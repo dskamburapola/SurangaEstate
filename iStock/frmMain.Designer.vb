@@ -48,12 +48,12 @@ Partial Class frmMain
         Me.BarButtonItem16 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem17 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem18 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem20 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem23 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem20 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibbonPageGroup8 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.RibbonPageGroup8 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage2 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup6 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -89,9 +89,9 @@ Partial Class frmMain
         Me.RibbonControl.ApplicationButtonDropDownControl = Me.ApplicationMenu1
         Me.RibbonControl.ApplicationIcon = Global.iStock.My.Resources.Resources.i
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonItem11, Me.BarButtonItem12, Me.BarButtonItem13, Me.BarButtonItem14, Me.bsiInformation, Me.bsiLoggedUser, Me.BarButtonItem15, Me.BarButtonItem16, Me.BarButtonItem17, Me.BarButtonItem18, Me.BarButtonItem19, Me.BarButtonItem20, Me.BarButtonItem21, Me.BarButtonItem22, Me.BarButtonItem23})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonItem11, Me.BarButtonItem12, Me.BarButtonItem13, Me.BarButtonItem14, Me.bsiInformation, Me.bsiLoggedUser, Me.BarButtonItem15, Me.BarButtonItem16, Me.BarButtonItem17, Me.BarButtonItem18, Me.BarButtonItem19, Me.BarButtonItem21, Me.BarButtonItem22, Me.BarButtonItem23, Me.BarButtonItem20})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 29
+        Me.RibbonControl.MaxItemId = 32
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage4, Me.RibbonPage3})
         Me.RibbonControl.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemPictureEdit1})
@@ -140,25 +140,30 @@ Partial Class frmMain
         Me.BarButtonItem1.Caption = "Suppliers"
         Me.BarButtonItem1.Id = 0
         Me.BarButtonItem1.LargeGlyph = CType(resources.GetObject("BarButtonItem1.LargeGlyph"), System.Drawing.Image)
+        Me.BarButtonItem1.LargeWidth = 75
         Me.BarButtonItem1.Name = "BarButtonItem1"
+        Me.BarButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'BarButtonItem2
         '
         Me.BarButtonItem2.Caption = "Customers"
         Me.BarButtonItem2.Id = 1
         Me.BarButtonItem2.LargeGlyph = CType(resources.GetObject("BarButtonItem2.LargeGlyph"), System.Drawing.Image)
+        Me.BarButtonItem2.LargeWidth = 75
         Me.BarButtonItem2.Name = "BarButtonItem2"
+        Me.BarButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'BarButtonItem3
         '
         Me.BarButtonItem3.Caption = "Stocks"
         Me.BarButtonItem3.Id = 2
         Me.BarButtonItem3.LargeGlyph = Global.iStock.My.Resources.Resources.Stock
+        Me.BarButtonItem3.LargeWidth = 75
         Me.BarButtonItem3.Name = "BarButtonItem3"
         '
         'BarButtonItem4
         '
-        Me.BarButtonItem4.Caption = "Purchasings (GRN)"
+        Me.BarButtonItem4.Caption = "Daily Working"
         Me.BarButtonItem4.Id = 3
         Me.BarButtonItem4.LargeGlyph = Global.iStock.My.Resources.Resources.purchases
         Me.BarButtonItem4.Name = "BarButtonItem4"
@@ -169,6 +174,7 @@ Partial Class frmMain
         Me.BarButtonItem5.Id = 4
         Me.BarButtonItem5.LargeGlyph = Global.iStock.My.Resources.Resources.sales
         Me.BarButtonItem5.Name = "BarButtonItem5"
+        Me.BarButtonItem5.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'BarButtonItem6
         '
@@ -176,6 +182,7 @@ Partial Class frmMain
         Me.BarButtonItem6.Id = 5
         Me.BarButtonItem6.LargeGlyph = Global.iStock.My.Resources.Resources.PayBills
         Me.BarButtonItem6.Name = "BarButtonItem6"
+        Me.BarButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'BarButtonItem7
         '
@@ -204,14 +211,15 @@ Partial Class frmMain
         Me.BarButtonItem10.Id = 9
         Me.BarButtonItem10.LargeGlyph = Global.iStock.My.Resources.Resources.RecevePayment
         Me.BarButtonItem10.Name = "BarButtonItem10"
+        Me.BarButtonItem10.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'BarButtonItem11
         '
         Me.BarButtonItem11.Caption = "Employees"
         Me.BarButtonItem11.Id = 10
         Me.BarButtonItem11.LargeGlyph = Global.iStock.My.Resources.Resources.Employer
+        Me.BarButtonItem11.LargeWidth = 75
         Me.BarButtonItem11.Name = "BarButtonItem11"
-        Me.BarButtonItem11.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'BarButtonItem12
         '
@@ -226,12 +234,14 @@ Partial Class frmMain
         Me.BarButtonItem13.Id = 12
         Me.BarButtonItem13.LargeGlyph = Global.iStock.My.Resources.Resources.Expenses
         Me.BarButtonItem13.Name = "BarButtonItem13"
+        Me.BarButtonItem13.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'BarButtonItem14
         '
         Me.BarButtonItem14.Caption = "Comapny"
         Me.BarButtonItem14.Id = 13
         Me.BarButtonItem14.LargeGlyph = Global.iStock.My.Resources.Resources.Company
+        Me.BarButtonItem14.LargeWidth = 75
         Me.BarButtonItem14.Name = "BarButtonItem14"
         '
         'bsiInformation
@@ -278,11 +288,6 @@ Partial Class frmMain
         Me.BarButtonItem18.Name = "BarButtonItem18"
         Me.BarButtonItem18.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
-        'BarButtonItem20
-        '
-        Me.BarButtonItem20.Id = 25
-        Me.BarButtonItem20.Name = "BarButtonItem20"
-        '
         'BarButtonItem23
         '
         Me.BarButtonItem23.Caption = "Roles"
@@ -290,11 +295,25 @@ Partial Class frmMain
         Me.BarButtonItem23.LargeGlyph = Global.iStock.My.Resources.Resources.rights
         Me.BarButtonItem23.Name = "BarButtonItem23"
         '
+        'BarButtonItem20
+        '
+        Me.BarButtonItem20.Caption = "Settings"
+        Me.BarButtonItem20.Id = 31
+        Me.BarButtonItem20.LargeGlyph = Global.iStock.My.Resources.Resources.Show
+        Me.BarButtonItem20.LargeWidth = 75
+        Me.BarButtonItem20.Name = "BarButtonItem20"
+        '
         'RibbonPage1
         '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup4, Me.RibbonPageGroup8})
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup8, Me.RibbonPageGroup1, Me.RibbonPageGroup4})
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "Start Up"
+        '
+        'RibbonPageGroup8
+        '
+        Me.RibbonPageGroup8.ItemLinks.Add(Me.BarButtonItem14)
+        Me.RibbonPageGroup8.Name = "RibbonPageGroup8"
+        Me.RibbonPageGroup8.ShowCaptionButton = False
         '
         'RibbonPageGroup1
         '
@@ -307,15 +326,9 @@ Partial Class frmMain
         'RibbonPageGroup4
         '
         Me.RibbonPageGroup4.ItemLinks.Add(Me.BarButtonItem3)
+        Me.RibbonPageGroup4.ItemLinks.Add(Me.BarButtonItem20)
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
         Me.RibbonPageGroup4.ShowCaptionButton = False
-        '
-        'RibbonPageGroup8
-        '
-        Me.RibbonPageGroup8.ItemLinks.Add(Me.BarButtonItem14)
-        Me.RibbonPageGroup8.ItemLinks.Add(Me.BarButtonItem20)
-        Me.RibbonPageGroup8.Name = "RibbonPageGroup8"
-        Me.RibbonPageGroup8.ShowCaptionButton = False
         '
         'RibbonPage2
         '
@@ -468,8 +481,8 @@ Partial Class frmMain
     Friend WithEvents BarButtonItem19 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem21 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem22 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem20 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem23 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem20 As DevExpress.XtraBars.BarButtonItem
 
 
 End Class

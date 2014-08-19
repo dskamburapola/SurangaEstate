@@ -506,6 +506,50 @@ Public Class iStockEmployers
 
 #End Region
 
+#Region "EmployeeDetailsGetByEmployerNo"
+    Public Sub EmployeeDetailsGetByEmployerNo()
+        Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+        Dim DBC As DbCommand = DB.GetStoredProcCommand(EMPLOYERS_GETBYEMPLOYERNO)
+        Try
+
+            DB.AddInParameter(DBC, "@EmployerNo", DbType.Int64, Me.EmployerNo)
+            Using DR As IDataReader = DB.ExecuteReader(DBC)
+
+
+                With DR
+                    Do While .Read
+                        Me.EmployerID = Convert.ToInt64(IIf(Not IsDBNull(.Item("EmployerID")), Trim(.Item("EmployerID").ToString), 0))
+                         Me.EmployerName = IIf(Not IsDBNull(.Item("EmployerName")), Trim(.Item("EmployerName").ToString), String.Empty)
+                                          Loop
+                End With
+
+                If (Not DR Is Nothing) Then
+                    DR.Close()
+                End If
+
+
+            End Using
+
+
+
+        Catch ex As Exception
+            Throw
+        Finally
+            DBC.Dispose()
+
+
+
+        End Try
+
+
+    End Sub
+
+
+
+
+
+#End Region
+
 #Region "Getting Image from Byte Array"
     Public Function GetImageFromByteArray(ByVal bytes As Byte()) As Bitmap
         Try

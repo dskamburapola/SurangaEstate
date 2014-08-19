@@ -150,9 +150,6 @@
 
 
 
-
-
-
     Public Shared STOCKCATEGORY_GETALL As String = "StockCategory_GetAll"
     Public Shared STOCKCATEGORY_DELETE As String = "StockCategory_Delete"
     Public Shared STOCKCATEGORY_INSERT As String = "StockCategory_Insert"
@@ -298,7 +295,25 @@
     Public Shared MESSAGES_GETALL As String = "Messages_GetAll"
     Public Shared MESSAGES_INSERT As String = "Messages_Insert"
 
+    '**************************************************
 
+    Public Shared ABBREVIATION_INSERT As String = "Abbreviation_Insert"
+    Public Shared ABBREVIATION_DELETE As String = "Abbreviation_Delete"
+    Public Shared ABBREVIATION_GETALL As String = "Abbreviation_GetAll"
+
+
+    Public Shared SETTINGS_INSERT As String = "Settings_Insert"
+    Public Shared SETTINGS_GETALL As String = "Settings_GetAll"
+
+
+    Public Shared EMPLOYEE_DETAILS_GETBYREGNO As String = "Employee_Details_GetByRegNo"
+    Public Shared DAILYWORKING_INSERT As String = "DailyWorking_Insert"
+    Public Shared DAILYWORKING_GETBY_DATE As String = "DailyWorking_GetBy_Date"
+    Public Shared DAILYWORKING_DELETE As String = "DailyWorking_Delete"
+
+
+
+    '**************************************************
 
 #End Region
 

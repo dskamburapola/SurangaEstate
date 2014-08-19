@@ -80,6 +80,8 @@
     <Import Include="System.Diagnostics" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="iStockDailyWorking.vb" />
+    <Compile Include="iStockSettings.vb" />
     <Compile Include="iStockApplication.vb" />
     <Compile Include="iStockExpenses.vb" />
     <Compile Include="iStockLogBook.vb" />

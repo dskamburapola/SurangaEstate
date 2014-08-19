@@ -191,14 +191,12 @@ Public Class frmEmployers
 
 
 
-
-
         Try
             With CWBEmployers
                 .EmployerID = Convert.ToInt64(IIf(lblID.Text = String.Empty, 0, lblID.Text))
                 .EmployerNo = seEmployerNo.Text
                 .EmployerName = teEmployerName.Text.Trim
-                .EmployerImage = peEmployer.Image
+                '.EmployerImage = peEmployer.Image
                 .AddressLine1 = teAdressLine1.Text.Trim
                 .AddressLine2 = teAddressLine2.Text.Trim
                 .AddressLine3 = teCity.Text.Trim
@@ -220,11 +218,11 @@ Public Class frmEmployers
                 .Designation = ceDesignation.Text
                 .Department = ceDepartment.Text
                 .EmergencyContactPerson = teEmployerContactPerson.Text.Trim
-                .BasicSalary = seBasicSalary.Text
-                .OTRate = seOTRate.Text
-                .FixedAllowance = seFixedAllowance.Text
-                .OtherAllowance = seOtherAllowance.Text
-                .Deductions = seDeduction.Text
+                .BasicSalary = 0
+                .OTRate = 0
+                .FixedAllowance = 0
+                .OtherAllowance = 0
+                .Deductions = 0
                 .EPFNo = teEPFNo.Text.Trim
 
                 .CreatedBy = UserID
@@ -281,7 +279,7 @@ Public Class frmEmployers
 
                     seEmployerNo.Text = .EmployerNo
                     teEmployerName.Text = .EmployerName
-                    peEmployer.EditValue = .EmployerImage
+                    'peEmployer.EditValue = .EmployerImage
                     teAdressLine1.Text = .AddressLine1
                     teAddressLine2.Text = .AddressLine2
                     teCity.Text = .AddressLine3
@@ -308,12 +306,12 @@ Public Class frmEmployers
                     ceDesignation.Text = .Designation
                     ceDepartment.Text = .Department
                     teEmployerContactPerson.Text = .EmergencyContactPerson
-                    seBasicSalary.Text = .BasicSalary
-                    seOTRate.Text = .OTRate
-                    seFixedAllowance.Text = .FixedAllowance
-                    seOtherAllowance.Text = .OtherAllowance
-                    seDeduction.Text = .Deductions
-                    teEPFNo.Text = .EPFNo
+                    'seBasicSalary.Text = .BasicSalary
+                    'seOTRate.Text = .OTRate
+                    'seFixedAllowance.Text = .FixedAllowance
+                    'seOtherAllowance.Text = .OtherAllowance
+                    'seDeduction.Text = .Deductions
+                    'teEPFNo.Text = .EPFNo
 
 
                 End With
@@ -345,7 +343,7 @@ Public Class frmEmployers
             lblID.Text = String.Empty
             seEmployerNo.Text = String.Empty
             teEmployerName.Text = String.Empty
-            peEmployer.EditValue = DBNull.Value
+            ' peEmployer.EditValue = DBNull.Value
             teAdressLine1.Text = String.Empty
             teAddressLine2.Text = String.Empty
             teCity.Text = String.Empty
@@ -357,11 +355,11 @@ Public Class frmEmployers
             ceDesignation.Text = String.Empty
             ceDepartment.Text = String.Empty
             teEmployerContactPerson.Text = String.Empty
-            seBasicSalary.Text = 0
-            seOTRate.Text = 0
-            seFixedAllowance.Text = 0
-            seOtherAllowance.Text = 0.0
-            seDeduction.Text = 0
+            'seBasicSalary.Text = 0
+            'seOTRate.Text = 0
+            'seFixedAllowance.Text = 0
+            'seOtherAllowance.Text = 0.0
+            'seDeduction.Text = 0
             teEPFNo.Text = String.Empty
             dxvpEmployers.RemoveControlError(seEmployerNo)
             dxvpEmployers.RemoveControlError(teEmployerName)
@@ -378,4 +376,5 @@ Public Class frmEmployers
 #End Region
 
 
+  
 End Class

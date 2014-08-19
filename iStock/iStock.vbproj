@@ -100,6 +100,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="frmAbbreviations.designer.vb">
+      <DependentUpon>frmAbbreviations.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAbbreviations.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDailyWorkings.designer.vb">
+      <DependentUpon>frmDailyWorkings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDailyWorkings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettings.designer.vb">
+      <DependentUpon>frmSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmRoles.Designer.vb">
       <DependentUpon>frmRoles.vb</DependentUpon>
     </Compile>
@@ -327,6 +345,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAbbreviations.resx">
+      <DependentUpon>frmAbbreviations.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDailyWorkings.resx">
+      <DependentUpon>frmDailyWorkings.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettings.resx">
+      <DependentUpon>frmSettings.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRoles.resx">
       <DependentUpon>frmRoles.vb</DependentUpon>
       <SubType>Designer</SubType>
