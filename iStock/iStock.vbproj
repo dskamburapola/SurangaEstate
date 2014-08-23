@@ -518,12 +518,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\iStockCommon.vbproj">
-      <Project>{8B150E50-B2C9-445E-A4D4-49F4F4286795}</Project>
-      <Name>iStockCommon</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
@@ -689,6 +683,12 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\iStockCommon.vbproj">
+      <Project>{8B150E50-B2C9-445E-A4D4-49F4F4286795}</Project>
+      <Name>iStockCommon</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

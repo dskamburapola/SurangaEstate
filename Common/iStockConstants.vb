@@ -306,11 +306,13 @@
     Public Shared SETTINGS_GETALL As String = "Settings_GetAll"
 
 
-    Public Shared EMPLOYEE_DETAILS_GETBYREGNO As String = "Employee_Details_GetByRegNo"
     Public Shared DAILYWORKING_INSERT As String = "DailyWorking_Insert"
     Public Shared DAILYWORKING_GETBY_DATE As String = "DailyWorking_GetBy_Date"
     Public Shared DAILYWORKING_DELETE As String = "DailyWorking_Delete"
+    Public Shared DAILYWORKING_GETALL_BYDATES As String = "DailyWorking_GetAll_ByDates"
 
+    Public Shared EMPLOYEE_DETAILS_GETBYREGNO As String = "Employee_Details_GetByRegNo"
+    Public Shared EMPLOYEE_GETALL_WORKERS As String = "Employee_GetAll_Workers"
 
 
     '**************************************************

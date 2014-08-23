@@ -207,6 +207,10 @@ Public Class iStockSettings
 
 #End Region
 
+
+
+
+
 #Region "Delete Abbrevation"
     Public Sub DeleteAbbrevation()
         Try

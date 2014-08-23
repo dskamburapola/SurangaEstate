@@ -22,6 +22,11 @@ Partial Class frmSettings
         Me.components = New System.ComponentModel.Container()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule4 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule5 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule6 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule7 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
@@ -53,19 +58,8 @@ Partial Class frmSettings
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmptySpaceItem3 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmptySpaceItem4 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmptySpaceItem5 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmptySpaceItem6 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmptySpaceItem7 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmptySpaceItem8 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem9 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem10 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmptySpaceItem11 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmptySpaceItem12 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmptySpaceItem13 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmptySpaceItem14 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmptySpaceItem15 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem16 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem17 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem10 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -101,19 +95,8 @@ Partial Class frmSettings
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem13, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem14, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem17, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -278,9 +261,6 @@ Partial Class frmSettings
         Me.teAbbreviationDesc.Size = New System.Drawing.Size(249, 20)
         Me.teAbbreviationDesc.StyleController = Me.LayoutControl1
         Me.teAbbreviationDesc.TabIndex = 22
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "This value is not valid"
-        Me.dxvpSettings.SetValidationRule(Me.teAbbreviationDesc, ConditionValidationRule1)
         '
         'teAbbreviationCode
         '
@@ -290,9 +270,6 @@ Partial Class frmSettings
         Me.teAbbreviationCode.Size = New System.Drawing.Size(70, 20)
         Me.teAbbreviationCode.StyleController = Me.LayoutControl1
         Me.teAbbreviationCode.TabIndex = 21
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule2.ErrorText = "This value is not valid"
-        Me.dxvpSettings.SetValidationRule(Me.teAbbreviationCode, ConditionValidationRule2)
         '
         'seIncentiveRate
         '
@@ -304,6 +281,10 @@ Partial Class frmSettings
         Me.seIncentiveRate.Size = New System.Drawing.Size(273, 20)
         Me.seIncentiveRate.StyleController = Me.LayoutControl1
         Me.seIncentiveRate.TabIndex = 20
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule1.ErrorText = "This value is not valid"
+        ConditionValidationRule1.Value1 = "0"
+        Me.dxvpSettings.SetValidationRule(Me.seIncentiveRate, ConditionValidationRule1)
         '
         'seIncentiveDays
         '
@@ -315,6 +296,10 @@ Partial Class frmSettings
         Me.seIncentiveDays.Size = New System.Drawing.Size(273, 20)
         Me.seIncentiveDays.StyleController = Me.LayoutControl1
         Me.seIncentiveDays.TabIndex = 19
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule2.ErrorText = "This value is not valid"
+        ConditionValidationRule2.Value1 = "0"
+        Me.dxvpSettings.SetValidationRule(Me.seIncentiveDays, ConditionValidationRule2)
         '
         'seKgsPerDay
         '
@@ -326,6 +311,10 @@ Partial Class frmSettings
         Me.seKgsPerDay.Size = New System.Drawing.Size(273, 20)
         Me.seKgsPerDay.StyleController = Me.LayoutControl1
         Me.seKgsPerDay.TabIndex = 18
+        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule3.ErrorText = "This value is not valid"
+        ConditionValidationRule3.Value1 = "0"
+        Me.dxvpSettings.SetValidationRule(Me.seKgsPerDay, ConditionValidationRule3)
         '
         'seOTRate
         '
@@ -337,6 +326,10 @@ Partial Class frmSettings
         Me.seOTRate.Size = New System.Drawing.Size(273, 20)
         Me.seOTRate.StyleController = Me.LayoutControl1
         Me.seOTRate.TabIndex = 17
+        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule4.ErrorText = "This value is not valid"
+        ConditionValidationRule4.Value1 = "0"
+        Me.dxvpSettings.SetValidationRule(Me.seOTRate, ConditionValidationRule4)
         '
         'seDayRate
         '
@@ -348,6 +341,10 @@ Partial Class frmSettings
         Me.seDayRate.Size = New System.Drawing.Size(273, 20)
         Me.seDayRate.StyleController = Me.LayoutControl1
         Me.seDayRate.TabIndex = 16
+        ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule5.ErrorText = "This value is not valid"
+        ConditionValidationRule5.Value1 = "0"
+        Me.dxvpSettings.SetValidationRule(Me.seDayRate, ConditionValidationRule5)
         '
         'seDevalutionAllowance
         '
@@ -359,6 +356,10 @@ Partial Class frmSettings
         Me.seDevalutionAllowance.Size = New System.Drawing.Size(273, 20)
         Me.seDevalutionAllowance.StyleController = Me.LayoutControl1
         Me.seDevalutionAllowance.TabIndex = 15
+        ConditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule6.ErrorText = "This value is not valid"
+        ConditionValidationRule6.Value1 = "0"
+        Me.dxvpSettings.SetValidationRule(Me.seDevalutionAllowance, ConditionValidationRule6)
         '
         'sePayChitCost
         '
@@ -370,6 +371,10 @@ Partial Class frmSettings
         Me.sePayChitCost.Size = New System.Drawing.Size(273, 20)
         Me.sePayChitCost.StyleController = Me.LayoutControl1
         Me.sePayChitCost.TabIndex = 14
+        ConditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule7.ErrorText = "This value is not valid"
+        ConditionValidationRule7.Value1 = "0"
+        Me.dxvpSettings.SetValidationRule(Me.sePayChitCost, ConditionValidationRule7)
         '
         'leAbbriviationCode
         '
@@ -386,7 +391,7 @@ Partial Class frmSettings
         'LayoutControlGroup1
         '
         Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.EmptySpaceItem1, Me.EmptySpaceItem2, Me.EmptySpaceItem3, Me.EmptySpaceItem4, Me.EmptySpaceItem5, Me.EmptySpaceItem6, Me.EmptySpaceItem7, Me.EmptySpaceItem8, Me.EmptySpaceItem9, Me.EmptySpaceItem10, Me.EmptySpaceItem11, Me.EmptySpaceItem12, Me.EmptySpaceItem13, Me.EmptySpaceItem14, Me.EmptySpaceItem15, Me.EmptySpaceItem16, Me.EmptySpaceItem17, Me.LayoutControlItem10, Me.LayoutControlItem9, Me.LayoutControlItem11, Me.LayoutControlItem1, Me.LayoutControlItem12, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlGroup2})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.EmptySpaceItem1, Me.EmptySpaceItem2, Me.EmptySpaceItem9, Me.EmptySpaceItem10, Me.EmptySpaceItem16, Me.EmptySpaceItem17, Me.LayoutControlItem10, Me.LayoutControlItem9, Me.LayoutControlItem11, Me.LayoutControlItem1, Me.LayoutControlItem12, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlGroup2})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(703, 412)
@@ -410,71 +415,11 @@ Partial Class frmSettings
         '
         Me.EmptySpaceItem2.AllowHotTrack = False
         Me.EmptySpaceItem2.CustomizationFormText = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(530, 294)
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(530, 196)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(153, 98)
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(153, 196)
         Me.EmptySpaceItem2.Text = "EmptySpaceItem2"
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmptySpaceItem3
-        '
-        Me.EmptySpaceItem3.AllowHotTrack = False
-        Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(530, 284)
-        Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(153, 10)
-        Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmptySpaceItem4
-        '
-        Me.EmptySpaceItem4.AllowHotTrack = False
-        Me.EmptySpaceItem4.CustomizationFormText = "EmptySpaceItem4"
-        Me.EmptySpaceItem4.Location = New System.Drawing.Point(530, 274)
-        Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
-        Me.EmptySpaceItem4.Size = New System.Drawing.Size(153, 10)
-        Me.EmptySpaceItem4.Text = "EmptySpaceItem4"
-        Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmptySpaceItem5
-        '
-        Me.EmptySpaceItem5.AllowHotTrack = False
-        Me.EmptySpaceItem5.CustomizationFormText = "EmptySpaceItem5"
-        Me.EmptySpaceItem5.Location = New System.Drawing.Point(530, 264)
-        Me.EmptySpaceItem5.Name = "EmptySpaceItem5"
-        Me.EmptySpaceItem5.Size = New System.Drawing.Size(153, 10)
-        Me.EmptySpaceItem5.Text = "EmptySpaceItem5"
-        Me.EmptySpaceItem5.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmptySpaceItem6
-        '
-        Me.EmptySpaceItem6.AllowHotTrack = False
-        Me.EmptySpaceItem6.CustomizationFormText = "EmptySpaceItem6"
-        Me.EmptySpaceItem6.Location = New System.Drawing.Point(530, 254)
-        Me.EmptySpaceItem6.Name = "EmptySpaceItem6"
-        Me.EmptySpaceItem6.Size = New System.Drawing.Size(153, 10)
-        Me.EmptySpaceItem6.Text = "EmptySpaceItem6"
-        Me.EmptySpaceItem6.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmptySpaceItem7
-        '
-        Me.EmptySpaceItem7.AllowHotTrack = False
-        Me.EmptySpaceItem7.CustomizationFormText = "EmptySpaceItem7"
-        Me.EmptySpaceItem7.Location = New System.Drawing.Point(530, 244)
-        Me.EmptySpaceItem7.Name = "EmptySpaceItem7"
-        Me.EmptySpaceItem7.Size = New System.Drawing.Size(153, 10)
-        Me.EmptySpaceItem7.Text = "EmptySpaceItem7"
-        Me.EmptySpaceItem7.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmptySpaceItem8
-        '
-        Me.EmptySpaceItem8.AllowHotTrack = False
-        Me.EmptySpaceItem8.CustomizationFormText = "EmptySpaceItem8"
-        Me.EmptySpaceItem8.Location = New System.Drawing.Point(530, 196)
-        Me.EmptySpaceItem8.Name = "EmptySpaceItem8"
-        Me.EmptySpaceItem8.Size = New System.Drawing.Size(153, 48)
-        Me.EmptySpaceItem8.Text = "EmptySpaceItem8"
-        Me.EmptySpaceItem8.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem9
         '
@@ -490,61 +435,11 @@ Partial Class frmSettings
         '
         Me.EmptySpaceItem10.AllowHotTrack = False
         Me.EmptySpaceItem10.CustomizationFormText = "EmptySpaceItem10"
-        Me.EmptySpaceItem10.Location = New System.Drawing.Point(0, 294)
+        Me.EmptySpaceItem10.Location = New System.Drawing.Point(0, 244)
         Me.EmptySpaceItem10.Name = "EmptySpaceItem10"
-        Me.EmptySpaceItem10.Size = New System.Drawing.Size(148, 98)
+        Me.EmptySpaceItem10.Size = New System.Drawing.Size(148, 148)
         Me.EmptySpaceItem10.Text = "EmptySpaceItem10"
         Me.EmptySpaceItem10.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmptySpaceItem11
-        '
-        Me.EmptySpaceItem11.AllowHotTrack = False
-        Me.EmptySpaceItem11.CustomizationFormText = "EmptySpaceItem11"
-        Me.EmptySpaceItem11.Location = New System.Drawing.Point(0, 284)
-        Me.EmptySpaceItem11.Name = "EmptySpaceItem11"
-        Me.EmptySpaceItem11.Size = New System.Drawing.Size(148, 10)
-        Me.EmptySpaceItem11.Text = "EmptySpaceItem11"
-        Me.EmptySpaceItem11.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmptySpaceItem12
-        '
-        Me.EmptySpaceItem12.AllowHotTrack = False
-        Me.EmptySpaceItem12.CustomizationFormText = "EmptySpaceItem12"
-        Me.EmptySpaceItem12.Location = New System.Drawing.Point(0, 274)
-        Me.EmptySpaceItem12.Name = "EmptySpaceItem12"
-        Me.EmptySpaceItem12.Size = New System.Drawing.Size(148, 10)
-        Me.EmptySpaceItem12.Text = "EmptySpaceItem12"
-        Me.EmptySpaceItem12.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmptySpaceItem13
-        '
-        Me.EmptySpaceItem13.AllowHotTrack = False
-        Me.EmptySpaceItem13.CustomizationFormText = "EmptySpaceItem13"
-        Me.EmptySpaceItem13.Location = New System.Drawing.Point(0, 264)
-        Me.EmptySpaceItem13.Name = "EmptySpaceItem13"
-        Me.EmptySpaceItem13.Size = New System.Drawing.Size(148, 10)
-        Me.EmptySpaceItem13.Text = "EmptySpaceItem13"
-        Me.EmptySpaceItem13.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmptySpaceItem14
-        '
-        Me.EmptySpaceItem14.AllowHotTrack = False
-        Me.EmptySpaceItem14.CustomizationFormText = "EmptySpaceItem14"
-        Me.EmptySpaceItem14.Location = New System.Drawing.Point(0, 254)
-        Me.EmptySpaceItem14.Name = "EmptySpaceItem14"
-        Me.EmptySpaceItem14.Size = New System.Drawing.Size(148, 10)
-        Me.EmptySpaceItem14.Text = "EmptySpaceItem14"
-        Me.EmptySpaceItem14.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmptySpaceItem15
-        '
-        Me.EmptySpaceItem15.AllowHotTrack = False
-        Me.EmptySpaceItem15.CustomizationFormText = "EmptySpaceItem15"
-        Me.EmptySpaceItem15.Location = New System.Drawing.Point(0, 244)
-        Me.EmptySpaceItem15.Name = "EmptySpaceItem15"
-        Me.EmptySpaceItem15.Size = New System.Drawing.Size(148, 10)
-        Me.EmptySpaceItem15.Text = "EmptySpaceItem15"
-        Me.EmptySpaceItem15.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem16
         '
@@ -759,19 +654,8 @@ Partial Class frmSettings
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem13, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem14, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem15, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem17, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).EndInit()
@@ -810,20 +694,7 @@ Partial Class frmSettings
     Friend WithEvents LayoutControlGroup1 As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents EmptySpaceItem1 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem2 As DevExpress.XtraLayout.EmptySpaceItem
-    Friend WithEvents EmptySpaceItem3 As DevExpress.XtraLayout.EmptySpaceItem
-    Friend WithEvents EmptySpaceItem4 As DevExpress.XtraLayout.EmptySpaceItem
-    Friend WithEvents EmptySpaceItem5 As DevExpress.XtraLayout.EmptySpaceItem
-    Friend WithEvents EmptySpaceItem6 As DevExpress.XtraLayout.EmptySpaceItem
-    Friend WithEvents EmptySpaceItem7 As DevExpress.XtraLayout.EmptySpaceItem
-    Friend WithEvents EmptySpaceItem8 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem9 As DevExpress.XtraLayout.EmptySpaceItem
-    Friend WithEvents EmptySpaceItem10 As DevExpress.XtraLayout.EmptySpaceItem
-    Friend WithEvents EmptySpaceItem11 As DevExpress.XtraLayout.EmptySpaceItem
-    Friend WithEvents EmptySpaceItem12 As DevExpress.XtraLayout.EmptySpaceItem
-    Friend WithEvents EmptySpaceItem13 As DevExpress.XtraLayout.EmptySpaceItem
-    Friend WithEvents EmptySpaceItem14 As DevExpress.XtraLayout.EmptySpaceItem
-    Friend WithEvents EmptySpaceItem15 As DevExpress.XtraLayout.EmptySpaceItem
-    Friend WithEvents EmptySpaceItem16 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem17 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents bbPrint As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents dxvpSettings As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
@@ -855,4 +726,6 @@ Partial Class frmSettings
     Friend WithEvents LayoutControlItem7 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem8 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem19 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents EmptySpaceItem10 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents EmptySpaceItem16 As DevExpress.XtraLayout.EmptySpaceItem
 End Class

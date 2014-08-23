@@ -52,10 +52,19 @@ Public Class frmSettings
     End Sub
 
     Private Sub bbSave_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbSave.ItemClick
+        Try
+            If dxvpSettings.Validate Then
 
-        If dxvpSettings.Validate Then
-            Me.SaveSettigs()
-        End If
+                Me.SaveSettigs()
+
+            End If
+
+          
+
+
+        Catch ex As Exception
+            MessageError(ex.ToString)
+        End Try
 
 
     End Sub
@@ -242,4 +251,14 @@ Public Class frmSettings
 
     End Sub
 #End Region
+
+  
+    
+    Private Sub seDayRate_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles seDayRate.EditValueChanged
+
+    End Sub
+
+    Private Sub seIncentiveRate_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles seIncentiveRate.EditValueChanged
+
+    End Sub
 End Class

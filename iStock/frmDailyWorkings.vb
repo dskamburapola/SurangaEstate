@@ -54,9 +54,10 @@ Public Class frmDailyWorkings
         Me.HideToolButtonsOnLoad()
         'Me.DisplayCompany()
         Me.GetWorkingCategory()
+        Me.GetEmployeeForWork()
 
 
-        Me.deWorkingDate.EditValue = Date.Now.ToShortDateString()
+        Me.deWorkingDate.EditValue = Date.Today
 
         '  MessageBox.Show(Me.deWorkingDate.EditValue)
 
@@ -84,6 +85,7 @@ Public Class frmDailyWorkings
     Private Sub bbSave_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbSave.ItemClick
 
         If dxvpCompany.Validate Then
+
             Me.SaveDailyWorking()
         End If
 
@@ -111,22 +113,47 @@ Public Class frmDailyWorkings
     End Sub
 #End Region
 
+#Region "Get Employee For Work"
+    Private Sub GetEmployeeForWork()
+
+        Try
+
+            Me.leEmployee.Properties.DataSource = iStockDailyWorking.GetEmployeeForWork.Tables(0)
+            Me.leEmployee.Properties.DisplayMember = "EmployerNo"
+            Me.leEmployee.Properties.ValueMember = "EmployerID"
+
+
+        Catch ex As Exception
+
+            Throw
+        End Try
+
+
+    End Sub
+#End Region
+
 #Region "Daily Working Get By Date"
     Private Sub DailyWorkingGetByDate()
 
         Try
 
-            With iStockDailyWorking
-
-                .WorkingDate = Me.deWorkingDate.EditValue
-                gcDailyWorking.DataSource = .DailyWorkingGetByDate.Tables(0)
+            If (deWorkingDate.EditValue IsNot Nothing) Then
 
 
 
+                With iStockDailyWorking
 
-            End With
-            
-           
+
+
+                    .WorkingDate = deWorkingDate.EditValue
+                    gcDailyWorking.DataSource = .DailyWorkingGetByDate.Tables(0)
+
+
+
+
+                End With
+            End If
+
 
 
         Catch ex As Exception
@@ -147,7 +174,7 @@ Public Class frmDailyWorkings
                 .WorkingDate = Me.deWorkingDate.EditValue
                 .WorkType = Me.cmbWorkType.Text.Trim
                 .AbbreviationID = Me.leWorkCategory.EditValue
-                .EmployeeID = lblID.Text.Trim
+                .EmployeeID = leEmployee.EditValue 'lblID.Text.Trim
                 .WorkedDays = Me.seWorkDays.Text.Trim
                 .Quantity = Me.seQuantity.Text.Trim
 
@@ -160,9 +187,9 @@ Public Class frmDailyWorkings
                 frm.ShowDialog()
             End With
 
-            Me.ClearFormData()
-            Me.DailyWorkingGetByDate()
 
+            Me.DailyWorkingGetByDate()
+            Me.ClearFormData()
         Catch ex As Exception
             MessageError(ex.ToString)
         End Try
@@ -177,7 +204,7 @@ Public Class frmDailyWorkings
 #Region "Clear Form Data"
     Public Sub ClearFormData()
         Me.lblID.Text = String.Empty
-        Me.seEmployeeCode.Text = String.Empty
+        ' Me.seEmployeeCode.Text = String.Empty
         Me.cmbWorkType.Text = String.Empty
         Me.teEmployeeName.Text = String.Empty
         Me.seWorkDays.Text = 0
@@ -187,39 +214,39 @@ Public Class frmDailyWorkings
     End Sub
 #End Region
 
-#Region "Dispay Employee Info"
-    Public Sub DisplayEmployeeInfo()
+    '#Region "Dispay Employee Info"
+    '    Public Sub DisplayEmployeeInfo()
 
-        Try
+    '        Try
 
-            With iStockEmployers
+    '            With iStockEmployers
 
-                .EmployerNo = Me.seEmployeeCode.Text.Trim
-                .EmployeeDetailsGetByEmployerNo()
+    '                .EmployerNo = Me.seEmployeeCode.Text.Trim
+    '                .EmployeeDetailsGetByEmployerNo()
 
-                lblID.Text = .EmployerID
-
-
-                teEmployeeName.Text = .EmployerName
-                seWorkDays.Focus()
+    '                lblID.Text = .EmployerID
 
 
-            End With
-
-            If lblID.Text = String.Empty Then
-                MsgBox("Invalid Reg No")
-                seEmployeeCode.Focus()
-
-            End If
+    '                teEmployeeName.Text = .EmployerName
+    '                seWorkDays.Focus()
 
 
-        Catch ex As Exception
-            MessageError(ex.ToString)
+    '            End With
 
-        End Try
+    '            If lblID.Text = String.Empty Then
+    '                MsgBox("Invalid Reg No")
+    '                seEmployeeCode.Focus()
 
-    End Sub
-#End Region
+    '            End If
+
+
+    '        Catch ex As Exception
+    '            MessageError(ex.ToString)
+
+    '        End Try
+
+    '    End Sub
+    '#End Region
 
 #Region "Delete Daily Working"
     Private Sub DeleteDailyWorking()
@@ -242,11 +269,11 @@ Public Class frmDailyWorkings
     End Sub
 #End Region
     
-    Private Sub seEmployeeCode_KeyPress(sender As Object, e As KeyPressEventArgs) Handles seEmployeeCode.KeyPress
-        If e.KeyChar = Microsoft.VisualBasic.Chr(13) Then
-            Me.DisplayEmployeeInfo()
-        End If
-    End Sub
+    ''Private Sub seEmployeeCode_KeyPress(sender As Object, e As KeyPressEventArgs) Handles seEmployeeCode.KeyPress
+    ''    If e.KeyChar = Microsoft.VisualBasic.Chr(13) Then
+    ''        Me.DisplayEmployeeInfo()
+    ''    End If
+    ''End Sub
 
     Private Sub deWorkingDate_EditValueChanged(sender As Object, e As EventArgs) Handles deWorkingDate.EditValueChanged
         Me.DailyWorkingGetByDate()
@@ -265,4 +292,23 @@ Public Class frmDailyWorkings
     End Sub
 
     
+  
+
+  
+
+  
+    Private Sub leEmployee_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles leEmployee.EditValueChanged
+        teEmployeeName.Text = leEmployee.GetColumnValue("EmployerName")
+    End Sub
+
+    Private Sub leWorkCategory_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles leWorkCategory.EditValueChanged
+
+    End Sub
+
+    Private Sub seQuantity_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles seQuantity.Leave
+        MsgBox("Leave working")
+        Me.SaveDailyWorking()
+        Me.ClearFormData()
+
+    End Sub
 End Class

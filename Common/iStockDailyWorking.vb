@@ -127,6 +127,24 @@ Public Class iStockDailyWorking
 
 #End Region
 
+#Region "Daily Working GetAll ByDates"
+    Public Function DailyWorkingGetAllByDates() As DataSet
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(DAILYWORKING_GETALL_BYDATES)
+            DB.AddInParameter(DBC, "@WorkingDate", DbType.Date, Me.WorkingDate)
+            Return DB.ExecuteDataSet(DBC)
+            DBC.Dispose()
+        Catch ex As Exception
+            Return Nothing
+            Throw
+        End Try
+
+
+    End Function
+
+#End Region
+
 #Region "DailyWorking Delete"
     Public Sub DailyWorkingDelete()
         Try
@@ -139,6 +157,24 @@ Public Class iStockDailyWorking
         End Try
 
     End Sub
+#End Region
+
+#Region "Get Employee For Work"
+    Public Function GetEmployeeForWork() As DataSet
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(EMPLOYEE_GETALL_WORKERS)
+
+            Return DB.ExecuteDataSet(DBC)
+            DBC.Dispose()
+        Catch ex As Exception
+            Return Nothing
+            Throw
+        End Try
+
+
+    End Function
+
 #End Region
 
 End Class
