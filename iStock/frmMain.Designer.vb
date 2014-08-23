@@ -170,7 +170,7 @@ Partial Class frmMain
         '
         'BarButtonItem5
         '
-        Me.BarButtonItem5.Caption = "Sales (Invoice)"
+        Me.BarButtonItem5.Caption = "Festival Advance Payment"
         Me.BarButtonItem5.Id = 4
         Me.BarButtonItem5.LargeGlyph = Global.iStock.My.Resources.Resources.sales
         Me.BarButtonItem5.Name = "BarButtonItem5"
@@ -178,11 +178,10 @@ Partial Class frmMain
         '
         'BarButtonItem6
         '
-        Me.BarButtonItem6.Caption = "Settle Dues"
+        Me.BarButtonItem6.Caption = "Monthly Advance Payment"
         Me.BarButtonItem6.Id = 5
         Me.BarButtonItem6.LargeGlyph = Global.iStock.My.Resources.Resources.PayBills
         Me.BarButtonItem6.Name = "BarButtonItem6"
-        Me.BarButtonItem6.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'BarButtonItem7
         '

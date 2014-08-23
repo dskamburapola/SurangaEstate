@@ -8,6 +8,8 @@ Public Class iStockDailyWorking
 #Region "Variables"
     Private _DailyWorkingID As Int64
     Private _WorkingDate As Date
+    Private _StartDate As Date
+    Private _EndDate As Date
     Private _WorkType As String
     Private _AbbreviationID As Int64
     Private _EmployeeID As Int64
@@ -26,9 +28,23 @@ Public Class iStockDailyWorking
         End Set
     End Property
 
+    Public Property StartDate() As Date
+        Get
+            Return _StartDate
+        End Get
+        Set(ByVal value As Date)
+            _StartDate = value
+        End Set
+    End Property
 
-
-
+    Public Property EndDate() As Date
+        Get
+            Return _EndDate
+        End Get
+        Set(ByVal value As Date)
+            _EndDate = value
+        End Set
+    End Property
 
     Public Property WorkingDate() As Date
         Get
@@ -132,7 +148,9 @@ Public Class iStockDailyWorking
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
             Dim DBC As DbCommand = DB.GetStoredProcCommand(DAILYWORKING_GETALL_BYDATES)
-            DB.AddInParameter(DBC, "@WorkingDate", DbType.Date, Me.WorkingDate)
+            DB.AddInParameter(DBC, "@StartDate", DbType.Date, Me.StartDate)
+            DB.AddInParameter(DBC, "@EndDate", DbType.Date, Me.EndDate)
+
             Return DB.ExecuteDataSet(DBC)
             DBC.Dispose()
         Catch ex As Exception

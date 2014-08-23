@@ -20,6 +20,7 @@ Partial Class frmDailyWorkings
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar2 = New DevExpress.XtraBars.Bar()
         Me.bbSave = New DevExpress.XtraBars.BarButtonItem()
@@ -55,6 +56,8 @@ Partial Class frmDailyWorkings
         Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn16 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemButtonEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
         Me.deWorkingDate = New DevExpress.XtraEditors.DateEdit()
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -75,7 +78,27 @@ Partial Class frmDailyWorkings
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
         Me.LayoutControl2 = New DevExpress.XtraLayout.LayoutControl()
+        Me.LayoutControl4 = New DevExpress.XtraLayout.LayoutControl()
+        Me.btnDisplay = New System.Windows.Forms.Button()
+        Me.deEndDate = New DevExpress.XtraEditors.DateEdit()
+        Me.deStartDate = New DevExpress.XtraEditors.DateEdit()
+        Me.gcAllWorkings = New DevExpress.XtraGrid.GridControl()
+        Me.gvAllWorkings = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn10 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn15 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem12 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem14 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem13 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem15 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.DateEdit1 = New DevExpress.XtraEditors.DateEdit()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpCompany, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,6 +114,7 @@ Partial Class frmDailyWorkings
         CType(Me.cmbWorkType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcDailyWorking, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gvDailyWorking, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemButtonEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.deWorkingDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.deWorkingDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -112,7 +136,24 @@ Partial Class frmDailyWorkings
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabPage2.SuspendLayout()
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.LayoutControl2.SuspendLayout()
+        CType(Me.LayoutControl4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.LayoutControl4.SuspendLayout()
+        CType(Me.deEndDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.deEndDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.deStartDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.deStartDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gcAllWorkings, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gvAllWorkings, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DateEdit1.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarManager1
@@ -345,13 +386,14 @@ Partial Class frmDailyWorkings
         Me.gcDailyWorking.MainView = Me.gvDailyWorking
         Me.gcDailyWorking.MenuManager = Me.BarManager1
         Me.gcDailyWorking.Name = "gcDailyWorking"
+        Me.gcDailyWorking.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemButtonEdit1})
         Me.gcDailyWorking.Size = New System.Drawing.Size(597, 137)
         Me.gcDailyWorking.TabIndex = 5
         Me.gcDailyWorking.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvDailyWorking})
         '
         'gvDailyWorking
         '
-        Me.gvDailyWorking.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8})
+        Me.gvDailyWorking.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn16})
         Me.gvDailyWorking.GridControl = Me.gcDailyWorking
         Me.gvDailyWorking.Name = "gvDailyWorking"
         '
@@ -362,7 +404,7 @@ Partial Class frmDailyWorkings
         Me.GridColumn1.Name = "GridColumn1"
         Me.GridColumn1.Visible = True
         Me.GridColumn1.VisibleIndex = 0
-        Me.GridColumn1.Width = 120
+        Me.GridColumn1.Width = 106
         '
         'GridColumn2
         '
@@ -371,7 +413,7 @@ Partial Class frmDailyWorkings
         Me.GridColumn2.Name = "GridColumn2"
         Me.GridColumn2.Visible = True
         Me.GridColumn2.VisibleIndex = 1
-        Me.GridColumn2.Width = 65
+        Me.GridColumn2.Width = 57
         '
         'GridColumn3
         '
@@ -380,7 +422,7 @@ Partial Class frmDailyWorkings
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.Visible = True
         Me.GridColumn3.VisibleIndex = 2
-        Me.GridColumn3.Width = 65
+        Me.GridColumn3.Width = 57
         '
         'GridColumn4
         '
@@ -389,7 +431,7 @@ Partial Class frmDailyWorkings
         Me.GridColumn4.Name = "GridColumn4"
         Me.GridColumn4.Visible = True
         Me.GridColumn4.VisibleIndex = 3
-        Me.GridColumn4.Width = 65
+        Me.GridColumn4.Width = 57
         '
         'GridColumn5
         '
@@ -398,7 +440,7 @@ Partial Class frmDailyWorkings
         Me.GridColumn5.Name = "GridColumn5"
         Me.GridColumn5.Visible = True
         Me.GridColumn5.VisibleIndex = 4
-        Me.GridColumn5.Width = 65
+        Me.GridColumn5.Width = 57
         '
         'GridColumn6
         '
@@ -407,7 +449,7 @@ Partial Class frmDailyWorkings
         Me.GridColumn6.Name = "GridColumn6"
         Me.GridColumn6.Visible = True
         Me.GridColumn6.VisibleIndex = 5
-        Me.GridColumn6.Width = 65
+        Me.GridColumn6.Width = 57
         '
         'GridColumn7
         '
@@ -416,7 +458,7 @@ Partial Class frmDailyWorkings
         Me.GridColumn7.Name = "GridColumn7"
         Me.GridColumn7.Visible = True
         Me.GridColumn7.VisibleIndex = 6
-        Me.GridColumn7.Width = 65
+        Me.GridColumn7.Width = 57
         '
         'GridColumn8
         '
@@ -425,7 +467,23 @@ Partial Class frmDailyWorkings
         Me.GridColumn8.Name = "GridColumn8"
         Me.GridColumn8.Visible = True
         Me.GridColumn8.VisibleIndex = 7
-        Me.GridColumn8.Width = 69
+        Me.GridColumn8.Width = 61
+        '
+        'GridColumn16
+        '
+        Me.GridColumn16.Caption = "GridColumn16"
+        Me.GridColumn16.ColumnEdit = Me.RepositoryItemButtonEdit1
+        Me.GridColumn16.Name = "GridColumn16"
+        Me.GridColumn16.Visible = True
+        Me.GridColumn16.VisibleIndex = 8
+        Me.GridColumn16.Width = 25
+        '
+        'RepositoryItemButtonEdit1
+        '
+        Me.RepositoryItemButtonEdit1.AutoHeight = False
+        Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Delete", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, "", Nothing, Nothing, True)})
+        Me.RepositoryItemButtonEdit1.Name = "RepositoryItemButtonEdit1"
+        Me.RepositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
         '
         'deWorkingDate
         '
@@ -635,6 +693,7 @@ Partial Class frmDailyWorkings
         '
         'LayoutControl2
         '
+        Me.LayoutControl2.Controls.Add(Me.LayoutControl4)
         Me.LayoutControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl2.Name = "LayoutControl2"
@@ -643,16 +702,233 @@ Partial Class frmDailyWorkings
         Me.LayoutControl2.TabIndex = 0
         Me.LayoutControl2.Text = "LayoutControl2"
         '
+        'LayoutControl4
+        '
+        Me.LayoutControl4.Controls.Add(Me.btnDisplay)
+        Me.LayoutControl4.Controls.Add(Me.deEndDate)
+        Me.LayoutControl4.Controls.Add(Me.deStartDate)
+        Me.LayoutControl4.Controls.Add(Me.gcAllWorkings)
+        Me.LayoutControl4.Location = New System.Drawing.Point(12, 12)
+        Me.LayoutControl4.Name = "LayoutControl4"
+        Me.LayoutControl4.Root = Me.Root
+        Me.LayoutControl4.Size = New System.Drawing.Size(673, 360)
+        Me.LayoutControl4.TabIndex = 4
+        Me.LayoutControl4.Text = "LayoutControl4"
+        '
+        'btnDisplay
+        '
+        Me.btnDisplay.Location = New System.Drawing.Point(501, 12)
+        Me.btnDisplay.Name = "btnDisplay"
+        Me.btnDisplay.Size = New System.Drawing.Size(160, 20)
+        Me.btnDisplay.TabIndex = 7
+        Me.btnDisplay.Text = "Display"
+        Me.btnDisplay.UseVisualStyleBackColor = True
+        '
+        'deEndDate
+        '
+        Me.deEndDate.EditValue = Nothing
+        Me.deEndDate.Location = New System.Drawing.Point(324, 12)
+        Me.deEndDate.MenuManager = Me.BarManager1
+        Me.deEndDate.Name = "deEndDate"
+        Me.deEndDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.deEndDate.Properties.DisplayFormat.FormatString = "dd-MMM-yy"
+        Me.deEndDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.deEndDate.Properties.EditFormat.FormatString = "dd-MMM-yy"
+        Me.deEndDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.deEndDate.Properties.Mask.EditMask = "dd-MMM-yy"
+        Me.deEndDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.deEndDate.Size = New System.Drawing.Size(173, 20)
+        Me.deEndDate.StyleController = Me.LayoutControl4
+        Me.deEndDate.TabIndex = 6
+        '
+        'deStartDate
+        '
+        Me.deStartDate.EditValue = Nothing
+        Me.deStartDate.Location = New System.Drawing.Point(65, 12)
+        Me.deStartDate.MenuManager = Me.BarManager1
+        Me.deStartDate.Name = "deStartDate"
+        Me.deStartDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.deStartDate.Properties.DisplayFormat.FormatString = "dd-MMM-yy"
+        Me.deStartDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.deStartDate.Properties.EditFormat.FormatString = "dd-MMM-yy"
+        Me.deStartDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.deStartDate.Properties.Mask.EditMask = "dd-MMM-yy"
+        Me.deStartDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.deStartDate.Size = New System.Drawing.Size(202, 20)
+        Me.deStartDate.StyleController = Me.LayoutControl4
+        Me.deStartDate.TabIndex = 5
+        '
+        'gcAllWorkings
+        '
+        Me.gcAllWorkings.Location = New System.Drawing.Point(12, 36)
+        Me.gcAllWorkings.MainView = Me.gvAllWorkings
+        Me.gcAllWorkings.MenuManager = Me.BarManager1
+        Me.gcAllWorkings.Name = "gcAllWorkings"
+        Me.gcAllWorkings.Size = New System.Drawing.Size(649, 312)
+        Me.gcAllWorkings.TabIndex = 4
+        Me.gcAllWorkings.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvAllWorkings})
+        '
+        'gvAllWorkings
+        '
+        Me.gvAllWorkings.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14, Me.GridColumn15})
+        Me.gvAllWorkings.GridControl = Me.gcAllWorkings
+        Me.gvAllWorkings.Name = "gvAllWorkings"
+        Me.gvAllWorkings.OptionsView.ShowAutoFilterRow = True
+        Me.gvAllWorkings.OptionsView.ShowFooter = True
+        '
+        'GridColumn9
+        '
+        Me.GridColumn9.Caption = "Working Date"
+        Me.GridColumn9.FieldName = "WorkingDate"
+        Me.GridColumn9.Name = "GridColumn9"
+        Me.GridColumn9.Visible = True
+        Me.GridColumn9.VisibleIndex = 0
+        '
+        'GridColumn10
+        '
+        Me.GridColumn10.Caption = "WorkType"
+        Me.GridColumn10.FieldName = "WorkType"
+        Me.GridColumn10.Name = "GridColumn10"
+        Me.GridColumn10.Visible = True
+        Me.GridColumn10.VisibleIndex = 1
+        '
+        'GridColumn11
+        '
+        Me.GridColumn11.Caption = "Work Category"
+        Me.GridColumn11.FieldName = "AbbreviationDesc"
+        Me.GridColumn11.Name = "GridColumn11"
+        Me.GridColumn11.Visible = True
+        Me.GridColumn11.VisibleIndex = 2
+        '
+        'GridColumn12
+        '
+        Me.GridColumn12.Caption = "Employee Code"
+        Me.GridColumn12.FieldName = "EmployerNo"
+        Me.GridColumn12.Name = "GridColumn12"
+        Me.GridColumn12.Visible = True
+        Me.GridColumn12.VisibleIndex = 3
+        '
+        'GridColumn13
+        '
+        Me.GridColumn13.Caption = "EmployerName"
+        Me.GridColumn13.FieldName = "EmployerName"
+        Me.GridColumn13.Name = "GridColumn13"
+        Me.GridColumn13.Visible = True
+        Me.GridColumn13.VisibleIndex = 4
+        '
+        'GridColumn14
+        '
+        Me.GridColumn14.Caption = "WorkedDays"
+        Me.GridColumn14.DisplayFormat.FormatString = "{0:n2}"
+        Me.GridColumn14.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.GridColumn14.FieldName = "WorkedDays"
+        Me.GridColumn14.Name = "GridColumn14"
+        Me.GridColumn14.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "WorkedDays", "{0:n2}")})
+        Me.GridColumn14.Visible = True
+        Me.GridColumn14.VisibleIndex = 5
+        '
+        'GridColumn15
+        '
+        Me.GridColumn15.Caption = "Quantity"
+        Me.GridColumn15.DisplayFormat.FormatString = "{0:n2}"
+        Me.GridColumn15.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.GridColumn15.FieldName = "Quantity"
+        Me.GridColumn15.Name = "GridColumn15"
+        Me.GridColumn15.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantity", "{0:n2}")})
+        Me.GridColumn15.Visible = True
+        Me.GridColumn15.VisibleIndex = 6
+        '
+        'Root
+        '
+        Me.Root.CustomizationFormText = "Root"
+        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.Root.GroupBordersVisible = False
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem12, Me.LayoutControlItem14, Me.LayoutControlItem13, Me.LayoutControlItem15})
+        Me.Root.Location = New System.Drawing.Point(0, 0)
+        Me.Root.Name = "Root"
+        Me.Root.Size = New System.Drawing.Size(673, 360)
+        Me.Root.Text = "Root"
+        Me.Root.TextVisible = False
+        '
+        'LayoutControlItem12
+        '
+        Me.LayoutControlItem12.Control = Me.gcAllWorkings
+        Me.LayoutControlItem12.CustomizationFormText = "LayoutControlItem12"
+        Me.LayoutControlItem12.Location = New System.Drawing.Point(0, 24)
+        Me.LayoutControlItem12.Name = "LayoutControlItem12"
+        Me.LayoutControlItem12.Size = New System.Drawing.Size(653, 316)
+        Me.LayoutControlItem12.Text = "LayoutControlItem12"
+        Me.LayoutControlItem12.TextLocation = DevExpress.Utils.Locations.Top
+        Me.LayoutControlItem12.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem12.TextToControlDistance = 0
+        Me.LayoutControlItem12.TextVisible = False
+        '
+        'LayoutControlItem14
+        '
+        Me.LayoutControlItem14.Control = Me.deEndDate
+        Me.LayoutControlItem14.CustomizationFormText = "LayoutControlItem14"
+        Me.LayoutControlItem14.Location = New System.Drawing.Point(259, 0)
+        Me.LayoutControlItem14.Name = "LayoutControlItem14"
+        Me.LayoutControlItem14.Size = New System.Drawing.Size(230, 24)
+        Me.LayoutControlItem14.Text = "End Date"
+        Me.LayoutControlItem14.TextSize = New System.Drawing.Size(50, 13)
+        '
+        'LayoutControlItem13
+        '
+        Me.LayoutControlItem13.Control = Me.deStartDate
+        Me.LayoutControlItem13.CustomizationFormText = "LayoutControlItem13"
+        Me.LayoutControlItem13.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem13.Name = "LayoutControlItem13"
+        Me.LayoutControlItem13.Size = New System.Drawing.Size(259, 24)
+        Me.LayoutControlItem13.Text = "Start Date"
+        Me.LayoutControlItem13.TextSize = New System.Drawing.Size(50, 13)
+        '
+        'LayoutControlItem15
+        '
+        Me.LayoutControlItem15.Control = Me.btnDisplay
+        Me.LayoutControlItem15.CustomizationFormText = "LayoutControlItem15"
+        Me.LayoutControlItem15.Location = New System.Drawing.Point(489, 0)
+        Me.LayoutControlItem15.Name = "LayoutControlItem15"
+        Me.LayoutControlItem15.Size = New System.Drawing.Size(164, 24)
+        Me.LayoutControlItem15.Text = "LayoutControlItem15"
+        Me.LayoutControlItem15.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem15.TextToControlDistance = 0
+        Me.LayoutControlItem15.TextVisible = False
+        '
         'LayoutControlGroup2
         '
         Me.LayoutControlGroup2.CustomizationFormText = "LayoutControlGroup2"
         Me.LayoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup2.GroupBordersVisible = False
+        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem5})
         Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
         Me.LayoutControlGroup2.Size = New System.Drawing.Size(697, 384)
         Me.LayoutControlGroup2.Text = "LayoutControlGroup2"
         Me.LayoutControlGroup2.TextVisible = False
+        '
+        'LayoutControlItem5
+        '
+        Me.LayoutControlItem5.Control = Me.LayoutControl4
+        Me.LayoutControlItem5.CustomizationFormText = "LayoutControlItem5"
+        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem5.Name = "LayoutControlItem5"
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(677, 364)
+        Me.LayoutControlItem5.Text = "LayoutControlItem5"
+        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem5.TextToControlDistance = 0
+        Me.LayoutControlItem5.TextVisible = False
+        '
+        'DateEdit1
+        '
+        Me.DateEdit1.EditValue = Nothing
+        Me.DateEdit1.Location = New System.Drawing.Point(0, 0)
+        Me.DateEdit1.MenuManager = Me.BarManager1
+        Me.DateEdit1.Name = "DateEdit1"
+        Me.DateEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.DateEdit1.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.DateEdit1.Size = New System.Drawing.Size(100, 20)
+        Me.DateEdit1.TabIndex = 2
         '
         'frmDailyWorkings
         '
@@ -682,6 +958,7 @@ Partial Class frmDailyWorkings
         CType(Me.cmbWorkType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gcDailyWorking, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gvDailyWorking, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemButtonEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.deWorkingDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.deWorkingDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -703,7 +980,24 @@ Partial Class frmDailyWorkings
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabPage2.ResumeLayout(False)
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.LayoutControl2.ResumeLayout(False)
+        CType(Me.LayoutControl4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.LayoutControl4.ResumeLayout(False)
+        CType(Me.deEndDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.deEndDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.deStartDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.deStartDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gcAllWorkings, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gvAllWorkings, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DateEdit1.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -763,4 +1057,26 @@ Partial Class frmDailyWorkings
     Friend WithEvents LayoutControlItem10 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents leEmployee As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LayoutControlItem11 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControl4 As DevExpress.XtraLayout.LayoutControl
+    Friend WithEvents gcAllWorkings As DevExpress.XtraGrid.GridControl
+    Friend WithEvents gvAllWorkings As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents Root As DevExpress.XtraLayout.LayoutControlGroup
+    Friend WithEvents LayoutControlItem12 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents deEndDate As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents deStartDate As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents LayoutControlItem13 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem14 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents DateEdit1 As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents btnDisplay As System.Windows.Forms.Button
+    Friend WithEvents LayoutControlItem15 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents GridColumn9 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn10 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn11 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn12 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn13 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn14 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn15 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn16 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemButtonEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
 End Class

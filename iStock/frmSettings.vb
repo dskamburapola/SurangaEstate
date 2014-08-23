@@ -261,4 +261,8 @@ Public Class frmSettings
     Private Sub seIncentiveRate_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles seIncentiveRate.EditValueChanged
 
     End Sub
+
+    Private Sub SpinEdit2_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SpinEdit2.EditValueChanged
+
+    End Sub
 End Class

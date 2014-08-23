@@ -165,6 +165,37 @@ Public Class frmDailyWorkings
     End Sub
 #End Region
 
+#Region "Daily Working Get All By Dates"
+    Private Sub DailyWorkingGetAllByDates()
+
+        Try
+
+
+            With iStockDailyWorking
+
+
+
+                .StartDate = deStartDate.EditValue
+                .EndDate = deEndDate.EditValue
+                gcAllWorkings.DataSource = .DailyWorkingGetAllByDates.Tables(0)
+
+
+
+
+            End With
+
+
+
+
+        Catch ex As Exception
+
+            Throw
+        End Try
+
+
+    End Sub
+#End Region
+
 #Region "Save Daily Working"
     Private Sub SaveDailyWorking()
 
@@ -309,6 +340,18 @@ Public Class frmDailyWorkings
         MsgBox("Leave working")
         Me.SaveDailyWorking()
         Me.ClearFormData()
+
+    End Sub
+
+    
+   
+    Private Sub btnDisplay_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDisplay.Click
+        Me.DailyWorkingGetAllByDates()
+
+    End Sub
+
+    Private Sub RepositoryItemButtonEdit1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RepositoryItemButtonEdit1.Click
+        MsgBox(Me.gvDailyWorking.GetFocusedRowCellValue(GridColumn1))
 
     End Sub
 End Class
