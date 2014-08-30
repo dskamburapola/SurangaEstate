@@ -18,6 +18,17 @@ Public Class iStockSettings
     Private _IncentiveDays As Int64
     Private _IncentiveRate As Int64
 
+    Private _EPF As Int64
+    Private _ETF As Int64
+    Private _OverKgRate As Int64
+    Private _WCPay As Int64
+    Private _CasualPayRate As Decimal
+    Private _CasualOTPayRate As Decimal
+
+    Private _CreatedBy As Int64
+    Private _CreatedDate As DateTime
+    Private _UpdatedBy As Int64
+    Private _UpdatedDate As DateTime
 #End Region
 
 #Region "Properties"
@@ -102,6 +113,87 @@ Public Class iStockSettings
         End Set
     End Property
 
+    Public Property EPF() As Int64
+        Get
+            Return _EPF
+        End Get
+        Set(ByVal value As Int64)
+            _EPF = value
+        End Set
+    End Property
+    Public Property ETF() As Int64
+        Get
+            Return _ETF
+        End Get
+        Set(ByVal value As Int64)
+            _ETF = value
+        End Set
+    End Property
+    Public Property OverKgRate() As Int64
+        Get
+            Return _OverKgRate
+        End Get
+        Set(ByVal value As Int64)
+            _OverKgRate = value
+        End Set
+    End Property
+    Public Property WCPay() As Int64
+        Get
+            Return _WCPay
+        End Get
+        Set(ByVal value As Int64)
+            _WCPay = value
+        End Set
+    End Property
+    Public Property CasualPayRate() As Decimal
+        Get
+            Return _CasualPayRate
+        End Get
+        Set(ByVal value As Decimal)
+            _CasualPayRate = value
+        End Set
+    End Property
+    Public Property CasualOTPayRate() As Decimal
+        Get
+            Return _CasualOTPayRate
+        End Get
+        Set(ByVal value As Decimal)
+            _CasualOTPayRate = value
+        End Set
+    End Property
+
+    Public Property CreatedBy() As Int64
+        Get
+            Return _CreatedBy
+        End Get
+        Set(ByVal value As Int64)
+            _CreatedBy = value
+        End Set
+    End Property
+    Public Property CreatedDate() As DateTime
+        Get
+            Return _CreatedDate
+        End Get
+        Set(ByVal value As DateTime)
+            _CreatedDate = value
+        End Set
+    End Property
+    Public Property UpdatedBy() As Int64
+        Get
+            Return _UpdatedBy
+        End Get
+        Set(ByVal value As Int64)
+            _UpdatedBy = value
+        End Set
+    End Property
+    Public Property UpdatedDate() As DateTime
+        Get
+            Return _UpdatedDate
+        End Get
+        Set(ByVal value As DateTime)
+            _UpdatedDate = value
+        End Set
+    End Property
 
 #End Region
 
@@ -116,7 +208,18 @@ Public Class iStockSettings
             DB.AddInParameter(DBC, "@OTRate", DbType.String, Me.OTRate)
             DB.AddInParameter(DBC, "@KgsPerDay", DbType.String, Me.KgsPerDay)
             DB.AddInParameter(DBC, "@IncentiveDays", DbType.String, Me.IncentiveDays)
-            DB.AddInParameter(DBC, "@IncentiveRate", DbType.String, Me.IncentiveRate)
+            ' DB.AddInParameter(DBC, "@IncentiveRate", DbType.String, Me.IncentiveRate)
+            DB.AddInParameter(DBC, "@EPF", DbType.String, Me.EPF)
+            DB.AddInParameter(DBC, "@ETF", DbType.String, Me.ETF)
+            DB.AddInParameter(DBC, "@OverKgRate", DbType.String, Me.OverKgRate)
+            DB.AddInParameter(DBC, "@WCPay", DbType.String, Me.WCPay)
+            DB.AddInParameter(DBC, "@CasualPayRate", DbType.Decimal, Me.CasualPayRate)
+            DB.AddInParameter(DBC, "@CasualOTPayRate", DbType.Decimal, Me.CasualOTPayRate)
+
+
+            DB.AddInParameter(DBC, "@CreatedBy", DbType.Int64, Me.CreatedBy)
+            DB.AddInParameter(DBC, "@UpdatedBy", DbType.Int64, Me.UpdatedBy)
+
             DB.ExecuteNonQuery(DBC)
         Catch ex As Exception
             Throw
@@ -124,7 +227,7 @@ Public Class iStockSettings
     End Sub
 #End Region
 
-#Region "Insert Settings"
+#Region "Insert Abbreviation"
     Public Sub InsertAbbreviation()
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
@@ -157,7 +260,13 @@ Public Class iStockSettings
                         Me.OTRate = IIf(Not IsDBNull(.Item("OTRate")), Trim(.Item("OTRate").ToString), String.Empty)
                         Me.KgsPerDay = IIf(Not IsDBNull(.Item("KgsPerDay")), Trim(.Item("KgsPerDay").ToString), String.Empty)
                         Me.IncentiveDays = IIf(Not IsDBNull(.Item("IncentiveDays")), Trim(.Item("IncentiveDays").ToString), String.Empty)
-                        Me.IncentiveRate = IIf(Not IsDBNull(.Item("IncentiveRate")), Trim(.Item("IncentiveRate").ToString), String.Empty)
+                        Me.EPF = IIf(Not IsDBNull(.Item("EPF")), Trim(.Item("EPF").ToString), String.Empty)
+                        Me.ETF = IIf(Not IsDBNull(.Item("ETF")), Trim(.Item("ETF").ToString), String.Empty)
+                        Me.OverKgRate = IIf(Not IsDBNull(.Item("OverKgRate")), Trim(.Item("OverKgRate").ToString), String.Empty)
+                        Me.WCPay = IIf(Not IsDBNull(.Item("WCPay")), Trim(.Item("WCPay").ToString), String.Empty)
+                        Me.CasualPayRate = Convert.ToDecimal(IIf(Not IsDBNull(.Item("CasualPayRate")), Trim(.Item("CasualPayRate").ToString), 0))
+                        Me.CasualOTPayRate = Convert.ToDecimal(IIf(Not IsDBNull(.Item("CasualOTPayRate")), Trim(.Item("CasualOTPayRate").ToString), 0))
+
 
 
 

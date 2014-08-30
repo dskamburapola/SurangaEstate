@@ -55,6 +55,8 @@ Public Class frmDailyWorkings
         'Me.DisplayCompany()
         Me.GetWorkingCategory()
         Me.GetEmployeeForWork()
+        Me.DisplaySettings()
+
 
 
         Me.deWorkingDate.EditValue = Date.Today
@@ -209,6 +211,53 @@ Public Class frmDailyWorkings
                 .WorkedDays = Me.seWorkDays.Text.Trim
                 .Quantity = Me.seQuantity.Text.Trim
 
+                .DayRate = Convert.ToDecimal(lblDayRate.Text.Trim)
+                .OTRate = Convert.ToDecimal(lblOTRate.Text.Trim)
+
+            
+
+                Select Case leWorkCategory.Text
+                    Case "PLUCKING"
+                        .KgsPerDay = Convert.ToInt64(lblKgsPerDay.Text.Trim)
+                        .OverKgRate = Convert.ToDecimal(lblOverKgsRate.Text.Trim)
+
+                    Case Else
+                        .KgsPerDay = 0
+                        .OverKgRate = 0
+
+                End Select
+
+
+                .EPF = Convert.ToInt64(lblEPF.Text.Trim)
+
+                Select Case cmbWorkType.Text
+
+                    Case "PERMENANT"
+                        .CasualPayRate = 0
+                        .CasualOTPayRate = 0
+
+                    Case "CASUAL"
+                        .DayRate = 0
+                        .OTRate = 0
+
+
+                        .CasualPayRate = Convert.ToDecimal(lblCasualPayRate.Text.Trim)
+                        .CasualOTPayRate = Convert.ToDecimal(lblCasualOTPayRate.Text.Trim)
+
+                    Case Else
+                        .DayRate = Convert.ToDecimal(lblDayRate.Text.Trim)
+                        .OTRate = Convert.ToDecimal(lblOTRate.Text.Trim)
+
+
+                        .CasualPayRate = 0
+                        .CasualOTPayRate = 0
+
+
+                End Select
+
+
+                .CreatedBy = UserID
+
                 .InsertDailyWorking()
 
                 Dim frm As New frmSavedOk
@@ -218,7 +267,7 @@ Public Class frmDailyWorkings
                 frm.ShowDialog()
             End With
 
-
+            'Me.cmbWorkType.Focus()
             Me.DailyWorkingGetByDate()
             Me.ClearFormData()
         Catch ex As Exception
@@ -231,16 +280,40 @@ Public Class frmDailyWorkings
     End Sub
 #End Region
 
+#Region "Display Settings"
+    Private Sub DisplaySettings()
+        Try
+            With ECSSettings
+                .GetSettings()
+               
+                Me.lblDayRate.Text = .DayRate
+                Me.lblOTRate.Text = .OTRate
+                Me.lblKgsPerDay.Text = .KgsPerDay
+                Me.lblCasualPayRate.Text = .CasualPayRate
+                Me.lblCasualOTPayRate.Text = .CasualOTPayRate
+
+                Me.lblEPF.Text = .EPF
+
+                Me.lblOverKgsRate.Text = .OverKgRate
+
+
+            End With
+        Catch ex As Exception
+            MessageError(ex.ToString)
+        End Try
+
+
+    End Sub
+#End Region
 
 #Region "Clear Form Data"
     Public Sub ClearFormData()
-        Me.lblID.Text = String.Empty
-        ' Me.seEmployeeCode.Text = String.Empty
+         ' Me.seEmployeeCode.Text = String.Empty
         Me.cmbWorkType.Text = String.Empty
         Me.teEmployeeName.Text = String.Empty
         Me.seWorkDays.Text = 0
         Me.seQuantity.Text = 0
-
+        ' Me.cmbWorkType.Focus()
 
     End Sub
 #End Region
@@ -313,7 +386,7 @@ Public Class frmDailyWorkings
 
    
     Private Sub gcDailyWorking_DoubleClick(sender As Object, e As EventArgs) Handles gcDailyWorking.DoubleClick
-        lblDeleteID.Text = Me.gvDailyWorking.GetFocusedRowCellValue(GridColumn1)
+        lblOTRate.Text = Me.gvDailyWorking.GetFocusedRowCellValue(GridColumn1)
         Me.bbDelete.Enabled = True
 
     End Sub
@@ -322,12 +395,6 @@ Public Class frmDailyWorkings
         Me.DeleteDailyWorking()
     End Sub
 
-    
-  
-
-  
-
-  
     Private Sub leEmployee_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles leEmployee.EditValueChanged
         teEmployeeName.Text = leEmployee.GetColumnValue("EmployerName")
     End Sub
@@ -337,14 +404,12 @@ Public Class frmDailyWorkings
     End Sub
 
     Private Sub seQuantity_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles seQuantity.Leave
-        MsgBox("Leave working")
+        'MsgBox("Leave working")
         Me.SaveDailyWorking()
-        Me.ClearFormData()
+        'Me.ClearFormData()
 
     End Sub
 
-    
-   
     Private Sub btnDisplay_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDisplay.Click
         Me.DailyWorkingGetAllByDates()
 

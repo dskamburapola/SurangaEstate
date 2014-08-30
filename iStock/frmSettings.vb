@@ -82,7 +82,17 @@ Public Class frmSettings
                 .OTRate = Me.seOTRate.Text
                 .KgsPerDay = Me.seKgsPerDay.Text
                 .IncentiveDays = Me.seIncentiveDays.Text
-                .IncentiveRate = Me.seIncentiveRate.Text
+                .EPF = Me.seEPF.Text
+                .ETF = Me.seETF.Text
+                .OverKgRate = Me.seOverKgsRate.Text
+                .WCPay = Me.seWCPay.Text
+                .CasualPayRate = Me.seCasualPayRate.Text
+                .CasualOTPayRate = Me.seCasualOTPayRate.Text
+
+                .CreatedBy = UserID
+                .UpdatedBy = UserID
+
+
 
                 .InsertSettings()
                 Dim frm As New frmSavedOk
@@ -113,7 +123,13 @@ Public Class frmSettings
                 Me.seOTRate.Text = .OTRate
                 Me.seKgsPerDay.Text = .KgsPerDay
                 Me.seIncentiveDays.Text = .IncentiveDays
-                Me.seIncentiveRate.Text = .IncentiveRate
+                '  Me.seIncentiveRate.Text = .IncentiveRate
+                Me.seEPF.Text = .EPF
+                Me.seETF.Text = .ETF
+                Me.seOverKgsRate.Text = .OverKgRate
+                Me.seWCPay.Text = .WCPay
+                Me.seCasualPayRate.Text = .CasualPayRate
+                Me.seCasualOTPayRate.Text = .CasualOTPayRate
 
             End With
         Catch ex As Exception
@@ -258,11 +274,11 @@ Public Class frmSettings
 
     End Sub
 
-    Private Sub seIncentiveRate_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles seIncentiveRate.EditValueChanged
+    Private Sub seIncentiveRate_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
-    Private Sub SpinEdit2_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SpinEdit2.EditValueChanged
+    Private Sub SpinEdit2_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles seWCPay.EditValueChanged
 
     End Sub
 End Class

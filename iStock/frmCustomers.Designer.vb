@@ -59,6 +59,7 @@ Partial Class frmCustomers
         Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem9 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem10 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem3 = New DevExpress.XtraLayout.EmptySpaceItem()
@@ -82,7 +83,6 @@ Partial Class frmCustomers
         Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.dxvpCustomers = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
-        Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.xTab1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.xTab1.SuspendLayout()
@@ -108,6 +108,7 @@ Partial Class frmCustomers
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -119,7 +120,6 @@ Partial Class frmCustomers
         CType(Me.gvCustomers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpCustomers, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarManager1
@@ -193,7 +193,7 @@ Partial Class frmCustomers
         Me.barDockControlTop.CausesValidation = False
         Me.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top
         Me.barDockControlTop.Location = New System.Drawing.Point(0, 0)
-        Me.barDockControlTop.Size = New System.Drawing.Size(701, 48)
+        Me.barDockControlTop.Size = New System.Drawing.Size(701, 44)
         '
         'barDockControlBottom
         '
@@ -206,23 +206,23 @@ Partial Class frmCustomers
         '
         Me.barDockControlLeft.CausesValidation = False
         Me.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left
-        Me.barDockControlLeft.Location = New System.Drawing.Point(0, 48)
-        Me.barDockControlLeft.Size = New System.Drawing.Size(0, 385)
+        Me.barDockControlLeft.Location = New System.Drawing.Point(0, 44)
+        Me.barDockControlLeft.Size = New System.Drawing.Size(0, 389)
         '
         'barDockControlRight
         '
         Me.barDockControlRight.CausesValidation = False
         Me.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right
-        Me.barDockControlRight.Location = New System.Drawing.Point(701, 48)
-        Me.barDockControlRight.Size = New System.Drawing.Size(0, 385)
+        Me.barDockControlRight.Location = New System.Drawing.Point(701, 44)
+        Me.barDockControlRight.Size = New System.Drawing.Size(0, 389)
         '
         'xTab1
         '
         Me.xTab1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.xTab1.Location = New System.Drawing.Point(0, 48)
+        Me.xTab1.Location = New System.Drawing.Point(0, 44)
         Me.xTab1.Name = "xTab1"
         Me.xTab1.SelectedTabPage = Me.XtraTabPage1
-        Me.xTab1.Size = New System.Drawing.Size(701, 385)
+        Me.xTab1.Size = New System.Drawing.Size(701, 389)
         Me.xTab1.TabIndex = 4
         Me.xTab1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage1, Me.XtraTabPage2})
         '
@@ -230,7 +230,7 @@ Partial Class frmCustomers
         '
         Me.XtraTabPage1.Controls.Add(Me.LayoutControl1)
         Me.XtraTabPage1.Name = "XtraTabPage1"
-        Me.XtraTabPage1.Size = New System.Drawing.Size(696, 359)
+        Me.XtraTabPage1.Size = New System.Drawing.Size(695, 361)
         Me.XtraTabPage1.Text = "New Record"
         '
         'LayoutControl1
@@ -250,7 +250,7 @@ Partial Class frmCustomers
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.LayoutControlGroup1
-        Me.LayoutControl1.Size = New System.Drawing.Size(696, 359)
+        Me.LayoutControl1.Size = New System.Drawing.Size(695, 361)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -285,7 +285,7 @@ Partial Class frmCustomers
         '
         Me.lblCustomerID.Location = New System.Drawing.Point(12, 43)
         Me.lblCustomerID.Name = "lblCustomerID"
-        Me.lblCustomerID.Size = New System.Drawing.Size(672, 13)
+        Me.lblCustomerID.Size = New System.Drawing.Size(671, 13)
         Me.lblCustomerID.StyleController = Me.LayoutControl1
         Me.lblCustomerID.TabIndex = 13
         Me.lblCustomerID.Visible = False
@@ -297,7 +297,7 @@ Partial Class frmCustomers
         Me.teWebURL.Name = "teWebURL"
         Me.teWebURL.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teWebURL.Properties.MaxLength = 50
-        Me.teWebURL.Size = New System.Drawing.Size(254, 20)
+        Me.teWebURL.Size = New System.Drawing.Size(253, 20)
         Me.teWebURL.StyleController = Me.LayoutControl1
         Me.teWebURL.TabIndex = 9
         '
@@ -319,7 +319,7 @@ Partial Class frmCustomers
         Me.teFax.Name = "teFax"
         Me.teFax.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teFax.Properties.MaxLength = 50
-        Me.teFax.Size = New System.Drawing.Size(254, 20)
+        Me.teFax.Size = New System.Drawing.Size(253, 20)
         Me.teFax.StyleController = Me.LayoutControl1
         Me.teFax.TabIndex = 7
         '
@@ -341,7 +341,7 @@ Partial Class frmCustomers
         Me.teAddressLine3.Name = "teAddressLine3"
         Me.teAddressLine3.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teAddressLine3.Properties.MaxLength = 100
-        Me.teAddressLine3.Size = New System.Drawing.Size(592, 20)
+        Me.teAddressLine3.Size = New System.Drawing.Size(591, 20)
         Me.teAddressLine3.StyleController = Me.LayoutControl1
         Me.teAddressLine3.TabIndex = 5
         '
@@ -352,7 +352,7 @@ Partial Class frmCustomers
         Me.teAddressLine2.Name = "teAddressLine2"
         Me.teAddressLine2.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teAddressLine2.Properties.MaxLength = 100
-        Me.teAddressLine2.Size = New System.Drawing.Size(592, 20)
+        Me.teAddressLine2.Size = New System.Drawing.Size(591, 20)
         Me.teAddressLine2.StyleController = Me.LayoutControl1
         Me.teAddressLine2.TabIndex = 4
         '
@@ -363,7 +363,7 @@ Partial Class frmCustomers
         Me.teAddressLine1.Name = "teAddressLine1"
         Me.teAddressLine1.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teAddressLine1.Properties.MaxLength = 100
-        Me.teAddressLine1.Size = New System.Drawing.Size(592, 20)
+        Me.teAddressLine1.Size = New System.Drawing.Size(591, 20)
         Me.teAddressLine1.StyleController = Me.LayoutControl1
         Me.teAddressLine1.TabIndex = 3
         '
@@ -387,7 +387,7 @@ Partial Class frmCustomers
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem8, Me.LayoutControlItem7, Me.LayoutControlItem9, Me.EmptySpaceItem1, Me.EmptySpaceItem2, Me.LayoutControlItem10, Me.EmptySpaceItem3, Me.LayoutControlItem11, Me.LayoutControlItem1, Me.EmptySpaceItem4})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(696, 359)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(695, 361)
         Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
         Me.LayoutControlGroup1.TextVisible = False
         '
@@ -413,7 +413,7 @@ Partial Class frmCustomers
         Me.LayoutControlItem3.CustomizationFormText = "Address Line1"
         Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 96)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(676, 24)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(675, 24)
         Me.LayoutControlItem3.Text = "Address Line1"
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(76, 13)
         '
@@ -423,7 +423,7 @@ Partial Class frmCustomers
         Me.LayoutControlItem4.CustomizationFormText = "Address Line2"
         Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 120)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(676, 24)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(675, 24)
         Me.LayoutControlItem4.Text = "Address Line2"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(76, 13)
         '
@@ -433,7 +433,7 @@ Partial Class frmCustomers
         Me.LayoutControlItem5.CustomizationFormText = "Address Line3"
         Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 144)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(676, 24)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(675, 24)
         Me.LayoutControlItem5.Text = "Address Line3"
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(76, 13)
         '
@@ -453,7 +453,7 @@ Partial Class frmCustomers
         Me.LayoutControlItem8.CustomizationFormText = "Email"
         Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 192)
         Me.LayoutControlItem8.Name = "LayoutControlItem8"
-        Me.LayoutControlItem8.Size = New System.Drawing.Size(338, 147)
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(338, 149)
         Me.LayoutControlItem8.Text = "Email"
         Me.LayoutControlItem8.TextSize = New System.Drawing.Size(76, 13)
         '
@@ -463,7 +463,7 @@ Partial Class frmCustomers
         Me.LayoutControlItem7.CustomizationFormText = "Fax"
         Me.LayoutControlItem7.Location = New System.Drawing.Point(338, 168)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
-        Me.LayoutControlItem7.Size = New System.Drawing.Size(338, 24)
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(337, 24)
         Me.LayoutControlItem7.Text = "Fax"
         Me.LayoutControlItem7.TextSize = New System.Drawing.Size(76, 13)
         '
@@ -473,9 +473,22 @@ Partial Class frmCustomers
         Me.LayoutControlItem9.CustomizationFormText = "Web URL"
         Me.LayoutControlItem9.Location = New System.Drawing.Point(338, 192)
         Me.LayoutControlItem9.Name = "LayoutControlItem9"
-        Me.LayoutControlItem9.Size = New System.Drawing.Size(338, 147)
+        Me.LayoutControlItem9.Size = New System.Drawing.Size(337, 149)
         Me.LayoutControlItem9.Text = "Web URL"
         Me.LayoutControlItem9.TextSize = New System.Drawing.Size(76, 13)
+        '
+        'EmptySpaceItem1
+        '
+        Me.EmptySpaceItem1.AllowHotTrack = False
+        Me.EmptySpaceItem1.CustomizationFormText = "EmptySpaceItem1"
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(338, 72)
+        Me.EmptySpaceItem1.MinSize = New System.Drawing.Size(100, 20)
+        Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
+        Me.EmptySpaceItem1.Padding = New DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0)
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(337, 24)
+        Me.EmptySpaceItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
+        Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
+        Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem2
         '
@@ -483,7 +496,7 @@ Partial Class frmCustomers
         Me.EmptySpaceItem2.CustomizationFormText = "EmptySpaceItem2"
         Me.EmptySpaceItem2.Location = New System.Drawing.Point(338, 48)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(338, 24)
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(337, 24)
         Me.EmptySpaceItem2.Text = "EmptySpaceItem2"
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -493,7 +506,7 @@ Partial Class frmCustomers
         Me.LayoutControlItem10.CustomizationFormText = "LayoutControlItem10"
         Me.LayoutControlItem10.Location = New System.Drawing.Point(0, 31)
         Me.LayoutControlItem10.Name = "LayoutControlItem10"
-        Me.LayoutControlItem10.Size = New System.Drawing.Size(676, 17)
+        Me.LayoutControlItem10.Size = New System.Drawing.Size(675, 17)
         Me.LayoutControlItem10.Text = "LayoutControlItem10"
         Me.LayoutControlItem10.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem10.TextToControlDistance = 0
@@ -509,7 +522,7 @@ Partial Class frmCustomers
         Me.EmptySpaceItem3.MinSize = New System.Drawing.Size(10, 10)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
         Me.EmptySpaceItem3.ShowInCustomizationForm = False
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(676, 31)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(675, 31)
         Me.EmptySpaceItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
@@ -551,7 +564,7 @@ Partial Class frmCustomers
         '
         Me.XtraTabPage2.Controls.Add(Me.gcCustomers)
         Me.XtraTabPage2.Name = "XtraTabPage2"
-        Me.XtraTabPage2.Size = New System.Drawing.Size(696, 359)
+        Me.XtraTabPage2.Size = New System.Drawing.Size(695, 357)
         Me.XtraTabPage2.Text = "History Data"
         '
         'gcCustomers
@@ -560,7 +573,7 @@ Partial Class frmCustomers
         Me.gcCustomers.Location = New System.Drawing.Point(0, 0)
         Me.gcCustomers.MainView = Me.gvCustomers
         Me.gcCustomers.Name = "gcCustomers"
-        Me.gcCustomers.Size = New System.Drawing.Size(696, 359)
+        Me.gcCustomers.Size = New System.Drawing.Size(695, 357)
         Me.gcCustomers.TabIndex = 0
         Me.gcCustomers.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvCustomers, Me.GridView2})
         '
@@ -694,19 +707,6 @@ Partial Class frmCustomers
         Me.GridView2.GridControl = Me.gcCustomers
         Me.GridView2.Name = "GridView2"
         '
-        'EmptySpaceItem1
-        '
-        Me.EmptySpaceItem1.AllowHotTrack = False
-        Me.EmptySpaceItem1.CustomizationFormText = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(338, 72)
-        Me.EmptySpaceItem1.MinSize = New System.Drawing.Size(100, 20)
-        Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Padding = New DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0)
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(338, 24)
-        Me.EmptySpaceItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
-        Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
-        '
         'frmCustomers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -746,6 +746,7 @@ Partial Class frmCustomers
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -757,7 +758,6 @@ Partial Class frmCustomers
         CType(Me.gvCustomers, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dxvpCustomers, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

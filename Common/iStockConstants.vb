@@ -314,6 +314,16 @@
     Public Shared EMPLOYEE_DETAILS_GETBYREGNO As String = "Employee_Details_GetByRegNo"
     Public Shared EMPLOYEE_GETALL_WORKERS As String = "Employee_GetAll_Workers"
 
+    Public Shared TERMDEDUCTIONS_INSERT As String = "TermDeductions_Insert"
+    Public Shared TERMDEDUCTIONDESCRIPTION_INSERT As String = "TermDeductionDescription_Insert"
+    Public Shared TERMDEDUCTIONDESCRIPTION_DELETE As String = "TermDeductionDescription_Delete"
+    Public Shared TERMDEDUCTIONDESCRIPTION_SELECT_BYID As String = "TermDeductionDescription_Select_ByID"
+    Public Shared TERMDEDUCTIONS_SELECTALL As String = "TermDeductions_SelectAll"
+    Public Shared TERMDEDUCTIONS_UPDATE As String = "TermDeductions_Update"
+    Public Shared TERMDEDUCTIONS_DELETE As String = "TermDeductions_Delete"
+    Public Shared TERMDEDUCTIONS_GETBYTERMDEDUCTIONID As String = "TermDeductions_GetByTermDeductionID"
+    Public Shared TERMDEDUCTIONSDESCRIPTION_GETBYTERMDEDUCTIONID As String = "TermDeductionsDescription_GetByTermDeductionID"
+
 
     '**************************************************
 

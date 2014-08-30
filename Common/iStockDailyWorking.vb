@@ -15,6 +15,21 @@ Public Class iStockDailyWorking
     Private _EmployeeID As Int64
     Private _WorkedDays As Double
     Private _Quantity As Double
+
+   
+    Private _DayRate As Int64
+    Private _OTRate As Int64
+    Private _KgsPerDay As Int64
+    Private _EPF As Int64
+    Private _OverKgRate As Int64
+
+    Private _CasualPayRate As Decimal
+    Private _CasualOTPayRate As Decimal
+
+    Private _CreatedBy As Int64
+    Private _CreatedDate As DateTime
+    Private _UpdatedBy As Int64
+    Private _UpdatedDate As DateTime
 #End Region
 
 #Region "Properties"
@@ -103,7 +118,97 @@ Public Class iStockDailyWorking
         End Set
     End Property
 
+    Public Property DayRate() As Int64
+        Get
+            Return _DayRate
+        End Get
+        Set(ByVal value As Int64)
+            _DayRate = value
+        End Set
+    End Property
+    Public Property OTRate() As Int64
+        Get
+            Return _OTRate
+        End Get
+        Set(ByVal value As Int64)
+            _OTRate = value
+        End Set
+    End Property
+    Public Property KgsPerDay() As Int64
+        Get
+            Return _KgsPerDay
+        End Get
+        Set(ByVal value As Int64)
+            _KgsPerDay = value
+        End Set
+    End Property
+  
+    Public Property EPF() As Int64
+        Get
+            Return _EPF
+        End Get
+        Set(ByVal value As Int64)
+            _EPF = value
+        End Set
+    End Property
+    Public Property OverKgRate() As Int64
+        Get
+            Return _OverKgRate
+        End Get
+        Set(ByVal value As Int64)
+            _OverKgRate = value
+        End Set
+    End Property
 
+    Public Property CasualPayRate() As Decimal
+        Get
+            Return _CasualPayRate
+        End Get
+        Set(ByVal value As Decimal)
+            _CasualPayRate = value
+        End Set
+    End Property
+    Public Property CasualOTPayRate() As Decimal
+        Get
+            Return _CasualOTPayRate
+        End Get
+        Set(ByVal value As Decimal)
+            _CasualOTPayRate = value
+        End Set
+    End Property
+
+    Public Property CreatedBy() As Int64
+        Get
+            Return _CreatedBy
+        End Get
+        Set(ByVal value As Int64)
+            _CreatedBy = value
+        End Set
+    End Property
+    Public Property CreatedDate() As DateTime
+        Get
+            Return _CreatedDate
+        End Get
+        Set(ByVal value As DateTime)
+            _CreatedDate = value
+        End Set
+    End Property
+    Public Property UpdatedBy() As Int64
+        Get
+            Return _UpdatedBy
+        End Get
+        Set(ByVal value As Int64)
+            _UpdatedBy = value
+        End Set
+    End Property
+    Public Property UpdatedDate() As DateTime
+        Get
+            Return _UpdatedDate
+        End Get
+        Set(ByVal value As DateTime)
+            _UpdatedDate = value
+        End Set
+    End Property
 #End Region
 
 #Region "Insert Daily Working"
@@ -117,6 +222,20 @@ Public Class iStockDailyWorking
             DB.AddInParameter(DBC, "@EmployeeID", DbType.Int64, Me.EmployeeID)
             DB.AddInParameter(DBC, "@WorkedDays", DbType.Double, Me.WorkedDays)
             DB.AddInParameter(DBC, "@Quantity", DbType.Double, Me.Quantity)
+
+            DB.AddInParameter(DBC, "@DayRate", DbType.Double, Me.DayRate)
+            DB.AddInParameter(DBC, "@OTRate", DbType.Double, Me.OTRate)
+            DB.AddInParameter(DBC, "@KgsPerDay", DbType.Double, Me.KgsPerDay)
+            DB.AddInParameter(DBC, "@OverKgRate", DbType.Double, Me.OverKgRate)
+            DB.AddInParameter(DBC, "@EPF", DbType.Double, Me.EPF)
+            DB.AddInParameter(DBC, "@CasualPayRate", DbType.Double, Me.CasualPayRate)
+            DB.AddInParameter(DBC, "@CasualOTPayRate", DbType.Double, Me.CasualOTPayRate)
+
+
+
+
+            DB.AddInParameter(DBC, "@CreatedBy", DbType.Double, Me.CreatedBy)
+         
           
             DB.ExecuteNonQuery(DBC)
         Catch ex As Exception

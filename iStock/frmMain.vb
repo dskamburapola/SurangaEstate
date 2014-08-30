@@ -36,7 +36,7 @@ Public Class frmMain
     End Sub
 
     Private Sub BarButtonItem5_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem5.ItemClick
-        ShowIStockForm(frmSales)
+        ShowIStockForm(frmTermDeductions)
     End Sub
 
     Private Sub BarButtonItem6_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem6.ItemClick
