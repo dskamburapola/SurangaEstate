@@ -106,6 +106,11 @@ Public Class frmMain
     Private Sub BarButtonItem20_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem20.ItemClick
         ShowIStockForm(frmSettings)
     End Sub
+
+    Private Sub BarButtonItem24_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem24.ItemClick
+        ShowIStockForm(frmAttendaceReport)
+    End Sub
+
 #End Region
 
 #Region "Show App Information"
@@ -143,7 +148,6 @@ Public Class frmMain
     End Sub
 
 #End Region
-
-    
+   
     
 End Class
