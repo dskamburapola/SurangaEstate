@@ -107,9 +107,9 @@ Public Class frmMain
         ShowIStockForm(frmSettings)
     End Sub
 
-    Private Sub BarButtonItem24_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem24.ItemClick
-        ShowIStockForm(frmAttendaceReport)
-    End Sub
+    'Private Sub BarButtonItem24_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem24.ItemClick
+    '    '   ShowIStockForm(frmAttendaceReport)
+    'End Sub
 
 #End Region
 

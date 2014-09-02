@@ -4,6 +4,13 @@ Imports iStockCommon.iStockConstants
 
 Public Class frmDailyWorkings
 
+
+    'If (ECSSettings.GetAbbreviations IsNot Nothing And ECSSettings.GetAbbreviations.Tables.Count > 0 And ECSSettings.GetAbbreviations.Tables(0) IsNot Nothing And ECSSettings.GetAbbreviations.Tables(0).Rows.Count > 0) Then
+
+    '    Me.teEmployeeName.Text = IIf(ECSSettings.GetAbbreviations.Tables(0).Rows(0)("fieldname") IsNot Nothing, ECSSettings.GetAbbreviations.Tables(0).Rows(0)("fieldname").ToString(), String.Empty)
+
+    'End If
+
 #Region "Properties"
     Private _iStockEmployers As iStockCommon.iStockEmployers
     Private _iStockDailyWorking As iStockCommon.iStockDailyWorking
@@ -101,7 +108,6 @@ Public Class frmDailyWorkings
         Try
 
             Me.leWorkCategory.Properties.DataSource = ECSSettings.GetAbbreviations.Tables(0)
-
             Me.leWorkCategory.Properties.DisplayMember = "AbbreviationDesc"
             Me.leWorkCategory.Properties.ValueMember = "AbbreviationID"
 
@@ -419,4 +425,5 @@ Public Class frmDailyWorkings
         MsgBox(Me.gvDailyWorking.GetFocusedRowCellValue(GridColumn1))
 
     End Sub
+
 End Class
