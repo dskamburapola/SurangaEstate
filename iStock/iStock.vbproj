@@ -107,6 +107,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="frmCashAdvance.designer.vb">
+      <DependentUpon>frmCashAdvance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCashAdvance.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAttendance.designer.vb">
       <DependentUpon>frmAttendance.vb</DependentUpon>
     </Compile>
@@ -364,6 +370,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmCashAdvance.resx">
+      <DependentUpon>frmCashAdvance.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAttendance.resx">
       <DependentUpon>frmAttendance.vb</DependentUpon>
     </EmbeddedResource>

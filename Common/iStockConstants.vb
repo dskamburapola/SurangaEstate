@@ -324,6 +324,13 @@
     Public Shared TERMDEDUCTIONS_GETBYTERMDEDUCTIONID As String = "TermDeductions_GetByTermDeductionID"
     Public Shared TERMDEDUCTIONSDESCRIPTION_GETBYTERMDEDUCTIONID As String = "TermDeductionsDescription_GetByTermDeductionID"
 
+    Public Shared EMPLOYEE_CALCULATEADVANCE As String = "Employee_CalculateAdvance"
+
+    Public Shared CASHADVANCE_INSERT As String = "CashAdvance_Insert"
+    Public Shared CASHADVANCE_GETALL_BYDATES As String = "CashAdvance_GetAll_ByDates"
+
+
+
 
     '**************************************************
 

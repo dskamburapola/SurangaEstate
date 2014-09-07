@@ -273,6 +273,7 @@ Partial Class frmTermDeductions
         Me.GridColumn1.Caption = "Month"
         Me.GridColumn1.FieldName = "TDMonthName"
         Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.OptionsColumn.AllowEdit = False
         Me.GridColumn1.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)})
         Me.GridColumn1.Visible = True
         Me.GridColumn1.VisibleIndex = 0
@@ -284,6 +285,7 @@ Partial Class frmTermDeductions
         Me.GridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom
         Me.GridColumn2.FieldName = "TDInsAmount"
         Me.GridColumn2.Name = "GridColumn2"
+        Me.GridColumn2.OptionsColumn.AllowEdit = False
         Me.GridColumn2.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", "{0:n2}")})
         Me.GridColumn2.Visible = True
         Me.GridColumn2.VisibleIndex = 1
@@ -460,6 +462,7 @@ Partial Class frmTermDeductions
         Me.LayoutControlItem8.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem8.TextToControlDistance = 0
         Me.LayoutControlItem8.TextVisible = False
+        Me.LayoutControlItem8.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
         'LayoutControlItem10
         '
@@ -488,14 +491,14 @@ Partial Class frmTermDeductions
         Me.XtraTabPage1.Controls.Add(Me.LayoutControl1)
         Me.XtraTabPage1.Name = "XtraTabPage1"
         Me.XtraTabPage1.Size = New System.Drawing.Size(697, 384)
-        Me.XtraTabPage1.Text = "XtraTabPage1"
+        Me.XtraTabPage1.Text = "Add New"
         '
         'XtraTabPage2
         '
         Me.XtraTabPage2.Controls.Add(Me.LayoutControl2)
         Me.XtraTabPage2.Name = "XtraTabPage2"
         Me.XtraTabPage2.Size = New System.Drawing.Size(697, 384)
-        Me.XtraTabPage2.Text = "XtraTabPage2"
+        Me.XtraTabPage2.Text = "History Data"
         '
         'LayoutControl2
         '
@@ -529,6 +532,8 @@ Partial Class frmTermDeductions
         Me.GridColumn3.Caption = "TermDeductionID"
         Me.GridColumn3.FieldName = "TermDeductionID"
         Me.GridColumn3.Name = "GridColumn3"
+        Me.GridColumn3.OptionsColumn.AllowEdit = False
+        Me.GridColumn3.OptionsColumn.AllowFocus = False
         Me.GridColumn3.Visible = True
         Me.GridColumn3.VisibleIndex = 0
         '
@@ -537,6 +542,8 @@ Partial Class frmTermDeductions
         Me.GridColumn4.Caption = "Issued Date"
         Me.GridColumn4.FieldName = "TDDate"
         Me.GridColumn4.Name = "GridColumn4"
+        Me.GridColumn4.OptionsColumn.AllowEdit = False
+        Me.GridColumn4.OptionsColumn.AllowFocus = False
         Me.GridColumn4.Visible = True
         Me.GridColumn4.VisibleIndex = 1
         '
@@ -545,6 +552,8 @@ Partial Class frmTermDeductions
         Me.GridColumn5.Caption = "Type"
         Me.GridColumn5.FieldName = "TDType"
         Me.GridColumn5.Name = "GridColumn5"
+        Me.GridColumn5.OptionsColumn.AllowEdit = False
+        Me.GridColumn5.OptionsColumn.AllowFocus = False
         Me.GridColumn5.Visible = True
         Me.GridColumn5.VisibleIndex = 2
         '
@@ -553,6 +562,8 @@ Partial Class frmTermDeductions
         Me.GridColumn6.Caption = "Employee ID"
         Me.GridColumn6.FieldName = "EmployerID"
         Me.GridColumn6.Name = "GridColumn6"
+        Me.GridColumn6.OptionsColumn.AllowEdit = False
+        Me.GridColumn6.OptionsColumn.AllowFocus = False
         Me.GridColumn6.Visible = True
         Me.GridColumn6.VisibleIndex = 3
         '
@@ -561,6 +572,8 @@ Partial Class frmTermDeductions
         Me.GridColumn7.Caption = "Employee No"
         Me.GridColumn7.FieldName = "EmployerNo"
         Me.GridColumn7.Name = "GridColumn7"
+        Me.GridColumn7.OptionsColumn.AllowEdit = False
+        Me.GridColumn7.OptionsColumn.AllowFocus = False
         Me.GridColumn7.Visible = True
         Me.GridColumn7.VisibleIndex = 4
         '
@@ -569,6 +582,8 @@ Partial Class frmTermDeductions
         Me.GridColumn8.Caption = "Employee Name "
         Me.GridColumn8.FieldName = "EmployerName"
         Me.GridColumn8.Name = "GridColumn8"
+        Me.GridColumn8.OptionsColumn.AllowEdit = False
+        Me.GridColumn8.OptionsColumn.AllowFocus = False
         Me.GridColumn8.Visible = True
         Me.GridColumn8.VisibleIndex = 5
         '
@@ -577,6 +592,8 @@ Partial Class frmTermDeductions
         Me.GridColumn9.Caption = "Amount"
         Me.GridColumn9.FieldName = "TDAmount"
         Me.GridColumn9.Name = "GridColumn9"
+        Me.GridColumn9.OptionsColumn.AllowEdit = False
+        Me.GridColumn9.OptionsColumn.AllowFocus = False
         Me.GridColumn9.Visible = True
         Me.GridColumn9.VisibleIndex = 6
         '
@@ -585,6 +602,8 @@ Partial Class frmTermDeductions
         Me.GridColumn10.Caption = "Period"
         Me.GridColumn10.FieldName = "TDInstallments"
         Me.GridColumn10.Name = "GridColumn10"
+        Me.GridColumn10.OptionsColumn.AllowEdit = False
+        Me.GridColumn10.OptionsColumn.AllowFocus = False
         Me.GridColumn10.Visible = True
         Me.GridColumn10.VisibleIndex = 7
         '
@@ -593,6 +612,8 @@ Partial Class frmTermDeductions
         Me.GridColumn11.Caption = "CreatedBy"
         Me.GridColumn11.FieldName = "CreatedBy"
         Me.GridColumn11.Name = "GridColumn11"
+        Me.GridColumn11.OptionsColumn.AllowEdit = False
+        Me.GridColumn11.OptionsColumn.AllowFocus = False
         Me.GridColumn11.Visible = True
         Me.GridColumn11.VisibleIndex = 8
         '
@@ -601,6 +622,8 @@ Partial Class frmTermDeductions
         Me.GridColumn12.Caption = "CreatedDate"
         Me.GridColumn12.FieldName = "CreatedDate"
         Me.GridColumn12.Name = "GridColumn12"
+        Me.GridColumn12.OptionsColumn.AllowEdit = False
+        Me.GridColumn12.OptionsColumn.AllowFocus = False
         Me.GridColumn12.Visible = True
         Me.GridColumn12.VisibleIndex = 9
         '
@@ -609,6 +632,8 @@ Partial Class frmTermDeductions
         Me.GridColumn13.Caption = "UpdatedBy"
         Me.GridColumn13.FieldName = "UpdatedBy"
         Me.GridColumn13.Name = "GridColumn13"
+        Me.GridColumn13.OptionsColumn.AllowEdit = False
+        Me.GridColumn13.OptionsColumn.AllowFocus = False
         Me.GridColumn13.Visible = True
         Me.GridColumn13.VisibleIndex = 10
         '
@@ -617,6 +642,8 @@ Partial Class frmTermDeductions
         Me.GridColumn14.Caption = "UdatedDate"
         Me.GridColumn14.FieldName = "UdatedDate"
         Me.GridColumn14.Name = "GridColumn14"
+        Me.GridColumn14.OptionsColumn.AllowEdit = False
+        Me.GridColumn14.OptionsColumn.AllowFocus = False
         Me.GridColumn14.Visible = True
         Me.GridColumn14.VisibleIndex = 11
         '
@@ -656,7 +683,7 @@ Partial Class frmTermDeductions
         Me.Controls.Add(Me.barDockControlTop)
         Me.KeyPreview = True
         Me.Name = "frmTermDeductions"
-        Me.Text = "Company Information"
+        Me.Text = "Festival Advance | Loan"
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dxvpCompany, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbDeductionType.Properties, System.ComponentModel.ISupportInitialize).EndInit()

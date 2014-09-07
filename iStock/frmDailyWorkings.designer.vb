@@ -38,6 +38,7 @@ Partial Class frmDailyWorkings
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.lblDeleteID = New DevExpress.XtraEditors.LabelControl()
         Me.lblCasualOTPayRate = New DevExpress.XtraEditors.LabelControl()
         Me.lblCasualPayRate = New DevExpress.XtraEditors.LabelControl()
         Me.lblEPF = New DevExpress.XtraEditors.LabelControl()
@@ -87,6 +88,7 @@ Partial Class frmDailyWorkings
         Me.LayoutControlItem18 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem19 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem20 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem21 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
         Me.LayoutControl2 = New DevExpress.XtraLayout.LayoutControl()
         Me.LayoutControl4 = New DevExpress.XtraLayout.LayoutControl()
@@ -151,6 +153,7 @@ Partial Class frmDailyWorkings
         CType(Me.LayoutControlItem18, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem19, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem20, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem21, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabPage2.SuspendLayout()
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl2.SuspendLayout()
@@ -200,14 +203,18 @@ Partial Class frmDailyWorkings
         'bbSave
         '
         Me.bbSave.Caption = "Save"
+        Me.bbSave.Enabled = False
         Me.bbSave.Id = 0
         Me.bbSave.Name = "bbSave"
+        Me.bbSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'bbDelete
         '
         Me.bbDelete.Caption = "Delete"
+        Me.bbDelete.Enabled = False
         Me.bbDelete.Id = 4
         Me.bbDelete.Name = "bbDelete"
+        Me.bbDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'bbClose
         '
@@ -283,10 +290,11 @@ Partial Class frmDailyWorkings
         Me.XtraTabPage1.Controls.Add(Me.LayoutControl1)
         Me.XtraTabPage1.Name = "XtraTabPage1"
         Me.XtraTabPage1.Size = New System.Drawing.Size(697, 384)
-        Me.XtraTabPage1.Text = "XtraTabPage1"
+        Me.XtraTabPage1.Text = "Add New"
         '
         'LayoutControl1
         '
+        Me.LayoutControl1.Controls.Add(Me.lblDeleteID)
         Me.LayoutControl1.Controls.Add(Me.lblCasualOTPayRate)
         Me.LayoutControl1.Controls.Add(Me.lblCasualPayRate)
         Me.LayoutControl1.Controls.Add(Me.lblEPF)
@@ -310,19 +318,28 @@ Partial Class frmDailyWorkings
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
+        'lblDeleteID
+        '
+        Me.lblDeleteID.Appearance.BackColor = System.Drawing.Color.Yellow
+        Me.lblDeleteID.Location = New System.Drawing.Point(260, 43)
+        Me.lblDeleteID.Name = "lblDeleteID"
+        Me.lblDeleteID.Size = New System.Drawing.Size(0, 13)
+        Me.lblDeleteID.StyleController = Me.LayoutControl1
+        Me.lblDeleteID.TabIndex = 20
+        '
         'lblCasualOTPayRate
         '
         Me.lblCasualOTPayRate.Appearance.BackColor = System.Drawing.Color.Fuchsia
-        Me.lblCasualOTPayRate.Location = New System.Drawing.Point(609, 43)
+        Me.lblCasualOTPayRate.Location = New System.Drawing.Point(610, 43)
         Me.lblCasualOTPayRate.Name = "lblCasualOTPayRate"
-        Me.lblCasualOTPayRate.Size = New System.Drawing.Size(64, 13)
+        Me.lblCasualOTPayRate.Size = New System.Drawing.Size(63, 13)
         Me.lblCasualOTPayRate.StyleController = Me.LayoutControl1
         Me.lblCasualOTPayRate.TabIndex = 19
         '
         'lblCasualPayRate
         '
         Me.lblCasualPayRate.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblCasualPayRate.Location = New System.Drawing.Point(566, 43)
+        Me.lblCasualPayRate.Location = New System.Drawing.Point(567, 43)
         Me.lblCasualPayRate.Name = "lblCasualPayRate"
         Me.lblCasualPayRate.Size = New System.Drawing.Size(39, 13)
         Me.lblCasualPayRate.StyleController = Me.LayoutControl1
@@ -331,16 +348,16 @@ Partial Class frmDailyWorkings
         'lblEPF
         '
         Me.lblEPF.Appearance.BackColor = System.Drawing.Color.Gray
-        Me.lblEPF.Location = New System.Drawing.Point(478, 43)
+        Me.lblEPF.Location = New System.Drawing.Point(480, 43)
         Me.lblEPF.Name = "lblEPF"
-        Me.lblEPF.Size = New System.Drawing.Size(84, 13)
+        Me.lblEPF.Size = New System.Drawing.Size(83, 13)
         Me.lblEPF.StyleController = Me.LayoutControl1
         Me.lblEPF.TabIndex = 17
         '
         'lblOverKgsRate
         '
         Me.lblOverKgsRate.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.lblOverKgsRate.Location = New System.Drawing.Point(417, 43)
+        Me.lblOverKgsRate.Location = New System.Drawing.Point(419, 43)
         Me.lblOverKgsRate.Name = "lblOverKgsRate"
         Me.lblOverKgsRate.Size = New System.Drawing.Size(57, 13)
         Me.lblOverKgsRate.StyleController = Me.LayoutControl1
@@ -365,7 +382,7 @@ Partial Class frmDailyWorkings
         Me.lblOTRate.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.lblOTRate.Location = New System.Drawing.Point(123, 43)
         Me.lblOTRate.Name = "lblOTRate"
-        Me.lblOTRate.Size = New System.Drawing.Size(134, 13)
+        Me.lblOTRate.Size = New System.Drawing.Size(133, 13)
         Me.lblOTRate.StyleController = Me.LayoutControl1
         Me.lblOTRate.TabIndex = 13
         '
@@ -394,9 +411,9 @@ Partial Class frmDailyWorkings
         'lblKgsPerDay
         '
         Me.lblKgsPerDay.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblKgsPerDay.Location = New System.Drawing.Point(261, 59)
+        Me.lblKgsPerDay.Location = New System.Drawing.Point(264, 59)
         Me.lblKgsPerDay.Name = "lblKgsPerDay"
-        Me.lblKgsPerDay.Size = New System.Drawing.Size(152, 13)
+        Me.lblKgsPerDay.Size = New System.Drawing.Size(151, 13)
         Me.lblKgsPerDay.StyleController = Me.LayoutControl1
         Me.lblKgsPerDay.TabIndex = 15
         '
@@ -469,6 +486,9 @@ Partial Class frmDailyWorkings
         Me.GridColumn1.Caption = "DailyWorkingID"
         Me.GridColumn1.FieldName = "DailyWorkingID"
         Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.OptionsColumn.AllowEdit = False
+        Me.GridColumn1.OptionsColumn.AllowFocus = False
+        Me.GridColumn1.OptionsColumn.AllowSize = False
         Me.GridColumn1.Visible = True
         Me.GridColumn1.VisibleIndex = 0
         Me.GridColumn1.Width = 106
@@ -478,6 +498,9 @@ Partial Class frmDailyWorkings
         Me.GridColumn2.Caption = "Date"
         Me.GridColumn2.FieldName = "WorkingDate"
         Me.GridColumn2.Name = "GridColumn2"
+        Me.GridColumn2.OptionsColumn.AllowEdit = False
+        Me.GridColumn2.OptionsColumn.AllowFocus = False
+        Me.GridColumn2.OptionsColumn.AllowSize = False
         Me.GridColumn2.Visible = True
         Me.GridColumn2.VisibleIndex = 1
         Me.GridColumn2.Width = 57
@@ -487,6 +510,9 @@ Partial Class frmDailyWorkings
         Me.GridColumn3.Caption = "Work Type"
         Me.GridColumn3.FieldName = "WorkType"
         Me.GridColumn3.Name = "GridColumn3"
+        Me.GridColumn3.OptionsColumn.AllowEdit = False
+        Me.GridColumn3.OptionsColumn.AllowFocus = False
+        Me.GridColumn3.OptionsColumn.AllowSize = False
         Me.GridColumn3.Visible = True
         Me.GridColumn3.VisibleIndex = 2
         Me.GridColumn3.Width = 57
@@ -496,6 +522,9 @@ Partial Class frmDailyWorkings
         Me.GridColumn4.Caption = "Work Category"
         Me.GridColumn4.FieldName = "AbbreviationDesc"
         Me.GridColumn4.Name = "GridColumn4"
+        Me.GridColumn4.OptionsColumn.AllowEdit = False
+        Me.GridColumn4.OptionsColumn.AllowFocus = False
+        Me.GridColumn4.OptionsColumn.AllowSize = False
         Me.GridColumn4.Visible = True
         Me.GridColumn4.VisibleIndex = 3
         Me.GridColumn4.Width = 57
@@ -505,6 +534,9 @@ Partial Class frmDailyWorkings
         Me.GridColumn5.Caption = "Employee Code"
         Me.GridColumn5.FieldName = "EmployerNo"
         Me.GridColumn5.Name = "GridColumn5"
+        Me.GridColumn5.OptionsColumn.AllowEdit = False
+        Me.GridColumn5.OptionsColumn.AllowFocus = False
+        Me.GridColumn5.OptionsColumn.AllowSize = False
         Me.GridColumn5.Visible = True
         Me.GridColumn5.VisibleIndex = 4
         Me.GridColumn5.Width = 57
@@ -514,6 +546,9 @@ Partial Class frmDailyWorkings
         Me.GridColumn6.Caption = "EmployeeName"
         Me.GridColumn6.FieldName = "EmployerName"
         Me.GridColumn6.Name = "GridColumn6"
+        Me.GridColumn6.OptionsColumn.AllowEdit = False
+        Me.GridColumn6.OptionsColumn.AllowFocus = False
+        Me.GridColumn6.OptionsColumn.AllowSize = False
         Me.GridColumn6.Visible = True
         Me.GridColumn6.VisibleIndex = 5
         Me.GridColumn6.Width = 57
@@ -523,6 +558,9 @@ Partial Class frmDailyWorkings
         Me.GridColumn7.Caption = "Days"
         Me.GridColumn7.FieldName = "WorkedDays"
         Me.GridColumn7.Name = "GridColumn7"
+        Me.GridColumn7.OptionsColumn.AllowEdit = False
+        Me.GridColumn7.OptionsColumn.AllowFocus = False
+        Me.GridColumn7.OptionsColumn.AllowSize = False
         Me.GridColumn7.Visible = True
         Me.GridColumn7.VisibleIndex = 6
         Me.GridColumn7.Width = 57
@@ -532,13 +570,16 @@ Partial Class frmDailyWorkings
         Me.GridColumn8.Caption = "Quantity"
         Me.GridColumn8.FieldName = "Quantity"
         Me.GridColumn8.Name = "GridColumn8"
+        Me.GridColumn8.OptionsColumn.AllowEdit = False
+        Me.GridColumn8.OptionsColumn.AllowFocus = False
+        Me.GridColumn8.OptionsColumn.AllowSize = False
         Me.GridColumn8.Visible = True
         Me.GridColumn8.VisibleIndex = 7
         Me.GridColumn8.Width = 61
         '
         'GridColumn16
         '
-        Me.GridColumn16.Caption = "GridColumn16"
+        Me.GridColumn16.Caption = "Delete"
         Me.GridColumn16.ColumnEdit = Me.RepositoryItemButtonEdit1
         Me.GridColumn16.Name = "GridColumn16"
         Me.GridColumn16.Visible = True
@@ -729,7 +770,7 @@ Partial Class frmDailyWorkings
         'LayoutControlGroup3
         '
         Me.LayoutControlGroup3.CustomizationFormText = "LayoutControlGroup3"
-        Me.LayoutControlGroup3.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem10, Me.LayoutControlItem9, Me.LayoutControlItem16, Me.LayoutControlItem17, Me.LayoutControlItem18, Me.LayoutControlItem19, Me.LayoutControlItem20})
+        Me.LayoutControlGroup3.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem10, Me.LayoutControlItem9, Me.LayoutControlItem16, Me.LayoutControlItem17, Me.LayoutControlItem18, Me.LayoutControlItem19, Me.LayoutControlItem20, Me.LayoutControlItem21})
         Me.LayoutControlGroup3.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup3.Name = "LayoutControlGroup3"
         Me.LayoutControlGroup3.Size = New System.Drawing.Size(677, 76)
@@ -742,7 +783,7 @@ Partial Class frmDailyWorkings
         Me.LayoutControlItem10.CustomizationFormText = "LayoutControlItem10"
         Me.LayoutControlItem10.Location = New System.Drawing.Point(99, 0)
         Me.LayoutControlItem10.Name = "LayoutControlItem10"
-        Me.LayoutControlItem10.Size = New System.Drawing.Size(138, 33)
+        Me.LayoutControlItem10.Size = New System.Drawing.Size(137, 33)
         Me.LayoutControlItem10.Text = "LayoutControlItem10"
         Me.LayoutControlItem10.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem10.TextToControlDistance = 0
@@ -765,9 +806,9 @@ Partial Class frmDailyWorkings
         '
         Me.LayoutControlItem16.Control = Me.lblKgsPerDay
         Me.LayoutControlItem16.CustomizationFormText = "LayoutControlItem16"
-        Me.LayoutControlItem16.Location = New System.Drawing.Point(237, 0)
+        Me.LayoutControlItem16.Location = New System.Drawing.Point(240, 0)
         Me.LayoutControlItem16.Name = "LayoutControlItem16"
-        Me.LayoutControlItem16.Size = New System.Drawing.Size(156, 33)
+        Me.LayoutControlItem16.Size = New System.Drawing.Size(155, 33)
         Me.LayoutControlItem16.Text = "LayoutControlItem16"
         Me.LayoutControlItem16.TextLocation = DevExpress.Utils.Locations.Top
         Me.LayoutControlItem16.TextSize = New System.Drawing.Size(102, 13)
@@ -776,7 +817,7 @@ Partial Class frmDailyWorkings
         '
         Me.LayoutControlItem17.Control = Me.lblOverKgsRate
         Me.LayoutControlItem17.CustomizationFormText = "LayoutControlItem17"
-        Me.LayoutControlItem17.Location = New System.Drawing.Point(393, 0)
+        Me.LayoutControlItem17.Location = New System.Drawing.Point(395, 0)
         Me.LayoutControlItem17.Name = "LayoutControlItem17"
         Me.LayoutControlItem17.Size = New System.Drawing.Size(61, 33)
         Me.LayoutControlItem17.Text = "LayoutControlItem17"
@@ -788,9 +829,9 @@ Partial Class frmDailyWorkings
         '
         Me.LayoutControlItem18.Control = Me.lblEPF
         Me.LayoutControlItem18.CustomizationFormText = "LayoutControlItem18"
-        Me.LayoutControlItem18.Location = New System.Drawing.Point(454, 0)
+        Me.LayoutControlItem18.Location = New System.Drawing.Point(456, 0)
         Me.LayoutControlItem18.Name = "LayoutControlItem18"
-        Me.LayoutControlItem18.Size = New System.Drawing.Size(88, 33)
+        Me.LayoutControlItem18.Size = New System.Drawing.Size(87, 33)
         Me.LayoutControlItem18.Text = "LayoutControlItem18"
         Me.LayoutControlItem18.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem18.TextToControlDistance = 0
@@ -800,7 +841,7 @@ Partial Class frmDailyWorkings
         '
         Me.LayoutControlItem19.Control = Me.lblCasualPayRate
         Me.LayoutControlItem19.CustomizationFormText = "LayoutControlItem19"
-        Me.LayoutControlItem19.Location = New System.Drawing.Point(542, 0)
+        Me.LayoutControlItem19.Location = New System.Drawing.Point(543, 0)
         Me.LayoutControlItem19.Name = "LayoutControlItem19"
         Me.LayoutControlItem19.Size = New System.Drawing.Size(43, 33)
         Me.LayoutControlItem19.Text = "LayoutControlItem19"
@@ -812,20 +853,32 @@ Partial Class frmDailyWorkings
         '
         Me.LayoutControlItem20.Control = Me.lblCasualOTPayRate
         Me.LayoutControlItem20.CustomizationFormText = "LayoutControlItem20"
-        Me.LayoutControlItem20.Location = New System.Drawing.Point(585, 0)
+        Me.LayoutControlItem20.Location = New System.Drawing.Point(586, 0)
         Me.LayoutControlItem20.Name = "LayoutControlItem20"
-        Me.LayoutControlItem20.Size = New System.Drawing.Size(68, 33)
+        Me.LayoutControlItem20.Size = New System.Drawing.Size(67, 33)
         Me.LayoutControlItem20.Text = "LayoutControlItem20"
         Me.LayoutControlItem20.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem20.TextToControlDistance = 0
         Me.LayoutControlItem20.TextVisible = False
+        '
+        'LayoutControlItem21
+        '
+        Me.LayoutControlItem21.Control = Me.lblDeleteID
+        Me.LayoutControlItem21.CustomizationFormText = "LayoutControlItem21"
+        Me.LayoutControlItem21.Location = New System.Drawing.Point(236, 0)
+        Me.LayoutControlItem21.Name = "LayoutControlItem21"
+        Me.LayoutControlItem21.Size = New System.Drawing.Size(4, 33)
+        Me.LayoutControlItem21.Text = "LayoutControlItem21"
+        Me.LayoutControlItem21.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem21.TextToControlDistance = 0
+        Me.LayoutControlItem21.TextVisible = False
         '
         'XtraTabPage2
         '
         Me.XtraTabPage2.Controls.Add(Me.LayoutControl2)
         Me.XtraTabPage2.Name = "XtraTabPage2"
         Me.XtraTabPage2.Size = New System.Drawing.Size(697, 384)
-        Me.XtraTabPage2.Text = "XtraTabPage2"
+        Me.XtraTabPage2.Text = "History Data"
         '
         'LayoutControl2
         '
@@ -917,6 +970,9 @@ Partial Class frmDailyWorkings
         Me.GridColumn9.Caption = "Working Date"
         Me.GridColumn9.FieldName = "WorkingDate"
         Me.GridColumn9.Name = "GridColumn9"
+        Me.GridColumn9.OptionsColumn.AllowEdit = False
+        Me.GridColumn9.OptionsColumn.AllowFocus = False
+        Me.GridColumn9.OptionsColumn.AllowMove = False
         Me.GridColumn9.Visible = True
         Me.GridColumn9.VisibleIndex = 0
         '
@@ -925,6 +981,9 @@ Partial Class frmDailyWorkings
         Me.GridColumn10.Caption = "WorkType"
         Me.GridColumn10.FieldName = "WorkType"
         Me.GridColumn10.Name = "GridColumn10"
+        Me.GridColumn10.OptionsColumn.AllowEdit = False
+        Me.GridColumn10.OptionsColumn.AllowFocus = False
+        Me.GridColumn10.OptionsColumn.AllowMove = False
         Me.GridColumn10.Visible = True
         Me.GridColumn10.VisibleIndex = 1
         '
@@ -933,6 +992,9 @@ Partial Class frmDailyWorkings
         Me.GridColumn11.Caption = "Work Category"
         Me.GridColumn11.FieldName = "AbbreviationDesc"
         Me.GridColumn11.Name = "GridColumn11"
+        Me.GridColumn11.OptionsColumn.AllowEdit = False
+        Me.GridColumn11.OptionsColumn.AllowFocus = False
+        Me.GridColumn11.OptionsColumn.AllowMove = False
         Me.GridColumn11.Visible = True
         Me.GridColumn11.VisibleIndex = 2
         '
@@ -941,6 +1003,9 @@ Partial Class frmDailyWorkings
         Me.GridColumn12.Caption = "Employee Code"
         Me.GridColumn12.FieldName = "EmployerNo"
         Me.GridColumn12.Name = "GridColumn12"
+        Me.GridColumn12.OptionsColumn.AllowEdit = False
+        Me.GridColumn12.OptionsColumn.AllowFocus = False
+        Me.GridColumn12.OptionsColumn.AllowMove = False
         Me.GridColumn12.Visible = True
         Me.GridColumn12.VisibleIndex = 3
         '
@@ -949,6 +1014,9 @@ Partial Class frmDailyWorkings
         Me.GridColumn13.Caption = "EmployerName"
         Me.GridColumn13.FieldName = "EmployerName"
         Me.GridColumn13.Name = "GridColumn13"
+        Me.GridColumn13.OptionsColumn.AllowEdit = False
+        Me.GridColumn13.OptionsColumn.AllowFocus = False
+        Me.GridColumn13.OptionsColumn.AllowMove = False
         Me.GridColumn13.Visible = True
         Me.GridColumn13.VisibleIndex = 4
         '
@@ -959,6 +1027,9 @@ Partial Class frmDailyWorkings
         Me.GridColumn14.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.GridColumn14.FieldName = "WorkedDays"
         Me.GridColumn14.Name = "GridColumn14"
+        Me.GridColumn14.OptionsColumn.AllowEdit = False
+        Me.GridColumn14.OptionsColumn.AllowFocus = False
+        Me.GridColumn14.OptionsColumn.AllowMove = False
         Me.GridColumn14.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "WorkedDays", "{0:n2}")})
         Me.GridColumn14.Visible = True
         Me.GridColumn14.VisibleIndex = 5
@@ -970,6 +1041,9 @@ Partial Class frmDailyWorkings
         Me.GridColumn15.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.GridColumn15.FieldName = "Quantity"
         Me.GridColumn15.Name = "GridColumn15"
+        Me.GridColumn15.OptionsColumn.AllowEdit = False
+        Me.GridColumn15.OptionsColumn.AllowFocus = False
+        Me.GridColumn15.OptionsColumn.AllowMove = False
         Me.GridColumn15.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantity", "{0:n2}")})
         Me.GridColumn15.Visible = True
         Me.GridColumn15.VisibleIndex = 6
@@ -1120,6 +1194,7 @@ Partial Class frmDailyWorkings
         CType(Me.LayoutControlItem18, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem19, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem20, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem21, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabPage2.ResumeLayout(False)
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl2.ResumeLayout(False)
@@ -1232,4 +1307,6 @@ Partial Class frmDailyWorkings
     Friend WithEvents LayoutControlItem19 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem20 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlGroup3 As DevExpress.XtraLayout.LayoutControlGroup
+    Friend WithEvents lblDeleteID As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LayoutControlItem21 As DevExpress.XtraLayout.LayoutControlItem
 End Class

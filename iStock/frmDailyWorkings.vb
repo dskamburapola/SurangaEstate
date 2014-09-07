@@ -363,7 +363,8 @@ Public Class frmDailyWorkings
 
         Try
             With iStockDailyWorking
-                .DailyWorkingID = Me.gvDailyWorking.GetFocusedRowCellValue(GridColumn1)
+                '.DailyWorkingID = Me.gvDailyWorking.GetFocusedRowCellValue(GridColumn1)
+                .DailyWorkingID = Convert.ToInt64(IIf(lblDeleteID.Text = String.Empty, 0, lblDeleteID.Text.ToString))
                 .DailyWorkingDelete()
             End With
 
@@ -391,11 +392,11 @@ Public Class frmDailyWorkings
     End Sub
 
    
-    Private Sub gcDailyWorking_DoubleClick(sender As Object, e As EventArgs) Handles gcDailyWorking.DoubleClick
-        lblOTRate.Text = Me.gvDailyWorking.GetFocusedRowCellValue(GridColumn1)
-        Me.bbDelete.Enabled = True
+    'Private Sub gcDailyWorking_DoubleClick(sender As Object, e As EventArgs) Handles gcDailyWorking.DoubleClick
+    '    lblOTRate.Text = Me.gvDailyWorking.GetFocusedRowCellValue(GridColumn1)
+    '    Me.bbDelete.Enabled = True
 
-    End Sub
+    'End Sub
 
     Private Sub bbDelete_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbDelete.ItemClick
         Me.DeleteDailyWorking()
@@ -422,7 +423,10 @@ Public Class frmDailyWorkings
     End Sub
 
     Private Sub RepositoryItemButtonEdit1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RepositoryItemButtonEdit1.Click
-        MsgBox(Me.gvDailyWorking.GetFocusedRowCellValue(GridColumn1))
+        '    MsgBox((Me.gvDailyWorking.GetFocusedRowCellValue(GridColumn1)))
+        lblDeleteID.Text = (Me.gvDailyWorking.GetFocusedRowCellValue(GridColumn1))
+        Me.DeleteDailyWorking()
+        Me.DailyWorkingGetByDate()
 
     End Sub
 
