@@ -76,18 +76,18 @@ Public Class frmSettings
         Try
             With ECSSettings
 
-                .PayChitCost = Me.sePayChitCost.Text
-                .DevalutionAllowance = Me.seDevalutionAllowance.Text
-                .DayRate = Me.seDayRate.Text
-                .OTRate = Me.seOTRate.Text
-                .KgsPerDay = Me.seKgsPerDay.Text
-                .IncentiveDays = Me.seIncentiveDays.Text
-                .EPF = Me.seEPF.Text
-                .ETF = Me.seETF.Text
-                .OverKgRate = Me.seOverKgsRate.Text
-                .WCPay = Me.seWCPay.Text
-                .CasualPayRate = Me.seCasualPayRate.Text
-                .CasualOTPayRate = Me.seCasualOTPayRate.Text
+                .PayChitCost = Me.sePayChitCost.Value
+                .DevalutionAllowance = Me.seDevalutionAllowance.Value
+                .DayRate = Me.seDayRate.Value
+                .OTRate = Me.seOTRate.Value
+                .KgsPerDay = Me.seKgsPerDay.Value
+                .IncentiveDays = Me.seIncentiveDays.Value
+                .EPF = Me.seEPF.Value
+                .ETF = Me.seETF.Value
+                .OverKgRate = Me.seOverKgsRate.Value
+                .WCPay = Me.seWCPay.Value
+                .CasualPayRate = Me.seCasualPayRate.Value
+                .CasualOTPayRate = Me.seCasualOTPayRate.Value
 
                 .CreatedBy = UserID
                 .UpdatedBy = UserID

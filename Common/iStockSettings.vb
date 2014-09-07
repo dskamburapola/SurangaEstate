@@ -10,18 +10,18 @@ Public Class iStockSettings
     Private _AbbreviationCode As String
     Private _AbbreviationDesc As String
 
-    Private _PayChitCost As Int64
-    Private _DevalutionAllowance As Int64
-    Private _DayRate As Int64
-    Private _OTRate As Int64
-    Private _KgsPerDay As Int64
-    Private _IncentiveDays As Int64
-    Private _IncentiveRate As Int64
+    Private _PayChitCost As Decimal
+    Private _DevalutionAllowance As Decimal
+    Private _DayRate As Decimal
+    Private _OTRate As Decimal
+    Private _KgsPerDay As Decimal
+    Private _IncentiveDays As Decimal
+    Private _IncentiveRate As Decimal
 
-    Private _EPF As Int64
-    Private _ETF As Int64
-    Private _OverKgRate As Int64
-    Private _WCPay As Int64
+    Private _EPF As Decimal
+    Private _ETF As Decimal
+    Private _OverKgRate As Decimal
+    Private _WCPay As Decimal
     Private _CasualPayRate As Decimal
     Private _CasualOTPayRate As Decimal
 
@@ -56,92 +56,92 @@ Public Class iStockSettings
             _AbbreviationDesc = value
         End Set
     End Property
-    Public Property PayChitCost() As Int64
+    Public Property PayChitCost() As Decimal
         Get
             Return _PayChitCost
         End Get
-        Set(ByVal value As Int64)
+        Set(ByVal value As Decimal)
             _PayChitCost = value
         End Set
     End Property
-    Public Property DevalutionAllowance() As Int64
+    Public Property DevalutionAllowance() As Decimal
         Get
             Return _DevalutionAllowance
         End Get
-        Set(ByVal value As Int64)
+        Set(ByVal value As Decimal)
             _DevalutionAllowance = value
         End Set
     End Property
-    Public Property DayRate() As Int64
+    Public Property DayRate() As Decimal
         Get
             Return _DayRate
         End Get
-        Set(ByVal value As Int64)
+        Set(ByVal value As Decimal)
             _DayRate = value
         End Set
     End Property
-    Public Property OTRate() As Int64
+    Public Property OTRate() As Decimal
         Get
             Return _OTRate
         End Get
-        Set(ByVal value As Int64)
+        Set(ByVal value As Decimal)
             _OTRate = value
         End Set
     End Property
-    Public Property KgsPerDay() As Int64
+    Public Property KgsPerDay() As Decimal
         Get
             Return _KgsPerDay
         End Get
-        Set(ByVal value As Int64)
+        Set(ByVal value As Decimal)
             _KgsPerDay = value
         End Set
     End Property
-    Public Property IncentiveDays() As Int64
+    Public Property IncentiveDays() As Decimal
         Get
             Return _IncentiveDays
         End Get
-        Set(ByVal value As Int64)
+        Set(ByVal value As Decimal)
             _IncentiveDays = value
         End Set
     End Property
-    Public Property IncentiveRate() As Int64
+    Public Property IncentiveRate() As Decimal
         Get
             Return _IncentiveRate
         End Get
-        Set(ByVal value As Int64)
+        Set(ByVal value As Decimal)
             _IncentiveRate = value
         End Set
     End Property
 
-    Public Property EPF() As Int64
+    Public Property EPF() As Decimal
         Get
             Return _EPF
         End Get
-        Set(ByVal value As Int64)
+        Set(ByVal value As Decimal)
             _EPF = value
         End Set
     End Property
-    Public Property ETF() As Int64
+    Public Property ETF() As Decimal
         Get
             Return _ETF
         End Get
-        Set(ByVal value As Int64)
+        Set(ByVal value As Decimal)
             _ETF = value
         End Set
     End Property
-    Public Property OverKgRate() As Int64
+    Public Property OverKgRate() As Decimal
         Get
             Return _OverKgRate
         End Get
-        Set(ByVal value As Int64)
+        Set(ByVal value As Decimal)
             _OverKgRate = value
         End Set
     End Property
-    Public Property WCPay() As Int64
+    Public Property WCPay() As Decimal
         Get
             Return _WCPay
         End Get
-        Set(ByVal value As Int64)
+        Set(ByVal value As Decimal)
             _WCPay = value
         End Set
     End Property
@@ -202,20 +202,19 @@ Public Class iStockSettings
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
             Dim DBC As DbCommand = DB.GetStoredProcCommand(SETTINGS_INSERT)
-            DB.AddInParameter(DBC, "@PayChitCost", DbType.String, Me.PayChitCost)
-            DB.AddInParameter(DBC, "@DevalutionAllowance", DbType.String, Me.DevalutionAllowance)
-            DB.AddInParameter(DBC, "@DayRate", DbType.String, Me.DayRate)
-            DB.AddInParameter(DBC, "@OTRate", DbType.String, Me.OTRate)
-            DB.AddInParameter(DBC, "@KgsPerDay", DbType.String, Me.KgsPerDay)
-            DB.AddInParameter(DBC, "@IncentiveDays", DbType.String, Me.IncentiveDays)
+            DB.AddInParameter(DBC, "@PayChitCost", DbType.Decimal, Me.PayChitCost)
+            DB.AddInParameter(DBC, "@DevalutionAllowance", DbType.Decimal, Me.DevalutionAllowance)
+            DB.AddInParameter(DBC, "@DayRate", DbType.Decimal, Me.DayRate)
+            DB.AddInParameter(DBC, "@OTRate", DbType.Decimal, Me.OTRate)
+            DB.AddInParameter(DBC, "@KgsPerDay", DbType.Decimal, Me.KgsPerDay)
+            DB.AddInParameter(DBC, "@IncentiveDays", DbType.Decimal, Me.IncentiveDays)
             ' DB.AddInParameter(DBC, "@IncentiveRate", DbType.String, Me.IncentiveRate)
-            DB.AddInParameter(DBC, "@EPF", DbType.String, Me.EPF)
-            DB.AddInParameter(DBC, "@ETF", DbType.String, Me.ETF)
-            DB.AddInParameter(DBC, "@OverKgRate", DbType.String, Me.OverKgRate)
-            DB.AddInParameter(DBC, "@WCPay", DbType.String, Me.WCPay)
+            DB.AddInParameter(DBC, "@EPF", DbType.Decimal, Me.EPF)
+            DB.AddInParameter(DBC, "@ETF", DbType.Decimal, Me.ETF)
+            DB.AddInParameter(DBC, "@OverKgRate", DbType.Decimal, Me.OverKgRate)
+            DB.AddInParameter(DBC, "@WCPay", DbType.Decimal, Me.WCPay)
             DB.AddInParameter(DBC, "@CasualPayRate", DbType.Decimal, Me.CasualPayRate)
             DB.AddInParameter(DBC, "@CasualOTPayRate", DbType.Decimal, Me.CasualOTPayRate)
-
 
             DB.AddInParameter(DBC, "@CreatedBy", DbType.Int64, Me.CreatedBy)
             DB.AddInParameter(DBC, "@UpdatedBy", DbType.Int64, Me.UpdatedBy)

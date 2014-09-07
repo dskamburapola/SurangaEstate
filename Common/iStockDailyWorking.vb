@@ -17,11 +17,11 @@ Public Class iStockDailyWorking
     Private _Quantity As Double
 
    
-    Private _DayRate As Int64
-    Private _OTRate As Int64
-    Private _KgsPerDay As Int64
-    Private _EPF As Int64
-    Private _OverKgRate As Int64
+    Private _DayRate As Double
+    Private _OTRate As Double
+    Private _KgsPerDay As Double
+    Private _EPF As Double
+    Private _OverKgRate As Double
 
     Private _CasualPayRate As Decimal
     Private _CasualOTPayRate As Decimal
@@ -118,44 +118,44 @@ Public Class iStockDailyWorking
         End Set
     End Property
 
-    Public Property DayRate() As Int64
+    Public Property DayRate() As Double
         Get
             Return _DayRate
         End Get
-        Set(ByVal value As Int64)
+        Set(ByVal value As Double)
             _DayRate = value
         End Set
     End Property
-    Public Property OTRate() As Int64
+    Public Property OTRate() As Double
         Get
             Return _OTRate
         End Get
-        Set(ByVal value As Int64)
+        Set(ByVal value As Double)
             _OTRate = value
         End Set
     End Property
-    Public Property KgsPerDay() As Int64
+    Public Property KgsPerDay() As Double
         Get
             Return _KgsPerDay
         End Get
-        Set(ByVal value As Int64)
+        Set(ByVal value As Double)
             _KgsPerDay = value
         End Set
     End Property
   
-    Public Property EPF() As Int64
+    Public Property EPF() As Double
         Get
             Return _EPF
         End Get
-        Set(ByVal value As Int64)
+        Set(ByVal value As Double)
             _EPF = value
         End Set
     End Property
-    Public Property OverKgRate() As Int64
+    Public Property OverKgRate() As Double
         Get
             Return _OverKgRate
         End Get
-        Set(ByVal value As Int64)
+        Set(ByVal value As Double)
             _OverKgRate = value
         End Set
     End Property
@@ -220,23 +220,17 @@ Public Class iStockDailyWorking
             DB.AddInParameter(DBC, "@WorkType", DbType.String, Me.WorkType)
             DB.AddInParameter(DBC, "@AbbreviationID", DbType.Int64, Me.AbbreviationID)
             DB.AddInParameter(DBC, "@EmployeeID", DbType.Int64, Me.EmployeeID)
-            DB.AddInParameter(DBC, "@WorkedDays", DbType.Double, Me.WorkedDays)
-            DB.AddInParameter(DBC, "@Quantity", DbType.Double, Me.Quantity)
-
-            DB.AddInParameter(DBC, "@DayRate", DbType.Double, Me.DayRate)
-            DB.AddInParameter(DBC, "@OTRate", DbType.Double, Me.OTRate)
-            DB.AddInParameter(DBC, "@KgsPerDay", DbType.Double, Me.KgsPerDay)
-            DB.AddInParameter(DBC, "@OverKgRate", DbType.Double, Me.OverKgRate)
-            DB.AddInParameter(DBC, "@EPF", DbType.Double, Me.EPF)
-            DB.AddInParameter(DBC, "@CasualPayRate", DbType.Double, Me.CasualPayRate)
-            DB.AddInParameter(DBC, "@CasualOTPayRate", DbType.Double, Me.CasualOTPayRate)
-
-
-
-
+            DB.AddInParameter(DBC, "@WorkedDays", DbType.Decimal, Me.WorkedDays)
+            DB.AddInParameter(DBC, "@Quantity", DbType.Decimal, Me.Quantity)
+            DB.AddInParameter(DBC, "@DayRate", DbType.Decimal, Me.DayRate)
+            DB.AddInParameter(DBC, "@OTRate", DbType.Decimal, Me.OTRate)
+            DB.AddInParameter(DBC, "@KgsPerDay", DbType.Decimal, Me.KgsPerDay)
+            DB.AddInParameter(DBC, "@OverKgRate", DbType.Decimal, Me.OverKgRate)
+            DB.AddInParameter(DBC, "@EPF", DbType.Decimal, Me.EPF)
+            DB.AddInParameter(DBC, "@CasualPayRate", DbType.Decimal, Me.CasualPayRate)
+            DB.AddInParameter(DBC, "@CasualOTPayRate", DbType.Decimal, Me.CasualOTPayRate)
             DB.AddInParameter(DBC, "@CreatedBy", DbType.Double, Me.CreatedBy)
-         
-          
+
             DB.ExecuteNonQuery(DBC)
         Catch ex As Exception
             Throw

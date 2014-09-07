@@ -60,6 +60,7 @@ Module iStockWindowsForms
 #End Region
 
 #Region "Startup form Bar button settings"
+
     Public Sub SetStartUpBarButton(ByVal bbSave As DevExpress.XtraBars.BarButtonItem, ByVal bbNew As DevExpress.XtraBars.BarButtonItem, ByVal bbDelete As DevExpress.XtraBars.BarButtonItem, ByVal bbClose As DevExpress.XtraBars.BarButtonItem, ByVal bbDisplaySelected As DevExpress.XtraBars.BarButtonItem, ByVal bbRefresh As DevExpress.XtraBars.BarButtonItem, ByVal bbPrint As DevExpress.XtraBars.BarButtonItem)
 
         bbSave.Caption = "Save"

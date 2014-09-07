@@ -8,12 +8,12 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("iStock")> 
+<Assembly: AssemblyTitle("Estate Planing")> 
 <Assembly: AssemblyDescription("Unauthorized publication is prohibited")> 
 <Assembly: AssemblyCompany("http://www.centrilla.com")> 
-<Assembly: AssemblyProduct("iStock")> 
+<Assembly: AssemblyProduct("Estate Planing")> 
 <Assembly: AssemblyCopyright("Centrilla Corporation")> 
-<Assembly: AssemblyTrademark("iStock")> 
+<Assembly: AssemblyTrademark("Estate Planing")> 
 
 <Assembly: ComVisible(False)>
 

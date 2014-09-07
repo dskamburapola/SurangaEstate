@@ -5,11 +5,7 @@ Imports iStockCommon.iStockConstants
 Public Class frmDailyWorkings
 
 
-    'If (ECSSettings.GetAbbreviations IsNot Nothing And ECSSettings.GetAbbreviations.Tables.Count > 0 And ECSSettings.GetAbbreviations.Tables(0) IsNot Nothing And ECSSettings.GetAbbreviations.Tables(0).Rows.Count > 0) Then
 
-    '    Me.teEmployeeName.Text = IIf(ECSSettings.GetAbbreviations.Tables(0).Rows(0)("fieldname") IsNot Nothing, ECSSettings.GetAbbreviations.Tables(0).Rows(0)("fieldname").ToString(), String.Empty)
-
-    'End If
 
 #Region "Properties"
     Private _iStockEmployers As iStockCommon.iStockEmployers
@@ -55,8 +51,9 @@ Public Class frmDailyWorkings
 #End Region
 
 #Region "Form Events"
-    
-    Private Sub frmDailyWorkings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    Private Sub frmDailyWorkings_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+
         SetStartUpBarButton(bbSave, bbNew, bbDelete, bbClose, bbDisplaySelected, bbRefresh, bbPrint)
         Me.HideToolButtonsOnLoad()
         'Me.DisplayCompany()
@@ -64,14 +61,15 @@ Public Class frmDailyWorkings
         Me.GetEmployeeForWork()
         Me.DisplaySettings()
 
-
-
         Me.deWorkingDate.EditValue = Date.Today
+        Me.deStartDate.EditValue = Date.Today
+        Me.deEndDate.EditValue = Date.Today
+
 
         '  MessageBox.Show(Me.deWorkingDate.EditValue)
 
     End Sub
-    
+
 #End Region
 
 #Region "Hide Tool Buttons On Load"
@@ -79,10 +77,10 @@ Public Class frmDailyWorkings
 
         Me.bbDisplaySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         Me.bbRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        'Me.bbDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         Me.bbDelete.Enabled = False
         Me.bbRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        Me.bbNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        'Me.bbNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
     End Sub
 #End Region
 
@@ -127,7 +125,7 @@ Public Class frmDailyWorkings
         Try
 
             Me.leEmployee.Properties.DataSource = iStockDailyWorking.GetEmployeeForWork.Tables(0)
-            Me.leEmployee.Properties.DisplayMember = "EmployerNo"
+            Me.leEmployee.Properties.DisplayMember = "EmployerName"
             Me.leEmployee.Properties.ValueMember = "EmployerID"
 
 
@@ -181,14 +179,9 @@ Public Class frmDailyWorkings
 
             With iStockDailyWorking
 
-
-
                 .StartDate = deStartDate.EditValue
                 .EndDate = deEndDate.EditValue
                 gcAllWorkings.DataSource = .DailyWorkingGetAllByDates.Tables(0)
-
-
-
 
             End With
 
@@ -220,11 +213,11 @@ Public Class frmDailyWorkings
                 .DayRate = Convert.ToDecimal(lblDayRate.Text.Trim)
                 .OTRate = Convert.ToDecimal(lblOTRate.Text.Trim)
 
-            
+
 
                 Select Case leWorkCategory.Text
                     Case "PLUCKING"
-                        .KgsPerDay = Convert.ToInt64(lblKgsPerDay.Text.Trim)
+                        .KgsPerDay = Convert.ToDecimal(lblKgsPerDay.Text.Trim)
                         .OverKgRate = Convert.ToDecimal(lblOverKgsRate.Text.Trim)
 
                     Case Else
@@ -234,7 +227,7 @@ Public Class frmDailyWorkings
                 End Select
 
 
-                .EPF = Convert.ToInt64(lblEPF.Text.Trim)
+                .EPF = Convert.ToDecimal(lblEPF.Text.Trim)
 
                 Select Case cmbWorkType.Text
 
@@ -254,10 +247,8 @@ Public Class frmDailyWorkings
                         .DayRate = Convert.ToDecimal(lblDayRate.Text.Trim)
                         .OTRate = Convert.ToDecimal(lblOTRate.Text.Trim)
 
-
                         .CasualPayRate = 0
                         .CasualOTPayRate = 0
-
 
                 End Select
 
@@ -273,9 +264,10 @@ Public Class frmDailyWorkings
                 frm.ShowDialog()
             End With
 
-            'Me.cmbWorkType.Focus()
+
             Me.DailyWorkingGetByDate()
             Me.ClearFormData()
+
         Catch ex As Exception
             MessageError(ex.ToString)
         End Try
@@ -291,7 +283,7 @@ Public Class frmDailyWorkings
         Try
             With ECSSettings
                 .GetSettings()
-               
+
                 Me.lblDayRate.Text = .DayRate
                 Me.lblOTRate.Text = .OTRate
                 Me.lblKgsPerDay.Text = .KgsPerDay
@@ -314,49 +306,19 @@ Public Class frmDailyWorkings
 
 #Region "Clear Form Data"
     Public Sub ClearFormData()
-         ' Me.seEmployeeCode.Text = String.Empty
-        Me.cmbWorkType.Text = String.Empty
-        Me.teEmployeeName.Text = String.Empty
+
+        Me.cmbWorkType.SelectedIndex = -1
+        'Me.teEmployeeName.Text = String.Empty
+        Me.leWorkCategory.EditValue = Nothing
+        Me.leEmployee.EditValue = Nothing
         Me.seWorkDays.Text = 0
         Me.seQuantity.Text = 0
-        ' Me.cmbWorkType.Focus()
+        Me.cmbWorkType.Focus()
 
     End Sub
 #End Region
 
-    '#Region "Dispay Employee Info"
-    '    Public Sub DisplayEmployeeInfo()
 
-    '        Try
-
-    '            With iStockEmployers
-
-    '                .EmployerNo = Me.seEmployeeCode.Text.Trim
-    '                .EmployeeDetailsGetByEmployerNo()
-
-    '                lblID.Text = .EmployerID
-
-
-    '                teEmployeeName.Text = .EmployerName
-    '                seWorkDays.Focus()
-
-
-    '            End With
-
-    '            If lblID.Text = String.Empty Then
-    '                MsgBox("Invalid Reg No")
-    '                seEmployeeCode.Focus()
-
-    '            End If
-
-
-    '        Catch ex As Exception
-    '            MessageError(ex.ToString)
-
-    '        End Try
-
-    '    End Sub
-    '#End Region
 
 #Region "Delete Daily Working"
     Private Sub DeleteDailyWorking()
@@ -379,40 +341,32 @@ Public Class frmDailyWorkings
 
     End Sub
 #End Region
-    
-    ''Private Sub seEmployeeCode_KeyPress(sender As Object, e As KeyPressEventArgs) Handles seEmployeeCode.KeyPress
-    ''    If e.KeyChar = Microsoft.VisualBasic.Chr(13) Then
-    ''        Me.DisplayEmployeeInfo()
-    ''    End If
-    ''End Sub
 
-    Private Sub deWorkingDate_EditValueChanged(sender As Object, e As EventArgs) Handles deWorkingDate.EditValueChanged
+
+
+    Private Sub deWorkingDate_EditValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles deWorkingDate.EditValueChanged
         Me.DailyWorkingGetByDate()
 
     End Sub
 
-   
-    'Private Sub gcDailyWorking_DoubleClick(sender As Object, e As EventArgs) Handles gcDailyWorking.DoubleClick
-    '    lblOTRate.Text = Me.gvDailyWorking.GetFocusedRowCellValue(GridColumn1)
-    '    Me.bbDelete.Enabled = True
 
-    'End Sub
 
-    Private Sub bbDelete_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbDelete.ItemClick
+
+    Private Sub bbDelete_ItemClick(ByVal sender As Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbDelete.ItemClick
         Me.DeleteDailyWorking()
     End Sub
 
     Private Sub leEmployee_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles leEmployee.EditValueChanged
-        teEmployeeName.Text = leEmployee.GetColumnValue("EmployerName")
+        'teEmployeeName.Text = leEmployee.GetColumnValue("EmployerName")
     End Sub
 
     Private Sub leWorkCategory_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles leWorkCategory.EditValueChanged
 
     End Sub
 
-    Private Sub seQuantity_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles seQuantity.Leave
+    Private Sub seQuantity_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs)
         'MsgBox("Leave working")
-        Me.SaveDailyWorking()
+        'Me.SaveDailyWorking()
         'Me.ClearFormData()
 
     End Sub
@@ -423,11 +377,77 @@ Public Class frmDailyWorkings
     End Sub
 
     Private Sub RepositoryItemButtonEdit1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RepositoryItemButtonEdit1.Click
-        '    MsgBox((Me.gvDailyWorking.GetFocusedRowCellValue(GridColumn1)))
+
         lblDeleteID.Text = (Me.gvDailyWorking.GetFocusedRowCellValue(GridColumn1))
-        Me.DeleteDailyWorking()
-        Me.DailyWorkingGetByDate()
+
+        If Not lblDeleteID.Text = String.Empty Then
+            Dim frm As New frmDeleteYesNo
+            frm.lblTitle.Text = CWB_DELETE_CONFIRMATION_TITLELABEL
+            frm.lblDescription.ForeColor = Color.Red
+            frm.peImage.Image = iStock.My.Resources.Resources.ImgDelete
+            frm.lblDescription.Text = CWB_DELETE_CONFIRMATION_DESCRIPTIONLABEL
+            frm.Text = CWB_DELETE_CONFIRMATION_TITLE
+
+            If frm.ShowDialog = Windows.Forms.DialogResult.Yes Then
+                Me.DeleteDailyWorking()
+                Me.DailyWorkingGetByDate()
+
+            End If
+        End If
+
+
+
 
     End Sub
 
+    Private Sub XtraTabControl1_SelectedPageChanged(ByVal sender As System.Object, ByVal e As DevExpress.XtraTab.TabPageChangedEventArgs) Handles XtraTabControl1.SelectedPageChanged
+        Select Case e.Page.TabControl.SelectedTabPageIndex
+            Case 0
+                Me.ShowToolButtonsOnNewRecordTabChange()
+            Case 1
+                Me.ShowToolButtonsOnHistoryTabChange()
+
+
+        End Select
+    End Sub
+
+    Public Sub ShowToolButtonsOnNewRecordTabChange()
+
+        Me.bbDisplaySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        Me.bbNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        'Me.bbDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+    End Sub
+
+    Public Sub ShowToolButtonsOnHistoryTabChange()
+
+        Me.bbDisplaySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        Me.bbRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        Me.bbPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        Me.bbSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+    End Sub
+
+    Private Sub seQuantity_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles seQuantity.KeyPress
+
+        If e.KeyChar = Chr(13) Then
+            If dxvpCompany.Validate Then
+                Me.SaveDailyWorking()
+            End If
+        End If
+
+    End Sub
+
+    Private Sub frmDailyWorkings_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles MyBase.KeyPress
+        If e.KeyChar = Chr(27) Then
+            Me.Close()
+        End If
+    End Sub
+
+    Private Sub gvAllWorkings_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gvAllWorkings.DoubleClick
+
+    End Sub
 End Class
