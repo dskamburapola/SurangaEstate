@@ -53,13 +53,9 @@ Public Class frmSettings
 
     Private Sub bbSave_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbSave.ItemClick
         Try
-            If dxvpSettings.Validate Then
 
-                Me.SaveSettigs()
 
-            End If
-
-          
+            Me.SaveSettigs()
 
 
         Catch ex As Exception
@@ -161,7 +157,7 @@ Public Class frmSettings
 #End Region
 
 #Region "Lookup Events"
-    Private Sub leAbbriviationCode_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles leAbbriviationCode.ButtonClick
+    Private Sub leAbbriviationCode_ButtonClick(ByVal sender As Object, ByVal e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles leAbbriviationCode.ButtonClick
         Select Case e.Button.Index
             Case 1
                 Me.LayoutControlGroup2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
@@ -192,7 +188,7 @@ Public Class frmSettings
 
 #Region "Button Events"
 
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    Private Sub btnCancel_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnCancel.Click
         teAbbreviationCode.Text = String.Empty
         teAbbreviationDesc.Text = String.Empty
 
@@ -200,7 +196,7 @@ Public Class frmSettings
 
     End Sub
 
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Sub btnSave_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnSave.Click
         If dxvpSettings.Validate Then
 
             SaveAbbreviations()
@@ -220,7 +216,7 @@ Public Class frmSettings
     End Sub
 
 #End Region
-    
+
 #Region "Save Abbreviations"
     Private Sub SaveAbbreviations()
 
@@ -240,7 +236,7 @@ Public Class frmSettings
             MessageError(ex.ToString)
         End Try
 
-      
+
 
 
 
@@ -268,8 +264,8 @@ Public Class frmSettings
     End Sub
 #End Region
 
-  
-    
+
+
     Private Sub seDayRate_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles seDayRate.EditValueChanged
 
     End Sub

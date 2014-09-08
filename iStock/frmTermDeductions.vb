@@ -94,7 +94,7 @@ Public Class frmTermDeductions
         Me.bbRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         Me.bbDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         Me.bbRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        Me.bbNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+
     End Sub
 #End Region
 
@@ -106,12 +106,10 @@ Public Class frmTermDeductions
         dt = New DataTable("Terms")
         ds = New DataSet
         dt.Columns.Add("TDMonthName") '0
-        dt.Columns.Add("TDInsAmount") '1
-        
+        dt.Columns.Add("TDInsAmount") '1        
 
         ds.Tables.Add(dt)
-        gcTermDeductions.DataSource = ds
-        gcTermDeductions.DataMember = "Terms"
+
 
 
         '  Me.gvPurchase.Columns("Stock Value").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
@@ -133,7 +131,10 @@ Public Class frmTermDeductions
          'If dxvpCompany.Validate Then
         '    '      Me.SaveCompany()
         'End If
-        Me.SaveTermDeductions()
+        If dxvpCompany.Validate Then
+            Me.SaveTermDeductions()
+        End If
+
 
     End Sub
 #End Region
@@ -144,7 +145,7 @@ Public Class frmTermDeductions
         Try
 
             Me.leEmployeeCode.Properties.DataSource = iStockDailyWorking.GetEmployeeForWork.Tables(0)
-            Me.leEmployeeCode.Properties.DisplayMember = "EmployerNo"
+            Me.leEmployeeCode.Properties.DisplayMember = "EmployerName"
             Me.leEmployeeCode.Properties.ValueMember = "EmployerID"
 
 
@@ -201,11 +202,9 @@ Public Class frmTermDeductions
                 .CreatedBy = UserID
                 .UpdatedBy = UserID
 
-
-
                 .InsertTermDeductions(_DB, _Transaction)
 
-                For i As Integer = 0 To Me.gvTermDeductions.RowCount
+                For i As Integer = 0 To Me.gvTermDeductions.RowCount - 1
 
                     If Not gvTermDeductions.GetRowCellDisplayText(i, gvTermDeductions.Columns(0)) = "" Then
                         .TermDeductionID = .NewTermDeductionID
@@ -225,8 +224,6 @@ Public Class frmTermDeductions
             frm.lblTitle.Text = CWB_SAVESUCCESS_CONFIRMATION_TITLELABEL
             frm.lblDescription.Text = CWB_SAVESUCCESS_CONFIRMATION_DESCRIPTIONLABEL
             frm.ShowDialog()
-
-
 
 
         Catch ex As Exception
@@ -276,33 +273,17 @@ Public Class frmTermDeductions
 
     End Sub
 
-    Private Sub deStartMonth_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles deStartMonth.Leave
-        gcTermDeductions.DataSource = Nothing
-        Me.CreateDataTable()
+    Private Sub deStartMonth_Leave(ByVal sender As Object, ByVal e As System.EventArgs)
 
-        dtx = Me.deStartMonth.EditValue
-        dtm = dtx.AddMonths(-1)
-
-        '  MsgBox(dtm)
-        For i As Integer = 1 To Convert.ToInt64(Me.sePeriod.EditValue)
-            dr = dt.NewRow
-
-            dr(0) = Format(dtm.AddMonths(1), "MMM-yyyy")
-            ' dr(0) = ym
-            dr(1) = Convert.ToDecimal(seAmount.EditValue) / Convert.ToDecimal(sePeriod.EditValue)
-            dt.Rows.Add(dr)
-
-            dtm = dtm.AddMonths(1)
-        Next
 
     End Sub
 
     Private Sub XtraTabControl1_SelectedPageChanged(ByVal sender As System.Object, ByVal e As DevExpress.XtraTab.TabPageChangedEventArgs) Handles XtraTabControl1.SelectedPageChanged
         Select Case e.Page.TabControl.SelectedTabPageIndex
             Case 0
-                '  Me.ShowToolButtonsOnNewRecordTabChange()
+                Me.ShowToolButtonsOnNewRecordTabChange()
             Case 1
-                ' Me.ShowToolButtonsOnHistoryTabChange()
+                Me.ShowToolButtonsOnHistoryTabChange()
                 Me.GetTermDeductions()
 
 
@@ -378,11 +359,9 @@ Public Class frmTermDeductions
 
         deIssueDate.EditValue = Date.Today
         cmbDeductionType.Text = String.Empty
-        leEmployeeCode.EditValue = 0
-        leEmployeeCode.Text = String.Empty
+        leEmployeeCode.EditValue = Nothing
         teEmployeeName.Text = String.Empty
         deStartMonth.EditValue = Date.Today()
-
         seAmount.Text = 0
         sePeriod.Text = 0
         gcTermDeductions.DataSource = Nothing
@@ -391,5 +370,56 @@ Public Class frmTermDeductions
     End Sub
 #End Region
 
+
+    Private Sub deStartMonth_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles deStartMonth.KeyPress
+        If e.KeyChar = Chr(13) Then
+
+            gcTermDeductions.DataSource = Nothing
+            Me.CreateDataTable()
+
+            dtx = Me.deStartMonth.EditValue
+            dtm = dtx.AddMonths(-1)
+
+            '  MsgBox(dtm)
+            For i As Integer = 1 To Convert.ToInt64(Me.sePeriod.EditValue)
+                dr = dt.NewRow
+
+                dr(0) = Format(dtm.AddMonths(1), "MMM-yyyy")
+                ' dr(0) = ym
+                dr(1) = Convert.ToDecimal(seAmount.EditValue) / Convert.ToDecimal(sePeriod.EditValue)
+                dt.Rows.Add(dr)
+
+                dtm = dtm.AddMonths(1)
+            Next
+
+            gcTermDeductions.DataSource = ds.Tables(0)
+
+
+        End If
+    End Sub
+
+#Region "Show Tool Buttons On History Tab change"
+    Public Sub ShowToolButtonsOnHistoryTabChange()
+
+        Me.bbDisplaySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        Me.bbRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        Me.bbPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        Me.bbSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+    End Sub
+#End Region
+
+#Region "Show Tool Buttons On New Record Tab change"
+    Public Sub ShowToolButtonsOnNewRecordTabChange()
+
+        Me.bbDisplaySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        Me.bbNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        Me.bbDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+    End Sub
+#End Region
 
 End Class

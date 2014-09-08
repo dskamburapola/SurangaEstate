@@ -423,7 +423,7 @@ Public Class frmDailyWorkings
 
     Public Sub ShowToolButtonsOnHistoryTabChange()
 
-        Me.bbDisplaySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        'Me.bbDisplaySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
         Me.bbRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
         Me.bbPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
         Me.bbSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never

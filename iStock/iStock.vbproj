@@ -647,6 +647,7 @@
     <Content Include="Images\Red.ico" />
     <Content Include="Images\Refresh.ico" />
     <None Include="Images\remove.png" />
+    <Content Include="Images\remove.jpg" />
     <Content Include="Images\return.png" />
     <None Include="Images\rights.png" />
     <Content Include="Images\Row.png" />
