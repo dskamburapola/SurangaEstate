@@ -163,7 +163,7 @@ Public Class iStockTermDeductions
         Try
             ' Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
 
-            Dim DBC As DbCommand = db.GetStoredProcCommand("")
+            Dim DBC As DbCommand = db.GetStoredProcCommand("TermDeductions_Update")
 
             db.AddInParameter(DBC, "@TermDeductionID", DbType.Int64, Me.TermDeductionID)
             db.AddInParameter(DBC, "@TDDate", DbType.Date, Me.TDDate)
@@ -303,10 +303,10 @@ Public Class iStockTermDeductions
 #End Region
 
 #Region "Delete Term deduction description"
-    Public Function DeleteTermDeductionDescriptionByID(ByVal db As Database, ByVal transaction As DbTransaction) As Boolean
+    Public Function DeleteTermDeductionDescriptionByTermDeductionID(ByVal db As Database, ByVal transaction As DbTransaction) As Boolean
         Try
 
-            Dim DBC As DbCommand = DB.GetStoredProcCommand(TERMDEDUCTIONDESCRIPTION_DELETE)
+            Dim DBC As DbCommand = db.GetStoredProcCommand("TermDeductionDescription_DeleteByTermDeductionID")
             DB.AddInParameter(DBC, "@TermDeductionID ", DbType.Int64, Me.TermDeductionID)
             DB.ExecuteNonQuery(DBC, transaction)
             Return True

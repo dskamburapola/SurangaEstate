@@ -375,6 +375,4 @@ Public Class frmEmployers
 
 #End Region
 
-
-  
 End Class

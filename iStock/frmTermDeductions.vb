@@ -3,7 +3,6 @@ Imports System.Data
 Imports System.Data.Common
 Imports Microsoft.Practices.EnterpriseLibrary.Common
 Imports Microsoft.Practices.EnterpriseLibrary.Data
-
 Imports iStockCommon.iStockEmployers
 Imports iStockCommon.iStockTermDeductions
 Imports iStockCommon.iStockConstants
@@ -172,6 +171,22 @@ Public Class frmTermDeductions
         End If
     End Sub
 
+    Private Sub bbRefresh_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbRefresh.ItemClick
+        With gvTermDeductioDetails
+            .ClearColumnsFilter()
+            .ClearGrouping()
+            .ClearSelection()
+            .ClearSorting()
+        End With
+    End Sub
+
+    Private Sub bbPrint_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbPrint.ItemClick
+        PrintPreview(gcTermDeductioDetails, "Festival Advance Report")
+    End Sub
+
+    Private Sub bbDisplaySelected_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbDisplaySelected.ItemClick
+        Me.DisplayRecord()
+    End Sub
 #End Region
 
 #Region "Get Employee For Work"
@@ -280,7 +295,6 @@ Public Class frmTermDeductions
     End Sub
 #End Region
 
-
 #Region "Update Term Deductions"
     Private Sub UpdateTermDeductions()
 
@@ -310,12 +324,12 @@ Public Class frmTermDeductions
 
                 .UpdateTermDeductions(_DB, _Transaction)
 
-                .DeleteTermDeductionDescriptionByID(_DB, _Transaction)
+                .DeleteTermDeductionDescriptionByTermDeductionID(_DB, _Transaction)
 
                 For i As Integer = 0 To Me.gvTermDeductions.RowCount - 1
 
                     If Not gvTermDeductions.GetRowCellDisplayText(i, gvTermDeductions.Columns(0)) = "" Then
-                        .TermDeductionID = .NewTermDeductionID
+                        .TermDeductionID = .TermDeductionID
                         .TDMonthName = Me.gvTermDeductions.GetRowCellDisplayText(i, GridColumn1)
                         .TDInsAmount = Me.gvTermDeductions.GetRowCellDisplayText(i, GridColumn2)
 
@@ -353,15 +367,43 @@ Public Class frmTermDeductions
     End Sub
 #End Region
 
+#Region "Editor events"
+
     Private Sub leEmployeeCode_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles leEmployeeCode.EditValueChanged
         teEmployeeName.Text = leEmployeeCode.GetColumnValue("EmployerName")
     End Sub
 
-    Private Sub sePeriod_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sePeriod.Leave
+    Private Sub deStartMonth_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles deStartMonth.KeyPress
+        If e.KeyChar = Chr(13) Then
+
+            gcTermDeductions.DataSource = Nothing
+            Me.CreateDataTable()
+
+            dtx = Me.deStartMonth.EditValue
+            dtm = dtx.AddMonths(-1)
+
+            '  MsgBox(dtm)
+            For i As Integer = 1 To Convert.ToInt64(Me.sePeriod.EditValue)
+                dr = dt.NewRow
+
+                dr(0) = Format(dtm.AddMonths(1), "MMM-yyyy")
+                ' dr(0) = ym
+                dr(1) = Convert.ToDecimal(seAmount.EditValue) / Convert.ToDecimal(sePeriod.EditValue)
+                dt.Rows.Add(dr)
+
+                dtm = dtm.AddMonths(1)
+            Next
+
+            gcTermDeductions.DataSource = ds.Tables(0)
 
 
-
+        End If
     End Sub
+
+
+#End Region
+
+#Region "Tab control events"
 
     Private Sub XtraTabControl1_SelectedPageChanged(ByVal sender As System.Object, ByVal e As DevExpress.XtraTab.TabPageChangedEventArgs) Handles XtraTabControl1.SelectedPageChanged
         Select Case e.Page.TabControl.SelectedTabPageIndex
@@ -376,9 +418,16 @@ Public Class frmTermDeductions
 
     End Sub
 
+#End Region
+
+#Region "Grid Events"
+
     Private Sub gcTermDeductioDetails_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gcTermDeductioDetails.DoubleClick
         Me.DisplayRecord()
     End Sub
+
+
+#End Region
 
 #Region "Dispay Record"
     Public Sub DisplayRecord()
@@ -453,34 +502,6 @@ Public Class frmTermDeductions
     End Sub
 #End Region
 
-
-    Private Sub deStartMonth_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles deStartMonth.KeyPress
-        If e.KeyChar = Chr(13) Then
-
-            gcTermDeductions.DataSource = Nothing
-            Me.CreateDataTable()
-
-            dtx = Me.deStartMonth.EditValue
-            dtm = dtx.AddMonths(-1)
-
-            '  MsgBox(dtm)
-            For i As Integer = 1 To Convert.ToInt64(Me.sePeriod.EditValue)
-                dr = dt.NewRow
-
-                dr(0) = Format(dtm.AddMonths(1), "MMM-yyyy")
-                ' dr(0) = ym
-                dr(1) = Convert.ToDecimal(seAmount.EditValue) / Convert.ToDecimal(sePeriod.EditValue)
-                dt.Rows.Add(dr)
-
-                dtm = dtm.AddMonths(1)
-            Next
-
-            gcTermDeductions.DataSource = ds.Tables(0)
-
-
-        End If
-    End Sub
-
 #Region "Show Tool Buttons On History Tab change"
     Public Sub ShowToolButtonsOnHistoryTabChange()
 
@@ -517,6 +538,7 @@ Public Class frmTermDeductions
     End Sub
 
 #End Region
+
 
 
 End Class

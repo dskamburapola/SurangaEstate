@@ -41,8 +41,11 @@ Public Class frmCashAdvance
         Me.GetEmployeeForWork()
         Me.deIssueDate.Focus()
 
+        Me.deStartDate.EditValue = Date.Today
+        Me.deEndDate.EditValue = Date.Today
 
     End Sub
+
     Private Sub frmCompany_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles MyBase.KeyPress
         If e.KeyChar = Microsoft.VisualBasic.Chr(27) Then
             Me.Close()
@@ -54,11 +57,12 @@ Public Class frmCashAdvance
     Public Sub HideToolButtonsOnLoad()
 
         Me.bbDisplaySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         Me.bbRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        Me.bbDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         Me.bbRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        Me.bbNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+
     End Sub
+
 #End Region
 
 #Region "Bar Button Events"
@@ -74,6 +78,34 @@ Public Class frmCashAdvance
 
 
     End Sub
+
+    Private Sub bbNew_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbNew.ItemClick
+        Me.ClearFormData()
+    End Sub
+
+    Private Sub bbDisplaySelected_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbDisplaySelected.ItemClick
+
+    End Sub
+
+    Private Sub bbDelete_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbDelete.ItemClick
+
+    End Sub
+
+    Private Sub bbRefresh_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbRefresh.ItemClick
+        With gvCashAdvance
+            .ClearColumnsFilter()
+            .ClearGrouping()
+            .ClearSelection()
+            .ClearSorting()
+        End With
+
+    End Sub
+
+    Private Sub bbPrint_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbPrint.ItemClick
+        PrintPreview(gcCashAdvance, "Cash Advanec Report")
+
+    End Sub
+
 #End Region
 
 #Region "Get Employee For Work"
@@ -241,6 +273,21 @@ Public Class frmCashAdvance
     End Sub
 #End Region
 
+#Region "Tab Events"
+    Private Sub xTab1_SelectedPageChanged(ByVal sender As System.Object, ByVal e As DevExpress.XtraTab.TabPageChangedEventArgs) Handles xTab1.SelectedPageChanged
+        Select Case e.Page.TabControl.SelectedTabPageIndex
+            Case 0
+                Me.ShowToolButtonsOnNewRecordTabChange()
+            Case 1
+                Me.ShowToolButtonsOnHistoryTabChange()
+                'Me.PopulateGrid()
+
+        End Select
+    End Sub
+#End Region
+
+#Region "Editor Events"
+
     Private Sub leEmployee_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
         teEmployeeName.Text = leEmployee.GetColumnValue("EmployerName")
     End Sub
@@ -258,8 +305,6 @@ Public Class frmCashAdvance
 
     End Sub
 
-   
-
     Private Sub sePaybleAmount_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If Asc(e.KeyChar) = 13 Then
             Me.SaveCashAdvance()
@@ -271,4 +316,31 @@ Public Class frmCashAdvance
         Me.CashAdvanceGetAllByDates()
     End Sub
 
+#End Region
+
+#Region "Show Tool Buttons On History Tab change"
+    Public Sub ShowToolButtonsOnHistoryTabChange()
+
+        Me.bbDisplaySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        Me.bbRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        Me.bbPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        Me.bbSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+    End Sub
+#End Region
+
+#Region "Show Tool Buttons On New Record Tab change"
+    Public Sub ShowToolButtonsOnNewRecordTabChange()
+
+        Me.bbDisplaySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        Me.bbNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        Me.bbDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+    End Sub
+#End Region
+
+   
 End Class
