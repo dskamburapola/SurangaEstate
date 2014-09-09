@@ -158,6 +158,29 @@ Public Class iStockTermDeductions
     End Sub
 #End Region
 
+#Region "Insert TermDeductions"
+    Public Sub UpdateTermDeductions(ByVal db As Database, ByVal transaction As DbTransaction)
+        Try
+            ' Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+
+            Dim DBC As DbCommand = db.GetStoredProcCommand("")
+
+            db.AddInParameter(DBC, "@TermDeductionID", DbType.Int64, Me.TermDeductionID)
+            db.AddInParameter(DBC, "@TDDate", DbType.Date, Me.TDDate)
+            db.AddInParameter(DBC, "@TDType", DbType.String, Me.TDType)
+            db.AddInParameter(DBC, "@EmployerID", DbType.Int64, Me.EmployerID)
+            db.AddInParameter(DBC, "@TDAmount", DbType.Decimal, Me.TDAmount)
+            db.AddInParameter(DBC, "@TDInstallments", DbType.Int64, Me.TDInstallments)
+            db.AddInParameter(DBC, "@UpdatedBy", DbType.Int64, Me.UpdatedBy)
+
+            db.ExecuteNonQuery(DBC, transaction)
+
+        Catch ex As Exception
+            Throw
+        End Try
+    End Sub
+#End Region
+
 #Region "Insert TermDeductionsDescription"
     Public Sub InsertTermDeductionsDescription(ByVal db As Database, ByVal transaction As DbTransaction)
         Try
@@ -263,4 +286,35 @@ Public Class iStockTermDeductions
         End Try
     End Function
 #End Region
+
+#Region "Delete Term deduction"
+    Public Function DeleteTermDescriptionByID() As Boolean
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(TERMDEDUCTIONS_DELETE)
+            DB.AddInParameter(DBC, "@TermDeductionID ", DbType.Int64, Me.TermDeductionID)
+            DB.ExecuteNonQuery(DBC)
+            Return True
+
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+#End Region
+
+#Region "Delete Term deduction description"
+    Public Function DeleteTermDeductionDescriptionByID(ByVal db As Database, ByVal transaction As DbTransaction) As Boolean
+        Try
+
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(TERMDEDUCTIONDESCRIPTION_DELETE)
+            DB.AddInParameter(DBC, "@TermDeductionID ", DbType.Int64, Me.TermDeductionID)
+            DB.ExecuteNonQuery(DBC, transaction)
+            Return True
+
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+#End Region
+
 End Class

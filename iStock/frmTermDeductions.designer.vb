@@ -30,12 +30,12 @@ Partial Class frmTermDeductions
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar2 = New DevExpress.XtraBars.Bar()
         Me.bbSave = New DevExpress.XtraBars.BarButtonItem()
-        Me.bbClose = New DevExpress.XtraBars.BarButtonItem()
         Me.bbNew = New DevExpress.XtraBars.BarButtonItem()
         Me.bbDisplaySelected = New DevExpress.XtraBars.BarButtonItem()
         Me.bbDelete = New DevExpress.XtraBars.BarButtonItem()
         Me.bbRefresh = New DevExpress.XtraBars.BarButtonItem()
         Me.bbPrint = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbClose = New DevExpress.XtraBars.BarButtonItem()
         Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
@@ -155,12 +155,6 @@ Partial Class frmTermDeductions
         Me.bbSave.Id = 0
         Me.bbSave.Name = "bbSave"
         '
-        'bbClose
-        '
-        Me.bbClose.Caption = "Close"
-        Me.bbClose.Id = 1
-        Me.bbClose.Name = "bbClose"
-        '
         'bbNew
         '
         Me.bbNew.Caption = "BarButtonItem1"
@@ -191,6 +185,12 @@ Partial Class frmTermDeductions
         Me.bbPrint.Id = 6
         Me.bbPrint.Name = "bbPrint"
         Me.bbPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        '
+        'bbClose
+        '
+        Me.bbClose.Caption = "Close"
+        Me.bbClose.Id = 1
+        Me.bbClose.Name = "bbClose"
         '
         'barDockControlTop
         '
@@ -312,6 +312,7 @@ Partial Class frmTermDeductions
         Me.deStartMonth.Location = New System.Drawing.Point(426, 77)
         Me.deStartMonth.MenuManager = Me.BarManager1
         Me.deStartMonth.Name = "deStartMonth"
+        Me.deStartMonth.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[False]
         Me.deStartMonth.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deStartMonth.Properties.DisplayFormat.FormatString = "MMM-yy"
         Me.deStartMonth.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
@@ -334,11 +335,13 @@ Partial Class frmTermDeductions
         Me.sePeriod.MenuManager = Me.BarManager1
         Me.sePeriod.Name = "sePeriod"
         Me.sePeriod.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.sePeriod.Properties.MaxValue = New Decimal(New Integer() {10000000, 0, 0, 0})
         Me.sePeriod.Size = New System.Drawing.Size(179, 20)
         Me.sePeriod.StyleController = Me.LayoutControl1
         Me.sePeriod.TabIndex = 4
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
         ConditionValidationRule2.ErrorText = "Require"
+        ConditionValidationRule2.Value1 = CType(0, Long)
         Me.dxvpCompany.SetValidationRule(Me.sePeriod, ConditionValidationRule2)
         '
         'seAmount
@@ -349,6 +352,7 @@ Partial Class frmTermDeductions
         Me.seAmount.MenuManager = Me.BarManager1
         Me.seAmount.Name = "seAmount"
         Me.seAmount.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.seAmount.Properties.MaxValue = New Decimal(New Integer() {10000000, 0, 0, 0})
         Me.seAmount.Size = New System.Drawing.Size(179, 20)
         Me.seAmount.StyleController = Me.LayoutControl1
         Me.seAmount.TabIndex = 3
@@ -393,6 +397,7 @@ Partial Class frmTermDeductions
         Me.deIssueDate.Location = New System.Drawing.Point(167, 77)
         Me.deIssueDate.MenuManager = Me.BarManager1
         Me.deIssueDate.Name = "deIssueDate"
+        Me.deIssueDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[False]
         Me.deIssueDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deIssueDate.Properties.DisplayFormat.FormatString = "dd-MMM-yy"
         Me.deIssueDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
@@ -587,6 +592,8 @@ Partial Class frmTermDeductions
         Me.gvTermDeductioDetails.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14})
         Me.gvTermDeductioDetails.GridControl = Me.gcTermDeductioDetails
         Me.gvTermDeductioDetails.Name = "gvTermDeductioDetails"
+        Me.gvTermDeductioDetails.OptionsView.ShowAutoFilterRow = True
+        Me.gvTermDeductioDetails.OptionsView.ShowFooter = True
         '
         'GridColumn3
         '
@@ -595,18 +602,18 @@ Partial Class frmTermDeductions
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.OptionsColumn.AllowEdit = False
         Me.GridColumn3.OptionsColumn.AllowFocus = False
-        Me.GridColumn3.Visible = True
-        Me.GridColumn3.VisibleIndex = 0
         '
         'GridColumn4
         '
         Me.GridColumn4.Caption = "Issued Date"
+        Me.GridColumn4.DisplayFormat.FormatString = "dd-MMM-yy"
+        Me.GridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.GridColumn4.FieldName = "TDDate"
         Me.GridColumn4.Name = "GridColumn4"
         Me.GridColumn4.OptionsColumn.AllowEdit = False
         Me.GridColumn4.OptionsColumn.AllowFocus = False
         Me.GridColumn4.Visible = True
-        Me.GridColumn4.VisibleIndex = 1
+        Me.GridColumn4.VisibleIndex = 0
         '
         'GridColumn5
         '
@@ -616,7 +623,7 @@ Partial Class frmTermDeductions
         Me.GridColumn5.OptionsColumn.AllowEdit = False
         Me.GridColumn5.OptionsColumn.AllowFocus = False
         Me.GridColumn5.Visible = True
-        Me.GridColumn5.VisibleIndex = 2
+        Me.GridColumn5.VisibleIndex = 1
         '
         'GridColumn6
         '
@@ -625,8 +632,6 @@ Partial Class frmTermDeductions
         Me.GridColumn6.Name = "GridColumn6"
         Me.GridColumn6.OptionsColumn.AllowEdit = False
         Me.GridColumn6.OptionsColumn.AllowFocus = False
-        Me.GridColumn6.Visible = True
-        Me.GridColumn6.VisibleIndex = 3
         '
         'GridColumn7
         '
@@ -636,7 +641,7 @@ Partial Class frmTermDeductions
         Me.GridColumn7.OptionsColumn.AllowEdit = False
         Me.GridColumn7.OptionsColumn.AllowFocus = False
         Me.GridColumn7.Visible = True
-        Me.GridColumn7.VisibleIndex = 4
+        Me.GridColumn7.VisibleIndex = 2
         '
         'GridColumn8
         '
@@ -646,17 +651,20 @@ Partial Class frmTermDeductions
         Me.GridColumn8.OptionsColumn.AllowEdit = False
         Me.GridColumn8.OptionsColumn.AllowFocus = False
         Me.GridColumn8.Visible = True
-        Me.GridColumn8.VisibleIndex = 5
+        Me.GridColumn8.VisibleIndex = 3
         '
         'GridColumn9
         '
         Me.GridColumn9.Caption = "Amount"
+        Me.GridColumn9.DisplayFormat.FormatString = "{0:N2}"
+        Me.GridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.GridColumn9.FieldName = "TDAmount"
         Me.GridColumn9.Name = "GridColumn9"
         Me.GridColumn9.OptionsColumn.AllowEdit = False
         Me.GridColumn9.OptionsColumn.AllowFocus = False
+        Me.GridColumn9.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TDAmount", "{0:N2}")})
         Me.GridColumn9.Visible = True
-        Me.GridColumn9.VisibleIndex = 6
+        Me.GridColumn9.VisibleIndex = 4
         '
         'GridColumn10
         '
@@ -666,7 +674,7 @@ Partial Class frmTermDeductions
         Me.GridColumn10.OptionsColumn.AllowEdit = False
         Me.GridColumn10.OptionsColumn.AllowFocus = False
         Me.GridColumn10.Visible = True
-        Me.GridColumn10.VisibleIndex = 7
+        Me.GridColumn10.VisibleIndex = 5
         '
         'GridColumn11
         '
@@ -675,8 +683,6 @@ Partial Class frmTermDeductions
         Me.GridColumn11.Name = "GridColumn11"
         Me.GridColumn11.OptionsColumn.AllowEdit = False
         Me.GridColumn11.OptionsColumn.AllowFocus = False
-        Me.GridColumn11.Visible = True
-        Me.GridColumn11.VisibleIndex = 8
         '
         'GridColumn12
         '
@@ -685,8 +691,6 @@ Partial Class frmTermDeductions
         Me.GridColumn12.Name = "GridColumn12"
         Me.GridColumn12.OptionsColumn.AllowEdit = False
         Me.GridColumn12.OptionsColumn.AllowFocus = False
-        Me.GridColumn12.Visible = True
-        Me.GridColumn12.VisibleIndex = 9
         '
         'GridColumn13
         '
@@ -695,8 +699,6 @@ Partial Class frmTermDeductions
         Me.GridColumn13.Name = "GridColumn13"
         Me.GridColumn13.OptionsColumn.AllowEdit = False
         Me.GridColumn13.OptionsColumn.AllowFocus = False
-        Me.GridColumn13.Visible = True
-        Me.GridColumn13.VisibleIndex = 10
         '
         'GridColumn14
         '
@@ -705,8 +707,6 @@ Partial Class frmTermDeductions
         Me.GridColumn14.Name = "GridColumn14"
         Me.GridColumn14.OptionsColumn.AllowEdit = False
         Me.GridColumn14.OptionsColumn.AllowFocus = False
-        Me.GridColumn14.Visible = True
-        Me.GridColumn14.VisibleIndex = 11
         '
         'LayoutControlGroup2
         '

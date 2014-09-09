@@ -10,12 +10,16 @@ Imports iStockCommon.iStockConstants
 Imports iStockCommon.iStockDailyWorking
 
 Public Class frmTermDeductions
+
+#Region "Variables"
+
     Dim dtm, dtx As Date
     Dim dt As DataTable
     Dim dr As DataRow
     Dim ds As DataSet
     Dim ym As String
 
+#End Region
 
 #Region "Properties"
     Private _iStockEmployers As iStockCommon.iStockEmployers
@@ -105,8 +109,8 @@ Public Class frmTermDeductions
 
         dt = New DataTable("Terms")
         ds = New DataSet
-        dt.Columns.Add("TDMonthName") '0
-        dt.Columns.Add("TDInsAmount") '1        
+        dt.Columns.Add("TDMonthName")
+        dt.Columns.Add("TDInsAmount", System.Type.GetType("System.Decimal"))
 
         ds.Tables.Add(dt)
 
@@ -126,17 +130,48 @@ Public Class frmTermDeductions
 
     Private Sub bbSave_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbSave.ItemClick
 
-        'MsgBox(deStartMonth.EditValue & "  +  " & deStartMonth.Text)
-
-         'If dxvpCompany.Validate Then
-        '    '      Me.SaveCompany()
-        'End If
         If dxvpCompany.Validate Then
-            Me.SaveTermDeductions()
+
+            If lblID.Text = String.Empty Then
+                Me.SaveTermDeductions()
+            Else
+                Dim frm As New frmUpdateYesNo
+                frm.peImage.Image = iStock.My.Resources.Resources.ImgUpdate
+                frm.Text = CWB_UPDATE_CONFIRMATION_TITLE
+                frm.lblTitle.Text = CWB_UPDATE_CONFIRMATION_TITLELABEL
+                frm.lblDescription.Text = CWB_UPDATE_CONFIRMATION_DESCRIPTIONLABEL
+
+
+                If frm.ShowDialog = Windows.Forms.DialogResult.Yes Then
+                    Me.UpdateTermDeductions()
+                    Me.ClearFormData()
+                End If
+
+            End If
         End If
 
-
     End Sub
+
+    Private Sub bbNew_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbNew.ItemClick
+        Me.ClearFormData()
+    End Sub
+
+    Private Sub bbDelete_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbDelete.ItemClick
+        If Not lblID.Text = String.Empty Then
+            Dim frm As New frmDeleteYesNo
+            frm.lblTitle.Text = CWB_DELETE_CONFIRMATION_TITLELABEL
+            frm.lblDescription.ForeColor = Color.Red
+            frm.peImage.Image = iStock.My.Resources.Resources.ImgDelete
+            frm.lblDescription.Text = CWB_DELETE_CONFIRMATION_DESCRIPTIONLABEL
+            frm.Text = CWB_DELETE_CONFIRMATION_TITLE
+
+            If frm.ShowDialog = Windows.Forms.DialogResult.Yes Then
+                Me.DeleteRecord()
+                Me.ClearFormData()
+            End If
+        End If
+    End Sub
+
 #End Region
 
 #Region "Get Employee For Work"
@@ -164,7 +199,7 @@ Public Class frmTermDeductions
         Try
 
             Me.gcTermDeductioDetails.DataSource = iStockTermDeductions.GetTermDeductions.Tables(0)
-           
+
 
         Catch ex As Exception
 
@@ -245,35 +280,85 @@ Public Class frmTermDeductions
     End Sub
 #End Region
 
-    'Private Sub SimpleButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-    '    ' MsgBox(dtm.AddMonths(1))
 
-    '    For i As Integer = 1 To Convert.ToInt64(Me.seTerms.Text)
-    '        dr = dt.NewRow
+#Region "Update Term Deductions"
+    Private Sub UpdateTermDeductions()
 
-    '        dr(0) = Format(dtm.AddMonths(1), "d")
+        Dim _Connection As DbConnection = Nothing
+        Dim _Transaction As DbTransaction = Nothing
 
-    '        dr(1) = Convert.ToDecimal(seAmount.Text) / Convert.ToDecimal(seTerms.Text)
-    '        dt.Rows.Add(dr)
+        Try
 
-    '        dtm = dtm.AddMonths(1)
-    '    Next
 
-    'End Sub
+            Dim _DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            _Connection = _DB.CreateConnection
+            _Connection.Open()
+            _Transaction = _Connection.BeginTransaction()
 
-    
-    
+
+            gvTermDeductions.PostEditor()
+
+            With iStockTermDeductions
+
+                .TermDeductionID = Convert.ToInt64(IIf(lblID.Text = String.Empty, 0, lblID.Text))
+                .TDDate = Convert.ToDateTime(Me.deIssueDate.Text)
+                .TDType = Me.cmbDeductionType.Text
+                .EmployerID = Convert.ToInt64(Me.leEmployeeCode.EditValue)
+                .TDAmount = Convert.ToDecimal(Me.seAmount.Text)
+                .TDInstallments = Convert.ToInt64(Me.sePeriod.Text)
+                .UpdatedBy = UserID
+
+                .UpdateTermDeductions(_DB, _Transaction)
+
+                .DeleteTermDeductionDescriptionByID(_DB, _Transaction)
+
+                For i As Integer = 0 To Me.gvTermDeductions.RowCount - 1
+
+                    If Not gvTermDeductions.GetRowCellDisplayText(i, gvTermDeductions.Columns(0)) = "" Then
+                        .TermDeductionID = .NewTermDeductionID
+                        .TDMonthName = Me.gvTermDeductions.GetRowCellDisplayText(i, GridColumn1)
+                        .TDInsAmount = Me.gvTermDeductions.GetRowCellDisplayText(i, GridColumn2)
+
+                        .InsertTermDeductionsDescription(_DB, _Transaction)
+                    End If
+
+                Next
+
+            End With
+            _Transaction.Commit()
+
+            Dim frm As New frmSavedOk
+            frm.Text = CWB_SAVESUCCESS_CONFIRMATION_TITLE
+            frm.lblTitle.Text = CWB_SAVESUCCESS_CONFIRMATION_TITLELABEL
+            frm.lblDescription.Text = CWB_SAVESUCCESS_CONFIRMATION_DESCRIPTIONLABEL
+            frm.ShowDialog()
+
+
+        Catch ex As Exception
+            _Transaction.Rollback()
+            MessageError(ex.ToString)
+        Finally
+            If _Connection.State = ConnectionState.Open Then
+                _Connection.Close()
+            End If
+
+
+            Me.ClearFormData()
+            Me.cmbDeductionType.Focus()
+        End Try
+
+
+
+
+    End Sub
+#End Region
+
     Private Sub leEmployeeCode_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles leEmployeeCode.EditValueChanged
         teEmployeeName.Text = leEmployeeCode.GetColumnValue("EmployerName")
     End Sub
 
     Private Sub sePeriod_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sePeriod.Leave
 
-        
-
-    End Sub
-
-    Private Sub deStartMonth_Leave(ByVal sender As Object, ByVal e As System.EventArgs)
 
 
     End Sub
@@ -305,8 +390,6 @@ Public Class frmTermDeductions
                 With iStockTermDeductions
 
                     lblID.Text = Me.gvTermDeductioDetails.GetFocusedRowCellValue(GridColumn3)
-
-
 
                     .TermDeductionID = Convert.ToInt64(IIf(lblID.Text = String.Empty, 0, lblID.Text))
 
@@ -421,5 +504,19 @@ Public Class frmTermDeductions
         Me.bbDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
     End Sub
 #End Region
+
+#Region "Delete Record"
+
+    Private Sub DeleteRecord()
+
+        With iStockTermDeductions
+            .TermDeductionID = Convert.ToInt64(IIf(lblID.Text = String.Empty, 0, lblID.Text))
+            .DeleteTermDescriptionByID()
+        End With
+
+    End Sub
+
+#End Region
+
 
 End Class
