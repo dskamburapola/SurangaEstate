@@ -102,7 +102,7 @@ Public Class frmCashAdvance
     End Sub
 
     Private Sub bbPrint_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbPrint.ItemClick
-        PrintPreview(gcCashAdvance, "Cash Advanec Report")
+        PrintPreview(gcCashAdvance, "Monthly Cash Advance Report")
 
     End Sub
 
@@ -114,9 +114,8 @@ Public Class frmCashAdvance
         Try
 
             Me.leEmployee.Properties.DataSource = iStockCashAdvance.GetEmployeeForWork.Tables(0)
-            Me.leEmployee.Properties.DisplayMember = "EmployerNo"
+            Me.leEmployee.Properties.DisplayMember = "EmployerName"
             Me.leEmployee.Properties.ValueMember = "EmployerID"
-
 
         Catch ex As Exception
 
@@ -135,47 +134,59 @@ Public Class frmCashAdvance
                 .EmployeeID = Me.leEmployee.EditValue
                 .IssueDate = Me.deIssueDate.EditValue
 
-                .GetPaymentDetailsForAdvance()
+                Dim ds As New DataSet
+                ds=.GetPaymentDetailsForAdvance()
 
-                If (iStockCashAdvance.GetPaymentDetailsForAdvance IsNot Nothing And iStockCashAdvance.GetPaymentDetailsForAdvance.Tables.Count > 0 And iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(1) IsNot Nothing And iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(1).Rows.Count > 0) Then
+                If (ds IsNot Nothing And ds.Tables.Count > 0 And ds.Tables(1) IsNot Nothing And ds.Tables(1).Rows.Count > 0) Then
 
-                    Me.teWorkedDays.Text = FormatNumber(IIf(iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(1).Rows(0)("PWorkedDays") IsNot Nothing, iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(1).Rows(0)("PWorkedDays").ToString(), String.Empty), 2, TriState.True)
-                    Me.tePayment.Text = FormatNumber(IIf(iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(1).Rows(0)("PAmount") IsNot Nothing, iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(1).Rows(0)("PAmount").ToString(), String.Empty), 2, TriState.True)
-                    Me.teEPF.Text = FormatNumber(IIf(iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(1).Rows(0)("EPF") IsNot Nothing, iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(1).Rows(0)("EPF").ToString(), String.Empty), 2, TriState.True)
+                    Me.teWorkedDays.EditValue = IIf(ds.Tables(1).Rows(0)("PWorkedDays") IsNot Nothing And ds.Tables(1).Rows(0)("PWorkedDays").ToString() <> String.Empty, ds.Tables(1).Rows(0)("PWorkedDays").ToString(), 0)
+                    Me.tePayment.EditValue = IIf(ds.Tables(1).Rows(0)("PAmount") IsNot Nothing And ds.Tables(1).Rows(0)("PAmount").ToString() <> String.Empty, ds.Tables(1).Rows(0)("PAmount").ToString(), 0)
+                    Me.teEPF.EditValue = IIf(ds.Tables(1).Rows(0)("EPF") IsNot Nothing And ds.Tables(1).Rows(0)("EPF").ToString() <> String.Empty, ds.Tables(1).Rows(0)("EPF").ToString(), 0)
+
+                Else
+                    Me.teWorkedDays.EditValue = 0
+                    Me.tePayment.EditValue = 0
+                    Me.teEPF.EditValue = 0
+                End If
+
+                If (ds IsNot Nothing And ds.Tables.Count > 0 And ds.Tables(2) IsNot Nothing And ds.Tables(2).Rows.Count > 0) Then
+
+                    Me.teFestivalAdvance.EditValue = IIf(ds.Tables(2).Rows(0)("FestivalAdvance") IsNot Nothing And ds.Tables(2).Rows(0)("FestivalAdvance").ToString() <> String.Empty, ds.Tables(2).Rows(0)("FestivalAdvance").ToString(), 0)
+
+                Else
+                    Me.teFestivalAdvance.EditValue = 0
 
                 End If
 
-                If (iStockCashAdvance.GetPaymentDetailsForAdvance IsNot Nothing And iStockCashAdvance.GetPaymentDetailsForAdvance.Tables.Count > 0 And iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(2) IsNot Nothing And iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(2).Rows.Count > 0) Then
+                If (ds IsNot Nothing And ds.Tables.Count > 0 And ds.Tables(3) IsNot Nothing And ds.Tables(3).Rows.Count > 0) Then
 
-                    Me.teFestivalAdvance.Text = FormatNumber(IIf(iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(2).Rows(0)("FestivalAdvance") IsNot Nothing, iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(2).Rows(0)("FestivalAdvance").ToString(), String.Empty), 2, TriState.True)
-
+                    Me.teLoan.EditValue = IIf(ds.Tables(3).Rows(0)("Loan") IsNot Nothing And ds.Tables(3).Rows(0)("Loan").ToString() <> String.Empty, ds.Tables(3).Rows(0)("Loan").ToString(), 0)
+                Else
+                    Me.teLoan.EditValue = 0
                 End If
 
-                If (iStockCashAdvance.GetPaymentDetailsForAdvance IsNot Nothing And iStockCashAdvance.GetPaymentDetailsForAdvance.Tables.Count > 0 And iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(3) IsNot Nothing And iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(3).Rows.Count > 0) Then
+                If (ds IsNot Nothing And ds.Tables.Count > 0 And ds.Tables(4) IsNot Nothing And ds.Tables(4).Rows.Count > 0) Then
 
-                    Me.teLoan.Text = FormatNumber(IIf(iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(3).Rows(0)("Loan") IsNot Nothing, iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(3).Rows(0)("Loan").ToString(), String.Empty), 2, TriState.True)
-
-                End If
-
-                If (iStockCashAdvance.GetPaymentDetailsForAdvance IsNot Nothing And iStockCashAdvance.GetPaymentDetailsForAdvance.Tables.Count > 0 And iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(4) IsNot Nothing And iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(4).Rows.Count > 0) Then
-
-                    Me.teCashAdvance.Text = FormatNumber(IIf(iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(4).Rows(0)("AdvanceAmount") IsNot Nothing, iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(4).Rows(0)("AdvanceAmount").ToString(), String.Empty), 2, TriState.True)
-
+                    Me.teCashAdvance.EditValue = IIf(ds.Tables(4).Rows(0)("AdvanceAmount") IsNot Nothing And ds.Tables(4).Rows(0)("AdvanceAmount").ToString() <> String.Empty, ds.Tables(4).Rows(0)("AdvanceAmount").ToString(), 0)
+                Else
+                    Me.teCashAdvance.EditValue = 0
                 End If
 
 
-                If (iStockCashAdvance.GetPaymentDetailsForAdvance IsNot Nothing And iStockCashAdvance.GetPaymentDetailsForAdvance.Tables.Count > 0 And iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(5) IsNot Nothing And iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(5).Rows.Count > 0) Then
+                If (ds IsNot Nothing And ds.Tables.Count > 0 And ds.Tables(5) IsNot Nothing And ds.Tables(5).Rows.Count > 0) Then
 
-                    Me.teLMB.Text = FormatNumber(IIf(iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(5).Rows(0)("LmbValue") IsNot Nothing, iStockCashAdvance.GetPaymentDetailsForAdvance.Tables(5).Rows(0)("LmbValue").ToString(), String.Empty), 2, TriState.True)
+                    Me.teCashAdvance.EditValue = IIf(ds.Tables(5).Rows(0)("LmbValue") IsNot Nothing And ds.Tables(5).Rows(0)("LmbValue").ToString() <> String.Empty, ds.Tables(5).Rows(0)("LmbValue").ToString(), 0)
+                Else
+                    Me.teCashAdvance.EditValue = 0
 
                 End If
 
 
             End With
 
-            Me.teTotalDeductions.Text = Convert.ToDecimal(teLMB.Text) + Convert.ToDecimal(teEPF.Text) + Convert.ToDecimal(teFestivalAdvance.Text) + Convert.ToDecimal(teLoan.Text) + Convert.ToDecimal(teCashAdvance.Text)
+            Me.teTotalDeductions.EditValue = Convert.ToDecimal(teLMB.EditValue) + Convert.ToDecimal(teEPF.EditValue) + Convert.ToDecimal(teFestivalAdvance.EditValue) + Convert.ToDecimal(teLoan.EditValue) + Convert.ToDecimal(teCashAdvance.EditValue)
 
-            Me.tePaybleAmount.Text = Convert.ToDecimal(tePayment.Text) - Convert.ToDecimal(teTotalDeductions.Text)
+            Me.tePaybleAmount.EditValue = Convert.ToDecimal(tePayment.EditValue) - Convert.ToDecimal(teTotalDeductions.EditValue)
         Catch ex As Exception
 
             Throw
@@ -294,9 +305,7 @@ Public Class frmCashAdvance
 
     Private Sub leEmployee_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
-        Me.GetPaymentDetailsForAdvance()
-        Me.sePaybleAmount.Focus()
-        SendKeys.Send("{HOME}+{END}")
+       
 
     End Sub
 
@@ -343,4 +352,9 @@ Public Class frmCashAdvance
 #End Region
 
    
+    Private Sub leEmployee_EditValueChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles leEmployee.EditValueChanged
+        Me.GetPaymentDetailsForAdvance()
+        Me.sePaybleAmount.Focus()
+        SendKeys.Send("{HOME}+{END}")
+    End Sub
 End Class
