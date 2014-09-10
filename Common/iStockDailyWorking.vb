@@ -30,6 +30,8 @@ Public Class iStockDailyWorking
     Private _CreatedDate As DateTime
     Private _UpdatedBy As Int64
     Private _UpdatedDate As DateTime
+
+
 #End Region
 
 #Region "Properties"
@@ -306,6 +308,24 @@ Public Class iStockDailyWorking
 
     End Function
 
+#End Region
+
+#Region "Attedence Report"
+    Public Function GetAttendanceReport(ByVal currentDate As Date) As DataSet
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand("ReportAttendance")
+            DB.AddInParameter(DBC, "@IssueDate", DbType.Date, currentDate)
+
+            Return DB.ExecuteDataSet(DBC)
+            DBC.Dispose()
+        Catch ex As Exception
+            Return Nothing
+            Throw
+        End Try
+
+
+    End Function
 #End Region
 
 End Class
