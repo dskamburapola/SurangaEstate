@@ -50,6 +50,7 @@ Partial Class frmMain
         Me.BarButtonItem18 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem23 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem20 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem24 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup8 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -58,6 +59,7 @@ Partial Class frmMain
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup6 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup7 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup11 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage4 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage3 = New DevExpress.XtraBars.Ribbon.RibbonPage()
@@ -66,8 +68,6 @@ Partial Class frmMain
         Me.RibbonPageGroup9 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RepositoryItemPictureEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit()
         Me.RibbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
-        Me.RibbonPageGroup11 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.BarButtonItem24 = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ApplicationMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -145,7 +145,6 @@ Partial Class frmMain
         Me.BarButtonItem1.LargeGlyph = CType(resources.GetObject("BarButtonItem1.LargeGlyph"), System.Drawing.Image)
         Me.BarButtonItem1.LargeWidth = 75
         Me.BarButtonItem1.Name = "BarButtonItem1"
-        Me.BarButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'BarButtonItem2
         '
@@ -154,7 +153,6 @@ Partial Class frmMain
         Me.BarButtonItem2.LargeGlyph = CType(resources.GetObject("BarButtonItem2.LargeGlyph"), System.Drawing.Image)
         Me.BarButtonItem2.LargeWidth = 75
         Me.BarButtonItem2.Name = "BarButtonItem2"
-        Me.BarButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'BarButtonItem3
         '
@@ -163,6 +161,7 @@ Partial Class frmMain
         Me.BarButtonItem3.LargeGlyph = Global.iStock.My.Resources.Resources.Stock
         Me.BarButtonItem3.LargeWidth = 75
         Me.BarButtonItem3.Name = "BarButtonItem3"
+        Me.BarButtonItem3.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'BarButtonItem4
         '
@@ -303,6 +302,13 @@ Partial Class frmMain
         Me.BarButtonItem20.LargeWidth = 75
         Me.BarButtonItem20.Name = "BarButtonItem20"
         '
+        'BarButtonItem24
+        '
+        Me.BarButtonItem24.Caption = "Attendace Report"
+        Me.BarButtonItem24.Id = 32
+        Me.BarButtonItem24.LargeGlyph = Global.iStock.My.Resources.Resources.Magenta
+        Me.BarButtonItem24.Name = "BarButtonItem24"
+        '
         'RibbonPage1
         '
         Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup8, Me.RibbonPageGroup1, Me.RibbonPageGroup4})
@@ -356,6 +362,12 @@ Partial Class frmMain
         Me.RibbonPageGroup7.ItemLinks.Add(Me.BarButtonItem13)
         Me.RibbonPageGroup7.Name = "RibbonPageGroup7"
         Me.RibbonPageGroup7.ShowCaptionButton = False
+        '
+        'RibbonPageGroup11
+        '
+        Me.RibbonPageGroup11.ItemLinks.Add(Me.BarButtonItem24)
+        Me.RibbonPageGroup11.Name = "RibbonPageGroup11"
+        Me.RibbonPageGroup11.ShowCaptionButton = False
         '
         'RibbonPage4
         '
@@ -412,19 +424,6 @@ Partial Class frmMain
         Me.RibbonStatusBar1.Name = "RibbonStatusBar1"
         Me.RibbonStatusBar1.Ribbon = Me.RibbonControl
         Me.RibbonStatusBar1.Size = New System.Drawing.Size(740, 31)
-        '
-        'RibbonPageGroup11
-        '
-        Me.RibbonPageGroup11.ItemLinks.Add(Me.BarButtonItem24)
-        Me.RibbonPageGroup11.Name = "RibbonPageGroup11"
-        Me.RibbonPageGroup11.ShowCaptionButton = False
-        '
-        'BarButtonItem24
-        '
-        Me.BarButtonItem24.Caption = "Attendace Report"
-        Me.BarButtonItem24.Id = 32
-        Me.BarButtonItem24.LargeGlyph = Global.iStock.My.Resources.Resources.Magenta
-        Me.BarButtonItem24.Name = "BarButtonItem24"
         '
         'frmMain
         '

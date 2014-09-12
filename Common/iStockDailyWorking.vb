@@ -411,4 +411,36 @@ Public Class iStockDailyWorking
 
 #End Region
 
+#Region "Update Daily workings"
+
+    Public Sub UpdateDailyWorking()
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand("DailyWorking_Update")
+            DB.AddInParameter(DBC, "@DailyWorkingID", DbType.Date, Me.DailyWorkingID)
+            DB.AddInParameter(DBC, "@WorkingDate", DbType.Date, Me.WorkingDate)
+            DB.AddInParameter(DBC, "@WorkType", DbType.String, Me.WorkType)
+            DB.AddInParameter(DBC, "@AbbreviationID", DbType.Int64, Me.AbbreviationID)
+            DB.AddInParameter(DBC, "@EmployeeID", DbType.Int64, Me.EmployeeID)
+            DB.AddInParameter(DBC, "@WorkedDays", DbType.Decimal, Me.WorkedDays)
+            DB.AddInParameter(DBC, "@Quantity", DbType.Decimal, Me.Quantity)
+            DB.AddInParameter(DBC, "@DayRate", DbType.Decimal, Me.DayRate)
+            DB.AddInParameter(DBC, "@OTRate", DbType.Decimal, Me.OTRate)
+            DB.AddInParameter(DBC, "@KgsPerDay", DbType.Decimal, Me.KgsPerDay)
+            DB.AddInParameter(DBC, "@OverKgRate", DbType.Decimal, Me.OverKgRate)
+            DB.AddInParameter(DBC, "@EPF", DbType.Decimal, Me.EPF)
+            DB.AddInParameter(DBC, "@CasualPayRate", DbType.Decimal, Me.CasualPayRate)
+            DB.AddInParameter(DBC, "@CasualOTPayRate", DbType.Decimal, Me.CasualOTPayRate)
+
+            DB.ExecuteNonQuery(DBC)
+        Catch ex As Exception
+            Throw
+        End Try
+    End Sub
+
+#End Region
+
+
+
+
 End Class
