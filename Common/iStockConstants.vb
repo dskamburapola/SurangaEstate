@@ -310,6 +310,8 @@
     Public Shared DAILYWORKING_GETBY_DATE As String = "DailyWorking_GetBy_Date"
     Public Shared DAILYWORKING_DELETE As String = "DailyWorking_Delete"
     Public Shared DAILYWORKING_GETALL_BYDATES As String = "DailyWorking_GetAll_ByDates"
+    Public Shared DAILYWORKING_IFEXISTS As String = "DailyWorking_IfExists"
+
 
     Public Shared EMPLOYEE_DETAILS_GETBYREGNO As String = "Employee_Details_GetByRegNo"
     Public Shared EMPLOYEE_GETALL_WORKERS As String = "Employee_GetAll_Workers"
@@ -328,6 +330,8 @@
 
     Public Shared CASHADVANCE_INSERT As String = "CashAdvance_Insert"
     Public Shared CASHADVANCE_GETALL_BYDATES As String = "CashAdvance_GetAll_ByDates"
+
+    Public Shared REPORTATTENDANCE As String = "ReportAttendance"
 
 
 

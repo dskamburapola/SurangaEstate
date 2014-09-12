@@ -16,7 +16,9 @@ Public Class iStockDailyWorking
     Private _WorkedDays As Double
     Private _Quantity As Double
 
-   
+    Private _CheckDays As Double
+    Private _CheckEmployeeID As Int64
+
     Private _DayRate As Double
     Private _OTRate As Double
     Private _KgsPerDay As Double
@@ -97,9 +99,23 @@ Public Class iStockDailyWorking
         End Set
     End Property
 
+    Public Property CheckEmployeeID() As Int64
+        Get
+            Return _CheckEmployeeID
+        End Get
+        Set(ByVal value As Int64)
+            _CheckEmployeeID = value
+        End Set
+    End Property
 
-
-
+    Public Property CheckDays() As Double
+        Get
+            Return _CheckDays
+        End Get
+        Set(ByVal value As Double)
+            _CheckDays = value
+        End Set
+    End Property
 
 
 
@@ -278,6 +294,26 @@ Public Class iStockDailyWorking
 
 #End Region
 
+#Region "Daily Working GetAll ByDates"
+    Public Function AttendancePivot() As DataSet
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(REPORTATTENDANCE)
+            '  DB.AddInParameter(DBC, "@StartDate", DbType.Date, Me.StartDate)
+            DB.AddInParameter(DBC, "@IssueDate", DbType.Date, Me.EndDate)
+
+            Return DB.ExecuteDataSet(DBC)
+            DBC.Dispose()
+        Catch ex As Exception
+            Return Nothing
+            Throw
+        End Try
+
+
+    End Function
+
+#End Region
+
 #Region "DailyWorking Delete"
     Public Sub DailyWorkingDelete()
         Try
@@ -326,6 +362,53 @@ Public Class iStockDailyWorking
 
 
     End Function
+#End Region
+
+#Region "DailyWorking IfExists"
+    Public Sub DailyWorkingIfExists()
+        Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+        Dim DBC As DbCommand = DB.GetStoredProcCommand(DAILYWORKING_IFEXISTS)
+        Try
+
+            DB.AddInParameter(DBC, "@EmployeeID", DbType.Int64, Me.EmployeeID)
+            DB.AddInParameter(DBC, "@WorkingDate", DbType.Date, Me.WorkingDate)
+
+            Using DR As IDataReader = DB.ExecuteReader(DBC)
+
+
+                With DR
+                    Do While .Read
+                        Me.CheckEmployeeID = Convert.ToInt64(IIf(Not IsDBNull(.Item("EmployeeID")), Trim(.Item("EmployeeID").ToString), 0))
+                        Me.CheckDays = Convert.ToDecimal(IIf(Not IsDBNull(.Item("WorkedDays")), Trim(.Item("WorkedDays").ToString), 0))
+                    Loop
+
+                End With
+
+                If (Not DR Is Nothing) Then
+                    DR.Close()
+                End If
+
+
+            End Using
+
+
+
+        Catch ex As Exception
+            Throw
+        Finally
+            DBC.Dispose()
+
+
+
+        End Try
+
+
+    End Sub
+
+
+
+
+
 #End Region
 
 End Class

@@ -109,16 +109,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="frmAttendaceReport.Designer.vb">
-      <DependentUpon>frmAttendaceReport.vb</DependentUpon>
+    <Compile Include="frmAttendanceReportdsk.designer.vb">
+      <DependentUpon>frmAttendanceReportdsk.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmAttendaceReport.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAttendance.designer.vb">
-      <DependentUpon>frmAttendance.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmAttendance.vb">
+    <Compile Include="frmAttendanceReportdsk.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCashAdvance.designer.vb">
@@ -378,11 +372,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmAttendaceReport.resx">
-      <DependentUpon>frmAttendaceReport.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAttendance.resx">
-      <DependentUpon>frmAttendance.vb</DependentUpon>
+    <EmbeddedResource Include="frmAttendanceReportdsk.resx">
+      <DependentUpon>frmAttendanceReportdsk.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCashAdvance.resx">
       <DependentUpon>frmCashAdvance.vb</DependentUpon>

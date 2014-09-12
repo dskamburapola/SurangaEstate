@@ -289,133 +289,133 @@ Partial Class frmCashAdvance
         'tePaybleAmount
         '
         Me.tePaybleAmount.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.tePaybleAmount.Location = New System.Drawing.Point(244, 298)
+        Me.tePaybleAmount.Location = New System.Drawing.Point(245, 298)
         Me.tePaybleAmount.MenuManager = Me.BarManager1
         Me.tePaybleAmount.Name = "tePaybleAmount"
         Me.tePaybleAmount.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.tePaybleAmount.Properties.DisplayFormat.FormatString = "{0:N2}"
         Me.tePaybleAmount.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.tePaybleAmount.Properties.ReadOnly = True
-        Me.tePaybleAmount.Size = New System.Drawing.Size(289, 20)
+        Me.tePaybleAmount.Size = New System.Drawing.Size(288, 20)
         Me.tePaybleAmount.StyleController = Me.LayoutControl1
         Me.tePaybleAmount.TabIndex = 25
         '
         'teTotalDeductions
         '
         Me.teTotalDeductions.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teTotalDeductions.Location = New System.Drawing.Point(244, 274)
+        Me.teTotalDeductions.Location = New System.Drawing.Point(245, 274)
         Me.teTotalDeductions.MenuManager = Me.BarManager1
         Me.teTotalDeductions.Name = "teTotalDeductions"
         Me.teTotalDeductions.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.teTotalDeductions.Properties.DisplayFormat.FormatString = "{0:N2}"
         Me.teTotalDeductions.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.teTotalDeductions.Properties.ReadOnly = True
-        Me.teTotalDeductions.Size = New System.Drawing.Size(289, 20)
+        Me.teTotalDeductions.Size = New System.Drawing.Size(288, 20)
         Me.teTotalDeductions.StyleController = Me.LayoutControl1
         Me.teTotalDeductions.TabIndex = 24
         '
         'teCashAdvance
         '
         Me.teCashAdvance.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teCashAdvance.Location = New System.Drawing.Point(244, 250)
+        Me.teCashAdvance.Location = New System.Drawing.Point(245, 250)
         Me.teCashAdvance.MenuManager = Me.BarManager1
         Me.teCashAdvance.Name = "teCashAdvance"
         Me.teCashAdvance.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.teCashAdvance.Properties.DisplayFormat.FormatString = "{0:N2}"
         Me.teCashAdvance.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.teCashAdvance.Properties.ReadOnly = True
-        Me.teCashAdvance.Size = New System.Drawing.Size(289, 20)
+        Me.teCashAdvance.Size = New System.Drawing.Size(288, 20)
         Me.teCashAdvance.StyleController = Me.LayoutControl1
         Me.teCashAdvance.TabIndex = 23
         '
         'teLoan
         '
         Me.teLoan.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teLoan.Location = New System.Drawing.Point(244, 226)
+        Me.teLoan.Location = New System.Drawing.Point(245, 226)
         Me.teLoan.MenuManager = Me.BarManager1
         Me.teLoan.Name = "teLoan"
         Me.teLoan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.teLoan.Properties.DisplayFormat.FormatString = "{0:N2}"
         Me.teLoan.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.teLoan.Properties.ReadOnly = True
-        Me.teLoan.Size = New System.Drawing.Size(289, 20)
+        Me.teLoan.Size = New System.Drawing.Size(288, 20)
         Me.teLoan.StyleController = Me.LayoutControl1
         Me.teLoan.TabIndex = 22
         '
         'teFestivalAdvance
         '
         Me.teFestivalAdvance.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teFestivalAdvance.Location = New System.Drawing.Point(244, 202)
+        Me.teFestivalAdvance.Location = New System.Drawing.Point(245, 202)
         Me.teFestivalAdvance.MenuManager = Me.BarManager1
         Me.teFestivalAdvance.Name = "teFestivalAdvance"
         Me.teFestivalAdvance.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.teFestivalAdvance.Properties.DisplayFormat.FormatString = "{0:N2}"
         Me.teFestivalAdvance.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.teFestivalAdvance.Properties.ReadOnly = True
-        Me.teFestivalAdvance.Size = New System.Drawing.Size(289, 20)
+        Me.teFestivalAdvance.Size = New System.Drawing.Size(288, 20)
         Me.teFestivalAdvance.StyleController = Me.LayoutControl1
         Me.teFestivalAdvance.TabIndex = 21
         '
         'teEPF
         '
         Me.teEPF.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teEPF.Location = New System.Drawing.Point(244, 178)
+        Me.teEPF.Location = New System.Drawing.Point(245, 178)
         Me.teEPF.MenuManager = Me.BarManager1
         Me.teEPF.Name = "teEPF"
         Me.teEPF.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.teEPF.Properties.DisplayFormat.FormatString = "{0:N2}"
         Me.teEPF.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.teEPF.Properties.ReadOnly = True
-        Me.teEPF.Size = New System.Drawing.Size(289, 20)
+        Me.teEPF.Size = New System.Drawing.Size(288, 20)
         Me.teEPF.StyleController = Me.LayoutControl1
         Me.teEPF.TabIndex = 20
         '
         'teLMB
         '
         Me.teLMB.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teLMB.Location = New System.Drawing.Point(244, 154)
+        Me.teLMB.Location = New System.Drawing.Point(245, 154)
         Me.teLMB.MenuManager = Me.BarManager1
         Me.teLMB.Name = "teLMB"
         Me.teLMB.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.teLMB.Properties.DisplayFormat.FormatString = "{0:N2}"
         Me.teLMB.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.teLMB.Properties.ReadOnly = True
-        Me.teLMB.Size = New System.Drawing.Size(289, 20)
+        Me.teLMB.Size = New System.Drawing.Size(288, 20)
         Me.teLMB.StyleController = Me.LayoutControl1
         Me.teLMB.TabIndex = 19
         '
         'tePayment
         '
         Me.tePayment.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.tePayment.Location = New System.Drawing.Point(244, 130)
+        Me.tePayment.Location = New System.Drawing.Point(245, 130)
         Me.tePayment.MenuManager = Me.BarManager1
         Me.tePayment.Name = "tePayment"
         Me.tePayment.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.tePayment.Properties.DisplayFormat.FormatString = "{0:N2}"
         Me.tePayment.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.tePayment.Properties.ReadOnly = True
-        Me.tePayment.Size = New System.Drawing.Size(289, 20)
+        Me.tePayment.Size = New System.Drawing.Size(288, 20)
         Me.tePayment.StyleController = Me.LayoutControl1
         Me.tePayment.TabIndex = 18
         '
         'teWorkedDays
         '
         Me.teWorkedDays.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teWorkedDays.Location = New System.Drawing.Point(244, 106)
+        Me.teWorkedDays.Location = New System.Drawing.Point(245, 106)
         Me.teWorkedDays.MenuManager = Me.BarManager1
         Me.teWorkedDays.Name = "teWorkedDays"
         Me.teWorkedDays.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.teWorkedDays.Properties.DisplayFormat.FormatString = "{0:N2}"
         Me.teWorkedDays.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.teWorkedDays.Properties.ReadOnly = True
-        Me.teWorkedDays.Size = New System.Drawing.Size(289, 20)
+        Me.teWorkedDays.Size = New System.Drawing.Size(288, 20)
         Me.teWorkedDays.StyleController = Me.LayoutControl1
         Me.teWorkedDays.TabIndex = 17
         '
         'sePaybleAmount
         '
         Me.sePaybleAmount.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.sePaybleAmount.Location = New System.Drawing.Point(244, 322)
+        Me.sePaybleAmount.Location = New System.Drawing.Point(245, 322)
         Me.sePaybleAmount.MenuManager = Me.BarManager1
         Me.sePaybleAmount.Name = "sePaybleAmount"
         Me.sePaybleAmount.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 14.0!)
@@ -423,19 +423,19 @@ Partial Class frmCashAdvance
         Me.sePaybleAmount.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.sePaybleAmount.Properties.DisplayFormat.FormatString = "{0:N2}"
         Me.sePaybleAmount.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.sePaybleAmount.Size = New System.Drawing.Size(289, 30)
+        Me.sePaybleAmount.Size = New System.Drawing.Size(288, 30)
         Me.sePaybleAmount.StyleController = Me.LayoutControl1
         Me.sePaybleAmount.TabIndex = 16
         '
         'leEmployee
         '
-        Me.leEmployee.Location = New System.Drawing.Point(244, 58)
+        Me.leEmployee.Location = New System.Drawing.Point(245, 58)
         Me.leEmployee.MenuManager = Me.BarManager1
         Me.leEmployee.Name = "leEmployee"
         Me.leEmployee.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.leEmployee.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("EmployerID", "EmployerID", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("EmployerNo", "Employee No"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("EmployerName", "Employer Name")})
         Me.leEmployee.Properties.NullText = ""
-        Me.leEmployee.Size = New System.Drawing.Size(289, 20)
+        Me.leEmployee.Size = New System.Drawing.Size(288, 20)
         Me.leEmployee.StyleController = Me.LayoutControl1
         Me.leEmployee.TabIndex = 13
         '
@@ -443,7 +443,7 @@ Partial Class frmCashAdvance
         '
         Me.deIssueDate.EditValue = Nothing
         Me.deIssueDate.EnterMoveNextControl = True
-        Me.deIssueDate.Location = New System.Drawing.Point(244, 34)
+        Me.deIssueDate.Location = New System.Drawing.Point(245, 34)
         Me.deIssueDate.MenuManager = Me.BarManager1
         Me.deIssueDate.Name = "deIssueDate"
         Me.deIssueDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -452,19 +452,19 @@ Partial Class frmCashAdvance
         Me.deIssueDate.Properties.EditFormat.FormatString = "dd-MMM-yy"
         Me.deIssueDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.deIssueDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.deIssueDate.Size = New System.Drawing.Size(289, 20)
+        Me.deIssueDate.Size = New System.Drawing.Size(288, 20)
         Me.deIssueDate.StyleController = Me.LayoutControl1
         Me.deIssueDate.TabIndex = 12
         '
         'teEmployeeName
         '
         Me.teEmployeeName.EnterMoveNextControl = True
-        Me.teEmployeeName.Location = New System.Drawing.Point(244, 82)
+        Me.teEmployeeName.Location = New System.Drawing.Point(245, 82)
         Me.teEmployeeName.Name = "teEmployeeName"
         Me.teEmployeeName.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.teEmployeeName.Properties.Appearance.Options.UseBackColor = True
         Me.teEmployeeName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.teEmployeeName.Size = New System.Drawing.Size(289, 20)
+        Me.teEmployeeName.Size = New System.Drawing.Size(288, 20)
         Me.teEmployeeName.StyleController = Me.LayoutControl1
         Me.teEmployeeName.TabIndex = 11
         '
@@ -822,7 +822,7 @@ Partial Class frmCashAdvance
         'deEndDate
         '
         Me.deEndDate.EditValue = Nothing
-        Me.deEndDate.Location = New System.Drawing.Point(334, 12)
+        Me.deEndDate.Location = New System.Drawing.Point(335, 12)
         Me.deEndDate.MenuManager = Me.BarManager1
         Me.deEndDate.Name = "deEndDate"
         Me.deEndDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -832,14 +832,14 @@ Partial Class frmCashAdvance
         Me.deEndDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.deEndDate.Properties.Mask.EditMask = "dd-MMM-yy"
         Me.deEndDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.deEndDate.Size = New System.Drawing.Size(181, 20)
+        Me.deEndDate.Size = New System.Drawing.Size(180, 20)
         Me.deEndDate.StyleController = Me.LayoutControl4
         Me.deEndDate.TabIndex = 6
         '
         'deStartDate
         '
         Me.deStartDate.EditValue = Nothing
-        Me.deStartDate.Location = New System.Drawing.Point(65, 12)
+        Me.deStartDate.Location = New System.Drawing.Point(66, 12)
         Me.deStartDate.MenuManager = Me.BarManager1
         Me.deStartDate.Name = "deStartDate"
         Me.deStartDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -849,7 +849,7 @@ Partial Class frmCashAdvance
         Me.deStartDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.deStartDate.Properties.Mask.EditMask = "dd-MMM-yy"
         Me.deStartDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.deStartDate.Size = New System.Drawing.Size(212, 20)
+        Me.deStartDate.Size = New System.Drawing.Size(211, 20)
         Me.deStartDate.StyleController = Me.LayoutControl4
         Me.deStartDate.TabIndex = 5
         '
@@ -879,8 +879,6 @@ Partial Class frmCashAdvance
         Me.GridColumn9.OptionsColumn.AllowEdit = False
         Me.GridColumn9.OptionsColumn.AllowFocus = False
         Me.GridColumn9.OptionsColumn.AllowMove = False
-        Me.GridColumn9.Visible = True
-        Me.GridColumn9.VisibleIndex = 0
         '
         'GridColumn10
         '
@@ -890,8 +888,6 @@ Partial Class frmCashAdvance
         Me.GridColumn10.OptionsColumn.AllowEdit = False
         Me.GridColumn10.OptionsColumn.AllowFocus = False
         Me.GridColumn10.OptionsColumn.AllowMove = False
-        Me.GridColumn10.Visible = True
-        Me.GridColumn10.VisibleIndex = 1
         '
         'GridColumn11
         '
@@ -902,7 +898,7 @@ Partial Class frmCashAdvance
         Me.GridColumn11.OptionsColumn.AllowFocus = False
         Me.GridColumn11.OptionsColumn.AllowMove = False
         Me.GridColumn11.Visible = True
-        Me.GridColumn11.VisibleIndex = 2
+        Me.GridColumn11.VisibleIndex = 0
         '
         'GridColumn12
         '
@@ -913,7 +909,7 @@ Partial Class frmCashAdvance
         Me.GridColumn12.OptionsColumn.AllowFocus = False
         Me.GridColumn12.OptionsColumn.AllowMove = False
         Me.GridColumn12.Visible = True
-        Me.GridColumn12.VisibleIndex = 3
+        Me.GridColumn12.VisibleIndex = 1
         '
         'GridColumn13
         '
@@ -924,7 +920,7 @@ Partial Class frmCashAdvance
         Me.GridColumn13.OptionsColumn.AllowFocus = False
         Me.GridColumn13.OptionsColumn.AllowMove = False
         Me.GridColumn13.Visible = True
-        Me.GridColumn13.VisibleIndex = 4
+        Me.GridColumn13.VisibleIndex = 2
         '
         'GridColumn14
         '
@@ -938,19 +934,19 @@ Partial Class frmCashAdvance
         Me.GridColumn14.OptionsColumn.AllowMove = False
         Me.GridColumn14.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "WorkedDays", "{0:n2}")})
         Me.GridColumn14.Visible = True
-        Me.GridColumn14.VisibleIndex = 5
+        Me.GridColumn14.VisibleIndex = 3
         '
         'GridColumn15
         '
         Me.GridColumn15.Caption = "CreatedBy"
-        Me.GridColumn15.FieldName = "CreatedBy"
+        Me.GridColumn15.FieldName = "CreatedUser"
         Me.GridColumn15.Name = "GridColumn15"
         Me.GridColumn15.OptionsColumn.AllowEdit = False
         Me.GridColumn15.OptionsColumn.AllowFocus = False
         Me.GridColumn15.OptionsColumn.AllowMove = False
         Me.GridColumn15.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantity", "{0:n2}")})
         Me.GridColumn15.Visible = True
-        Me.GridColumn15.VisibleIndex = 6
+        Me.GridColumn15.VisibleIndex = 4
         '
         'GridColumn1
         '
@@ -958,15 +954,15 @@ Partial Class frmCashAdvance
         Me.GridColumn1.FieldName = "CreatedDate"
         Me.GridColumn1.Name = "GridColumn1"
         Me.GridColumn1.Visible = True
-        Me.GridColumn1.VisibleIndex = 7
+        Me.GridColumn1.VisibleIndex = 5
         '
         'GridColumn2
         '
         Me.GridColumn2.Caption = "UpdatedBy"
-        Me.GridColumn2.FieldName = "UpdatedBy"
+        Me.GridColumn2.FieldName = "UpdatedUser"
         Me.GridColumn2.Name = "GridColumn2"
         Me.GridColumn2.Visible = True
-        Me.GridColumn2.VisibleIndex = 8
+        Me.GridColumn2.VisibleIndex = 6
         '
         'GridColumn3
         '
@@ -974,7 +970,7 @@ Partial Class frmCashAdvance
         Me.GridColumn3.FieldName = "UpdatedDate"
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.Visible = True
-        Me.GridColumn3.VisibleIndex = 9
+        Me.GridColumn3.VisibleIndex = 7
         '
         'Root
         '

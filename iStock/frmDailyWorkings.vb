@@ -207,7 +207,7 @@ Public Class frmDailyWorkings
                 .WorkType = Me.cmbWorkType.Text.Trim
                 .AbbreviationID = Me.leWorkCategory.EditValue
                 .EmployeeID = leEmployee.EditValue 'lblID.Text.Trim
-                .WorkedDays = Me.seWorkDays.Text.Trim
+                .WorkedDays = Me.cmbDays.Text.Trim
                 .Quantity = Me.seQuantity.Text.Trim
 
                 .DayRate = Convert.ToDecimal(lblDayRate.Text.Trim)
@@ -311,14 +311,12 @@ Public Class frmDailyWorkings
         'Me.teEmployeeName.Text = String.Empty
         Me.leWorkCategory.EditValue = Nothing
         Me.leEmployee.EditValue = Nothing
-        Me.seWorkDays.Text = 0
+        Me.cmbDays.Text = String.Empty
         Me.seQuantity.Text = 0
         Me.cmbWorkType.Focus()
 
     End Sub
 #End Region
-
-
 
 #Region "Delete Daily Working"
     Private Sub DeleteDailyWorking()
@@ -342,7 +340,50 @@ Public Class frmDailyWorkings
     End Sub
 #End Region
 
+#Region "Daily Working IfExists"
+    Public Sub DailyWorkingIfExists()
 
+        Try
+
+
+            With iStockDailyWorking
+                .CheckDays = 0
+                .CheckEmployeeID = 0
+
+                .EmployeeID = Me.leEmployee.EditValue
+                .WorkingDate = Convert.ToDateTime(Me.deWorkingDate.Text)
+
+                .DailyWorkingIfExists()
+
+                If Me.leEmployee.EditValue = .CheckEmployeeID Then
+
+                    If .CheckDays = 1 Then
+                        MsgBox("Employee Already Exists. Multiple Days Not Allowed")
+
+                    ElseIf .CheckDays = 0.5 And cmbDays.Text = 0.5 Then
+                        '  MsgBox("0.5 day allowed")
+                        seQuantity.Focus()
+                    Else
+                        MsgBox("Employee Already Worked as 0.5 Day. 01 Day Not Allowed")
+
+                    End If
+
+                Else
+                    MsgBox("no")
+                    Me.seQuantity.Focus()
+
+                End If
+            End With
+
+
+
+        Catch ex As Exception
+            MessageError(ex.ToString)
+
+        End Try
+
+    End Sub
+#End Region
 
     Private Sub deWorkingDate_EditValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles deWorkingDate.EditValueChanged
         Me.DailyWorkingGetByDate()
@@ -447,7 +488,11 @@ Public Class frmDailyWorkings
         End If
     End Sub
 
-    Private Sub gvAllWorkings_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gvAllWorkings.DoubleClick
-
+    Private Sub cmbDays_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cmbDays.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            Me.DailyWorkingIfExists()
+        End If
     End Sub
+
+   
 End Class

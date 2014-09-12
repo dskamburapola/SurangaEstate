@@ -72,11 +72,12 @@ Public Class frmCashAdvance
 
     Private Sub bbSave_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbSave.ItemClick
 
-        If dxvpCompany.Validate Then
-            '   Me.SaveCompany()
-        End If
+        'If dxvpCompany.Validate Then
+        '    '   Me.SaveCompany()
+        'End If
 
-
+        Me.SaveCashAdvance()
+        Me.ClearFormData()
     End Sub
 
     Private Sub bbNew_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbNew.ItemClick
@@ -139,54 +140,54 @@ Public Class frmCashAdvance
 
                 If (ds IsNot Nothing And ds.Tables.Count > 0 And ds.Tables(1) IsNot Nothing And ds.Tables(1).Rows.Count > 0) Then
 
-                    Me.teWorkedDays.EditValue = IIf(ds.Tables(1).Rows(0)("PWorkedDays") IsNot Nothing And ds.Tables(1).Rows(0)("PWorkedDays").ToString() <> String.Empty, ds.Tables(1).Rows(0)("PWorkedDays").ToString(), 0)
-                    Me.tePayment.EditValue = IIf(ds.Tables(1).Rows(0)("PAmount") IsNot Nothing And ds.Tables(1).Rows(0)("PAmount").ToString() <> String.Empty, ds.Tables(1).Rows(0)("PAmount").ToString(), 0)
-                    Me.teEPF.EditValue = IIf(ds.Tables(1).Rows(0)("EPF") IsNot Nothing And ds.Tables(1).Rows(0)("EPF").ToString() <> String.Empty, ds.Tables(1).Rows(0)("EPF").ToString(), 0)
+                    Me.teWorkedDays.Text = IIf(ds.Tables(1).Rows(0)("PWorkedDays") IsNot Nothing And ds.Tables(1).Rows(0)("PWorkedDays").ToString() <> String.Empty, ds.Tables(1).Rows(0)("PWorkedDays").ToString(), 0)
+                    Me.tePayment.Text = IIf(ds.Tables(1).Rows(0)("PAmount") IsNot Nothing And ds.Tables(1).Rows(0)("PAmount").ToString() <> String.Empty, ds.Tables(1).Rows(0)("PAmount").ToString(), 0)
+                    Me.teEPF.Text = IIf(ds.Tables(1).Rows(0)("EPF") IsNot Nothing And ds.Tables(1).Rows(0)("EPF").ToString() <> String.Empty, ds.Tables(1).Rows(0)("EPF").ToString(), 0)
 
                 Else
-                    Me.teWorkedDays.EditValue = 0
-                    Me.tePayment.EditValue = 0
-                    Me.teEPF.EditValue = 0
+                    Me.teWorkedDays.Text = 0
+                    Me.tePayment.Text = 0
+                    Me.teEPF.Text = 0
                 End If
 
                 If (ds IsNot Nothing And ds.Tables.Count > 0 And ds.Tables(2) IsNot Nothing And ds.Tables(2).Rows.Count > 0) Then
 
-                    Me.teFestivalAdvance.EditValue = IIf(ds.Tables(2).Rows(0)("FestivalAdvance") IsNot Nothing And ds.Tables(2).Rows(0)("FestivalAdvance").ToString() <> String.Empty, ds.Tables(2).Rows(0)("FestivalAdvance").ToString(), 0)
+                    Me.teFestivalAdvance.Text = IIf(ds.Tables(2).Rows(0)("FestivalAdvance") IsNot Nothing And ds.Tables(2).Rows(0)("FestivalAdvance").ToString() <> String.Empty, ds.Tables(2).Rows(0)("FestivalAdvance").ToString(), 0)
 
                 Else
-                    Me.teFestivalAdvance.EditValue = 0
+                    Me.teFestivalAdvance.Text = 0
 
                 End If
 
                 If (ds IsNot Nothing And ds.Tables.Count > 0 And ds.Tables(3) IsNot Nothing And ds.Tables(3).Rows.Count > 0) Then
 
-                    Me.teLoan.EditValue = IIf(ds.Tables(3).Rows(0)("Loan") IsNot Nothing And ds.Tables(3).Rows(0)("Loan").ToString() <> String.Empty, ds.Tables(3).Rows(0)("Loan").ToString(), 0)
+                    Me.teLoan.Text = IIf(ds.Tables(3).Rows(0)("Loan") IsNot Nothing And ds.Tables(3).Rows(0)("Loan").ToString() <> String.Empty, ds.Tables(3).Rows(0)("Loan").ToString(), 0)
                 Else
-                    Me.teLoan.EditValue = 0
+                    Me.teLoan.Text = 0
                 End If
 
                 If (ds IsNot Nothing And ds.Tables.Count > 0 And ds.Tables(4) IsNot Nothing And ds.Tables(4).Rows.Count > 0) Then
 
-                    Me.teCashAdvance.EditValue = IIf(ds.Tables(4).Rows(0)("AdvanceAmount") IsNot Nothing And ds.Tables(4).Rows(0)("AdvanceAmount").ToString() <> String.Empty, ds.Tables(4).Rows(0)("AdvanceAmount").ToString(), 0)
+                    Me.teCashAdvance.Text = IIf(ds.Tables(4).Rows(0)("AdvanceAmount") IsNot Nothing And ds.Tables(4).Rows(0)("AdvanceAmount").ToString() <> String.Empty, ds.Tables(4).Rows(0)("AdvanceAmount").ToString(), 0)
                 Else
-                    Me.teCashAdvance.EditValue = 0
+                    Me.teCashAdvance.Text = 0
                 End If
 
 
                 If (ds IsNot Nothing And ds.Tables.Count > 0 And ds.Tables(5) IsNot Nothing And ds.Tables(5).Rows.Count > 0) Then
 
-                    Me.teCashAdvance.EditValue = IIf(ds.Tables(5).Rows(0)("LmbValue") IsNot Nothing And ds.Tables(5).Rows(0)("LmbValue").ToString() <> String.Empty, ds.Tables(5).Rows(0)("LmbValue").ToString(), 0)
+                    Me.teLMB.Text = IIf(ds.Tables(5).Rows(0)("LmbValue") IsNot Nothing And ds.Tables(5).Rows(0)("LmbValue").ToString() <> String.Empty, ds.Tables(5).Rows(0)("LmbValue").ToString(), 0)
                 Else
-                    Me.teCashAdvance.EditValue = 0
+                    Me.teLMB.Text = 0
 
                 End If
 
 
             End With
 
-            Me.teTotalDeductions.EditValue = Convert.ToDecimal(teLMB.EditValue) + Convert.ToDecimal(teEPF.EditValue) + Convert.ToDecimal(teFestivalAdvance.EditValue) + Convert.ToDecimal(teLoan.EditValue) + Convert.ToDecimal(teCashAdvance.EditValue)
+            Me.teTotalDeductions.Text = Convert.ToDecimal(teLMB.EditValue) + Convert.ToDecimal(teEPF.EditValue) + Convert.ToDecimal(teFestivalAdvance.EditValue) + Convert.ToDecimal(teLoan.EditValue) + Convert.ToDecimal(teCashAdvance.EditValue)
 
-            Me.tePaybleAmount.EditValue = Convert.ToDecimal(tePayment.EditValue) - Convert.ToDecimal(teTotalDeductions.EditValue)
+            Me.tePaybleAmount.Text = Convert.ToDecimal(tePayment.EditValue) - Convert.ToDecimal(teTotalDeductions.EditValue)
         Catch ex As Exception
 
             Throw
@@ -234,7 +235,7 @@ Public Class frmCashAdvance
 
     Public Sub ClearFormData()
 
-        Me.deIssueDate.Text = Date.Today
+        '  Me.deIssueDate.Text = Date.Today
         Me.leEmployee.Text = String.Empty
         Me.teCashAdvance.Text = String.Empty
         Me.teEmployeeName.Text = String.Empty
@@ -247,7 +248,7 @@ Public Class frmCashAdvance
         Me.teTotalDeductions.Text = String.Empty
         Me.teWorkedDays.Text = String.Empty
 
-        '    Me.deIssueDate.Focus()
+        Me.leEmployee.Focus()
 
 
     End Sub
@@ -352,9 +353,26 @@ Public Class frmCashAdvance
 #End Region
 
    
-    Private Sub leEmployee_EditValueChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles leEmployee.EditValueChanged
-        Me.GetPaymentDetailsForAdvance()
-        Me.sePaybleAmount.Focus()
-        SendKeys.Send("{HOME}+{END}")
+    'Private Sub leEmployee_EditValueChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles leEmployee.EditValueChanged
+    '    Me.GetPaymentDetailsForAdvance()
+    '    Me.sePaybleAmount.Focus()
+    '    SendKeys.Send("{HOME}+{END}")
+    'End Sub
+
+    Private Sub sePaybleAmount_KeyPress_1(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles sePaybleAmount.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            Me.SaveCashAdvance()
+            Me.ClearFormData()
+        End If
+    End Sub
+
+   
+    Private Sub leEmployee_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles leEmployee.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            Me.GetPaymentDetailsForAdvance()
+            Me.sePaybleAmount.Focus()
+            SendKeys.Send("{HOME}+{END}")
+        End If
+
     End Sub
 End Class
