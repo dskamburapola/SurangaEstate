@@ -528,7 +528,7 @@ Partial Class frmDailyWorkings
         '
         'GridColumn6
         '
-        Me.GridColumn6.Caption = "EmployeeName"
+        Me.GridColumn6.Caption = "Employee Name"
         Me.GridColumn6.FieldName = "EmployerName"
         Me.GridColumn6.Name = "GridColumn6"
         Me.GridColumn6.OptionsColumn.AllowEdit = False
@@ -917,11 +917,14 @@ Partial Class frmDailyWorkings
         'GridColumn9
         '
         Me.GridColumn9.Caption = "Working Date"
+        Me.GridColumn9.DisplayFormat.FormatString = "dd-MMM-yy"
+        Me.GridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.GridColumn9.FieldName = "WorkingDate"
         Me.GridColumn9.Name = "GridColumn9"
         Me.GridColumn9.OptionsColumn.AllowEdit = False
         Me.GridColumn9.OptionsColumn.AllowFocus = False
         Me.GridColumn9.OptionsColumn.AllowMove = False
+        Me.GridColumn9.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)})
         Me.GridColumn9.Visible = True
         Me.GridColumn9.VisibleIndex = 0
         '

@@ -20,6 +20,11 @@ Partial Class frmAttendaceReport
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.pgcAttendance = New DevExpress.XtraPivotGrid.PivotGridControl()
+        Me.PivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField2 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField3 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField4 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.leYear = New DevExpress.XtraEditors.LookUpEdit()
         Me.meMonth = New DevExpress.XtraScheduler.UI.MonthEdit()
         Me.sbGenerate = New DevExpress.XtraEditors.SimpleButton()
@@ -31,15 +36,10 @@ Partial Class frmAttendaceReport
         Me.EmptySpaceItem3 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.pgcAttendance = New DevExpress.XtraPivotGrid.PivotGridControl()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.PivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
-        Me.PivotGridField2 = New DevExpress.XtraPivotGrid.PivotGridField()
-        Me.PivotGridField3 = New DevExpress.XtraPivotGrid.PivotGridField()
-        Me.PivotGridField4 = New DevExpress.XtraPivotGrid.PivotGridField()
-        Me.PivotGridField5 = New DevExpress.XtraPivotGrid.PivotGridField()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.pgcAttendance, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,7 +49,6 @@ Partial Class frmAttendaceReport
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pgcAttendance, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -67,6 +66,48 @@ Partial Class frmAttendaceReport
         Me.LayoutControl1.Size = New System.Drawing.Size(702, 502)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'pgcAttendance
+        '
+        Me.pgcAttendance.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.PivotGridField1, Me.PivotGridField2, Me.PivotGridField3, Me.PivotGridField4})
+        Me.pgcAttendance.Location = New System.Drawing.Point(12, 38)
+        Me.pgcAttendance.Name = "pgcAttendance"
+        Me.pgcAttendance.Size = New System.Drawing.Size(678, 405)
+        Me.pgcAttendance.TabIndex = 16
+        '
+        'PivotGridField1
+        '
+        Me.PivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+        Me.PivotGridField1.AreaIndex = 0
+        Me.PivotGridField1.Caption = "Employer No"
+        Me.PivotGridField1.FieldName = "EmployerNo"
+        Me.PivotGridField1.Name = "PivotGridField1"
+        '
+        'PivotGridField2
+        '
+        Me.PivotGridField2.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+        Me.PivotGridField2.AreaIndex = 1
+        Me.PivotGridField2.Caption = "Employer Name"
+        Me.PivotGridField2.FieldName = "EmployerName"
+        Me.PivotGridField2.Name = "PivotGridField2"
+        '
+        'PivotGridField3
+        '
+        Me.PivotGridField3.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
+        Me.PivotGridField3.AreaIndex = 0
+        Me.PivotGridField3.Caption = "Attendance"
+        Me.PivotGridField3.CellFormat.FormatString = "{0:N1}"
+        Me.PivotGridField3.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.PivotGridField3.FieldName = "Attendance"
+        Me.PivotGridField3.Name = "PivotGridField3"
+        '
+        'PivotGridField4
+        '
+        Me.PivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
+        Me.PivotGridField4.AreaIndex = 0
+        Me.PivotGridField4.Caption = "Day"
+        Me.PivotGridField4.FieldName = "monthDate"
+        Me.PivotGridField4.Name = "PivotGridField4"
         '
         'leYear
         '
@@ -182,14 +223,6 @@ Partial Class frmAttendaceReport
         Me.LayoutControlItem6.Text = "Year"
         Me.LayoutControlItem6.TextSize = New System.Drawing.Size(30, 13)
         '
-        'pgcAttendance
-        '
-        Me.pgcAttendance.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.PivotGridField1, Me.PivotGridField2, Me.PivotGridField3, Me.PivotGridField4, Me.PivotGridField5})
-        Me.pgcAttendance.Location = New System.Drawing.Point(12, 38)
-        Me.pgcAttendance.Name = "pgcAttendance"
-        Me.pgcAttendance.Size = New System.Drawing.Size(678, 405)
-        Me.pgcAttendance.TabIndex = 16
-        '
         'LayoutControlItem2
         '
         Me.LayoutControlItem2.Control = Me.pgcAttendance
@@ -202,44 +235,6 @@ Partial Class frmAttendaceReport
         Me.LayoutControlItem2.TextToControlDistance = 0
         Me.LayoutControlItem2.TextVisible = False
         '
-        'PivotGridField1
-        '
-        Me.PivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
-        Me.PivotGridField1.AreaIndex = 0
-        Me.PivotGridField1.Caption = "Employer No"
-        Me.PivotGridField1.FieldName = "EmployerNo"
-        Me.PivotGridField1.Name = "PivotGridField1"
-        '
-        'PivotGridField2
-        '
-        Me.PivotGridField2.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
-        Me.PivotGridField2.AreaIndex = 1
-        Me.PivotGridField2.Caption = "Employer Name"
-        Me.PivotGridField2.FieldName = "EmployerName"
-        Me.PivotGridField2.Name = "PivotGridField2"
-        '
-        'PivotGridField3
-        '
-        Me.PivotGridField3.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
-        Me.PivotGridField3.AreaIndex = 0
-        Me.PivotGridField3.Caption = "Attendance"
-        Me.PivotGridField3.FieldName = "Attendance"
-        Me.PivotGridField3.Name = "PivotGridField3"
-        '
-        'PivotGridField4
-        '
-        Me.PivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
-        Me.PivotGridField4.AreaIndex = 0
-        Me.PivotGridField4.Caption = "Day"
-        Me.PivotGridField4.FieldName = "monthDate"
-        Me.PivotGridField4.Name = "PivotGridField4"
-        '
-        'PivotGridField5
-        '
-        Me.PivotGridField5.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
-        Me.PivotGridField5.AreaIndex = 2
-        Me.PivotGridField5.Name = "PivotGridField5"
-        '
         'frmAttendaceReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -251,6 +246,7 @@ Partial Class frmAttendaceReport
         Me.Text = "Attendance Report"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.pgcAttendance, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -260,7 +256,6 @@ Partial Class frmAttendaceReport
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pgcAttendance, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -284,5 +279,4 @@ Partial Class frmAttendaceReport
     Friend WithEvents PivotGridField3 As DevExpress.XtraPivotGrid.PivotGridField
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents PivotGridField4 As DevExpress.XtraPivotGrid.PivotGridField
-    Friend WithEvents PivotGridField5 As DevExpress.XtraPivotGrid.PivotGridField
 End Class

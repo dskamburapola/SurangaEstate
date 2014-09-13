@@ -54,7 +54,7 @@ Public Class frmAttendaceReport
 
 #Region "Form Events"
     Private Sub frmStockBalance_Activated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Activated
-        'pgcAttendance.BestFitColumnArea()
+        pgcAttendance.BestFitColumnArea()
     End Sub
 
     Private Sub frmStockBalance_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles MyBase.KeyPress
