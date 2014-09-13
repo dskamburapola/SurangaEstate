@@ -65,6 +65,7 @@ Public Class frmDailyWorkings
         Me.deStartDate.EditValue = Date.Today
         Me.deEndDate.EditValue = Date.Today
 
+        Me.deWorkingDate.Focus()
 
         '  MessageBox.Show(Me.deWorkingDate.EditValue)
 
@@ -85,6 +86,7 @@ Public Class frmDailyWorkings
 #End Region
 
 #Region "Bar Button Events"
+
     Private Sub bbClose_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbClose.ItemClick
         Me.Close()
     End Sub
@@ -98,6 +100,12 @@ Public Class frmDailyWorkings
 
 
     End Sub
+
+    Private Sub bbNew_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbNew.ItemClick
+        Me.ClearFormData()
+    End Sub
+
+
 #End Region
 
 #Region "Get Working Category"
@@ -125,7 +133,7 @@ Public Class frmDailyWorkings
         Try
 
             Me.leEmployee.Properties.DataSource = iStockDailyWorking.GetEmployeeForWork.Tables(0)
-            Me.leEmployee.Properties.DisplayMember = "EmployerName"
+            Me.leEmployee.Properties.DisplayMember = "EmployerNo"
             Me.leEmployee.Properties.ValueMember = "EmployerID"
 
 
@@ -308,7 +316,6 @@ Public Class frmDailyWorkings
     Public Sub ClearFormData()
 
         Me.cmbWorkType.SelectedIndex = -1
-        'Me.teEmployeeName.Text = String.Empty
         Me.leWorkCategory.EditValue = Nothing
         Me.leEmployee.EditValue = Nothing
         Me.cmbDays.Text = String.Empty
@@ -369,7 +376,7 @@ Public Class frmDailyWorkings
                     End If
 
                 Else
-                    MsgBox("no")
+                    'MsgBox("no")
                     Me.seQuantity.Focus()
 
                 End If
@@ -385,13 +392,27 @@ Public Class frmDailyWorkings
     End Sub
 #End Region
 
+#Region "Tab Events"
+
+    Private Sub XtraTabControl1_SelectedPageChanged(ByVal sender As System.Object, ByVal e As DevExpress.XtraTab.TabPageChangedEventArgs) Handles XtraTabControl1.SelectedPageChanged
+        Select Case e.Page.TabControl.SelectedTabPageIndex
+            Case 0
+                Me.ShowToolButtonsOnNewRecordTabChange()
+            Case 1
+                Me.ShowToolButtonsOnHistoryTabChange()
+
+
+        End Select
+    End Sub
+
+#End Region
+
+#Region "Editors Events"
+
     Private Sub deWorkingDate_EditValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles deWorkingDate.EditValueChanged
         Me.DailyWorkingGetByDate()
 
     End Sub
-
-
-
 
     Private Sub bbDelete_ItemClick(ByVal sender As Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbDelete.ItemClick
         Me.DeleteDailyWorking()
@@ -441,37 +462,6 @@ Public Class frmDailyWorkings
 
     End Sub
 
-    Private Sub XtraTabControl1_SelectedPageChanged(ByVal sender As System.Object, ByVal e As DevExpress.XtraTab.TabPageChangedEventArgs) Handles XtraTabControl1.SelectedPageChanged
-        Select Case e.Page.TabControl.SelectedTabPageIndex
-            Case 0
-                Me.ShowToolButtonsOnNewRecordTabChange()
-            Case 1
-                Me.ShowToolButtonsOnHistoryTabChange()
-
-
-        End Select
-    End Sub
-
-    Public Sub ShowToolButtonsOnNewRecordTabChange()
-
-        Me.bbDisplaySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        Me.bbRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        Me.bbPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        Me.bbSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
-        Me.bbNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
-        'Me.bbDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
-    End Sub
-
-    Public Sub ShowToolButtonsOnHistoryTabChange()
-
-        'Me.bbDisplaySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
-        Me.bbRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
-        Me.bbPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
-        Me.bbSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        Me.bbNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        Me.bbDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-    End Sub
-
     Private Sub seQuantity_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles seQuantity.KeyPress
 
         If e.KeyChar = Chr(13) Then
@@ -494,5 +484,32 @@ Public Class frmDailyWorkings
         End If
     End Sub
 
-   
+#End Region
+
+#Region "Show/Display bar button"
+
+    Public Sub ShowToolButtonsOnNewRecordTabChange()
+
+        Me.bbDisplaySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        Me.bbNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        'Me.bbDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+    End Sub
+
+    Public Sub ShowToolButtonsOnHistoryTabChange()
+
+        'Me.bbDisplaySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        Me.bbRefresh.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        Me.bbPrint.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
+        Me.bbSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        Me.bbDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+    End Sub
+
+#End Region
+
+  
+
 End Class
