@@ -109,6 +109,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="frmAttendaceReport.Designer.vb">
+      <DependentUpon>frmAttendaceReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAttendaceReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAttendanceReportdsk.designer.vb">
       <DependentUpon>frmAttendanceReportdsk.vb</DependentUpon>
     </Compile>
@@ -372,6 +378,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAttendaceReport.resx">
+      <DependentUpon>frmAttendaceReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAttendanceReportdsk.resx">
       <DependentUpon>frmAttendanceReportdsk.vb</DependentUpon>
       <SubType>Designer</SubType>

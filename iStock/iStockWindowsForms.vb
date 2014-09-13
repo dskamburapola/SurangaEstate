@@ -338,9 +338,52 @@ Module iStockWindowsForms
             a.Header.Content.Add(" ")
             a.Header.Content.Add("" + _CWBCompany.CompanyName + vbCrLf + reportheadername + vbCrLf + "Printed On -" + Date.Now.ToString("dd-MMM-yy hh:mm:tt"))
 
+            frmPrint.PrintControl1.PrintingSystem = Link.PrintingSystem
+
+
+            Link.Margins = New System.Drawing.Printing.Margins(50, 50, 100, 50)
+            Link.CreateDocument()
+            frmPrint.MdiParent = frmMain
+            frmPrint.Show()
+            frmPrint.BringToFront()
 
 
 
+        Catch ex As Exception
+            MessageError(ex.ToString)
+        End Try
+
+
+    End Sub
+
+    Public Sub PrintPivotPreview(ByVal grid As DevExpress.XtraPivotGrid.PivotGridControl, ByVal reportheadername As String)
+        Try
+            'Dim Link As New PrintableComponentLink()
+            'Link.PrintingSystem = New PrintingSystem
+            'Link.Component = grid
+
+
+            'frmPrint.PrintControl1.PrintingSystem = Link.PrintingSystem
+
+            'Link.Margins = New System.Drawing.Printing.Margins(50, 50, 100, 50)
+            'Link.CreateDocument()
+            'frmPrint.MdiParent = frmMain
+            'frmPrint.Show()
+            'frmPrint.BringToFront()
+
+            Dim _CWBCompany As New iStockCommon.iStockCompany
+            _CWBCompany.GetCompany()
+
+            Dim Link As New PrintableComponentLink()
+
+            Link.PrintingSystem = New PrintingSystem
+            Link.Component = grid
+
+            Dim a As PageHeaderFooter
+            a = Link.PageHeaderFooter
+            a.Header.LineAlignment = BrickAlignment.Center
+            a.Header.Content.Add(" ")
+            a.Header.Content.Add("" + _CWBCompany.CompanyName + vbCrLf + reportheadername + vbCrLf + "Printed On -" + Date.Now.ToString("dd-MMM-yy hh:mm:tt"))
 
             frmPrint.PrintControl1.PrintingSystem = Link.PrintingSystem
 
