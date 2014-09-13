@@ -86,6 +86,7 @@ Partial Class frmTermDeductions
         Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem9 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.GridColumn15 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpCompany, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbDeductionType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -224,12 +225,12 @@ Partial Class frmTermDeductions
         '
         Me.cmbDeductionType.EnterMoveNextControl = True
         Me.dxvpCompany.SetIconAlignment(Me.cmbDeductionType, System.Windows.Forms.ErrorIconAlignment.TopLeft)
-        Me.cmbDeductionType.Location = New System.Drawing.Point(167, 53)
+        Me.cmbDeductionType.Location = New System.Drawing.Point(168, 53)
         Me.cmbDeductionType.MenuManager = Me.BarManager1
         Me.cmbDeductionType.Name = "cmbDeductionType"
         Me.cmbDeductionType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbDeductionType.Properties.Items.AddRange(New Object() {"FESTIVAL ", "LOAN "})
-        Me.cmbDeductionType.Size = New System.Drawing.Size(177, 20)
+        Me.cmbDeductionType.Size = New System.Drawing.Size(176, 20)
         Me.cmbDeductionType.StyleController = Me.LayoutControl1
         Me.cmbDeductionType.TabIndex = 1
         ConditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -277,7 +278,7 @@ Partial Class frmTermDeductions
         '
         'gvTermDeductions
         '
-        Me.gvTermDeductions.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2})
+        Me.gvTermDeductions.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn15})
         Me.gvTermDeductions.GridControl = Me.gcTermDeductions
         Me.gvTermDeductions.Name = "gvTermDeductions"
         Me.gvTermDeductions.OptionsView.ShowFooter = True
@@ -309,7 +310,7 @@ Partial Class frmTermDeductions
         '
         Me.deStartMonth.EditValue = Nothing
         Me.deStartMonth.EnterMoveNextControl = True
-        Me.deStartMonth.Location = New System.Drawing.Point(426, 77)
+        Me.deStartMonth.Location = New System.Drawing.Point(427, 77)
         Me.deStartMonth.MenuManager = Me.BarManager1
         Me.deStartMonth.Name = "deStartMonth"
         Me.deStartMonth.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[False]
@@ -320,7 +321,7 @@ Partial Class frmTermDeductions
         Me.deStartMonth.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.deStartMonth.Properties.Mask.EditMask = "MMM-yy"
         Me.deStartMonth.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.deStartMonth.Size = New System.Drawing.Size(179, 20)
+        Me.deStartMonth.Size = New System.Drawing.Size(178, 20)
         Me.deStartMonth.StyleController = Me.LayoutControl1
         Me.deStartMonth.TabIndex = 5
         ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -331,12 +332,12 @@ Partial Class frmTermDeductions
         '
         Me.sePeriod.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.sePeriod.EnterMoveNextControl = True
-        Me.sePeriod.Location = New System.Drawing.Point(426, 53)
+        Me.sePeriod.Location = New System.Drawing.Point(427, 53)
         Me.sePeriod.MenuManager = Me.BarManager1
         Me.sePeriod.Name = "sePeriod"
         Me.sePeriod.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.sePeriod.Properties.MaxValue = New Decimal(New Integer() {10000000, 0, 0, 0})
-        Me.sePeriod.Size = New System.Drawing.Size(179, 20)
+        Me.sePeriod.Size = New System.Drawing.Size(178, 20)
         Me.sePeriod.StyleController = Me.LayoutControl1
         Me.sePeriod.TabIndex = 4
         ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
@@ -348,12 +349,12 @@ Partial Class frmTermDeductions
         '
         Me.seAmount.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seAmount.EnterMoveNextControl = True
-        Me.seAmount.Location = New System.Drawing.Point(426, 29)
+        Me.seAmount.Location = New System.Drawing.Point(427, 29)
         Me.seAmount.MenuManager = Me.BarManager1
         Me.seAmount.Name = "seAmount"
         Me.seAmount.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.seAmount.Properties.MaxValue = New Decimal(New Integer() {10000000, 0, 0, 0})
-        Me.seAmount.Size = New System.Drawing.Size(179, 20)
+        Me.seAmount.Size = New System.Drawing.Size(178, 20)
         Me.seAmount.StyleController = Me.LayoutControl1
         Me.seAmount.TabIndex = 3
         ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
@@ -377,13 +378,13 @@ Partial Class frmTermDeductions
         'leEmployeeCode
         '
         Me.leEmployeeCode.EnterMoveNextControl = True
-        Me.leEmployeeCode.Location = New System.Drawing.Point(167, 29)
+        Me.leEmployeeCode.Location = New System.Drawing.Point(168, 29)
         Me.leEmployeeCode.MenuManager = Me.BarManager1
         Me.leEmployeeCode.Name = "leEmployeeCode"
         Me.leEmployeeCode.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.leEmployeeCode.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("EmployerID", "EmployerID", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("EmployerNo", "Employer No"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("EmployerName", "Employer Name")})
         Me.leEmployeeCode.Properties.NullText = ""
-        Me.leEmployeeCode.Size = New System.Drawing.Size(177, 20)
+        Me.leEmployeeCode.Size = New System.Drawing.Size(176, 20)
         Me.leEmployeeCode.StyleController = Me.LayoutControl1
         Me.leEmployeeCode.TabIndex = 0
         ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -394,7 +395,7 @@ Partial Class frmTermDeductions
         '
         Me.deIssueDate.EditValue = Nothing
         Me.deIssueDate.EnterMoveNextControl = True
-        Me.deIssueDate.Location = New System.Drawing.Point(167, 77)
+        Me.deIssueDate.Location = New System.Drawing.Point(168, 77)
         Me.deIssueDate.MenuManager = Me.BarManager1
         Me.deIssueDate.Name = "deIssueDate"
         Me.deIssueDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[False]
@@ -405,7 +406,7 @@ Partial Class frmTermDeductions
         Me.deIssueDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.deIssueDate.Properties.Mask.EditMask = "dd-MMM-yy"
         Me.deIssueDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.deIssueDate.Size = New System.Drawing.Size(177, 20)
+        Me.deIssueDate.Size = New System.Drawing.Size(176, 20)
         Me.deIssueDate.StyleController = Me.LayoutControl1
         Me.deIssueDate.TabIndex = 2
         ConditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -732,6 +733,14 @@ Partial Class frmTermDeductions
         Me.LayoutControlItem9.TextToControlDistance = 0
         Me.LayoutControlItem9.TextVisible = False
         '
+        'GridColumn15
+        '
+        Me.GridColumn15.Caption = "ActiveDate"
+        Me.GridColumn15.FieldName = "ActiveDate"
+        Me.GridColumn15.Name = "GridColumn15"
+        Me.GridColumn15.Visible = True
+        Me.GridColumn15.VisibleIndex = 2
+        '
         'frmTermDeductions
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -844,4 +853,5 @@ Partial Class frmTermDeductions
     Friend WithEvents LayoutControlItem10 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem1 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem2 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents GridColumn15 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

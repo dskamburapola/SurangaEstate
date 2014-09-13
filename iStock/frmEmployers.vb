@@ -223,7 +223,7 @@ Public Class frmEmployers
                 .FixedAllowance = 0
                 .OtherAllowance = 0
                 .Deductions = 0
-                .EPFNo = teEPFNo.Text.Trim
+                .EPFNo = seEPFNo.Text.Trim
 
                 .CreatedBy = UserID
                 .UpdatedBy = UserID
@@ -360,7 +360,7 @@ Public Class frmEmployers
             'seFixedAllowance.Text = 0
             'seOtherAllowance.Text = 0.0
             'seDeduction.Text = 0
-            teEPFNo.Text = String.Empty
+            seEPFNo.Text = String.Empty
             dxvpEmployers.RemoveControlError(seEmployerNo)
             dxvpEmployers.RemoveControlError(teEmployerName)
             dxvpEmployers.RemoveControlError(ceSex)

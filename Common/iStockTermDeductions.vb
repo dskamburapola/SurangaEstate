@@ -21,6 +21,7 @@ Public Class iStockTermDeductions
     Private _TDMonthName As String
     Private _TDInsAmount As Decimal
 
+    Private _ActiveDate As Date
 
 #End Region
 
@@ -130,6 +131,14 @@ Public Class iStockTermDeductions
             _TDInsAmount = value
         End Set
     End Property
+    Public Property ActiveDate() As Date
+        Get
+            Return _ActiveDate
+        End Get
+        Set(ByVal value As Date)
+            _ActiveDate = value
+        End Set
+    End Property
 #End Region
 
 #Region "Insert TermDeductions"
@@ -186,6 +195,7 @@ Public Class iStockTermDeductions
         Try
             ' Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
             Dim DBC As DbCommand = db.GetStoredProcCommand(TERMDEDUCTIONDESCRIPTION_INSERT)
+            db.AddInParameter(DBC, "@ActiveDate", DbType.Date, Me.ActiveDate)
             db.AddInParameter(DBC, "@TermDeductionID", DbType.Int64, Me.TermDeductionID)
             DB.AddInParameter(DBC, "@TDMonthName", DbType.String, Me.TDMonthName)
             db.AddInParameter(DBC, "@TDInsAmount", DbType.Decimal, Me.TDInsAmount)

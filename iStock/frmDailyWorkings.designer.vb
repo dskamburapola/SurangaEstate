@@ -20,8 +20,11 @@ Partial Class frmDailyWorkings
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim ConditionValidationRule4 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule5 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar2 = New DevExpress.XtraBars.Bar()
@@ -36,7 +39,7 @@ Partial Class frmDailyWorkings
         Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
-        Me.dxvpCompany = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.dxvpDailyWorking = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         Me.leWorkCategory = New DevExpress.XtraEditors.LookUpEdit()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.cmbDays = New DevExpress.XtraEditors.ComboBoxEdit()
@@ -111,7 +114,7 @@ Partial Class frmDailyWorkings
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.DateEdit1 = New DevExpress.XtraEditors.DateEdit()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dxvpCompany, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dxvpDailyWorking, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.leWorkCategory.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
@@ -278,9 +281,9 @@ Partial Class frmDailyWorkings
         Me.leWorkCategory.Size = New System.Drawing.Size(190, 20)
         Me.leWorkCategory.StyleController = Me.LayoutControl1
         Me.leWorkCategory.TabIndex = 2
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "Require"
-        Me.dxvpCompany.SetValidationRule(Me.leWorkCategory, ConditionValidationRule1)
+        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule4.ErrorText = "Require"
+        Me.dxvpDailyWorking.SetValidationRule(Me.leWorkCategory, ConditionValidationRule4)
         '
         'LayoutControl1
         '
@@ -318,6 +321,9 @@ Partial Class frmDailyWorkings
         Me.cmbDays.Size = New System.Drawing.Size(191, 20)
         Me.cmbDays.StyleController = Me.LayoutControl1
         Me.cmbDays.TabIndex = 4
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "Require"
+        Me.dxvpDailyWorking.SetValidationRule(Me.cmbDays, ConditionValidationRule1)
         '
         'lblDeleteID
         '
@@ -376,6 +382,9 @@ Partial Class frmDailyWorkings
         Me.leEmployee.Size = New System.Drawing.Size(191, 20)
         Me.leEmployee.StyleController = Me.LayoutControl1
         Me.leEmployee.TabIndex = 3
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule2.ErrorText = "Require"
+        Me.dxvpDailyWorking.SetValidationRule(Me.leEmployee, ConditionValidationRule2)
         '
         'lblOTRate
         '
@@ -408,6 +417,9 @@ Partial Class frmDailyWorkings
         Me.seQuantity.Size = New System.Drawing.Size(191, 20)
         Me.seQuantity.StyleController = Me.LayoutControl1
         Me.seQuantity.TabIndex = 6
+        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule3.ErrorText = "Require"
+        Me.dxvpDailyWorking.SetValidationRule(Me.seQuantity, ConditionValidationRule3)
         '
         'lblKgsPerDay
         '
@@ -429,9 +441,9 @@ Partial Class frmDailyWorkings
         Me.cmbWorkType.Size = New System.Drawing.Size(190, 20)
         Me.cmbWorkType.StyleController = Me.LayoutControl1
         Me.cmbWorkType.TabIndex = 1
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule2.ErrorText = "Require"
-        Me.dxvpCompany.SetValidationRule(Me.cmbWorkType, ConditionValidationRule2)
+        ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule5.ErrorText = "Require"
+        Me.dxvpDailyWorking.SetValidationRule(Me.cmbWorkType, ConditionValidationRule5)
         '
         'gcDailyWorking
         '
@@ -1117,7 +1129,7 @@ Partial Class frmDailyWorkings
         Me.Name = "frmDailyWorkings"
         Me.Text = "Daily Workings"
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dxvpCompany, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dxvpDailyWorking, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.leWorkCategory.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
@@ -1190,7 +1202,7 @@ Partial Class frmDailyWorkings
     Friend WithEvents bbDelete As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents bbRefresh As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents bbPrint As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents dxvpCompany As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
+    Friend WithEvents dxvpDailyWorking As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
     Friend WithEvents XtraTabControl1 As DevExpress.XtraTab.XtraTabControl
     Friend WithEvents XtraTabPage1 As DevExpress.XtraTab.XtraTabPage
     Friend WithEvents LayoutControl1 As DevExpress.XtraLayout.LayoutControl

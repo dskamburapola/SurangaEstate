@@ -20,6 +20,9 @@ Partial Class frmCashAdvance
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar2 = New DevExpress.XtraBars.Bar()
         Me.bbSave = New DevExpress.XtraBars.BarButtonItem()
@@ -33,7 +36,8 @@ Partial Class frmCashAdvance
         Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
-        Me.dxvpCompany = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.dxvpCashAdvance = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.sePaybleAmount = New DevExpress.XtraEditors.SpinEdit()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.tePaybleAmount = New DevExpress.XtraEditors.SpinEdit()
         Me.teTotalDeductions = New DevExpress.XtraEditors.SpinEdit()
@@ -44,7 +48,6 @@ Partial Class frmCashAdvance
         Me.teLMB = New DevExpress.XtraEditors.SpinEdit()
         Me.tePayment = New DevExpress.XtraEditors.SpinEdit()
         Me.teWorkedDays = New DevExpress.XtraEditors.SpinEdit()
-        Me.sePaybleAmount = New DevExpress.XtraEditors.SpinEdit()
         Me.leEmployee = New DevExpress.XtraEditors.LookUpEdit()
         Me.deIssueDate = New DevExpress.XtraEditors.DateEdit()
         Me.teEmployeeName = New DevExpress.XtraEditors.TextEdit()
@@ -103,7 +106,8 @@ Partial Class frmCashAdvance
         Me.LayoutControlItem16 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem17 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dxvpCompany, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dxvpCashAdvance, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.sePaybleAmount.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.tePaybleAmount.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,7 +119,6 @@ Partial Class frmCashAdvance
         CType(Me.teLMB.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tePayment.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.teWorkedDays.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.sePaybleAmount.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.leEmployee.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.deIssueDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.deIssueDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -262,6 +265,25 @@ Partial Class frmCashAdvance
         Me.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right
         Me.barDockControlRight.Location = New System.Drawing.Point(703, 22)
         Me.barDockControlRight.Size = New System.Drawing.Size(0, 412)
+        '
+        'sePaybleAmount
+        '
+        Me.sePaybleAmount.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.sePaybleAmount.Location = New System.Drawing.Point(245, 322)
+        Me.sePaybleAmount.MenuManager = Me.BarManager1
+        Me.sePaybleAmount.Name = "sePaybleAmount"
+        Me.sePaybleAmount.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 14.0!)
+        Me.sePaybleAmount.Properties.Appearance.Options.UseFont = True
+        Me.sePaybleAmount.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.sePaybleAmount.Properties.DisplayFormat.FormatString = "{0:N2}"
+        Me.sePaybleAmount.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.sePaybleAmount.Size = New System.Drawing.Size(288, 30)
+        Me.sePaybleAmount.StyleController = Me.LayoutControl1
+        Me.sePaybleAmount.TabIndex = 16
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals
+        ConditionValidationRule1.ErrorText = "This value is not valid"
+        ConditionValidationRule1.Value1 = "0"
+        Me.dxvpCashAdvance.SetValidationRule(Me.sePaybleAmount, ConditionValidationRule1)
         '
         'LayoutControl1
         '
@@ -412,21 +434,6 @@ Partial Class frmCashAdvance
         Me.teWorkedDays.StyleController = Me.LayoutControl1
         Me.teWorkedDays.TabIndex = 17
         '
-        'sePaybleAmount
-        '
-        Me.sePaybleAmount.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.sePaybleAmount.Location = New System.Drawing.Point(245, 322)
-        Me.sePaybleAmount.MenuManager = Me.BarManager1
-        Me.sePaybleAmount.Name = "sePaybleAmount"
-        Me.sePaybleAmount.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 14.0!)
-        Me.sePaybleAmount.Properties.Appearance.Options.UseFont = True
-        Me.sePaybleAmount.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.sePaybleAmount.Properties.DisplayFormat.FormatString = "{0:N2}"
-        Me.sePaybleAmount.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.sePaybleAmount.Size = New System.Drawing.Size(288, 30)
-        Me.sePaybleAmount.StyleController = Me.LayoutControl1
-        Me.sePaybleAmount.TabIndex = 16
-        '
         'leEmployee
         '
         Me.leEmployee.Location = New System.Drawing.Point(245, 58)
@@ -438,6 +445,9 @@ Partial Class frmCashAdvance
         Me.leEmployee.Size = New System.Drawing.Size(288, 20)
         Me.leEmployee.StyleController = Me.LayoutControl1
         Me.leEmployee.TabIndex = 13
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule2.ErrorText = "This value is not valid"
+        Me.dxvpCashAdvance.SetValidationRule(Me.leEmployee, ConditionValidationRule2)
         '
         'deIssueDate
         '
@@ -455,6 +465,9 @@ Partial Class frmCashAdvance
         Me.deIssueDate.Size = New System.Drawing.Size(288, 20)
         Me.deIssueDate.StyleController = Me.LayoutControl1
         Me.deIssueDate.TabIndex = 12
+        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule3.ErrorText = "This value is not valid"
+        Me.dxvpCashAdvance.SetValidationRule(Me.deIssueDate, ConditionValidationRule3)
         '
         'teEmployeeName
         '
@@ -1043,7 +1056,8 @@ Partial Class frmCashAdvance
         Me.Name = "frmCashAdvance"
         Me.Text = "Monthly Cash Advance"
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dxvpCompany, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dxvpCashAdvance, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.sePaybleAmount.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.tePaybleAmount.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1055,7 +1069,6 @@ Partial Class frmCashAdvance
         CType(Me.teLMB.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tePayment.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.teWorkedDays.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.sePaybleAmount.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.leEmployee.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.deIssueDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.deIssueDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1123,7 +1136,7 @@ Partial Class frmCashAdvance
     Friend WithEvents bbDelete As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents bbRefresh As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents bbPrint As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents dxvpCompany As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
+    Friend WithEvents dxvpCashAdvance As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
     Friend WithEvents xTab1 As DevExpress.XtraTab.XtraTabControl
     Friend WithEvents XtraTabPage2 As DevExpress.XtraTab.XtraTabPage
     Friend WithEvents XtraTabPage1 As DevExpress.XtraTab.XtraTabPage

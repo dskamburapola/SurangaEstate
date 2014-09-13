@@ -91,7 +91,7 @@ Public Class frmDailyWorkings
 
     Private Sub bbSave_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbSave.ItemClick
 
-        If dxvpCompany.Validate Then
+        If dxvpDailyWorking.Validate Then
 
             Me.SaveDailyWorking()
         End If
@@ -475,7 +475,7 @@ Public Class frmDailyWorkings
     Private Sub seQuantity_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles seQuantity.KeyPress
 
         If e.KeyChar = Chr(13) Then
-            If dxvpCompany.Validate Then
+            If dxvpDailyWorking.Validate Then
                 Me.SaveDailyWorking()
             End If
         End If

@@ -12,7 +12,7 @@ Public Class frmTermDeductions
 
 #Region "Variables"
 
-    Dim dtm, dtx As Date
+    Dim dtm, dtx, firstDate As Date
     Dim dt As DataTable
     Dim dr As DataRow
     Dim ds As DataSet
@@ -110,7 +110,7 @@ Public Class frmTermDeductions
         ds = New DataSet
         dt.Columns.Add("TDMonthName")
         dt.Columns.Add("TDInsAmount", System.Type.GetType("System.Decimal"))
-
+        dt.Columns.Add("ActiveDate")
         ds.Tables.Add(dt)
 
 
@@ -260,6 +260,7 @@ Public Class frmTermDeductions
                         .TermDeductionID = .NewTermDeductionID
                         .TDMonthName = Me.gvTermDeductions.GetRowCellDisplayText(i, GridColumn1)
                         .TDInsAmount = Me.gvTermDeductions.GetRowCellDisplayText(i, GridColumn2)
+                        .ActiveDate = Convert.ToDateTime(Me.gvTermDeductions.GetRowCellDisplayText(i, GridColumn15))
 
                         .InsertTermDeductionsDescription(_DB, _Transaction)
                     End If
@@ -385,11 +386,18 @@ Public Class frmTermDeductions
             '  MsgBox(dtm)
             For i As Integer = 1 To Convert.ToInt64(Me.sePeriod.EditValue)
                 dr = dt.NewRow
+                firstDate = New DateTime(dtm.Year, dtm.Month, 1)
 
                 dr(0) = Format(dtm.AddMonths(1), "MMM-yyyy")
                 ' dr(0) = ym
                 dr(1) = Convert.ToDecimal(seAmount.EditValue) / Convert.ToDecimal(sePeriod.EditValue)
+                dr(2) = Format(firstDate.AddMonths(1), "dd-MMM-yyyy")
+
+
                 dt.Rows.Add(dr)
+
+                'MessageBox.Show(DateTime(dtm.Year, dtm.Month, 1))
+                '   Dim firstDate As Date = New DateTime(dtm.Year, dtm.Month, 1)
 
                 dtm = dtm.AddMonths(1)
             Next

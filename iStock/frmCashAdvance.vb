@@ -72,12 +72,13 @@ Public Class frmCashAdvance
 
     Private Sub bbSave_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbSave.ItemClick
 
-        'If dxvpCompany.Validate Then
-        '    '   Me.SaveCompany()
-        'End If
+        
+        If dxvpCashAdvance.Validate Then
 
-        Me.SaveCashAdvance()
-        Me.ClearFormData()
+            Me.SaveCashAdvance()
+            Me.ClearFormData()
+        End If
+
     End Sub
 
     Private Sub bbNew_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbNew.ItemClick
@@ -310,17 +311,9 @@ Public Class frmCashAdvance
 
     End Sub
 
-    Private Sub sePaybleAmount_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Me.SaveCashAdvance()
+    
 
-    End Sub
-
-    Private Sub sePaybleAmount_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
-        If Asc(e.KeyChar) = 13 Then
-            Me.SaveCashAdvance()
-
-        End If
-    End Sub
+    
 
     Private Sub btnDisplay_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDisplay.Click
         Me.CashAdvanceGetAllByDates()
@@ -359,12 +352,7 @@ Public Class frmCashAdvance
     '    SendKeys.Send("{HOME}+{END}")
     'End Sub
 
-    Private Sub sePaybleAmount_KeyPress_1(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles sePaybleAmount.KeyPress
-        If Asc(e.KeyChar) = 13 Then
-            Me.SaveCashAdvance()
-            Me.ClearFormData()
-        End If
-    End Sub
+    
 
    
     Private Sub leEmployee_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles leEmployee.KeyPress
@@ -374,5 +362,18 @@ Public Class frmCashAdvance
             SendKeys.Send("{HOME}+{END}")
         End If
 
+    End Sub
+
+   
+    Private Sub sePaybleAmount_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles sePaybleAmount.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+
+            If dxvpCashAdvance.Validate Then
+
+                Me.SaveCashAdvance()
+                Me.ClearFormData()
+            End If
+
+        End If
     End Sub
 End Class
