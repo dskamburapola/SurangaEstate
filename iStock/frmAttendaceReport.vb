@@ -99,18 +99,22 @@ Public Class frmAttendaceReport
 
     Private Sub sbGenerate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbGenerate.Click
 
-        Dim currentDate As Date
-        Dim selectedMonth, selectedYear As String
-        selectedMonth = meMonth.EditValue
-        selectedYear = leYear.EditValue
-        currentDate = Convert.ToDateTime(selectedMonth + "-1-" + selectedYear)
+        If dxvpAttendaceReport.Validate Then
 
-        Dim ds As New DataSet
+            Dim currentDate As Date
+            Dim selectedMonth, selectedYear As String
+            selectedMonth = meMonth.EditValue
+            selectedYear = leYear.EditValue
+            currentDate = Convert.ToDateTime(selectedMonth + "-1-" + selectedYear)
 
-        ds = iStockDailyWorking.GetAttendanceReport(currentDate)
-        pgcAttendance.DataSource = ds.Tables(0)
+            Dim ds As New DataSet
+
+            ds = iStockDailyWorking.GetAttendanceReport(currentDate)
+            pgcAttendance.DataSource = ds.Tables(0)
 
 
+        End If
+      
 
     End Sub
 End Class

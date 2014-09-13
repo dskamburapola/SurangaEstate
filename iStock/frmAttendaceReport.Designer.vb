@@ -19,6 +19,9 @@ Partial Class frmAttendaceReport
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.pgcAttendance = New DevExpress.XtraPivotGrid.PivotGridControl()
         Me.PivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
@@ -37,6 +40,7 @@ Partial Class frmAttendaceReport
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.pgcAttendance, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,6 +54,7 @@ Partial Class frmAttendaceReport
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -118,6 +123,9 @@ Partial Class frmAttendaceReport
         Me.leYear.Size = New System.Drawing.Size(131, 20)
         Me.leYear.StyleController = Me.LayoutControl1
         Me.leYear.TabIndex = 15
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.leYear, ConditionValidationRule1)
         '
         'meMonth
         '
@@ -127,6 +135,9 @@ Partial Class frmAttendaceReport
         Me.meMonth.Size = New System.Drawing.Size(133, 20)
         Me.meMonth.StyleController = Me.LayoutControl1
         Me.meMonth.TabIndex = 14
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule2.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.meMonth, ConditionValidationRule2)
         '
         'sbGenerate
         '
@@ -257,6 +268,7 @@ Partial Class frmAttendaceReport
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -279,4 +291,5 @@ Partial Class frmAttendaceReport
     Friend WithEvents PivotGridField3 As DevExpress.XtraPivotGrid.PivotGridField
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents PivotGridField4 As DevExpress.XtraPivotGrid.PivotGridField
+    Friend WithEvents dxvpAttendaceReport As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
 End Class

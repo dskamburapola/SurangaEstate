@@ -148,7 +148,13 @@ Public Class frmMain
     End Sub
 
 #End Region
-   
+
+
+    'select DATEPART(year,WorkingDate) AS yesr,
+    'DATEPART(month,WorkingDate) AS yesrmonth,
+    'sum(Quantity)
+    '  from tblDailyWorking
+    '  group by DATEPART(year,WorkingDate),DATEPART(month,WorkingDate)
     
   
 End Class
