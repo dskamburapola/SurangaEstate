@@ -61,13 +61,6 @@ Partial Class frmSettings
         Me.sePayChitCost = New DevExpress.XtraEditors.SpinEdit()
         Me.leAbbriviationCode = New DevExpress.XtraEditors.LookUpEdit()
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.LayoutControlItem16 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem15 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem9 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem12 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem17 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlGroup3 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem10 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
@@ -77,17 +70,24 @@ Partial Class frmSettings
         Me.EmptySpaceItem18 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.EmptySpaceItem4 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.EmptySpaceItem3 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.LayoutControlGroup4 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem12 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem17 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem9 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem15 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem16 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem11 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem13 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem14 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmptySpaceItem4 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmptySpaceItem3 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.dxvpSettings = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
-        Me.LayoutControlGroup4 = New DevExpress.XtraLayout.LayoutControlGroup()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
@@ -107,13 +107,6 @@ Partial Class frmSettings
         CType(Me.sePayChitCost.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.leAbbriviationCode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -123,17 +116,24 @@ Partial Class frmSettings
         CType(Me.EmptySpaceItem18, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlGroup4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpSettings, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlGroup4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarManager1
@@ -496,76 +496,6 @@ Partial Class frmSettings
         Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
         Me.LayoutControlGroup1.TextVisible = False
         '
-        'LayoutControlItem16
-        '
-        Me.LayoutControlItem16.Control = Me.seETF
-        Me.LayoutControlItem16.CustomizationFormText = "ETF"
-        Me.LayoutControlItem16.Location = New System.Drawing.Point(0, 144)
-        Me.LayoutControlItem16.Name = "LayoutControlItem16"
-        Me.LayoutControlItem16.Size = New System.Drawing.Size(537, 24)
-        Me.LayoutControlItem16.Text = "ETF (%)"
-        Me.LayoutControlItem16.TextSize = New System.Drawing.Size(102, 13)
-        '
-        'LayoutControlItem15
-        '
-        Me.LayoutControlItem15.Control = Me.seEPF
-        Me.LayoutControlItem15.CustomizationFormText = "EPF "
-        Me.LayoutControlItem15.Location = New System.Drawing.Point(0, 120)
-        Me.LayoutControlItem15.Name = "LayoutControlItem15"
-        Me.LayoutControlItem15.Size = New System.Drawing.Size(537, 24)
-        Me.LayoutControlItem15.Text = "EPF (%)"
-        Me.LayoutControlItem15.TextSize = New System.Drawing.Size(102, 13)
-        '
-        'LayoutControlItem9
-        '
-        Me.LayoutControlItem9.Control = Me.sePayChitCost
-        Me.LayoutControlItem9.CustomizationFormText = "LayoutControlItem9"
-        Me.LayoutControlItem9.Location = New System.Drawing.Point(0, 96)
-        Me.LayoutControlItem9.Name = "LayoutControlItem9"
-        Me.LayoutControlItem9.Size = New System.Drawing.Size(283, 24)
-        Me.LayoutControlItem9.Text = "Pay Chit Cost"
-        Me.LayoutControlItem9.TextSize = New System.Drawing.Size(102, 13)
-        '
-        'LayoutControlItem1
-        '
-        Me.LayoutControlItem1.Control = Me.seDayRate
-        Me.LayoutControlItem1.CustomizationFormText = "Day Rate"
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(283, 24)
-        Me.LayoutControlItem1.Text = "Day Rate"
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(102, 13)
-        '
-        'LayoutControlItem12
-        '
-        Me.LayoutControlItem12.Control = Me.seOTRate
-        Me.LayoutControlItem12.CustomizationFormText = "OT Rate"
-        Me.LayoutControlItem12.Location = New System.Drawing.Point(0, 24)
-        Me.LayoutControlItem12.Name = "LayoutControlItem12"
-        Me.LayoutControlItem12.Size = New System.Drawing.Size(283, 24)
-        Me.LayoutControlItem12.Text = "OT Rate"
-        Me.LayoutControlItem12.TextSize = New System.Drawing.Size(102, 13)
-        '
-        'LayoutControlItem4
-        '
-        Me.LayoutControlItem4.Control = Me.seCasualPayRate
-        Me.LayoutControlItem4.CustomizationFormText = "Casual Pay Rate"
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 48)
-        Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(283, 24)
-        Me.LayoutControlItem4.Text = "Casual Pay Rate"
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(102, 13)
-        '
-        'LayoutControlItem17
-        '
-        Me.LayoutControlItem17.Control = Me.seCasualOTPayRate
-        Me.LayoutControlItem17.CustomizationFormText = "Casual OT Pay Rate"
-        Me.LayoutControlItem17.Location = New System.Drawing.Point(0, 72)
-        Me.LayoutControlItem17.Name = "LayoutControlItem17"
-        Me.LayoutControlItem17.Size = New System.Drawing.Size(283, 24)
-        Me.LayoutControlItem17.Text = "Casual OT Pay Rate"
-        Me.LayoutControlItem17.TextSize = New System.Drawing.Size(102, 13)
-        '
         'LayoutControlGroup3
         '
         Me.LayoutControlGroup3.CustomizationFormText = "Abbreviations"
@@ -659,6 +589,125 @@ Partial Class frmSettings
         Me.LayoutControlItem8.TextToControlDistance = 0
         Me.LayoutControlItem8.TextVisible = False
         '
+        'EmptySpaceItem1
+        '
+        Me.EmptySpaceItem1.AllowHotTrack = False
+        Me.EmptySpaceItem1.CustomizationFormText = "EmptySpaceItem1"
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(172, 395)
+        Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(561, 170)
+        Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
+        Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'EmptySpaceItem4
+        '
+        Me.EmptySpaceItem4.AllowHotTrack = False
+        Me.EmptySpaceItem4.CustomizationFormText = "EmptySpaceItem4"
+        Me.EmptySpaceItem4.Location = New System.Drawing.Point(172, 565)
+        Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
+        Me.EmptySpaceItem4.Size = New System.Drawing.Size(561, 20)
+        Me.EmptySpaceItem4.Text = "EmptySpaceItem4"
+        Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'EmptySpaceItem2
+        '
+        Me.EmptySpaceItem2.AllowHotTrack = False
+        Me.EmptySpaceItem2.CustomizationFormText = "EmptySpaceItem2"
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(0, 0)
+        Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(172, 585)
+        Me.EmptySpaceItem2.Text = "EmptySpaceItem2"
+        Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'EmptySpaceItem3
+        '
+        Me.EmptySpaceItem3.AllowHotTrack = False
+        Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(733, 0)
+        Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(135, 585)
+        Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
+        Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'LayoutControlGroup4
+        '
+        Me.LayoutControlGroup4.CustomizationFormText = "Application Settings"
+        Me.LayoutControlGroup4.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem12, Me.LayoutControlItem4, Me.LayoutControlItem17, Me.LayoutControlItem9, Me.LayoutControlItem15, Me.LayoutControlItem16, Me.LayoutControlItem11, Me.LayoutControlItem2, Me.LayoutControlItem13, Me.LayoutControlItem3, Me.LayoutControlItem14})
+        Me.LayoutControlGroup4.Location = New System.Drawing.Point(172, 184)
+        Me.LayoutControlGroup4.Name = "LayoutControlGroup4"
+        Me.LayoutControlGroup4.Size = New System.Drawing.Size(561, 211)
+        Me.LayoutControlGroup4.Text = "Application Settings"
+        '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.seDayRate
+        Me.LayoutControlItem1.CustomizationFormText = "Day Rate"
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(283, 24)
+        Me.LayoutControlItem1.Text = "Day Rate"
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(102, 13)
+        '
+        'LayoutControlItem12
+        '
+        Me.LayoutControlItem12.Control = Me.seOTRate
+        Me.LayoutControlItem12.CustomizationFormText = "OT Rate"
+        Me.LayoutControlItem12.Location = New System.Drawing.Point(0, 24)
+        Me.LayoutControlItem12.Name = "LayoutControlItem12"
+        Me.LayoutControlItem12.Size = New System.Drawing.Size(283, 24)
+        Me.LayoutControlItem12.Text = "OT Rate"
+        Me.LayoutControlItem12.TextSize = New System.Drawing.Size(102, 13)
+        '
+        'LayoutControlItem4
+        '
+        Me.LayoutControlItem4.Control = Me.seCasualPayRate
+        Me.LayoutControlItem4.CustomizationFormText = "Casual Pay Rate"
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 48)
+        Me.LayoutControlItem4.Name = "LayoutControlItem4"
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(283, 24)
+        Me.LayoutControlItem4.Text = "Casual Pay Rate"
+        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(102, 13)
+        '
+        'LayoutControlItem17
+        '
+        Me.LayoutControlItem17.Control = Me.seCasualOTPayRate
+        Me.LayoutControlItem17.CustomizationFormText = "Casual OT Pay Rate"
+        Me.LayoutControlItem17.Location = New System.Drawing.Point(0, 72)
+        Me.LayoutControlItem17.Name = "LayoutControlItem17"
+        Me.LayoutControlItem17.Size = New System.Drawing.Size(283, 24)
+        Me.LayoutControlItem17.Text = "Casual OT Pay Rate"
+        Me.LayoutControlItem17.TextSize = New System.Drawing.Size(102, 13)
+        '
+        'LayoutControlItem9
+        '
+        Me.LayoutControlItem9.Control = Me.sePayChitCost
+        Me.LayoutControlItem9.CustomizationFormText = "LayoutControlItem9"
+        Me.LayoutControlItem9.Location = New System.Drawing.Point(0, 96)
+        Me.LayoutControlItem9.Name = "LayoutControlItem9"
+        Me.LayoutControlItem9.Size = New System.Drawing.Size(283, 24)
+        Me.LayoutControlItem9.Text = "Pay Chit Cost"
+        Me.LayoutControlItem9.TextSize = New System.Drawing.Size(102, 13)
+        '
+        'LayoutControlItem15
+        '
+        Me.LayoutControlItem15.Control = Me.seEPF
+        Me.LayoutControlItem15.CustomizationFormText = "EPF "
+        Me.LayoutControlItem15.Location = New System.Drawing.Point(0, 120)
+        Me.LayoutControlItem15.Name = "LayoutControlItem15"
+        Me.LayoutControlItem15.Size = New System.Drawing.Size(537, 24)
+        Me.LayoutControlItem15.Text = "EPF (%)"
+        Me.LayoutControlItem15.TextSize = New System.Drawing.Size(102, 13)
+        '
+        'LayoutControlItem16
+        '
+        Me.LayoutControlItem16.Control = Me.seETF
+        Me.LayoutControlItem16.CustomizationFormText = "ETF"
+        Me.LayoutControlItem16.Location = New System.Drawing.Point(0, 144)
+        Me.LayoutControlItem16.Name = "LayoutControlItem16"
+        Me.LayoutControlItem16.Size = New System.Drawing.Size(537, 24)
+        Me.LayoutControlItem16.Text = "ETF (%)"
+        Me.LayoutControlItem16.TextSize = New System.Drawing.Size(102, 13)
+        '
         'LayoutControlItem11
         '
         Me.LayoutControlItem11.Control = Me.seDevalutionAllowance
@@ -709,55 +758,6 @@ Partial Class frmSettings
         Me.LayoutControlItem14.Text = "WC Pay"
         Me.LayoutControlItem14.TextSize = New System.Drawing.Size(102, 13)
         '
-        'EmptySpaceItem1
-        '
-        Me.EmptySpaceItem1.AllowHotTrack = False
-        Me.EmptySpaceItem1.CustomizationFormText = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(172, 395)
-        Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(561, 170)
-        Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmptySpaceItem4
-        '
-        Me.EmptySpaceItem4.AllowHotTrack = False
-        Me.EmptySpaceItem4.CustomizationFormText = "EmptySpaceItem4"
-        Me.EmptySpaceItem4.Location = New System.Drawing.Point(172, 565)
-        Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
-        Me.EmptySpaceItem4.Size = New System.Drawing.Size(561, 20)
-        Me.EmptySpaceItem4.Text = "EmptySpaceItem4"
-        Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmptySpaceItem2
-        '
-        Me.EmptySpaceItem2.AllowHotTrack = False
-        Me.EmptySpaceItem2.CustomizationFormText = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(0, 0)
-        Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(172, 585)
-        Me.EmptySpaceItem2.Text = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmptySpaceItem3
-        '
-        Me.EmptySpaceItem3.AllowHotTrack = False
-        Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(733, 0)
-        Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(135, 585)
-        Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'LayoutControlGroup4
-        '
-        Me.LayoutControlGroup4.CustomizationFormText = "Application Settings"
-        Me.LayoutControlGroup4.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem12, Me.LayoutControlItem4, Me.LayoutControlItem17, Me.LayoutControlItem9, Me.LayoutControlItem15, Me.LayoutControlItem16, Me.LayoutControlItem11, Me.LayoutControlItem2, Me.LayoutControlItem13, Me.LayoutControlItem3, Me.LayoutControlItem14})
-        Me.LayoutControlGroup4.Location = New System.Drawing.Point(172, 184)
-        Me.LayoutControlGroup4.Name = "LayoutControlGroup4"
-        Me.LayoutControlGroup4.Size = New System.Drawing.Size(561, 211)
-        Me.LayoutControlGroup4.Text = "Application Settings"
-        '
         'frmSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -790,13 +790,6 @@ Partial Class frmSettings
         CType(Me.sePayChitCost.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.leAbbriviationCode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -806,17 +799,24 @@ Partial Class frmSettings
         CType(Me.EmptySpaceItem18, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlGroup4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dxvpSettings, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlGroup4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

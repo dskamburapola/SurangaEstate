@@ -90,10 +90,9 @@ Partial Class frmDailyWorkings
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
         Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
         Me.LayoutControl2 = New DevExpress.XtraLayout.LayoutControl()
-        Me.LayoutControl4 = New DevExpress.XtraLayout.LayoutControl()
-        Me.btnDisplay = New System.Windows.Forms.Button()
-        Me.deEndDate = New DevExpress.XtraEditors.DateEdit()
         Me.deStartDate = New DevExpress.XtraEditors.DateEdit()
+        Me.deEndDate = New DevExpress.XtraEditors.DateEdit()
+        Me.btnDisplay = New System.Windows.Forms.Button()
         Me.gcAllWorkings = New DevExpress.XtraGrid.GridControl()
         Me.gvAllWorkings = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -103,15 +102,13 @@ Partial Class frmDailyWorkings
         Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn15 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.LayoutControlItem12 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlGroup4 = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.LayoutControlItem15 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.LayoutControlGroup4 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem12 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem14 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem13 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.DateEdit1 = New DevExpress.XtraEditors.DateEdit()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpDailyWorking, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -152,23 +149,19 @@ Partial Class frmDailyWorkings
         Me.XtraTabPage2.SuspendLayout()
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl2.SuspendLayout()
-        CType(Me.LayoutControl4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.LayoutControl4.SuspendLayout()
-        CType(Me.deEndDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.deEndDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.deStartDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.deStartDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.deEndDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.deEndDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcAllWorkings, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gvAllWorkings, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlGroup4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlGroup4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DateEdit1.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -464,6 +457,7 @@ Partial Class frmDailyWorkings
         Me.gvDailyWorking.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn16})
         Me.gvDailyWorking.GridControl = Me.gcDailyWorking
         Me.gvDailyWorking.Name = "gvDailyWorking"
+        Me.gvDailyWorking.OptionsView.EnableAppearanceOddRow = True
         Me.gvDailyWorking.OptionsView.ShowGroupPanel = False
         '
         'GridColumn1
@@ -830,7 +824,10 @@ Partial Class frmDailyWorkings
         '
         'LayoutControl2
         '
-        Me.LayoutControl2.Controls.Add(Me.LayoutControl4)
+        Me.LayoutControl2.Controls.Add(Me.deStartDate)
+        Me.LayoutControl2.Controls.Add(Me.deEndDate)
+        Me.LayoutControl2.Controls.Add(Me.btnDisplay)
+        Me.LayoutControl2.Controls.Add(Me.gcAllWorkings)
         Me.LayoutControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl2.Name = "LayoutControl2"
@@ -839,49 +836,10 @@ Partial Class frmDailyWorkings
         Me.LayoutControl2.TabIndex = 0
         Me.LayoutControl2.Text = "LayoutControl2"
         '
-        'LayoutControl4
-        '
-        Me.LayoutControl4.Controls.Add(Me.btnDisplay)
-        Me.LayoutControl4.Controls.Add(Me.deEndDate)
-        Me.LayoutControl4.Controls.Add(Me.deStartDate)
-        Me.LayoutControl4.Controls.Add(Me.gcAllWorkings)
-        Me.LayoutControl4.Location = New System.Drawing.Point(12, 12)
-        Me.LayoutControl4.Name = "LayoutControl4"
-        Me.LayoutControl4.Root = Me.Root
-        Me.LayoutControl4.Size = New System.Drawing.Size(673, 360)
-        Me.LayoutControl4.TabIndex = 4
-        Me.LayoutControl4.Text = "LayoutControl4"
-        '
-        'btnDisplay
-        '
-        Me.btnDisplay.Location = New System.Drawing.Point(417, 36)
-        Me.btnDisplay.Name = "btnDisplay"
-        Me.btnDisplay.Size = New System.Drawing.Size(146, 26)
-        Me.btnDisplay.TabIndex = 7
-        Me.btnDisplay.Text = "Display"
-        Me.btnDisplay.UseVisualStyleBackColor = True
-        '
-        'deEndDate
-        '
-        Me.deEndDate.EditValue = Nothing
-        Me.deEndDate.Location = New System.Drawing.Point(270, 36)
-        Me.deEndDate.MenuManager = Me.BarManager1
-        Me.deEndDate.Name = "deEndDate"
-        Me.deEndDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.deEndDate.Properties.DisplayFormat.FormatString = "dd-MMM-yy"
-        Me.deEndDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.deEndDate.Properties.EditFormat.FormatString = "dd-MMM-yy"
-        Me.deEndDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.deEndDate.Properties.Mask.EditMask = "dd-MMM-yy"
-        Me.deEndDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.deEndDate.Size = New System.Drawing.Size(143, 20)
-        Me.deEndDate.StyleController = Me.LayoutControl4
-        Me.deEndDate.TabIndex = 6
-        '
         'deStartDate
         '
         Me.deStartDate.EditValue = Nothing
-        Me.deStartDate.Location = New System.Drawing.Point(70, 36)
+        Me.deStartDate.Location = New System.Drawing.Point(66, 43)
         Me.deStartDate.MenuManager = Me.BarManager1
         Me.deStartDate.Name = "deStartDate"
         Me.deStartDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -891,17 +849,43 @@ Partial Class frmDailyWorkings
         Me.deStartDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.deStartDate.Properties.Mask.EditMask = "dd-MMM-yy"
         Me.deStartDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.deStartDate.Size = New System.Drawing.Size(143, 20)
-        Me.deStartDate.StyleController = Me.LayoutControl4
+        Me.deStartDate.Size = New System.Drawing.Size(104, 20)
+        Me.deStartDate.StyleController = Me.LayoutControl2
         Me.deStartDate.TabIndex = 5
+        '
+        'deEndDate
+        '
+        Me.deEndDate.EditValue = Nothing
+        Me.deEndDate.Location = New System.Drawing.Point(216, 43)
+        Me.deEndDate.MenuManager = Me.BarManager1
+        Me.deEndDate.Name = "deEndDate"
+        Me.deEndDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.deEndDate.Properties.DisplayFormat.FormatString = "dd-MMM-yy"
+        Me.deEndDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.deEndDate.Properties.EditFormat.FormatString = "dd-MMM-yy"
+        Me.deEndDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.deEndDate.Properties.Mask.EditMask = "dd-MMM-yy"
+        Me.deEndDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.deEndDate.Size = New System.Drawing.Size(104, 20)
+        Me.deEndDate.StyleController = Me.LayoutControl2
+        Me.deEndDate.TabIndex = 6
+        '
+        'btnDisplay
+        '
+        Me.btnDisplay.Location = New System.Drawing.Point(324, 43)
+        Me.btnDisplay.Name = "btnDisplay"
+        Me.btnDisplay.Size = New System.Drawing.Size(146, 22)
+        Me.btnDisplay.TabIndex = 7
+        Me.btnDisplay.Text = "Process"
+        Me.btnDisplay.UseVisualStyleBackColor = True
         '
         'gcAllWorkings
         '
-        Me.gcAllWorkings.Location = New System.Drawing.Point(12, 71)
+        Me.gcAllWorkings.Location = New System.Drawing.Point(12, 81)
         Me.gcAllWorkings.MainView = Me.gvAllWorkings
         Me.gcAllWorkings.MenuManager = Me.BarManager1
         Me.gcAllWorkings.Name = "gcAllWorkings"
-        Me.gcAllWorkings.Size = New System.Drawing.Size(649, 277)
+        Me.gcAllWorkings.Size = New System.Drawing.Size(673, 291)
         Me.gcAllWorkings.TabIndex = 4
         Me.gcAllWorkings.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvAllWorkings})
         '
@@ -1000,115 +984,89 @@ Partial Class frmDailyWorkings
         Me.GridColumn15.Visible = True
         Me.GridColumn15.VisibleIndex = 6
         '
-        'Root
-        '
-        Me.Root.CustomizationFormText = "Root"
-        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem12, Me.LayoutControlGroup4})
-        Me.Root.Location = New System.Drawing.Point(0, 0)
-        Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(673, 360)
-        Me.Root.Text = "Root"
-        Me.Root.TextVisible = False
-        '
-        'LayoutControlItem12
-        '
-        Me.LayoutControlItem12.Control = Me.gcAllWorkings
-        Me.LayoutControlItem12.CustomizationFormText = "LayoutControlItem12"
-        Me.LayoutControlItem12.Location = New System.Drawing.Point(0, 59)
-        Me.LayoutControlItem12.Name = "LayoutControlItem12"
-        Me.LayoutControlItem12.Size = New System.Drawing.Size(653, 281)
-        Me.LayoutControlItem12.Text = "LayoutControlItem12"
-        Me.LayoutControlItem12.TextLocation = DevExpress.Utils.Locations.Top
-        Me.LayoutControlItem12.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem12.TextToControlDistance = 0
-        Me.LayoutControlItem12.TextVisible = False
-        '
-        'LayoutControlGroup4
-        '
-        Me.LayoutControlGroup4.CustomizationFormText = "Select date range"
-        Me.LayoutControlGroup4.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem15, Me.EmptySpaceItem1, Me.LayoutControlItem14, Me.LayoutControlItem13})
-        Me.LayoutControlGroup4.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlGroup4.Name = "LayoutControlGroup4"
-        Me.LayoutControlGroup4.Padding = New DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2)
-        Me.LayoutControlGroup4.Size = New System.Drawing.Size(653, 59)
-        Me.LayoutControlGroup4.Text = "Select date range"
-        '
-        'LayoutControlItem15
-        '
-        Me.LayoutControlItem15.Control = Me.btnDisplay
-        Me.LayoutControlItem15.CustomizationFormText = "LayoutControlItem15"
-        Me.LayoutControlItem15.Location = New System.Drawing.Point(400, 0)
-        Me.LayoutControlItem15.MaxSize = New System.Drawing.Size(150, 50)
-        Me.LayoutControlItem15.MinSize = New System.Drawing.Size(150, 30)
-        Me.LayoutControlItem15.Name = "LayoutControlItem15"
-        Me.LayoutControlItem15.Size = New System.Drawing.Size(150, 30)
-        Me.LayoutControlItem15.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
-        Me.LayoutControlItem15.Text = "LayoutControlItem15"
-        Me.LayoutControlItem15.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem15.TextToControlDistance = 0
-        Me.LayoutControlItem15.TextVisible = False
-        '
-        'EmptySpaceItem1
-        '
-        Me.EmptySpaceItem1.AllowHotTrack = False
-        Me.EmptySpaceItem1.CustomizationFormText = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(550, 0)
-        Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(93, 30)
-        Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'LayoutControlItem14
-        '
-        Me.LayoutControlItem14.Control = Me.deEndDate
-        Me.LayoutControlItem14.CustomizationFormText = "LayoutControlItem14"
-        Me.LayoutControlItem14.Location = New System.Drawing.Point(200, 0)
-        Me.LayoutControlItem14.MaxSize = New System.Drawing.Size(200, 24)
-        Me.LayoutControlItem14.MinSize = New System.Drawing.Size(200, 24)
-        Me.LayoutControlItem14.Name = "LayoutControlItem14"
-        Me.LayoutControlItem14.Size = New System.Drawing.Size(200, 30)
-        Me.LayoutControlItem14.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
-        Me.LayoutControlItem14.Text = "End Date"
-        Me.LayoutControlItem14.TextSize = New System.Drawing.Size(50, 13)
-        '
-        'LayoutControlItem13
-        '
-        Me.LayoutControlItem13.Control = Me.deStartDate
-        Me.LayoutControlItem13.CustomizationFormText = "LayoutControlItem13"
-        Me.LayoutControlItem13.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem13.MaxSize = New System.Drawing.Size(200, 24)
-        Me.LayoutControlItem13.MinSize = New System.Drawing.Size(200, 24)
-        Me.LayoutControlItem13.Name = "LayoutControlItem13"
-        Me.LayoutControlItem13.Size = New System.Drawing.Size(200, 30)
-        Me.LayoutControlItem13.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
-        Me.LayoutControlItem13.Text = "Start Date"
-        Me.LayoutControlItem13.TextSize = New System.Drawing.Size(50, 13)
-        '
         'LayoutControlGroup2
         '
         Me.LayoutControlGroup2.CustomizationFormText = "LayoutControlGroup2"
         Me.LayoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup2.GroupBordersVisible = False
-        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem5})
+        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem7, Me.EmptySpaceItem1, Me.LayoutControlGroup4})
         Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
         Me.LayoutControlGroup2.Size = New System.Drawing.Size(697, 384)
         Me.LayoutControlGroup2.Text = "LayoutControlGroup2"
         Me.LayoutControlGroup2.TextVisible = False
         '
-        'LayoutControlItem5
+        'LayoutControlItem7
         '
-        Me.LayoutControlItem5.Control = Me.LayoutControl4
-        Me.LayoutControlItem5.CustomizationFormText = "LayoutControlItem5"
-        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(677, 364)
-        Me.LayoutControlItem5.Text = "LayoutControlItem5"
-        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem5.TextToControlDistance = 0
-        Me.LayoutControlItem5.TextVisible = False
+        Me.LayoutControlItem7.Control = Me.gcAllWorkings
+        Me.LayoutControlItem7.CustomizationFormText = "LayoutControlItem7"
+        Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 69)
+        Me.LayoutControlItem7.Name = "LayoutControlItem7"
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(677, 295)
+        Me.LayoutControlItem7.Text = "LayoutControlItem7"
+        Me.LayoutControlItem7.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem7.TextToControlDistance = 0
+        Me.LayoutControlItem7.TextVisible = False
+        '
+        'EmptySpaceItem1
+        '
+        Me.EmptySpaceItem1.AllowHotTrack = False
+        Me.EmptySpaceItem1.CustomizationFormText = "EmptySpaceItem1"
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(474, 0)
+        Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(203, 69)
+        Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
+        Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'LayoutControlGroup4
+        '
+        Me.LayoutControlGroup4.CustomizationFormText = "Select Date Range"
+        Me.LayoutControlGroup4.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem12, Me.LayoutControlItem14, Me.LayoutControlItem13})
+        Me.LayoutControlGroup4.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlGroup4.Name = "LayoutControlGroup4"
+        Me.LayoutControlGroup4.Size = New System.Drawing.Size(474, 69)
+        Me.LayoutControlGroup4.Text = "Select Date Range"
+        '
+        'LayoutControlItem12
+        '
+        Me.LayoutControlItem12.Control = Me.btnDisplay
+        Me.LayoutControlItem12.CustomizationFormText = "LayoutControlItem12"
+        Me.LayoutControlItem12.Location = New System.Drawing.Point(300, 0)
+        Me.LayoutControlItem12.MaxSize = New System.Drawing.Size(150, 26)
+        Me.LayoutControlItem12.MinSize = New System.Drawing.Size(150, 26)
+        Me.LayoutControlItem12.Name = "LayoutControlItem12"
+        Me.LayoutControlItem12.Size = New System.Drawing.Size(150, 26)
+        Me.LayoutControlItem12.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
+        Me.LayoutControlItem12.Text = "LayoutControlItem12"
+        Me.LayoutControlItem12.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem12.TextToControlDistance = 0
+        Me.LayoutControlItem12.TextVisible = False
+        '
+        'LayoutControlItem14
+        '
+        Me.LayoutControlItem14.Control = Me.deEndDate
+        Me.LayoutControlItem14.CustomizationFormText = "To"
+        Me.LayoutControlItem14.Location = New System.Drawing.Point(150, 0)
+        Me.LayoutControlItem14.MaxSize = New System.Drawing.Size(150, 24)
+        Me.LayoutControlItem14.MinSize = New System.Drawing.Size(150, 24)
+        Me.LayoutControlItem14.Name = "LayoutControlItem14"
+        Me.LayoutControlItem14.Size = New System.Drawing.Size(150, 26)
+        Me.LayoutControlItem14.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
+        Me.LayoutControlItem14.Text = "To"
+        Me.LayoutControlItem14.TextSize = New System.Drawing.Size(39, 13)
+        '
+        'LayoutControlItem13
+        '
+        Me.LayoutControlItem13.Control = Me.deStartDate
+        Me.LayoutControlItem13.CustomizationFormText = "From To"
+        Me.LayoutControlItem13.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem13.MaxSize = New System.Drawing.Size(150, 24)
+        Me.LayoutControlItem13.MinSize = New System.Drawing.Size(150, 24)
+        Me.LayoutControlItem13.Name = "LayoutControlItem13"
+        Me.LayoutControlItem13.Size = New System.Drawing.Size(150, 26)
+        Me.LayoutControlItem13.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
+        Me.LayoutControlItem13.Text = "From To"
+        Me.LayoutControlItem13.TextSize = New System.Drawing.Size(39, 13)
         '
         'DateEdit1
         '
@@ -1173,23 +1131,19 @@ Partial Class frmDailyWorkings
         Me.XtraTabPage2.ResumeLayout(False)
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl2.ResumeLayout(False)
-        CType(Me.LayoutControl4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.LayoutControl4.ResumeLayout(False)
-        CType(Me.deEndDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.deEndDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.deStartDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.deStartDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.deEndDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.deEndDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gcAllWorkings, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gvAllWorkings, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlGroup4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlGroup4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DateEdit1.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -1243,19 +1197,12 @@ Partial Class frmDailyWorkings
     Friend WithEvents LayoutControlItem10 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents leEmployee As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LayoutControlItem11 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LayoutControl4 As DevExpress.XtraLayout.LayoutControl
     Friend WithEvents gcAllWorkings As DevExpress.XtraGrid.GridControl
     Friend WithEvents gvAllWorkings As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents Root As DevExpress.XtraLayout.LayoutControlGroup
-    Friend WithEvents LayoutControlItem12 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents deEndDate As DevExpress.XtraEditors.DateEdit
     Friend WithEvents deStartDate As DevExpress.XtraEditors.DateEdit
-    Friend WithEvents LayoutControlItem13 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LayoutControlItem14 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents DateEdit1 As DevExpress.XtraEditors.DateEdit
     Friend WithEvents btnDisplay As System.Windows.Forms.Button
-    Friend WithEvents LayoutControlItem15 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents GridColumn9 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn10 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn11 As DevExpress.XtraGrid.Columns.GridColumn
@@ -1278,8 +1225,12 @@ Partial Class frmDailyWorkings
     Friend WithEvents LayoutControlGroup3 As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents lblDeleteID As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LayoutControlItem21 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents EmptySpaceItem1 As DevExpress.XtraLayout.EmptySpaceItem
-    Friend WithEvents LayoutControlGroup4 As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents cmbDays As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents LayoutControlItem6 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem7 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents EmptySpaceItem1 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents LayoutControlGroup4 As DevExpress.XtraLayout.LayoutControlGroup
+    Friend WithEvents LayoutControlItem12 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem14 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem13 As DevExpress.XtraLayout.LayoutControlItem
 End Class

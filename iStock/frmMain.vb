@@ -111,6 +111,10 @@ Public Class frmMain
         ShowIStockForm(frmAttendaceReport)
     End Sub
 
+    Private Sub BarButtonItem25_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem25.ItemClick
+        ShowIStockForm(frmAttendaceReportAdvance)
+    End Sub
+
 #End Region
 
 #Region "Show App Information"
@@ -156,5 +160,6 @@ Public Class frmMain
     '  from tblDailyWorking
     '  group by DATEPART(year,WorkingDate),DATEPART(month,WorkingDate)
     
+  
   
 End Class

@@ -82,13 +82,18 @@ Public Class frmAttendaceReport
 
     Private Sub LoadYears()
 
-        Dim list As New List(Of Integer)
+        Dim dict As New Dictionary(Of Integer, Integer)
 
         For index = 2013 To 2040
-            list.Add(index)
+            dict.Add(index, index)
         Next
 
-        leYear.Properties.DataSource = list
+        leYear.Properties.DataSource = dict
+        leYear.Properties.DisplayMember = "Key"
+        leYear.Properties.ValueMember = "Key"
+
+
+
         'leYear.Properties.Columns(0).Caption = "Year"
 
     End Sub
@@ -112,6 +117,7 @@ Public Class frmAttendaceReport
             ds = iStockDailyWorking.GetAttendanceReport(currentDate)
             pgcAttendance.DataSource = ds.Tables(0)
 
+            'PivotGridField2.FilterValues.ShowBlanks = False
 
         End If
       

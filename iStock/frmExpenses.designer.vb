@@ -26,7 +26,6 @@ Partial Class frmExpenses
         Dim ConditionValidatonRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidatonRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidatonRule()
         Me.deFromDate = New DevExpress.XtraEditors.DateEdit()
         Me.LayoutControl2 = New DevExpress.XtraLayout.LayoutControl()
-        Me.sbProcess = New DevExpress.XtraEditors.SimpleButton()
         Me.deToDate = New DevExpress.XtraEditors.DateEdit()
         Me.gcExpenses = New DevExpress.XtraGrid.GridControl()
         Me.gvExpenses = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -47,7 +46,6 @@ Partial Class frmExpenses
         Me.LayoutControlGroup3 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem9 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem10 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar2 = New DevExpress.XtraBars.Bar()
         Me.bbSave = New DevExpress.XtraBars.BarButtonItem()
@@ -82,6 +80,8 @@ Partial Class frmExpenses
         Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
         Me.dxvpExpenses = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         Me.dxvpHistoryData = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.sbProcess = New DevExpress.XtraEditors.SimpleButton()
+        Me.LayoutControlItem10 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.deFromDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.deFromDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -97,7 +97,6 @@ Partial Class frmExpenses
         CType(Me.LayoutControlGroup3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.xTab1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.xTab1.SuspendLayout()
@@ -122,13 +121,14 @@ Partial Class frmExpenses
         Me.XtraTabPage2.SuspendLayout()
         CType(Me.dxvpExpenses, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpHistoryData, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'deFromDate
         '
         Me.deFromDate.EditValue = Nothing
         Me.deFromDate.EnterMoveNextControl = True
-        Me.deFromDate.Location = New System.Drawing.Point(52, 43)
+        Me.deFromDate.Location = New System.Drawing.Point(51, 43)
         Me.deFromDate.Name = "deFromDate"
         Me.deFromDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[False]
         Me.deFromDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -138,7 +138,7 @@ Partial Class frmExpenses
         Me.deFromDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.deFromDate.Properties.Mask.EditMask = "dd-MMM-yy"
         Me.deFromDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.deFromDate.Size = New System.Drawing.Size(108, 20)
+        Me.deFromDate.Size = New System.Drawing.Size(119, 20)
         Me.deFromDate.StyleController = Me.LayoutControl2
         Me.deFromDate.TabIndex = 0
         '
@@ -156,20 +156,11 @@ Partial Class frmExpenses
         Me.LayoutControl2.TabIndex = 1
         Me.LayoutControl2.Text = "LayoutControl2"
         '
-        'sbProcess
-        '
-        Me.sbProcess.Location = New System.Drawing.Point(305, 43)
-        Me.sbProcess.Name = "sbProcess"
-        Me.sbProcess.Size = New System.Drawing.Size(83, 29)
-        Me.sbProcess.StyleController = Me.LayoutControl2
-        Me.sbProcess.TabIndex = 2
-        Me.sbProcess.Text = "Process"
-        '
         'deToDate
         '
         Me.deToDate.EditValue = Nothing
         Me.deToDate.EnterMoveNextControl = True
-        Me.deToDate.Location = New System.Drawing.Point(192, 43)
+        Me.deToDate.Location = New System.Drawing.Point(201, 43)
         Me.deToDate.Name = "deToDate"
         Me.deToDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[False]
         Me.deToDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -179,7 +170,7 @@ Partial Class frmExpenses
         Me.deToDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.deToDate.Properties.Mask.EditMask = "dd-MMM-yy"
         Me.deToDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.deToDate.Size = New System.Drawing.Size(109, 20)
+        Me.deToDate.Size = New System.Drawing.Size(119, 20)
         Me.deToDate.StyleController = Me.LayoutControl2
         Me.deToDate.TabIndex = 1
         CompareAgainstControlValidationRule1.CompareControlOperator = DevExpress.XtraEditors.DXErrorProvider.CompareControlOperator.GreaterOrEqual
@@ -189,10 +180,10 @@ Partial Class frmExpenses
         '
         'gcExpenses
         '
-        Me.gcExpenses.Location = New System.Drawing.Point(12, 88)
+        Me.gcExpenses.Location = New System.Drawing.Point(12, 81)
         Me.gcExpenses.MainView = Me.gvExpenses
         Me.gcExpenses.Name = "gcExpenses"
-        Me.gcExpenses.Size = New System.Drawing.Size(719, 311)
+        Me.gcExpenses.Size = New System.Drawing.Size(719, 318)
         Me.gcExpenses.TabIndex = 0
         Me.gcExpenses.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvExpenses, Me.GridView2})
         '
@@ -328,9 +319,9 @@ Partial Class frmExpenses
         '
         Me.LayoutControlItem7.Control = Me.gcExpenses
         Me.LayoutControlItem7.CustomizationFormText = "LayoutControlItem7"
-        Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 76)
+        Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 69)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
-        Me.LayoutControlItem7.Size = New System.Drawing.Size(723, 315)
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(723, 322)
         Me.LayoutControlItem7.Text = "LayoutControlItem7"
         Me.LayoutControlItem7.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem7.TextToControlDistance = 0
@@ -340,9 +331,9 @@ Partial Class frmExpenses
         '
         Me.EmptySpaceItem2.AllowHotTrack = False
         Me.EmptySpaceItem2.CustomizationFormText = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(392, 0)
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(474, 0)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(331, 76)
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(249, 69)
         Me.EmptySpaceItem2.Text = "EmptySpaceItem2"
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -352,7 +343,7 @@ Partial Class frmExpenses
         Me.LayoutControlGroup3.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem8, Me.LayoutControlItem9, Me.LayoutControlItem10})
         Me.LayoutControlGroup3.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup3.Name = "LayoutControlGroup3"
-        Me.LayoutControlGroup3.Size = New System.Drawing.Size(392, 76)
+        Me.LayoutControlGroup3.Size = New System.Drawing.Size(474, 69)
         Me.LayoutControlGroup3.Text = "Select Date Range to Display History Expenses"
         '
         'LayoutControlItem8
@@ -360,8 +351,11 @@ Partial Class frmExpenses
         Me.LayoutControlItem8.Control = Me.deFromDate
         Me.LayoutControlItem8.CustomizationFormText = "From"
         Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem8.MaxSize = New System.Drawing.Size(150, 24)
+        Me.LayoutControlItem8.MinSize = New System.Drawing.Size(150, 24)
         Me.LayoutControlItem8.Name = "LayoutControlItem8"
-        Me.LayoutControlItem8.Size = New System.Drawing.Size(140, 33)
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(150, 26)
+        Me.LayoutControlItem8.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem8.Text = "From"
         Me.LayoutControlItem8.TextSize = New System.Drawing.Size(24, 13)
         '
@@ -369,26 +363,14 @@ Partial Class frmExpenses
         '
         Me.LayoutControlItem9.Control = Me.deToDate
         Me.LayoutControlItem9.CustomizationFormText = "To"
-        Me.LayoutControlItem9.Location = New System.Drawing.Point(140, 0)
+        Me.LayoutControlItem9.Location = New System.Drawing.Point(150, 0)
+        Me.LayoutControlItem9.MaxSize = New System.Drawing.Size(150, 24)
+        Me.LayoutControlItem9.MinSize = New System.Drawing.Size(150, 24)
         Me.LayoutControlItem9.Name = "LayoutControlItem9"
-        Me.LayoutControlItem9.Size = New System.Drawing.Size(141, 33)
+        Me.LayoutControlItem9.Size = New System.Drawing.Size(150, 26)
+        Me.LayoutControlItem9.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem9.Text = "To"
         Me.LayoutControlItem9.TextSize = New System.Drawing.Size(24, 13)
-        '
-        'LayoutControlItem10
-        '
-        Me.LayoutControlItem10.Control = Me.sbProcess
-        Me.LayoutControlItem10.CustomizationFormText = "LayoutControlItem10"
-        Me.LayoutControlItem10.Location = New System.Drawing.Point(281, 0)
-        Me.LayoutControlItem10.MaxSize = New System.Drawing.Size(0, 33)
-        Me.LayoutControlItem10.MinSize = New System.Drawing.Size(61, 33)
-        Me.LayoutControlItem10.Name = "LayoutControlItem10"
-        Me.LayoutControlItem10.Size = New System.Drawing.Size(87, 33)
-        Me.LayoutControlItem10.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
-        Me.LayoutControlItem10.Text = "LayoutControlItem10"
-        Me.LayoutControlItem10.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem10.TextToControlDistance = 0
-        Me.LayoutControlItem10.TextVisible = False
         '
         'BarManager1
         '
@@ -521,26 +503,26 @@ Partial Class frmExpenses
         '
         Me.cbePaymentType.EditValue = "CASH"
         Me.cbePaymentType.EnterMoveNextControl = True
-        Me.cbePaymentType.Location = New System.Drawing.Point(85, 61)
+        Me.cbePaymentType.Location = New System.Drawing.Point(84, 61)
         Me.cbePaymentType.Name = "cbePaymentType"
         Me.cbePaymentType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cbePaymentType.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.cbePaymentType.Properties.Items.AddRange(New Object() {"CASH", "CHECK", "C.CARD"})
         Me.cbePaymentType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
-        Me.cbePaymentType.Size = New System.Drawing.Size(287, 20)
+        Me.cbePaymentType.Size = New System.Drawing.Size(288, 20)
         Me.cbePaymentType.StyleController = Me.LayoutControl1
         Me.cbePaymentType.TabIndex = 8
         '
         'meNote
         '
         Me.meNote.EnterMoveNextControl = True
-        Me.meNote.Location = New System.Drawing.Point(85, 133)
+        Me.meNote.Location = New System.Drawing.Point(84, 133)
         Me.meNote.Name = "meNote"
         Me.meNote.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.meNote.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.meNote.Properties.PopupFormSize = New System.Drawing.Size(400, 150)
         Me.meNote.Properties.ShowIcon = False
-        Me.meNote.Size = New System.Drawing.Size(287, 20)
+        Me.meNote.Size = New System.Drawing.Size(288, 20)
         Me.meNote.StyleController = Me.LayoutControl1
         Me.meNote.TabIndex = 7
         '
@@ -548,27 +530,27 @@ Partial Class frmExpenses
         '
         Me.seAmount.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seAmount.EnterMoveNextControl = True
-        Me.seAmount.Location = New System.Drawing.Point(85, 109)
+        Me.seAmount.Location = New System.Drawing.Point(84, 109)
         Me.seAmount.Name = "seAmount"
         Me.seAmount.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.seAmount.Properties.DisplayFormat.FormatString = "F"
         Me.seAmount.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.seAmount.Properties.MaxValue = New Decimal(New Integer() {2147483647, 0, 0, 0})
-        Me.seAmount.Size = New System.Drawing.Size(287, 20)
+        Me.seAmount.Size = New System.Drawing.Size(288, 20)
         Me.seAmount.StyleController = Me.LayoutControl1
         Me.seAmount.TabIndex = 6
         '
         'lupExpenseType
         '
         Me.lupExpenseType.EnterMoveNextControl = True
-        Me.lupExpenseType.Location = New System.Drawing.Point(85, 37)
+        Me.lupExpenseType.Location = New System.Drawing.Point(84, 37)
         Me.lupExpenseType.Name = "lupExpenseType"
         Me.lupExpenseType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Save", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, "", Nothing, Nothing, False), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Delete", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject2, "", Nothing, Nothing, False)})
         Me.lupExpenseType.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.lupExpenseType.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "Expense Type")})
         Me.lupExpenseType.Properties.NullText = ""
         Me.lupExpenseType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
-        Me.lupExpenseType.Size = New System.Drawing.Size(287, 20)
+        Me.lupExpenseType.Size = New System.Drawing.Size(288, 20)
         Me.lupExpenseType.StyleController = Me.LayoutControl1
         Me.lupExpenseType.TabIndex = 4
         ConditionValidatonRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -579,7 +561,7 @@ Partial Class frmExpenses
         '
         Me.deDate.EditValue = Nothing
         Me.deDate.EnterMoveNextControl = True
-        Me.deDate.Location = New System.Drawing.Point(85, 85)
+        Me.deDate.Location = New System.Drawing.Point(84, 85)
         Me.deDate.Name = "deDate"
         Me.deDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[False]
         Me.deDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -590,7 +572,7 @@ Partial Class frmExpenses
         Me.deDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.deDate.Properties.Mask.EditMask = "dd-MMM-yy"
         Me.deDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.deDate.Size = New System.Drawing.Size(287, 20)
+        Me.deDate.Size = New System.Drawing.Size(288, 20)
         Me.deDate.StyleController = Me.LayoutControl1
         Me.deDate.TabIndex = 5
         '
@@ -705,6 +687,30 @@ Partial Class frmExpenses
         Me.XtraTabPage2.Size = New System.Drawing.Size(743, 411)
         Me.XtraTabPage2.Text = "History Record"
         '
+        'sbProcess
+        '
+        Me.sbProcess.Location = New System.Drawing.Point(324, 43)
+        Me.sbProcess.Name = "sbProcess"
+        Me.sbProcess.Size = New System.Drawing.Size(146, 22)
+        Me.sbProcess.StyleController = Me.LayoutControl2
+        Me.sbProcess.TabIndex = 4
+        Me.sbProcess.Text = "Process"
+        '
+        'LayoutControlItem10
+        '
+        Me.LayoutControlItem10.Control = Me.sbProcess
+        Me.LayoutControlItem10.CustomizationFormText = "LayoutControlItem10"
+        Me.LayoutControlItem10.Location = New System.Drawing.Point(300, 0)
+        Me.LayoutControlItem10.MaxSize = New System.Drawing.Size(150, 26)
+        Me.LayoutControlItem10.MinSize = New System.Drawing.Size(150, 26)
+        Me.LayoutControlItem10.Name = "LayoutControlItem10"
+        Me.LayoutControlItem10.Size = New System.Drawing.Size(150, 26)
+        Me.LayoutControlItem10.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
+        Me.LayoutControlItem10.Text = "LayoutControlItem10"
+        Me.LayoutControlItem10.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem10.TextToControlDistance = 0
+        Me.LayoutControlItem10.TextVisible = False
+        '
         'frmExpenses
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -733,7 +739,6 @@ Partial Class frmExpenses
         CType(Me.LayoutControlGroup3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.xTab1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.xTab1.ResumeLayout(False)
@@ -758,6 +763,7 @@ Partial Class frmExpenses
         Me.XtraTabPage2.ResumeLayout(False)
         CType(Me.dxvpExpenses, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dxvpHistoryData, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -816,7 +822,7 @@ Partial Class frmExpenses
     Friend WithEvents LayoutControlGroup3 As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents LayoutControlItem8 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem9 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents dxvpHistoryData As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
     Friend WithEvents sbProcess As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LayoutControlItem10 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents dxvpHistoryData As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
 End Class

@@ -41,6 +41,7 @@ Partial Class frmAttendaceReport
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.pgcAttendance, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,6 +56,7 @@ Partial Class frmAttendaceReport
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -75,9 +77,10 @@ Partial Class frmAttendaceReport
         'pgcAttendance
         '
         Me.pgcAttendance.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.PivotGridField1, Me.PivotGridField2, Me.PivotGridField3, Me.PivotGridField4})
-        Me.pgcAttendance.Location = New System.Drawing.Point(12, 38)
+        Me.pgcAttendance.Location = New System.Drawing.Point(12, 81)
         Me.pgcAttendance.Name = "pgcAttendance"
-        Me.pgcAttendance.Size = New System.Drawing.Size(678, 405)
+        Me.pgcAttendance.OptionsFilterPopup.ShowOnlyAvailableItems = True
+        Me.pgcAttendance.Size = New System.Drawing.Size(678, 362)
         Me.pgcAttendance.TabIndex = 16
         '
         'PivotGridField1
@@ -116,11 +119,12 @@ Partial Class frmAttendaceReport
         '
         'leYear
         '
-        Me.leYear.Location = New System.Drawing.Point(215, 12)
+        Me.leYear.Location = New System.Drawing.Point(207, 43)
         Me.leYear.Name = "leYear"
         Me.leYear.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.leYear.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Key", "Year")})
         Me.leYear.Properties.NullText = ""
-        Me.leYear.Size = New System.Drawing.Size(131, 20)
+        Me.leYear.Size = New System.Drawing.Size(113, 20)
         Me.leYear.StyleController = Me.LayoutControl1
         Me.leYear.TabIndex = 15
         ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -129,10 +133,10 @@ Partial Class frmAttendaceReport
         '
         'meMonth
         '
-        Me.meMonth.Location = New System.Drawing.Point(45, 12)
+        Me.meMonth.Location = New System.Drawing.Point(57, 43)
         Me.meMonth.Name = "meMonth"
         Me.meMonth.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.meMonth.Size = New System.Drawing.Size(133, 20)
+        Me.meMonth.Size = New System.Drawing.Size(113, 20)
         Me.meMonth.StyleController = Me.LayoutControl1
         Me.meMonth.TabIndex = 14
         ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -141,9 +145,9 @@ Partial Class frmAttendaceReport
         '
         'sbGenerate
         '
-        Me.sbGenerate.Location = New System.Drawing.Point(350, 12)
+        Me.sbGenerate.Location = New System.Drawing.Point(324, 43)
         Me.sbGenerate.Name = "sbGenerate"
-        Me.sbGenerate.Size = New System.Drawing.Size(171, 22)
+        Me.sbGenerate.Size = New System.Drawing.Size(146, 22)
         Me.sbGenerate.StyleController = Me.LayoutControl1
         Me.sbGenerate.TabIndex = 12
         Me.sbGenerate.Text = "Generate"
@@ -160,7 +164,7 @@ Partial Class frmAttendaceReport
         'LayoutControlGroup1
         '
         Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.LayoutControlItem1, Me.EmptySpaceItem1, Me.EmptySpaceItem3, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem2})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.EmptySpaceItem1, Me.EmptySpaceItem3, Me.LayoutControlItem2, Me.LayoutControlGroup2})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "Root"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(702, 502)
@@ -186,9 +190,12 @@ Partial Class frmAttendaceReport
         '
         Me.LayoutControlItem1.Control = Me.sbGenerate
         Me.LayoutControlItem1.CustomizationFormText = "LayoutControlItem1"
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(338, 0)
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(300, 0)
+        Me.LayoutControlItem1.MaxSize = New System.Drawing.Size(150, 26)
+        Me.LayoutControlItem1.MinSize = New System.Drawing.Size(150, 26)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(175, 26)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(150, 26)
+        Me.LayoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem1.Text = "LayoutControlItem1"
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextToControlDistance = 0
@@ -208,9 +215,9 @@ Partial Class frmAttendaceReport
         '
         Me.EmptySpaceItem3.AllowHotTrack = False
         Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(513, 0)
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(474, 0)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(169, 26)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(208, 69)
         Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -219,8 +226,11 @@ Partial Class frmAttendaceReport
         Me.LayoutControlItem5.Control = Me.meMonth
         Me.LayoutControlItem5.CustomizationFormText = "Month"
         Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem5.MaxSize = New System.Drawing.Size(150, 24)
+        Me.LayoutControlItem5.MinSize = New System.Drawing.Size(150, 24)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(170, 26)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(150, 26)
+        Me.LayoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem5.Text = "Month"
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(30, 13)
         '
@@ -228,9 +238,12 @@ Partial Class frmAttendaceReport
         '
         Me.LayoutControlItem6.Control = Me.leYear
         Me.LayoutControlItem6.CustomizationFormText = "Year"
-        Me.LayoutControlItem6.Location = New System.Drawing.Point(170, 0)
+        Me.LayoutControlItem6.Location = New System.Drawing.Point(150, 0)
+        Me.LayoutControlItem6.MaxSize = New System.Drawing.Size(150, 24)
+        Me.LayoutControlItem6.MinSize = New System.Drawing.Size(150, 24)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
-        Me.LayoutControlItem6.Size = New System.Drawing.Size(168, 26)
+        Me.LayoutControlItem6.Size = New System.Drawing.Size(150, 26)
+        Me.LayoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem6.Text = "Year"
         Me.LayoutControlItem6.TextSize = New System.Drawing.Size(30, 13)
         '
@@ -238,13 +251,22 @@ Partial Class frmAttendaceReport
         '
         Me.LayoutControlItem2.Control = Me.pgcAttendance
         Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 26)
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 69)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(682, 409)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(682, 366)
         Me.LayoutControlItem2.Text = "LayoutControlItem2"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextToControlDistance = 0
         Me.LayoutControlItem2.TextVisible = False
+        '
+        'LayoutControlGroup2
+        '
+        Me.LayoutControlGroup2.CustomizationFormText = "Select Month & Year"
+        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem1})
+        Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
+        Me.LayoutControlGroup2.Size = New System.Drawing.Size(474, 69)
+        Me.LayoutControlGroup2.Text = "Select Month & Year"
         '
         'frmAttendaceReport
         '
@@ -269,6 +291,7 @@ Partial Class frmAttendaceReport
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -292,4 +315,5 @@ Partial Class frmAttendaceReport
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents PivotGridField4 As DevExpress.XtraPivotGrid.PivotGridField
     Friend WithEvents dxvpAttendaceReport As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
+    Friend WithEvents LayoutControlGroup2 As DevExpress.XtraLayout.LayoutControlGroup
 End Class
