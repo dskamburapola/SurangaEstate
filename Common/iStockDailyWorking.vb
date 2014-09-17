@@ -458,5 +458,23 @@ Public Class iStockDailyWorking
     End Function
 #End Region
 
+#Region "Crop Summary Report"
+    Public Function GetCropSummary(ByVal abbreviationID As Int64) As DataSet
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand("ReportCropSummary")
+            DB.AddInParameter(DBC, "@AbreviationID", DbType.Int64, abbreviationID)
+
+            Return DB.ExecuteDataSet(DBC)
+            DBC.Dispose()
+        Catch ex As Exception
+            Return Nothing
+            Throw
+        End Try
+
+
+    End Function
+#End Region
+
 
 End Class
