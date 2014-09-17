@@ -7,7 +7,7 @@ Imports DevExpress.XtraEditors
 Imports DevExpress.XtraEditors.ViewInfo
 Imports DevExpress.XtraPivotGrid
 
-Public Class frmAttendaceReport
+Public Class frmAttendaceAdvanceReport
 
 #Region "Variables"
     Private _CWBStock As iStockCommon.iStockStock
@@ -59,7 +59,7 @@ Public Class frmAttendaceReport
     End Sub
 
     Private Sub frmStockBalance_Activated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Activated
-        pgcAttendance.BestFitColumnArea()
+
     End Sub
 
     Private Sub frmStockBalance_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles MyBase.KeyPress
@@ -70,19 +70,10 @@ Public Class frmAttendaceReport
 
 #End Region
 
-#Region "Populate Grid"
-    Public Sub PopulateGrid()
-        Try
-            pgcAttendance.DataSource = CWBStock.GetAllStockItems().Tables(0)
-        Catch ex As Exception
-            MessageError(ex.ToString)
-        End Try
-    End Sub
-#End Region
 
 #Region "Print Preview"
     Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
-        PrintPivotPreview(pgcAttendance, "Attendance Report")
+        PrintPreview(gcCheckRoll, "Attendance Report")
     End Sub
 #End Region
 
@@ -121,9 +112,9 @@ Public Class frmAttendaceReport
             Dim ds As New DataSet
 
             ds = iStockDailyWorking.GetCheckRollReport(currentDate)
-            pgcAttendance.DataSource = ds.Tables(0)
+            gcCheckRoll.DataSource = ds.Tables(0)
 
-            'PivotGridField2.FilterValues.ShowBlanks = False
+
 
         End If
 

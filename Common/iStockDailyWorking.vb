@@ -440,7 +440,23 @@ Public Class iStockDailyWorking
 
 #End Region
 
+#Region "Check Roll Report"
+    Public Function GetCheckRollReport(ByVal currentDate As Date) As DataSet
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand("ReportAttendanceAdvance")
+            DB.AddInParameter(DBC, "@IssueDate", DbType.Date, currentDate)
 
+            Return DB.ExecuteDataSet(DBC)
+            DBC.Dispose()
+        Catch ex As Exception
+            Return Nothing
+            Throw
+        End Try
+
+
+    End Function
+#End Region
 
 
 End Class
