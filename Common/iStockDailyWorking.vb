@@ -463,7 +463,7 @@ Public Class iStockDailyWorking
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
             Dim DBC As DbCommand = DB.GetStoredProcCommand("ReportCropSummary")
-            DB.AddInParameter(DBC, "@AbreviationID", DbType.Int64, abbreviationID)
+            DB.AddInParameter(DBC, "@AbreviationID", DbType.Int64, AbbreviationID)
 
             Return DB.ExecuteDataSet(DBC)
             DBC.Dispose()

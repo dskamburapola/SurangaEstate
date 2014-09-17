@@ -10,14 +10,26 @@ Imports DevExpress.XtraPivotGrid
 Public Class frmCropSummaryReport
 
 #Region "Variables"
+
     Private _CWBStock As iStockCommon.iStockStock
     Private _CWBSuppliers As iStockCommon.iStockSuppliers
     Private _iStockDailyWorking As iStockCommon.iStockDailyWorking
+    Private _ECSSettings As iStockCommon.iStockSettings
 
 #End Region
 
 #Region "Constructor"
 
+    Public ReadOnly Property ECSSettings() As iStockCommon.iStockSettings
+        Get
+
+            If _ECSSettings Is Nothing Then
+                _ECSSettings = New iStockCommon.iStockSettings
+            End If
+
+            Return _ECSSettings
+        End Get
+    End Property
     Public ReadOnly Property CWBStock() As iStockCommon.iStockStock
         Get
 
@@ -55,7 +67,7 @@ Public Class frmCropSummaryReport
 #Region "Form Events"
 
     Private Sub frmAttendaceReport_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        LoadYears()
+        LoadTypes()
     End Sub
 
     Private Sub frmStockBalance_Activated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Activated
@@ -78,17 +90,12 @@ Public Class frmCropSummaryReport
 
 #Region "Populate Years"
 
-    Private Sub LoadYears()
+    Private Sub LoadTypes()
 
-        Dim dict As New Dictionary(Of Integer, Integer)
 
-        For index = 2013 To 2040
-            dict.Add(index, index)
-        Next
-
-        leYear.Properties.DataSource = dict
-        leYear.Properties.DisplayMember = "Key"
-        leYear.Properties.ValueMember = "Key"
+        Me.leType.Properties.DataSource = ECSSettings.GetAbbreviations.Tables(1)
+        Me.leType.Properties.DisplayMember = "AbbreviationDesc"
+        Me.leType.Properties.ValueMember = "AbbreviationID"
 
 
     End Sub
@@ -102,15 +109,9 @@ Public Class frmCropSummaryReport
 
         If dxvpAttendaceReport.Validate Then
 
-            Dim currentDate As Date
-            Dim selectedMonth, selectedYear As String
-            selectedMonth = meMonth.EditValue
-            selectedYear = leYear.EditValue
-            currentDate = Convert.ToDateTime(selectedMonth + "-1-" + selectedYear)
-
             Dim ds As New DataSet
 
-            ds = iStockDailyWorking.GetCropSummary(1)
+            ds = iStockDailyWorking.GetCropSummary(leType.EditValue)
             pgcAttendance.DataSource = ds.Tables(0)
 
             'PivotGridField2.FilterValues.ShowBlanks = False

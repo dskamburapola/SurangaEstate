@@ -23,6 +23,8 @@ Partial Class frmAttendaceAdvanceReport
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.gcCheckRoll = New DevExpress.XtraGrid.GridControl()
+        Me.gvCheckRoll = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.leYear = New DevExpress.XtraEditors.LookUpEdit()
         Me.meMonth = New DevExpress.XtraScheduler.UI.MonthEdit()
         Me.sbGenerate = New DevExpress.XtraEditors.SimpleButton()
@@ -34,12 +36,12 @@ Partial Class frmAttendaceAdvanceReport
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
-        Me.gcCheckRoll = New DevExpress.XtraGrid.GridControl()
-        Me.gvCheckRoll = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.gcCheckRoll, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gvCheckRoll, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,10 +51,8 @@ Partial Class frmAttendaceAdvanceReport
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.gcCheckRoll, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.gvCheckRoll, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -69,6 +69,23 @@ Partial Class frmAttendaceAdvanceReport
         Me.LayoutControl1.Size = New System.Drawing.Size(702, 502)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'gcCheckRoll
+        '
+        Me.gcCheckRoll.Location = New System.Drawing.Point(12, 81)
+        Me.gcCheckRoll.MainView = Me.gvCheckRoll
+        Me.gcCheckRoll.Name = "gcCheckRoll"
+        Me.gcCheckRoll.Size = New System.Drawing.Size(678, 374)
+        Me.gcCheckRoll.TabIndex = 17
+        Me.gcCheckRoll.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvCheckRoll})
+        '
+        'gvCheckRoll
+        '
+        Me.gvCheckRoll.BestFitMaxRowCount = 1
+        Me.gvCheckRoll.GridControl = Me.gcCheckRoll
+        Me.gvCheckRoll.Name = "gvCheckRoll"
+        Me.gvCheckRoll.OptionsView.ColumnAutoWidth = False
+        Me.gvCheckRoll.OptionsView.ShowFooter = True
         '
         'leYear
         '
@@ -156,7 +173,7 @@ Partial Class frmAttendaceAdvanceReport
         Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
         Me.LayoutControlGroup2.Size = New System.Drawing.Size(474, 69)
-        Me.LayoutControlGroup2.Text = "Select Month & Year"
+        Me.LayoutControlGroup2.Text = "Select Month && Year"
         '
         'LayoutControlItem5
         '
@@ -199,20 +216,6 @@ Partial Class frmAttendaceAdvanceReport
         Me.LayoutControlItem1.TextToControlDistance = 0
         Me.LayoutControlItem1.TextVisible = False
         '
-        'gcCheckRoll
-        '
-        Me.gcCheckRoll.Location = New System.Drawing.Point(12, 81)
-        Me.gcCheckRoll.MainView = Me.gvCheckRoll
-        Me.gcCheckRoll.Name = "gcCheckRoll"
-        Me.gcCheckRoll.Size = New System.Drawing.Size(678, 374)
-        Me.gcCheckRoll.TabIndex = 17
-        Me.gcCheckRoll.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvCheckRoll})
-        '
-        'gvCheckRoll
-        '
-        Me.gvCheckRoll.GridControl = Me.gcCheckRoll
-        Me.gvCheckRoll.Name = "gvCheckRoll"
-        '
         'LayoutControlItem4
         '
         Me.LayoutControlItem4.Control = Me.gcCheckRoll
@@ -236,6 +239,8 @@ Partial Class frmAttendaceAdvanceReport
         Me.Text = "Attendance Report"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.gcCheckRoll, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gvCheckRoll, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -245,10 +250,8 @@ Partial Class frmAttendaceAdvanceReport
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.gcCheckRoll, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.gvCheckRoll, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

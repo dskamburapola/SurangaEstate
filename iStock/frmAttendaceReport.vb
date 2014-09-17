@@ -116,12 +116,13 @@ Public Class frmAttendaceReport
             Dim selectedMonth, selectedYear As String
             selectedMonth = meMonth.EditValue
             selectedYear = leYear.EditValue
-            currentDate = Convert.ToDateTime(selectedMonth + "-1-" + selectedYear)
+            currentDate = Convert.ToDateTime(selectedMonth + "-01-" + selectedYear)
 
             Dim ds As New DataSet
 
-            ds = iStockDailyWorking.GetCheckRollReport(currentDate)
+            ds = iStockDailyWorking.GetAttendanceReport(currentDate)
             pgcAttendance.DataSource = ds.Tables(0)
+            pgcAttendance.BestFitColumnArea()
 
             'PivotGridField2.FilterValues.ShowBlanks = False
 

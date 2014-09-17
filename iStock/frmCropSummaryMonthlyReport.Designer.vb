@@ -1,5 +1,5 @@
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmCropSummaryReport
+Partial Class frmCropSummaryMonthlyReport
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
@@ -223,15 +223,15 @@ Partial Class frmCropSummaryReport
         Me.LayoutControlItem2.TextToControlDistance = 0
         Me.LayoutControlItem2.TextVisible = False
         '
-        'frmCropSummaryReport
+        'frmCropSummaryMonthlyReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(702, 502)
         Me.Controls.Add(Me.LayoutControl1)
         Me.KeyPreview = True
-        Me.Name = "frmCropSummaryReport"
-        Me.Text = "Crop Summary Report"
+        Me.Name = "frmCropSummaryMonthlyReport"
+        Me.Text = "Monthly Crop Summary Report"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.pgcAttendance, System.ComponentModel.ISupportInitialize).EndInit()
