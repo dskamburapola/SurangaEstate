@@ -30,6 +30,7 @@ Public Class frmCropSummaryMonthlyReport
             Return _ECSSettings
         End Get
     End Property
+
     Public ReadOnly Property CWBStock() As iStockCommon.iStockStock
         Get
 
@@ -67,11 +68,11 @@ Public Class frmCropSummaryMonthlyReport
 #Region "Form Events"
 
     Private Sub frmAttendaceReport_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        LoadTypes()
+        LoadYears()
     End Sub
 
     Private Sub frmStockBalance_Activated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Activated
-        pgcAttendance.BestFitColumnArea()
+        pgcCropSummaryMonthly.BestFitColumnArea()
     End Sub
 
     Private Sub frmStockBalance_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles MyBase.KeyPress
@@ -84,23 +85,8 @@ Public Class frmCropSummaryMonthlyReport
 
 #Region "Print Preview"
     Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
-        PrintPivotPreview(pgcAttendance, "Attendance Report")
+        PrintPivotPreview(pgcCropSummaryMonthly, "Monthly Crop Summary Report")
     End Sub
-#End Region
-
-#Region "Populate Years"
-
-    Private Sub LoadTypes()
-
-
-        Me.leType.Properties.DataSource = ECSSettings.GetAbbreviations.Tables(1)
-        Me.leType.Properties.DisplayMember = "AbbreviationDesc"
-        Me.leType.Properties.ValueMember = "AbbreviationID"
-
-
-    End Sub
-
-
 #End Region
 
 #Region "Button Events"
@@ -109,14 +95,39 @@ Public Class frmCropSummaryMonthlyReport
 
         If dxvpAttendaceReport.Validate Then
 
+            Dim currentDate As Date
+            Dim selectedMonth, selectedYear As String
+            selectedMonth = meMonth.EditValue
+            selectedYear = leYear.EditValue
+            currentDate = Convert.ToDateTime(selectedMonth + "-01-" + selectedYear)
+
             Dim ds As New DataSet
 
-            ds = iStockDailyWorking.GetCropSummary(leType.EditValue)
-            pgcAttendance.DataSource = ds.Tables(0)
+            ds = iStockDailyWorking.GetCropSummaryMonthly(currentDate)
+            pgcCropSummaryMonthly.DataSource = ds.Tables(0)
 
-            'PivotGridField2.FilterValues.ShowBlanks = False
 
         End If
+
+
+    End Sub
+
+
+#End Region
+
+#Region "Populate Years"
+
+    Private Sub LoadYears()
+
+        Dim dict As New Dictionary(Of Integer, Integer)
+
+        For index = 2013 To 2040
+            dict.Add(index, index)
+        Next
+
+        leYear.Properties.DataSource = dict
+        leYear.Properties.DisplayMember = "Key"
+        leYear.Properties.ValueMember = "Key"
 
 
     End Sub

@@ -20,14 +20,15 @@ Partial Class frmAttendaceReport
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.pgcAttendance = New DevExpress.XtraPivotGrid.PivotGridControl()
         Me.PivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.PivotGridField2 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.PivotGridField3 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.PivotGridField4 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField5 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.leYear = New DevExpress.XtraEditors.LookUpEdit()
         Me.meMonth = New DevExpress.XtraScheduler.UI.MonthEdit()
         Me.sbGenerate = New DevExpress.XtraEditors.SimpleButton()
@@ -41,7 +42,6 @@ Partial Class frmAttendaceReport
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
-        Me.PivotGridField5 = New DevExpress.XtraPivotGrid.PivotGridField()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.pgcAttendance, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -119,6 +119,16 @@ Partial Class frmAttendaceReport
         Me.PivotGridField4.FieldName = "monthDate"
         Me.PivotGridField4.Name = "PivotGridField4"
         '
+        'PivotGridField5
+        '
+        Me.PivotGridField5.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
+        Me.PivotGridField5.AreaIndex = 1
+        Me.PivotGridField5.Caption = "(%)"
+        Me.PivotGridField5.FieldName = "Attendance"
+        Me.PivotGridField5.Name = "PivotGridField5"
+        Me.PivotGridField5.Options.ShowValues = False
+        Me.PivotGridField5.SummaryDisplayType = DevExpress.Data.PivotGrid.PivotSummaryDisplayType.PercentOfColumn
+        '
         'leYear
         '
         Me.leYear.Location = New System.Drawing.Point(207, 43)
@@ -129,9 +139,9 @@ Partial Class frmAttendaceReport
         Me.leYear.Size = New System.Drawing.Size(113, 20)
         Me.leYear.StyleController = Me.LayoutControl1
         Me.leYear.TabIndex = 15
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule2.ErrorText = "Require"
-        Me.dxvpAttendaceReport.SetValidationRule(Me.leYear, ConditionValidationRule2)
+        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule3.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.leYear, ConditionValidationRule3)
         '
         'meMonth
         '
@@ -141,9 +151,9 @@ Partial Class frmAttendaceReport
         Me.meMonth.Size = New System.Drawing.Size(113, 20)
         Me.meMonth.StyleController = Me.LayoutControl1
         Me.meMonth.TabIndex = 14
-        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule3.ErrorText = "Require"
-        Me.dxvpAttendaceReport.SetValidationRule(Me.meMonth, ConditionValidationRule3)
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.meMonth, ConditionValidationRule1)
         '
         'sbGenerate
         '
@@ -259,16 +269,6 @@ Partial Class frmAttendaceReport
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextToControlDistance = 0
         Me.LayoutControlItem2.TextVisible = False
-        '
-        'PivotGridField5
-        '
-        Me.PivotGridField5.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
-        Me.PivotGridField5.AreaIndex = 1
-        Me.PivotGridField5.Caption = "(%)"
-        Me.PivotGridField5.FieldName = "Attendance"
-        Me.PivotGridField5.Name = "PivotGridField5"
-        Me.PivotGridField5.Options.ShowValues = False
-        Me.PivotGridField5.SummaryDisplayType = DevExpress.Data.PivotGrid.PivotSummaryDisplayType.PercentOfColumn
         '
         'frmAttendaceReport
         '

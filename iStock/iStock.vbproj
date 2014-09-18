@@ -109,6 +109,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="frmAttendaceAdvanceReport.Designer.vb">
+      <DependentUpon>frmAttendaceAdvanceReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAttendaceAdvanceReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCropSummaryMonthlyReport.Designer.vb">
+      <DependentUpon>frmCropSummaryMonthlyReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCropSummaryMonthlyReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCropSummaryReport.Designer.vb">
+      <DependentUpon>frmCropSummaryReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCropSummaryReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmUpdateRatesBulk.designer.vb">
       <DependentUpon>frmUpdateRatesBulk.vb</DependentUpon>
     </Compile>
@@ -384,6 +402,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAttendaceAdvanceReport.resx">
+      <DependentUpon>frmAttendaceAdvanceReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCropSummaryMonthlyReport.resx">
+      <DependentUpon>frmCropSummaryMonthlyReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCropSummaryReport.resx">
+      <DependentUpon>frmCropSummaryReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmUpdateRatesBulk.resx">
       <DependentUpon>frmUpdateRatesBulk.vb</DependentUpon>
       <SubType>Designer</SubType>

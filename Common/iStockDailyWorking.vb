@@ -509,5 +509,23 @@ Public Class iStockDailyWorking
     End Function
 #End Region
 
+#Region "Crop Summary Report Monthly"
+    Public Function GetCropSummaryMonthly(ByVal currentDate As Date) As DataSet
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand("ReportCropSummaryByMonthly")
+            DB.AddInParameter(DBC, "@IssueDate", DbType.Date, currentDate)
+
+            Return DB.ExecuteDataSet(DBC)
+            DBC.Dispose()
+        Catch ex As Exception
+            Return Nothing
+            Throw
+        End Try
+
+
+    End Function
+#End Region
+
 
 End Class

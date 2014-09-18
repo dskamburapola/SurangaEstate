@@ -70,15 +70,7 @@ Public Class frmAttendaceReport
 
 #End Region
 
-#Region "Populate Grid"
-    Public Sub PopulateGrid()
-        Try
-            pgcAttendance.DataSource = CWBStock.GetAllStockItems().Tables(0)
-        Catch ex As Exception
-            MessageError(ex.ToString)
-        End Try
-    End Sub
-#End Region
+
 
 #Region "Print Preview"
     Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
