@@ -112,9 +112,12 @@ Public Class frmMain
     End Sub
 
     Private Sub BarButtonItem25_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem25.ItemClick
-        ShowIStockForm(frmAttendaceAdvanceReport)
+        '  ShowIStockForm(frmAttendaceReportAdvance)
     End Sub
-
+    Private Sub BarButtonItem27_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem27.ItemClick
+        ShowIStockForm(frmUpdateRatesBulk)
+    End Sub
+   
 #End Region
 
 #Region "Show App Information"
@@ -162,11 +165,6 @@ Public Class frmMain
     
   
   
-    Private Sub BarButtonItem26_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem26.ItemClick
-        ShowIStockForm(frmCropSummaryReport)
-    End Sub
-
-    Private Sub BarButtonItem27_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem27.ItemClick
-        ShowIStockForm(frmCropSummaryMonthlyReport)
-    End Sub
+   
+  
 End Class

@@ -33,6 +33,7 @@ Public Class iStockDailyWorking
     Private _UpdatedBy As Int64
     Private _UpdatedDate As DateTime
 
+    Private _Designation As String
 
 #End Region
 
@@ -227,6 +228,15 @@ Public Class iStockDailyWorking
             _UpdatedDate = value
         End Set
     End Property
+
+    Public Property Designation() As String
+        Get
+            Return _Designation
+        End Get
+        Set(ByVal value As String)
+            _Designation = value
+        End Set
+    End Property
 #End Region
 
 #Region "Insert Daily Working"
@@ -248,6 +258,28 @@ Public Class iStockDailyWorking
             DB.AddInParameter(DBC, "@CasualPayRate", DbType.Decimal, Me.CasualPayRate)
             DB.AddInParameter(DBC, "@CasualOTPayRate", DbType.Decimal, Me.CasualOTPayRate)
             DB.AddInParameter(DBC, "@CreatedBy", DbType.Double, Me.CreatedBy)
+
+            DB.ExecuteNonQuery(DBC)
+        Catch ex As Exception
+            Throw
+        End Try
+    End Sub
+#End Region
+
+#Region "Update Rates"
+    Public Sub UpdateRates()
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(DAILYWORKING_UPDATERATE)
+            DB.AddInParameter(DBC, "@DailyWorkingID", DbType.Int64, Me.DailyWorkingID)
+            DB.AddInParameter(DBC, "@DayRate", DbType.Decimal, Me.DayRate)
+            DB.AddInParameter(DBC, "@OTRate", DbType.Decimal, Me.OTRate)
+            DB.AddInParameter(DBC, "@KgsPerDay", DbType.Decimal, Me.KgsPerDay)
+            DB.AddInParameter(DBC, "@OverKgRate", DbType.Decimal, Me.OverKgRate)
+            DB.AddInParameter(DBC, "@EPF", DbType.Decimal, Me.EPF)
+            DB.AddInParameter(DBC, "@CasualPayRate", DbType.Decimal, Me.CasualPayRate)
+            DB.AddInParameter(DBC, "@CasualOTPayRate", DbType.Decimal, Me.CasualOTPayRate)
+            'DB.AddInParameter(DBC, "@UpdatedBy", DbType.Int64, Me.UpdatedBy)
 
             DB.ExecuteNonQuery(DBC)
         Catch ex As Exception
@@ -294,13 +326,14 @@ Public Class iStockDailyWorking
 
 #End Region
 
-#Region "Daily Working GetAll ByDates"
-    Public Function AttendancePivot() As DataSet
+#Region "Daily Working Get for Rate Update"
+    Public Function DailyWorkingGetforRateUpdate() As DataSet
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
-            Dim DBC As DbCommand = DB.GetStoredProcCommand(REPORTATTENDANCE)
-            '  DB.AddInParameter(DBC, "@StartDate", DbType.Date, Me.StartDate)
-            DB.AddInParameter(DBC, "@IssueDate", DbType.Date, Me.EndDate)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(DAILYWORKING_GETALLFORRATEUPDATE)
+            DB.AddInParameter(DBC, "@StartDate", DbType.Date, Me.StartDate)
+            DB.AddInParameter(DBC, "@EndDate", DbType.Date, Me.EndDate)
+            DB.AddInParameter(DBC, "@Designation", DbType.String, Me.Designation)
 
             Return DB.ExecuteDataSet(DBC)
             DBC.Dispose()
@@ -333,7 +366,7 @@ Public Class iStockDailyWorking
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
             Dim DBC As DbCommand = DB.GetStoredProcCommand(EMPLOYEE_GETALL_WORKERS)
-
+            DB.AddInParameter(DBC, "@Designation", DbType.String, Me.WorkType)
             Return DB.ExecuteDataSet(DBC)
             DBC.Dispose()
         Catch ex As Exception

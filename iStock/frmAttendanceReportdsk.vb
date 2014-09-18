@@ -84,7 +84,7 @@ Public Class frmAttendanceReportdsk
 
 
                 .EndDate = deEndDate.EditValue
-                PivotGridControl1.DataSource = .AttendancePivot.Tables(0)
+                'PivotGridControl1.DataSource = .AttendancePivot.Tables(0)
 
             End With
 

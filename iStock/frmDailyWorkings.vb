@@ -58,7 +58,7 @@ Public Class frmDailyWorkings
         Me.HideToolButtonsOnLoad()
         'Me.DisplayCompany()
         Me.GetWorkingCategory()
-        Me.GetEmployeeForWork()
+        'Me.GetEmployeeForWork()
         Me.DisplaySettings()
 
         Me.deWorkingDate.EditValue = Date.Today
@@ -131,7 +131,18 @@ Public Class frmDailyWorkings
     Private Sub GetEmployeeForWork()
 
         Try
+            If cmbWorkType.Text <> String.Empty Then
+                Select Case cmbWorkType.Text
 
+                    Case "CASUAL"
+                        iStockDailyWorking.WorkType = "CASUAL LABOUR"
+
+                    Case "PERMENANT"
+                        iStockDailyWorking.WorkType = "PERMANENT LABOUR"
+
+
+                End Select
+            End If
             Me.leEmployee.Properties.DataSource = iStockDailyWorking.GetEmployeeForWork.Tables(0)
             Me.leEmployee.Properties.DisplayMember = "EmployerNo"
             Me.leEmployee.Properties.ValueMember = "EmployerID"
@@ -218,9 +229,21 @@ Public Class frmDailyWorkings
                 .WorkedDays = Me.cmbDays.Text.Trim
                 .Quantity = Me.seQuantity.Text.Trim
 
-                .DayRate = Convert.ToDecimal(lblDayRate.Text.Trim)
-                .OTRate = Convert.ToDecimal(lblOTRate.Text.Trim)
 
+                'Select Case cmbWorkType.Text
+
+                '    Case "PERMENANT"
+                '        .DayRate = Convert.ToDecimal(lblDayRate.Text.Trim)
+                '        .OTRate = Convert.ToDecimal(lblOTRate.Text.Trim)
+
+                '    Case "CASUAL"
+                '        .CasualPayRate = Convert.ToDecimal(lblCasualPayRate.Text.Trim)
+                '        .CasualOTPayRate = Convert.ToDecimal(lblCasualOTPayRate.Text.Trim)
+
+
+
+                'End Select
+              
 
 
                 Select Case leWorkCategory.Text
@@ -484,6 +507,10 @@ Public Class frmDailyWorkings
         End If
     End Sub
 
+    Private Sub cmbWorkType_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbWorkType.SelectedIndexChanged
+        Me.GetEmployeeForWork()
+    End Sub
+
 #End Region
 
 #Region "Show/Display bar button"
@@ -512,4 +539,5 @@ Public Class frmDailyWorkings
 
   
 
+    
 End Class

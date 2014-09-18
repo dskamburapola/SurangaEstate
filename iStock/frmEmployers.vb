@@ -86,6 +86,8 @@ Public Class frmEmployers
             If lblID.Text = String.Empty Then
 
                 CWBEmployers.EmployerNo = Me.seEmployerNo.Text.Trim
+                CWBEmployers.Designation = Me.ceDesignation.Text.Trim
+
 
                 If CWBEmployers.IsEmployerExits() = True Then
                     Dim frm As New frmAlreadyExists

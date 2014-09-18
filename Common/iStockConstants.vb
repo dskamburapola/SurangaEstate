@@ -90,7 +90,7 @@
     Public Shared CWB_CUSTOMER_CONFIRMATION_DESCRIPTIONLABEL As String = "Click Ok to continue"
 
     Public Shared CWB_EMPLOYER_CONFIRMATION_TITLE As String = "Employer No already exists"
-    Public Shared CWB_EMPLOYER_CONFIRMATION_TITLELABEL As String = "You can not save this records, Change Employer No and save"
+    Public Shared CWB_EMPLOYER_CONFIRMATION_TITLELABEL As String = "You can not save this records, Change Employer No or Designation and save"
     Public Shared CWB_EMPLOYER_CONFIRMATION_DESCRIPTIONLABEL As String = "Click Ok to continue"
 
 
@@ -311,6 +311,9 @@
     Public Shared DAILYWORKING_DELETE As String = "DailyWorking_Delete"
     Public Shared DAILYWORKING_GETALL_BYDATES As String = "DailyWorking_GetAll_ByDates"
     Public Shared DAILYWORKING_IFEXISTS As String = "DailyWorking_IfExists"
+    Public Shared DAILYWORKING_GETALLFORRATEUPDATE As String = "DailyWorking_GetAllForRateUpdate"
+
+    Public Shared DAILYWORKING_UPDATERATE As String = "DailyWorking_UpdateRate"
 
 
     Public Shared EMPLOYEE_DETAILS_GETBYREGNO As String = "Employee_Details_GetByRegNo"

@@ -247,6 +247,7 @@ Public Class iStockEmployers
             Dim DBC As DbCommand = DB.GetStoredProcCommand(EMPLOYERS_ISEMPLOYEREXISTS)
 
             DB.AddInParameter(DBC, "@EmployerNo", DbType.Int64, EmployerNo)
+            DB.AddInParameter(DBC, "@Designation", DbType.String, Designation)
             DB.AddOutParameter(DBC, "@IsExists", DbType.Int64, 0)
             DB.ExecuteNonQuery(DBC)
 
