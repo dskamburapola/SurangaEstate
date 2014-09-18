@@ -20,8 +20,8 @@ Partial Class frmAttendaceReport
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.pgcAttendance = New DevExpress.XtraPivotGrid.PivotGridControl()
         Me.PivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
@@ -128,6 +128,7 @@ Partial Class frmAttendaceReport
         Me.PivotGridField5.Name = "PivotGridField5"
         Me.PivotGridField5.Options.ShowValues = False
         Me.PivotGridField5.SummaryDisplayType = DevExpress.Data.PivotGrid.PivotSummaryDisplayType.PercentOfColumn
+        Me.PivotGridField5.Visible = False
         '
         'leYear
         '
@@ -139,9 +140,9 @@ Partial Class frmAttendaceReport
         Me.leYear.Size = New System.Drawing.Size(113, 20)
         Me.leYear.StyleController = Me.LayoutControl1
         Me.leYear.TabIndex = 15
-        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule3.ErrorText = "Require"
-        Me.dxvpAttendaceReport.SetValidationRule(Me.leYear, ConditionValidationRule3)
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.leYear, ConditionValidationRule1)
         '
         'meMonth
         '
@@ -151,9 +152,9 @@ Partial Class frmAttendaceReport
         Me.meMonth.Size = New System.Drawing.Size(113, 20)
         Me.meMonth.StyleController = Me.LayoutControl1
         Me.meMonth.TabIndex = 14
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "Require"
-        Me.dxvpAttendaceReport.SetValidationRule(Me.meMonth, ConditionValidationRule1)
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule2.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.meMonth, ConditionValidationRule2)
         '
         'sbGenerate
         '
