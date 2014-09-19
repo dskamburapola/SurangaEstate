@@ -336,6 +336,7 @@
 
     Public Shared REPORTATTENDANCE As String = "ReportAttendance"
 
+    Public Shared GETRUBBERLTRSBYDATE As String = "GetRubberLtrsByDate"
 
 
 

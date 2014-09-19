@@ -34,7 +34,7 @@ Public Class iStockDailyWorking
     Private _UpdatedDate As DateTime
 
     Private _Designation As String
-
+    Private _RubberLtrs As Decimal
 #End Region
 
 #Region "Properties"
@@ -237,6 +237,16 @@ Public Class iStockDailyWorking
             _Designation = value
         End Set
     End Property
+
+    Public Property RubberLtrs() As Decimal
+        Get
+            Return _RubberLtrs
+        End Get
+        Set(ByVal value As Decimal)
+            _RubberLtrs = value
+        End Set
+    End Property
+
 #End Region
 
 #Region "Insert Daily Working"
@@ -287,6 +297,49 @@ Public Class iStockDailyWorking
         End Try
     End Sub
 #End Region
+
+#Region "Get RubberLtrs By Date"
+    Public Sub GetRubberLtrByDate()
+        Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+        Dim DBC As DbCommand = DB.GetStoredProcCommand(GETRUBBERLTRSBYDATE)
+        Try
+
+            DB.AddInParameter(DBC, "@WorkingDate", DbType.Date, Me.WorkingDate)
+            Using DR As IDataReader = DB.ExecuteReader(DBC)
+
+
+                With DR
+                    Do While .Read
+                        Me.RubberLtrs = Convert.ToDecimal(IIf(Not IsDBNull(.Item("RubberLtrs")), .Item("RubberLtrs").ToString, 0))
+
+
+                    Loop
+                End With
+
+                If (Not DR Is Nothing) Then
+                    DR.Close()
+                End If
+
+
+            End Using
+
+
+
+        Catch ex As Exception
+            Throw
+        Finally
+            DBC.Dispose()
+
+
+
+        End Try
+
+
+    End Sub
+#End Region
+
+
+
 
 #Region "DailyWorking GetBy Date"
     Public Function DailyWorkingGetByDate() As DataSet
