@@ -193,7 +193,19 @@ Public Class frmTermDeductions
     Private Sub GetEmployeeForWork()
 
         Try
+            'If cmbWorkType.Text <> String.Empty Then
+            '    Select Case cmbWorkType.Text
 
+            '        Case "CASUAL"
+            '            iStockDailyWorking.WorkType = "CASUAL LABOUR"
+
+            '        Case "PERMENANT"
+            '            iStockDailyWorking.WorkType = "PERMANENT LABOUR"
+
+
+            '    End Select
+            'End If
+            iStockDailyWorking.WorkType = "PERMANENT LABOUR"
             Me.leEmployeeCode.Properties.DataSource = iStockDailyWorking.GetEmployeeForWork.Tables(0)
             Me.leEmployeeCode.Properties.DisplayMember = "EmployerName"
             Me.leEmployeeCode.Properties.ValueMember = "EmployerID"
@@ -287,7 +299,7 @@ Public Class frmTermDeductions
 
 
             Me.ClearFormData()
-            Me.cmbDeductionType.Focus()
+            Me.cmbWorkType.Focus()
         End Try
 
 
@@ -359,7 +371,7 @@ Public Class frmTermDeductions
 
 
             Me.ClearFormData()
-            Me.cmbDeductionType.Focus()
+            Me.cmbWorkType.Focus()
         End Try
 
 
@@ -499,13 +511,16 @@ Public Class frmTermDeductions
 
         deIssueDate.EditValue = Date.Today
         cmbDeductionType.Text = String.Empty
-        leEmployeeCode.EditValue = Nothing
+        leEmployeeCode.Properties.DataSource = Nothing
         teEmployeeName.Text = String.Empty
         deStartMonth.EditValue = Date.Today()
         seAmount.Text = 0
         sePeriod.Text = 0
         gcTermDeductions.DataSource = Nothing
+        cmbWorkType.Text = String.Empty
 
+        Me.GetEmployeeForWork()
+        Me.leEmployeeCode.Focus()
 
     End Sub
 #End Region
@@ -546,6 +561,7 @@ Public Class frmTermDeductions
     End Sub
 
 #End Region
+
 
 
 

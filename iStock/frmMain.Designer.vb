@@ -469,6 +469,7 @@ Partial Class frmMain
         Me.Name = "frmMain"
         Me.Ribbon = Me.RibbonControl
         Me.StatusBar = Me.RibbonStatusBar1
+        Me.Text = " "
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ApplicationMenu1, System.ComponentModel.ISupportInitialize).EndInit()

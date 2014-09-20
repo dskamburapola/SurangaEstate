@@ -34,9 +34,9 @@ Public Class frmCashAdvance
         SetStartUpBarButton(bbSave, bbNew, bbDelete, bbClose, bbDisplaySelected, bbRefresh, bbPrint)
         Me.HideToolButtonsOnLoad()
         Me.deIssueDate.EditValue = Date.Today
-        Me.GetEmployeeForWork()
-        Me.deIssueDate.Focus()
 
+        Me.deIssueDate.Focus()
+        Me.GetEmployeeForWork()
         Me.deStartDate.EditValue = Date.Today
         Me.deEndDate.EditValue = Date.Today
 
@@ -110,6 +110,20 @@ Public Class frmCashAdvance
     Private Sub GetEmployeeForWork()
 
         Try
+
+            'If cmbWorkType.Text <> String.Empty Then
+            '    Select Case cmbWorkType.Text
+
+            '        Case "CASUAL"
+            '            iStockCashAdvance.WorkType = "CASUAL LABOUR"
+
+            '        Case "PERMENANT"
+            '            iStockCashAdvance.WorkType = "PERMANENT LABOUR"
+
+
+            '    End Select
+            'End If
+            iStockCashAdvance.WorkType = "PERMANENT LABOUR"
 
             Me.leEmployee.Properties.DataSource = iStockCashAdvance.GetEmployeeForWork.Tables(0)
             Me.leEmployee.Properties.DisplayMember = "EmployerName"
@@ -223,7 +237,7 @@ Public Class frmCashAdvance
 
 
         Me.ClearFormData()
-        'Me.deIssueDate.Focus()
+        Me.deIssueDate.Focus()
 
     End Sub
 #End Region
@@ -244,8 +258,9 @@ Public Class frmCashAdvance
         Me.tePayment.Text = String.Empty
         Me.teTotalDeductions.Text = String.Empty
         Me.teWorkedDays.Text = String.Empty
+        Me.cmbWorkType.Text = String.Empty
 
-        Me.leEmployee.Focus()
+        Me.deIssueDate.Focus()
 
 
     End Sub
@@ -372,4 +387,8 @@ Public Class frmCashAdvance
 
         End If
     End Sub
+
+    
+   
+    
 End Class

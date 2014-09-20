@@ -387,7 +387,7 @@ Public Class iStockCashAdvance
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
             Dim DBC As DbCommand = DB.GetStoredProcCommand(EMPLOYEE_GETALL_WORKERS)
-
+            DB.AddInParameter(DBC, "@Designation", DbType.String, Me.WorkType)
             Return DB.ExecuteDataSet(DBC)
             DBC.Dispose()
         Catch ex As Exception
