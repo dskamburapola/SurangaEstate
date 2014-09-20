@@ -27,11 +27,7 @@ Public Class frmCashAdvance
 #End Region
 
 #Region "Form Events"
-    'Private Sub frmCompany_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-    '    SetStartUpBarButton(bbSave, bbNew, bbDelete, bbClose, bbDisplaySelected, bbRefresh, bbPrint)
-    '    Me.HideToolButtonsOnLoad()
-    '    Me.DisplayCompany()
-    'End Sub
+
 
     Private Sub frmCashAdvance_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 

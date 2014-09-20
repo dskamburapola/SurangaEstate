@@ -99,7 +99,7 @@ Public Class frmCropSummaryMonthlyReport
             Dim selectedMonth, selectedYear As String
             selectedMonth = meMonth.EditValue
             selectedYear = leYear.EditValue
-            currentDate = Convert.ToDateTime(selectedMonth + "-01-" + selectedYear)
+            currentDate = Convert.ToDateTime("01-" + selectedMonth + "-" + selectedYear)
 
             Dim ds As New DataSet
 

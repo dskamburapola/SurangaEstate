@@ -236,7 +236,7 @@ Partial Class frmAttendaceAdvanceReport
         Me.Controls.Add(Me.LayoutControl1)
         Me.KeyPreview = True
         Me.Name = "frmAttendaceAdvanceReport"
-        Me.Text = "Attendance Report"
+        Me.Text = "Check Roll"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.gcCheckRoll, System.ComponentModel.ISupportInitialize).EndInit()

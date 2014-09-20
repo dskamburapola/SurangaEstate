@@ -425,8 +425,8 @@ Partial Class frmMain
         '
         'RibbonPageGroup11
         '
-        Me.RibbonPageGroup11.ItemLinks.Add(Me.BarButtonItem26)
         Me.RibbonPageGroup11.ItemLinks.Add(Me.BarButtonItem28)
+        Me.RibbonPageGroup11.ItemLinks.Add(Me.BarButtonItem26)
         Me.RibbonPageGroup11.Name = "RibbonPageGroup11"
         Me.RibbonPageGroup11.ShowCaptionButton = False
         '

@@ -70,8 +70,6 @@ Public Class frmAttendaceReport
 
 #End Region
 
-
-
 #Region "Print Preview"
     Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
         PrintPivotPreview(pgcAttendance, "Attendance Report")
@@ -108,7 +106,7 @@ Public Class frmAttendaceReport
             Dim selectedMonth, selectedYear As String
             selectedMonth = meMonth.EditValue
             selectedYear = leYear.EditValue
-            currentDate = Convert.ToDateTime(selectedMonth + "-01-" + selectedYear)
+            currentDate = Convert.ToDateTime("01-" + selectedMonth + "-" + selectedYear)
 
             Dim ds As New DataSet
 

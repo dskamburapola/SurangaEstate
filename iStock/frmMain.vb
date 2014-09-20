@@ -1,4 +1,7 @@
-Public Class frmMain 
+Imports System.Threading
+Imports System.Globalization
+
+Public Class frmMain
 
 #Region "Form Events"
 
@@ -8,6 +11,11 @@ Public Class frmMain
         bsiLoggedUser.Caption = UserName + " - [" + UserType + "]"
         Me.ShowAppInformation()
         Me.RibbonControl.Minimized = True
+
+        Thread.CurrentThread.CurrentCulture = New CultureInfo("en-GB")
+        ' Sets the UI culture to French (France)
+        Thread.CurrentThread.CurrentUICulture = New CultureInfo("en-GB")
+
 
     End Sub
 
@@ -103,7 +111,7 @@ Public Class frmMain
         ShowIStockForm(frmRoles)
     End Sub
 
-    Private Sub BarButtonItem20_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem20.ItemClick
+    Private Sub BarButtonItem20_ItemClick(ByVal sender As Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem20.ItemClick
         ShowIStockForm(frmSettings)
     End Sub
 
@@ -117,7 +125,7 @@ Public Class frmMain
     Private Sub BarButtonItem27_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem27.ItemClick
         ShowIStockForm(frmUpdateRatesBulk)
     End Sub
-   
+
 #End Region
 
 #Region "Show App Information"
@@ -157,16 +165,10 @@ Public Class frmMain
 #End Region
 
 
-    'select DATEPART(year,WorkingDate) AS yesr,
-    'DATEPART(month,WorkingDate) AS yesrmonth,
-    'sum(Quantity)
-    '  from tblDailyWorking
-    '  group by DATEPART(year,WorkingDate),DATEPART(month,WorkingDate)
-    
-  
-  
-   
-  
+
+
+
+
     Private Sub BarButtonItem26_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem26.ItemClick
         ShowIStockForm(frmCropSummaryReport)
     End Sub
@@ -175,7 +177,4 @@ Public Class frmMain
         ShowIStockForm(frmCropSummaryMonthlyReport)
     End Sub
 
-    Private Sub BarButtonItem29_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem29.ItemClick
-        ShowIStockForm(frmRubberSheets)
-    End Sub
 End Class

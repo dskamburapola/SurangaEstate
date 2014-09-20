@@ -216,7 +216,7 @@ Partial Class frmAttendaceReport
         Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
         Me.LayoutControlGroup2.Size = New System.Drawing.Size(474, 69)
-        Me.LayoutControlGroup2.Text = "Select Month & Year"
+        Me.LayoutControlGroup2.Text = "Select Month && Year"
         '
         'LayoutControlItem5
         '

@@ -20,9 +20,16 @@ Partial Class frmCropSummaryMonthlyReport
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.pgcCropSummaryMonthly = New DevExpress.XtraPivotGrid.PivotGridControl()
+        Me.PivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField2 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField3 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField4 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField5 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.meMonth = New DevExpress.XtraScheduler.UI.MonthEdit()
         Me.leYear = New DevExpress.XtraEditors.LookUpEdit()
         Me.sbGenerate = New DevExpress.XtraEditors.SimpleButton()
         Me.sbPrint = New DevExpress.XtraEditors.SimpleButton()
@@ -32,18 +39,13 @@ Partial Class frmCropSummaryMonthlyReport
         Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
-        Me.meMonth = New DevExpress.XtraScheduler.UI.MonthEdit()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.pgcCropSummaryMonthly = New DevExpress.XtraPivotGrid.PivotGridControl()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.PivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
-        Me.PivotGridField2 = New DevExpress.XtraPivotGrid.PivotGridField()
-        Me.PivotGridField3 = New DevExpress.XtraPivotGrid.PivotGridField()
-        Me.PivotGridField4 = New DevExpress.XtraPivotGrid.PivotGridField()
-        Me.PivotGridField5 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.pgcCropSummaryMonthly, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,11 +53,9 @@ Partial Class frmCropSummaryMonthlyReport
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pgcCropSummaryMonthly, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -72,6 +72,72 @@ Partial Class frmCropSummaryMonthlyReport
         Me.LayoutControl1.Size = New System.Drawing.Size(702, 502)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'pgcCropSummaryMonthly
+        '
+        Me.pgcCropSummaryMonthly.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.PivotGridField1, Me.PivotGridField2, Me.PivotGridField3, Me.PivotGridField4, Me.PivotGridField5})
+        Me.pgcCropSummaryMonthly.Location = New System.Drawing.Point(12, 81)
+        Me.pgcCropSummaryMonthly.Name = "pgcCropSummaryMonthly"
+        Me.pgcCropSummaryMonthly.Size = New System.Drawing.Size(678, 374)
+        Me.pgcCropSummaryMonthly.TabIndex = 18
+        '
+        'PivotGridField1
+        '
+        Me.PivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+        Me.PivotGridField1.AreaIndex = 0
+        Me.PivotGridField1.Caption = "EmployerNo"
+        Me.PivotGridField1.FieldName = "EmployerNo"
+        Me.PivotGridField1.Name = "PivotGridField1"
+        '
+        'PivotGridField2
+        '
+        Me.PivotGridField2.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+        Me.PivotGridField2.AreaIndex = 1
+        Me.PivotGridField2.Caption = "EmployerName"
+        Me.PivotGridField2.FieldName = "EmployerName"
+        Me.PivotGridField2.Name = "PivotGridField2"
+        '
+        'PivotGridField3
+        '
+        Me.PivotGridField3.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+        Me.PivotGridField3.AreaIndex = 2
+        Me.PivotGridField3.Caption = "Sex"
+        Me.PivotGridField3.FieldName = "Sex"
+        Me.PivotGridField3.Name = "PivotGridField3"
+        '
+        'PivotGridField4
+        '
+        Me.PivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
+        Me.PivotGridField4.AreaIndex = 0
+        Me.PivotGridField4.Caption = "Quantity"
+        Me.PivotGridField4.CellFormat.FormatString = "{0:N2}"
+        Me.PivotGridField4.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.PivotGridField4.FieldName = "Quantity"
+        Me.PivotGridField4.Name = "PivotGridField4"
+        '
+        'PivotGridField5
+        '
+        Me.PivotGridField5.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
+        Me.PivotGridField5.AreaIndex = 0
+        Me.PivotGridField5.Caption = "Day"
+        Me.PivotGridField5.CellFormat.FormatString = "dd"
+        Me.PivotGridField5.CellFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.PivotGridField5.FieldName = "WorkingDate"
+        Me.PivotGridField5.Name = "PivotGridField5"
+        Me.PivotGridField5.ValueFormat.FormatString = "dd"
+        Me.PivotGridField5.ValueFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        '
+        'meMonth
+        '
+        Me.meMonth.Location = New System.Drawing.Point(57, 43)
+        Me.meMonth.Name = "meMonth"
+        Me.meMonth.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.meMonth.Size = New System.Drawing.Size(113, 20)
+        Me.meMonth.StyleController = Me.LayoutControl1
+        Me.meMonth.TabIndex = 17
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.meMonth, ConditionValidationRule1)
         '
         'leYear
         '
@@ -147,7 +213,7 @@ Partial Class frmCropSummaryMonthlyReport
         Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
         Me.LayoutControlGroup2.Size = New System.Drawing.Size(474, 69)
-        Me.LayoutControlGroup2.Text = "Select Date Range"
+        Me.LayoutControlGroup2.Text = "Select Month && Year"
         '
         'LayoutControlItem6
         '
@@ -177,18 +243,6 @@ Partial Class frmCropSummaryMonthlyReport
         Me.LayoutControlItem1.TextToControlDistance = 0
         Me.LayoutControlItem1.TextVisible = False
         '
-        'meMonth
-        '
-        Me.meMonth.Location = New System.Drawing.Point(57, 43)
-        Me.meMonth.Name = "meMonth"
-        Me.meMonth.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.meMonth.Size = New System.Drawing.Size(113, 20)
-        Me.meMonth.StyleController = Me.LayoutControl1
-        Me.meMonth.TabIndex = 17
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "Require"
-        Me.dxvpAttendaceReport.SetValidationRule(Me.meMonth, ConditionValidationRule1)
-        '
         'LayoutControlItem4
         '
         Me.LayoutControlItem4.Control = Me.meMonth
@@ -202,14 +256,6 @@ Partial Class frmCropSummaryMonthlyReport
         Me.LayoutControlItem4.Text = "Month"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(30, 13)
         '
-        'pgcCropSummaryMonthly
-        '
-        Me.pgcCropSummaryMonthly.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.PivotGridField1, Me.PivotGridField2, Me.PivotGridField3, Me.PivotGridField4, Me.PivotGridField5})
-        Me.pgcCropSummaryMonthly.Location = New System.Drawing.Point(12, 81)
-        Me.pgcCropSummaryMonthly.Name = "pgcCropSummaryMonthly"
-        Me.pgcCropSummaryMonthly.Size = New System.Drawing.Size(678, 374)
-        Me.pgcCropSummaryMonthly.TabIndex = 18
-        '
         'LayoutControlItem2
         '
         Me.LayoutControlItem2.Control = Me.pgcCropSummaryMonthly
@@ -222,52 +268,6 @@ Partial Class frmCropSummaryMonthlyReport
         Me.LayoutControlItem2.TextToControlDistance = 0
         Me.LayoutControlItem2.TextVisible = False
         '
-        'PivotGridField1
-        '
-        Me.PivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
-        Me.PivotGridField1.AreaIndex = 0
-        Me.PivotGridField1.Caption = "EmployerNo"
-        Me.PivotGridField1.FieldName = "EmployerNo"
-        Me.PivotGridField1.Name = "PivotGridField1"
-        '
-        'PivotGridField2
-        '
-        Me.PivotGridField2.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
-        Me.PivotGridField2.AreaIndex = 1
-        Me.PivotGridField2.Caption = "EmployerName"
-        Me.PivotGridField2.FieldName = "EmployerName"
-        Me.PivotGridField2.Name = "PivotGridField2"
-        '
-        'PivotGridField3
-        '
-        Me.PivotGridField3.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
-        Me.PivotGridField3.AreaIndex = 2
-        Me.PivotGridField3.Caption = "Sex"
-        Me.PivotGridField3.FieldName = "Sex"
-        Me.PivotGridField3.Name = "PivotGridField3"
-        '
-        'PivotGridField4
-        '
-        Me.PivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
-        Me.PivotGridField4.AreaIndex = 0
-        Me.PivotGridField4.Caption = "Quantity"
-        Me.PivotGridField4.CellFormat.FormatString = "{0:N2}"
-        Me.PivotGridField4.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.PivotGridField4.FieldName = "Quantity"
-        Me.PivotGridField4.Name = "PivotGridField4"
-        '
-        'PivotGridField5
-        '
-        Me.PivotGridField5.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
-        Me.PivotGridField5.AreaIndex = 0
-        Me.PivotGridField5.Caption = "Day"
-        Me.PivotGridField5.CellFormat.FormatString = "dd"
-        Me.PivotGridField5.CellFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.PivotGridField5.FieldName = "WorkingDate"
-        Me.PivotGridField5.Name = "PivotGridField5"
-        Me.PivotGridField5.ValueFormat.FormatString = "dd"
-        Me.PivotGridField5.ValueFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        '
         'frmCropSummaryMonthlyReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -279,6 +279,8 @@ Partial Class frmCropSummaryMonthlyReport
         Me.Text = "Monthly Crop Summary Report"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.pgcCropSummaryMonthly, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -286,11 +288,9 @@ Partial Class frmCropSummaryMonthlyReport
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pgcCropSummaryMonthly, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
