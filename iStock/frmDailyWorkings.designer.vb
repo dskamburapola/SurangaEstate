@@ -265,13 +265,13 @@ Partial Class frmDailyWorkings
         'leWorkCategory
         '
         Me.leWorkCategory.EnterMoveNextControl = True
-        Me.leWorkCategory.Location = New System.Drawing.Point(158, 60)
+        Me.leWorkCategory.Location = New System.Drawing.Point(157, 60)
         Me.leWorkCategory.MenuManager = Me.BarManager1
         Me.leWorkCategory.Name = "leWorkCategory"
         Me.leWorkCategory.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.leWorkCategory.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("AbbreviationID", "AbbreviationID", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("AbbreviationDesc", "Work Category")})
         Me.leWorkCategory.Properties.NullText = ""
-        Me.leWorkCategory.Size = New System.Drawing.Size(190, 20)
+        Me.leWorkCategory.Size = New System.Drawing.Size(191, 20)
         Me.leWorkCategory.StyleController = Me.LayoutControl1
         Me.leWorkCategory.TabIndex = 2
         ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -306,13 +306,13 @@ Partial Class frmDailyWorkings
         '
         'cmbDays
         '
-        Me.cmbDays.Location = New System.Drawing.Point(458, 36)
+        Me.cmbDays.Location = New System.Drawing.Point(457, 36)
         Me.cmbDays.MenuManager = Me.BarManager1
         Me.cmbDays.Name = "cmbDays"
         Me.cmbDays.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbDays.Properties.Items.AddRange(New Object() {"0.5", "1.0"})
         Me.cmbDays.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
-        Me.cmbDays.Size = New System.Drawing.Size(191, 20)
+        Me.cmbDays.Size = New System.Drawing.Size(192, 20)
         Me.cmbDays.StyleController = Me.LayoutControl1
         Me.cmbDays.TabIndex = 4
         ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -367,14 +367,14 @@ Partial Class frmDailyWorkings
         'leEmployee
         '
         Me.leEmployee.EnterMoveNextControl = True
-        Me.leEmployee.Location = New System.Drawing.Point(458, 12)
+        Me.leEmployee.Location = New System.Drawing.Point(457, 12)
         Me.leEmployee.MenuManager = Me.BarManager1
         Me.leEmployee.Name = "leEmployee"
         Me.leEmployee.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.leEmployee.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.leEmployee.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("EmployerID", "EmployerID", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("EmployerNo", "EmployerNo"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("EmployerName", "EmployerName")})
         Me.leEmployee.Properties.NullText = ""
-        Me.leEmployee.Size = New System.Drawing.Size(191, 20)
+        Me.leEmployee.Size = New System.Drawing.Size(192, 20)
         Me.leEmployee.StyleController = Me.LayoutControl1
         Me.leEmployee.TabIndex = 3
         ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -405,11 +405,11 @@ Partial Class frmDailyWorkings
         '
         Me.seQuantity.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seQuantity.EnterMoveNextControl = True
-        Me.seQuantity.Location = New System.Drawing.Point(458, 60)
+        Me.seQuantity.Location = New System.Drawing.Point(457, 60)
         Me.seQuantity.MenuManager = Me.BarManager1
         Me.seQuantity.Name = "seQuantity"
         Me.seQuantity.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.seQuantity.Size = New System.Drawing.Size(191, 20)
+        Me.seQuantity.Size = New System.Drawing.Size(192, 20)
         Me.seQuantity.StyleController = Me.LayoutControl1
         Me.seQuantity.TabIndex = 6
         ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -428,13 +428,13 @@ Partial Class frmDailyWorkings
         'cmbWorkType
         '
         Me.cmbWorkType.EnterMoveNextControl = True
-        Me.cmbWorkType.Location = New System.Drawing.Point(158, 36)
+        Me.cmbWorkType.Location = New System.Drawing.Point(157, 36)
         Me.cmbWorkType.MenuManager = Me.BarManager1
         Me.cmbWorkType.Name = "cmbWorkType"
         Me.cmbWorkType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbWorkType.Properties.Items.AddRange(New Object() {"CASUAL", "PERMENANT"})
         Me.cmbWorkType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
-        Me.cmbWorkType.Size = New System.Drawing.Size(190, 20)
+        Me.cmbWorkType.Size = New System.Drawing.Size(191, 20)
         Me.cmbWorkType.StyleController = Me.LayoutControl1
         Me.cmbWorkType.TabIndex = 1
         ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -574,7 +574,7 @@ Partial Class frmDailyWorkings
         '
         Me.deWorkingDate.EditValue = Nothing
         Me.deWorkingDate.EnterMoveNextControl = True
-        Me.deWorkingDate.Location = New System.Drawing.Point(158, 12)
+        Me.deWorkingDate.Location = New System.Drawing.Point(157, 12)
         Me.deWorkingDate.MenuManager = Me.BarManager1
         Me.deWorkingDate.Name = "deWorkingDate"
         Me.deWorkingDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -584,7 +584,7 @@ Partial Class frmDailyWorkings
         Me.deWorkingDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.deWorkingDate.Properties.Mask.EditMask = "dd-MMM-yy"
         Me.deWorkingDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.deWorkingDate.Size = New System.Drawing.Size(190, 20)
+        Me.deWorkingDate.Size = New System.Drawing.Size(191, 20)
         Me.deWorkingDate.StyleController = Me.LayoutControl1
         Me.deWorkingDate.TabIndex = 0
         '
@@ -839,7 +839,7 @@ Partial Class frmDailyWorkings
         'deStartDate
         '
         Me.deStartDate.EditValue = Nothing
-        Me.deStartDate.Location = New System.Drawing.Point(67, 43)
+        Me.deStartDate.Location = New System.Drawing.Point(66, 43)
         Me.deStartDate.MenuManager = Me.BarManager1
         Me.deStartDate.Name = "deStartDate"
         Me.deStartDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -849,14 +849,14 @@ Partial Class frmDailyWorkings
         Me.deStartDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.deStartDate.Properties.Mask.EditMask = "dd-MMM-yy"
         Me.deStartDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.deStartDate.Size = New System.Drawing.Size(103, 20)
+        Me.deStartDate.Size = New System.Drawing.Size(104, 20)
         Me.deStartDate.StyleController = Me.LayoutControl2
         Me.deStartDate.TabIndex = 5
         '
         'deEndDate
         '
         Me.deEndDate.EditValue = Nothing
-        Me.deEndDate.Location = New System.Drawing.Point(217, 43)
+        Me.deEndDate.Location = New System.Drawing.Point(216, 43)
         Me.deEndDate.MenuManager = Me.BarManager1
         Me.deEndDate.Name = "deEndDate"
         Me.deEndDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -866,7 +866,7 @@ Partial Class frmDailyWorkings
         Me.deEndDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.deEndDate.Properties.Mask.EditMask = "dd-MMM-yy"
         Me.deEndDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.deEndDate.Size = New System.Drawing.Size(103, 20)
+        Me.deEndDate.Size = New System.Drawing.Size(104, 20)
         Me.deEndDate.StyleController = Me.LayoutControl2
         Me.deEndDate.TabIndex = 6
         '
@@ -914,7 +914,7 @@ Partial Class frmDailyWorkings
         '
         'GridColumn10
         '
-        Me.GridColumn10.Caption = "WorkType"
+        Me.GridColumn10.Caption = "Work Type"
         Me.GridColumn10.FieldName = "WorkType"
         Me.GridColumn10.Name = "GridColumn10"
         Me.GridColumn10.OptionsColumn.AllowEdit = False
@@ -947,7 +947,7 @@ Partial Class frmDailyWorkings
         '
         'GridColumn13
         '
-        Me.GridColumn13.Caption = "EmployerName"
+        Me.GridColumn13.Caption = "Employee Name"
         Me.GridColumn13.FieldName = "EmployerName"
         Me.GridColumn13.Name = "GridColumn13"
         Me.GridColumn13.OptionsColumn.AllowEdit = False
@@ -958,7 +958,7 @@ Partial Class frmDailyWorkings
         '
         'GridColumn14
         '
-        Me.GridColumn14.Caption = "WorkedDays"
+        Me.GridColumn14.Caption = "Worked Days"
         Me.GridColumn14.DisplayFormat.FormatString = "{0:n2}"
         Me.GridColumn14.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.GridColumn14.FieldName = "WorkedDays"
