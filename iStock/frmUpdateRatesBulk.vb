@@ -284,6 +284,20 @@ Public Class frmUpdateRatesBulk
 
                 .StartDate = deStartDate.EditValue
                 .EndDate = deEndDate.EditValue
+
+                ''If cmbDesignation.Text <> String.Empty Then
+                ''    Select Case cmbDesignation.Text
+
+                ''        Case "CASUAL"
+                ''            .Designation = "CASUAL LABOUR"
+
+                ''        Case "PERMENANT"
+                ''            .Designation = "PERMANENT LABOUR"
+
+
+                ''    End Select
+                ''End If
+
                 .Designation = Me.cmbDesignation.Text.Trim
 
                 gcUpdateRates.DataSource = .DailyWorkingGetforRateUpdate.Tables(0)

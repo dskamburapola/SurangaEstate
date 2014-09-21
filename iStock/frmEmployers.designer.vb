@@ -227,7 +227,7 @@ Partial Class frmEmployers
         Me.ceDesignation.Name = "ceDesignation"
         Me.ceDesignation.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.ceDesignation.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.ceDesignation.Properties.Items.AddRange(New Object() {"STAFF", "PERMANENT LABOUR", "CASUAL LABOUR"})
+        Me.ceDesignation.Properties.Items.AddRange(New Object() {"PERMANENT", "CASUAL"})
         Me.ceDesignation.Size = New System.Drawing.Size(338, 20)
         Me.ceDesignation.StyleController = Me.LayoutControl1
         Me.ceDesignation.TabIndex = 11

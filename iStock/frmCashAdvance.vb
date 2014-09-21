@@ -123,7 +123,7 @@ Public Class frmCashAdvance
 
             '    End Select
             'End If
-            iStockCashAdvance.WorkType = "PERMANENT LABOUR"
+            iStockCashAdvance.WorkType = "PERMANENT"
 
             Me.leEmployee.Properties.DataSource = iStockCashAdvance.GetEmployeeForWork.Tables(0)
             Me.leEmployee.Properties.DisplayMember = "EmployerName"

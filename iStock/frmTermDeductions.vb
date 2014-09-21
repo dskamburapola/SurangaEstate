@@ -205,7 +205,7 @@ Public Class frmTermDeductions
 
             '    End Select
             'End If
-            iStockDailyWorking.WorkType = "PERMANENT LABOUR"
+            iStockDailyWorking.WorkType = "PERMANENT"
             Me.leEmployeeCode.Properties.DataSource = iStockDailyWorking.GetEmployeeForWork.Tables(0)
             Me.leEmployeeCode.Properties.DisplayMember = "EmployerName"
             Me.leEmployeeCode.Properties.ValueMember = "EmployerID"

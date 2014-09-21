@@ -131,18 +131,19 @@ Public Class frmDailyWorkings
     Private Sub GetEmployeeForWork()
 
         Try
-            If cmbWorkType.Text <> String.Empty Then
-                Select Case cmbWorkType.Text
+            'If cmbWorkType.Text <> String.Empty Then
+            '    'Select Case cmbWorkType.Text
 
-                    Case "CASUAL"
-                        iStockDailyWorking.WorkType = "CASUAL LABOUR"
+            '    '    Case "CASUAL"
+            '    '        iStockDailyWorking.WorkType = "CASUAL LABOUR"
 
-                    Case "PERMENANT"
-                        iStockDailyWorking.WorkType = "PERMANENT LABOUR"
+            '    '    Case "PERMENANT"
+            '    '        iStockDailyWorking.WorkType = "PERMANENT LABOUR"
 
 
-                End Select
-            End If
+            '    'End Select
+            'End If
+            iStockDailyWorking.WorkType = cmbWorkType.Text.Trim
             Me.leEmployee.Properties.DataSource = iStockDailyWorking.GetEmployeeForWork.Tables(0)
             Me.leEmployee.Properties.DisplayMember = "EmployerNo"
             Me.leEmployee.Properties.ValueMember = "EmployerID"
