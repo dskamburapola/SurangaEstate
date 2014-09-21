@@ -20,12 +20,14 @@ Partial Class frmAttendaceReport
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim PivotGridStyleFormatCondition1 As DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition = New DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition()
+        Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
-        Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.pgcAttendance = New DevExpress.XtraPivotGrid.PivotGridControl()
         Me.PivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.PivotGridField2 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField6 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.PivotGridField3 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.PivotGridField4 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.PivotGridField5 = New DevExpress.XtraPivotGrid.PivotGridField()
@@ -42,7 +44,6 @@ Partial Class frmAttendaceReport
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
-        Me.PivotGridField6 = New DevExpress.XtraPivotGrid.PivotGridField()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.pgcAttendance, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,6 +78,12 @@ Partial Class frmAttendaceReport
         'pgcAttendance
         '
         Me.pgcAttendance.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.PivotGridField1, Me.PivotGridField2, Me.PivotGridField6, Me.PivotGridField3, Me.PivotGridField4, Me.PivotGridField5})
+        PivotGridStyleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Transparent
+        PivotGridStyleFormatCondition1.Appearance.Options.UseForeColor = True
+        PivotGridStyleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal
+        PivotGridStyleFormatCondition1.FieldName = ""
+        PivotGridStyleFormatCondition1.Value1 = New Decimal(New Integer() {0, 0, 0, 131072})
+        Me.pgcAttendance.FormatConditions.AddRange(New DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition() {PivotGridStyleFormatCondition1})
         Me.pgcAttendance.Location = New System.Drawing.Point(12, 81)
         Me.pgcAttendance.Name = "pgcAttendance"
         Me.pgcAttendance.Size = New System.Drawing.Size(678, 374)
@@ -97,6 +104,14 @@ Partial Class frmAttendaceReport
         Me.PivotGridField2.Caption = "Employer Name"
         Me.PivotGridField2.FieldName = "EmployerName"
         Me.PivotGridField2.Name = "PivotGridField2"
+        '
+        'PivotGridField6
+        '
+        Me.PivotGridField6.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+        Me.PivotGridField6.AreaIndex = 2
+        Me.PivotGridField6.Caption = "Sex"
+        Me.PivotGridField6.FieldName = "Sex"
+        Me.PivotGridField6.Name = "PivotGridField6"
         '
         'PivotGridField3
         '
@@ -141,9 +156,9 @@ Partial Class frmAttendaceReport
         Me.leYear.Size = New System.Drawing.Size(113, 20)
         Me.leYear.StyleController = Me.LayoutControl1
         Me.leYear.TabIndex = 15
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule2.ErrorText = "Require"
-        Me.dxvpAttendaceReport.SetValidationRule(Me.leYear, ConditionValidationRule2)
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.leYear, ConditionValidationRule1)
         '
         'meMonth
         '
@@ -153,9 +168,9 @@ Partial Class frmAttendaceReport
         Me.meMonth.Size = New System.Drawing.Size(113, 20)
         Me.meMonth.StyleController = Me.LayoutControl1
         Me.meMonth.TabIndex = 14
-        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule3.ErrorText = "Require"
-        Me.dxvpAttendaceReport.SetValidationRule(Me.meMonth, ConditionValidationRule3)
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule2.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.meMonth, ConditionValidationRule2)
         '
         'sbGenerate
         '
@@ -271,14 +286,6 @@ Partial Class frmAttendaceReport
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextToControlDistance = 0
         Me.LayoutControlItem2.TextVisible = False
-        '
-        'PivotGridField6
-        '
-        Me.PivotGridField6.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
-        Me.PivotGridField6.AreaIndex = 2
-        Me.PivotGridField6.Caption = "Sex"
-        Me.PivotGridField6.FieldName = "Sex"
-        Me.PivotGridField6.Name = "PivotGridField6"
         '
         'frmAttendaceReport
         '

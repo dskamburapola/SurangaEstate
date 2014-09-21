@@ -72,7 +72,7 @@ Public Class frmCropSummaryMonthlyReport
     End Sub
 
     Private Sub frmStockBalance_Activated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Activated
-        pgcCropSummaryMonthly.BestFitColumnArea()
+
     End Sub
 
     Private Sub frmStockBalance_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles MyBase.KeyPress
@@ -106,7 +106,7 @@ Public Class frmCropSummaryMonthlyReport
             ds = iStockDailyWorking.GetCropSummaryMonthly(currentDate)
             pgcCropSummaryMonthly.DataSource = ds.Tables(0)
 
-
+            pgcCropSummaryMonthly.BestFitColumnArea()
         End If
 
 

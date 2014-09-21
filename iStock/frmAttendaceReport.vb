@@ -114,7 +114,6 @@ Public Class frmAttendaceReport
             pgcAttendance.DataSource = ds.Tables(0)
             pgcAttendance.BestFitColumnArea()
 
-            'PivotGridField2.FilterValues.ShowBlanks = False
 
         End If
 

@@ -84,6 +84,7 @@ Partial Class frmAttendaceAdvanceReport
         Me.gvCheckRoll.BestFitMaxRowCount = 1
         Me.gvCheckRoll.GridControl = Me.gcCheckRoll
         Me.gvCheckRoll.Name = "gvCheckRoll"
+        Me.gvCheckRoll.OptionsBehavior.Editable = False
         Me.gvCheckRoll.OptionsView.ColumnAutoWidth = False
         Me.gvCheckRoll.OptionsView.ShowFooter = True
         '

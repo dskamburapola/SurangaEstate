@@ -319,6 +319,7 @@ Partial Class frmMain
         Me.BarButtonItem27.Id = 35
         Me.BarButtonItem27.LargeGlyph = Global.iStock.My.Resources.Resources.DisplaySelected
         Me.BarButtonItem27.Name = "BarButtonItem27"
+        Me.BarButtonItem27.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'BarButtonItem26
         '
