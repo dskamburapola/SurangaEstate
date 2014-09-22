@@ -35,6 +35,17 @@ Public Class iStockDailyWorking
 
     Private _Designation As String
     Private _RubberLtrs As Decimal
+
+    Private _PayChitCost As Decimal
+    Private _DevalutionAllowance As Decimal
+    Private _IncentiveDays As Decimal
+    Private _IncentiveRate As Decimal
+
+    Private _ETF As Decimal
+    Private _WCPay As Decimal
+
+    Private _IsDeleted As Boolean
+
 #End Region
 
 #Region "Properties"
@@ -247,7 +258,69 @@ Public Class iStockDailyWorking
         End Set
     End Property
 
+    Public Property PayChitCost() As Decimal
+        Get
+            Return _PayChitCost
+        End Get
+        Set(ByVal value As Decimal)
+            _PayChitCost = value
+        End Set
+    End Property
+    Public Property DevalutionAllowance() As Decimal
+        Get
+            Return _DevalutionAllowance
+        End Get
+        Set(ByVal value As Decimal)
+            _DevalutionAllowance = value
+        End Set
+    End Property
+    Public Property IncentiveDays() As Decimal
+        Get
+            Return _IncentiveDays
+        End Get
+        Set(ByVal value As Decimal)
+            _IncentiveDays = value
+        End Set
+    End Property
+    Public Property IncentiveRate() As Decimal
+        Get
+            Return _IncentiveRate
+        End Get
+        Set(ByVal value As Decimal)
+            _IncentiveRate = value
+        End Set
+    End Property
+
+    Public Property ETF() As Decimal
+        Get
+            Return _ETF
+        End Get
+        Set(ByVal value As Decimal)
+            _ETF = value
+        End Set
+    End Property
+    Public Property WCPay() As Decimal
+        Get
+            Return _WCPay
+        End Get
+        Set(ByVal value As Decimal)
+            _WCPay = value
+        End Set
+    End Property
+    Public Property IsDeleted() As Boolean
+        Get
+            Return _IsDeleted
+        End Get
+        Set(ByVal value As Boolean)
+            _IsDeleted = value
+        End Set
+    End Property
+
 #End Region
+
+
+
+
 
 #Region "Insert Daily Working"
     Public Sub InsertDailyWorking()
@@ -264,9 +337,18 @@ Public Class iStockDailyWorking
             DB.AddInParameter(DBC, "@OTRate", DbType.Decimal, Me.OTRate)
             DB.AddInParameter(DBC, "@KgsPerDay", DbType.Decimal, Me.KgsPerDay)
             DB.AddInParameter(DBC, "@OverKgRate", DbType.Decimal, Me.OverKgRate)
+            '-------
+            DB.AddInParameter(DBC, "@WCPayRate", DbType.Decimal, Me.WCPay)
+            DB.AddInParameter(DBC, "@DevalutionRate", DbType.Decimal, Me.IncentiveRate)
+            DB.AddInParameter(DBC, "@DevaluationDays", DbType.Decimal, Me.IncentiveDays)
+            DB.AddInParameter(DBC, "@PayChit", DbType.Decimal, Me.PayChitCost)
+
+            '-------
+
             DB.AddInParameter(DBC, "@EPF", DbType.Decimal, Me.EPF)
             DB.AddInParameter(DBC, "@CasualPayRate", DbType.Decimal, Me.CasualPayRate)
             DB.AddInParameter(DBC, "@CasualOTPayRate", DbType.Decimal, Me.CasualOTPayRate)
+            DB.AddInParameter(DBC, "@IsDeleted", DbType.Boolean, Me.IsDeleted)
             DB.AddInParameter(DBC, "@CreatedBy", DbType.Double, Me.CreatedBy)
 
             DB.ExecuteNonQuery(DBC)

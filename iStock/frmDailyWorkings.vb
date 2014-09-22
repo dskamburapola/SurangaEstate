@@ -131,18 +131,7 @@ Public Class frmDailyWorkings
     Private Sub GetEmployeeForWork()
 
         Try
-            'If cmbWorkType.Text <> String.Empty Then
-            '    'Select Case cmbWorkType.Text
-
-            '    '    Case "CASUAL"
-            '    '        iStockDailyWorking.WorkType = "CASUAL LABOUR"
-
-            '    '    Case "PERMENANT"
-            '    '        iStockDailyWorking.WorkType = "PERMANENT LABOUR"
-
-
-            '    'End Select
-            'End If
+           
             iStockDailyWorking.WorkType = cmbWorkType.Text.Trim
             Me.leEmployee.Properties.DataSource = iStockDailyWorking.GetEmployeeForWork.Tables(0)
             Me.leEmployee.Properties.DisplayMember = "EmployerNo"
@@ -231,21 +220,6 @@ Public Class frmDailyWorkings
                 .Quantity = Me.seQuantity.Text.Trim
 
 
-                'Select Case cmbWorkType.Text
-
-                '    Case "PERMENANT"
-                '        .DayRate = Convert.ToDecimal(lblDayRate.Text.Trim)
-                '        .OTRate = Convert.ToDecimal(lblOTRate.Text.Trim)
-
-                '    Case "CASUAL"
-                '        .CasualPayRate = Convert.ToDecimal(lblCasualPayRate.Text.Trim)
-                '        .CasualOTPayRate = Convert.ToDecimal(lblCasualOTPayRate.Text.Trim)
-
-
-
-                'End Select
-              
-
 
                 Select Case leWorkCategory.Text
                     Case "PLUCKING"
@@ -263,9 +237,16 @@ Public Class frmDailyWorkings
 
                 Select Case cmbWorkType.Text
 
-                    Case "PERMENANT"
+                    Case "PERMANENT"
+                        .DayRate = Convert.ToDecimal(lblDayRate.Text.Trim)
+                        .OTRate = Convert.ToDecimal(lblOTRate.Text.Trim)
+
                         .CasualPayRate = 0
                         .CasualOTPayRate = 0
+                        .WCPay = Convert.ToDecimal(lblWCPay.Text)
+                        .IncentiveDays = Convert.ToDecimal(lblIncentiveDays.Text)
+                        .IncentiveRate = Convert.ToDecimal(lblIncentiveRate.Text)
+                        .PayChitCost = Convert.ToDecimal(lblPayChit.Text)
 
                     Case "CASUAL"
                         .DayRate = 0
@@ -275,16 +256,22 @@ Public Class frmDailyWorkings
                         .CasualPayRate = Convert.ToDecimal(lblCasualPayRate.Text.Trim)
                         .CasualOTPayRate = Convert.ToDecimal(lblCasualOTPayRate.Text.Trim)
 
-                    Case Else
-                        .DayRate = Convert.ToDecimal(lblDayRate.Text.Trim)
-                        .OTRate = Convert.ToDecimal(lblOTRate.Text.Trim)
+                        .WCPay = 0
+                        .IncentiveDays = 0
+                        .IncentiveRate = 0
+                        .PayChitCost = 0
 
-                        .CasualPayRate = 0
-                        .CasualOTPayRate = 0
+
+                        'Case Else
+                        '.DayRate = Convert.ToDecimal(lblDayRate.Text.Trim)
+                        '.OTRate = Convert.ToDecimal(lblOTRate.Text.Trim)
+
+                        '.CasualPayRate = 0
+                        '.CasualOTPayRate = 0
 
                 End Select
 
-
+                .IsDeleted = 0
                 .CreatedBy = UserID
 
                 .InsertDailyWorking()
@@ -321,10 +308,12 @@ Public Class frmDailyWorkings
                 Me.lblKgsPerDay.Text = .KgsPerDay
                 Me.lblCasualPayRate.Text = .CasualPayRate
                 Me.lblCasualOTPayRate.Text = .CasualOTPayRate
-
                 Me.lblEPF.Text = .EPF
-
                 Me.lblOverKgsRate.Text = .OverKgRate
+                Me.lblWCPay.Text = .WCPay
+                Me.lblIncentiveDays.Text = .IncentiveDays
+                Me.lblIncentiveRate.Text = .DevalutionAllowance
+                Me.lblPayChit.Text = .PayChitCost
 
 
             End With
