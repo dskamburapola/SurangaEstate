@@ -24,13 +24,14 @@ Partial Class frmCropSummaryMonthlyReport
         Dim PivotGridStyleFormatCondition2 As DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition = New DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Me.PivotGridField4 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField6 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.pgcCropSummaryMonthly = New DevExpress.XtraPivotGrid.PivotGridControl()
         Me.PivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.PivotGridField2 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.PivotGridField3 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.PivotGridField5 = New DevExpress.XtraPivotGrid.PivotGridField()
-        Me.PivotGridField6 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.meMonth = New DevExpress.XtraScheduler.UI.MonthEdit()
         Me.leYear = New DevExpress.XtraEditors.LookUpEdit()
         Me.sbGenerate = New DevExpress.XtraEditors.SimpleButton()
@@ -44,7 +45,7 @@ Partial Class frmCropSummaryMonthlyReport
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
-        Me.PivotGridField4 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField7 = New DevExpress.XtraPivotGrid.PivotGridField()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.pgcCropSummaryMonthly, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,6 +61,35 @@ Partial Class frmCropSummaryMonthlyReport
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'PivotGridField4
+        '
+        Me.PivotGridField4.Appearance.Header.Options.UseTextOptions = True
+        Me.PivotGridField4.Appearance.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.PivotGridField4.Appearance.Header.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center
+        Me.PivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
+        Me.PivotGridField4.AreaIndex = 0
+        Me.PivotGridField4.Caption = "T"
+        Me.PivotGridField4.CellFormat.FormatString = "{0:N2}"
+        Me.PivotGridField4.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.PivotGridField4.FieldName = "Tapping"
+        Me.PivotGridField4.GroupInterval = DevExpress.XtraPivotGrid.PivotGroupInterval.Custom
+        Me.PivotGridField4.Name = "PivotGridField4"
+        Me.PivotGridField4.Options.ShowTotals = False
+        Me.PivotGridField4.UnboundFieldName = "PivotGridField4"
+        '
+        'PivotGridField6
+        '
+        Me.PivotGridField6.Appearance.Header.Options.UseTextOptions = True
+        Me.PivotGridField6.Appearance.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.PivotGridField6.Appearance.Header.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center
+        Me.PivotGridField6.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
+        Me.PivotGridField6.AreaIndex = 1
+        Me.PivotGridField6.Caption = "P"
+        Me.PivotGridField6.CellFormat.FormatString = "{0:N2}"
+        Me.PivotGridField6.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.PivotGridField6.FieldName = "Plucking"
+        Me.PivotGridField6.Name = "PivotGridField6"
         '
         'LayoutControl1
         '
@@ -78,7 +108,7 @@ Partial Class frmCropSummaryMonthlyReport
         '
         'pgcCropSummaryMonthly
         '
-        Me.pgcCropSummaryMonthly.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.PivotGridField1, Me.PivotGridField2, Me.PivotGridField3, Me.PivotGridField5, Me.PivotGridField6, Me.PivotGridField4})
+        Me.pgcCropSummaryMonthly.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.PivotGridField1, Me.PivotGridField2, Me.PivotGridField3, Me.PivotGridField7, Me.PivotGridField5, Me.PivotGridField6, Me.PivotGridField4})
         PivotGridStyleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Transparent
         PivotGridStyleFormatCondition1.Appearance.Options.UseForeColor = True
         PivotGridStyleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal
@@ -135,19 +165,6 @@ Partial Class frmCropSummaryMonthlyReport
         Me.PivotGridField5.Name = "PivotGridField5"
         Me.PivotGridField5.ValueFormat.FormatString = "dd"
         Me.PivotGridField5.ValueFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        '
-        'PivotGridField6
-        '
-        Me.PivotGridField6.Appearance.Header.Options.UseTextOptions = True
-        Me.PivotGridField6.Appearance.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.PivotGridField6.Appearance.Header.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center
-        Me.PivotGridField6.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
-        Me.PivotGridField6.AreaIndex = 1
-        Me.PivotGridField6.Caption = "P"
-        Me.PivotGridField6.CellFormat.FormatString = "{0:N2}"
-        Me.PivotGridField6.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.PivotGridField6.FieldName = "Plucking"
-        Me.PivotGridField6.Name = "PivotGridField6"
         '
         'meMonth
         '
@@ -290,21 +307,13 @@ Partial Class frmCropSummaryMonthlyReport
         Me.LayoutControlItem2.TextToControlDistance = 0
         Me.LayoutControlItem2.TextVisible = False
         '
-        'PivotGridField4
+        'PivotGridField7
         '
-        Me.PivotGridField4.Appearance.Header.Options.UseTextOptions = True
-        Me.PivotGridField4.Appearance.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.PivotGridField4.Appearance.Header.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center
-        Me.PivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
-        Me.PivotGridField4.AreaIndex = 0
-        Me.PivotGridField4.Caption = "T"
-        Me.PivotGridField4.CellFormat.FormatString = "{0:N2}"
-        Me.PivotGridField4.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.PivotGridField4.FieldName = "Tapping"
-        Me.PivotGridField4.GroupInterval = DevExpress.XtraPivotGrid.PivotGroupInterval.Custom
-        Me.PivotGridField4.Name = "PivotGridField4"
-        Me.PivotGridField4.Options.ShowTotals = False
-        Me.PivotGridField4.UnboundFieldName = "PivotGridField4"
+        Me.PivotGridField7.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+        Me.PivotGridField7.AreaIndex = 3
+        Me.PivotGridField7.Caption = "Type"
+        Me.PivotGridField7.FieldName = "Designation"
+        Me.PivotGridField7.Name = "PivotGridField7"
         '
         'frmCropSummaryMonthlyReport
         '
@@ -354,4 +363,5 @@ Partial Class frmCropSummaryMonthlyReport
     Friend WithEvents PivotGridField4 As DevExpress.XtraPivotGrid.PivotGridField
     Friend WithEvents PivotGridField5 As DevExpress.XtraPivotGrid.PivotGridField
     Friend WithEvents PivotGridField6 As DevExpress.XtraPivotGrid.PivotGridField
+    Friend WithEvents PivotGridField7 As DevExpress.XtraPivotGrid.PivotGridField
 End Class

@@ -108,9 +108,13 @@ Public Class frmAttendaceReport
             selectedYear = leYear.EditValue
             currentDate = Convert.ToDateTime("01-" + selectedMonth + "-" + selectedYear)
 
+            Dim workType As String
+            workType = cbeWorkType.SelectedText
+
             Dim ds As New DataSet
 
-            ds = iStockDailyWorking.GetAttendanceReport(currentDate)
+
+            ds = iStockDailyWorking.GetAttendanceReport(currentDate, workType)
             pgcAttendance.DataSource = ds.Tables(0)
             pgcAttendance.BestFitColumnArea()
 

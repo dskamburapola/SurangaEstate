@@ -318,10 +318,6 @@ Public Class iStockDailyWorking
 
 #End Region
 
-
-
-
-
 #Region "Insert Daily Working"
     Public Sub InsertDailyWorking()
         Try
@@ -420,9 +416,6 @@ Public Class iStockDailyWorking
     End Sub
 #End Region
 
-
-
-
 #Region "DailyWorking GetBy Date"
     Public Function DailyWorkingGetByDate() As DataSet
         Try
@@ -515,11 +508,12 @@ Public Class iStockDailyWorking
 #End Region
 
 #Region "Attedence Report"
-    Public Function GetAttendanceReport(ByVal currentDate As Date) As DataSet
+    Public Function GetAttendanceReport(ByVal currentDate As Date, ByVal workType As String) As DataSet
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
             Dim DBC As DbCommand = DB.GetStoredProcCommand("ReportAttendance")
             DB.AddInParameter(DBC, "@IssueDate", DbType.Date, currentDate)
+            DB.AddInParameter(DBC, "@WorkType", DbType.String, workType)
 
             Return DB.ExecuteDataSet(DBC)
             DBC.Dispose()
