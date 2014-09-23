@@ -217,7 +217,7 @@ Public Class frmUpdateRatesBulk
 
                 Select Case cmbDesignation.Text.Trim
 
-                    Case "PERMENANT"
+                    Case "PERMANENT"
                         LayoutControlItem1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
                         LayoutControlItem12.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
                         LayoutControlItem15.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always

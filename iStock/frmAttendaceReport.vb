@@ -109,7 +109,7 @@ Public Class frmAttendaceReport
             currentDate = Convert.ToDateTime("01-" + selectedMonth + "-" + selectedYear)
 
             Dim workType As String
-            workType = cbeWorkType.SelectedText
+            workType = cbeWorkType.EditValue
 
             Dim ds As New DataSet
 

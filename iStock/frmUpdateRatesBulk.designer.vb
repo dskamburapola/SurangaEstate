@@ -128,12 +128,12 @@ Partial Class frmUpdateRatesBulk
         'deStartDate
         '
         Me.deStartDate.EditValue = Nothing
-        Me.deStartDate.Location = New System.Drawing.Point(206, 43)
+        Me.deStartDate.Location = New System.Drawing.Point(205, 43)
         Me.deStartDate.MenuManager = Me.BarManager1
         Me.deStartDate.Name = "deStartDate"
         Me.deStartDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deStartDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.deStartDate.Size = New System.Drawing.Size(88, 20)
+        Me.deStartDate.Size = New System.Drawing.Size(89, 20)
         Me.deStartDate.StyleController = Me.LayoutControl1
         Me.deStartDate.TabIndex = 31
         '
@@ -418,12 +418,12 @@ Partial Class frmUpdateRatesBulk
         '
         'cmbDesignation
         '
-        Me.cmbDesignation.Location = New System.Drawing.Point(596, 43)
+        Me.cmbDesignation.Location = New System.Drawing.Point(595, 43)
         Me.cmbDesignation.MenuManager = Me.BarManager1
         Me.cmbDesignation.Name = "cmbDesignation"
         Me.cmbDesignation.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbDesignation.Properties.Items.AddRange(New Object() {"PERMENANT", "CASUAL"})
-        Me.cmbDesignation.Size = New System.Drawing.Size(89, 20)
+        Me.cmbDesignation.Properties.Items.AddRange(New Object() {"PERMANENT", "CASUAL"})
+        Me.cmbDesignation.Size = New System.Drawing.Size(90, 20)
         Me.cmbDesignation.StyleController = Me.LayoutControl1
         Me.cmbDesignation.TabIndex = 34
         ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -442,12 +442,12 @@ Partial Class frmUpdateRatesBulk
         'deEndDate
         '
         Me.deEndDate.EditValue = Nothing
-        Me.deEndDate.Location = New System.Drawing.Point(398, 43)
+        Me.deEndDate.Location = New System.Drawing.Point(397, 43)
         Me.deEndDate.MenuManager = Me.BarManager1
         Me.deEndDate.Name = "deEndDate"
         Me.deEndDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deEndDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.deEndDate.Size = New System.Drawing.Size(94, 20)
+        Me.deEndDate.Size = New System.Drawing.Size(95, 20)
         Me.deEndDate.StyleController = Me.LayoutControl1
         Me.deEndDate.TabIndex = 32
         CompareAgainstControlValidationRule1.CompareControlOperator = DevExpress.XtraEditors.DXErrorProvider.CompareControlOperator.Greater
@@ -460,7 +460,7 @@ Partial Class frmUpdateRatesBulk
         Me.seCasualOTPayRate.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seCasualOTPayRate.Enabled = False
         Me.seCasualOTPayRate.EnterMoveNextControl = True
-        Me.seCasualOTPayRate.Location = New System.Drawing.Point(545, 513)
+        Me.seCasualOTPayRate.Location = New System.Drawing.Point(544, 513)
         Me.seCasualOTPayRate.MenuManager = Me.BarManager1
         Me.seCasualOTPayRate.Name = "seCasualOTPayRate"
         Me.seCasualOTPayRate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -468,7 +468,7 @@ Partial Class frmUpdateRatesBulk
         Me.seCasualOTPayRate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.seCasualOTPayRate.Properties.EditFormat.FormatString = "{0:N2}"
         Me.seCasualOTPayRate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.seCasualOTPayRate.Size = New System.Drawing.Size(229, 20)
+        Me.seCasualOTPayRate.Size = New System.Drawing.Size(230, 20)
         Me.seCasualOTPayRate.StyleController = Me.LayoutControl1
         Me.seCasualOTPayRate.TabIndex = 30
         '
@@ -477,7 +477,7 @@ Partial Class frmUpdateRatesBulk
         Me.seCasualPayRate.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seCasualPayRate.Enabled = False
         Me.seCasualPayRate.EnterMoveNextControl = True
-        Me.seCasualPayRate.Location = New System.Drawing.Point(206, 513)
+        Me.seCasualPayRate.Location = New System.Drawing.Point(205, 513)
         Me.seCasualPayRate.MenuManager = Me.BarManager1
         Me.seCasualPayRate.Name = "seCasualPayRate"
         Me.seCasualPayRate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -485,7 +485,7 @@ Partial Class frmUpdateRatesBulk
         Me.seCasualPayRate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.seCasualPayRate.Properties.EditFormat.FormatString = "{0:N2}"
         Me.seCasualPayRate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.seCasualPayRate.Size = New System.Drawing.Size(235, 20)
+        Me.seCasualPayRate.Size = New System.Drawing.Size(236, 20)
         Me.seCasualPayRate.StyleController = Me.LayoutControl1
         Me.seCasualPayRate.TabIndex = 29
         '
@@ -494,11 +494,11 @@ Partial Class frmUpdateRatesBulk
         Me.seEPF.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seEPF.Enabled = False
         Me.seEPF.EnterMoveNextControl = True
-        Me.seEPF.Location = New System.Drawing.Point(206, 561)
+        Me.seEPF.Location = New System.Drawing.Point(205, 561)
         Me.seEPF.MenuManager = Me.BarManager1
         Me.seEPF.Name = "seEPF"
         Me.seEPF.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.seEPF.Size = New System.Drawing.Size(235, 20)
+        Me.seEPF.Size = New System.Drawing.Size(236, 20)
         Me.seEPF.StyleController = Me.LayoutControl1
         Me.seEPF.TabIndex = 27
         '
@@ -507,7 +507,7 @@ Partial Class frmUpdateRatesBulk
         Me.seOverKgsRate.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seOverKgsRate.Enabled = False
         Me.seOverKgsRate.EnterMoveNextControl = True
-        Me.seOverKgsRate.Location = New System.Drawing.Point(206, 537)
+        Me.seOverKgsRate.Location = New System.Drawing.Point(205, 537)
         Me.seOverKgsRate.MenuManager = Me.BarManager1
         Me.seOverKgsRate.Name = "seOverKgsRate"
         Me.seOverKgsRate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -515,7 +515,7 @@ Partial Class frmUpdateRatesBulk
         Me.seOverKgsRate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.seOverKgsRate.Properties.EditFormat.FormatString = "{0:N2}"
         Me.seOverKgsRate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.seOverKgsRate.Size = New System.Drawing.Size(235, 20)
+        Me.seOverKgsRate.Size = New System.Drawing.Size(236, 20)
         Me.seOverKgsRate.StyleController = Me.LayoutControl1
         Me.seOverKgsRate.TabIndex = 25
         '
@@ -524,11 +524,11 @@ Partial Class frmUpdateRatesBulk
         Me.seKgsPerDay.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seKgsPerDay.Enabled = False
         Me.seKgsPerDay.EnterMoveNextControl = True
-        Me.seKgsPerDay.Location = New System.Drawing.Point(545, 537)
+        Me.seKgsPerDay.Location = New System.Drawing.Point(544, 537)
         Me.seKgsPerDay.MenuManager = Me.BarManager1
         Me.seKgsPerDay.Name = "seKgsPerDay"
         Me.seKgsPerDay.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.seKgsPerDay.Size = New System.Drawing.Size(229, 20)
+        Me.seKgsPerDay.Size = New System.Drawing.Size(230, 20)
         Me.seKgsPerDay.StyleController = Me.LayoutControl1
         Me.seKgsPerDay.TabIndex = 18
         ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
@@ -541,7 +541,7 @@ Partial Class frmUpdateRatesBulk
         Me.seOTRate.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seOTRate.Enabled = False
         Me.seOTRate.EnterMoveNextControl = True
-        Me.seOTRate.Location = New System.Drawing.Point(545, 489)
+        Me.seOTRate.Location = New System.Drawing.Point(544, 489)
         Me.seOTRate.MenuManager = Me.BarManager1
         Me.seOTRate.Name = "seOTRate"
         Me.seOTRate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -549,7 +549,7 @@ Partial Class frmUpdateRatesBulk
         Me.seOTRate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.seOTRate.Properties.EditFormat.FormatString = "{0:N2}"
         Me.seOTRate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.seOTRate.Size = New System.Drawing.Size(229, 20)
+        Me.seOTRate.Size = New System.Drawing.Size(230, 20)
         Me.seOTRate.StyleController = Me.LayoutControl1
         Me.seOTRate.TabIndex = 17
         ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
@@ -562,7 +562,7 @@ Partial Class frmUpdateRatesBulk
         Me.seDayRate.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seDayRate.Enabled = False
         Me.seDayRate.EnterMoveNextControl = True
-        Me.seDayRate.Location = New System.Drawing.Point(206, 489)
+        Me.seDayRate.Location = New System.Drawing.Point(205, 489)
         Me.seDayRate.MenuManager = Me.BarManager1
         Me.seDayRate.Name = "seDayRate"
         Me.seDayRate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -570,7 +570,7 @@ Partial Class frmUpdateRatesBulk
         Me.seDayRate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.seDayRate.Properties.EditFormat.FormatString = "d"
         Me.seDayRate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.seDayRate.Size = New System.Drawing.Size(235, 20)
+        Me.seDayRate.Size = New System.Drawing.Size(236, 20)
         Me.seDayRate.StyleController = Me.LayoutControl1
         Me.seDayRate.TabIndex = 16
         ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
@@ -746,7 +746,7 @@ Partial Class frmUpdateRatesBulk
         Me.LayoutControlItem8.Location = New System.Drawing.Point(390, 0)
         Me.LayoutControlItem8.Name = "LayoutControlItem8"
         Me.LayoutControlItem8.Size = New System.Drawing.Size(193, 26)
-        Me.LayoutControlItem8.Text = "Designation"
+        Me.LayoutControlItem8.Text = "Work Type"
         Me.LayoutControlItem8.TextSize = New System.Drawing.Size(96, 13)
         '
         'LayoutControlItem6

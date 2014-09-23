@@ -85,6 +85,7 @@ Partial Class frmAttendaceAdvanceReport
         Me.gvCheckRoll.GridControl = Me.gcCheckRoll
         Me.gvCheckRoll.Name = "gvCheckRoll"
         Me.gvCheckRoll.OptionsBehavior.Editable = False
+        Me.gvCheckRoll.OptionsBehavior.SummariesIgnoreNullValues = True
         Me.gvCheckRoll.OptionsView.ColumnAutoWidth = False
         Me.gvCheckRoll.OptionsView.ShowFooter = True
         '

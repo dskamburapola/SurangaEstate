@@ -211,34 +211,34 @@ Partial Class frmEmployers
         'ceDepartment
         '
         Me.ceDepartment.EnterMoveNextControl = True
-        Me.ceDepartment.Location = New System.Drawing.Point(321, 78)
+        Me.ceDepartment.Location = New System.Drawing.Point(320, 78)
         Me.ceDepartment.Name = "ceDepartment"
         Me.ceDepartment.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.ceDepartment.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.ceDepartment.Properties.Items.AddRange(New Object() {"ACCOUNTS", "PRODUCTION", "OFFICE", "STORES", "GENERAL", "IT", "WORKER"})
-        Me.ceDepartment.Size = New System.Drawing.Size(338, 20)
+        Me.ceDepartment.Size = New System.Drawing.Size(339, 20)
         Me.ceDepartment.StyleController = Me.LayoutControl1
         Me.ceDepartment.TabIndex = 10
         '
         'ceDesignation
         '
         Me.ceDesignation.EnterMoveNextControl = True
-        Me.ceDesignation.Location = New System.Drawing.Point(321, 102)
+        Me.ceDesignation.Location = New System.Drawing.Point(320, 102)
         Me.ceDesignation.Name = "ceDesignation"
         Me.ceDesignation.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.ceDesignation.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.ceDesignation.Properties.Items.AddRange(New Object() {"PERMANENT", "CASUAL"})
-        Me.ceDesignation.Size = New System.Drawing.Size(338, 20)
+        Me.ceDesignation.Size = New System.Drawing.Size(339, 20)
         Me.ceDesignation.StyleController = Me.LayoutControl1
         Me.ceDesignation.TabIndex = 11
         '
         'teEmployerContactPerson
         '
         Me.teEmployerContactPerson.EnterMoveNextControl = True
-        Me.teEmployerContactPerson.Location = New System.Drawing.Point(321, 434)
+        Me.teEmployerContactPerson.Location = New System.Drawing.Point(320, 434)
         Me.teEmployerContactPerson.Name = "teEmployerContactPerson"
         Me.teEmployerContactPerson.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.teEmployerContactPerson.Size = New System.Drawing.Size(338, 20)
+        Me.teEmployerContactPerson.Size = New System.Drawing.Size(339, 20)
         Me.teEmployerContactPerson.StyleController = Me.LayoutControl1
         Me.teEmployerContactPerson.TabIndex = 9
         '
@@ -246,7 +246,7 @@ Partial Class frmEmployers
         '
         Me.deDateJoined.EditValue = Nothing
         Me.deDateJoined.EnterMoveNextControl = True
-        Me.deDateJoined.Location = New System.Drawing.Point(321, 126)
+        Me.deDateJoined.Location = New System.Drawing.Point(320, 126)
         Me.deDateJoined.Name = "deDateJoined"
         Me.deDateJoined.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deDateJoined.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
@@ -256,7 +256,7 @@ Partial Class frmEmployers
         Me.deDateJoined.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.deDateJoined.Properties.Mask.EditMask = "dd-MMM-yy"
         Me.deDateJoined.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.deDateJoined.Size = New System.Drawing.Size(338, 20)
+        Me.deDateJoined.Size = New System.Drawing.Size(339, 20)
         Me.deDateJoined.StyleController = Me.LayoutControl1
         Me.deDateJoined.TabIndex = 12
         ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -266,20 +266,20 @@ Partial Class frmEmployers
         'teTelephone
         '
         Me.teTelephone.EnterMoveNextControl = True
-        Me.teTelephone.Location = New System.Drawing.Point(321, 410)
+        Me.teTelephone.Location = New System.Drawing.Point(320, 410)
         Me.teTelephone.Name = "teTelephone"
         Me.teTelephone.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.teTelephone.Size = New System.Drawing.Size(338, 20)
+        Me.teTelephone.Size = New System.Drawing.Size(339, 20)
         Me.teTelephone.StyleController = Me.LayoutControl1
         Me.teTelephone.TabIndex = 8
         '
         'teNICNo
         '
         Me.teNICNo.EnterMoveNextControl = True
-        Me.teNICNo.Location = New System.Drawing.Point(321, 266)
+        Me.teNICNo.Location = New System.Drawing.Point(320, 266)
         Me.teNICNo.Name = "teNICNo"
         Me.teNICNo.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.teNICNo.Size = New System.Drawing.Size(338, 20)
+        Me.teNICNo.Size = New System.Drawing.Size(339, 20)
         Me.teNICNo.StyleController = Me.LayoutControl1
         Me.teNICNo.TabIndex = 4
         ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -289,13 +289,13 @@ Partial Class frmEmployers
         'ceSex
         '
         Me.ceSex.EnterMoveNextControl = True
-        Me.ceSex.Location = New System.Drawing.Point(321, 290)
+        Me.ceSex.Location = New System.Drawing.Point(320, 290)
         Me.ceSex.Name = "ceSex"
         Me.ceSex.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.ceSex.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.ceSex.Properties.Items.AddRange(New Object() {"FEMALE", "MALE"})
         Me.ceSex.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
-        Me.ceSex.Size = New System.Drawing.Size(338, 20)
+        Me.ceSex.Size = New System.Drawing.Size(339, 20)
         Me.ceSex.StyleController = Me.LayoutControl1
         Me.ceSex.TabIndex = 3
         ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -305,40 +305,40 @@ Partial Class frmEmployers
         'teCity
         '
         Me.teCity.EnterMoveNextControl = True
-        Me.teCity.Location = New System.Drawing.Point(321, 386)
+        Me.teCity.Location = New System.Drawing.Point(320, 386)
         Me.teCity.Name = "teCity"
         Me.teCity.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.teCity.Size = New System.Drawing.Size(338, 20)
+        Me.teCity.Size = New System.Drawing.Size(339, 20)
         Me.teCity.StyleController = Me.LayoutControl1
         Me.teCity.TabIndex = 7
         '
         'teAddressLine2
         '
         Me.teAddressLine2.EnterMoveNextControl = True
-        Me.teAddressLine2.Location = New System.Drawing.Point(321, 338)
+        Me.teAddressLine2.Location = New System.Drawing.Point(320, 338)
         Me.teAddressLine2.Name = "teAddressLine2"
         Me.teAddressLine2.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.teAddressLine2.Size = New System.Drawing.Size(338, 20)
+        Me.teAddressLine2.Size = New System.Drawing.Size(339, 20)
         Me.teAddressLine2.StyleController = Me.LayoutControl1
         Me.teAddressLine2.TabIndex = 5
         '
         'teAdressLine1
         '
         Me.teAdressLine1.EnterMoveNextControl = True
-        Me.teAdressLine1.Location = New System.Drawing.Point(321, 362)
+        Me.teAdressLine1.Location = New System.Drawing.Point(320, 362)
         Me.teAdressLine1.Name = "teAdressLine1"
         Me.teAdressLine1.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.teAdressLine1.Size = New System.Drawing.Size(338, 20)
+        Me.teAdressLine1.Size = New System.Drawing.Size(339, 20)
         Me.teAdressLine1.StyleController = Me.LayoutControl1
         Me.teAdressLine1.TabIndex = 6
         '
         'teEmployerName
         '
         Me.teEmployerName.EnterMoveNextControl = True
-        Me.teEmployerName.Location = New System.Drawing.Point(321, 242)
+        Me.teEmployerName.Location = New System.Drawing.Point(320, 242)
         Me.teEmployerName.Name = "teEmployerName"
         Me.teEmployerName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.teEmployerName.Size = New System.Drawing.Size(338, 20)
+        Me.teEmployerName.Size = New System.Drawing.Size(339, 20)
         Me.teEmployerName.StyleController = Me.LayoutControl1
         Me.teEmployerName.TabIndex = 1
         ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -349,7 +349,7 @@ Partial Class frmEmployers
         '
         Me.deDOB.EditValue = Nothing
         Me.deDOB.EnterMoveNextControl = True
-        Me.deDOB.Location = New System.Drawing.Point(321, 314)
+        Me.deDOB.Location = New System.Drawing.Point(320, 314)
         Me.deDOB.Name = "deDOB"
         Me.deDOB.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deDOB.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
@@ -359,7 +359,7 @@ Partial Class frmEmployers
         Me.deDOB.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.deDOB.Properties.Mask.EditMask = "dd-MMM-yy"
         Me.deDOB.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.deDOB.Size = New System.Drawing.Size(338, 20)
+        Me.deDOB.Size = New System.Drawing.Size(339, 20)
         Me.deDOB.StyleController = Me.LayoutControl1
         Me.deDOB.TabIndex = 2
         '
@@ -367,11 +367,11 @@ Partial Class frmEmployers
         '
         Me.seEmployerNo.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seEmployerNo.EnterMoveNextControl = True
-        Me.seEmployerNo.Location = New System.Drawing.Point(321, 150)
+        Me.seEmployerNo.Location = New System.Drawing.Point(320, 150)
         Me.seEmployerNo.Name = "seEmployerNo"
         Me.seEmployerNo.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.seEmployerNo.Properties.MaxValue = New Decimal(New Integer() {2147483647, 0, 0, 0})
-        Me.seEmployerNo.Size = New System.Drawing.Size(338, 20)
+        Me.seEmployerNo.Size = New System.Drawing.Size(339, 20)
         Me.seEmployerNo.StyleController = Me.LayoutControl1
         Me.seEmployerNo.TabIndex = 0
         ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
@@ -382,13 +382,13 @@ Partial Class frmEmployers
         'seEPFNo
         '
         Me.seEPFNo.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.seEPFNo.Location = New System.Drawing.Point(321, 174)
+        Me.seEPFNo.Location = New System.Drawing.Point(320, 174)
         Me.seEPFNo.Name = "seEPFNo"
         Me.seEPFNo.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.seEPFNo.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.seEPFNo.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.[Default]
         Me.seEPFNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None
-        Me.seEPFNo.Size = New System.Drawing.Size(338, 20)
+        Me.seEPFNo.Size = New System.Drawing.Size(339, 20)
         Me.seEPFNo.StyleController = Me.LayoutControl1
         Me.seEPFNo.TabIndex = 13
         ConditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -491,7 +491,7 @@ Partial Class frmEmployers
         Me.LayoutControlItem19.Name = "LayoutControlItem19"
         Me.LayoutControlItem19.Size = New System.Drawing.Size(476, 24)
         Me.LayoutControlItem19.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
-        Me.LayoutControlItem19.Text = "Designation"
+        Me.LayoutControlItem19.Text = "Work Type"
         Me.LayoutControlItem19.TextSize = New System.Drawing.Size(130, 13)
         '
         'LayoutControlItem12

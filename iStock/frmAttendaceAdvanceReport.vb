@@ -111,9 +111,64 @@ Public Class frmAttendaceAdvanceReport
             Dim ds As New DataSet
 
             ds = iStockDailyWorking.GetCheckRollReport(currentDate)
+
+            gcCheckRoll.DataSource = Nothing
             gcCheckRoll.DataSource = ds.Tables(0)
 
             gvCheckRoll.BestFitColumns()
+
+            gvCheckRoll.Columns("EmployeeID").Visible = False
+
+            gvCheckRoll.Columns("EmployeeNo").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+            gvCheckRoll.Columns("EmployeeName").Width = 150
+            gvCheckRoll.Columns("Sex").Width = 60
+
+            gvCheckRoll.Columns("EmployeeNo").Fixed = Columns.FixedStyle.Left
+            gvCheckRoll.Columns("EmployeeName").Fixed = Columns.FixedStyle.Left
+            gvCheckRoll.Columns("Sex").Fixed = Columns.FixedStyle.Left
+
+
+            gvCheckRoll.Columns("TotalDays").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvCheckRoll.Columns("PluckingKgs").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvCheckRoll.Columns("TappingL").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvCheckRoll.Columns("OverKgs").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvCheckRoll.Columns("PluckingOrTappingPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvCheckRoll.Columns("OverKgsPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvCheckRoll.Columns("WCPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvCheckRoll.Columns("DevalutionAllowance").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvCheckRoll.Columns("GrandTotalPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvCheckRoll.Columns("EPFAmount").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvCheckRoll.Columns("PayChit").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvCheckRoll.Columns("FestivalAdvance").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvCheckRoll.Columns("CashAdvance").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvCheckRoll.Columns("TotalDeductions").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvCheckRoll.Columns("BalancePay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvCheckRoll.Columns("EPF_12").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvCheckRoll.Columns("EPF_20").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvCheckRoll.Columns("ETF_3").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+
+            gvCheckRoll.Columns("EPF_12").Caption = "EPF (12%)"
+            gvCheckRoll.Columns("EPF_20").Caption = "EPF (20%)"
+            gvCheckRoll.Columns("ETF_3").Caption = "ETF (3%)"
+
+            gvCheckRoll.Columns("EPF_12").Width = 60
+            gvCheckRoll.Columns("EPF_20").Width = 60
+            gvCheckRoll.Columns("ETF_3").Width = 60
+
+            For index = 0 To gvCheckRoll.Columns.Count - 1
+
+                If IsDate(gvCheckRoll.Columns(index).FieldName) Then
+
+                    gvCheckRoll.Columns(index).Caption = DatePart(DateInterval.Day, Convert.ToDateTime(gvCheckRoll.Columns(index).FieldName)).ToString()
+                    'gvCheckRoll.Columns(index).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+
+                End If
+
+            Next
+
+
+
+
 
         End If
 
