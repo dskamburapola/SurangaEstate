@@ -87,7 +87,9 @@ Partial Class frmAttendaceAdvanceCasualReport
         Me.gvCheckRoll.OptionsBehavior.Editable = False
         Me.gvCheckRoll.OptionsBehavior.SummariesIgnoreNullValues = True
         Me.gvCheckRoll.OptionsView.ColumnAutoWidth = False
+        Me.gvCheckRoll.OptionsView.EnableAppearanceOddRow = True
         Me.gvCheckRoll.OptionsView.ShowFooter = True
+        Me.gvCheckRoll.OptionsView.ShowGroupPanel = False
         '
         'leYear
         '
@@ -230,15 +232,15 @@ Partial Class frmAttendaceAdvanceCasualReport
         Me.LayoutControlItem4.TextToControlDistance = 0
         Me.LayoutControlItem4.TextVisible = False
         '
-        'frmAttendaceAdvanceReport
+        'frmAttendaceAdvanceCasualReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(702, 502)
         Me.Controls.Add(Me.LayoutControl1)
         Me.KeyPreview = True
-        Me.Name = "frmAttendaceAdvanceReport"
-        Me.Text = "Check Roll"
+        Me.Name = "frmAttendaceAdvanceCasualReport"
+        Me.Text = "Check Roll (Casual)"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.gcCheckRoll, System.ComponentModel.ISupportInitialize).EndInit()

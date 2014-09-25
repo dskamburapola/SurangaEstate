@@ -72,7 +72,7 @@ Public Class frmAttendaceAdvanceReport
 
 #Region "Print Preview"
     Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
-        PrintPreview(gcCheckRoll, "Attendance Report")
+        PrintPreview(gcCheckRoll, "Attendance Report (Permanent)")
     End Sub
 #End Region
 
@@ -146,6 +146,11 @@ Public Class frmAttendaceAdvanceReport
             gvCheckRoll.Columns("EPF_12").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
             gvCheckRoll.Columns("EPF_20").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
             gvCheckRoll.Columns("ETF_3").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+
+            gvCheckRoll.Columns("PluckingKgs").Caption = "Plucking (Kg)"
+            gvCheckRoll.Columns("OverKgs").Caption = "Over (Kg)"
+            gvCheckRoll.Columns("OverKgsPay").Caption = "Over (Kg) Pay"
+            gvCheckRoll.Columns("TappingL").Caption = "Tapping (L)"
 
             gvCheckRoll.Columns("EPF_12").Caption = "EPF (12%)"
             gvCheckRoll.Columns("EPF_20").Caption = "EPF (20%)"

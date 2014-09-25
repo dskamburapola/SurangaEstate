@@ -87,7 +87,9 @@ Partial Class frmAttendaceAdvanceReport
         Me.gvCheckRoll.OptionsBehavior.Editable = False
         Me.gvCheckRoll.OptionsBehavior.SummariesIgnoreNullValues = True
         Me.gvCheckRoll.OptionsView.ColumnAutoWidth = False
+        Me.gvCheckRoll.OptionsView.EnableAppearanceOddRow = True
         Me.gvCheckRoll.OptionsView.ShowFooter = True
+        Me.gvCheckRoll.OptionsView.ShowGroupPanel = False
         '
         'leYear
         '
@@ -238,7 +240,7 @@ Partial Class frmAttendaceAdvanceReport
         Me.Controls.Add(Me.LayoutControl1)
         Me.KeyPreview = True
         Me.Name = "frmAttendaceAdvanceReport"
-        Me.Text = "Check Roll"
+        Me.Text = "Check Roll (Permanent)"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.gcCheckRoll, System.ComponentModel.ISupportInitialize).EndInit()

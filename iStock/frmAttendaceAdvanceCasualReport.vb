@@ -72,7 +72,7 @@ Public Class frmAttendaceAdvanceCasualReport
 
 #Region "Print Preview"
     Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
-        PrintPreview(gcCheckRoll, "Attendance Report")
+        PrintPreview(gcCheckRoll, "Attendance Report (Casual)")
     End Sub
 #End Region
 
@@ -132,19 +132,18 @@ Public Class frmAttendaceAdvanceCasualReport
             gvCheckRoll.Columns("PluckingKgs").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
             gvCheckRoll.Columns("TappingL").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
             gvCheckRoll.Columns("OverKgs").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
-            gvCheckRoll.Columns("PluckingOrTappingPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvCheckRoll.Columns("DaysPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
             gvCheckRoll.Columns("OverKgsPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
-            gvCheckRoll.Columns("WCPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
-            gvCheckRoll.Columns("DevalutionAllowance").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
             gvCheckRoll.Columns("GrandTotalPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
-            gvCheckRoll.Columns("PayChit").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
             gvCheckRoll.Columns("FestivalAdvance").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
             gvCheckRoll.Columns("CashAdvance").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
             gvCheckRoll.Columns("TotalDeductions").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
             gvCheckRoll.Columns("BalancePay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
-            gvCheckRoll.Columns("EPF_12").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
-            gvCheckRoll.Columns("EPF_20").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
-            gvCheckRoll.Columns("ETF_3").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+
+            gvCheckRoll.Columns("PluckingKgs").Caption = "Plucking (Kg)"
+            gvCheckRoll.Columns("OverKgs").Caption = "Over (Kg)"
+            gvCheckRoll.Columns("OverKgsPay").Caption = "Over (Kg) Pay"
+            gvCheckRoll.Columns("TappingL").Caption = "Tapping (L)"
 
       
             For index = 0 To gvCheckRoll.Columns.Count - 1

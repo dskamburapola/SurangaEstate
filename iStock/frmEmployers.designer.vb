@@ -228,6 +228,7 @@ Partial Class frmEmployers
         Me.ceDesignation.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.ceDesignation.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.ceDesignation.Properties.Items.AddRange(New Object() {"PERMANENT", "CASUAL"})
+        Me.ceDesignation.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
         Me.ceDesignation.Size = New System.Drawing.Size(339, 20)
         Me.ceDesignation.StyleController = Me.LayoutControl1
         Me.ceDesignation.TabIndex = 11
