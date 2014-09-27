@@ -72,7 +72,7 @@ Public Class frmAttendaceAdvanceCasualReport
 
 #Region "Print Preview"
     Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
-        PrintPreview(gcCheckRoll, "Attendance Report (Casual)")
+        PrintPreview(gcCheckRoll, "Check Roll Report (Casual) " + meMonth.Text + " / " + leYear.Text)
     End Sub
 #End Region
 
@@ -145,7 +145,9 @@ Public Class frmAttendaceAdvanceCasualReport
             gvCheckRoll.Columns("OverKgsPay").Caption = "Over (Kg) Pay"
             gvCheckRoll.Columns("TappingL").Caption = "Tapping (L)"
 
-      
+            gvCheckRoll.Columns("GrandTotalPay").AppearanceCell.BackColor = Color.Bisque
+            gvCheckRoll.Columns("BalancePay").AppearanceCell.BackColor = Color.Thistle
+
             For index = 0 To gvCheckRoll.Columns.Count - 1
 
                 If IsDate(gvCheckRoll.Columns(index).FieldName) Then

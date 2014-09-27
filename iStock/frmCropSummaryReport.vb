@@ -84,7 +84,7 @@ Public Class frmCropSummaryReport
 
 #Region "Print Preview"
     Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
-        PrintPivotPreview(pgcAttendance, "Attendance Report")
+        PrintPivotPreview(pgcAttendance, "Overall Crop Report - " + leType.Text)
     End Sub
 #End Region
 

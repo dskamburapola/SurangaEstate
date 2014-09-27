@@ -256,11 +256,11 @@ Public Class frmTermDeductions
 
             With iStockTermDeductions
 
-                .TDDate = Convert.ToDateTime(Me.deIssueDate.Text)
-                .TDType = Me.cmbDeductionType.Text
+                .TDDate = Convert.ToDateTime(Me.deIssueDate.EditValue)
+                .TDType = Me.cmbDeductionType.EditValue
                 .EmployerID = Convert.ToInt64(Me.leEmployeeCode.EditValue)
-                .TDAmount = Convert.ToDecimal(Me.seAmount.Text)
-                .TDInstallments = Convert.ToInt64(Me.sePeriod.Text)
+                .TDAmount = Convert.ToDecimal(Me.seAmount.EditValue)
+                .TDInstallments = Convert.ToInt64(Me.sePeriod.EditValue)
                 .CreatedBy = UserID
                 .UpdatedBy = UserID
 
@@ -322,17 +322,16 @@ Public Class frmTermDeductions
             _Connection.Open()
             _Transaction = _Connection.BeginTransaction()
 
-
             gvTermDeductions.PostEditor()
 
             With iStockTermDeductions
 
                 .TermDeductionID = Convert.ToInt64(IIf(lblID.Text = String.Empty, 0, lblID.Text))
-                .TDDate = Convert.ToDateTime(Me.deIssueDate.Text)
-                .TDType = Me.cmbDeductionType.Text
+                .TDDate = Convert.ToDateTime(Me.deIssueDate.EditValue)
+                .TDType = Me.cmbDeductionType.EditValue
                 .EmployerID = Convert.ToInt64(Me.leEmployeeCode.EditValue)
-                .TDAmount = Convert.ToDecimal(Me.seAmount.Text)
-                .TDInstallments = Convert.ToInt64(Me.sePeriod.Text)
+                .TDAmount = Convert.ToDecimal(Me.seAmount.EditValue)
+                .TDInstallments = Convert.ToInt64(Me.sePeriod.EditValue)
                 .UpdatedBy = UserID
 
                 .UpdateTermDeductions(_DB, _Transaction)
@@ -345,7 +344,7 @@ Public Class frmTermDeductions
                         .TermDeductionID = .TermDeductionID
                         .TDMonthName = Me.gvTermDeductions.GetRowCellDisplayText(i, GridColumn1)
                         .TDInsAmount = Me.gvTermDeductions.GetRowCellDisplayText(i, GridColumn2)
-
+                        .ActiveDate = Convert.ToDateTime(Me.gvTermDeductions.GetRowCellDisplayText(i, GridColumn15))
                         .InsertTermDeductionsDescription(_DB, _Transaction)
                     End If
 
@@ -465,17 +464,17 @@ Public Class frmTermDeductions
                     .GetTermDeductionsByID()
 
                     'lblRegNo.Text = .EmpID
-                    deIssueDate.Text = .TDDate
+                    deIssueDate.EditValue = .TDDate
                     cmbDeductionType.Text = .TDType
                     leEmployeeCode.EditValue = .EmployerID
-                    seAmount.Text = FormatNumber(.TDAmount, 2, TriState.True)
-                    sePeriod.Text = .TDInstallments
+                    seAmount.EditValue = FormatNumber(.TDAmount, 2, TriState.True)
+                    sePeriod.EditValue = .TDInstallments
 
                 End With
 
                 Me.PopulateInstallmentGrid()
 
-                deIssueDate.Focus()
+
             End If
         Catch ex As Exception
             MessageError(ex.ToString)
@@ -518,7 +517,8 @@ Public Class frmTermDeductions
         sePeriod.Text = 0
         gcTermDeductions.DataSource = Nothing
         cmbWorkType.Text = String.Empty
-
+        leEmployeeCode.EditValue = Nothing
+        lblID.Text = String.Empty
         Me.GetEmployeeForWork()
         Me.leEmployeeCode.Focus()
 

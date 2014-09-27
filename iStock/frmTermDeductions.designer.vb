@@ -329,7 +329,9 @@ Partial Class frmTermDeductions
         '
         'GridColumn15
         '
-        Me.GridColumn15.Caption = "ActiveDate"
+        Me.GridColumn15.Caption = "Range"
+        Me.GridColumn15.DisplayFormat.FormatString = "dd-MMM-yy"
+        Me.GridColumn15.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.GridColumn15.FieldName = "ActiveDate"
         Me.GridColumn15.Name = "GridColumn15"
         Me.GridColumn15.Visible = True

@@ -85,7 +85,7 @@ Public Class frmCropSummaryMonthlyReport
 
 #Region "Print Preview"
     Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
-        PrintPivotPreview(pgcCropSummaryMonthly, "Monthly Crop Summary Report")
+        PrintPivotPreview(pgcCropSummaryMonthly, "Monthly Crop Summary Report - " + meMonth.Text + " / " + leYear.Text)
     End Sub
 #End Region
 

@@ -72,7 +72,7 @@ Public Class frmAttendaceAdvanceReport
 
 #Region "Print Preview"
     Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
-        PrintPreview(gcCheckRoll, "Attendance Report (Permanent)")
+        PrintPreview(gcCheckRoll, "Check Roll Report (Permanent) " + meMonth.Text + " / " + leYear.Text)
     End Sub
 #End Region
 
@@ -159,6 +159,9 @@ Public Class frmAttendaceAdvanceReport
             gvCheckRoll.Columns("EPF_12").Width = 60
             gvCheckRoll.Columns("EPF_20").Width = 60
             gvCheckRoll.Columns("ETF_3").Width = 60
+
+            gvCheckRoll.Columns("GrandTotalPay").AppearanceCell.BackColor = Color.Bisque
+            gvCheckRoll.Columns("BalancePay").AppearanceCell.BackColor = Color.Thistle
 
             For index = 0 To gvCheckRoll.Columns.Count - 1
 
