@@ -300,6 +300,7 @@
     Public Shared ABBREVIATION_INSERT As String = "Abbreviation_Insert"
     Public Shared ABBREVIATION_DELETE As String = "Abbreviation_Delete"
     Public Shared ABBREVIATION_GETALL As String = "Abbreviation_GetAll"
+    Public Shared ABBREVIATION_FOR_RUBBERSHEETS As String = "Abbreviation_For_RubberSheets"
 
 
     Public Shared SETTINGS_INSERT As String = "Settings_Insert"
@@ -312,8 +313,15 @@
     Public Shared DAILYWORKING_GETALL_BYDATES As String = "DailyWorking_GetAll_ByDates"
     Public Shared DAILYWORKING_IFEXISTS As String = "DailyWorking_IfExists"
     Public Shared DAILYWORKING_GETALLFORRATEUPDATE As String = "DailyWorking_GetAllForRateUpdate"
+    Public Shared DAILYWORKING_GETRUBBER_BYDATES As String = "DailyWorking_GetRubber_ByDates"
+    Public Shared DAILYWORKING_GETBYID As String = "DailyWorking_GetByID"
+
+
+
 
     Public Shared DAILYWORKING_UPDATERATE As String = "DailyWorking_UpdateRate"
+    Public Shared DAILYWORKINGRUBBER_INSERT As String = "DailyWorkingRubber_Insert"
+    Public Shared DAILYWORKINGDESCRIPTION_INSERT As String = "DailyWorkingDescription_Insert"
 
 
     Public Shared EMPLOYEE_DETAILS_GETBYREGNO As String = "Employee_Details_GetByRegNo"
@@ -337,10 +345,15 @@
     Public Shared REPORTATTENDANCE As String = "ReportAttendance"
 
     Public Shared GETRUBBERLTRSBYDATE As String = "GetRubberLtrsByDate"
+    Public Shared TBLSTOCK_GETALL As String = "tblStock_GetAll"
+    Public Shared STOCK_UPDATERUBBERPRODUCTS As String = "Stock_UpdateRubberProducts"
 
-
+    Public Shared DAILYWORKINGRUBBERSHEETS_GETBY_ID As String = "DailyWorkingRubberSheets_GetBy_ID"
+    Public Shared STOCK_REMOVEFROMRUBBERSHEET As String = "Stock_RemoveFromRubberSheet"
+    Public Shared DAILYWORKINGDESCRIPTION_DELETE As String = "DailyWorkingDescription_Delete"
 
     '**************************************************
+    Public Shared ALLINFOSP As String = "AllInfosp"
 
 #End Region
 

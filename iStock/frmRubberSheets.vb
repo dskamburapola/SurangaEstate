@@ -104,9 +104,9 @@ Public Class frmRubberSheets
 
         Try
 
-            Me.leItemIssues.Properties.DataSource = iStockStock.GetAllStockItems.Tables(0)
-            Me.leItemIssues.Properties.DisplayMember = "Description"
-            Me.leItemIssues.Properties.ValueMember = "StockID"
+            'Me.leItemIssues.Properties.DataSource = iStockStock.GetAllStockItems.Tables(0)
+            'Me.leItemIssues.Properties.DisplayMember = "Description"
+            'Me.leItemIssues.Properties.ValueMember = "StockID"
 
 
         Catch ex As Exception
@@ -119,40 +119,40 @@ Public Class frmRubberSheets
 #End Region
 
 
-#Region "Get RubberLtrs By Date"
-    Private Sub GetRubberLtrsByDate()
+    '#Region "Get RubberLtrs By Date"
+    '    Private Sub GetRubberLtrsByDate()
 
-        Try
+    '        Try
 
-            If (deWorkingDate.EditValue IsNot Nothing) Then
-
-
-
-                With iStockDailyWorking
+    '            If (deWorkingDate.EditValue IsNot Nothing) Then
 
 
 
-                    .WorkingDate = deWorkingDate.EditValue
-                    .GetRubberLtrByDate()
-
-                    teRubberLtrs.Text = .RubberLtrs
+    '                With iStockDailyWorking
 
 
 
+    '                    .WorkingDate = deWorkingDate.EditValue
+    '                    .GetRubberLtrByDate()
 
-                End With
-            End If
-
-
-
-        Catch ex As Exception
-
-            Throw
-        End Try
+    '                    teRubberLtrs.Text = .RubberLtrs
 
 
-    End Sub
-#End Region
+
+
+    '                End With
+    '            End If
+
+
+
+    '        Catch ex As Exception
+
+    '            Throw
+    '        End Try
+
+
+    '    End Sub
+    '#End Region
 
 
 
@@ -212,10 +212,10 @@ Public Class frmRubberSheets
 
 #Region "Editors Events"
 
-    Private Sub deWorkingDate_EditValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles deWorkingDate.EditValueChanged
+    Private Sub deWorkingDate_EditValueChanged(ByVal sender As Object, ByVal e As EventArgs)
         'Me.DailyWorkingGetByDate()
-        Me.GetRubberLtrsByDate()
-        seQuantity.Focus()
+        'Me.GetRubberLtrsByDate()
+        'seQuantity.Focus()
     End Sub
 
     Private Sub bbDelete_ItemClick(ByVal sender As Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbDelete.ItemClick

@@ -315,6 +315,24 @@ Public Class iStockSettings
 
 #End Region
 
+#Region "Get Abbreviations For Rubber Sheets"
+    Public Function GetAbbreviationsForRubberSheets() As DataSet
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(ABBREVIATION_FOR_RUBBERSHEETS)
+
+            Return DB.ExecuteDataSet(DBC)
+            DBC.Dispose()
+        Catch ex As Exception
+            Return Nothing
+            Throw
+        End Try
+
+
+    End Function
+
+#End Region
+
 
 
 
