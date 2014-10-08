@@ -1,4 +1,4 @@
-Imports iStockCommon.iStockExpenses
+Imports iStockCommon.iStockOtherIncomes
 Imports iStockCommon.iStockCollections
 Imports iStockCommon.iStockConstants
 Imports Microsoft.Practices.EnterpriseLibrary.Common
@@ -11,21 +11,21 @@ Imports iStockCommon.iStockEnums
 Public Class frmOtherIncome
 
 #Region "Variables"
-    Private _CWBExpense As iStockCommon.iStockExpenses
+    Private _CWBOtherIncome As iStockCommon.iStockOtherIncome
     Private _CWBCollection As iStockCommon.iStockCollections
     Dim _CWBEnums As iStockCommon.iStockEnums
 #End Region
 
 #Region "Constructors"
 
-    Public ReadOnly Property CWBExpense() As iStockCommon.iStockExpenses
+    Public ReadOnly Property CWBOtherIncome() As iStockCommon.iStockOtherIncome
         Get
 
-            If _CWBExpense Is Nothing Then
-                _CWBExpense = New iStockCommon.iStockExpenses()
+            If _CWBOtherIncome Is Nothing Then
+                _CWBOtherIncome = New iStockCommon.iStockOtherIncome()
             End If
 
-            Return _CWBExpense
+            Return _CWBOtherIncome
         End Get
     End Property
     Public ReadOnly Property CWBEnums() As iStockCommon.iStockEnums
@@ -53,16 +53,16 @@ Public Class frmOtherIncome
 #End Region
 
 #Region "Form Events"
-    Private Sub frmExpenses_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles MyBase.KeyPress
+    Private Sub frmOtherIncomes_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Microsoft.VisualBasic.Chr(27) Then
             Me.Close()
         End If
     End Sub
 
-    Private Sub frmExpenses_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub frmOtherIncomes_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         SetCWBExpenseBarButton(bbSave, bbNew, bbDelete, bbClose, bbDisplaySelected, bbRefresh, bbPrint)
         Me.HideToolButtonsOnLoad()
-        Me.PopulateExpenseTypesLookup()
+        Me.PopulateOtherIncomeTypesLookup()
         Me.deDate.EditValue = Date.Today
         Me.deFromDate.EditValue = Date.Today
         Me.deToDate.EditValue = Date.Today
@@ -81,7 +81,7 @@ Public Class frmOtherIncome
 
     Private Sub bbSave_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbSave.ItemClick
 
-        If dxvpExpenses.Validate Then
+        If dxvpOtherIncomes.Validate Then
             If lblID.Text = String.Empty Then
                 Me.SaveRecords()
             Else
@@ -102,7 +102,7 @@ Public Class frmOtherIncome
     End Sub
 
     Private Sub bbRefresh_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbRefresh.ItemClick
-        With gvExpenses
+        With gvOtherIncomes
             .ClearColumnsFilter()
             .ClearGrouping()
             .ClearSelection()
@@ -122,21 +122,21 @@ Public Class frmOtherIncome
 
             If frm.ShowDialog = Windows.Forms.DialogResult.Yes Then
 
-                Me.DeleteExpenses(lblID.Text)
+                Me.DeleteOtherIncomes(lblID.Text)
                 Me.ClearFormData()
             End If
         End If
 
-        lupExpenseType.Focus()
+        lupOtherIncomeType.Focus()
 
     End Sub
 
     Private Sub bbDisplaySelected_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbDisplaySelected.ItemClick
-        Me.DisplayExpense()
+        Me.DisplayOtherIncome()
     End Sub
 
     Private Sub bbPrint_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbPrint.ItemClick
-        PrintPreview(gcExpenses, "Expense Report")
+        PrintPreview(gcOtherIncomes, "OtherIncome Report")
     End Sub
 #End Region
 
@@ -192,24 +192,24 @@ Public Class frmOtherIncome
 
 #Region "Clear Form Data"
     Private Sub ClearFormData()
-        Me.lupExpenseType.EditValue = DBNull.Value
+        Me.lupOtherIncomeType.EditValue = DBNull.Value
         Me.seAmount.EditValue = 0
         Me.meNote.Text = String.Empty
         Me.lblID.Text = String.Empty
-        dxvpExpenses.RemoveControlError(lupExpenseType)
-        Me.lupExpenseType.Focus()
+        dxvpOtherIncomes.RemoveControlError(lupOtherIncomeType)
+        Me.lupOtherIncomeType.Focus()
 
     End Sub
 #End Region
 
-#Region "Populate ExpenseTypes Lookup"
-    Public Sub PopulateExpenseTypesLookup()
+#Region "Populate OtherIncomeTypes Lookup"
+    Public Sub PopulateOtherIncomeTypesLookup()
 
         Try
-            With lupExpenseType
-                .Properties.DataSource = CWBExpense.ExpenseTypesGetAll().Tables(0)
+            With lupOtherIncomeType
+                .Properties.DataSource = CWBOtherIncome.OtherIncomeTypesGetAll().Tables(0)
                 .Properties.DisplayMember = "Description"
-                .Properties.ValueMember = "ExpenseTypeID"
+                .Properties.ValueMember = "OtherIncomeTypeID"
 
             End With
 
@@ -221,18 +221,18 @@ Public Class frmOtherIncome
 #End Region
 
 #Region "Lookup Events"
-    Private Sub lupExpenseType_ButtonClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles lupExpenseType.ButtonClick
+    Private Sub lupOtherIncomeType_ButtonClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles lupOtherIncomeType.ButtonClick
         Select Case e.Button.Index
             Case 1
-                If Not Me.lupExpenseType.Text = String.Empty Then
-                    Me.SaveExpenseType()
-                    Me.PopulateExpenseTypesLookup()
+                If Not Me.lupOtherIncomeType.Text = String.Empty Then
+                    Me.SaveOtherIncomeType()
+                    Me.PopulateOtherIncomeTypesLookup()
                 End If
 
             Case 2
 
 
-                If Not Me.lupExpenseType.Text = String.Empty Then
+                If Not Me.lupOtherIncomeType.Text = String.Empty Then
                     Dim frm As New frmDeleteYesNo
                     frm.lblTitle.Text = CWB_DELETE_CONFIRMATION_TITLELABEL
                     frm.lblDescription.ForeColor = Color.Red
@@ -241,8 +241,8 @@ Public Class frmOtherIncome
                     frm.Text = CWB_DELETE_CONFIRMATION_TITLE
 
                     If frm.ShowDialog = Windows.Forms.DialogResult.Yes Then
-                        Me.DeleteExpenseType()
-                        Me.PopulateExpenseTypesLookup()
+                        Me.DeleteOtherIncomeType()
+                        Me.PopulateOtherIncomeTypesLookup()
 
                     End If
                 End If
@@ -252,7 +252,7 @@ Public Class frmOtherIncome
     End Sub
 #End Region
 
-#Region "Save Expenses"
+#Region "Save OtherIncomes"
     Private Sub SaveRecords()
 
         Dim _Connection As DbConnection = Nothing
@@ -265,9 +265,9 @@ Public Class frmOtherIncome
             _Connection.Open()
             _Transaction = _Connection.BeginTransaction()
 
-            With CWBExpense
-                .ExpenseID = Convert.ToInt64(IIf(lblID.Text = String.Empty, 0, lblID.Text))
-                .ExpenseTypeID = Me.lupExpenseType.EditValue
+            With CWBOtherIncome
+                .OtherIncomeID = Convert.ToInt64(IIf(lblID.Text = String.Empty, 0, lblID.Text))
+                .OtherIncomeTypeID = Me.lupOtherIncomeType.EditValue
                 Select Case cbePaymentType.SelectedIndex
                     Case 0
                         .PaymentTypeID = iStockCommon.iStockEnums.EnumPaymentTypes.CASH
@@ -277,7 +277,7 @@ Public Class frmOtherIncome
                         .PaymentTypeID = iStockCommon.iStockEnums.EnumPaymentTypes.CCARD
                 End Select
 
-                .ExpenseDate = Me.deDate.EditValue
+                .OtherIncomeDate = Me.deDate.EditValue
                 .Amount = Me.seAmount.EditValue
                 .Note = Me.meNote.EditValue
                 .CreatedBy = UserID
@@ -285,8 +285,8 @@ Public Class frmOtherIncome
                 .InsertExpnese(_DB, _Transaction)
 
                 With CWBCollection
-                    .SystemID = CWBExpense.CurrentExpenseID
-                    .TransactionTypeID = iStockCommon.iStockEnums.EnumTransactionTypes.EXPENSES
+                    .SystemID = CWBOtherIncome.CurrentOtherIncomeID
+                    .TransactionTypeID = iStockCommon.iStockEnums.EnumTransactionTypes.OTHERINCOME
 
                     Select Case Me.cbePaymentType.SelectedIndex
                         Case 0
@@ -317,7 +317,7 @@ Public Class frmOtherIncome
     End Sub
 #End Region
 
-#Region "Update Expenses"
+#Region "Update OtherIncomes"
     Private Sub UpdateRecords()
 
         Dim _Connection As DbConnection = Nothing
@@ -330,10 +330,10 @@ Public Class frmOtherIncome
             _Connection.Open()
             _Transaction = _Connection.BeginTransaction()
 
-            With CWBExpense
+            With CWBOtherIncome
 
-                .ExpenseID = Convert.ToInt64(IIf(lblID.Text = String.Empty, 0, lblID.Text))
-                .ExpenseTypeID = Me.lupExpenseType.EditValue
+                .OtherIncomeID = Convert.ToInt64(IIf(lblID.Text = String.Empty, 0, lblID.Text))
+                .OtherIncomeTypeID = Me.lupOtherIncomeType.EditValue
 
                 Select Case cbePaymentType.SelectedIndex
                     Case 0
@@ -344,7 +344,7 @@ Public Class frmOtherIncome
                         .PaymentTypeID = iStockCommon.iStockEnums.EnumPaymentTypes.CCARD
                 End Select
 
-                .ExpenseDate = Me.deDate.EditValue
+                .OtherIncomeDate = Me.deDate.EditValue
                 .Amount = Me.seAmount.EditValue
                 .Note = Me.meNote.EditValue
                 .CreatedBy = UserID
@@ -356,11 +356,11 @@ Public Class frmOtherIncome
                 With CWBCollection
 
                     .SystemID = Convert.ToInt64(IIf(lblID.Text = String.Empty, 0, lblID.Text))
-                    .TransactionTypeID = iStockCommon.iStockEnums.EnumTransactionTypes.EXPENSES
+                    .TransactionTypeID = iStockCommon.iStockEnums.EnumTransactionTypes.OTHERINCOME
                     .CollectionDelete(_DB, _Transaction)
 
                     .SystemID = Convert.ToInt64(IIf(lblID.Text = String.Empty, 0, lblID.Text))
-                    .TransactionTypeID = iStockCommon.iStockEnums.EnumTransactionTypes.EXPENSES
+                    .TransactionTypeID = iStockCommon.iStockEnums.EnumTransactionTypes.OTHERINCOME
 
                     Select Case Me.cbePaymentType.SelectedIndex
                         Case 0
@@ -391,11 +391,11 @@ Public Class frmOtherIncome
     End Sub
 #End Region
 
-#Region "Save Expense Type"
-    Private Sub SaveExpenseType()
+#Region "Save OtherIncome Type"
+    Private Sub SaveOtherIncomeType()
         Try
-            With CWBExpense
-                .Description = Me.lupExpenseType.Text
+            With CWBOtherIncome
+                .Description = Me.lupOtherIncomeType.Text
                 .InsertExpneseTypes()
 
             End With
@@ -405,12 +405,12 @@ Public Class frmOtherIncome
     End Sub
 #End Region
 
-#Region "Delete Expense Type"
-    Private Sub DeleteExpenseType()
+#Region "Delete OtherIncome Type"
+    Private Sub DeleteOtherIncomeType()
         Try
-            With CWBExpense
-                .Description = Me.lupExpenseType.Text
-                .ExpenseTypesDelete()
+            With CWBOtherIncome
+                .Description = Me.lupOtherIncomeType.Text
+                .OtherIncomeTypesDelete()
             End With
         Catch ex As Exception
 
@@ -421,22 +421,22 @@ Public Class frmOtherIncome
 #Region "Populate Grid"
     Public Sub PopulateHistoryData()
         Try
-            CWBExpense.FromDate = Me.deFromDate.EditValue
-            CWBExpense.ToDate = Me.deToDate.EditValue
+            CWBOtherIncome.FromDate = Me.deFromDate.EditValue
+            CWBOtherIncome.ToDate = Me.deToDate.EditValue
 
-            gcExpenses.DataSource = CWBExpense.ExpenseGetByDates().Tables(0)
+            gcOtherIncomes.DataSource = CWBOtherIncome.OtherIncomeGetByDates().Tables(0)
         Catch ex As Exception
             MessageError(ex.ToString)
         End Try
     End Sub
 #End Region
 
-#Region "Delete Expenses"
-    Private Sub DeleteExpenses(ByVal ExpenseID As Int64)
+#Region "Delete OtherIncomes"
+    Private Sub DeleteOtherIncomes(ByVal OtherIncomeID As Int64)
         Try
-            With CWBExpense
-                .ExpenseID = ExpenseID
-                .ExpenseDelete()
+            With CWBOtherIncome
+                .OtherIncomeID = OtherIncomeID
+                .OtherIncomeDelete()
             End With
 
         Catch ex As Exception
@@ -451,18 +451,18 @@ Public Class frmOtherIncome
     End Sub
 #End Region
 
-#Region "Display Expense"
-    Public Sub DisplayExpense()
+#Region "Display OtherIncome"
+    Public Sub DisplayOtherIncome()
 
-        If gvExpenses.RowCount > 0 Then
+        If gvOtherIncomes.RowCount > 0 Then
 
 
             xTab1.SelectedTabPageIndex = 0
-            With CWBExpense
-                .ExpenseID = gvExpenses.GetFocusedRowCellValue(GridColumn1)
-                .GetExpenseByID()
-                lblID.Text = .ExpenseID
-                lupExpenseType.EditValue = .ExpenseTypeID
+            With CWBOtherIncome
+                .OtherIncomeID = gvOtherIncomes.GetFocusedRowCellValue(GridColumn1)
+                .GetOtherIncomeByID()
+                lblID.Text = .OtherIncomeID
+                lupOtherIncomeType.EditValue = .OtherIncomeTypeID
 
                 Select Case .PaymentTypeID
                     Case 1
@@ -475,7 +475,7 @@ Public Class frmOtherIncome
 
                 End Select
 
-                deDate.EditValue = .ExpenseDate
+                deDate.EditValue = .OtherIncomeDate
                 seAmount.EditValue = .Amount
                 meNote.EditValue = .Note
 
@@ -487,8 +487,8 @@ Public Class frmOtherIncome
 #End Region
 
 #Region "Grid Events"
-    Private Sub gvExpenses_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gvExpenses.DoubleClick
-        Me.DisplayExpense()
+    Private Sub gvOtherIncomes_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gvOtherIncomes.DoubleClick
+        Me.DisplayOtherIncome()
     End Sub
 #End Region
 

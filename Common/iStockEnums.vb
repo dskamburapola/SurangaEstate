@@ -4,6 +4,7 @@
         SALES = 2
         EXPENSES = 3
         OPENINGBALANCE = 4
+        OTHERINCOME = 5
 
     End Enum
 
