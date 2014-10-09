@@ -46,9 +46,20 @@ Public Class iStockDailyWorking
 
     Private _IsDeleted As Boolean
 
+    Private _StockID As Int64
+
 #End Region
 
 #Region "Properties"
+
+    Public Property StockID() As Int64
+        Get
+            Return _StockID
+        End Get
+        Set(ByVal value As Int64)
+            _StockID = value
+        End Set
+    End Property
 
     Public Property DailyWorkingID() As Int64
         Get
@@ -345,7 +356,9 @@ Public Class iStockDailyWorking
             DB.AddInParameter(DBC, "@CasualPayRate", DbType.Decimal, Me.CasualPayRate)
             DB.AddInParameter(DBC, "@CasualOTPayRate", DbType.Decimal, Me.CasualOTPayRate)
             DB.AddInParameter(DBC, "@IsDeleted", DbType.Boolean, Me.IsDeleted)
-            DB.AddInParameter(DBC, "@CreatedBy", DbType.Double, Me.CreatedBy)
+            DB.AddInParameter(DBC, "@CreatedBy", DbType.Int64, Me.CreatedBy)
+            DB.AddInParameter(DBC, "@StockID", DbType.Int64, Me.StockID)
+
 
             DB.ExecuteNonQuery(DBC)
         Catch ex As Exception

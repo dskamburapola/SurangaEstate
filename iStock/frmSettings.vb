@@ -197,7 +197,7 @@ Public Class frmSettings
     End Sub
 
     Private Sub btnSave_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnSave.Click
-        If dxvpSettings.Validate Then
+        If dxvpCodes.Validate Then
 
             SaveAbbreviations()
 

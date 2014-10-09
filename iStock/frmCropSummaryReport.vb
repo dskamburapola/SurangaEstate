@@ -93,7 +93,7 @@ Public Class frmCropSummaryReport
     Private Sub LoadTypes()
 
 
-        Me.leType.Properties.DataSource = ECSSettings.GetAbbreviations.Tables(1)
+        Me.leType.Properties.DataSource = ECSSettings.GetAbbreviations.Tables(0)
         Me.leType.Properties.DisplayMember = "AbbreviationDesc"
         Me.leType.Properties.ValueMember = "AbbreviationID"
 

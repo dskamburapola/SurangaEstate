@@ -31,6 +31,7 @@ Partial Class frmCropSummaryMonthlyReport
         Me.PivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.PivotGridField2 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.PivotGridField3 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField7 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.PivotGridField5 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.meMonth = New DevExpress.XtraScheduler.UI.MonthEdit()
         Me.leYear = New DevExpress.XtraEditors.LookUpEdit()
@@ -45,7 +46,8 @@ Partial Class frmCropSummaryMonthlyReport
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
-        Me.PivotGridField7 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField8 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField9 = New DevExpress.XtraPivotGrid.PivotGridField()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.pgcCropSummaryMonthly, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -108,7 +110,7 @@ Partial Class frmCropSummaryMonthlyReport
         '
         'pgcCropSummaryMonthly
         '
-        Me.pgcCropSummaryMonthly.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.PivotGridField1, Me.PivotGridField2, Me.PivotGridField3, Me.PivotGridField7, Me.PivotGridField5, Me.PivotGridField6, Me.PivotGridField4})
+        Me.pgcCropSummaryMonthly.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.PivotGridField1, Me.PivotGridField2, Me.PivotGridField3, Me.PivotGridField7, Me.PivotGridField5, Me.PivotGridField6, Me.PivotGridField4, Me.PivotGridField8, Me.PivotGridField9})
         PivotGridStyleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Transparent
         PivotGridStyleFormatCondition1.Appearance.Options.UseForeColor = True
         PivotGridStyleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal
@@ -150,6 +152,14 @@ Partial Class frmCropSummaryMonthlyReport
         Me.PivotGridField3.Caption = "Sex"
         Me.PivotGridField3.FieldName = "Sex"
         Me.PivotGridField3.Name = "PivotGridField3"
+        '
+        'PivotGridField7
+        '
+        Me.PivotGridField7.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+        Me.PivotGridField7.AreaIndex = 3
+        Me.PivotGridField7.Caption = "Type"
+        Me.PivotGridField7.FieldName = "Designation"
+        Me.PivotGridField7.Name = "PivotGridField7"
         '
         'PivotGridField5
         '
@@ -307,13 +317,25 @@ Partial Class frmCropSummaryMonthlyReport
         Me.LayoutControlItem2.TextToControlDistance = 0
         Me.LayoutControlItem2.TextVisible = False
         '
-        'PivotGridField7
+        'PivotGridField8
         '
-        Me.PivotGridField7.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
-        Me.PivotGridField7.AreaIndex = 3
-        Me.PivotGridField7.Caption = "Type"
-        Me.PivotGridField7.FieldName = "Designation"
-        Me.PivotGridField7.Name = "PivotGridField7"
+        Me.PivotGridField8.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
+        Me.PivotGridField8.AreaIndex = 2
+        Me.PivotGridField8.Caption = "RS"
+        Me.PivotGridField8.CellFormat.FormatString = "{0:N2}"
+        Me.PivotGridField8.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.PivotGridField8.FieldName = "Sheets"
+        Me.PivotGridField8.Name = "PivotGridField8"
+        '
+        'PivotGridField9
+        '
+        Me.PivotGridField9.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
+        Me.PivotGridField9.AreaIndex = 3
+        Me.PivotGridField9.Caption = "SC"
+        Me.PivotGridField9.CellFormat.FormatString = "{0:N2}"
+        Me.PivotGridField9.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.PivotGridField9.FieldName = "Scrap"
+        Me.PivotGridField9.Name = "PivotGridField9"
         '
         'frmCropSummaryMonthlyReport
         '
@@ -364,4 +386,6 @@ Partial Class frmCropSummaryMonthlyReport
     Friend WithEvents PivotGridField5 As DevExpress.XtraPivotGrid.PivotGridField
     Friend WithEvents PivotGridField6 As DevExpress.XtraPivotGrid.PivotGridField
     Friend WithEvents PivotGridField7 As DevExpress.XtraPivotGrid.PivotGridField
+    Friend WithEvents PivotGridField8 As DevExpress.XtraPivotGrid.PivotGridField
+    Friend WithEvents PivotGridField9 As DevExpress.XtraPivotGrid.PivotGridField
 End Class

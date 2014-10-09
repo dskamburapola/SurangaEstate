@@ -5,16 +5,27 @@ Imports iStockCommon.iStockConstants
 Public Class frmDailyWorkings
 
 
-
-
 #Region "Properties"
+
     Private _iStockEmployers As iStockCommon.iStockEmployers
     Private _iStockDailyWorking As iStockCommon.iStockDailyWorking
     Private _ECSSettings As iStockCommon.iStockSettings
+    Dim _iStockItems As iStockCommon.iStockStock
 
 #End Region
 
 #Region "Constructors"
+
+    Public ReadOnly Property iStockItems() As iStockCommon.iStockStock
+        Get
+
+            If _iStockItems Is Nothing Then
+                _iStockItems = New iStockCommon.iStockStock
+            End If
+
+            Return _iStockItems
+        End Get
+    End Property
 
     Public ReadOnly Property iStockEmployers() As iStockCommon.iStockEmployers
         Get
@@ -69,8 +80,14 @@ Public Class frmDailyWorkings
 
         '  MessageBox.Show(Me.deWorkingDate.EditValue)
 
+
+
     End Sub
 
+    Private Sub frmDailyWorkings_Activated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Activated
+        Me.PopulateStockItemsGridLookup()
+
+    End Sub
 #End Region
 
 #Region "Hide Tool Buttons On Load"
@@ -105,6 +122,9 @@ Public Class frmDailyWorkings
         Me.ClearFormData()
     End Sub
 
+    Private Sub bbPrint_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbPrint.ItemClick
+        PrintPreview(gcAllWorkings, "Daily Workings")
+    End Sub
 
 #End Region
 
@@ -163,7 +183,8 @@ Public Class frmDailyWorkings
                     .WorkingDate = deWorkingDate.EditValue
                     gcDailyWorking.DataSource = .DailyWorkingGetByDate.Tables(0)
 
-
+                    gvDailyWorking.Columns("AbbreviationDesc").Group()
+                    gvDailyWorking.ExpandAllGroups()
 
 
                 End With
@@ -262,18 +283,13 @@ Public Class frmDailyWorkings
                         .PayChitCost = 0
 
 
-                        'Case Else
-                        '.DayRate = Convert.ToDecimal(lblDayRate.Text.Trim)
-                        '.OTRate = Convert.ToDecimal(lblOTRate.Text.Trim)
-
-                        '.CasualPayRate = 0
-                        '.CasualOTPayRate = 0
+                       
 
                 End Select
 
                 .IsDeleted = 0
                 .CreatedBy = UserID
-
+                .StockID = leStock.EditValue
                 .InsertDailyWorking()
 
                 Dim frm As New frmSavedOk
@@ -333,6 +349,7 @@ Public Class frmDailyWorkings
         Me.leEmployee.EditValue = Nothing
         Me.cmbDays.Text = String.Empty
         Me.seQuantity.Text = 0
+        Me.leStock.EditValue = Nothing
         Me.cmbWorkType.Focus()
 
     End Sub
@@ -526,11 +543,23 @@ Public Class frmDailyWorkings
     End Sub
 
 #End Region
-
   
+#Region "Populate Stock Items Grid Lookup"
+    Public Sub PopulateStockItemsGridLookup()
 
-    
-    Private Sub bbPrint_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbPrint.ItemClick
+        Try
+            With leStock
+                .Properties.DataSource = iStockItems.GetAllStockItems.Tables(0)
+                .Properties.DisplayMember = "StockCode"
+                .Properties.ValueMember = "StockID"
+            End With
 
+
+        Catch ex As Exception
+            MessageError(ex.ToString)
+        End Try
     End Sub
+#End Region
+    
+
 End Class

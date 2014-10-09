@@ -27,6 +27,8 @@ Partial Class frmSettings
         Dim ConditionValidationRule5 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule6 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule7 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule8 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule9 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
@@ -88,6 +90,7 @@ Partial Class frmSettings
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem14 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.dxvpSettings = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.dxvpCodes = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
@@ -134,6 +137,7 @@ Partial Class frmSettings
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpSettings, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dxvpCodes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarManager1
@@ -362,21 +366,29 @@ Partial Class frmSettings
         Me.teAbbreviationDesc.Location = New System.Drawing.Point(313, 122)
         Me.teAbbreviationDesc.MenuManager = Me.BarManager1
         Me.teAbbreviationDesc.Name = "teAbbreviationDesc"
+        Me.teAbbreviationDesc.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teAbbreviationDesc.Size = New System.Drawing.Size(404, 20)
         Me.teAbbreviationDesc.StyleController = Me.LayoutControl1
         Me.teAbbreviationDesc.TabIndex = 22
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "Require"
+        Me.dxvpCodes.SetValidationRule(Me.teAbbreviationDesc, ConditionValidationRule1)
         '
         'teAbbreviationCode
         '
         Me.teAbbreviationCode.Location = New System.Drawing.Point(313, 98)
         Me.teAbbreviationCode.MenuManager = Me.BarManager1
         Me.teAbbreviationCode.Name = "teAbbreviationCode"
+        Me.teAbbreviationCode.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teAbbreviationCode.Size = New System.Drawing.Size(323, 20)
         Me.teAbbreviationCode.StyleController = Me.LayoutControl1
         Me.teAbbreviationCode.TabIndex = 21
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "Reuire"
-        Me.dxvpSettings.SetValidationRule(Me.teAbbreviationCode, ConditionValidationRule1)
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule2.ErrorText = "Require"
+        Me.dxvpCodes.SetValidationRule(Me.teAbbreviationCode, ConditionValidationRule2)
+        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule3.ErrorText = "Reuire"
+        Me.dxvpSettings.SetValidationRule(Me.teAbbreviationCode, ConditionValidationRule3)
         '
         'seIncentiveDays
         '
@@ -389,10 +401,10 @@ Partial Class frmSettings
         Me.seIncentiveDays.Size = New System.Drawing.Size(145, 20)
         Me.seIncentiveDays.StyleController = Me.LayoutControl1
         Me.seIncentiveDays.TabIndex = 19
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
-        ConditionValidationRule2.ErrorText = "This value is not valid"
-        ConditionValidationRule2.Value1 = "0"
-        Me.dxvpSettings.SetValidationRule(Me.seIncentiveDays, ConditionValidationRule2)
+        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule4.ErrorText = "This value is not valid"
+        ConditionValidationRule4.Value1 = "0"
+        Me.dxvpSettings.SetValidationRule(Me.seIncentiveDays, ConditionValidationRule4)
         '
         'seKgsPerDay
         '
@@ -405,10 +417,10 @@ Partial Class frmSettings
         Me.seKgsPerDay.Size = New System.Drawing.Size(145, 20)
         Me.seKgsPerDay.StyleController = Me.LayoutControl1
         Me.seKgsPerDay.TabIndex = 18
-        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
-        ConditionValidationRule3.ErrorText = "This value is not valid"
-        ConditionValidationRule3.Value1 = "0"
-        Me.dxvpSettings.SetValidationRule(Me.seKgsPerDay, ConditionValidationRule3)
+        ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule5.ErrorText = "This value is not valid"
+        ConditionValidationRule5.Value1 = "0"
+        Me.dxvpSettings.SetValidationRule(Me.seKgsPerDay, ConditionValidationRule5)
         '
         'seOTRate
         '
@@ -421,10 +433,10 @@ Partial Class frmSettings
         Me.seOTRate.Size = New System.Drawing.Size(174, 20)
         Me.seOTRate.StyleController = Me.LayoutControl1
         Me.seOTRate.TabIndex = 17
-        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
-        ConditionValidationRule4.ErrorText = "This value is not valid"
-        ConditionValidationRule4.Value1 = "0"
-        Me.dxvpSettings.SetValidationRule(Me.seOTRate, ConditionValidationRule4)
+        ConditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule6.ErrorText = "This value is not valid"
+        ConditionValidationRule6.Value1 = "0"
+        Me.dxvpSettings.SetValidationRule(Me.seOTRate, ConditionValidationRule6)
         '
         'seDayRate
         '
@@ -437,10 +449,10 @@ Partial Class frmSettings
         Me.seDayRate.Size = New System.Drawing.Size(174, 20)
         Me.seDayRate.StyleController = Me.LayoutControl1
         Me.seDayRate.TabIndex = 16
-        ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
-        ConditionValidationRule5.ErrorText = "This value is not valid"
-        ConditionValidationRule5.Value1 = "0"
-        Me.dxvpSettings.SetValidationRule(Me.seDayRate, ConditionValidationRule5)
+        ConditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule7.ErrorText = "This value is not valid"
+        ConditionValidationRule7.Value1 = "0"
+        Me.dxvpSettings.SetValidationRule(Me.seDayRate, ConditionValidationRule7)
         '
         'seDevalutionAllowance
         '
@@ -453,10 +465,10 @@ Partial Class frmSettings
         Me.seDevalutionAllowance.Size = New System.Drawing.Size(145, 20)
         Me.seDevalutionAllowance.StyleController = Me.LayoutControl1
         Me.seDevalutionAllowance.TabIndex = 15
-        ConditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
-        ConditionValidationRule6.ErrorText = "This value is not valid"
-        ConditionValidationRule6.Value1 = "0"
-        Me.dxvpSettings.SetValidationRule(Me.seDevalutionAllowance, ConditionValidationRule6)
+        ConditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule8.ErrorText = "This value is not valid"
+        ConditionValidationRule8.Value1 = "0"
+        Me.dxvpSettings.SetValidationRule(Me.seDevalutionAllowance, ConditionValidationRule8)
         '
         'sePayChitCost
         '
@@ -469,10 +481,10 @@ Partial Class frmSettings
         Me.sePayChitCost.Size = New System.Drawing.Size(174, 20)
         Me.sePayChitCost.StyleController = Me.LayoutControl1
         Me.sePayChitCost.TabIndex = 14
-        ConditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
-        ConditionValidationRule7.ErrorText = "This value is not valid"
-        ConditionValidationRule7.Value1 = "0"
-        Me.dxvpSettings.SetValidationRule(Me.sePayChitCost, ConditionValidationRule7)
+        ConditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule9.ErrorText = "This value is not valid"
+        ConditionValidationRule9.Value1 = "0"
+        Me.dxvpSettings.SetValidationRule(Me.sePayChitCost, ConditionValidationRule9)
         '
         'leAbbriviationCode
         '
@@ -817,6 +829,7 @@ Partial Class frmSettings
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dxvpSettings, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dxvpCodes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -879,4 +892,5 @@ Partial Class frmSettings
     Friend WithEvents EmptySpaceItem1 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem4 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents LayoutControlGroup4 As DevExpress.XtraLayout.LayoutControlGroup
+    Friend WithEvents dxvpCodes As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
 End Class
