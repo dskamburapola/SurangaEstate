@@ -127,8 +127,8 @@
   <data name="purchases" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\purchases.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Splash1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Splash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Network1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Network.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Alert" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Alert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,20 +139,26 @@
   <data name="Show" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\show.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Splash.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Info1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Info.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="sales" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\sales.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ImgUpdate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\ImgUpdate.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PayBills" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\PayBills.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Error1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Error.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Splash1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Splash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Login.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="i" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\i.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Customers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Customers.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,17 +178,17 @@
   <data name="Expenses" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Expenses.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Magenta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Magenta.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\delete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Info1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Info.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ImgDelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\ImgDelete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Stock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Stock.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\delete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Magenta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Magenta.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Close.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,8 +196,8 @@
   <data name="Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\save.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Splash.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Error1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Error.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Suppliers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Suppliers.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,11 +205,8 @@
   <data name="Employer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Employer.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ImgDelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\ImgDelete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="i" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\i.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ImgUpdate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\ImgUpdate.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ImgSavedOk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\ImgSavedOk.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,13 +214,13 @@
   <data name="rights" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\rights.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Network1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Network.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\remove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RecevePayment" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\RecevePayment.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\remove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="update" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\update.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

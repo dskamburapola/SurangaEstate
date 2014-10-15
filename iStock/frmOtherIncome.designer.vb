@@ -35,6 +35,8 @@ Partial Class frmOtherIncome
         Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -64,6 +66,8 @@ Partial Class frmOtherIncome
         Me.xTab1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.seQuantity = New DevExpress.XtraEditors.SpinEdit()
+        Me.seRate = New DevExpress.XtraEditors.SpinEdit()
         Me.cbePaymentType = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.meNote = New DevExpress.XtraEditors.MemoExEdit()
         Me.seAmount = New DevExpress.XtraEditors.SpinEdit()
@@ -79,15 +83,11 @@ Partial Class frmOtherIncome
         Me.EmptySpaceItem5 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem11 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem12 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
         Me.dxvpOtherIncomes = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         Me.dxvpHistoryData = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
-        Me.seRate = New DevExpress.XtraEditors.SpinEdit()
-        Me.LayoutControlItem11 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.seQuantity = New DevExpress.XtraEditors.SpinEdit()
-        Me.LayoutControlItem12 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.deFromDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.deFromDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -110,6 +110,8 @@ Partial Class frmOtherIncome
         Me.XtraTabPage1.SuspendLayout()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.seQuantity.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.seRate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cbePaymentType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.meNote.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.seAmount.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,13 +127,11 @@ Partial Class frmOtherIncome
         CType(Me.EmptySpaceItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabPage2.SuspendLayout()
         CType(Me.dxvpOtherIncomes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpHistoryData, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.seRate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.seQuantity.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'deFromDate
@@ -268,6 +268,26 @@ Partial Class frmOtherIncome
         Me.GridColumn5.Visible = True
         Me.GridColumn5.VisibleIndex = 3
         Me.GridColumn5.Width = 120
+        '
+        'GridColumn12
+        '
+        Me.GridColumn12.Caption = "Rate"
+        Me.GridColumn12.DisplayFormat.FormatString = "{0:N2}"
+        Me.GridColumn12.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.GridColumn12.FieldName = "Rate"
+        Me.GridColumn12.Name = "GridColumn12"
+        Me.GridColumn12.Visible = True
+        Me.GridColumn12.VisibleIndex = 5
+        '
+        'GridColumn11
+        '
+        Me.GridColumn11.Caption = "Quantity"
+        Me.GridColumn11.DisplayFormat.FormatString = "{0:N2}"
+        Me.GridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.GridColumn11.FieldName = "Quantity"
+        Me.GridColumn11.Name = "GridColumn11"
+        Me.GridColumn11.Visible = True
+        Me.GridColumn11.VisibleIndex = 6
         '
         'GridColumn6
         '
@@ -536,6 +556,30 @@ Partial Class frmOtherIncome
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
+        'seQuantity
+        '
+        Me.seQuantity.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.seQuantity.EnterMoveNextControl = True
+        Me.seQuantity.Location = New System.Drawing.Point(84, 157)
+        Me.seQuantity.MenuManager = Me.BarManager1
+        Me.seQuantity.Name = "seQuantity"
+        Me.seQuantity.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.seQuantity.Size = New System.Drawing.Size(288, 20)
+        Me.seQuantity.StyleController = Me.LayoutControl1
+        Me.seQuantity.TabIndex = 5
+        '
+        'seRate
+        '
+        Me.seRate.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.seRate.EnterMoveNextControl = True
+        Me.seRate.Location = New System.Drawing.Point(84, 133)
+        Me.seRate.MenuManager = Me.BarManager1
+        Me.seRate.Name = "seRate"
+        Me.seRate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.seRate.Size = New System.Drawing.Size(288, 20)
+        Me.seRate.StyleController = Me.LayoutControl1
+        Me.seRate.TabIndex = 4
+        '
         'cbePaymentType
         '
         Me.cbePaymentType.EditValue = "CASH"
@@ -717,25 +761,6 @@ Partial Class frmOtherIncome
         Me.LayoutControlItem6.TextToControlDistance = 0
         Me.LayoutControlItem6.TextVisible = False
         '
-        'XtraTabPage2
-        '
-        Me.XtraTabPage2.Controls.Add(Me.LayoutControl2)
-        Me.XtraTabPage2.Name = "XtraTabPage2"
-        Me.XtraTabPage2.Size = New System.Drawing.Size(743, 411)
-        Me.XtraTabPage2.Text = "History Record"
-        '
-        'seRate
-        '
-        Me.seRate.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.seRate.EnterMoveNextControl = True
-        Me.seRate.Location = New System.Drawing.Point(84, 133)
-        Me.seRate.MenuManager = Me.BarManager1
-        Me.seRate.Name = "seRate"
-        Me.seRate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.seRate.Size = New System.Drawing.Size(288, 20)
-        Me.seRate.StyleController = Me.LayoutControl1
-        Me.seRate.TabIndex = 4
-        '
         'LayoutControlItem11
         '
         Me.LayoutControlItem11.Control = Me.seRate
@@ -745,18 +770,6 @@ Partial Class frmOtherIncome
         Me.LayoutControlItem11.Size = New System.Drawing.Size(364, 24)
         Me.LayoutControlItem11.Text = "Rate"
         Me.LayoutControlItem11.TextSize = New System.Drawing.Size(69, 13)
-        '
-        'seQuantity
-        '
-        Me.seQuantity.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.seQuantity.EnterMoveNextControl = True
-        Me.seQuantity.Location = New System.Drawing.Point(84, 157)
-        Me.seQuantity.MenuManager = Me.BarManager1
-        Me.seQuantity.Name = "seQuantity"
-        Me.seQuantity.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.seQuantity.Size = New System.Drawing.Size(288, 20)
-        Me.seQuantity.StyleController = Me.LayoutControl1
-        Me.seQuantity.TabIndex = 5
         '
         'LayoutControlItem12
         '
@@ -768,25 +781,12 @@ Partial Class frmOtherIncome
         Me.LayoutControlItem12.Text = "Quantity"
         Me.LayoutControlItem12.TextSize = New System.Drawing.Size(69, 13)
         '
-        'GridColumn11
+        'XtraTabPage2
         '
-        Me.GridColumn11.Caption = "Quantity"
-        Me.GridColumn11.DisplayFormat.FormatString = "{0:N2}"
-        Me.GridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.GridColumn11.FieldName = "Quantity"
-        Me.GridColumn11.Name = "GridColumn11"
-        Me.GridColumn11.Visible = True
-        Me.GridColumn11.VisibleIndex = 6
-        '
-        'GridColumn12
-        '
-        Me.GridColumn12.Caption = "Rate"
-        Me.GridColumn12.DisplayFormat.FormatString = "{0:N2}"
-        Me.GridColumn12.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.GridColumn12.FieldName = "Rate"
-        Me.GridColumn12.Name = "GridColumn12"
-        Me.GridColumn12.Visible = True
-        Me.GridColumn12.VisibleIndex = 5
+        Me.XtraTabPage2.Controls.Add(Me.LayoutControl2)
+        Me.XtraTabPage2.Name = "XtraTabPage2"
+        Me.XtraTabPage2.Size = New System.Drawing.Size(743, 411)
+        Me.XtraTabPage2.Text = "History Record"
         '
         'frmOtherIncome
         '
@@ -800,7 +800,7 @@ Partial Class frmOtherIncome
         Me.Controls.Add(Me.barDockControlTop)
         Me.KeyPreview = True
         Me.Name = "frmOtherIncome"
-        Me.Text = "Other Income"
+        Me.Text = "Income"
         CType(Me.deFromDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.deFromDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -823,6 +823,8 @@ Partial Class frmOtherIncome
         Me.XtraTabPage1.ResumeLayout(False)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.seQuantity.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.seRate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cbePaymentType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.meNote.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.seAmount.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -838,13 +840,11 @@ Partial Class frmOtherIncome
         CType(Me.EmptySpaceItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabPage2.ResumeLayout(False)
         CType(Me.dxvpOtherIncomes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dxvpHistoryData, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.seRate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.seQuantity.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

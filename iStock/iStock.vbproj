@@ -67,6 +67,7 @@
     <Reference Include="DevExpress.Data.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v12.2.UI, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -109,6 +110,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="frmChart-income.Designer.vb">
+      <DependentUpon>frmChart-income.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmChart-income.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmCoinCalculator.Designer.vb">
       <DependentUpon>frmCoinCalculator.vb</DependentUpon>
     </Compile>
@@ -426,6 +433,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmChart-income.resx">
+      <DependentUpon>frmChart-income.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCoinCalculator.resx">
       <DependentUpon>frmCoinCalculator.vb</DependentUpon>
     </EmbeddedResource>

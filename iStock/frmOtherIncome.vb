@@ -183,7 +183,7 @@ Public Class frmOtherIncome
                 Me.ShowToolButtonsOnNewRecordTabChange()
             Case 1
                 Me.ShowToolButtonsOnHistoryTabChange()
-
+                Me.PopulateHistoryData()
 
         End Select
 
@@ -351,6 +351,8 @@ Public Class frmOtherIncome
 
                 .OtherIncomeDate = Me.deDate.EditValue
                 .Amount = Me.seAmount.EditValue
+                .Rate = Me.seRate.EditValue
+                .Quantity = Me.seQuantity.EditValue
                 .Note = Me.meNote.EditValue
                 .CreatedBy = UserID
                 .UpdatedBy = UserID

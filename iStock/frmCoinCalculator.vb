@@ -59,4 +59,7 @@ Public Class frmCoinCalculator
 
 
 
+    Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
+        PrintPreview(gcCoin, "Coin Change Repoprt")
+    End Sub
 End Class
