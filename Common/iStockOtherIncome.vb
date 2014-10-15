@@ -13,6 +13,8 @@ Public Class iStockOtherIncome
     Private _PaymentTypeID As Int64
     Private _OtherIncomeDate As Date
     Private _Amount As Decimal
+    Private _Rate As Decimal
+    Private _Quantity As Decimal
     Private _Note As String
     Private _Description As String
     Private _CurrentOtherIncomeID As Int64
@@ -66,6 +68,25 @@ Public Class iStockOtherIncome
             _Amount = value
         End Set
     End Property
+
+    Public Property Rate() As Decimal
+        Get
+            Return _Rate
+        End Get
+        Set(ByVal value As Decimal)
+            _Rate = value
+        End Set
+    End Property
+
+    Public Property Quantity() As Decimal
+        Get
+            Return _Quantity
+        End Get
+        Set(ByVal value As Decimal)
+            _Quantity = value
+        End Set
+    End Property
+
     Public Property Note() As String
         Get
             Return _Note
@@ -155,6 +176,8 @@ Public Class iStockOtherIncome
             db.AddInParameter(DBC, "@PaymentTypeID", DbType.Int64, Me.PaymentTypeID)
             db.AddInParameter(DBC, "@OtherIncomeDate", DbType.Date, Me.OtherIncomeDate)
             db.AddInParameter(DBC, "@Amount", DbType.Decimal, Me.Amount)
+            db.AddInParameter(DBC, "@Rate", DbType.Decimal, Me.Rate)
+            db.AddInParameter(DBC, "@Quantity", DbType.Decimal, Me.Quantity)
             db.AddInParameter(DBC, "@Note", DbType.String, Me.Note)
             db.AddOutParameter(DBC, "@CurrentOtherIncomeID", DbType.Int64, 0)
             db.AddInParameter(DBC, "@CreatedBy", DbType.Int64, CreatedBy)

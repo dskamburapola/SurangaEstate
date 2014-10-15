@@ -196,6 +196,8 @@ Public Class frmOtherIncome
         Me.seAmount.EditValue = 0
         Me.meNote.Text = String.Empty
         Me.lblID.Text = String.Empty
+        Me.seRate.EditValue = 0
+        Me.seQuantity.EditValue = 0
         dxvpOtherIncomes.RemoveControlError(lupOtherIncomeType)
         Me.lupOtherIncomeType.Focus()
 
@@ -279,6 +281,8 @@ Public Class frmOtherIncome
 
                 .OtherIncomeDate = Me.deDate.EditValue
                 .Amount = Me.seAmount.EditValue
+                .Rate = Me.seRate.EditValue
+                .Quantity = Me.seQuantity.EditValue
                 .Note = Me.meNote.EditValue
                 .CreatedBy = UserID
                 .UpdatedBy = UserID
@@ -300,6 +304,7 @@ Public Class frmOtherIncome
                     .Date = Me.deDate.EditValue
                     .Reference = String.Empty
                     .Amount = Me.seAmount.EditValue
+
                     .InsertCollection(_DB, _Transaction)
 
                 End With
@@ -477,6 +482,8 @@ Public Class frmOtherIncome
 
                 deDate.EditValue = .OtherIncomeDate
                 seAmount.EditValue = .Amount
+                seRate.EditValue = .Rate
+                seQuantity.EditValue = .Quantity
                 meNote.EditValue = .Note
 
 

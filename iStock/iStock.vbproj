@@ -109,6 +109,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="frmCoinCalculator.Designer.vb">
+      <DependentUpon>frmCoinCalculator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCoinCalculator.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmDailyWorkings.designer.vb">
       <DependentUpon>frmDailyWorkings.vb</DependentUpon>
     </Compile>
@@ -420,6 +426,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmCoinCalculator.resx">
+      <DependentUpon>frmCoinCalculator.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDailyWorkings.resx">
       <DependentUpon>frmDailyWorkings.vb</DependentUpon>
       <SubType>Designer</SubType>
