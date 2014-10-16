@@ -402,6 +402,43 @@ Module iStockWindowsForms
 
 
     End Sub
+
+    Public Sub PrintChartPreview(ByVal chart As DevExpress.XtraCharts.ChartControl, ByVal reportheadername As String)
+        Try
+
+
+            Dim _CWBCompany As New iStockCommon.iStockCompany
+            _CWBCompany.GetCompany()
+
+            Dim Link As New PrintableComponentLink()
+
+            Link.PrintingSystem = New PrintingSystem
+            Link.Component = chart
+
+            Dim a As PageHeaderFooter
+            a = Link.PageHeaderFooter
+            a.Header.LineAlignment = BrickAlignment.Center
+            a.Header.Content.Add(" ")
+            a.Header.Content.Add("" + _CWBCompany.CompanyName + vbCrLf + reportheadername + vbCrLf + "Printed On -" + Date.Now.ToString("dd-MMM-yy hh:mm:tt"))
+
+            frmPrint.PrintControl1.PrintingSystem = Link.PrintingSystem
+
+
+            Link.Margins = New System.Drawing.Printing.Margins(50, 50, 100, 50)
+            Link.CreateDocument()
+            frmPrint.MdiParent = frmMain
+            frmPrint.Show()
+            frmPrint.BringToFront()
+
+
+
+        Catch ex As Exception
+            MessageError(ex.ToString)
+        End Try
+
+
+    End Sub
+
 #End Region
 
 #Region "Message Error"

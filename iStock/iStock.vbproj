@@ -110,6 +110,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="frmChart-expense.Designer.vb">
+      <DependentUpon>frmChart-expense.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmChart-expense.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmChart-income.Designer.vb">
       <DependentUpon>frmChart-income.vb</DependentUpon>
     </Compile>
@@ -433,6 +439,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmChart-expense.resx">
+      <DependentUpon>frmChart-expense.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChart-income.resx">
       <DependentUpon>frmChart-income.vb</DependentUpon>
     </EmbeddedResource>
