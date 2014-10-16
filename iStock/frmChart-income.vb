@@ -26,6 +26,8 @@
     Private Sub frmChart_income_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.LoadYears()
 
+    
+
     End Sub
     Private Sub frmChart_income_Activated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Activated
         PopulateOtherIncomeTypesLookup()
@@ -74,10 +76,44 @@
 
     Private Sub sbProcess_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbProcess.Click
         If dxvpCommon.Validate Then
-
+            Me.BindChart();
         End If
     End Sub
 
 #End Region
 
+#Region "Bind Chart"
+
+    Private Sub BindChart()
+
+        Chart.DataSource = CreateChartData()
+        Chart.SeriesDataMember = "Section"
+        Chart.SeriesTemplate.ArgumentDataMember = "Month"
+        Chart.SeriesTemplate.ValueDataMembers.AddRange(New String() {"Value"})
+        'Chart.SeriesNameTemplate.BeginText = "Month: "
+
+    End Sub
+
+#End Region
+
+
+    Private Function CreateChartData() As DataTable
+        ' Create an empty table.
+        Dim table As New DataTable("Table1")
+
+        ' Add three columns to the table.
+        table.Columns.Add("Month", GetType(String))
+        table.Columns.Add("Section", GetType(String))
+        table.Columns.Add("Value", GetType(Int32))
+
+        ' Add data rows to the table.
+        table.Rows.Add(New Object() {"Jan", "Section1", 10})
+        table.Rows.Add(New Object() {"Jan", "Section2", 20})
+        table.Rows.Add(New Object() {"Feb", "Section1", 20})
+        table.Rows.Add(New Object() {"Feb", "Section2", 30})
+        table.Rows.Add(New Object() {"March", "Section1", 15})
+        table.Rows.Add(New Object() {"March", "Section2", 25})
+
+        Return table
+    End Function
 End Class
