@@ -24,10 +24,22 @@ Public Class iStockOtherIncome
     Private _UpdatedDate As Date
     Private _FromDate As DateTime
     Private _ToDate As DateTime
+    Private _StcokID As Int64
+
 
 #End Region
 
 #Region "Porperties"
+
+    Public Property StockID() As Int64
+        Get
+            Return _StcokID
+        End Get
+        Set(ByVal value As Int64)
+            _StcokID = value
+        End Set
+    End Property
+
     Public Property OtherIncomeID() As Int64
         Get
             Return _OtherIncomeID
@@ -164,7 +176,7 @@ Public Class iStockOtherIncome
 #End Region
 
 #Region "OtherIncome Insert"
-    Public Sub InsertExpnese(ByVal db As Database, ByVal transaction As DbTransaction)
+    Public Sub InsertOtherIncome(ByVal db As Database, ByVal transaction As DbTransaction)
 
         Try
 
@@ -182,6 +194,8 @@ Public Class iStockOtherIncome
             db.AddOutParameter(DBC, "@CurrentOtherIncomeID", DbType.Int64, 0)
             db.AddInParameter(DBC, "@CreatedBy", DbType.Int64, CreatedBy)
             db.AddInParameter(DBC, "@UpdatedBy", DbType.Int64, UpdatedBy)
+            db.AddInParameter(DBC, "@StockID", DbType.Int64, Me.StockID)
+
 
             db.ExecuteNonQuery(DBC, transaction)
             Me.CurrentOtherIncomeID = Convert.ToInt64(db.GetParameterValue(DBC, "@CurrentOtherIncomeID").ToString())
@@ -246,6 +260,7 @@ Public Class iStockOtherIncome
 
                 With DR
                     Do While .Read
+
                         Me.OtherIncomeID = Convert.ToInt64(IIf(Not IsDBNull(.Item("OtherIncomeID")), Trim(.Item("OtherIncomeID").ToString), String.Empty))
                         Me.OtherIncomeTypeID = Convert.ToInt64(IIf(Not IsDBNull(.Item("OtherIncomeTypeID")), Trim(.Item("OtherIncomeTypeID").ToString), String.Empty))
                         Me.PaymentTypeID = Convert.ToInt64(IIf(Not IsDBNull(.Item("PaymentTypeID")), Trim(.Item("PaymentTypeID").ToString), String.Empty))
@@ -258,6 +273,8 @@ Public Class iStockOtherIncome
                         Me.CreatedDate = Convert.ToDateTime((IIf(Not IsDBNull(.Item("CreatedDate")), Trim(.Item("CreatedDate").ToString), Date.MinValue)))
                         Me.UpdatedBy = Convert.ToInt64(IIf(Not IsDBNull(.Item("UpdatedBy")), Trim(.Item("UpdatedBy").ToString), 0))
                         Me.UpdatedDate = Convert.ToDateTime((IIf(Not IsDBNull(.Item("UpdatedDate")), Trim(.Item("UpdatedDate").ToString), Date.MinValue)))
+                        Me.StockID = Convert.ToInt64(IIf(Not IsDBNull(.Item("StockID")), Trim(.Item("StockID").ToString), String.Empty))
+
                     Loop
                 End With
 
@@ -283,7 +300,7 @@ Public Class iStockOtherIncome
     End Sub
 #End Region
 
-#Region "ExpensTypse Insert"
+#Region "OtherIncomeTypes Insert"
     Public Sub InsertExpneseTypes()
 
         Try

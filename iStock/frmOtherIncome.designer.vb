@@ -66,6 +66,7 @@ Partial Class frmOtherIncome
         Me.xTab1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.leStock = New DevExpress.XtraEditors.LookUpEdit()
         Me.seQuantity = New DevExpress.XtraEditors.SpinEdit()
         Me.seRate = New DevExpress.XtraEditors.SpinEdit()
         Me.cbePaymentType = New DevExpress.XtraEditors.ComboBoxEdit()
@@ -85,9 +86,11 @@ Partial Class frmOtherIncome
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem11 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem12 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem13 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
         Me.dxvpOtherIncomes = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         Me.dxvpHistoryData = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.deFromDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.deFromDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -110,6 +113,7 @@ Partial Class frmOtherIncome
         Me.XtraTabPage1.SuspendLayout()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.leStock.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.seQuantity.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.seRate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cbePaymentType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -129,6 +133,7 @@ Partial Class frmOtherIncome
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabPage2.SuspendLayout()
         CType(Me.dxvpOtherIncomes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpHistoryData, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -208,7 +213,7 @@ Partial Class frmOtherIncome
         '
         'gvOtherIncomes
         '
-        Me.gvOtherIncomes.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn12, Me.GridColumn11, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10})
+        Me.gvOtherIncomes.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn13, Me.GridColumn12, Me.GridColumn11, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10})
         Me.gvOtherIncomes.GridControl = Me.gcOtherIncomes
         Me.gvOtherIncomes.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantity", Me.GridColumn11, "{0:N2}"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", Me.GridColumn5, "{0:N2}")})
         Me.gvOtherIncomes.Name = "gvOtherIncomes"
@@ -295,7 +300,7 @@ Partial Class frmOtherIncome
         Me.GridColumn6.FieldName = "Note"
         Me.GridColumn6.Name = "GridColumn6"
         Me.GridColumn6.Visible = True
-        Me.GridColumn6.VisibleIndex = 4
+        Me.GridColumn6.VisibleIndex = 7
         Me.GridColumn6.Width = 120
         '
         'GridColumn7
@@ -304,7 +309,7 @@ Partial Class frmOtherIncome
         Me.GridColumn7.FieldName = "CreatedBy"
         Me.GridColumn7.Name = "GridColumn7"
         Me.GridColumn7.Visible = True
-        Me.GridColumn7.VisibleIndex = 7
+        Me.GridColumn7.VisibleIndex = 8
         Me.GridColumn7.Width = 120
         '
         'GridColumn8
@@ -316,7 +321,7 @@ Partial Class frmOtherIncome
         Me.GridColumn8.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText
         Me.GridColumn8.Name = "GridColumn8"
         Me.GridColumn8.Visible = True
-        Me.GridColumn8.VisibleIndex = 8
+        Me.GridColumn8.VisibleIndex = 9
         Me.GridColumn8.Width = 120
         '
         'GridColumn9
@@ -325,7 +330,7 @@ Partial Class frmOtherIncome
         Me.GridColumn9.FieldName = "UpdatedBy"
         Me.GridColumn9.Name = "GridColumn9"
         Me.GridColumn9.Visible = True
-        Me.GridColumn9.VisibleIndex = 9
+        Me.GridColumn9.VisibleIndex = 10
         Me.GridColumn9.Width = 120
         '
         'GridColumn10
@@ -337,7 +342,7 @@ Partial Class frmOtherIncome
         Me.GridColumn10.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText
         Me.GridColumn10.Name = "GridColumn10"
         Me.GridColumn10.Visible = True
-        Me.GridColumn10.VisibleIndex = 10
+        Me.GridColumn10.VisibleIndex = 11
         Me.GridColumn10.Width = 120
         '
         'GridView2
@@ -540,6 +545,7 @@ Partial Class frmOtherIncome
         '
         'LayoutControl1
         '
+        Me.LayoutControl1.Controls.Add(Me.leStock)
         Me.LayoutControl1.Controls.Add(Me.seQuantity)
         Me.LayoutControl1.Controls.Add(Me.seRate)
         Me.LayoutControl1.Controls.Add(Me.cbePaymentType)
@@ -556,29 +562,42 @@ Partial Class frmOtherIncome
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
+        'leStock
+        '
+        Me.leStock.EnterMoveNextControl = True
+        Me.leStock.Location = New System.Drawing.Point(84, 133)
+        Me.leStock.MenuManager = Me.BarManager1
+        Me.leStock.Name = "leStock"
+        Me.leStock.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.leStock.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("StockCode", "Stock Code"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "Description")})
+        Me.leStock.Properties.NullText = ""
+        Me.leStock.Size = New System.Drawing.Size(288, 20)
+        Me.leStock.StyleController = Me.LayoutControl1
+        Me.leStock.TabIndex = 4
+        '
         'seQuantity
         '
         Me.seQuantity.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seQuantity.EnterMoveNextControl = True
-        Me.seQuantity.Location = New System.Drawing.Point(84, 157)
+        Me.seQuantity.Location = New System.Drawing.Point(84, 181)
         Me.seQuantity.MenuManager = Me.BarManager1
         Me.seQuantity.Name = "seQuantity"
         Me.seQuantity.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.seQuantity.Size = New System.Drawing.Size(288, 20)
         Me.seQuantity.StyleController = Me.LayoutControl1
-        Me.seQuantity.TabIndex = 5
+        Me.seQuantity.TabIndex = 6
         '
         'seRate
         '
         Me.seRate.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seRate.EnterMoveNextControl = True
-        Me.seRate.Location = New System.Drawing.Point(84, 133)
+        Me.seRate.Location = New System.Drawing.Point(84, 157)
         Me.seRate.MenuManager = Me.BarManager1
         Me.seRate.Name = "seRate"
         Me.seRate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.seRate.Size = New System.Drawing.Size(288, 20)
         Me.seRate.StyleController = Me.LayoutControl1
-        Me.seRate.TabIndex = 4
+        Me.seRate.TabIndex = 5
         '
         'cbePaymentType
         '
@@ -597,7 +616,7 @@ Partial Class frmOtherIncome
         'meNote
         '
         Me.meNote.EnterMoveNextControl = True
-        Me.meNote.Location = New System.Drawing.Point(84, 181)
+        Me.meNote.Location = New System.Drawing.Point(84, 205)
         Me.meNote.Name = "meNote"
         Me.meNote.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.meNote.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
@@ -605,7 +624,7 @@ Partial Class frmOtherIncome
         Me.meNote.Properties.ShowIcon = False
         Me.meNote.Size = New System.Drawing.Size(288, 20)
         Me.meNote.StyleController = Me.LayoutControl1
-        Me.meNote.TabIndex = 6
+        Me.meNote.TabIndex = 7
         '
         'seAmount
         '
@@ -669,7 +688,7 @@ Partial Class frmOtherIncome
         'LayoutControlGroup1
         '
         Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.EmptySpaceItem1, Me.EmptySpaceItem5, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem11, Me.LayoutControlItem12})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.EmptySpaceItem1, Me.EmptySpaceItem5, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem11, Me.LayoutControlItem12, Me.LayoutControlItem13})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(743, 411)
@@ -710,9 +729,9 @@ Partial Class frmOtherIncome
         '
         Me.LayoutControlItem4.Control = Me.meNote
         Me.LayoutControlItem4.CustomizationFormText = "Note"
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 169)
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 193)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(364, 222)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(364, 198)
         Me.LayoutControlItem4.Text = "Note"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(69, 13)
         '
@@ -765,7 +784,7 @@ Partial Class frmOtherIncome
         '
         Me.LayoutControlItem11.Control = Me.seRate
         Me.LayoutControlItem11.CustomizationFormText = "Rate"
-        Me.LayoutControlItem11.Location = New System.Drawing.Point(0, 121)
+        Me.LayoutControlItem11.Location = New System.Drawing.Point(0, 145)
         Me.LayoutControlItem11.Name = "LayoutControlItem11"
         Me.LayoutControlItem11.Size = New System.Drawing.Size(364, 24)
         Me.LayoutControlItem11.Text = "Rate"
@@ -775,11 +794,21 @@ Partial Class frmOtherIncome
         '
         Me.LayoutControlItem12.Control = Me.seQuantity
         Me.LayoutControlItem12.CustomizationFormText = "Quantity"
-        Me.LayoutControlItem12.Location = New System.Drawing.Point(0, 145)
+        Me.LayoutControlItem12.Location = New System.Drawing.Point(0, 169)
         Me.LayoutControlItem12.Name = "LayoutControlItem12"
         Me.LayoutControlItem12.Size = New System.Drawing.Size(364, 24)
         Me.LayoutControlItem12.Text = "Quantity"
         Me.LayoutControlItem12.TextSize = New System.Drawing.Size(69, 13)
+        '
+        'LayoutControlItem13
+        '
+        Me.LayoutControlItem13.Control = Me.leStock
+        Me.LayoutControlItem13.CustomizationFormText = "Stock"
+        Me.LayoutControlItem13.Location = New System.Drawing.Point(0, 121)
+        Me.LayoutControlItem13.Name = "LayoutControlItem13"
+        Me.LayoutControlItem13.Size = New System.Drawing.Size(364, 24)
+        Me.LayoutControlItem13.Text = "Stock"
+        Me.LayoutControlItem13.TextSize = New System.Drawing.Size(69, 13)
         '
         'XtraTabPage2
         '
@@ -787,6 +816,14 @@ Partial Class frmOtherIncome
         Me.XtraTabPage2.Name = "XtraTabPage2"
         Me.XtraTabPage2.Size = New System.Drawing.Size(743, 411)
         Me.XtraTabPage2.Text = "History Record"
+        '
+        'GridColumn13
+        '
+        Me.GridColumn13.Caption = "Stock Code"
+        Me.GridColumn13.FieldName = "StockCode"
+        Me.GridColumn13.Name = "GridColumn13"
+        Me.GridColumn13.Visible = True
+        Me.GridColumn13.VisibleIndex = 4
         '
         'frmOtherIncome
         '
@@ -823,6 +860,7 @@ Partial Class frmOtherIncome
         Me.XtraTabPage1.ResumeLayout(False)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.leStock.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.seQuantity.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.seRate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cbePaymentType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -842,6 +880,7 @@ Partial Class frmOtherIncome
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabPage2.ResumeLayout(False)
         CType(Me.dxvpOtherIncomes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dxvpHistoryData, System.ComponentModel.ISupportInitialize).EndInit()
@@ -912,4 +951,7 @@ Partial Class frmOtherIncome
     Friend WithEvents LayoutControlItem12 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents GridColumn12 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn11 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents leStock As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents LayoutControlItem13 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents GridColumn13 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

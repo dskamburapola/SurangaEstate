@@ -11,12 +11,26 @@ Imports iStockCommon.iStockEnums
 Public Class frmOtherIncome
 
 #Region "Variables"
+
     Private _CWBOtherIncome As iStockCommon.iStockOtherIncome
     Private _CWBCollection As iStockCommon.iStockCollections
     Dim _CWBEnums As iStockCommon.iStockEnums
+    Dim _iStockItems As iStockCommon.iStockStock
+
 #End Region
 
 #Region "Constructors"
+
+    Public ReadOnly Property iStockItems() As iStockCommon.iStockStock
+        Get
+
+            If _iStockItems Is Nothing Then
+                _iStockItems = New iStockCommon.iStockStock
+            End If
+
+            Return _iStockItems
+        End Get
+    End Property
 
     Public ReadOnly Property CWBOtherIncome() As iStockCommon.iStockOtherIncome
         Get
@@ -67,6 +81,11 @@ Public Class frmOtherIncome
         Me.deFromDate.EditValue = Date.Today
         Me.deToDate.EditValue = Date.Today
     End Sub
+
+    Private Sub frmOtherIncome_Activated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Activated
+        PopulateStockItemsGridLookup()
+    End Sub
+
 #End Region
 
 #Region "Bar Button Events"
@@ -199,6 +218,7 @@ Public Class frmOtherIncome
         Me.seRate.EditValue = 0
         Me.seQuantity.EditValue = 0
         dxvpOtherIncomes.RemoveControlError(lupOtherIncomeType)
+        Me.leStock.EditValue = Nothing
         Me.lupOtherIncomeType.Focus()
 
     End Sub
@@ -286,7 +306,8 @@ Public Class frmOtherIncome
                 .Note = Me.meNote.EditValue
                 .CreatedBy = UserID
                 .UpdatedBy = UserID
-                .InsertExpnese(_DB, _Transaction)
+                .StockID = leStock.EditValue
+                .InsertOtherIncome(_DB, _Transaction)
 
                 With CWBCollection
                     .SystemID = CWBOtherIncome.CurrentOtherIncomeID
@@ -356,9 +377,9 @@ Public Class frmOtherIncome
                 .Note = Me.meNote.EditValue
                 .CreatedBy = UserID
                 .UpdatedBy = UserID
-                .InsertExpnese(_DB, _Transaction)
+                .StockID = leStock.EditValue
 
-
+                .InsertOtherIncome(_DB, _Transaction)
 
                 With CWBCollection
 
@@ -487,7 +508,7 @@ Public Class frmOtherIncome
                 seRate.EditValue = .Rate
                 seQuantity.EditValue = .Quantity
                 meNote.EditValue = .Note
-
+                leStock.EditValue = .StockID
 
             End With
         End If
@@ -517,4 +538,22 @@ Public Class frmOtherIncome
     End Sub
 #End Region
 
+#Region "Populate Stock Items Grid Lookup"
+    Public Sub PopulateStockItemsGridLookup()
+
+        Try
+            With leStock
+                .Properties.DataSource = iStockItems.GetAllStockItems.Tables(0)
+                .Properties.DisplayMember = "StockCode"
+                .Properties.ValueMember = "StockID"
+            End With
+
+
+        Catch ex As Exception
+            MessageError(ex.ToString)
+        End Try
+    End Sub
+#End Region
+
+  
 End Class
