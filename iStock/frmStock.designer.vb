@@ -306,13 +306,13 @@ Partial Class frmStock
         '
         Me.ceStockType.EditValue = "STOCK ITEM"
         Me.ceStockType.EnterMoveNextControl = True
-        Me.ceStockType.Location = New System.Drawing.Point(125, 97)
+        Me.ceStockType.Location = New System.Drawing.Point(124, 96)
         Me.ceStockType.Name = "ceStockType"
         Me.ceStockType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.ceStockType.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.ceStockType.Properties.Items.AddRange(New Object() {"STOCK ITEM", "SERVICE"})
         Me.ceStockType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
-        Me.ceStockType.Size = New System.Drawing.Size(291, 20)
+        Me.ceStockType.Size = New System.Drawing.Size(292, 20)
         Me.ceStockType.StyleController = Me.LayoutControl1
         Me.ceStockType.TabIndex = 2
         ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -322,7 +322,7 @@ Partial Class frmStock
         'seCurrentStockValue
         '
         Me.seCurrentStockValue.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.seCurrentStockValue.Location = New System.Drawing.Point(557, 266)
+        Me.seCurrentStockValue.Location = New System.Drawing.Point(556, 265)
         Me.seCurrentStockValue.Name = "seCurrentStockValue"
         Me.seCurrentStockValue.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.seCurrentStockValue.Properties.DisplayFormat.FormatString = "F"
@@ -330,7 +330,7 @@ Partial Class frmStock
         Me.seCurrentStockValue.Properties.EditFormat.FormatString = "F"
         Me.seCurrentStockValue.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.seCurrentStockValue.Properties.MaxValue = New Decimal(New Integer() {2147483647, 0, 0, 0})
-        Me.seCurrentStockValue.Size = New System.Drawing.Size(50, 20)
+        Me.seCurrentStockValue.Size = New System.Drawing.Size(51, 20)
         Me.seCurrentStockValue.StyleController = Me.LayoutControl1
         Me.seCurrentStockValue.TabIndex = 11
         '
@@ -338,7 +338,7 @@ Partial Class frmStock
         '
         Me.seCurrentStockBalance.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seCurrentStockBalance.EnterMoveNextControl = True
-        Me.seCurrentStockBalance.Location = New System.Drawing.Point(533, 175)
+        Me.seCurrentStockBalance.Location = New System.Drawing.Point(532, 174)
         Me.seCurrentStockBalance.Name = "seCurrentStockBalance"
         Me.seCurrentStockBalance.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.seCurrentStockBalance.Properties.DisplayFormat.FormatString = "F"
@@ -346,13 +346,13 @@ Partial Class frmStock
         Me.seCurrentStockBalance.Properties.EditFormat.FormatString = "F"
         Me.seCurrentStockBalance.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.seCurrentStockBalance.Properties.MaxValue = New Decimal(New Integer() {2147483647, 0, 0, 0})
-        Me.seCurrentStockBalance.Size = New System.Drawing.Size(291, 20)
+        Me.seCurrentStockBalance.Size = New System.Drawing.Size(292, 20)
         Me.seCurrentStockBalance.StyleController = Me.LayoutControl1
         Me.seCurrentStockBalance.TabIndex = 10
         '
         'lblID
         '
-        Me.lblID.Location = New System.Drawing.Point(12, 32)
+        Me.lblID.Location = New System.Drawing.Point(12, 31)
         Me.lblID.Name = "lblID"
         Me.lblID.Size = New System.Drawing.Size(812, 13)
         Me.lblID.StyleController = Me.LayoutControl1
@@ -362,7 +362,7 @@ Partial Class frmStock
         '
         Me.seOpeningStockValue.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seOpeningStockValue.EnterMoveNextControl = True
-        Me.seOpeningStockValue.Location = New System.Drawing.Point(557, 242)
+        Me.seOpeningStockValue.Location = New System.Drawing.Point(556, 241)
         Me.seOpeningStockValue.Name = "seOpeningStockValue"
         Me.seOpeningStockValue.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.seOpeningStockValue.Properties.DisplayFormat.FormatString = "F"
@@ -370,7 +370,7 @@ Partial Class frmStock
         Me.seOpeningStockValue.Properties.EditFormat.FormatString = "F"
         Me.seOpeningStockValue.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.seOpeningStockValue.Properties.MaxValue = New Decimal(New Integer() {2147483647, 0, 0, 0})
-        Me.seOpeningStockValue.Size = New System.Drawing.Size(50, 20)
+        Me.seOpeningStockValue.Size = New System.Drawing.Size(51, 20)
         Me.seOpeningStockValue.StyleController = Me.LayoutControl1
         Me.seOpeningStockValue.TabIndex = 9
         '
@@ -378,7 +378,7 @@ Partial Class frmStock
         '
         Me.seOpeningStockBalance.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seOpeningStockBalance.EnterMoveNextControl = True
-        Me.seOpeningStockBalance.Location = New System.Drawing.Point(533, 151)
+        Me.seOpeningStockBalance.Location = New System.Drawing.Point(532, 150)
         Me.seOpeningStockBalance.Name = "seOpeningStockBalance"
         Me.seOpeningStockBalance.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.seOpeningStockBalance.Properties.DisplayFormat.FormatString = "F"
@@ -386,7 +386,7 @@ Partial Class frmStock
         Me.seOpeningStockBalance.Properties.EditFormat.FormatString = "F"
         Me.seOpeningStockBalance.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.seOpeningStockBalance.Properties.MaxValue = New Decimal(New Integer() {2147483647, 0, 0, 0})
-        Me.seOpeningStockBalance.Size = New System.Drawing.Size(291, 20)
+        Me.seOpeningStockBalance.Size = New System.Drawing.Size(292, 20)
         Me.seOpeningStockBalance.StyleController = Me.LayoutControl1
         Me.seOpeningStockBalance.TabIndex = 8
         '
@@ -394,7 +394,7 @@ Partial Class frmStock
         '
         Me.seReorderLevel.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seReorderLevel.EnterMoveNextControl = True
-        Me.seReorderLevel.Location = New System.Drawing.Point(125, 175)
+        Me.seReorderLevel.Location = New System.Drawing.Point(124, 174)
         Me.seReorderLevel.Name = "seReorderLevel"
         Me.seReorderLevel.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.seReorderLevel.Properties.DisplayFormat.FormatString = "F"
@@ -402,19 +402,19 @@ Partial Class frmStock
         Me.seReorderLevel.Properties.EditFormat.FormatString = "F"
         Me.seReorderLevel.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.seReorderLevel.Properties.MaxValue = New Decimal(New Integer() {2147483647, 0, 0, 0})
-        Me.seReorderLevel.Size = New System.Drawing.Size(291, 20)
+        Me.seReorderLevel.Size = New System.Drawing.Size(292, 20)
         Me.seReorderLevel.StyleController = Me.LayoutControl1
         Me.seReorderLevel.TabIndex = 5
         '
         'lupSupplier
         '
         Me.lupSupplier.EnterMoveNextControl = True
-        Me.lupSupplier.Location = New System.Drawing.Point(125, 151)
+        Me.lupSupplier.Location = New System.Drawing.Point(124, 150)
         Me.lupSupplier.Name = "lupSupplier"
         Me.lupSupplier.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lupSupplier.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("SupplierNo", "Supplier No"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("SupplierName", "Supplier Name")})
         Me.lupSupplier.Properties.NullText = ""
-        Me.lupSupplier.Size = New System.Drawing.Size(291, 20)
+        Me.lupSupplier.Size = New System.Drawing.Size(292, 20)
         Me.lupSupplier.StyleController = Me.LayoutControl1
         Me.lupSupplier.TabIndex = 4
         ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -425,7 +425,7 @@ Partial Class frmStock
         '
         Me.seSalesPrice.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seSalesPrice.EnterMoveNextControl = True
-        Me.seSalesPrice.Location = New System.Drawing.Point(533, 121)
+        Me.seSalesPrice.Location = New System.Drawing.Point(532, 120)
         Me.seSalesPrice.Name = "seSalesPrice"
         Me.seSalesPrice.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.seSalesPrice.Properties.DisplayFormat.FormatString = "F"
@@ -433,7 +433,7 @@ Partial Class frmStock
         Me.seSalesPrice.Properties.EditFormat.FormatString = "F"
         Me.seSalesPrice.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.seSalesPrice.Properties.MaxValue = New Decimal(New Integer() {2147483647, 0, 0, 0})
-        Me.seSalesPrice.Size = New System.Drawing.Size(291, 20)
+        Me.seSalesPrice.Size = New System.Drawing.Size(292, 20)
         Me.seSalesPrice.StyleController = Me.LayoutControl1
         Me.seSalesPrice.TabIndex = 7
         '
@@ -441,7 +441,7 @@ Partial Class frmStock
         '
         Me.sePurchasePrice.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.sePurchasePrice.EnterMoveNextControl = True
-        Me.sePurchasePrice.Location = New System.Drawing.Point(533, 97)
+        Me.sePurchasePrice.Location = New System.Drawing.Point(532, 96)
         Me.sePurchasePrice.Name = "sePurchasePrice"
         Me.sePurchasePrice.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.sePurchasePrice.Properties.DisplayFormat.FormatString = "F"
@@ -449,21 +449,21 @@ Partial Class frmStock
         Me.sePurchasePrice.Properties.EditFormat.FormatString = "F"
         Me.sePurchasePrice.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.sePurchasePrice.Properties.MaxValue = New Decimal(New Integer() {2147483647, 0, 0, 0})
-        Me.sePurchasePrice.Size = New System.Drawing.Size(291, 20)
+        Me.sePurchasePrice.Size = New System.Drawing.Size(292, 20)
         Me.sePurchasePrice.StyleController = Me.LayoutControl1
         Me.sePurchasePrice.TabIndex = 6
         '
         'LupStockCategory
         '
         Me.LupStockCategory.EnterMoveNextControl = True
-        Me.LupStockCategory.Location = New System.Drawing.Point(125, 124)
+        Me.LupStockCategory.Location = New System.Drawing.Point(124, 123)
         Me.LupStockCategory.Name = "LupStockCategory"
         Me.LupStockCategory.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Save", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, "", Nothing, Nothing, False), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Delete", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject2, "", Nothing, Nothing, False)})
         Me.LupStockCategory.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.LupStockCategory.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "Stock Category")})
         Me.LupStockCategory.Properties.NullText = ""
         Me.LupStockCategory.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
-        Me.LupStockCategory.Size = New System.Drawing.Size(291, 20)
+        Me.LupStockCategory.Size = New System.Drawing.Size(292, 20)
         Me.LupStockCategory.StyleController = Me.LayoutControl1
         Me.LupStockCategory.TabIndex = 3
         ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -473,10 +473,10 @@ Partial Class frmStock
         'teDescription
         '
         Me.teDescription.EnterMoveNextControl = True
-        Me.teDescription.Location = New System.Drawing.Point(125, 73)
+        Me.teDescription.Location = New System.Drawing.Point(124, 72)
         Me.teDescription.Name = "teDescription"
         Me.teDescription.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.teDescription.Size = New System.Drawing.Size(291, 20)
+        Me.teDescription.Size = New System.Drawing.Size(292, 20)
         Me.teDescription.StyleController = Me.LayoutControl1
         Me.teDescription.TabIndex = 1
         ConditionValidatonRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -486,10 +486,10 @@ Partial Class frmStock
         'teStockCode
         '
         Me.teStockCode.EnterMoveNextControl = True
-        Me.teStockCode.Location = New System.Drawing.Point(125, 49)
+        Me.teStockCode.Location = New System.Drawing.Point(124, 48)
         Me.teStockCode.Name = "teStockCode"
         Me.teStockCode.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.teStockCode.Size = New System.Drawing.Size(86, 20)
+        Me.teStockCode.Size = New System.Drawing.Size(87, 20)
         Me.teStockCode.StyleController = Me.LayoutControl1
         Me.teStockCode.TabIndex = 0
         ConditionValidatonRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -510,7 +510,7 @@ Partial Class frmStock
         '
         Me.LayoutControlItem1.Control = Me.teStockCode
         Me.LayoutControlItem1.CustomizationFormText = "Stock Code"
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 37)
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 36)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
         Me.LayoutControlItem1.Size = New System.Drawing.Size(203, 24)
         Me.LayoutControlItem1.Text = "Stock Code"
@@ -520,7 +520,7 @@ Partial Class frmStock
         '
         Me.LayoutControlItem2.Control = Me.teDescription
         Me.LayoutControlItem2.CustomizationFormText = "Description"
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 61)
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 60)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
         Me.LayoutControlItem2.Size = New System.Drawing.Size(408, 24)
         Me.LayoutControlItem2.Text = "Description"
@@ -530,7 +530,7 @@ Partial Class frmStock
         '
         Me.LayoutControlItem10.Control = Me.lblID
         Me.LayoutControlItem10.CustomizationFormText = "LayoutControlItem10"
-        Me.LayoutControlItem10.Location = New System.Drawing.Point(0, 20)
+        Me.LayoutControlItem10.Location = New System.Drawing.Point(0, 19)
         Me.LayoutControlItem10.Name = "LayoutControlItem10"
         Me.LayoutControlItem10.Size = New System.Drawing.Size(816, 17)
         Me.LayoutControlItem10.Text = "LayoutControlItem10"
@@ -547,7 +547,7 @@ Partial Class frmStock
         Me.EmptySpaceItem1.MaxSize = New System.Drawing.Size(0, 25)
         Me.EmptySpaceItem1.MinSize = New System.Drawing.Size(10, 10)
         Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(816, 20)
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(816, 19)
         Me.EmptySpaceItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
@@ -556,7 +556,7 @@ Partial Class frmStock
         '
         Me.EmptySpaceItem4.AllowHotTrack = False
         Me.EmptySpaceItem4.CustomizationFormText = "EmptySpaceItem4"
-        Me.EmptySpaceItem4.Location = New System.Drawing.Point(203, 37)
+        Me.EmptySpaceItem4.Location = New System.Drawing.Point(203, 36)
         Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
         Me.EmptySpaceItem4.Size = New System.Drawing.Size(613, 24)
         Me.EmptySpaceItem4.Text = "EmptySpaceItem4"
@@ -566,7 +566,7 @@ Partial Class frmStock
         '
         Me.LayoutControlItem3.Control = Me.LupStockCategory
         Me.LayoutControlItem3.CustomizationFormText = "Stock Category"
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 109)
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 108)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
         Me.LayoutControlItem3.Padding = New DevExpress.XtraLayout.Utils.Padding(2, 2, 5, 5)
         Me.LayoutControlItem3.Size = New System.Drawing.Size(408, 30)
@@ -577,7 +577,7 @@ Partial Class frmStock
         '
         Me.EmptySpaceItem3.AllowHotTrack = False
         Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(408, 61)
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(408, 60)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
         Me.EmptySpaceItem3.Size = New System.Drawing.Size(408, 24)
         Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
@@ -587,7 +587,7 @@ Partial Class frmStock
         '
         Me.LayoutControlItem13.Control = Me.ceStockType
         Me.LayoutControlItem13.CustomizationFormText = "Type"
-        Me.LayoutControlItem13.Location = New System.Drawing.Point(0, 85)
+        Me.LayoutControlItem13.Location = New System.Drawing.Point(0, 84)
         Me.LayoutControlItem13.Name = "LayoutControlItem13"
         Me.LayoutControlItem13.Size = New System.Drawing.Size(408, 24)
         Me.LayoutControlItem13.Text = "Type"
@@ -597,7 +597,7 @@ Partial Class frmStock
         '
         Me.LayoutControlItem4.Control = Me.sePurchasePrice
         Me.LayoutControlItem4.CustomizationFormText = "Purchasing Price"
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(408, 85)
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(408, 84)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
         Me.LayoutControlItem4.Size = New System.Drawing.Size(408, 24)
         Me.LayoutControlItem4.Text = "Purchasing Price"
@@ -607,7 +607,7 @@ Partial Class frmStock
         '
         Me.LayoutControlItem5.Control = Me.seSalesPrice
         Me.LayoutControlItem5.CustomizationFormText = "Sales Price"
-        Me.LayoutControlItem5.Location = New System.Drawing.Point(408, 109)
+        Me.LayoutControlItem5.Location = New System.Drawing.Point(408, 108)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
         Me.LayoutControlItem5.Size = New System.Drawing.Size(408, 30)
         Me.LayoutControlItem5.Text = "Sales Price"
@@ -617,7 +617,7 @@ Partial Class frmStock
         '
         Me.LayoutControlItem6.Control = Me.lupSupplier
         Me.LayoutControlItem6.CustomizationFormText = "Supplier"
-        Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 139)
+        Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 138)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
         Me.LayoutControlItem6.Size = New System.Drawing.Size(408, 24)
         Me.LayoutControlItem6.Text = "Supplier"
@@ -627,7 +627,7 @@ Partial Class frmStock
         '
         Me.LayoutControlItem8.Control = Me.seOpeningStockBalance
         Me.LayoutControlItem8.CustomizationFormText = "Stock Balance"
-        Me.LayoutControlItem8.Location = New System.Drawing.Point(408, 139)
+        Me.LayoutControlItem8.Location = New System.Drawing.Point(408, 138)
         Me.LayoutControlItem8.Name = "LayoutControlItem8"
         Me.LayoutControlItem8.Size = New System.Drawing.Size(408, 24)
         Me.LayoutControlItem8.Text = "Opening Stock Balance"
@@ -637,7 +637,7 @@ Partial Class frmStock
         '
         Me.LayoutControlItem7.Control = Me.seReorderLevel
         Me.LayoutControlItem7.CustomizationFormText = "Reorder Level"
-        Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 163)
+        Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 162)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
         Me.LayoutControlItem7.Size = New System.Drawing.Size(408, 24)
         Me.LayoutControlItem7.Text = "Reorder Level"
@@ -647,7 +647,7 @@ Partial Class frmStock
         '
         Me.EmptySpaceItem2.AllowHotTrack = False
         Me.EmptySpaceItem2.CustomizationFormText = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(0, 218)
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(0, 217)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
         Me.EmptySpaceItem2.Size = New System.Drawing.Size(420, 49)
         Me.EmptySpaceItem2.Text = "EmptySpaceItem2"
@@ -657,7 +657,7 @@ Partial Class frmStock
         '
         Me.EmptySpaceItem5.AllowHotTrack = False
         Me.EmptySpaceItem5.CustomizationFormText = "EmptySpaceItem5"
-        Me.EmptySpaceItem5.Location = New System.Drawing.Point(0, 267)
+        Me.EmptySpaceItem5.Location = New System.Drawing.Point(0, 266)
         Me.EmptySpaceItem5.Name = "EmptySpaceItem5"
         Me.EmptySpaceItem5.Size = New System.Drawing.Size(420, 23)
         Me.EmptySpaceItem5.Text = "EmptySpaceItem5"
@@ -667,7 +667,7 @@ Partial Class frmStock
         '
         Me.EmptySpaceItem6.AllowHotTrack = False
         Me.EmptySpaceItem6.CustomizationFormText = "EmptySpaceItem6"
-        Me.EmptySpaceItem6.Location = New System.Drawing.Point(611, 218)
+        Me.EmptySpaceItem6.Location = New System.Drawing.Point(611, 217)
         Me.EmptySpaceItem6.Name = "EmptySpaceItem6"
         Me.EmptySpaceItem6.Size = New System.Drawing.Size(205, 19)
         Me.EmptySpaceItem6.Text = "EmptySpaceItem6"
@@ -677,7 +677,7 @@ Partial Class frmStock
         '
         Me.EmptySpaceItem7.AllowHotTrack = False
         Me.EmptySpaceItem7.CustomizationFormText = "EmptySpaceItem7"
-        Me.EmptySpaceItem7.Location = New System.Drawing.Point(611, 237)
+        Me.EmptySpaceItem7.Location = New System.Drawing.Point(611, 236)
         Me.EmptySpaceItem7.Name = "EmptySpaceItem7"
         Me.EmptySpaceItem7.Size = New System.Drawing.Size(205, 53)
         Me.EmptySpaceItem7.Text = "EmptySpaceItem7"
@@ -687,7 +687,7 @@ Partial Class frmStock
         '
         Me.EmptySpaceItem8.AllowHotTrack = False
         Me.EmptySpaceItem8.CustomizationFormText = "EmptySpaceItem8"
-        Me.EmptySpaceItem8.Location = New System.Drawing.Point(0, 187)
+        Me.EmptySpaceItem8.Location = New System.Drawing.Point(0, 186)
         Me.EmptySpaceItem8.MaxSize = New System.Drawing.Size(0, 31)
         Me.EmptySpaceItem8.MinSize = New System.Drawing.Size(10, 31)
         Me.EmptySpaceItem8.Name = "EmptySpaceItem8"
@@ -700,7 +700,7 @@ Partial Class frmStock
         '
         Me.LayoutControlGroup2.CustomizationFormText = "LayoutControlGroup2"
         Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem12, Me.LayoutControlItem9})
-        Me.LayoutControlGroup2.Location = New System.Drawing.Point(420, 218)
+        Me.LayoutControlGroup2.Location = New System.Drawing.Point(420, 217)
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
         Me.LayoutControlGroup2.Size = New System.Drawing.Size(191, 72)
         Me.LayoutControlGroup2.Text = "LayoutControlGroup2"
@@ -733,9 +733,9 @@ Partial Class frmStock
         '
         Me.EmptySpaceItem10.AllowHotTrack = False
         Me.EmptySpaceItem10.CustomizationFormText = "EmptySpaceItem10"
-        Me.EmptySpaceItem10.Location = New System.Drawing.Point(0, 290)
+        Me.EmptySpaceItem10.Location = New System.Drawing.Point(0, 289)
         Me.EmptySpaceItem10.Name = "EmptySpaceItem10"
-        Me.EmptySpaceItem10.Size = New System.Drawing.Size(816, 47)
+        Me.EmptySpaceItem10.Size = New System.Drawing.Size(816, 48)
         Me.EmptySpaceItem10.Text = "EmptySpaceItem10"
         Me.EmptySpaceItem10.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -743,7 +743,7 @@ Partial Class frmStock
         '
         Me.LayoutControlItem11.Control = Me.seCurrentStockBalance
         Me.LayoutControlItem11.CustomizationFormText = "Current Stock Balance"
-        Me.LayoutControlItem11.Location = New System.Drawing.Point(408, 163)
+        Me.LayoutControlItem11.Location = New System.Drawing.Point(408, 162)
         Me.LayoutControlItem11.Name = "LayoutControlItem11"
         Me.LayoutControlItem11.Size = New System.Drawing.Size(408, 24)
         Me.LayoutControlItem11.Text = "Current Stock Balance"
@@ -955,7 +955,7 @@ Partial Class frmStock
         Me.Controls.Add(Me.barDockControlTop)
         Me.KeyPreview = True
         Me.Name = "frmStock"
-        Me.Text = "Stock Items"
+        Me.Text = "Inventory Items"
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.xTab1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.xTab1.ResumeLayout(False)

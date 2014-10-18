@@ -38,12 +38,18 @@
     Private Sub frmChart_income_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.LoadYears()
 
-
-
     End Sub
+
     Private Sub frmChart_income_Activated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Activated
         PopulateOtherIncomeTypesLookup()
     End Sub
+
+    Private Sub frmChart_income_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles MyBase.KeyPress
+        If e.KeyChar = Chr(27) Then
+            Me.Close()
+        End If
+    End Sub
+
 #End Region
 
 #Region "Populate Years"
@@ -126,4 +132,5 @@
 #End Region
 
    
+    
 End Class

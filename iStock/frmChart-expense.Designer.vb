@@ -20,9 +20,9 @@ Partial Class frmChart_expense
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
-        Dim SideBySideBarSeriesLabel1 As DevExpress.XtraCharts.SideBySideBarSeriesLabel = New DevExpress.XtraCharts.SideBySideBarSeriesLabel()
-        Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim SideBySideBarSeriesLabel2 As DevExpress.XtraCharts.SideBySideBarSeriesLabel = New DevExpress.XtraCharts.SideBySideBarSeriesLabel()
+        Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.sbPrint = New DevExpress.XtraEditors.SimpleButton()
         Me.leYear = New DevExpress.XtraEditors.LookUpEdit()
@@ -42,7 +42,7 @@ Partial Class frmChart_expense
         Me.LayoutControl1.SuspendLayout()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Chart, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(SideBySideBarSeriesLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(SideBySideBarSeriesLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lupExpenseType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,9 +89,9 @@ Partial Class frmChart_expense
         Me.leYear.Size = New System.Drawing.Size(75, 20)
         Me.leYear.StyleController = Me.LayoutControl1
         Me.leYear.TabIndex = 7
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "Require"
-        Me.dxvpCommon.SetValidationRule(Me.leYear, ConditionValidationRule1)
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule2.ErrorText = "Require"
+        Me.dxvpCommon.SetValidationRule(Me.leYear, ConditionValidationRule2)
         '
         'Chart
         '
@@ -99,8 +99,8 @@ Partial Class frmChart_expense
         Me.Chart.Location = New System.Drawing.Point(12, 38)
         Me.Chart.Name = "Chart"
         Me.Chart.SeriesSerializable = New DevExpress.XtraCharts.Series(-1) {}
-        SideBySideBarSeriesLabel1.LineVisible = True
-        Me.Chart.SeriesTemplate.Label = SideBySideBarSeriesLabel1
+        SideBySideBarSeriesLabel2.LineVisible = True
+        Me.Chart.SeriesTemplate.Label = SideBySideBarSeriesLabel2
         Me.Chart.Size = New System.Drawing.Size(559, 390)
         Me.Chart.TabIndex = 6
         '
@@ -117,7 +117,7 @@ Partial Class frmChart_expense
         '
         Me.lupExpenseType.Location = New System.Drawing.Point(83, 12)
         Me.lupExpenseType.Name = "lupExpenseType"
-        Me.lupExpenseType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Clear", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, "", Nothing, Nothing, True)})
+        Me.lupExpenseType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Clear", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject2, "", Nothing, Nothing, True)})
         Me.lupExpenseType.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "Type")})
         Me.lupExpenseType.Properties.NullText = ""
         Me.lupExpenseType.Size = New System.Drawing.Size(125, 20)
@@ -230,12 +230,13 @@ Partial Class frmChart_expense
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(583, 474)
         Me.Controls.Add(Me.LayoutControl1)
+        Me.KeyPreview = True
         Me.Name = "frmChart_expense"
         Me.Text = "Expense"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(SideBySideBarSeriesLabel1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(SideBySideBarSeriesLabel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Chart, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lupExpenseType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()

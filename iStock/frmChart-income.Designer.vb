@@ -20,39 +20,39 @@ Partial Class frmChart_income
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
-        Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SideBySideBarSeriesLabel1 As DevExpress.XtraCharts.SideBySideBarSeriesLabel = New DevExpress.XtraCharts.SideBySideBarSeriesLabel()
+        Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim SideBySideBarSeriesLabel2 As DevExpress.XtraCharts.SideBySideBarSeriesLabel = New DevExpress.XtraCharts.SideBySideBarSeriesLabel()
+        Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.sbPrint = New DevExpress.XtraEditors.SimpleButton()
         Me.leYear = New DevExpress.XtraEditors.LookUpEdit()
+        Me.Chart = New DevExpress.XtraCharts.ChartControl()
         Me.sbProcess = New DevExpress.XtraEditors.SimpleButton()
         Me.lupOtherIncomeType = New DevExpress.XtraEditors.LookUpEdit()
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.dxvpCommon = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
-        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.Chart = New DevExpress.XtraCharts.ChartControl()
-        Me.sbPrint = New DevExpress.XtraEditors.SimpleButton()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.dxvpCommon = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Chart, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(SideBySideBarSeriesLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lupOtherIncomeType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dxvpCommon, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Chart, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(SideBySideBarSeriesLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dxvpCommon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -70,6 +70,15 @@ Partial Class frmChart_income
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
+        'sbPrint
+        '
+        Me.sbPrint.Location = New System.Drawing.Point(425, 432)
+        Me.sbPrint.Name = "sbPrint"
+        Me.sbPrint.Size = New System.Drawing.Size(146, 30)
+        Me.sbPrint.StyleController = Me.LayoutControl1
+        Me.sbPrint.TabIndex = 8
+        Me.sbPrint.Text = "Print"
+        '
         'leYear
         '
         Me.leYear.Location = New System.Drawing.Point(277, 12)
@@ -80,9 +89,20 @@ Partial Class frmChart_income
         Me.leYear.Size = New System.Drawing.Size(81, 20)
         Me.leYear.StyleController = Me.LayoutControl1
         Me.leYear.TabIndex = 7
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "Require"
-        Me.dxvpCommon.SetValidationRule(Me.leYear, ConditionValidationRule1)
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule2.ErrorText = "Require"
+        Me.dxvpCommon.SetValidationRule(Me.leYear, ConditionValidationRule2)
+        '
+        'Chart
+        '
+        Me.Chart.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.Chart.Location = New System.Drawing.Point(12, 38)
+        Me.Chart.Name = "Chart"
+        Me.Chart.SeriesSerializable = New DevExpress.XtraCharts.Series(-1) {}
+        SideBySideBarSeriesLabel2.LineVisible = True
+        Me.Chart.SeriesTemplate.Label = SideBySideBarSeriesLabel2
+        Me.Chart.Size = New System.Drawing.Size(559, 390)
+        Me.Chart.TabIndex = 6
         '
         'sbProcess
         '
@@ -97,7 +117,7 @@ Partial Class frmChart_income
         '
         Me.lupOtherIncomeType.Location = New System.Drawing.Point(77, 12)
         Me.lupOtherIncomeType.Name = "lupOtherIncomeType"
-        Me.lupOtherIncomeType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Clear", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, "", Nothing, Nothing, True)})
+        Me.lupOtherIncomeType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Clear", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject2, "", Nothing, Nothing, True)})
         Me.lupOtherIncomeType.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "Type")})
         Me.lupOtherIncomeType.Properties.NullText = ""
         Me.lupOtherIncomeType.Size = New System.Drawing.Size(131, 20)
@@ -144,6 +164,18 @@ Partial Class frmChart_income
         Me.LayoutControlItem2.TextToControlDistance = 0
         Me.LayoutControlItem2.TextVisible = False
         '
+        'LayoutControlItem3
+        '
+        Me.LayoutControlItem3.Control = Me.Chart
+        Me.LayoutControlItem3.CustomizationFormText = "LayoutControlItem3"
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 26)
+        Me.LayoutControlItem3.Name = "LayoutControlItem3"
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(563, 394)
+        Me.LayoutControlItem3.Text = "LayoutControlItem3"
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem3.TextToControlDistance = 0
+        Me.LayoutControlItem3.TextVisible = False
+        '
         'EmptySpaceItem1
         '
         Me.EmptySpaceItem1.AllowHotTrack = False
@@ -166,38 +198,6 @@ Partial Class frmChart_income
         Me.LayoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem4.Text = "Year"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(62, 13)
-        '
-        'LayoutControlItem3
-        '
-        Me.LayoutControlItem3.Control = Me.Chart
-        Me.LayoutControlItem3.CustomizationFormText = "LayoutControlItem3"
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 26)
-        Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(563, 394)
-        Me.LayoutControlItem3.Text = "LayoutControlItem3"
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem3.TextToControlDistance = 0
-        Me.LayoutControlItem3.TextVisible = False
-        '
-        'Chart
-        '
-        Me.Chart.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.Chart.Location = New System.Drawing.Point(12, 38)
-        Me.Chart.Name = "Chart"
-        Me.Chart.SeriesSerializable = New DevExpress.XtraCharts.Series(-1) {}
-        SideBySideBarSeriesLabel1.LineVisible = True
-        Me.Chart.SeriesTemplate.Label = SideBySideBarSeriesLabel1
-        Me.Chart.Size = New System.Drawing.Size(559, 390)
-        Me.Chart.TabIndex = 6
-        '
-        'sbPrint
-        '
-        Me.sbPrint.Location = New System.Drawing.Point(425, 432)
-        Me.sbPrint.Name = "sbPrint"
-        Me.sbPrint.Size = New System.Drawing.Size(146, 30)
-        Me.sbPrint.StyleController = Me.LayoutControl1
-        Me.sbPrint.TabIndex = 8
-        Me.sbPrint.Text = "Print"
         '
         'LayoutControlItem5
         '
@@ -230,23 +230,24 @@ Partial Class frmChart_income
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(583, 474)
         Me.Controls.Add(Me.LayoutControl1)
+        Me.KeyPreview = True
         Me.Name = "frmChart_income"
         Me.Text = "Income"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(SideBySideBarSeriesLabel2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Chart, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lupOtherIncomeType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dxvpCommon, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(SideBySideBarSeriesLabel1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Chart, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dxvpCommon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
