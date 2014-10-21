@@ -9,6 +9,8 @@ Public Class iStockSettings
     Private _AbbreviationID As Int64
     Private _AbbreviationCode As String
     Private _AbbreviationDesc As String
+    Private _IsOutPutTypes As String
+
 
     Private _PayChitCost As Decimal
     Private _DevalutionAllowance As Decimal
@@ -32,6 +34,16 @@ Public Class iStockSettings
 #End Region
 
 #Region "Properties"
+
+    Public Property IsOutPutTypes() As String
+        Get
+            Return _IsOutPutTypes
+        End Get
+        Set(ByVal value As String)
+            _IsOutPutTypes = value
+        End Set
+    End Property
+
     Public Property AbbreviationID() As Int64
         Get
             Return _AbbreviationID
@@ -233,6 +245,7 @@ Public Class iStockSettings
             Dim DBC As DbCommand = DB.GetStoredProcCommand(ABBREVIATION_INSERT)
             DB.AddInParameter(DBC, "@AbbreviationCode", DbType.String, Me.AbbreviationCode)
             DB.AddInParameter(DBC, "@AbbreviationDesc", DbType.String, Me.AbbreviationDesc)
+            DB.AddInParameter(DBC, "@IsProductionType", DbType.String, Me.IsOutPutTypes)
 
             DB.ExecuteNonQuery(DBC)
         Catch ex As Exception

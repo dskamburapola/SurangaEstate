@@ -225,7 +225,7 @@ Public Class frmSettings
 
                 .AbbreviationCode = Me.teAbbreviationCode.Text
                 .AbbreviationDesc = Me.teAbbreviationDesc.Text
-
+                .IsOutPutTypes = Me.cmbOutputType.SelectedText
                 .InsertAbbreviation()
 
 

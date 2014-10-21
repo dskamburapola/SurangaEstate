@@ -29,6 +29,7 @@ Partial Class frmSettings
         Dim ConditionValidationRule7 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule8 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule9 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule10 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
@@ -45,6 +46,7 @@ Partial Class frmSettings
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.cmbOutputType = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.seCasualOTPayRate = New DevExpress.XtraEditors.SpinEdit()
         Me.seCasualPayRate = New DevExpress.XtraEditors.SpinEdit()
         Me.seETF = New DevExpress.XtraEditors.SpinEdit()
@@ -72,6 +74,7 @@ Partial Class frmSettings
         Me.EmptySpaceItem18 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem18 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem4 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
@@ -94,6 +97,7 @@ Partial Class frmSettings
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.cmbOutputType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.seCasualOTPayRate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.seCasualPayRate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.seETF.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -119,6 +123,7 @@ Partial Class frmSettings
         CType(Me.EmptySpaceItem18, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem18, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -238,6 +243,7 @@ Partial Class frmSettings
         '
         'LayoutControl1
         '
+        Me.LayoutControl1.Controls.Add(Me.cmbOutputType)
         Me.LayoutControl1.Controls.Add(Me.seCasualOTPayRate)
         Me.LayoutControl1.Controls.Add(Me.seCasualPayRate)
         Me.LayoutControl1.Controls.Add(Me.seETF)
@@ -262,6 +268,21 @@ Partial Class frmSettings
         Me.LayoutControl1.Size = New System.Drawing.Size(888, 605)
         Me.LayoutControl1.TabIndex = 4
         Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'cmbOutputType
+        '
+        Me.cmbOutputType.Location = New System.Drawing.Point(313, 146)
+        Me.cmbOutputType.MenuManager = Me.BarManager1
+        Me.cmbOutputType.Name = "cmbOutputType"
+        Me.cmbOutputType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbOutputType.Properties.Items.AddRange(New Object() {"Yes", "No"})
+        Me.cmbOutputType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
+        Me.cmbOutputType.Size = New System.Drawing.Size(104, 20)
+        Me.cmbOutputType.StyleController = Me.LayoutControl1
+        Me.cmbOutputType.TabIndex = 31
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "Require"
+        Me.dxvpCodes.SetValidationRule(Me.cmbOutputType, ConditionValidationRule1)
         '
         'seCasualOTPayRate
         '
@@ -370,9 +391,9 @@ Partial Class frmSettings
         Me.teAbbreviationDesc.Size = New System.Drawing.Size(404, 20)
         Me.teAbbreviationDesc.StyleController = Me.LayoutControl1
         Me.teAbbreviationDesc.TabIndex = 22
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "Require"
-        Me.dxvpCodes.SetValidationRule(Me.teAbbreviationDesc, ConditionValidationRule1)
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule2.ErrorText = "Require"
+        Me.dxvpCodes.SetValidationRule(Me.teAbbreviationDesc, ConditionValidationRule2)
         '
         'teAbbreviationCode
         '
@@ -383,12 +404,12 @@ Partial Class frmSettings
         Me.teAbbreviationCode.Size = New System.Drawing.Size(323, 20)
         Me.teAbbreviationCode.StyleController = Me.LayoutControl1
         Me.teAbbreviationCode.TabIndex = 21
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule2.ErrorText = "Require"
-        Me.dxvpCodes.SetValidationRule(Me.teAbbreviationCode, ConditionValidationRule2)
         ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule3.ErrorText = "Reuire"
-        Me.dxvpSettings.SetValidationRule(Me.teAbbreviationCode, ConditionValidationRule3)
+        ConditionValidationRule3.ErrorText = "Require"
+        Me.dxvpCodes.SetValidationRule(Me.teAbbreviationCode, ConditionValidationRule3)
+        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule4.ErrorText = "Reuire"
+        Me.dxvpSettings.SetValidationRule(Me.teAbbreviationCode, ConditionValidationRule4)
         '
         'seIncentiveDays
         '
@@ -401,10 +422,10 @@ Partial Class frmSettings
         Me.seIncentiveDays.Size = New System.Drawing.Size(145, 20)
         Me.seIncentiveDays.StyleController = Me.LayoutControl1
         Me.seIncentiveDays.TabIndex = 19
-        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
-        ConditionValidationRule4.ErrorText = "This value is not valid"
-        ConditionValidationRule4.Value1 = "0"
-        Me.dxvpSettings.SetValidationRule(Me.seIncentiveDays, ConditionValidationRule4)
+        ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule5.ErrorText = "This value is not valid"
+        ConditionValidationRule5.Value1 = "0"
+        Me.dxvpSettings.SetValidationRule(Me.seIncentiveDays, ConditionValidationRule5)
         '
         'seKgsPerDay
         '
@@ -417,10 +438,10 @@ Partial Class frmSettings
         Me.seKgsPerDay.Size = New System.Drawing.Size(145, 20)
         Me.seKgsPerDay.StyleController = Me.LayoutControl1
         Me.seKgsPerDay.TabIndex = 18
-        ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
-        ConditionValidationRule5.ErrorText = "This value is not valid"
-        ConditionValidationRule5.Value1 = "0"
-        Me.dxvpSettings.SetValidationRule(Me.seKgsPerDay, ConditionValidationRule5)
+        ConditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule6.ErrorText = "This value is not valid"
+        ConditionValidationRule6.Value1 = "0"
+        Me.dxvpSettings.SetValidationRule(Me.seKgsPerDay, ConditionValidationRule6)
         '
         'seOTRate
         '
@@ -433,10 +454,10 @@ Partial Class frmSettings
         Me.seOTRate.Size = New System.Drawing.Size(174, 20)
         Me.seOTRate.StyleController = Me.LayoutControl1
         Me.seOTRate.TabIndex = 17
-        ConditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
-        ConditionValidationRule6.ErrorText = "This value is not valid"
-        ConditionValidationRule6.Value1 = "0"
-        Me.dxvpSettings.SetValidationRule(Me.seOTRate, ConditionValidationRule6)
+        ConditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule7.ErrorText = "This value is not valid"
+        ConditionValidationRule7.Value1 = "0"
+        Me.dxvpSettings.SetValidationRule(Me.seOTRate, ConditionValidationRule7)
         '
         'seDayRate
         '
@@ -449,10 +470,10 @@ Partial Class frmSettings
         Me.seDayRate.Size = New System.Drawing.Size(174, 20)
         Me.seDayRate.StyleController = Me.LayoutControl1
         Me.seDayRate.TabIndex = 16
-        ConditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
-        ConditionValidationRule7.ErrorText = "This value is not valid"
-        ConditionValidationRule7.Value1 = "0"
-        Me.dxvpSettings.SetValidationRule(Me.seDayRate, ConditionValidationRule7)
+        ConditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule8.ErrorText = "This value is not valid"
+        ConditionValidationRule8.Value1 = "0"
+        Me.dxvpSettings.SetValidationRule(Me.seDayRate, ConditionValidationRule8)
         '
         'seDevalutionAllowance
         '
@@ -465,10 +486,10 @@ Partial Class frmSettings
         Me.seDevalutionAllowance.Size = New System.Drawing.Size(145, 20)
         Me.seDevalutionAllowance.StyleController = Me.LayoutControl1
         Me.seDevalutionAllowance.TabIndex = 15
-        ConditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
-        ConditionValidationRule8.ErrorText = "This value is not valid"
-        ConditionValidationRule8.Value1 = "0"
-        Me.dxvpSettings.SetValidationRule(Me.seDevalutionAllowance, ConditionValidationRule8)
+        ConditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule9.ErrorText = "This value is not valid"
+        ConditionValidationRule9.Value1 = "0"
+        Me.dxvpSettings.SetValidationRule(Me.seDevalutionAllowance, ConditionValidationRule9)
         '
         'sePayChitCost
         '
@@ -481,10 +502,10 @@ Partial Class frmSettings
         Me.sePayChitCost.Size = New System.Drawing.Size(174, 20)
         Me.sePayChitCost.StyleController = Me.LayoutControl1
         Me.sePayChitCost.TabIndex = 14
-        ConditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
-        ConditionValidationRule9.ErrorText = "This value is not valid"
-        ConditionValidationRule9.Value1 = "0"
-        Me.dxvpSettings.SetValidationRule(Me.sePayChitCost, ConditionValidationRule9)
+        ConditionValidationRule10.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule10.ErrorText = "This value is not valid"
+        ConditionValidationRule10.Value1 = "0"
+        Me.dxvpSettings.SetValidationRule(Me.sePayChitCost, ConditionValidationRule10)
         '
         'leAbbriviationCode
         '
@@ -530,7 +551,7 @@ Partial Class frmSettings
         'LayoutControlGroup2
         '
         Me.LayoutControlGroup2.CustomizationFormText = "Enter Abbreviation Code Details"
-        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem5, Me.EmptySpaceItem20, Me.LayoutControlItem6, Me.EmptySpaceItem18, Me.LayoutControlItem7, Me.LayoutControlItem8})
+        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem5, Me.EmptySpaceItem20, Me.LayoutControlItem6, Me.EmptySpaceItem18, Me.LayoutControlItem7, Me.LayoutControlItem8, Me.LayoutControlItem18})
         Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 24)
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
         Me.LayoutControlGroup2.Size = New System.Drawing.Size(537, 117)
@@ -571,9 +592,9 @@ Partial Class frmSettings
         '
         Me.EmptySpaceItem18.AllowHotTrack = False
         Me.EmptySpaceItem18.CustomizationFormText = "EmptySpaceItem18"
-        Me.EmptySpaceItem18.Location = New System.Drawing.Point(0, 48)
+        Me.EmptySpaceItem18.Location = New System.Drawing.Point(213, 48)
         Me.EmptySpaceItem18.Name = "EmptySpaceItem18"
-        Me.EmptySpaceItem18.Size = New System.Drawing.Size(427, 26)
+        Me.EmptySpaceItem18.Size = New System.Drawing.Size(214, 26)
         Me.EmptySpaceItem18.Text = "EmptySpaceItem18"
         Me.EmptySpaceItem18.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -600,6 +621,16 @@ Partial Class frmSettings
         Me.LayoutControlItem8.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem8.TextToControlDistance = 0
         Me.LayoutControlItem8.TextVisible = False
+        '
+        'LayoutControlItem18
+        '
+        Me.LayoutControlItem18.Control = Me.cmbOutputType
+        Me.LayoutControlItem18.CustomizationFormText = "Is Output Type"
+        Me.LayoutControlItem18.Location = New System.Drawing.Point(0, 48)
+        Me.LayoutControlItem18.Name = "LayoutControlItem18"
+        Me.LayoutControlItem18.Size = New System.Drawing.Size(213, 26)
+        Me.LayoutControlItem18.Text = "Is Output Type"
+        Me.LayoutControlItem18.TextSize = New System.Drawing.Size(102, 13)
         '
         'EmptySpaceItem1
         '
@@ -786,6 +817,7 @@ Partial Class frmSettings
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.cmbOutputType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.seCasualOTPayRate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.seCasualPayRate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.seETF.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -811,6 +843,7 @@ Partial Class frmSettings
         CType(Me.EmptySpaceItem18, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem18, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -893,4 +926,7 @@ Partial Class frmSettings
     Friend WithEvents EmptySpaceItem4 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents LayoutControlGroup4 As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents dxvpCodes As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
+    Friend WithEvents CheckedListBoxControl1 As DevExpress.XtraEditors.CheckedListBoxControl
+    Friend WithEvents cmbOutputType As DevExpress.XtraEditors.ComboBoxEdit
+    Friend WithEvents LayoutControlItem18 As DevExpress.XtraLayout.LayoutControlItem
 End Class
