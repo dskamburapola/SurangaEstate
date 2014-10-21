@@ -60,6 +60,7 @@ Partial Class frmMain
         Me.BarButtonItem31 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem32 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem33 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem34 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup8 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -111,9 +112,9 @@ Partial Class frmMain
         Me.RibbonControl.ApplicationButtonDropDownControl = Me.ApplicationMenu1
         Me.RibbonControl.ApplicationIcon = Global.iStock.My.Resources.Resources.i
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonItem11, Me.BarButtonItem12, Me.BarButtonItem13, Me.BarButtonItem14, Me.bsiInformation, Me.bsiLoggedUser, Me.BarButtonItem15, Me.BarButtonItem16, Me.BarButtonItem17, Me.BarButtonItem18, Me.BarButtonItem19, Me.BarButtonItem21, Me.BarButtonItem22, Me.BarButtonItem23, Me.BarButtonItem20, Me.BarButtonItem24, Me.BarButtonItem25, Me.BarButtonItem27, Me.BarButtonItem26, Me.BarButtonItem28, Me.BarButtonItem29, Me.BarButtonItem30, Me.BarButtonItem31, Me.BarButtonItem32, Me.BarButtonItem33})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonItem11, Me.BarButtonItem12, Me.BarButtonItem13, Me.BarButtonItem14, Me.bsiInformation, Me.bsiLoggedUser, Me.BarButtonItem15, Me.BarButtonItem16, Me.BarButtonItem17, Me.BarButtonItem18, Me.BarButtonItem19, Me.BarButtonItem21, Me.BarButtonItem22, Me.BarButtonItem23, Me.BarButtonItem20, Me.BarButtonItem24, Me.BarButtonItem25, Me.BarButtonItem27, Me.BarButtonItem26, Me.BarButtonItem28, Me.BarButtonItem29, Me.BarButtonItem30, Me.BarButtonItem31, Me.BarButtonItem32, Me.BarButtonItem33, Me.BarButtonItem34})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 43
+        Me.RibbonControl.MaxItemId = 44
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage4, Me.RibbonPage3, Me.RibbonPage5})
         Me.RibbonControl.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemPictureEdit1})
@@ -381,6 +382,13 @@ Partial Class frmMain
         Me.BarButtonItem33.LargeGlyph = Global.iStock.My.Resources.Resources.update
         Me.BarButtonItem33.Name = "BarButtonItem33"
         '
+        'BarButtonItem34
+        '
+        Me.BarButtonItem34.Caption = "Field Performance"
+        Me.BarButtonItem34.Id = 43
+        Me.BarButtonItem34.LargeGlyph = Global.iStock.My.Resources.Resources.Magenta
+        Me.BarButtonItem34.Name = "BarButtonItem34"
+        '
         'RibbonPage1
         '
         Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup8, Me.RibbonPageGroup1, Me.RibbonPageGroup4, Me.RibbonPageGroup12})
@@ -484,6 +492,7 @@ Partial Class frmMain
         '
         'RibbonPageGroup11
         '
+        Me.RibbonPageGroup11.ItemLinks.Add(Me.BarButtonItem34)
         Me.RibbonPageGroup11.ItemLinks.Add(Me.BarButtonItem28)
         Me.RibbonPageGroup11.ItemLinks.Add(Me.BarButtonItem26)
         Me.RibbonPageGroup11.Name = "RibbonPageGroup11"
@@ -618,6 +627,7 @@ Partial Class frmMain
     Friend WithEvents RibbonPage5 As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents RibbonPageGroup15 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents BarButtonItem33 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem34 As DevExpress.XtraBars.BarButtonItem
 
 
 End Class
