@@ -531,6 +531,7 @@ Partial Class frmDailyWorkings
         Me.gvDailyWorking.GridControl = Me.gcDailyWorking
         Me.gvDailyWorking.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantity", Me.GridColumn8, "{0:N2}")})
         Me.gvDailyWorking.Name = "gvDailyWorking"
+        Me.gvDailyWorking.OptionsBehavior.Editable = False
         Me.gvDailyWorking.OptionsView.EnableAppearanceOddRow = True
         Me.gvDailyWorking.OptionsView.ShowFooter = True
         '
@@ -1041,8 +1042,8 @@ Partial Class frmDailyWorkings
         '
         Me.gvAllWorkings.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14, Me.GridColumn15, Me.GridColumn17, Me.GridColumn18})
         Me.gvAllWorkings.GridControl = Me.gcAllWorkings
+        Me.gvAllWorkings.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "WorkedDays", Me.GridColumn14, "{0:N2}")})
         Me.gvAllWorkings.Name = "gvAllWorkings"
-        Me.gvAllWorkings.OptionsBehavior.Editable = False
         Me.gvAllWorkings.OptionsView.EnableAppearanceEvenRow = True
         Me.gvAllWorkings.OptionsView.ShowAutoFilterRow = True
         Me.gvAllWorkings.OptionsView.ShowFooter = True
@@ -1055,8 +1056,6 @@ Partial Class frmDailyWorkings
         Me.GridColumn9.FieldName = "WorkingDate"
         Me.GridColumn9.Name = "GridColumn9"
         Me.GridColumn9.OptionsColumn.AllowEdit = False
-        Me.GridColumn9.OptionsColumn.AllowFocus = False
-        Me.GridColumn9.OptionsColumn.AllowMove = False
         Me.GridColumn9.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)})
         Me.GridColumn9.Visible = True
         Me.GridColumn9.VisibleIndex = 0
@@ -1067,8 +1066,6 @@ Partial Class frmDailyWorkings
         Me.GridColumn10.FieldName = "WorkType"
         Me.GridColumn10.Name = "GridColumn10"
         Me.GridColumn10.OptionsColumn.AllowEdit = False
-        Me.GridColumn10.OptionsColumn.AllowFocus = False
-        Me.GridColumn10.OptionsColumn.AllowMove = False
         Me.GridColumn10.Visible = True
         Me.GridColumn10.VisibleIndex = 1
         '
@@ -1078,8 +1075,6 @@ Partial Class frmDailyWorkings
         Me.GridColumn11.FieldName = "AbbreviationDesc"
         Me.GridColumn11.Name = "GridColumn11"
         Me.GridColumn11.OptionsColumn.AllowEdit = False
-        Me.GridColumn11.OptionsColumn.AllowFocus = False
-        Me.GridColumn11.OptionsColumn.AllowMove = False
         Me.GridColumn11.Visible = True
         Me.GridColumn11.VisibleIndex = 2
         '
@@ -1089,8 +1084,6 @@ Partial Class frmDailyWorkings
         Me.GridColumn12.FieldName = "EmployerNo"
         Me.GridColumn12.Name = "GridColumn12"
         Me.GridColumn12.OptionsColumn.AllowEdit = False
-        Me.GridColumn12.OptionsColumn.AllowFocus = False
-        Me.GridColumn12.OptionsColumn.AllowMove = False
         Me.GridColumn12.Visible = True
         Me.GridColumn12.VisibleIndex = 3
         '
@@ -1100,8 +1093,6 @@ Partial Class frmDailyWorkings
         Me.GridColumn13.FieldName = "EmployerName"
         Me.GridColumn13.Name = "GridColumn13"
         Me.GridColumn13.OptionsColumn.AllowEdit = False
-        Me.GridColumn13.OptionsColumn.AllowFocus = False
-        Me.GridColumn13.OptionsColumn.AllowMove = False
         Me.GridColumn13.Visible = True
         Me.GridColumn13.VisibleIndex = 4
         '
@@ -1113,8 +1104,6 @@ Partial Class frmDailyWorkings
         Me.GridColumn14.FieldName = "WorkedDays"
         Me.GridColumn14.Name = "GridColumn14"
         Me.GridColumn14.OptionsColumn.AllowEdit = False
-        Me.GridColumn14.OptionsColumn.AllowFocus = False
-        Me.GridColumn14.OptionsColumn.AllowMove = False
         Me.GridColumn14.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "WorkedDays", "{0:n2}")})
         Me.GridColumn14.Visible = True
         Me.GridColumn14.VisibleIndex = 5
@@ -1127,8 +1116,6 @@ Partial Class frmDailyWorkings
         Me.GridColumn15.FieldName = "Quantity"
         Me.GridColumn15.Name = "GridColumn15"
         Me.GridColumn15.OptionsColumn.AllowEdit = False
-        Me.GridColumn15.OptionsColumn.AllowFocus = False
-        Me.GridColumn15.OptionsColumn.AllowMove = False
         Me.GridColumn15.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantity", "{0:n2}")})
         Me.GridColumn15.Visible = True
         Me.GridColumn15.VisibleIndex = 6

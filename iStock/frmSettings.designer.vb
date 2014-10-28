@@ -271,13 +271,13 @@ Partial Class frmSettings
         '
         'cmbOutputType
         '
-        Me.cmbOutputType.Location = New System.Drawing.Point(313, 146)
+        Me.cmbOutputType.Location = New System.Drawing.Point(367, 146)
         Me.cmbOutputType.MenuManager = Me.BarManager1
         Me.cmbOutputType.Name = "cmbOutputType"
         Me.cmbOutputType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbOutputType.Properties.Items.AddRange(New Object() {"Yes", "No"})
         Me.cmbOutputType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
-        Me.cmbOutputType.Size = New System.Drawing.Size(104, 20)
+        Me.cmbOutputType.Size = New System.Drawing.Size(50, 20)
         Me.cmbOutputType.StyleController = Me.LayoutControl1
         Me.cmbOutputType.TabIndex = 31
         ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -288,7 +288,7 @@ Partial Class frmSettings
         '
         Me.seCasualOTPayRate.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seCasualOTPayRate.EnterMoveNextControl = True
-        Me.seCasualOTPayRate.Location = New System.Drawing.Point(301, 299)
+        Me.seCasualOTPayRate.Location = New System.Drawing.Point(355, 299)
         Me.seCasualOTPayRate.MenuManager = Me.BarManager1
         Me.seCasualOTPayRate.Name = "seCasualOTPayRate"
         Me.seCasualOTPayRate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -296,7 +296,7 @@ Partial Class frmSettings
         Me.seCasualOTPayRate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.seCasualOTPayRate.Properties.EditFormat.FormatString = "{0:N2}"
         Me.seCasualOTPayRate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.seCasualOTPayRate.Size = New System.Drawing.Size(174, 20)
+        Me.seCasualOTPayRate.Size = New System.Drawing.Size(120, 20)
         Me.seCasualOTPayRate.StyleController = Me.LayoutControl1
         Me.seCasualOTPayRate.TabIndex = 30
         '
@@ -304,7 +304,7 @@ Partial Class frmSettings
         '
         Me.seCasualPayRate.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seCasualPayRate.EnterMoveNextControl = True
-        Me.seCasualPayRate.Location = New System.Drawing.Point(301, 275)
+        Me.seCasualPayRate.Location = New System.Drawing.Point(355, 275)
         Me.seCasualPayRate.MenuManager = Me.BarManager1
         Me.seCasualPayRate.Name = "seCasualPayRate"
         Me.seCasualPayRate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -312,7 +312,7 @@ Partial Class frmSettings
         Me.seCasualPayRate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.seCasualPayRate.Properties.EditFormat.FormatString = "{0:N2}"
         Me.seCasualPayRate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.seCasualPayRate.Size = New System.Drawing.Size(174, 20)
+        Me.seCasualPayRate.Size = New System.Drawing.Size(120, 20)
         Me.seCasualPayRate.StyleController = Me.LayoutControl1
         Me.seCasualPayRate.TabIndex = 29
         '
@@ -320,11 +320,11 @@ Partial Class frmSettings
         '
         Me.seETF.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seETF.EnterMoveNextControl = True
-        Me.seETF.Location = New System.Drawing.Point(301, 371)
+        Me.seETF.Location = New System.Drawing.Point(355, 371)
         Me.seETF.MenuManager = Me.BarManager1
         Me.seETF.Name = "seETF"
         Me.seETF.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.seETF.Size = New System.Drawing.Size(428, 20)
+        Me.seETF.Size = New System.Drawing.Size(374, 20)
         Me.seETF.StyleController = Me.LayoutControl1
         Me.seETF.TabIndex = 28
         '
@@ -332,11 +332,11 @@ Partial Class frmSettings
         '
         Me.seEPF.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seEPF.EnterMoveNextControl = True
-        Me.seEPF.Location = New System.Drawing.Point(301, 347)
+        Me.seEPF.Location = New System.Drawing.Point(355, 347)
         Me.seEPF.MenuManager = Me.BarManager1
         Me.seEPF.Name = "seEPF"
         Me.seEPF.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.seEPF.Size = New System.Drawing.Size(428, 20)
+        Me.seEPF.Size = New System.Drawing.Size(374, 20)
         Me.seEPF.StyleController = Me.LayoutControl1
         Me.seEPF.TabIndex = 27
         '
@@ -344,11 +344,11 @@ Partial Class frmSettings
         '
         Me.seWCPay.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seWCPay.EnterMoveNextControl = True
-        Me.seWCPay.Location = New System.Drawing.Point(584, 323)
+        Me.seWCPay.Location = New System.Drawing.Point(638, 323)
         Me.seWCPay.MenuManager = Me.BarManager1
         Me.seWCPay.Name = "seWCPay"
         Me.seWCPay.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.seWCPay.Size = New System.Drawing.Size(145, 20)
+        Me.seWCPay.Size = New System.Drawing.Size(91, 20)
         Me.seWCPay.StyleController = Me.LayoutControl1
         Me.seWCPay.TabIndex = 26
         '
@@ -356,11 +356,11 @@ Partial Class frmSettings
         '
         Me.seOverKgsRate.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seOverKgsRate.EnterMoveNextControl = True
-        Me.seOverKgsRate.Location = New System.Drawing.Point(584, 275)
+        Me.seOverKgsRate.Location = New System.Drawing.Point(638, 275)
         Me.seOverKgsRate.MenuManager = Me.BarManager1
         Me.seOverKgsRate.Name = "seOverKgsRate"
         Me.seOverKgsRate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.seOverKgsRate.Size = New System.Drawing.Size(145, 20)
+        Me.seOverKgsRate.Size = New System.Drawing.Size(91, 20)
         Me.seOverKgsRate.StyleController = Me.LayoutControl1
         Me.seOverKgsRate.TabIndex = 25
         '
@@ -384,11 +384,11 @@ Partial Class frmSettings
         '
         'teAbbreviationDesc
         '
-        Me.teAbbreviationDesc.Location = New System.Drawing.Point(313, 122)
+        Me.teAbbreviationDesc.Location = New System.Drawing.Point(367, 122)
         Me.teAbbreviationDesc.MenuManager = Me.BarManager1
         Me.teAbbreviationDesc.Name = "teAbbreviationDesc"
         Me.teAbbreviationDesc.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.teAbbreviationDesc.Size = New System.Drawing.Size(404, 20)
+        Me.teAbbreviationDesc.Size = New System.Drawing.Size(350, 20)
         Me.teAbbreviationDesc.StyleController = Me.LayoutControl1
         Me.teAbbreviationDesc.TabIndex = 22
         ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -397,11 +397,11 @@ Partial Class frmSettings
         '
         'teAbbreviationCode
         '
-        Me.teAbbreviationCode.Location = New System.Drawing.Point(313, 98)
+        Me.teAbbreviationCode.Location = New System.Drawing.Point(367, 98)
         Me.teAbbreviationCode.MenuManager = Me.BarManager1
         Me.teAbbreviationCode.Name = "teAbbreviationCode"
         Me.teAbbreviationCode.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.teAbbreviationCode.Size = New System.Drawing.Size(323, 20)
+        Me.teAbbreviationCode.Size = New System.Drawing.Size(269, 20)
         Me.teAbbreviationCode.StyleController = Me.LayoutControl1
         Me.teAbbreviationCode.TabIndex = 21
         ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -415,11 +415,11 @@ Partial Class frmSettings
         '
         Me.seIncentiveDays.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seIncentiveDays.EnterMoveNextControl = True
-        Me.seIncentiveDays.Location = New System.Drawing.Point(584, 299)
+        Me.seIncentiveDays.Location = New System.Drawing.Point(638, 299)
         Me.seIncentiveDays.MenuManager = Me.BarManager1
         Me.seIncentiveDays.Name = "seIncentiveDays"
         Me.seIncentiveDays.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.seIncentiveDays.Size = New System.Drawing.Size(145, 20)
+        Me.seIncentiveDays.Size = New System.Drawing.Size(91, 20)
         Me.seIncentiveDays.StyleController = Me.LayoutControl1
         Me.seIncentiveDays.TabIndex = 19
         ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
@@ -431,11 +431,11 @@ Partial Class frmSettings
         '
         Me.seKgsPerDay.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seKgsPerDay.EnterMoveNextControl = True
-        Me.seKgsPerDay.Location = New System.Drawing.Point(584, 251)
+        Me.seKgsPerDay.Location = New System.Drawing.Point(638, 251)
         Me.seKgsPerDay.MenuManager = Me.BarManager1
         Me.seKgsPerDay.Name = "seKgsPerDay"
         Me.seKgsPerDay.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.seKgsPerDay.Size = New System.Drawing.Size(145, 20)
+        Me.seKgsPerDay.Size = New System.Drawing.Size(91, 20)
         Me.seKgsPerDay.StyleController = Me.LayoutControl1
         Me.seKgsPerDay.TabIndex = 18
         ConditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
@@ -447,11 +447,11 @@ Partial Class frmSettings
         '
         Me.seOTRate.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seOTRate.EnterMoveNextControl = True
-        Me.seOTRate.Location = New System.Drawing.Point(301, 251)
+        Me.seOTRate.Location = New System.Drawing.Point(355, 251)
         Me.seOTRate.MenuManager = Me.BarManager1
         Me.seOTRate.Name = "seOTRate"
         Me.seOTRate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.seOTRate.Size = New System.Drawing.Size(174, 20)
+        Me.seOTRate.Size = New System.Drawing.Size(120, 20)
         Me.seOTRate.StyleController = Me.LayoutControl1
         Me.seOTRate.TabIndex = 17
         ConditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
@@ -463,11 +463,11 @@ Partial Class frmSettings
         '
         Me.seDayRate.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seDayRate.EnterMoveNextControl = True
-        Me.seDayRate.Location = New System.Drawing.Point(301, 227)
+        Me.seDayRate.Location = New System.Drawing.Point(355, 227)
         Me.seDayRate.MenuManager = Me.BarManager1
         Me.seDayRate.Name = "seDayRate"
         Me.seDayRate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.seDayRate.Size = New System.Drawing.Size(174, 20)
+        Me.seDayRate.Size = New System.Drawing.Size(120, 20)
         Me.seDayRate.StyleController = Me.LayoutControl1
         Me.seDayRate.TabIndex = 16
         ConditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
@@ -479,11 +479,11 @@ Partial Class frmSettings
         '
         Me.seDevalutionAllowance.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seDevalutionAllowance.EnterMoveNextControl = True
-        Me.seDevalutionAllowance.Location = New System.Drawing.Point(584, 227)
+        Me.seDevalutionAllowance.Location = New System.Drawing.Point(638, 227)
         Me.seDevalutionAllowance.MenuManager = Me.BarManager1
         Me.seDevalutionAllowance.Name = "seDevalutionAllowance"
         Me.seDevalutionAllowance.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.seDevalutionAllowance.Size = New System.Drawing.Size(145, 20)
+        Me.seDevalutionAllowance.Size = New System.Drawing.Size(91, 20)
         Me.seDevalutionAllowance.StyleController = Me.LayoutControl1
         Me.seDevalutionAllowance.TabIndex = 15
         ConditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
@@ -495,11 +495,11 @@ Partial Class frmSettings
         '
         Me.sePayChitCost.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.sePayChitCost.EnterMoveNextControl = True
-        Me.sePayChitCost.Location = New System.Drawing.Point(301, 323)
+        Me.sePayChitCost.Location = New System.Drawing.Point(355, 323)
         Me.sePayChitCost.MenuManager = Me.BarManager1
         Me.sePayChitCost.Name = "sePayChitCost"
         Me.sePayChitCost.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.sePayChitCost.Size = New System.Drawing.Size(174, 20)
+        Me.sePayChitCost.Size = New System.Drawing.Size(120, 20)
         Me.sePayChitCost.StyleController = Me.LayoutControl1
         Me.sePayChitCost.TabIndex = 14
         ConditionValidationRule10.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
@@ -509,13 +509,13 @@ Partial Class frmSettings
         '
         'leAbbriviationCode
         '
-        Me.leAbbriviationCode.Location = New System.Drawing.Point(301, 43)
+        Me.leAbbriviationCode.Location = New System.Drawing.Point(355, 43)
         Me.leAbbriviationCode.MenuManager = Me.BarManager1
         Me.leAbbriviationCode.Name = "leAbbriviationCode"
         Me.leAbbriviationCode.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Add", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, "", Nothing, Nothing, True), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Delete", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject2, "", Nothing, Nothing, True)})
         Me.leAbbriviationCode.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("AbbreviationID", "AbbreviationID", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("AbbreviationCode", "Abbreviation Code"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("AbbreviationDesc", "Abbreviation Description")})
         Me.leAbbriviationCode.Properties.NullText = ""
-        Me.leAbbriviationCode.Size = New System.Drawing.Size(428, 20)
+        Me.leAbbriviationCode.Size = New System.Drawing.Size(374, 20)
         Me.leAbbriviationCode.StyleController = Me.LayoutControl1
         Me.leAbbriviationCode.TabIndex = 13
         '
@@ -546,7 +546,7 @@ Partial Class frmSettings
         Me.LayoutControlItem10.Name = "LayoutControlItem10"
         Me.LayoutControlItem10.Size = New System.Drawing.Size(537, 24)
         Me.LayoutControlItem10.Text = "Abbreviation Code"
-        Me.LayoutControlItem10.TextSize = New System.Drawing.Size(102, 13)
+        Me.LayoutControlItem10.TextSize = New System.Drawing.Size(156, 13)
         '
         'LayoutControlGroup2
         '
@@ -566,7 +566,7 @@ Partial Class frmSettings
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
         Me.LayoutControlItem5.Size = New System.Drawing.Size(432, 24)
         Me.LayoutControlItem5.Text = "Code"
-        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(102, 13)
+        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(156, 13)
         '
         'EmptySpaceItem20
         '
@@ -586,7 +586,7 @@ Partial Class frmSettings
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
         Me.LayoutControlItem6.Size = New System.Drawing.Size(513, 24)
         Me.LayoutControlItem6.Text = "Description"
-        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(102, 13)
+        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(156, 13)
         '
         'EmptySpaceItem18
         '
@@ -630,7 +630,7 @@ Partial Class frmSettings
         Me.LayoutControlItem18.Name = "LayoutControlItem18"
         Me.LayoutControlItem18.Size = New System.Drawing.Size(213, 26)
         Me.LayoutControlItem18.Text = "Is Output Type"
-        Me.LayoutControlItem18.TextSize = New System.Drawing.Size(102, 13)
+        Me.LayoutControlItem18.TextSize = New System.Drawing.Size(156, 13)
         '
         'EmptySpaceItem1
         '
@@ -688,8 +688,8 @@ Partial Class frmSettings
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
         Me.LayoutControlItem1.Size = New System.Drawing.Size(283, 24)
-        Me.LayoutControlItem1.Text = "Day Rate"
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(102, 13)
+        Me.LayoutControlItem1.Text = "Day Pay Rate (Rs.)"
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(156, 13)
         '
         'LayoutControlItem12
         '
@@ -698,8 +698,8 @@ Partial Class frmSettings
         Me.LayoutControlItem12.Location = New System.Drawing.Point(0, 24)
         Me.LayoutControlItem12.Name = "LayoutControlItem12"
         Me.LayoutControlItem12.Size = New System.Drawing.Size(283, 24)
-        Me.LayoutControlItem12.Text = "OT Rate"
-        Me.LayoutControlItem12.TextSize = New System.Drawing.Size(102, 13)
+        Me.LayoutControlItem12.Text = "OT Pay Rate (Rs.)"
+        Me.LayoutControlItem12.TextSize = New System.Drawing.Size(156, 13)
         '
         'LayoutControlItem4
         '
@@ -708,8 +708,8 @@ Partial Class frmSettings
         Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 48)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
         Me.LayoutControlItem4.Size = New System.Drawing.Size(283, 24)
-        Me.LayoutControlItem4.Text = "Casual Pay Rate"
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(102, 13)
+        Me.LayoutControlItem4.Text = "Casual Pay Rate (Rs.)"
+        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(156, 13)
         '
         'LayoutControlItem17
         '
@@ -718,8 +718,8 @@ Partial Class frmSettings
         Me.LayoutControlItem17.Location = New System.Drawing.Point(0, 72)
         Me.LayoutControlItem17.Name = "LayoutControlItem17"
         Me.LayoutControlItem17.Size = New System.Drawing.Size(283, 24)
-        Me.LayoutControlItem17.Text = "Casual OT Pay Rate"
-        Me.LayoutControlItem17.TextSize = New System.Drawing.Size(102, 13)
+        Me.LayoutControlItem17.Text = "Casual OT Pay Rate (Rs.)"
+        Me.LayoutControlItem17.TextSize = New System.Drawing.Size(156, 13)
         '
         'LayoutControlItem9
         '
@@ -728,8 +728,8 @@ Partial Class frmSettings
         Me.LayoutControlItem9.Location = New System.Drawing.Point(0, 96)
         Me.LayoutControlItem9.Name = "LayoutControlItem9"
         Me.LayoutControlItem9.Size = New System.Drawing.Size(283, 24)
-        Me.LayoutControlItem9.Text = "Pay Chit Cost"
-        Me.LayoutControlItem9.TextSize = New System.Drawing.Size(102, 13)
+        Me.LayoutControlItem9.Text = "Pay Chit Cost (Rs.)"
+        Me.LayoutControlItem9.TextSize = New System.Drawing.Size(156, 13)
         '
         'LayoutControlItem15
         '
@@ -739,7 +739,7 @@ Partial Class frmSettings
         Me.LayoutControlItem15.Name = "LayoutControlItem15"
         Me.LayoutControlItem15.Size = New System.Drawing.Size(537, 24)
         Me.LayoutControlItem15.Text = "EPF (%)"
-        Me.LayoutControlItem15.TextSize = New System.Drawing.Size(102, 13)
+        Me.LayoutControlItem15.TextSize = New System.Drawing.Size(156, 13)
         '
         'LayoutControlItem16
         '
@@ -749,7 +749,7 @@ Partial Class frmSettings
         Me.LayoutControlItem16.Name = "LayoutControlItem16"
         Me.LayoutControlItem16.Size = New System.Drawing.Size(537, 24)
         Me.LayoutControlItem16.Text = "ETF (%)"
-        Me.LayoutControlItem16.TextSize = New System.Drawing.Size(102, 13)
+        Me.LayoutControlItem16.TextSize = New System.Drawing.Size(156, 13)
         '
         'LayoutControlItem11
         '
@@ -758,8 +758,8 @@ Partial Class frmSettings
         Me.LayoutControlItem11.Location = New System.Drawing.Point(283, 0)
         Me.LayoutControlItem11.Name = "LayoutControlItem11"
         Me.LayoutControlItem11.Size = New System.Drawing.Size(254, 24)
-        Me.LayoutControlItem11.Text = "Devalution Allowance"
-        Me.LayoutControlItem11.TextSize = New System.Drawing.Size(102, 13)
+        Me.LayoutControlItem11.Text = "Evaluation Allowance (Rs.)"
+        Me.LayoutControlItem11.TextSize = New System.Drawing.Size(156, 13)
         '
         'LayoutControlItem2
         '
@@ -768,8 +768,8 @@ Partial Class frmSettings
         Me.LayoutControlItem2.Location = New System.Drawing.Point(283, 24)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
         Me.LayoutControlItem2.Size = New System.Drawing.Size(254, 24)
-        Me.LayoutControlItem2.Text = "Kgs per Day"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(102, 13)
+        Me.LayoutControlItem2.Text = "Mandatory margin per Day (Kgs)"
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(156, 13)
         '
         'LayoutControlItem13
         '
@@ -778,8 +778,8 @@ Partial Class frmSettings
         Me.LayoutControlItem13.Location = New System.Drawing.Point(283, 48)
         Me.LayoutControlItem13.Name = "LayoutControlItem13"
         Me.LayoutControlItem13.Size = New System.Drawing.Size(254, 24)
-        Me.LayoutControlItem13.Text = "Over Kgs Rate"
-        Me.LayoutControlItem13.TextSize = New System.Drawing.Size(102, 13)
+        Me.LayoutControlItem13.Text = "Over Kgs Rate (Rs.)"
+        Me.LayoutControlItem13.TextSize = New System.Drawing.Size(156, 13)
         '
         'LayoutControlItem3
         '
@@ -788,8 +788,8 @@ Partial Class frmSettings
         Me.LayoutControlItem3.Location = New System.Drawing.Point(283, 72)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
         Me.LayoutControlItem3.Size = New System.Drawing.Size(254, 24)
-        Me.LayoutControlItem3.Text = "Incentive Days"
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(102, 13)
+        Me.LayoutControlItem3.Text = "Evaluation Margin (Days)"
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(156, 13)
         '
         'LayoutControlItem14
         '
@@ -798,8 +798,8 @@ Partial Class frmSettings
         Me.LayoutControlItem14.Location = New System.Drawing.Point(283, 96)
         Me.LayoutControlItem14.Name = "LayoutControlItem14"
         Me.LayoutControlItem14.Size = New System.Drawing.Size(254, 24)
-        Me.LayoutControlItem14.Text = "WC Pay"
-        Me.LayoutControlItem14.TextSize = New System.Drawing.Size(102, 13)
+        Me.LayoutControlItem14.Text = "WC Pay Rate (Rs.)"
+        Me.LayoutControlItem14.TextSize = New System.Drawing.Size(156, 13)
         '
         'frmSettings
         '

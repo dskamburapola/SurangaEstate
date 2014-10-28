@@ -20,11 +20,12 @@ Partial Class frmAttendaceReport
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim PivotGridStyleFormatCondition1 As DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition = New DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
-        Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.cbeWorkType = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.pgcAttendance = New DevExpress.XtraPivotGrid.PivotGridControl()
         Me.PivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.PivotGridField2 = New DevExpress.XtraPivotGrid.PivotGridField()
@@ -43,12 +44,12 @@ Partial Class frmAttendaceReport
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
-        Me.cbeWorkType = New DevExpress.XtraEditors.ComboBoxEdit()
-        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.cbeWorkType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pgcAttendance, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,10 +60,9 @@ Partial Class frmAttendaceReport
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cbeWorkType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -80,6 +80,20 @@ Partial Class frmAttendaceReport
         Me.LayoutControl1.Size = New System.Drawing.Size(702, 502)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'cbeWorkType
+        '
+        Me.cbeWorkType.Location = New System.Drawing.Point(379, 43)
+        Me.cbeWorkType.Name = "cbeWorkType"
+        Me.cbeWorkType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cbeWorkType.Properties.Items.AddRange(New Object() {"PERMANENT", "CASUAL"})
+        Me.cbeWorkType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
+        Me.cbeWorkType.Size = New System.Drawing.Size(91, 20)
+        Me.cbeWorkType.StyleController = Me.LayoutControl1
+        Me.cbeWorkType.TabIndex = 17
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.cbeWorkType, ConditionValidationRule1)
         '
         'pgcAttendance
         '
@@ -99,7 +113,7 @@ Partial Class frmAttendaceReport
         '
         Me.PivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
         Me.PivotGridField1.AreaIndex = 0
-        Me.PivotGridField1.Caption = "Employer No"
+        Me.PivotGridField1.Caption = "Employee No"
         Me.PivotGridField1.FieldName = "EmployerNo"
         Me.PivotGridField1.Name = "PivotGridField1"
         '
@@ -107,7 +121,7 @@ Partial Class frmAttendaceReport
         '
         Me.PivotGridField2.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
         Me.PivotGridField2.AreaIndex = 1
-        Me.PivotGridField2.Caption = "Employer Name"
+        Me.PivotGridField2.Caption = "Employee Name"
         Me.PivotGridField2.FieldName = "EmployerName"
         Me.PivotGridField2.Name = "PivotGridField2"
         '
@@ -281,32 +295,6 @@ Partial Class frmAttendaceReport
         Me.LayoutControlItem1.TextToControlDistance = 0
         Me.LayoutControlItem1.TextVisible = False
         '
-        'LayoutControlItem2
-        '
-        Me.LayoutControlItem2.Control = Me.pgcAttendance
-        Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 69)
-        Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(682, 378)
-        Me.LayoutControlItem2.Text = "LayoutControlItem2"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem2.TextToControlDistance = 0
-        Me.LayoutControlItem2.TextVisible = False
-        '
-        'cbeWorkType
-        '
-        Me.cbeWorkType.Location = New System.Drawing.Point(379, 43)
-        Me.cbeWorkType.Name = "cbeWorkType"
-        Me.cbeWorkType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cbeWorkType.Properties.Items.AddRange(New Object() {"PERMANENT", "CASUAL"})
-        Me.cbeWorkType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
-        Me.cbeWorkType.Size = New System.Drawing.Size(91, 20)
-        Me.cbeWorkType.StyleController = Me.LayoutControl1
-        Me.cbeWorkType.TabIndex = 17
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "Require"
-        Me.dxvpAttendaceReport.SetValidationRule(Me.cbeWorkType, ConditionValidationRule1)
-        '
         'LayoutControlItem4
         '
         Me.LayoutControlItem4.Control = Me.cbeWorkType
@@ -320,6 +308,18 @@ Partial Class frmAttendaceReport
         Me.LayoutControlItem4.Text = "Work Type"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(52, 13)
         '
+        'LayoutControlItem2
+        '
+        Me.LayoutControlItem2.Control = Me.pgcAttendance
+        Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 69)
+        Me.LayoutControlItem2.Name = "LayoutControlItem2"
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(682, 378)
+        Me.LayoutControlItem2.Text = "LayoutControlItem2"
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem2.TextToControlDistance = 0
+        Me.LayoutControlItem2.TextVisible = False
+        '
         'frmAttendaceReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -331,6 +331,7 @@ Partial Class frmAttendaceReport
         Me.Text = "Attendance Report"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.cbeWorkType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pgcAttendance, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -341,10 +342,9 @@ Partial Class frmAttendaceReport
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cbeWorkType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -215,7 +215,7 @@ Partial Class frmEmployers
         Me.ceDepartment.Name = "ceDepartment"
         Me.ceDepartment.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.ceDepartment.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.ceDepartment.Properties.Items.AddRange(New Object() {"ACCOUNTS", "PRODUCTION", "OFFICE", "STORES", "GENERAL", "IT", "WORKER"})
+        Me.ceDepartment.Properties.Items.AddRange(New Object() {"ACCOUNTS", "PRODUCTION", "OFFICE", "STORES", "ADMIN", "LABOUR"})
         Me.ceDepartment.Size = New System.Drawing.Size(339, 20)
         Me.ceDepartment.StyleController = Me.LayoutControl1
         Me.ceDepartment.TabIndex = 10
