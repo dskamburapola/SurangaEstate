@@ -22,6 +22,8 @@ Partial Class frmAttendaceReport
         Me.components = New System.ComponentModel.Container()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim PivotGridStyleFormatCondition1 As DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition = New DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition()
+        Dim PivotGridCustomTotal1 As DevExpress.XtraPivotGrid.PivotGridCustomTotal = New DevExpress.XtraPivotGrid.PivotGridCustomTotal()
+        Dim PivotGridCustomTotal2 As DevExpress.XtraPivotGrid.PivotGridCustomTotal = New DevExpress.XtraPivotGrid.PivotGridCustomTotal()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
@@ -116,11 +118,12 @@ Partial Class frmAttendaceReport
         Me.PivotGridField1.Caption = "Employee No"
         Me.PivotGridField1.FieldName = "EmployerNo"
         Me.PivotGridField1.Name = "PivotGridField1"
+        Me.PivotGridField1.Visible = False
         '
         'PivotGridField2
         '
         Me.PivotGridField2.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
-        Me.PivotGridField2.AreaIndex = 1
+        Me.PivotGridField2.AreaIndex = 0
         Me.PivotGridField2.Caption = "Employee Name"
         Me.PivotGridField2.FieldName = "EmployerName"
         Me.PivotGridField2.Name = "PivotGridField2"
@@ -128,43 +131,53 @@ Partial Class frmAttendaceReport
         'PivotGridField6
         '
         Me.PivotGridField6.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
-        Me.PivotGridField6.AreaIndex = 2
+        Me.PivotGridField6.AreaIndex = 1
         Me.PivotGridField6.Caption = "Sex"
         Me.PivotGridField6.FieldName = "Sex"
         Me.PivotGridField6.Name = "PivotGridField6"
+        Me.PivotGridField6.Visible = False
         '
         'PivotGridField3
         '
         Me.PivotGridField3.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
         Me.PivotGridField3.AreaIndex = 0
-        Me.PivotGridField3.Caption = "Attendace"
+        Me.PivotGridField3.Caption = "Total"
         Me.PivotGridField3.CellFormat.FormatString = "{0:N1}"
         Me.PivotGridField3.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        PivotGridCustomTotal1.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Average
+        Me.PivotGridField3.CustomTotals.AddRange(New DevExpress.XtraPivotGrid.PivotGridCustomTotal() {PivotGridCustomTotal1})
         Me.PivotGridField3.FieldName = "Attendance"
         Me.PivotGridField3.GrandTotalCellFormat.FormatString = "{0:N1}"
         Me.PivotGridField3.GrandTotalCellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.PivotGridField3.Name = "PivotGridField3"
+        Me.PivotGridField3.Options.AllowRunTimeSummaryChange = True
+        Me.PivotGridField3.TotalsVisibility = DevExpress.XtraPivotGrid.PivotTotalsVisibility.CustomTotals
+        Me.PivotGridField3.UnboundFieldName = "PivotGridField3"
         '
         'PivotGridField4
         '
         Me.PivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
         Me.PivotGridField4.AreaIndex = 0
         Me.PivotGridField4.Caption = "Day"
-        Me.PivotGridField4.CellFormat.FormatString = "d"
-        Me.PivotGridField4.CellFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.PivotGridField4.FieldName = "monthDate"
+        Me.PivotGridField4.GroupIntervalNumericRange = 12
         Me.PivotGridField4.Name = "PivotGridField4"
+        Me.PivotGridField4.UnboundFieldName = "PivotGridField4"
         '
         'PivotGridField5
         '
         Me.PivotGridField5.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
         Me.PivotGridField5.AreaIndex = 1
-        Me.PivotGridField5.Caption = "(%)"
+        Me.PivotGridField5.Caption = "(Avg %)"
+        Me.PivotGridField5.CellFormat.FormatString = "{0:N1}"
+        Me.PivotGridField5.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        PivotGridCustomTotal2.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Average
+        Me.PivotGridField5.CustomTotals.AddRange(New DevExpress.XtraPivotGrid.PivotGridCustomTotal() {PivotGridCustomTotal2})
         Me.PivotGridField5.FieldName = "Attendance"
         Me.PivotGridField5.Name = "PivotGridField5"
         Me.PivotGridField5.Options.ShowValues = False
-        Me.PivotGridField5.SummaryDisplayType = DevExpress.Data.PivotGrid.PivotSummaryDisplayType.PercentOfColumn
-        Me.PivotGridField5.Visible = False
+        Me.PivotGridField5.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Average
+        Me.PivotGridField5.UnboundFieldName = "PivotGridField5"
         '
         'leYear
         '

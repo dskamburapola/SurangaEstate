@@ -132,7 +132,7 @@ Public Class frmAttendaceReport
     Private Sub pgcAttendance_CustomDrawFieldValue(ByVal sender As System.Object, ByVal e As DevExpress.XtraPivotGrid.PivotCustomDrawFieldValueEventArgs) Handles pgcAttendance.CustomDrawFieldValue
 
         If (e.ValueType = PivotGridValueType.GrandTotal) Then
-            e.Info.Caption = "Total"
+            ' e.Info.Caption = "Total"
         End If
 
     End Sub
