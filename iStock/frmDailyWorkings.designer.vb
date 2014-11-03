@@ -20,12 +20,12 @@ Partial Class frmDailyWorkings
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ConditionValidationRule4 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule6 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
-        Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
-        Dim ConditionValidationRule5 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
-        Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim ConditionValidationRule4 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar2 = New DevExpress.XtraBars.Bar()
         Me.bbSave = New DevExpress.XtraBars.BarButtonItem()
@@ -73,6 +73,8 @@ Partial Class frmDailyWorkings
         Me.GridColumn19 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn16 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemButtonEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
+        Me.RepositoryItemImageEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemImageEdit()
+        Me.RepositoryItemButtonEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
         Me.deWorkingDate = New DevExpress.XtraEditors.DateEdit()
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -137,6 +139,8 @@ Partial Class frmDailyWorkings
         CType(Me.gcDailyWorking, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gvDailyWorking, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemButtonEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemImageEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemButtonEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.deWorkingDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.deWorkingDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -294,9 +298,9 @@ Partial Class frmDailyWorkings
         Me.leWorkCategory.Size = New System.Drawing.Size(254, 20)
         Me.leWorkCategory.StyleController = Me.LayoutControl1
         Me.leWorkCategory.TabIndex = 2
-        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule4.ErrorText = "Require"
-        Me.dxvpDailyWorking.SetValidationRule(Me.leWorkCategory, ConditionValidationRule4)
+        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule3.ErrorText = "Require"
+        Me.dxvpDailyWorking.SetValidationRule(Me.leWorkCategory, ConditionValidationRule3)
         '
         'LayoutControl1
         '
@@ -388,9 +392,9 @@ Partial Class frmDailyWorkings
         Me.cmbDays.Size = New System.Drawing.Size(256, 20)
         Me.cmbDays.StyleController = Me.LayoutControl1
         Me.cmbDays.TabIndex = 4
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "Require"
-        Me.dxvpDailyWorking.SetValidationRule(Me.cmbDays, ConditionValidationRule1)
+        ConditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule6.ErrorText = "Require"
+        Me.dxvpDailyWorking.SetValidationRule(Me.cmbDays, ConditionValidationRule6)
         '
         'lblDeleteID
         '
@@ -450,9 +454,9 @@ Partial Class frmDailyWorkings
         Me.leEmployee.Size = New System.Drawing.Size(256, 20)
         Me.leEmployee.StyleController = Me.LayoutControl1
         Me.leEmployee.TabIndex = 3
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule2.ErrorText = "Require"
-        Me.dxvpDailyWorking.SetValidationRule(Me.leEmployee, ConditionValidationRule2)
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "Require"
+        Me.dxvpDailyWorking.SetValidationRule(Me.leEmployee, ConditionValidationRule1)
         '
         'lblOTRate
         '
@@ -485,9 +489,9 @@ Partial Class frmDailyWorkings
         Me.seQuantity.Size = New System.Drawing.Size(73, 20)
         Me.seQuantity.StyleController = Me.LayoutControl1
         Me.seQuantity.TabIndex = 6
-        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule3.ErrorText = "Require"
-        Me.dxvpDailyWorking.SetValidationRule(Me.seQuantity, ConditionValidationRule3)
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule2.ErrorText = "Require"
+        Me.dxvpDailyWorking.SetValidationRule(Me.seQuantity, ConditionValidationRule2)
         '
         'lblKgsPerDay
         '
@@ -510,9 +514,9 @@ Partial Class frmDailyWorkings
         Me.cmbWorkType.Size = New System.Drawing.Size(254, 20)
         Me.cmbWorkType.StyleController = Me.LayoutControl1
         Me.cmbWorkType.TabIndex = 1
-        ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule5.ErrorText = "Require"
-        Me.dxvpDailyWorking.SetValidationRule(Me.cmbWorkType, ConditionValidationRule5)
+        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule4.ErrorText = "Require"
+        Me.dxvpDailyWorking.SetValidationRule(Me.cmbWorkType, ConditionValidationRule4)
         '
         'gcDailyWorking
         '
@@ -520,7 +524,7 @@ Partial Class frmDailyWorkings
         Me.gcDailyWorking.MainView = Me.gvDailyWorking
         Me.gcDailyWorking.MenuManager = Me.BarManager1
         Me.gcDailyWorking.Name = "gcDailyWorking"
-        Me.gcDailyWorking.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemButtonEdit1})
+        Me.gcDailyWorking.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemButtonEdit1, Me.RepositoryItemButtonEdit2, Me.RepositoryItemImageEdit1})
         Me.gcDailyWorking.Size = New System.Drawing.Size(724, 212)
         Me.gcDailyWorking.TabIndex = 7
         Me.gcDailyWorking.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvDailyWorking})
@@ -531,7 +535,6 @@ Partial Class frmDailyWorkings
         Me.gvDailyWorking.GridControl = Me.gcDailyWorking
         Me.gvDailyWorking.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantity", Me.GridColumn8, "{0:N2}")})
         Me.gvDailyWorking.Name = "gvDailyWorking"
-        Me.gvDailyWorking.OptionsBehavior.Editable = False
         Me.gvDailyWorking.OptionsView.EnableAppearanceOddRow = True
         Me.gvDailyWorking.OptionsView.ShowFooter = True
         '
@@ -657,9 +660,21 @@ Partial Class frmDailyWorkings
         '
         'RepositoryItemButtonEdit1
         '
-        Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Delete", 20, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Global.iStock.My.Resources.Resources.remove, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, "", Nothing, Nothing, True)})
+        Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Delete", 20, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Global.iStock.My.Resources.Resources.remove, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject2, "", Nothing, Nothing, True)})
         Me.RepositoryItemButtonEdit1.Name = "RepositoryItemButtonEdit1"
         Me.RepositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
+        '
+        'RepositoryItemImageEdit1
+        '
+        Me.RepositoryItemImageEdit1.AutoHeight = False
+        Me.RepositoryItemImageEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemImageEdit1.Name = "RepositoryItemImageEdit1"
+        '
+        'RepositoryItemButtonEdit2
+        '
+        Me.RepositoryItemButtonEdit2.AutoHeight = False
+        Me.RepositoryItemButtonEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.RepositoryItemButtonEdit2.Name = "RepositoryItemButtonEdit2"
         '
         'deWorkingDate
         '
@@ -1257,6 +1272,8 @@ Partial Class frmDailyWorkings
         CType(Me.gcDailyWorking, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gvDailyWorking, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemButtonEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemImageEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemButtonEdit2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.deWorkingDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.deWorkingDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1405,4 +1422,6 @@ Partial Class frmDailyWorkings
     Friend WithEvents GridColumn18 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn20 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn19 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemButtonEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
+    Friend WithEvents RepositoryItemImageEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemImageEdit
 End Class

@@ -183,8 +183,8 @@ Public Class frmDailyWorkings
                     .WorkingDate = deWorkingDate.EditValue
                     gcDailyWorking.DataSource = .DailyWorkingGetByDate.Tables(0)
 
-                    'gvDailyWorking.Columns("AbbreviationDesc").Group()
-                    'gvDailyWorking.ExpandAllGroups()
+                    gvDailyWorking.Columns("AbbreviationDesc").Group()
+                    gvDailyWorking.ExpandAllGroups()
 
 
                 End With
@@ -564,5 +564,10 @@ Public Class frmDailyWorkings
 
     Private Sub RepositoryItemButtonEdit1_ButtonClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles RepositoryItemButtonEdit1.ButtonClick
         Dim a As String
+    End Sub
+
+    Private Sub RepositoryItemImageEdit1_ButtonClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles RepositoryItemImageEdit1.ButtonClick
+        Dim a As String
+
     End Sub
 End Class

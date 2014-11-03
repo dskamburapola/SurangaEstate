@@ -152,6 +152,8 @@ Public Class frmAttendaceAdvanceReport
             gvCheckRoll.Columns("OverKgsPay").Caption = "Over (Kg) Pay"
             gvCheckRoll.Columns("TappingL").Caption = "Tapping (L)"
 
+            gvCheckRoll.Columns("DevalutionAllowance").Caption = "Evaluation Allowance"
+
             gvCheckRoll.Columns("EPF_12").Caption = "EPF (12%)"
             gvCheckRoll.Columns("EPF_20").Caption = "EPF (20%)"
             gvCheckRoll.Columns("ETF_3").Caption = "ETF (3%)"
@@ -159,6 +161,8 @@ Public Class frmAttendaceAdvanceReport
             gvCheckRoll.Columns("EPF_12").Width = 60
             gvCheckRoll.Columns("EPF_20").Width = 60
             gvCheckRoll.Columns("ETF_3").Width = 60
+
+
 
             gvCheckRoll.Columns("GrandTotalPay").AppearanceCell.BackColor = Color.Bisque
             gvCheckRoll.Columns("BalancePay").AppearanceCell.BackColor = Color.Thistle
