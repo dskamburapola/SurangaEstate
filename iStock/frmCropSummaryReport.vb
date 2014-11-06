@@ -113,7 +113,7 @@ Public Class frmCropSummaryReport
 
             ds = iStockDailyWorking.GetCropSummary(leType.EditValue)
             pgcAttendance.DataSource = ds.Tables(0)
-
+            pgcAttendance.BestFitColumnArea()
             'PivotGridField2.FilterValues.ShowBlanks = False
 
         End If
