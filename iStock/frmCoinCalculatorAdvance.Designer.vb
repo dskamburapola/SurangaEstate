@@ -20,6 +20,7 @@ Partial Class frmCoinCalculatorAdvance
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.lblTitle = New DevExpress.XtraEditors.LabelControl()
         Me.gcSummary = New DevExpress.XtraGrid.GridControl()
         Me.gvSummary = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -40,7 +41,6 @@ Partial Class frmCoinCalculatorAdvance
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.lblTitle = New DevExpress.XtraEditors.LabelControl()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
@@ -65,6 +65,15 @@ Partial Class frmCoinCalculatorAdvance
         Me.LayoutControl1.Size = New System.Drawing.Size(652, 560)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'lblTitle
+        '
+        Me.lblTitle.Appearance.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitle.Location = New System.Drawing.Point(12, 12)
+        Me.lblTitle.Name = "lblTitle"
+        Me.lblTitle.Size = New System.Drawing.Size(628, 23)
+        Me.lblTitle.StyleController = Me.LayoutControl1
+        Me.lblTitle.TabIndex = 21
         '
         'gcSummary
         '
@@ -255,15 +264,6 @@ Partial Class frmCoinCalculatorAdvance
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem5.TextToControlDistance = 0
         Me.LayoutControlItem5.TextVisible = False
-        '
-        'lblTitle
-        '
-        Me.lblTitle.Appearance.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitle.Location = New System.Drawing.Point(12, 12)
-        Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(628, 23)
-        Me.lblTitle.StyleController = Me.LayoutControl1
-        Me.lblTitle.TabIndex = 21
         '
         'LayoutControlItem1
         '
