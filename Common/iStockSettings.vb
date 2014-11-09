@@ -17,6 +17,7 @@ Public Class iStockSettings
     Private _DayRate As Decimal
     Private _OTRate As Decimal
     Private _KgsPerDay As Decimal
+    Private _KgsPerDayNotMandatory As Decimal
     Private _IncentiveDays As Decimal
     Private _IncentiveRate As Decimal
 
@@ -31,6 +32,8 @@ Public Class iStockSettings
     Private _CreatedDate As DateTime
     Private _UpdatedBy As Int64
     Private _UpdatedDate As DateTime
+
+
 #End Region
 
 #Region "Properties"
@@ -108,6 +111,16 @@ Public Class iStockSettings
             _KgsPerDay = value
         End Set
     End Property
+
+    Public Property KgsPerDayNotMandatory() As Decimal
+        Get
+            Return _KgsPerDayNotMandatory
+        End Get
+        Set(ByVal value As Decimal)
+            _KgsPerDayNotMandatory = value
+        End Set
+    End Property
+
     Public Property IncentiveDays() As Decimal
         Get
             Return _IncentiveDays
@@ -219,6 +232,7 @@ Public Class iStockSettings
             DB.AddInParameter(DBC, "@DayRate", DbType.Decimal, Me.DayRate)
             DB.AddInParameter(DBC, "@OTRate", DbType.Decimal, Me.OTRate)
             DB.AddInParameter(DBC, "@KgsPerDay", DbType.Decimal, Me.KgsPerDay)
+            DB.AddInParameter(DBC, "@KgsPerDayNotMandatory", DbType.Decimal, Me.KgsPerDayNotMandatory)
             DB.AddInParameter(DBC, "@IncentiveDays", DbType.Decimal, Me.IncentiveDays)
             ' DB.AddInParameter(DBC, "@IncentiveRate", DbType.String, Me.IncentiveRate)
             DB.AddInParameter(DBC, "@EPF", DbType.Decimal, Me.EPF)
@@ -266,16 +280,17 @@ Public Class iStockSettings
 
                 With DR
                     Do While .Read
-                        Me.PayChitCost = IIf(Not IsDBNull(.Item("PayChitCost")), Trim(.Item("PayChitCost").ToString), String.Empty)
-                        Me.DevalutionAllowance = IIf(Not IsDBNull(.Item("DevalutionAllowance")), Trim(.Item("DevalutionAllowance").ToString), String.Empty)
-                        Me.DayRate = IIf(Not IsDBNull(.Item("DayRate")), Trim(.Item("DayRate").ToString), String.Empty)
-                        Me.OTRate = IIf(Not IsDBNull(.Item("OTRate")), Trim(.Item("OTRate").ToString), String.Empty)
-                        Me.KgsPerDay = IIf(Not IsDBNull(.Item("KgsPerDay")), Trim(.Item("KgsPerDay").ToString), String.Empty)
-                        Me.IncentiveDays = IIf(Not IsDBNull(.Item("IncentiveDays")), Trim(.Item("IncentiveDays").ToString), String.Empty)
-                        Me.EPF = IIf(Not IsDBNull(.Item("EPF")), Trim(.Item("EPF").ToString), String.Empty)
-                        Me.ETF = IIf(Not IsDBNull(.Item("ETF")), Trim(.Item("ETF").ToString), String.Empty)
-                        Me.OverKgRate = IIf(Not IsDBNull(.Item("OverKgRate")), Trim(.Item("OverKgRate").ToString), String.Empty)
-                        Me.WCPay = IIf(Not IsDBNull(.Item("WCPay")), Trim(.Item("WCPay").ToString), String.Empty)
+                        Me.PayChitCost = IIf(Not IsDBNull(.Item("PayChitCost")), Trim(.Item("PayChitCost").ToString), 0)
+                        Me.DevalutionAllowance = IIf(Not IsDBNull(.Item("DevalutionAllowance")), Trim(.Item("DevalutionAllowance").ToString), 0)
+                        Me.DayRate = IIf(Not IsDBNull(.Item("DayRate")), Trim(.Item("DayRate").ToString), 0)
+                        Me.OTRate = IIf(Not IsDBNull(.Item("OTRate")), Trim(.Item("OTRate").ToString), 0)
+                        Me.KgsPerDay = IIf(Not IsDBNull(.Item("KgsPerDay")), Trim(.Item("KgsPerDay").ToString), 0)
+                        Me.KgsPerDayNotMandatory = IIf(Not IsDBNull(.Item("KgsPerDayNotMandatory")), Trim(.Item("KgsPerDayNotMandatory").ToString), 0)
+                        Me.IncentiveDays = IIf(Not IsDBNull(.Item("IncentiveDays")), Trim(.Item("IncentiveDays").ToString), 0)
+                        Me.EPF = IIf(Not IsDBNull(.Item("EPF")), Trim(.Item("EPF").ToString), 0)
+                        Me.ETF = IIf(Not IsDBNull(.Item("ETF")), Trim(.Item("ETF").ToString), 0)
+                        Me.OverKgRate = IIf(Not IsDBNull(.Item("OverKgRate")), Trim(.Item("OverKgRate").ToString), 0)
+                        Me.WCPay = IIf(Not IsDBNull(.Item("WCPay")), Trim(.Item("WCPay").ToString), 0)
                         Me.CasualPayRate = Convert.ToDecimal(IIf(Not IsDBNull(.Item("CasualPayRate")), Trim(.Item("CasualPayRate").ToString), 0))
                         Me.CasualOTPayRate = Convert.ToDecimal(IIf(Not IsDBNull(.Item("CasualOTPayRate")), Trim(.Item("CasualOTPayRate").ToString), 0))
 
@@ -329,6 +344,7 @@ Public Class iStockSettings
 #End Region
 
 #Region "Get Abbreviations For Rubber Sheets"
+
     Public Function GetAbbreviationsForRubberSheets() As DataSet
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
@@ -346,11 +362,8 @@ Public Class iStockSettings
 
 #End Region
 
-
-
-
-
 #Region "Delete Abbrevation"
+
     Public Sub DeleteAbbrevation()
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
@@ -362,6 +375,7 @@ Public Class iStockSettings
         End Try
 
     End Sub
+
 #End Region
 
 End Class

@@ -1,5 +1,5 @@
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmAttendaceAdvanceReport
+Partial Class frmAttendaceReportAdvance
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
@@ -23,47 +23,45 @@ Partial Class frmAttendaceAdvanceReport
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
-        Me.gcCheckRoll = New DevExpress.XtraGrid.GridControl()
-        Me.gvCheckRoll = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.pgcAttendance = New DevExpress.XtraPivotGrid.PivotGridControl()
+        Me.PivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField2 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField3 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField4 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.leYear = New DevExpress.XtraEditors.LookUpEdit()
         Me.meMonth = New DevExpress.XtraScheduler.UI.MonthEdit()
         Me.sbGenerate = New DevExpress.XtraEditors.SimpleButton()
         Me.sbPrint = New DevExpress.XtraEditors.SimpleButton()
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem3 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
-        CType(Me.gcCheckRoll, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.gvCheckRoll, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pgcAttendance, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
         '
-        Me.LayoutControl1.Controls.Add(Me.SimpleButton1)
-        Me.LayoutControl1.Controls.Add(Me.gcCheckRoll)
+        Me.LayoutControl1.Controls.Add(Me.pgcAttendance)
         Me.LayoutControl1.Controls.Add(Me.leYear)
         Me.LayoutControl1.Controls.Add(Me.meMonth)
         Me.LayoutControl1.Controls.Add(Me.sbGenerate)
@@ -76,35 +74,48 @@ Partial Class frmAttendaceAdvanceReport
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
-        'SimpleButton1
+        'pgcAttendance
         '
-        Me.SimpleButton1.Location = New System.Drawing.Point(212, 459)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(196, 31)
-        Me.SimpleButton1.StyleController = Me.LayoutControl1
-        Me.SimpleButton1.TabIndex = 18
-        Me.SimpleButton1.Text = "Coin Calculator"
+        Me.pgcAttendance.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.PivotGridField1, Me.PivotGridField2, Me.PivotGridField3, Me.PivotGridField4})
+        Me.pgcAttendance.Location = New System.Drawing.Point(12, 81)
+        Me.pgcAttendance.Name = "pgcAttendance"
+        Me.pgcAttendance.OptionsFilterPopup.ShowOnlyAvailableItems = True
+        Me.pgcAttendance.Size = New System.Drawing.Size(678, 362)
+        Me.pgcAttendance.TabIndex = 16
         '
-        'gcCheckRoll
+        'PivotGridField1
         '
-        Me.gcCheckRoll.Location = New System.Drawing.Point(12, 81)
-        Me.gcCheckRoll.MainView = Me.gvCheckRoll
-        Me.gcCheckRoll.Name = "gcCheckRoll"
-        Me.gcCheckRoll.Size = New System.Drawing.Size(678, 374)
-        Me.gcCheckRoll.TabIndex = 17
-        Me.gcCheckRoll.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvCheckRoll})
+        Me.PivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+        Me.PivotGridField1.AreaIndex = 0
+        Me.PivotGridField1.Caption = "Employer No"
+        Me.PivotGridField1.FieldName = "EmployerNo"
+        Me.PivotGridField1.Name = "PivotGridField1"
         '
-        'gvCheckRoll
+        'PivotGridField2
         '
-        Me.gvCheckRoll.BestFitMaxRowCount = 1
-        Me.gvCheckRoll.GridControl = Me.gcCheckRoll
-        Me.gvCheckRoll.Name = "gvCheckRoll"
-        Me.gvCheckRoll.OptionsBehavior.Editable = False
-        Me.gvCheckRoll.OptionsBehavior.SummariesIgnoreNullValues = True
-        Me.gvCheckRoll.OptionsView.ColumnAutoWidth = False
-        Me.gvCheckRoll.OptionsView.EnableAppearanceOddRow = True
-        Me.gvCheckRoll.OptionsView.ShowFooter = True
-        Me.gvCheckRoll.OptionsView.ShowGroupPanel = False
+        Me.PivotGridField2.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+        Me.PivotGridField2.AreaIndex = 1
+        Me.PivotGridField2.Caption = "Employer Name"
+        Me.PivotGridField2.FieldName = "EmployerName"
+        Me.PivotGridField2.Name = "PivotGridField2"
+        '
+        'PivotGridField3
+        '
+        Me.PivotGridField3.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
+        Me.PivotGridField3.AreaIndex = 0
+        Me.PivotGridField3.Caption = "Attendance"
+        Me.PivotGridField3.CellFormat.FormatString = "{0:N1}"
+        Me.PivotGridField3.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.PivotGridField3.FieldName = "Attendance"
+        Me.PivotGridField3.Name = "PivotGridField3"
+        '
+        'PivotGridField4
+        '
+        Me.PivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
+        Me.PivotGridField4.AreaIndex = 0
+        Me.PivotGridField4.Caption = "Day"
+        Me.PivotGridField4.FieldName = "monthDate"
+        Me.PivotGridField4.Name = "PivotGridField4"
         '
         'leYear
         '
@@ -153,7 +164,7 @@ Partial Class frmAttendaceAdvanceReport
         'LayoutControlGroup1
         '
         Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.EmptySpaceItem3, Me.LayoutControlGroup2, Me.LayoutControlItem4, Me.LayoutControlItem2, Me.EmptySpaceItem1})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.EmptySpaceItem1, Me.EmptySpaceItem3, Me.LayoutControlItem2, Me.LayoutControlGroup2})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "Root"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(702, 502)
@@ -168,12 +179,22 @@ Partial Class frmAttendaceAdvanceReport
         Me.LayoutControlItem3.MaxSize = New System.Drawing.Size(200, 35)
         Me.LayoutControlItem3.MinSize = New System.Drawing.Size(200, 35)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(200, 35)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(682, 35)
         Me.LayoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem3.Text = "LayoutControlItem3"
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem3.TextToControlDistance = 0
         Me.LayoutControlItem3.TextVisible = False
+        '
+        'EmptySpaceItem1
+        '
+        Me.EmptySpaceItem1.AllowHotTrack = False
+        Me.EmptySpaceItem1.CustomizationFormText = "EmptySpaceItem1"
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 435)
+        Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(682, 12)
+        Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
+        Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem3
         '
@@ -185,6 +206,18 @@ Partial Class frmAttendaceAdvanceReport
         Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
+        'LayoutControlItem2
+        '
+        Me.LayoutControlItem2.Control = Me.pgcAttendance
+        Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 69)
+        Me.LayoutControlItem2.Name = "LayoutControlItem2"
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(682, 366)
+        Me.LayoutControlItem2.Text = "LayoutControlItem2"
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem2.TextToControlDistance = 0
+        Me.LayoutControlItem2.TextVisible = False
+        '
         'LayoutControlGroup2
         '
         Me.LayoutControlGroup2.CustomizationFormText = "Select Month & Year"
@@ -192,7 +225,7 @@ Partial Class frmAttendaceAdvanceReport
         Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
         Me.LayoutControlGroup2.Size = New System.Drawing.Size(474, 69)
-        Me.LayoutControlGroup2.Text = "Select Month && Year"
+        Me.LayoutControlGroup2.Text = "Select Month & Year"
         '
         'LayoutControlItem5
         '
@@ -235,68 +268,29 @@ Partial Class frmAttendaceAdvanceReport
         Me.LayoutControlItem1.TextToControlDistance = 0
         Me.LayoutControlItem1.TextVisible = False
         '
-        'LayoutControlItem4
-        '
-        Me.LayoutControlItem4.Control = Me.gcCheckRoll
-        Me.LayoutControlItem4.CustomizationFormText = "LayoutControlItem4"
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 69)
-        Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(682, 378)
-        Me.LayoutControlItem4.Text = "LayoutControlItem4"
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem4.TextToControlDistance = 0
-        Me.LayoutControlItem4.TextVisible = False
-        '
-        'LayoutControlItem2
-        '
-        Me.LayoutControlItem2.Control = Me.SimpleButton1
-        Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(200, 447)
-        Me.LayoutControlItem2.MaxSize = New System.Drawing.Size(200, 35)
-        Me.LayoutControlItem2.MinSize = New System.Drawing.Size(200, 35)
-        Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(200, 35)
-        Me.LayoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
-        Me.LayoutControlItem2.Text = "LayoutControlItem2"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem2.TextToControlDistance = 0
-        Me.LayoutControlItem2.TextVisible = False
-        '
-        'EmptySpaceItem1
-        '
-        Me.EmptySpaceItem1.AllowHotTrack = False
-        Me.EmptySpaceItem1.CustomizationFormText = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(400, 447)
-        Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(282, 35)
-        Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'frmAttendaceAdvanceReport
+        'frmAttendaceReportAdvance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(702, 502)
         Me.Controls.Add(Me.LayoutControl1)
         Me.KeyPreview = True
-        Me.Name = "frmAttendaceAdvanceReport"
-        Me.Text = "Check Roll (Permanent)"
+        Me.Name = "frmAttendaceReportAdvance"
+        Me.Text = "Comparative Check Roll"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
-        CType(Me.gcCheckRoll, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.gvCheckRoll, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pgcAttendance, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -305,6 +299,7 @@ Partial Class frmAttendaceAdvanceReport
     Friend WithEvents LayoutControlGroup1 As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents sbPrint As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents EmptySpaceItem1 As DevExpress.XtraLayout.EmptySpaceItem
 
     Friend WithEvents sbGenerate As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
@@ -313,12 +308,12 @@ Partial Class frmAttendaceAdvanceReport
     Friend WithEvents meMonth As DevExpress.XtraScheduler.UI.MonthEdit
     Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem6 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents pgcAttendance As DevExpress.XtraPivotGrid.PivotGridControl
+    Friend WithEvents PivotGridField1 As DevExpress.XtraPivotGrid.PivotGridField
+    Friend WithEvents PivotGridField2 As DevExpress.XtraPivotGrid.PivotGridField
+    Friend WithEvents PivotGridField3 As DevExpress.XtraPivotGrid.PivotGridField
+    Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents PivotGridField4 As DevExpress.XtraPivotGrid.PivotGridField
     Friend WithEvents dxvpAttendaceReport As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
     Friend WithEvents LayoutControlGroup2 As DevExpress.XtraLayout.LayoutControlGroup
-    Friend WithEvents gcCheckRoll As DevExpress.XtraGrid.GridControl
-    Friend WithEvents gvCheckRoll As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents LayoutControlItem4 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents EmptySpaceItem1 As DevExpress.XtraLayout.EmptySpaceItem
 End Class

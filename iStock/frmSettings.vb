@@ -28,11 +28,12 @@ Public Class frmSettings
         Me.GetAbbreviations()
     End Sub
 
-    'Private Sub frmCompany_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles MyBase.KeyPress
-    '    If e.KeyChar = Microsoft.VisualBasic.Chr(27) Then
-    '        Me.Close()
-    '    End If
-    'End Sub
+    Private Sub frmSettings_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles MyBase.KeyPress
+        If e.KeyChar = Chr(27) Then
+            Me.Close()
+        End If
+    End Sub
+
 #End Region
 
 #Region "Hide Tool Buttons On Load"
@@ -77,6 +78,7 @@ Public Class frmSettings
                 .DayRate = Me.seDayRate.Value
                 .OTRate = Me.seOTRate.Value
                 .KgsPerDay = Me.seKgsPerDay.Value
+                .KgsPerDayNotMandatory = Me.seKgsPerDayNotMandatory.EditValue
                 .IncentiveDays = Me.seIncentiveDays.Value
                 .EPF = Me.seEPF.Value
                 .ETF = Me.seETF.Value
@@ -118,6 +120,7 @@ Public Class frmSettings
                 Me.seDayRate.Text = .DayRate
                 Me.seOTRate.Text = .OTRate
                 Me.seKgsPerDay.Text = .KgsPerDay
+                Me.seKgsPerDayNotMandatory.EditValue = .KgsPerDayNotMandatory
                 Me.seIncentiveDays.Text = .IncentiveDays
                 '  Me.seIncentiveRate.Text = .IncentiveRate
                 Me.seEPF.Text = .EPF
@@ -264,7 +267,7 @@ Public Class frmSettings
     End Sub
 #End Region
 
-
+#Region "Editor Events"
 
     Private Sub seDayRate_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles seDayRate.EditValueChanged
 
@@ -278,9 +281,8 @@ Public Class frmSettings
 
     End Sub
 
-    Private Sub frmSettings_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles MyBase.KeyPress
-        If e.KeyChar = Chr(27) Then
-            Me.Close()
-        End If
-    End Sub
+
+#End Region
+
+    
 End Class

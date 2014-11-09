@@ -6,6 +6,7 @@ Imports iStockCommon.iStockConstants
 Public Class iStockDailyWorking
 
 #Region "Variables"
+
     Private _DailyWorkingID As Int64
     Private _WorkingDate As Date
     Private _StartDate As Date
@@ -22,6 +23,8 @@ Public Class iStockDailyWorking
     Private _DayRate As Double
     Private _OTRate As Double
     Private _KgsPerDay As Double
+    Private _KgsPerDayNotMandatory As Double
+
     Private _EPF As Double
     Private _OverKgRate As Double
 
@@ -181,6 +184,15 @@ Public Class iStockDailyWorking
         End Get
         Set(ByVal value As Double)
             _KgsPerDay = value
+        End Set
+    End Property
+
+    Public Property KgsPerDayNotMandatory() As Double
+        Get
+            Return _KgsPerDayNotMandatory
+        End Get
+        Set(ByVal value As Double)
+            _KgsPerDayNotMandatory = value
         End Set
     End Property
   
@@ -344,20 +356,20 @@ Public Class iStockDailyWorking
             DB.AddInParameter(DBC, "@OTRate", DbType.Decimal, Me.OTRate)
             DB.AddInParameter(DBC, "@KgsPerDay", DbType.Decimal, Me.KgsPerDay)
             DB.AddInParameter(DBC, "@OverKgRate", DbType.Decimal, Me.OverKgRate)
-            '-------
             DB.AddInParameter(DBC, "@WCPayRate", DbType.Decimal, Me.WCPay)
             DB.AddInParameter(DBC, "@DevalutionRate", DbType.Decimal, Me.IncentiveRate)
             DB.AddInParameter(DBC, "@DevaluationDays", DbType.Decimal, Me.IncentiveDays)
             DB.AddInParameter(DBC, "@PayChit", DbType.Decimal, Me.PayChitCost)
-
-            '-------
-
             DB.AddInParameter(DBC, "@EPF", DbType.Decimal, Me.EPF)
             DB.AddInParameter(DBC, "@CasualPayRate", DbType.Decimal, Me.CasualPayRate)
             DB.AddInParameter(DBC, "@CasualOTPayRate", DbType.Decimal, Me.CasualOTPayRate)
             DB.AddInParameter(DBC, "@IsDeleted", DbType.Boolean, Me.IsDeleted)
             DB.AddInParameter(DBC, "@CreatedBy", DbType.Int64, Me.CreatedBy)
             DB.AddInParameter(DBC, "@StockID", DbType.Int64, Me.StockID)
+            DB.AddInParameter(DBC, "@ETF", DbType.Decimal, Me.ETF)
+            DB.AddInParameter(DBC, "@KgsPerDayNotMandatory", DbType.Decimal, Me.KgsPerDayNotMandatory)
+
+
 
 
             DB.ExecuteNonQuery(DBC)

@@ -240,13 +240,12 @@ Public Class frmDailyWorkings
                 .WorkedDays = Me.cmbDays.Text.Trim
                 .Quantity = Me.seQuantity.Text.Trim
 
-
-
                 Select Case leWorkCategory.Text
                     Case "PLUCKING"
+
                         .KgsPerDay = Convert.ToDecimal(lblKgsPerDay.Text.Trim)
                         .OverKgRate = Convert.ToDecimal(lblOverKgsRate.Text.Trim)
-
+                        .KgsPerDayNotMandatory = Convert.ToDecimal(lblKgsPerDayNotMandatory.Text.Trim)
                     Case Else
                         .KgsPerDay = 0
                         .OverKgRate = 0
@@ -255,6 +254,7 @@ Public Class frmDailyWorkings
 
 
                 .EPF = Convert.ToDecimal(lblEPF.Text.Trim)
+                .ETF = Convert.ToDecimal(lblETF.Text.Trim)
 
                 Select Case cmbWorkType.Text
 
@@ -330,7 +330,8 @@ Public Class frmDailyWorkings
                 Me.lblIncentiveDays.Text = .IncentiveDays
                 Me.lblIncentiveRate.Text = .DevalutionAllowance
                 Me.lblPayChit.Text = .PayChitCost
-
+                Me.lblKgsPerDayNotMandatory.Text = .KgsPerDayNotMandatory
+                Me.lblETF.Text = .ETF
 
             End With
         Catch ex As Exception
@@ -563,11 +564,11 @@ Public Class frmDailyWorkings
     
 
     Private Sub RepositoryItemButtonEdit1_ButtonClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles RepositoryItemButtonEdit1.ButtonClick
-        Dim a As String
-    End Sub
-
-    Private Sub RepositoryItemImageEdit1_ButtonClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles RepositoryItemImageEdit1.ButtonClick
-        Dim a As String
 
     End Sub
+
+
+
+
+
 End Class

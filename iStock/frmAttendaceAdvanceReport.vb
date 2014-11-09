@@ -98,6 +98,80 @@ Public Class frmAttendaceAdvanceReport
 
 #Region "Button Events"
 
+    Private Sub SimpleButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SimpleButton1.Click
+
+
+
+        Dim dt As New DataTable
+        dt = frmCoinCalculatorAdvance.CreateDataSource()
+
+        For i = 0 To gvCheckRoll.RowCount - 1 Step 1
+
+            Dim dr As DataRow
+            dr = dt.NewRow
+
+
+            Dim cointval() As Integer = {1, 2, 5, 10, 20, 50, 100, 500, 1000, 2000, 5000}
+            Dim numofCoinUsed(11) As Integer
+            Dim amountToCal As Integer
+            amountToCal = Convert.ToDecimal(gvCheckRoll.GetRowCellValue(i, gvCheckRoll.Columns("BalancePay")))
+
+            Dim remainingAmount As Integer
+
+            remainingAmount = amountToCal
+
+            For currentCoin As Integer = 9 To 0 Step -1
+
+                Dim currentCoinIndex As Integer
+                currentCoinIndex = 0
+
+
+                Dim x As Decimal
+
+                x = (remainingAmount / cointval(currentCoin))
+
+                currentCoinIndex = IIf(x < 1, 0, Math.Abs(Math.Floor(x)))
+
+                numofCoinUsed(currentCoin) = currentCoinIndex
+
+                remainingAmount = remainingAmount - (currentCoinIndex * cointval(currentCoin))
+
+                If (remainingAmount = 0) Then
+                    Continue For
+                End If
+
+            Next
+
+
+            dr("EmployeeName") = gvCheckRoll.GetRowCellValue(i, gvCheckRoll.Columns("EmployeeName"))
+            dr("BalancePay") = gvCheckRoll.GetRowCellValue(i, gvCheckRoll.Columns("BalancePay"))
+            dr("5000") = numofCoinUsed(10)
+            dr("2000") = numofCoinUsed(9)
+            dr("1000") = numofCoinUsed(8)
+            dr("500") = numofCoinUsed(7)
+            dr("100") = numofCoinUsed(6)
+            dr("50") = numofCoinUsed(5)
+            dr("20") = numofCoinUsed(4)
+            dr("10") = numofCoinUsed(3)
+            dr("5") = numofCoinUsed(2)
+            dr("2") = numofCoinUsed(1)
+            dr("1") = numofCoinUsed(0)
+
+            dt.Rows.Add(dr)
+
+        Next
+
+
+        frmCoinCalculatorAdvance.gcSummary.DataSource = dt
+
+        ShowIStockForm(frmCoinCalculatorAdvance)
+        frmCoinCalculatorAdvance.BringToFront()
+        frmCoinCalculatorAdvance.lblTitle.Text = "Check Roll (Permanent)"
+
+
+
+    End Sub
+
     Private Sub sbGenerate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbGenerate.Click
 
         If dxvpAttendaceReport.Validate Then
@@ -178,7 +252,7 @@ Public Class frmAttendaceAdvanceReport
 
             Next
 
-
+            gvCheckRoll.BestFitColumns()
 
 
 
@@ -190,4 +264,7 @@ Public Class frmAttendaceAdvanceReport
 
 #End Region
 
+   
+    Private Sub GridControl1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    End Sub
 End Class

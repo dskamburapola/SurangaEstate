@@ -218,7 +218,7 @@ Partial Class frmEmployers
         Me.ceDepartment.Properties.Items.AddRange(New Object() {"ACCOUNTS", "PRODUCTION", "OFFICE", "STORES", "ADMIN", "LABOUR"})
         Me.ceDepartment.Size = New System.Drawing.Size(339, 20)
         Me.ceDepartment.StyleController = Me.LayoutControl1
-        Me.ceDepartment.TabIndex = 10
+        Me.ceDepartment.TabIndex = 0
         '
         'ceDesignation
         '
@@ -231,7 +231,7 @@ Partial Class frmEmployers
         Me.ceDesignation.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
         Me.ceDesignation.Size = New System.Drawing.Size(339, 20)
         Me.ceDesignation.StyleController = Me.LayoutControl1
-        Me.ceDesignation.TabIndex = 11
+        Me.ceDesignation.TabIndex = 1
         '
         'teEmployerContactPerson
         '
@@ -241,7 +241,7 @@ Partial Class frmEmployers
         Me.teEmployerContactPerson.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teEmployerContactPerson.Size = New System.Drawing.Size(339, 20)
         Me.teEmployerContactPerson.StyleController = Me.LayoutControl1
-        Me.teEmployerContactPerson.TabIndex = 9
+        Me.teEmployerContactPerson.TabIndex = 13
         '
         'deDateJoined
         '
@@ -259,7 +259,7 @@ Partial Class frmEmployers
         Me.deDateJoined.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.deDateJoined.Size = New System.Drawing.Size(339, 20)
         Me.deDateJoined.StyleController = Me.LayoutControl1
-        Me.deDateJoined.TabIndex = 12
+        Me.deDateJoined.TabIndex = 2
         ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
         ConditionValidationRule1.ErrorText = "This value is not valid"
         Me.dxvpEmployers.SetValidationRule(Me.deDateJoined, ConditionValidationRule1)
@@ -272,7 +272,7 @@ Partial Class frmEmployers
         Me.teTelephone.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teTelephone.Size = New System.Drawing.Size(339, 20)
         Me.teTelephone.StyleController = Me.LayoutControl1
-        Me.teTelephone.TabIndex = 8
+        Me.teTelephone.TabIndex = 12
         '
         'teNICNo
         '
@@ -282,7 +282,7 @@ Partial Class frmEmployers
         Me.teNICNo.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teNICNo.Size = New System.Drawing.Size(339, 20)
         Me.teNICNo.StyleController = Me.LayoutControl1
-        Me.teNICNo.TabIndex = 4
+        Me.teNICNo.TabIndex = 6
         ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
         ConditionValidationRule2.ErrorText = "This value is not valid"
         Me.dxvpEmployers.SetValidationRule(Me.teNICNo, ConditionValidationRule2)
@@ -298,7 +298,7 @@ Partial Class frmEmployers
         Me.ceSex.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
         Me.ceSex.Size = New System.Drawing.Size(339, 20)
         Me.ceSex.StyleController = Me.LayoutControl1
-        Me.ceSex.TabIndex = 3
+        Me.ceSex.TabIndex = 7
         ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
         ConditionValidationRule3.ErrorText = "Can not be Blank"
         Me.dxvpEmployers.SetValidationRule(Me.ceSex, ConditionValidationRule3)
@@ -311,7 +311,7 @@ Partial Class frmEmployers
         Me.teCity.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teCity.Size = New System.Drawing.Size(339, 20)
         Me.teCity.StyleController = Me.LayoutControl1
-        Me.teCity.TabIndex = 7
+        Me.teCity.TabIndex = 11
         '
         'teAddressLine2
         '
@@ -321,7 +321,7 @@ Partial Class frmEmployers
         Me.teAddressLine2.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teAddressLine2.Size = New System.Drawing.Size(339, 20)
         Me.teAddressLine2.StyleController = Me.LayoutControl1
-        Me.teAddressLine2.TabIndex = 5
+        Me.teAddressLine2.TabIndex = 9
         '
         'teAdressLine1
         '
@@ -331,7 +331,7 @@ Partial Class frmEmployers
         Me.teAdressLine1.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teAdressLine1.Size = New System.Drawing.Size(339, 20)
         Me.teAdressLine1.StyleController = Me.LayoutControl1
-        Me.teAdressLine1.TabIndex = 6
+        Me.teAdressLine1.TabIndex = 10
         '
         'teEmployerName
         '
@@ -341,7 +341,7 @@ Partial Class frmEmployers
         Me.teEmployerName.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teEmployerName.Size = New System.Drawing.Size(339, 20)
         Me.teEmployerName.StyleController = Me.LayoutControl1
-        Me.teEmployerName.TabIndex = 1
+        Me.teEmployerName.TabIndex = 5
         ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
         ConditionValidationRule4.ErrorText = "Can not be Blank"
         Me.dxvpEmployers.SetValidationRule(Me.teEmployerName, ConditionValidationRule4)
@@ -362,7 +362,7 @@ Partial Class frmEmployers
         Me.deDOB.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.deDOB.Size = New System.Drawing.Size(339, 20)
         Me.deDOB.StyleController = Me.LayoutControl1
-        Me.deDOB.TabIndex = 2
+        Me.deDOB.TabIndex = 8
         '
         'seEmployerNo
         '
@@ -374,7 +374,7 @@ Partial Class frmEmployers
         Me.seEmployerNo.Properties.MaxValue = New Decimal(New Integer() {2147483647, 0, 0, 0})
         Me.seEmployerNo.Size = New System.Drawing.Size(339, 20)
         Me.seEmployerNo.StyleController = Me.LayoutControl1
-        Me.seEmployerNo.TabIndex = 0
+        Me.seEmployerNo.TabIndex = 3
         ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
         ConditionValidationRule5.ErrorText = "Must be a Valid No, Not 0"
         ConditionValidationRule5.Value1 = 0
@@ -391,7 +391,7 @@ Partial Class frmEmployers
         Me.seEPFNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None
         Me.seEPFNo.Size = New System.Drawing.Size(339, 20)
         Me.seEPFNo.StyleController = Me.LayoutControl1
-        Me.seEPFNo.TabIndex = 13
+        Me.seEPFNo.TabIndex = 4
         ConditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
         ConditionValidationRule6.ErrorText = "This value is not valid"
         Me.dxvpEmployers.SetValidationRule(Me.seEPFNo, ConditionValidationRule6)
