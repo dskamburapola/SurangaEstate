@@ -20,13 +20,9 @@ Partial Class frmCropSummaryReport
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.pgcAttendance = New DevExpress.XtraPivotGrid.PivotGridControl()
-        Me.PivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
-        Me.PivotGridField2 = New DevExpress.XtraPivotGrid.PivotGridField()
-        Me.PivotGridField3 = New DevExpress.XtraPivotGrid.PivotGridField()
-        Me.PivotGridField4 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.leType = New DevExpress.XtraEditors.LookUpEdit()
         Me.sbGenerate = New DevExpress.XtraEditors.SimpleButton()
         Me.sbPrint = New DevExpress.XtraEditors.SimpleButton()
@@ -38,7 +34,10 @@ Partial Class frmCropSummaryReport
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
-        Me.PivotGridField5 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField2 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField3 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField4 = New DevExpress.XtraPivotGrid.PivotGridField()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.pgcAttendance, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,60 +68,13 @@ Partial Class frmCropSummaryReport
         '
         'pgcAttendance
         '
-        Me.pgcAttendance.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.PivotGridField1, Me.PivotGridField2, Me.PivotGridField3, Me.PivotGridField4, Me.PivotGridField5})
+        Me.pgcAttendance.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.PivotGridField1, Me.PivotGridField2, Me.PivotGridField3, Me.PivotGridField4})
         Me.pgcAttendance.Location = New System.Drawing.Point(12, 81)
         Me.pgcAttendance.Name = "pgcAttendance"
         Me.pgcAttendance.OptionsData.DataFieldUnboundExpressionMode = DevExpress.XtraPivotGrid.DataFieldUnboundExpressionMode.UseSummaryValues
         Me.pgcAttendance.OptionsView.ShowGrandTotalsForSingleValues = True
         Me.pgcAttendance.Size = New System.Drawing.Size(678, 374)
         Me.pgcAttendance.TabIndex = 16
-        '
-        'PivotGridField1
-        '
-        Me.PivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
-        Me.PivotGridField1.AreaIndex = 0
-        Me.PivotGridField1.Caption = "Month No"
-        Me.PivotGridField1.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.PivotGridField1.FieldName = "MonthNo"
-        Me.PivotGridField1.GroupInterval = DevExpress.XtraPivotGrid.PivotGroupInterval.DateYear
-        Me.PivotGridField1.Name = "PivotGridField1"
-        Me.PivotGridField1.UnboundFieldName = "PivotGridField1"
-        Me.PivotGridField1.ValueFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        '
-        'PivotGridField2
-        '
-        Me.PivotGridField2.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
-        Me.PivotGridField2.AreaIndex = 1
-        Me.PivotGridField2.Caption = "Month"
-        Me.PivotGridField2.CellFormat.FormatString = "MMM"
-        Me.PivotGridField2.CellFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.PivotGridField2.FieldName = "MONTH"
-        Me.PivotGridField2.Name = "PivotGridField2"
-        Me.PivotGridField2.Options.AllowSort = DevExpress.Utils.DefaultBoolean.[False]
-        Me.PivotGridField2.Options.AllowSortBySummary = DevExpress.Utils.DefaultBoolean.[False]
-        Me.PivotGridField2.SortMode = DevExpress.XtraPivotGrid.PivotSortMode.None
-        '
-        'PivotGridField3
-        '
-        Me.PivotGridField3.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
-        Me.PivotGridField3.AreaIndex = 0
-        Me.PivotGridField3.Caption = "Crop"
-        Me.PivotGridField3.CellFormat.FormatString = "{0:N2}"
-        Me.PivotGridField3.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.PivotGridField3.FieldName = "Crop"
-        Me.PivotGridField3.GrandTotalCellFormat.FormatString = "{0:N2}"
-        Me.PivotGridField3.GrandTotalCellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.PivotGridField3.GrandTotalText = "Crop"
-        Me.PivotGridField3.Name = "PivotGridField3"
-        Me.PivotGridField3.UnboundFieldName = "PivotGridField3"
-        '
-        'PivotGridField4
-        '
-        Me.PivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
-        Me.PivotGridField4.AreaIndex = 0
-        Me.PivotGridField4.Caption = "Year"
-        Me.PivotGridField4.FieldName = "YEAR"
-        Me.PivotGridField4.Name = "PivotGridField4"
         '
         'leType
         '
@@ -134,9 +86,9 @@ Partial Class frmCropSummaryReport
         Me.leType.Size = New System.Drawing.Size(119, 20)
         Me.leType.StyleController = Me.LayoutControl1
         Me.leType.TabIndex = 15
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule2.ErrorText = "Require"
-        Me.dxvpAttendaceReport.SetValidationRule(Me.leType, ConditionValidationRule2)
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.leType, ConditionValidationRule1)
         '
         'sbGenerate
         '
@@ -240,20 +192,40 @@ Partial Class frmCropSummaryReport
         Me.LayoutControlItem2.TextToControlDistance = 0
         Me.LayoutControlItem2.TextVisible = False
         '
-        'PivotGridField5
+        'PivotGridField1
         '
-        Me.PivotGridField5.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
-        Me.PivotGridField5.AreaIndex = 1
-        Me.PivotGridField5.Caption = "Avg"
-        Me.PivotGridField5.CellFormat.FormatString = "{0:N2}"
-        Me.PivotGridField5.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.PivotGridField5.FieldName = "Crop"
-        Me.PivotGridField5.GrandTotalText = "Avg"
-        Me.PivotGridField5.Name = "PivotGridField5"
-        Me.PivotGridField5.Options.ShowValues = False
-        Me.PivotGridField5.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Average
-        Me.PivotGridField5.TotalCellFormat.FormatString = "{0:N2}"
-        Me.PivotGridField5.TotalCellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.PivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+        Me.PivotGridField1.AreaIndex = 0
+        Me.PivotGridField1.Caption = "Month"
+        Me.PivotGridField1.FieldName = "MONTH"
+        Me.PivotGridField1.Name = "PivotGridField1"
+        '
+        'PivotGridField2
+        '
+        Me.PivotGridField2.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
+        Me.PivotGridField2.AreaIndex = 0
+        Me.PivotGridField2.Caption = "Year"
+        Me.PivotGridField2.FieldName = "YEAR"
+        Me.PivotGridField2.Name = "PivotGridField2"
+        '
+        'PivotGridField3
+        '
+        Me.PivotGridField3.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
+        Me.PivotGridField3.AreaIndex = 0
+        Me.PivotGridField3.Caption = "Crop"
+        Me.PivotGridField3.CellFormat.FormatString = "{0:N2}"
+        Me.PivotGridField3.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.PivotGridField3.FieldName = "Crop"
+        Me.PivotGridField3.Name = "PivotGridField3"
+        '
+        'PivotGridField4
+        '
+        Me.PivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
+        Me.PivotGridField4.AreaIndex = 1
+        Me.PivotGridField4.Caption = "Avg (%)"
+        Me.PivotGridField4.FieldName = "Crop"
+        Me.PivotGridField4.Name = "PivotGridField4"
+        Me.PivotGridField4.SummaryDisplayType = DevExpress.Data.PivotGrid.PivotSummaryDisplayType.PercentOfColumn
         '
         'frmCropSummaryReport
         '
@@ -293,9 +265,8 @@ Partial Class frmCropSummaryReport
     Friend WithEvents LayoutControlGroup2 As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents pgcAttendance As DevExpress.XtraPivotGrid.PivotGridControl
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents PivotGridField1 As DevExpress.XtraPivotGrid.PivotGridField
     Friend WithEvents PivotGridField2 As DevExpress.XtraPivotGrid.PivotGridField
     Friend WithEvents PivotGridField3 As DevExpress.XtraPivotGrid.PivotGridField
     Friend WithEvents PivotGridField4 As DevExpress.XtraPivotGrid.PivotGridField
-    Friend WithEvents PivotGridField1 As DevExpress.XtraPivotGrid.PivotGridField
-    Friend WithEvents PivotGridField5 As DevExpress.XtraPivotGrid.PivotGridField
 End Class

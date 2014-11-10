@@ -118,7 +118,7 @@ Public Class frmAttendaceReport
             pgcAttendance.DataSource = ds.Tables(0)
             pgcAttendance.BestFitColumnArea()
 
-            ds.Tables(0).WriteXmlSchema("c:\DataSource.xml")
+
 
 
         End If

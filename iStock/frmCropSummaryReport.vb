@@ -113,8 +113,34 @@ Public Class frmCropSummaryReport
 
             ds = iStockDailyWorking.GetCropSummary(leType.EditValue)
             pgcAttendance.DataSource = ds.Tables(0)
+
+            'Dim frow As New PivotGridField
+            'Dim fcol As New PivotGridField
+            'Dim fdata As New PivotGridField
+            'Dim fdataPercentage As New PivotGridField
+
+
+            'frow.FieldName = "MONTH"
+            'fcol.FieldName = "YEAR"
+            'fdata.FieldName = "Crop"
+            'fdataPercentage.FieldName = "Crop"
+
+            'frow=
+
+            'With pgcAttendance
+            '    .Fields.Add(frow)
+            '    .Fields.Add(fdata)
+            '    .Fields.Add(fdataPercentage).SummaryDisplayType = DevExpress.Data.PivotGrid.PivotSummaryDisplayType.PercentOfColumn
+            '    .Fields.Add(fcol)
+
+            'End With
+
+
             pgcAttendance.BestFitColumnArea()
+
             'PivotGridField2.FilterValues.ShowBlanks = False
+
+
 
         End If
 
@@ -124,4 +150,7 @@ Public Class frmCropSummaryReport
 
 #End Region
 
+    Private Sub pgcAttendance_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pgcAttendance.Click
+
+    End Sub
 End Class
