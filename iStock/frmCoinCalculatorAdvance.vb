@@ -13,8 +13,6 @@ Public Class frmCoinCalculatorAdvance
 
         dt.Columns.Add("EmployeeName", GetType(String))
         dt.Columns.Add("BalancePay", GetType(Decimal))
-        dt.Columns.Add("5000", GetType(Integer))
-        dt.Columns.Add("2000", GetType(Integer))
         dt.Columns.Add("1000", GetType(Integer))
         dt.Columns.Add("500", GetType(Integer))
         dt.Columns.Add("100", GetType(Integer))

@@ -111,8 +111,8 @@ Public Class frmAttendaceAdvanceReport
             dr = dt.NewRow
 
 
-            Dim cointval() As Integer = {1, 2, 5, 10, 20, 50, 100, 500, 1000, 2000, 5000}
-            Dim numofCoinUsed(11) As Integer
+            Dim cointval() As Integer = {1, 2, 5, 10, 20, 50, 100, 500, 1000}
+            Dim numofCoinUsed(9) As Integer
             Dim amountToCal As Integer
             amountToCal = Convert.ToDecimal(gvCheckRoll.GetRowCellValue(i, gvCheckRoll.Columns("BalancePay")))
 
@@ -120,7 +120,7 @@ Public Class frmAttendaceAdvanceReport
 
             remainingAmount = amountToCal
 
-            For currentCoin As Integer = 9 To 0 Step -1
+            For currentCoin As Integer = 8 To 0 Step -1
 
                 Dim currentCoinIndex As Integer
                 currentCoinIndex = 0
@@ -145,8 +145,7 @@ Public Class frmAttendaceAdvanceReport
 
             dr("EmployeeName") = gvCheckRoll.GetRowCellValue(i, gvCheckRoll.Columns("EmployeeName"))
             dr("BalancePay") = gvCheckRoll.GetRowCellValue(i, gvCheckRoll.Columns("BalancePay"))
-            dr("5000") = numofCoinUsed(10)
-            dr("2000") = numofCoinUsed(9)
+            
             dr("1000") = numofCoinUsed(8)
             dr("500") = numofCoinUsed(7)
             dr("100") = numofCoinUsed(6)
