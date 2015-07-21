@@ -240,6 +240,14 @@ Public Class frmAttendaceAdvanceReport
             gvCheckRoll.Columns("GrandTotalPay").AppearanceCell.BackColor = Color.Bisque
             gvCheckRoll.Columns("BalancePay").AppearanceCell.BackColor = Color.Thistle
 
+
+            gvCheckRoll.Columns("EPFAmount").AppearanceCell.BackColor = Color.LightCoral
+            gvCheckRoll.Columns("PayChit").AppearanceCell.BackColor = Color.LightCoral
+            gvCheckRoll.Columns("FestivalAdvance").AppearanceCell.BackColor = Color.LightCoral
+            gvCheckRoll.Columns("CashAdvance").AppearanceCell.BackColor = Color.LightCoral
+            gvCheckRoll.Columns("TotalDeductions").AppearanceCell.BackColor = Color.LightCoral
+
+
             For index = 0 To gvCheckRoll.Columns.Count - 1
 
                 If IsDate(gvCheckRoll.Columns(index).FieldName) Then
@@ -251,6 +259,7 @@ Public Class frmAttendaceAdvanceReport
 
             Next
 
+        
             gvCheckRoll.BestFitColumns()
 
 
