@@ -63,8 +63,10 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Office.v12.2.Core, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v12.2.Core, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v12.2.Core, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v12.2.UI, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -431,6 +433,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PrintRibbonControllerResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="xrMonthlyReport.Designer.vb">
+      <DependentUpon>xrMonthlyReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xrMonthlyReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="xrProfitnLoss.Designer.vb">
       <DependentUpon>xrProfitnLoss.vb</DependentUpon>
     </Compile>
@@ -653,6 +661,9 @@
       <LastGenOutput>PrintRibbonControllerResources.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="xrMonthlyReport.resx">
+      <DependentUpon>xrMonthlyReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="xrProfitnLoss.resx">
       <DependentUpon>xrProfitnLoss.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -678,7 +689,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\CWB.ico" />
