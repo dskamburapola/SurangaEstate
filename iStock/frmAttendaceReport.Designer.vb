@@ -20,6 +20,7 @@ Partial Class frmAttendaceReport
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim PivotGridStyleFormatCondition1 As DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition = New DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition()
         Dim PivotGridCustomTotal1 As DevExpress.XtraPivotGrid.PivotGridCustomTotal = New DevExpress.XtraPivotGrid.PivotGridCustomTotal()
@@ -35,6 +36,7 @@ Partial Class frmAttendaceReport
         Me.PivotGridField3 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.PivotGridField4 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.PivotGridField5 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField7 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.leYear = New DevExpress.XtraEditors.LookUpEdit()
         Me.meMonth = New DevExpress.XtraScheduler.UI.MonthEdit()
         Me.sbGenerate = New DevExpress.XtraEditors.SimpleButton()
@@ -87,19 +89,18 @@ Partial Class frmAttendaceReport
         '
         Me.cbeWorkType.Location = New System.Drawing.Point(379, 43)
         Me.cbeWorkType.Name = "cbeWorkType"
-        Me.cbeWorkType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cbeWorkType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Clear", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, "", Nothing, Nothing, True)})
         Me.cbeWorkType.Properties.Items.AddRange(New Object() {"PERMANENT", "CASUAL"})
         Me.cbeWorkType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
-        Me.cbeWorkType.Size = New System.Drawing.Size(91, 20)
+        Me.cbeWorkType.Size = New System.Drawing.Size(121, 20)
         Me.cbeWorkType.StyleController = Me.LayoutControl1
         Me.cbeWorkType.TabIndex = 17
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "Require"
+        ConditionValidationRule1.ErrorText = ""
         Me.dxvpAttendaceReport.SetValidationRule(Me.cbeWorkType, ConditionValidationRule1)
         '
         'pgcAttendance
         '
-        Me.pgcAttendance.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.PivotGridField1, Me.PivotGridField2, Me.PivotGridField6, Me.PivotGridField3, Me.PivotGridField4, Me.PivotGridField5})
+        Me.pgcAttendance.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.PivotGridField1, Me.PivotGridField2, Me.PivotGridField6, Me.PivotGridField3, Me.PivotGridField4, Me.PivotGridField5, Me.PivotGridField7})
         PivotGridStyleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Transparent
         PivotGridStyleFormatCondition1.Appearance.Options.UseForeColor = True
         PivotGridStyleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal
@@ -142,15 +143,17 @@ Partial Class frmAttendaceReport
         Me.PivotGridField3.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
         Me.PivotGridField3.AreaIndex = 0
         Me.PivotGridField3.Caption = "Total"
-        Me.PivotGridField3.CellFormat.FormatString = "{0:N1}"
+        Me.PivotGridField3.CellFormat.FormatString = "#.#"
         Me.PivotGridField3.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         PivotGridCustomTotal1.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Average
         Me.PivotGridField3.CustomTotals.AddRange(New DevExpress.XtraPivotGrid.PivotGridCustomTotal() {PivotGridCustomTotal1})
         Me.PivotGridField3.FieldName = "Attendance"
-        Me.PivotGridField3.GrandTotalCellFormat.FormatString = "{0:N1}"
+        Me.PivotGridField3.GrandTotalCellFormat.FormatString = "#.#"
         Me.PivotGridField3.GrandTotalCellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.PivotGridField3.Name = "PivotGridField3"
         Me.PivotGridField3.Options.AllowRunTimeSummaryChange = True
+        Me.PivotGridField3.TotalCellFormat.FormatString = "#.#"
+        Me.PivotGridField3.TotalCellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.PivotGridField3.TotalsVisibility = DevExpress.XtraPivotGrid.PivotTotalsVisibility.CustomTotals
         Me.PivotGridField3.UnboundFieldName = "PivotGridField3"
         '
@@ -169,7 +172,7 @@ Partial Class frmAttendaceReport
         Me.PivotGridField5.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
         Me.PivotGridField5.AreaIndex = 1
         Me.PivotGridField5.Caption = "(Avg %)"
-        Me.PivotGridField5.CellFormat.FormatString = "{0:N1}"
+        Me.PivotGridField5.CellFormat.FormatString = "#.#"
         Me.PivotGridField5.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         PivotGridCustomTotal2.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Average
         Me.PivotGridField5.CustomTotals.AddRange(New DevExpress.XtraPivotGrid.PivotGridCustomTotal() {PivotGridCustomTotal2})
@@ -178,6 +181,15 @@ Partial Class frmAttendaceReport
         Me.PivotGridField5.Options.ShowValues = False
         Me.PivotGridField5.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Average
         Me.PivotGridField5.UnboundFieldName = "PivotGridField5"
+        Me.PivotGridField5.Visible = False
+        '
+        'PivotGridField7
+        '
+        Me.PivotGridField7.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+        Me.PivotGridField7.AreaIndex = 1
+        Me.PivotGridField7.Caption = "Work Type"
+        Me.PivotGridField7.FieldName = "WorkType"
+        Me.PivotGridField7.Name = "PivotGridField7"
         '
         'leYear
         '
@@ -207,7 +219,7 @@ Partial Class frmAttendaceReport
         '
         'sbGenerate
         '
-        Me.sbGenerate.Location = New System.Drawing.Point(474, 43)
+        Me.sbGenerate.Location = New System.Drawing.Point(504, 43)
         Me.sbGenerate.Name = "sbGenerate"
         Me.sbGenerate.Size = New System.Drawing.Size(146, 22)
         Me.sbGenerate.StyleController = Me.LayoutControl1
@@ -252,9 +264,9 @@ Partial Class frmAttendaceReport
         '
         Me.EmptySpaceItem3.AllowHotTrack = False
         Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(624, 0)
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(654, 0)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(58, 69)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(28, 69)
         Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -264,7 +276,7 @@ Partial Class frmAttendaceReport
         Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem1, Me.LayoutControlItem4})
         Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
-        Me.LayoutControlGroup2.Size = New System.Drawing.Size(624, 69)
+        Me.LayoutControlGroup2.Size = New System.Drawing.Size(654, 69)
         Me.LayoutControlGroup2.Text = "Select Month && Year"
         '
         'LayoutControlItem5
@@ -297,7 +309,7 @@ Partial Class frmAttendaceReport
         '
         Me.LayoutControlItem1.Control = Me.sbGenerate
         Me.LayoutControlItem1.CustomizationFormText = "LayoutControlItem1"
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(450, 0)
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(480, 0)
         Me.LayoutControlItem1.MaxSize = New System.Drawing.Size(150, 26)
         Me.LayoutControlItem1.MinSize = New System.Drawing.Size(150, 26)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
@@ -313,10 +325,10 @@ Partial Class frmAttendaceReport
         Me.LayoutControlItem4.Control = Me.cbeWorkType
         Me.LayoutControlItem4.CustomizationFormText = "Work Type"
         Me.LayoutControlItem4.Location = New System.Drawing.Point(300, 0)
-        Me.LayoutControlItem4.MaxSize = New System.Drawing.Size(150, 24)
-        Me.LayoutControlItem4.MinSize = New System.Drawing.Size(150, 24)
+        Me.LayoutControlItem4.MaxSize = New System.Drawing.Size(180, 24)
+        Me.LayoutControlItem4.MinSize = New System.Drawing.Size(180, 24)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(150, 26)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(180, 26)
         Me.LayoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem4.Text = "Work Type"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(52, 13)
@@ -385,4 +397,5 @@ Partial Class frmAttendaceReport
     Friend WithEvents PivotGridField6 As DevExpress.XtraPivotGrid.PivotGridField
     Friend WithEvents cbeWorkType As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents LayoutControlItem4 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents PivotGridField7 As DevExpress.XtraPivotGrid.PivotGridField
 End Class

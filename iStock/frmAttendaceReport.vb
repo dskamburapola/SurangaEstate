@@ -141,4 +141,9 @@ Public Class frmAttendaceReport
 
 #End Region
 
+    Private Sub cbeWorkType_ButtonClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles cbeWorkType.ButtonClick
+        If e.Button.Index = 1 Then
+            cbeWorkType.EditValue = Nothing
+        End If
+    End Sub
 End Class
