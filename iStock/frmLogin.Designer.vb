@@ -126,12 +126,12 @@ Partial Class frmLogin
         '
         'tePassword
         '
-        Me.tePassword.EditValue = "123"
+        Me.tePassword.EditValue = ""
         Me.tePassword.EnterMoveNextControl = True
-        Me.tePassword.Location = New System.Drawing.Point(91, 85)
+        Me.tePassword.Location = New System.Drawing.Point(90, 85)
         Me.tePassword.Name = "tePassword"
         Me.tePassword.Properties.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.tePassword.Size = New System.Drawing.Size(170, 20)
+        Me.tePassword.Size = New System.Drawing.Size(171, 20)
         Me.tePassword.StyleController = Me.LayoutControl1
         Me.tePassword.TabIndex = 1
         ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
@@ -141,13 +141,13 @@ Partial Class frmLogin
         'leUsers
         '
         Me.leUsers.EnterMoveNextControl = True
-        Me.leUsers.Location = New System.Drawing.Point(91, 61)
+        Me.leUsers.Location = New System.Drawing.Point(90, 61)
         Me.leUsers.Name = "leUsers"
         Me.leUsers.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.leUsers.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.leUsers.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("UserName", "User Name")})
         Me.leUsers.Properties.NullText = ""
-        Me.leUsers.Size = New System.Drawing.Size(170, 20)
+        Me.leUsers.Size = New System.Drawing.Size(171, 20)
         Me.leUsers.StyleController = Me.LayoutControl1
         Me.leUsers.TabIndex = 0
         ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank

@@ -193,15 +193,7 @@ Public Class frmMain
    
     Private Sub BarButtonItem35_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem35.ItemClick
 
-        Dim report As New xrMonthlyReport
-        frmPrint.PrintControl1.PrintingSystem = report.PrintingSystem
-
-        
-        report.CreateDocument()
-        report.BringToFront()
-        frmPrint.MdiParent = Me
-        frmPrint.Show()
-        frmPrint.BringToFront()
+        ShowIStockForm(frmMonthlyReport)
 
 
     End Sub

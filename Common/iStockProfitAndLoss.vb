@@ -167,5 +167,23 @@ Public Class iStockProfitAndLoss
     End Sub
 #End Region
 
+#Region "Monthly Report"
+
+    Function GetMonthlyReport() As DataSet
+
+        Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+        Dim DBC As DbCommand = DB.GetStoredProcCommand("ReportMonthly")
+
+        'DB.AddInParameter(DBC, "@FromDate", DbType.DateTime, Me.FromDate)
+        'DB.AddInParameter(DBC, "@ToDate", DbType.DateTime, Me.ToDate)
+
+        Return DB.ExecuteDataSet(DBC)
+
+    End Function
+
+
+
+
+#End Region
 
 End Class

@@ -20,28 +20,32 @@ Partial Public Class xrMonthlyReport
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
-        Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
-        Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
-        Me.PageHeader = New DevExpress.XtraReports.UI.PageHeaderBand()
-        Me.PageFooter = New DevExpress.XtraReports.UI.PageFooterBand()
-        Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrTable1 = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow1 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell1 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow2 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell4 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell5 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell70 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrTeaDes = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrTeaAmt = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow3 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell2 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell3 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell71 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrRubberLatexDes = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrRubberLatexAmt = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableRow31 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell72 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrRubberSheetDes = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrRubberSheetAmt = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableRow30 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell68 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrOtherAmt = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow4 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell6 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell7 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrCroptTotalAmt = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableRow6 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell11 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow5 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell8 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell9 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableRow6 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell11 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow7 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell10 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell12 = New DevExpress.XtraReports.UI.XRTableCell()
@@ -60,125 +64,97 @@ Partial Public Class xrMonthlyReport
         Me.XrTableRow12 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell21 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell22 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableRow13 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell23 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow14 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell25 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableRow13 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell23 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow15 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell26 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell27 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableRow16 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell24 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell28 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableRow17 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell29 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell30 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrPluckingDes1 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrPluckingAmt1 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow18 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell31 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell32 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrPluckingDes2 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrPluckingAmt2 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableRow17 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.xrPluckingDes3 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrPluckingAmt3 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableRow35 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell74 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableRow34 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.xrRubberLatexDes1 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrRubberLatexAmt1 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableRow36 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.xrRubberLatexDes2 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrRubberLatexAmt2 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableRow33 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.xrRubberLatexDes3 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrRubberLatexAmt3 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow19 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell33 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow20 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell35 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell36 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrRubberSheetDes1 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrRubberSheetAmt1 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow21 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell37 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell38 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrRubberSheetDes2 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrRubberSheetAmt2 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow22 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell39 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell40 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableRow23 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell34 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell41 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableRow24 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell42 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell43 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrRubberSheetDes3 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrRubberSheetAmt3 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow25 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell44 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableRow26 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell45 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell46 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableRow27 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell47 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell48 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableRow28 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell49 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell50 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableRow29 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell51 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell52 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableRow24 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell42 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell53 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell54 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell55 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell56 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell57 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell58 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell59 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell60 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell61 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell62 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell63 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell64 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell65 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell66 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell67 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell43 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableRow28 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.xrAttendanceName1 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrAttendanceDays1 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrAttendanceDaysPerc1 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrAttendancePluck1 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrAttendanceSheets1 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableRow27 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.xrAttendanceName2 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrAttendanceDays2 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrAttendanceDaysPerc2 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrAttendancePluck2 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrAttendanceSheets2 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableRow26 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.xrAttendanceName3 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrAttendanceDays3 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrAttendanceDaysPerc3 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrAttendancePluck3 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrAttendanceSheets3 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
+        Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
+        Me.PageHeader = New DevExpress.XtraReports.UI.PageHeaderBand()
         Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.PageFooter = New DevExpress.XtraReports.UI.PageFooterBand()
+        Me.xrAttendanceLatex1 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrAttendanceLatex2 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrAttendanceLatex3 = New DevExpress.XtraReports.UI.XRTableCell()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'Detail
         '
         Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrTable1})
-        Me.Detail.HeightF = 725.0!
+        Me.Detail.HeightF = 814.5833!
         Me.Detail.Name = "Detail"
         Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
-        '
-        'TopMargin
-        '
-        Me.TopMargin.HeightF = 25.0!
-        Me.TopMargin.Name = "TopMargin"
-        Me.TopMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
-        Me.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
-        '
-        'BottomMargin
-        '
-        Me.BottomMargin.HeightF = 25.0!
-        Me.BottomMargin.Name = "BottomMargin"
-        Me.BottomMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
-        Me.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
-        '
-        'PageHeader
-        '
-        Me.PageHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel2, Me.XrLabel1})
-        Me.PageHeader.Name = "PageHeader"
-        '
-        'PageFooter
-        '
-        Me.PageFooter.Name = "PageFooter"
-        '
-        'XrLabel1
-        '
-        Me.XrLabel1.Font = New System.Drawing.Font("Tahoma", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(325.0!, 0.0!)
-        Me.XrLabel1.Name = "XrLabel1"
-        Me.XrLabel1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
-        Me.XrLabel1.SizeF = New System.Drawing.SizeF(162.5!, 25.0!)
-        Me.XrLabel1.StylePriority.UseFont = False
-        Me.XrLabel1.StylePriority.UseTextAlignment = False
-        Me.XrLabel1.Text = "Monthly Report"
-        Me.XrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         '
         'XrTable1
         '
         Me.XrTable1.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
                     Or DevExpress.XtraPrinting.BorderSide.Right) _
                     Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
-        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(27.08333!, 0.0!)
+        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(37.5!, 0.0!)
         Me.XrTable1.Name = "XrTable1"
         Me.XrTable1.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 5, 5, 100.0!)
-        Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow1, Me.XrTableRow2, Me.XrTableRow3, Me.XrTableRow4, Me.XrTableRow6, Me.XrTableRow5, Me.XrTableRow7, Me.XrTableRow8, Me.XrTableRow9, Me.XrTableRow10, Me.XrTableRow11, Me.XrTableRow12, Me.XrTableRow14, Me.XrTableRow13, Me.XrTableRow15, Me.XrTableRow18, Me.XrTableRow17, Me.XrTableRow16, Me.XrTableRow19, Me.XrTableRow20, Me.XrTableRow21, Me.XrTableRow22, Me.XrTableRow23, Me.XrTableRow25, Me.XrTableRow24, Me.XrTableRow28, Me.XrTableRow27, Me.XrTableRow26, Me.XrTableRow29})
-        Me.XrTable1.SizeF = New System.Drawing.SizeF(735.4167!, 725.0!)
+        Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow1, Me.XrTableRow2, Me.XrTableRow3, Me.XrTableRow31, Me.XrTableRow30, Me.XrTableRow4, Me.XrTableRow6, Me.XrTableRow5, Me.XrTableRow7, Me.XrTableRow8, Me.XrTableRow9, Me.XrTableRow10, Me.XrTableRow11, Me.XrTableRow12, Me.XrTableRow14, Me.XrTableRow13, Me.XrTableRow15, Me.XrTableRow18, Me.XrTableRow17, Me.XrTableRow35, Me.XrTableRow34, Me.XrTableRow36, Me.XrTableRow33, Me.XrTableRow19, Me.XrTableRow20, Me.XrTableRow21, Me.XrTableRow22, Me.XrTableRow25, Me.XrTableRow24, Me.XrTableRow28, Me.XrTableRow27, Me.XrTableRow26})
+        Me.XrTable1.SizeF = New System.Drawing.SizeF(735.4167!, 800.0!)
         Me.XrTable1.StylePriority.UseBorders = False
         Me.XrTable1.StylePriority.UsePadding = False
         Me.XrTable1.StylePriority.UseTextAlignment = False
@@ -200,47 +176,98 @@ Partial Public Class xrMonthlyReport
         '
         'XrTableRow2
         '
-        Me.XrTableRow2.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell4, Me.XrTableCell5})
+        Me.XrTableRow2.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell70, Me.xrTeaDes, Me.xrTeaAmt})
         Me.XrTableRow2.Name = "XrTableRow2"
         Me.XrTableRow2.Weight = 1.0R
         '
-        'XrTableCell4
+        'XrTableCell70
         '
-        Me.XrTableCell4.Name = "XrTableCell4"
-        Me.XrTableCell4.Text = "Tea 2363 Kg x 73.57"
-        Me.XrTableCell4.Weight = 1.6676299777800998R
+        Me.XrTableCell70.Name = "XrTableCell70"
+        Me.XrTableCell70.Text = "Tea"
+        Me.XrTableCell70.Weight = 0.8338149888900499R
         '
-        'XrTableCell5
+        'xrTeaDes
         '
-        Me.XrTableCell5.Name = "XrTableCell5"
-        Me.XrTableCell5.StylePriority.UseTextAlignment = False
-        Me.XrTableCell5.Text = "168544.91"
-        Me.XrTableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-        Me.XrTableCell5.Weight = 1.3323700222199002R
+        Me.xrTeaDes.Name = "xrTeaDes"
+        Me.xrTeaDes.Weight = 0.8338149888900499R
+        '
+        'xrTeaAmt
+        '
+        Me.xrTeaAmt.Name = "xrTeaAmt"
+        Me.xrTeaAmt.StylePriority.UseTextAlignment = False
+        Me.xrTeaAmt.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.xrTeaAmt.Weight = 1.3323700222199002R
         '
         'XrTableRow3
         '
-        Me.XrTableRow3.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell2, Me.XrTableCell3})
+        Me.XrTableRow3.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell71, Me.xrRubberLatexDes, Me.xrRubberLatexAmt})
         Me.XrTableRow3.Name = "XrTableRow3"
         Me.XrTableRow3.Weight = 1.0R
         '
-        'XrTableCell2
+        'XrTableCell71
         '
-        Me.XrTableCell2.Name = "XrTableCell2"
-        Me.XrTableCell2.Text = "Rubber 888 x 520 461.76 x 260"
-        Me.XrTableCell2.Weight = 1.6676299777800998R
+        Me.XrTableCell71.Name = "XrTableCell71"
+        Me.XrTableCell71.Text = "Rubber (Laxex)"
+        Me.XrTableCell71.Weight = 0.8338149888900499R
         '
-        'XrTableCell3
+        'xrRubberLatexDes
         '
-        Me.XrTableCell3.Name = "XrTableCell3"
-        Me.XrTableCell3.StylePriority.UseTextAlignment = False
-        Me.XrTableCell3.Text = "120057.60"
-        Me.XrTableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-        Me.XrTableCell3.Weight = 1.3323700222199002R
+        Me.xrRubberLatexDes.Name = "xrRubberLatexDes"
+        Me.xrRubberLatexDes.Weight = 0.8338149888900499R
+        '
+        'xrRubberLatexAmt
+        '
+        Me.xrRubberLatexAmt.Name = "xrRubberLatexAmt"
+        Me.xrRubberLatexAmt.StylePriority.UseTextAlignment = False
+        Me.xrRubberLatexAmt.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.xrRubberLatexAmt.Weight = 1.3323700222199002R
+        '
+        'XrTableRow31
+        '
+        Me.XrTableRow31.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell72, Me.xrRubberSheetDes, Me.xrRubberSheetAmt})
+        Me.XrTableRow31.Name = "XrTableRow31"
+        Me.XrTableRow31.Weight = 1.0R
+        '
+        'XrTableCell72
+        '
+        Me.XrTableCell72.Name = "XrTableCell72"
+        Me.XrTableCell72.Text = "Rubber (Sheets)"
+        Me.XrTableCell72.Weight = 0.8338149888900499R
+        '
+        'xrRubberSheetDes
+        '
+        Me.xrRubberSheetDes.Name = "xrRubberSheetDes"
+        Me.xrRubberSheetDes.Weight = 0.8338149888900499R
+        '
+        'xrRubberSheetAmt
+        '
+        Me.xrRubberSheetAmt.Name = "xrRubberSheetAmt"
+        Me.xrRubberSheetAmt.StylePriority.UseTextAlignment = False
+        Me.xrRubberSheetAmt.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.xrRubberSheetAmt.Weight = 1.3323700222199002R
+        '
+        'XrTableRow30
+        '
+        Me.XrTableRow30.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell68, Me.xrOtherAmt})
+        Me.XrTableRow30.Name = "XrTableRow30"
+        Me.XrTableRow30.Weight = 1.0R
+        '
+        'XrTableCell68
+        '
+        Me.XrTableCell68.Name = "XrTableCell68"
+        Me.XrTableCell68.Text = "Other"
+        Me.XrTableCell68.Weight = 1.6676299777800998R
+        '
+        'xrOtherAmt
+        '
+        Me.xrOtherAmt.Name = "xrOtherAmt"
+        Me.xrOtherAmt.StylePriority.UseTextAlignment = False
+        Me.xrOtherAmt.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.xrOtherAmt.Weight = 1.3323700222199002R
         '
         'XrTableRow4
         '
-        Me.XrTableRow4.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell6, Me.XrTableCell7})
+        Me.XrTableRow4.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell6, Me.xrCroptTotalAmt})
         Me.XrTableRow4.Name = "XrTableRow4"
         Me.XrTableRow4.Weight = 1.0R
         '
@@ -252,15 +279,25 @@ Partial Public Class xrMonthlyReport
         Me.XrTableCell6.Text = "TOTAL"
         Me.XrTableCell6.Weight = 1.6676299777800998R
         '
-        'XrTableCell7
+        'xrCroptTotalAmt
         '
-        Me.XrTableCell7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.XrTableCell7.Name = "XrTableCell7"
-        Me.XrTableCell7.StylePriority.UseFont = False
-        Me.XrTableCell7.StylePriority.UseTextAlignment = False
-        Me.XrTableCell7.Text = "288602.51"
-        Me.XrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-        Me.XrTableCell7.Weight = 1.3323700222199002R
+        Me.xrCroptTotalAmt.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.xrCroptTotalAmt.Name = "xrCroptTotalAmt"
+        Me.xrCroptTotalAmt.StylePriority.UseFont = False
+        Me.xrCroptTotalAmt.StylePriority.UseTextAlignment = False
+        Me.xrCroptTotalAmt.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.xrCroptTotalAmt.Weight = 1.3323700222199002R
+        '
+        'XrTableRow6
+        '
+        Me.XrTableRow6.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell11})
+        Me.XrTableRow6.Name = "XrTableRow6"
+        Me.XrTableRow6.Weight = 1.0R
+        '
+        'XrTableCell11
+        '
+        Me.XrTableCell11.Name = "XrTableCell11"
+        Me.XrTableCell11.Weight = 3.0R
         '
         'XrTableRow5
         '
@@ -278,20 +315,8 @@ Partial Public Class xrMonthlyReport
         '
         Me.XrTableCell9.Name = "XrTableCell9"
         Me.XrTableCell9.StylePriority.UseTextAlignment = False
-        Me.XrTableCell9.Text = "144736.00"
         Me.XrTableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.XrTableCell9.Weight = 1.3323700222199002R
-        '
-        'XrTableRow6
-        '
-        Me.XrTableRow6.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell11})
-        Me.XrTableRow6.Name = "XrTableRow6"
-        Me.XrTableRow6.Weight = 1.0R
-        '
-        'XrTableCell11
-        '
-        Me.XrTableCell11.Name = "XrTableCell11"
-        Me.XrTableCell11.Weight = 3.0R
         '
         'XrTableRow7
         '
@@ -309,7 +334,6 @@ Partial Public Class xrMonthlyReport
         '
         Me.XrTableCell12.Name = "XrTableCell12"
         Me.XrTableCell12.StylePriority.UseTextAlignment = False
-        Me.XrTableCell12.Text = "35000.00"
         Me.XrTableCell12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.XrTableCell12.Weight = 1.3323700222199002R
         '
@@ -329,7 +353,6 @@ Partial Public Class xrMonthlyReport
         '
         Me.XrTableCell14.Name = "XrTableCell14"
         Me.XrTableCell14.StylePriority.UseTextAlignment = False
-        Me.XrTableCell14.Text = "6042.00"
         Me.XrTableCell14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.XrTableCell14.Weight = 1.3323700222199002R
         '
@@ -349,7 +372,6 @@ Partial Public Class xrMonthlyReport
         '
         Me.XrTableCell16.Name = "XrTableCell16"
         Me.XrTableCell16.StylePriority.UseTextAlignment = False
-        Me.XrTableCell16.Text = "1510.00"
         Me.XrTableCell16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.XrTableCell16.Weight = 1.3323700222199002R
         '
@@ -369,7 +391,6 @@ Partial Public Class xrMonthlyReport
         '
         Me.XrTableCell18.Name = "XrTableCell18"
         Me.XrTableCell18.StylePriority.UseTextAlignment = False
-        Me.XrTableCell18.Text = "3000.00"
         Me.XrTableCell18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.XrTableCell18.Weight = 1.3323700222199002R
         '
@@ -389,7 +410,6 @@ Partial Public Class xrMonthlyReport
         '
         Me.XrTableCell20.Name = "XrTableCell20"
         Me.XrTableCell20.StylePriority.UseTextAlignment = False
-        Me.XrTableCell20.Text = "10790.00"
         Me.XrTableCell20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.XrTableCell20.Weight = 1.3323700222199002R
         '
@@ -413,9 +433,19 @@ Partial Public Class xrMonthlyReport
         Me.XrTableCell22.Name = "XrTableCell22"
         Me.XrTableCell22.StylePriority.UseFont = False
         Me.XrTableCell22.StylePriority.UseTextAlignment = False
-        Me.XrTableCell22.Text = "201078.00"
         Me.XrTableCell22.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.XrTableCell22.Weight = 1.3323700222199002R
+        '
+        'XrTableRow14
+        '
+        Me.XrTableRow14.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell25})
+        Me.XrTableRow14.Name = "XrTableRow14"
+        Me.XrTableRow14.Weight = 1.0R
+        '
+        'XrTableCell25
+        '
+        Me.XrTableCell25.Name = "XrTableCell25"
+        Me.XrTableCell25.Weight = 3.0R
         '
         'XrTableRow13
         '
@@ -431,80 +461,128 @@ Partial Public Class xrMonthlyReport
         Me.XrTableCell23.Text = "PLUCKING"
         Me.XrTableCell23.Weight = 3.0R
         '
-        'XrTableRow14
-        '
-        Me.XrTableRow14.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell25})
-        Me.XrTableRow14.Name = "XrTableRow14"
-        Me.XrTableRow14.Weight = 1.0R
-        '
-        'XrTableCell25
-        '
-        Me.XrTableCell25.Name = "XrTableCell25"
-        Me.XrTableCell25.Weight = 3.0R
-        '
         'XrTableRow15
         '
-        Me.XrTableRow15.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell26, Me.XrTableCell27})
+        Me.XrTableRow15.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.xrPluckingDes1, Me.xrPluckingAmt1})
         Me.XrTableRow15.Name = "XrTableRow15"
         Me.XrTableRow15.Weight = 1.0R
         '
-        'XrTableCell26
+        'xrPluckingDes1
         '
-        Me.XrTableCell26.Name = "XrTableCell26"
-        Me.XrTableCell26.Weight = 1.6676299777800998R
+        Me.xrPluckingDes1.Name = "xrPluckingDes1"
+        Me.xrPluckingDes1.Weight = 1.6676299777800998R
         '
-        'XrTableCell27
+        'xrPluckingAmt1
         '
-        Me.XrTableCell27.Name = "XrTableCell27"
-        Me.XrTableCell27.Weight = 1.3323700222199002R
-        '
-        'XrTableRow16
-        '
-        Me.XrTableRow16.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell24, Me.XrTableCell28})
-        Me.XrTableRow16.Name = "XrTableRow16"
-        Me.XrTableRow16.Weight = 1.0R
-        '
-        'XrTableCell24
-        '
-        Me.XrTableCell24.Name = "XrTableCell24"
-        Me.XrTableCell24.Weight = 1.6676299777800998R
-        '
-        'XrTableCell28
-        '
-        Me.XrTableCell28.Name = "XrTableCell28"
-        Me.XrTableCell28.Weight = 1.3323700222199002R
-        '
-        'XrTableRow17
-        '
-        Me.XrTableRow17.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell29, Me.XrTableCell30})
-        Me.XrTableRow17.Name = "XrTableRow17"
-        Me.XrTableRow17.Weight = 1.0R
-        '
-        'XrTableCell29
-        '
-        Me.XrTableCell29.Name = "XrTableCell29"
-        Me.XrTableCell29.Weight = 1.6676299777800998R
-        '
-        'XrTableCell30
-        '
-        Me.XrTableCell30.Name = "XrTableCell30"
-        Me.XrTableCell30.Weight = 1.3323700222199002R
+        Me.xrPluckingAmt1.Name = "xrPluckingAmt1"
+        Me.xrPluckingAmt1.StylePriority.UseTextAlignment = False
+        Me.xrPluckingAmt1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.xrPluckingAmt1.Weight = 1.3323700222199002R
         '
         'XrTableRow18
         '
-        Me.XrTableRow18.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell31, Me.XrTableCell32})
+        Me.XrTableRow18.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.xrPluckingDes2, Me.xrPluckingAmt2})
         Me.XrTableRow18.Name = "XrTableRow18"
         Me.XrTableRow18.Weight = 1.0R
         '
-        'XrTableCell31
+        'xrPluckingDes2
         '
-        Me.XrTableCell31.Name = "XrTableCell31"
-        Me.XrTableCell31.Weight = 1.6676299777800998R
+        Me.xrPluckingDes2.Name = "xrPluckingDes2"
+        Me.xrPluckingDes2.Weight = 1.6676299777800998R
         '
-        'XrTableCell32
+        'xrPluckingAmt2
         '
-        Me.XrTableCell32.Name = "XrTableCell32"
-        Me.XrTableCell32.Weight = 1.3323700222199002R
+        Me.xrPluckingAmt2.Name = "xrPluckingAmt2"
+        Me.xrPluckingAmt2.StylePriority.UseTextAlignment = False
+        Me.xrPluckingAmt2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.xrPluckingAmt2.Weight = 1.3323700222199002R
+        '
+        'XrTableRow17
+        '
+        Me.XrTableRow17.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.xrPluckingDes3, Me.xrPluckingAmt3})
+        Me.XrTableRow17.Name = "XrTableRow17"
+        Me.XrTableRow17.Weight = 1.0R
+        '
+        'xrPluckingDes3
+        '
+        Me.xrPluckingDes3.Name = "xrPluckingDes3"
+        Me.xrPluckingDes3.Weight = 1.6676299777800998R
+        '
+        'xrPluckingAmt3
+        '
+        Me.xrPluckingAmt3.Name = "xrPluckingAmt3"
+        Me.xrPluckingAmt3.StylePriority.UseTextAlignment = False
+        Me.xrPluckingAmt3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.xrPluckingAmt3.Weight = 1.3323700222199002R
+        '
+        'XrTableRow35
+        '
+        Me.XrTableRow35.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell74})
+        Me.XrTableRow35.Name = "XrTableRow35"
+        Me.XrTableRow35.Weight = 1.0R
+        '
+        'XrTableCell74
+        '
+        Me.XrTableCell74.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.XrTableCell74.Multiline = True
+        Me.XrTableCell74.Name = "XrTableCell74"
+        Me.XrTableCell74.StylePriority.UseFont = False
+        Me.XrTableCell74.Text = "RUBBER LATEX" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.XrTableCell74.Weight = 3.0R
+        '
+        'XrTableRow34
+        '
+        Me.XrTableRow34.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.xrRubberLatexDes1, Me.xrRubberLatexAmt1})
+        Me.XrTableRow34.Name = "XrTableRow34"
+        Me.XrTableRow34.Weight = 1.0R
+        '
+        'xrRubberLatexDes1
+        '
+        Me.xrRubberLatexDes1.Name = "xrRubberLatexDes1"
+        Me.xrRubberLatexDes1.Weight = 1.6676299777800998R
+        '
+        'xrRubberLatexAmt1
+        '
+        Me.xrRubberLatexAmt1.Name = "xrRubberLatexAmt1"
+        Me.xrRubberLatexAmt1.StylePriority.UseTextAlignment = False
+        Me.xrRubberLatexAmt1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.xrRubberLatexAmt1.Weight = 1.3323700222199002R
+        '
+        'XrTableRow36
+        '
+        Me.XrTableRow36.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.xrRubberLatexDes2, Me.xrRubberLatexAmt2})
+        Me.XrTableRow36.Name = "XrTableRow36"
+        Me.XrTableRow36.Weight = 1.0R
+        '
+        'xrRubberLatexDes2
+        '
+        Me.xrRubberLatexDes2.Name = "xrRubberLatexDes2"
+        Me.xrRubberLatexDes2.Weight = 1.6676299777800998R
+        '
+        'xrRubberLatexAmt2
+        '
+        Me.xrRubberLatexAmt2.Name = "xrRubberLatexAmt2"
+        Me.xrRubberLatexAmt2.StylePriority.UseTextAlignment = False
+        Me.xrRubberLatexAmt2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.xrRubberLatexAmt2.Weight = 1.3323700222199002R
+        '
+        'XrTableRow33
+        '
+        Me.XrTableRow33.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.xrRubberLatexDes3, Me.xrRubberLatexAmt3})
+        Me.XrTableRow33.Name = "XrTableRow33"
+        Me.XrTableRow33.Weight = 1.0R
+        '
+        'xrRubberLatexDes3
+        '
+        Me.xrRubberLatexDes3.Name = "xrRubberLatexDes3"
+        Me.xrRubberLatexDes3.Weight = 1.6676299777800998R
+        '
+        'xrRubberLatexAmt3
+        '
+        Me.xrRubberLatexAmt3.Name = "xrRubberLatexAmt3"
+        Me.xrRubberLatexAmt3.StylePriority.UseTextAlignment = False
+        Me.xrRubberLatexAmt3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.xrRubberLatexAmt3.Weight = 1.3323700222199002R
         '
         'XrTableRow19
         '
@@ -522,67 +600,71 @@ Partial Public Class xrMonthlyReport
         '
         'XrTableRow20
         '
-        Me.XrTableRow20.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell35, Me.XrTableCell36})
+        Me.XrTableRow20.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.xrRubberSheetDes1, Me.xrRubberSheetAmt1})
         Me.XrTableRow20.Name = "XrTableRow20"
         Me.XrTableRow20.Weight = 1.0R
         '
-        'XrTableCell35
+        'xrRubberSheetDes1
         '
-        Me.XrTableCell35.Name = "XrTableCell35"
-        Me.XrTableCell35.Weight = 1.6676299777800998R
+        Me.xrRubberSheetDes1.Name = "xrRubberSheetDes1"
+        Me.xrRubberSheetDes1.Weight = 1.6676299777800998R
         '
-        'XrTableCell36
+        'xrRubberSheetAmt1
         '
-        Me.XrTableCell36.Name = "XrTableCell36"
-        Me.XrTableCell36.Weight = 1.3323700222199002R
+        Me.xrRubberSheetAmt1.Name = "xrRubberSheetAmt1"
+        Me.xrRubberSheetAmt1.StylePriority.UseTextAlignment = False
+        Me.xrRubberSheetAmt1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.xrRubberSheetAmt1.Weight = 1.3323700222199002R
         '
         'XrTableRow21
         '
-        Me.XrTableRow21.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell37, Me.XrTableCell38})
+        Me.XrTableRow21.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.xrRubberSheetDes2, Me.xrRubberSheetAmt2})
         Me.XrTableRow21.Name = "XrTableRow21"
         Me.XrTableRow21.Weight = 1.0R
         '
-        'XrTableCell37
+        'xrRubberSheetDes2
         '
-        Me.XrTableCell37.Name = "XrTableCell37"
-        Me.XrTableCell37.Weight = 1.6676299777800998R
+        Me.xrRubberSheetDes2.Name = "xrRubberSheetDes2"
+        Me.xrRubberSheetDes2.Weight = 1.6676299777800998R
         '
-        'XrTableCell38
+        'xrRubberSheetAmt2
         '
-        Me.XrTableCell38.Name = "XrTableCell38"
-        Me.XrTableCell38.Weight = 1.3323700222199002R
+        Me.xrRubberSheetAmt2.Name = "xrRubberSheetAmt2"
+        Me.xrRubberSheetAmt2.StylePriority.UseTextAlignment = False
+        Me.xrRubberSheetAmt2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.xrRubberSheetAmt2.Weight = 1.3323700222199002R
         '
         'XrTableRow22
         '
-        Me.XrTableRow22.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell39, Me.XrTableCell40})
+        Me.XrTableRow22.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.xrRubberSheetDes3, Me.xrRubberSheetAmt3})
         Me.XrTableRow22.Name = "XrTableRow22"
         Me.XrTableRow22.Weight = 1.0R
         '
-        'XrTableCell39
+        'xrRubberSheetDes3
         '
-        Me.XrTableCell39.Name = "XrTableCell39"
-        Me.XrTableCell39.Weight = 1.6676299777800998R
+        Me.xrRubberSheetDes3.Name = "xrRubberSheetDes3"
+        Me.xrRubberSheetDes3.Weight = 1.6676299777800998R
         '
-        'XrTableCell40
+        'xrRubberSheetAmt3
         '
-        Me.XrTableCell40.Name = "XrTableCell40"
-        Me.XrTableCell40.Weight = 1.3323700222199002R
+        Me.xrRubberSheetAmt3.Name = "xrRubberSheetAmt3"
+        Me.xrRubberSheetAmt3.StylePriority.UseTextAlignment = False
+        Me.xrRubberSheetAmt3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.xrRubberSheetAmt3.Weight = 1.3323700222199002R
         '
-        'XrTableRow23
+        'XrTableRow25
         '
-        Me.XrTableRow23.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell34, Me.XrTableCell41})
-        Me.XrTableRow23.Name = "XrTableRow23"
-        Me.XrTableRow23.Weight = 1.0R
+        Me.XrTableRow25.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell44})
+        Me.XrTableRow25.Name = "XrTableRow25"
+        Me.XrTableRow25.Weight = 1.0R
         '
-        'XrTableCell34
+        'XrTableCell44
         '
-        Me.XrTableCell34.Name = "XrTableCell34"
-        Me.XrTableCell34.Weight = 1.6676299777800998R
-        '
-        'XrTableCell41
-        '
-        Me.XrTableCell41.Name = "XrTableCell41"
-        Me.XrTableCell41.Weight = 1.3323700222199002R
+        Me.XrTableCell44.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.XrTableCell44.Name = "XrTableCell44"
+        Me.XrTableCell44.StylePriority.UseFont = False
+        Me.XrTableCell44.Text = "BEST ATTENDANCE & CONTRIBUTION"
+        Me.XrTableCell44.Weight = 3.0R
         '
         'XrTableRow24
         '
@@ -599,94 +681,6 @@ Partial Public Class xrMonthlyReport
         Me.XrTableCell42.Text = "NAME"
         Me.XrTableCell42.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         Me.XrTableCell42.Weight = 0.86451410167118614R
-        '
-        'XrTableCell43
-        '
-        Me.XrTableCell43.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.XrTableCell43.Name = "XrTableCell43"
-        Me.XrTableCell43.StylePriority.UseFont = False
-        Me.XrTableCell43.StylePriority.UseTextAlignment = False
-        Me.XrTableCell43.Text = "LATEX"
-        Me.XrTableCell43.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableCell43.Weight = 0.51020773710652312R
-        '
-        'XrTableRow25
-        '
-        Me.XrTableRow25.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell44})
-        Me.XrTableRow25.Name = "XrTableRow25"
-        Me.XrTableRow25.Weight = 1.0R
-        '
-        'XrTableCell44
-        '
-        Me.XrTableCell44.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.XrTableCell44.Name = "XrTableCell44"
-        Me.XrTableCell44.StylePriority.UseFont = False
-        Me.XrTableCell44.Text = "BEST ATTENDANCE & CONTRIBUTION"
-        Me.XrTableCell44.Weight = 3.0R
-        '
-        'XrTableRow26
-        '
-        Me.XrTableRow26.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell45, Me.XrTableCell62, Me.XrTableCell63, Me.XrTableCell64, Me.XrTableCell46})
-        Me.XrTableRow26.Name = "XrTableRow26"
-        Me.XrTableRow26.Weight = 1.0R
-        '
-        'XrTableCell45
-        '
-        Me.XrTableCell45.Name = "XrTableCell45"
-        Me.XrTableCell45.Weight = 0.86451435065311977R
-        '
-        'XrTableCell46
-        '
-        Me.XrTableCell46.Name = "XrTableCell46"
-        Me.XrTableCell46.Weight = 0.51020761261555636R
-        '
-        'XrTableRow27
-        '
-        Me.XrTableRow27.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell47, Me.XrTableCell59, Me.XrTableCell60, Me.XrTableCell61, Me.XrTableCell48})
-        Me.XrTableRow27.Name = "XrTableRow27"
-        Me.XrTableRow27.Weight = 1.0R
-        '
-        'XrTableCell47
-        '
-        Me.XrTableCell47.Name = "XrTableCell47"
-        Me.XrTableCell47.Weight = 0.8645142261621529R
-        '
-        'XrTableCell48
-        '
-        Me.XrTableCell48.Name = "XrTableCell48"
-        Me.XrTableCell48.Weight = 0.51020747256321863R
-        '
-        'XrTableRow28
-        '
-        Me.XrTableRow28.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell49, Me.XrTableCell56, Me.XrTableCell57, Me.XrTableCell58, Me.XrTableCell50})
-        Me.XrTableRow28.Name = "XrTableRow28"
-        Me.XrTableRow28.Weight = 1.0R
-        '
-        'XrTableCell49
-        '
-        Me.XrTableCell49.Name = "XrTableCell49"
-        Me.XrTableCell49.Weight = 0.8645142261621529R
-        '
-        'XrTableCell50
-        '
-        Me.XrTableCell50.Name = "XrTableCell50"
-        Me.XrTableCell50.Weight = 0.5102075970541855R
-        '
-        'XrTableRow29
-        '
-        Me.XrTableRow29.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell51, Me.XrTableCell65, Me.XrTableCell66, Me.XrTableCell67, Me.XrTableCell52})
-        Me.XrTableRow29.Name = "XrTableRow29"
-        Me.XrTableRow29.Weight = 1.0R
-        '
-        'XrTableCell51
-        '
-        Me.XrTableCell51.Name = "XrTableCell51"
-        Me.XrTableCell51.Weight = 0.86451435065311977R
-        '
-        'XrTableCell52
-        '
-        Me.XrTableCell52.Name = "XrTableCell52"
-        Me.XrTableCell52.Weight = 0.51020748812458949R
         '
         'XrTableCell53
         '
@@ -706,7 +700,7 @@ Partial Public Class xrMonthlyReport
         Me.XrTableCell54.StylePriority.UseTextAlignment = False
         Me.XrTableCell54.Text = "%"
         Me.XrTableCell54.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableCell54.Weight = 0.55299322483888314R
+        Me.XrTableCell54.Weight = 0.46375803758330558R
         '
         'XrTableCell55
         '
@@ -716,67 +710,154 @@ Partial Public Class xrMonthlyReport
         Me.XrTableCell55.StylePriority.UseTextAlignment = False
         Me.XrTableCell55.Text = "PLUCKINGS"
         Me.XrTableCell55.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableCell55.Weight = 0.51020773710652312R
+        Me.XrTableCell55.Weight = 0.49745967536863089R
         '
-        'XrTableCell56
+        'XrTableCell43
         '
-        Me.XrTableCell56.Name = "XrTableCell56"
-        Me.XrTableCell56.Weight = 0.56207713703140116R
+        Me.XrTableCell43.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.XrTableCell43.Name = "XrTableCell43"
+        Me.XrTableCell43.StylePriority.UseFont = False
+        Me.XrTableCell43.StylePriority.UseTextAlignment = False
+        Me.XrTableCell43.Text = "LATEX/SHEETS"
+        Me.XrTableCell43.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.XrTableCell43.Weight = 0.6121909860999929R
         '
-        'XrTableCell57
+        'XrTableRow28
         '
-        Me.XrTableCell57.Name = "XrTableCell57"
-        Me.XrTableCell57.Weight = 0.55299344269807493R
+        Me.XrTableRow28.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.xrAttendanceName1, Me.xrAttendanceDays1, Me.xrAttendanceDaysPerc1, Me.xrAttendancePluck1, Me.xrAttendanceLatex1, Me.xrAttendanceSheets1})
+        Me.XrTableRow28.Name = "XrTableRow28"
+        Me.XrTableRow28.Weight = 1.0R
         '
-        'XrTableCell58
+        'xrAttendanceName1
         '
-        Me.XrTableCell58.Name = "XrTableCell58"
-        Me.XrTableCell58.Weight = 0.5102075970541855R
+        Me.xrAttendanceName1.Name = "xrAttendanceName1"
+        Me.xrAttendanceName1.Weight = 0.8645142261621529R
         '
-        'XrTableCell59
+        'xrAttendanceDays1
         '
-        Me.XrTableCell59.Name = "XrTableCell59"
-        Me.XrTableCell59.Weight = 0.56207713703140116R
+        Me.xrAttendanceDays1.Name = "xrAttendanceDays1"
+        Me.xrAttendanceDays1.StylePriority.UseTextAlignment = False
+        Me.xrAttendanceDays1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.xrAttendanceDays1.Weight = 0.56207713703140116R
         '
-        'XrTableCell60
+        'xrAttendanceDaysPerc1
         '
-        Me.XrTableCell60.Name = "XrTableCell60"
-        Me.XrTableCell60.Weight = 0.55299369168000867R
+        Me.xrAttendanceDaysPerc1.Name = "xrAttendanceDaysPerc1"
+        Me.xrAttendanceDaysPerc1.StylePriority.UseTextAlignment = False
+        Me.xrAttendanceDaysPerc1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.xrAttendanceDaysPerc1.Weight = 0.46375834881072248R
         '
-        'XrTableCell61
+        'xrAttendancePluck1
         '
-        Me.XrTableCell61.Name = "XrTableCell61"
-        Me.XrTableCell61.Weight = 0.51020747256321863R
+        Me.xrAttendancePluck1.Name = "xrAttendancePluck1"
+        Me.xrAttendancePluck1.StylePriority.UseTextAlignment = False
+        Me.xrAttendancePluck1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.xrAttendancePluck1.Weight = 0.49745969093000175R
         '
-        'XrTableCell62
+        'xrAttendanceSheets1
         '
-        Me.XrTableCell62.Name = "XrTableCell62"
-        Me.XrTableCell62.Weight = 0.562076950294951R
+        Me.xrAttendanceSheets1.Name = "xrAttendanceSheets1"
+        Me.xrAttendanceSheets1.StylePriority.UseTextAlignment = False
+        Me.xrAttendanceSheets1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.xrAttendanceSheets1.Weight = 0.31034457982576091R
         '
-        'XrTableCell63
+        'XrTableRow27
         '
-        Me.XrTableCell63.Name = "XrTableCell63"
-        Me.XrTableCell63.Weight = 0.55299347382081665R
+        Me.XrTableRow27.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.xrAttendanceName2, Me.xrAttendanceDays2, Me.xrAttendanceDaysPerc2, Me.xrAttendancePluck2, Me.xrAttendanceLatex2, Me.xrAttendanceSheets2})
+        Me.XrTableRow27.Name = "XrTableRow27"
+        Me.XrTableRow27.Weight = 1.0R
         '
-        'XrTableCell64
+        'xrAttendanceName2
         '
-        Me.XrTableCell64.Name = "XrTableCell64"
-        Me.XrTableCell64.Weight = 0.51020761261555636R
+        Me.xrAttendanceName2.Name = "xrAttendanceName2"
+        Me.xrAttendanceName2.Weight = 0.8645142261621529R
         '
-        'XrTableCell65
+        'xrAttendanceDays2
         '
-        Me.XrTableCell65.Name = "XrTableCell65"
-        Me.XrTableCell65.Weight = 0.562076950294951R
+        Me.xrAttendanceDays2.Name = "xrAttendanceDays2"
+        Me.xrAttendanceDays2.StylePriority.UseTextAlignment = False
+        Me.xrAttendanceDays2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.xrAttendanceDays2.Weight = 0.56207713703140116R
         '
-        'XrTableCell66
+        'xrAttendanceDaysPerc2
         '
-        Me.XrTableCell66.Name = "XrTableCell66"
-        Me.XrTableCell66.Weight = 0.55299372280275039R
+        Me.xrAttendanceDaysPerc2.Name = "xrAttendanceDaysPerc2"
+        Me.xrAttendanceDaysPerc2.StylePriority.UseTextAlignment = False
+        Me.xrAttendanceDaysPerc2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.xrAttendanceDaysPerc2.Weight = 0.4637584733016894R
         '
-        'XrTableCell67
+        'xrAttendancePluck2
         '
-        Me.XrTableCell67.Name = "XrTableCell67"
-        Me.XrTableCell67.Weight = 0.51020748812458949R
+        Me.xrAttendancePluck2.Name = "xrAttendancePluck2"
+        Me.xrAttendancePluck2.StylePriority.UseTextAlignment = False
+        Me.xrAttendancePluck2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.xrAttendancePluck2.Weight = 0.49745969093000175R
+        '
+        'xrAttendanceSheets2
+        '
+        Me.xrAttendanceSheets2.Name = "xrAttendanceSheets2"
+        Me.xrAttendanceSheets2.StylePriority.UseTextAlignment = False
+        Me.xrAttendanceSheets2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.xrAttendanceSheets2.Weight = 0.3103444553347941R
+        '
+        'XrTableRow26
+        '
+        Me.XrTableRow26.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.xrAttendanceName3, Me.xrAttendanceDays3, Me.xrAttendanceDaysPerc3, Me.xrAttendancePluck3, Me.xrAttendanceLatex3, Me.xrAttendanceSheets3})
+        Me.XrTableRow26.Name = "XrTableRow26"
+        Me.XrTableRow26.Weight = 1.0R
+        '
+        'xrAttendanceName3
+        '
+        Me.xrAttendanceName3.Name = "xrAttendanceName3"
+        Me.xrAttendanceName3.Weight = 0.86451435065311977R
+        '
+        'xrAttendanceDays3
+        '
+        Me.xrAttendanceDays3.Name = "xrAttendanceDays3"
+        Me.xrAttendanceDays3.StylePriority.UseTextAlignment = False
+        Me.xrAttendanceDays3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.xrAttendanceDays3.Weight = 0.562076950294951R
+        '
+        'xrAttendanceDaysPerc3
+        '
+        Me.xrAttendanceDaysPerc3.Name = "xrAttendanceDaysPerc3"
+        Me.xrAttendanceDaysPerc3.StylePriority.UseTextAlignment = False
+        Me.xrAttendanceDaysPerc3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.xrAttendanceDaysPerc3.Weight = 0.46375841105620591R
+        '
+        'xrAttendancePluck3
+        '
+        Me.xrAttendancePluck3.Name = "xrAttendancePluck3"
+        Me.xrAttendancePluck3.StylePriority.UseTextAlignment = False
+        Me.xrAttendancePluck3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.xrAttendancePluck3.Weight = 0.497459675368631R
+        '
+        'xrAttendanceSheets3
+        '
+        Me.xrAttendanceSheets3.Name = "xrAttendanceSheets3"
+        Me.xrAttendanceSheets3.StylePriority.UseTextAlignment = False
+        Me.xrAttendanceSheets3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.xrAttendanceSheets3.Weight = 0.31034458760644634R
+        '
+        'TopMargin
+        '
+        Me.TopMargin.HeightF = 25.0!
+        Me.TopMargin.Name = "TopMargin"
+        Me.TopMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
+        Me.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
+        '
+        'BottomMargin
+        '
+        Me.BottomMargin.HeightF = 25.0!
+        Me.BottomMargin.Name = "BottomMargin"
+        Me.BottomMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
+        Me.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
+        '
+        'PageHeader
+        '
+        Me.PageHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel2, Me.XrLabel1})
+        Me.PageHeader.HeightF = 65.625!
+        Me.PageHeader.Name = "PageHeader"
         '
         'XrLabel2
         '
@@ -788,6 +869,43 @@ Partial Public Class xrMonthlyReport
         Me.XrLabel2.StylePriority.UseFont = False
         Me.XrLabel2.StylePriority.UseTextAlignment = False
         Me.XrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        '
+        'XrLabel1
+        '
+        Me.XrLabel1.Font = New System.Drawing.Font("Tahoma", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(325.0!, 0.0!)
+        Me.XrLabel1.Name = "XrLabel1"
+        Me.XrLabel1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel1.SizeF = New System.Drawing.SizeF(162.5!, 25.0!)
+        Me.XrLabel1.StylePriority.UseFont = False
+        Me.XrLabel1.StylePriority.UseTextAlignment = False
+        Me.XrLabel1.Text = "Monthly Report"
+        Me.XrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        '
+        'PageFooter
+        '
+        Me.PageFooter.Name = "PageFooter"
+        '
+        'xrAttendanceLatex1
+        '
+        Me.xrAttendanceLatex1.Name = "xrAttendanceLatex1"
+        Me.xrAttendanceLatex1.StylePriority.UseTextAlignment = False
+        Me.xrAttendanceLatex1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.xrAttendanceLatex1.Weight = 0.30184601723996074R
+        '
+        'xrAttendanceLatex2
+        '
+        Me.xrAttendanceLatex2.Name = "xrAttendanceLatex2"
+        Me.xrAttendanceLatex2.StylePriority.UseTextAlignment = False
+        Me.xrAttendanceLatex2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.xrAttendanceLatex2.Weight = 0.30184601723996068R
+        '
+        'xrAttendanceLatex3
+        '
+        Me.xrAttendanceLatex3.Name = "xrAttendanceLatex3"
+        Me.xrAttendanceLatex3.StylePriority.UseTextAlignment = False
+        Me.xrAttendanceLatex3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.xrAttendanceLatex3.Weight = 0.30184602502064617R
         '
         'xrMonthlyReport
         '
@@ -810,14 +928,9 @@ Partial Public Class xrMonthlyReport
     Friend WithEvents XrTableRow1 As DevExpress.XtraReports.UI.XRTableRow
     Friend WithEvents XrTableCell1 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow2 As DevExpress.XtraReports.UI.XRTableRow
-    Friend WithEvents XrTableCell4 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell5 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow3 As DevExpress.XtraReports.UI.XRTableRow
-    Friend WithEvents XrTableCell2 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell3 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow4 As DevExpress.XtraReports.UI.XRTableRow
     Friend WithEvents XrTableCell6 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell7 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow6 As DevExpress.XtraReports.UI.XRTableRow
     Friend WithEvents XrTableCell11 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow5 As DevExpress.XtraReports.UI.XRTableRow
@@ -846,31 +959,19 @@ Partial Public Class xrMonthlyReport
     Friend WithEvents XrTableRow13 As DevExpress.XtraReports.UI.XRTableRow
     Friend WithEvents XrTableCell23 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow15 As DevExpress.XtraReports.UI.XRTableRow
-    Friend WithEvents XrTableCell26 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell27 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow18 As DevExpress.XtraReports.UI.XRTableRow
-    Friend WithEvents XrTableCell31 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell32 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow17 As DevExpress.XtraReports.UI.XRTableRow
-    Friend WithEvents XrTableCell29 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell30 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableRow16 As DevExpress.XtraReports.UI.XRTableRow
-    Friend WithEvents XrTableCell24 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell28 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow19 As DevExpress.XtraReports.UI.XRTableRow
     Friend WithEvents XrTableCell33 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow20 As DevExpress.XtraReports.UI.XRTableRow
-    Friend WithEvents XrTableCell35 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell36 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents xrRubberSheetDes1 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents xrRubberSheetAmt1 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow21 As DevExpress.XtraReports.UI.XRTableRow
-    Friend WithEvents XrTableCell37 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell38 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents xrRubberSheetDes2 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents xrRubberSheetAmt2 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow22 As DevExpress.XtraReports.UI.XRTableRow
-    Friend WithEvents XrTableCell39 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell40 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableRow23 As DevExpress.XtraReports.UI.XRTableRow
-    Friend WithEvents XrTableCell34 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell41 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents xrRubberSheetDes3 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents xrRubberSheetAmt3 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow25 As DevExpress.XtraReports.UI.XRTableRow
     Friend WithEvents XrTableCell44 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow24 As DevExpress.XtraReports.UI.XRTableRow
@@ -880,28 +981,56 @@ Partial Public Class xrMonthlyReport
     Friend WithEvents XrTableCell55 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell43 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow28 As DevExpress.XtraReports.UI.XRTableRow
-    Friend WithEvents XrTableCell49 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell56 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell57 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell58 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell50 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow27 As DevExpress.XtraReports.UI.XRTableRow
-    Friend WithEvents XrTableCell47 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell59 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell60 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell61 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell48 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow26 As DevExpress.XtraReports.UI.XRTableRow
-    Friend WithEvents XrTableCell45 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell62 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell63 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell64 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell46 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableRow29 As DevExpress.XtraReports.UI.XRTableRow
-    Friend WithEvents XrTableCell51 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell65 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell66 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell67 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell52 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrLabel2 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrTableRow30 As DevExpress.XtraReports.UI.XRTableRow
+    Friend WithEvents XrTableCell68 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableCell70 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableCell71 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableRow31 As DevExpress.XtraReports.UI.XRTableRow
+    Friend WithEvents XrTableCell72 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrOtherAmt As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrRubberSheetDes As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrRubberSheetAmt As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrTeaDes As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrTeaAmt As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrRubberLatexDes As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrRubberLatexAmt As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrCroptTotalAmt As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableRow35 As DevExpress.XtraReports.UI.XRTableRow
+    Friend WithEvents XrTableCell74 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableRow34 As DevExpress.XtraReports.UI.XRTableRow
+    Friend WithEvents xrRubberLatexDes1 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents xrRubberLatexAmt1 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableRow36 As DevExpress.XtraReports.UI.XRTableRow
+    Friend WithEvents xrRubberLatexDes2 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents xrRubberLatexAmt2 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableRow33 As DevExpress.XtraReports.UI.XRTableRow
+    Friend WithEvents xrRubberLatexDes3 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents xrRubberLatexAmt3 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrPluckingDes1 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrPluckingAmt1 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrPluckingDes2 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrPluckingAmt2 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrPluckingDes3 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrPluckingAmt3 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrAttendanceLatex1 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrAttendanceLatex2 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrAttendanceLatex3 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrAttendanceName1 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrAttendanceDays1 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrAttendanceDaysPerc1 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrAttendancePluck1 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrAttendanceSheets1 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrAttendanceName2 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrAttendanceDays2 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrAttendanceDaysPerc2 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrAttendancePluck2 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrAttendanceSheets2 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrAttendanceName3 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrAttendanceDays3 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrAttendanceDaysPerc3 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrAttendancePluck3 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents xrAttendanceSheets3 As DevExpress.XtraReports.UI.XRTableCell
 End Class
