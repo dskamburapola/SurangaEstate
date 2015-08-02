@@ -482,6 +482,7 @@ Partial Class frmCashAdvance
         Me.deIssueDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.deIssueDate.Properties.EditFormat.FormatString = "dd-MMM-yy"
         Me.deIssueDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.deIssueDate.Properties.Mask.EditMask = "dd-MMM-yy"
         Me.deIssueDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.deIssueDate.Size = New System.Drawing.Size(366, 20)
         Me.deIssueDate.StyleController = Me.LayoutControl1

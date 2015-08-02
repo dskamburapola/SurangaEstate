@@ -59,6 +59,8 @@
             Dim report As New xrMonthlyReport
             frmPrint.PrintControl1.PrintingSystem = report.PrintingSystem
 
+            report.xrMonth.Text = meMonth.Text.ToString + "-" + leYear.EditValue.ToString
+
             If (dt1.Rows.Count > 0) Then
 
                 report.xrTeaDes.Text = dt1.Rows(0)("TeaCropQty").ToString() + " X " + dt1.Rows(0)("TeaRate").ToString()
@@ -69,6 +71,10 @@
                 report.xrRubberSheetAmt.Text = dt1.Rows(0)("RubberSheeAmt").ToString()
                 report.xrOtherAmt.Text = dt1.Rows(0)("OtherAmt").ToString()
                 report.xrCroptTotalAmt.Text = dt1.Rows(0)("CropTotal").ToString()
+                report.xrEmployeeSalary.Text = dt1.Rows(0)("EmployeeSalaryAmt").ToString()
+                report.xrEPF12.Text = dt1.Rows(0)("EPF12Amt").ToString()
+                report.xrETF3.Text = dt1.Rows(0)("ETF3Amt").ToString()
+                report.xrTotal.Text = dt1.Rows(0)("Total").ToString()
 
             End If
 
