@@ -41,7 +41,14 @@
         If dxvpMonthlyReport.Validate Then
 
 
+            Dim currentDate As Date
+            Dim selectedMonth, selectedYear As String
+            selectedMonth = meMonth.EditValue
+            selectedYear = leYear.EditValue
+            currentDate = Convert.ToDateTime("01-" + selectedMonth + "-" + selectedYear)
+
             Dim ds As New DataSet
+            PL.FromDate = currentDate
             ds = PL.GetMonthlyReport()
             Dim dt1 As DataTable
             Dim dt2 As DataTable
@@ -74,6 +81,7 @@
                 report.xrEmployeeSalary.Text = dt1.Rows(0)("EmployeeSalaryAmt").ToString()
                 report.xrEPF12.Text = dt1.Rows(0)("EPF12Amt").ToString()
                 report.xrETF3.Text = dt1.Rows(0)("ETF3Amt").ToString()
+                report.xrOthers.Text = dt1.Rows(0)("OthersAmt").ToString()
                 report.xrTotal.Text = dt1.Rows(0)("Total").ToString()
 
             End If

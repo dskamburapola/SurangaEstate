@@ -174,8 +174,7 @@ Public Class iStockProfitAndLoss
         Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
         Dim DBC As DbCommand = DB.GetStoredProcCommand("ReportMonthly")
 
-        'DB.AddInParameter(DBC, "@FromDate", DbType.DateTime, Me.FromDate)
-        'DB.AddInParameter(DBC, "@ToDate", DbType.DateTime, Me.ToDate)
+        DB.AddInParameter(DBC, "@IssueDate", DbType.Date, Me.FromDate)
 
         Return DB.ExecuteDataSet(DBC)
 
