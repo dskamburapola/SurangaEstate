@@ -93,15 +93,15 @@
                     Select Case i
 
                         Case 0
-                            report.xrPluckingDes1.Text = dt2.Rows(i)("Name").ToString()
+                            report.xrPluckingDes1.Text = "[" + dt2.Rows(i)("EmployerNo").ToString() + "] " + dt2.Rows(i)("EmployerName").ToString()
                             report.xrPluckingAmt1.Text = dt2.Rows(i)("Quantity").ToString() + "Kg"
 
                         Case 1
-                            report.xrPluckingDes2.Text = dt2.Rows(i)("Name").ToString()
+                            report.xrPluckingDes2.Text = "[" + dt2.Rows(i)("EmployerNo").ToString() + "] " + dt2.Rows(i)("EmployerName").ToString()
                             report.xrPluckingAmt2.Text = dt2.Rows(i)("Quantity").ToString() + "Kg"
 
                         Case 2
-                            report.xrPluckingDes3.Text = dt2.Rows(i)("Name").ToString()
+                            report.xrPluckingDes3.Text = "[" + dt2.Rows(i)("EmployerNo").ToString() + "] " + dt2.Rows(i)("EmployerName").ToString()
                             report.xrPluckingAmt3.Text = dt2.Rows(i)("Quantity").ToString() + "Kg"
                        
 
@@ -118,15 +118,15 @@
                     Select Case i
 
                         Case 0
-                            report.xrRubberLatexDes1.Text = dt3.Rows(i)("Name").ToString()
+                            report.xrRubberLatexDes1.Text = "[" + dt3.Rows(i)("EmployerNo").ToString() + "] " + dt3.Rows(i)("EmployerName").ToString()
                             report.xrRubberLatexAmt1.Text = dt3.Rows(i)("Quantity").ToString()
 
                         Case 1
-                            report.xrRubberLatexDes2.Text = IIf(dt3.Rows(i)("Name") IsNot Nothing, dt3.Rows(i)("Name").ToString(), String.Empty)
+                            report.xrRubberLatexDes2.Text = "[" + dt3.Rows(i)("EmployerNo").ToString() + "] " + dt3.Rows(i)("EmployerName").ToString()
                             report.xrRubberLatexAmt2.Text = dt3.Rows(i)("Quantity").ToString()
 
                         Case 2
-                            report.xrRubberLatexDes3.Text = dt3.Rows(i)("Name").ToString()
+                            report.xrRubberLatexDes3.Text = "[" + dt3.Rows(i)("EmployerNo").ToString() + "] " + dt3.Rows(i)("EmployerName").ToString()
                             report.xrRubberLatexAmt3.Text = dt3.Rows(i)("Quantity").ToString()
                        
 
@@ -143,15 +143,15 @@
                     Select Case i
 
                         Case 0
-                            report.xrRubberSheetDes1.Text = dt4.Rows(i)("Name").ToString()
+                            report.xrRubberSheetDes1.Text = "[" + dt4.Rows(i)("EmployerNo").ToString() + "] " + dt4.Rows(i)("EmployerName").ToString()
                             report.xrRubberSheetAmt1.Text = dt4.Rows(i)("Quantity").ToString()
 
                         Case 1
-                            report.xrRubberSheetDes2.Text = dt4.Rows(i)("Name").ToString()
+                            report.xrRubberSheetDes2.Text = "[" + dt4.Rows(i)("EmployerNo").ToString() + "] " + dt4.Rows(i)("EmployerName").ToString()
                             report.xrRubberSheetAmt2.Text = dt4.Rows(i)("Quantity").ToString()
 
                         Case 2
-                            report.xrRubberSheetDes3.Text = dt4.Rows(i)("Name").ToString()
+                            report.xrRubberSheetDes3.Text = "[" + dt4.Rows(i)("EmployerNo").ToString() + "] " + dt4.Rows(i)("EmployerName").ToString()
                             report.xrRubberSheetAmt3.Text = dt4.Rows(i)("Quantity").ToString()
                      
 
