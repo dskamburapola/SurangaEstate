@@ -61,6 +61,7 @@ Partial Class frmMain
         Me.BarButtonItem32 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem33 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem34 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem35 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup8 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -83,7 +84,7 @@ Partial Class frmMain
         Me.RibbonPageGroup15 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RepositoryItemPictureEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit()
         Me.RibbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
-        Me.BarButtonItem35 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem36 = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ApplicationMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -113,9 +114,9 @@ Partial Class frmMain
         Me.RibbonControl.ApplicationButtonDropDownControl = Me.ApplicationMenu1
         Me.RibbonControl.ApplicationIcon = Global.iStock.My.Resources.Resources.i
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonItem11, Me.BarButtonItem12, Me.BarButtonItem13, Me.BarButtonItem14, Me.bsiInformation, Me.bsiLoggedUser, Me.BarButtonItem15, Me.BarButtonItem16, Me.BarButtonItem17, Me.BarButtonItem18, Me.BarButtonItem19, Me.BarButtonItem21, Me.BarButtonItem22, Me.BarButtonItem23, Me.BarButtonItem20, Me.BarButtonItem24, Me.BarButtonItem25, Me.BarButtonItem27, Me.BarButtonItem26, Me.BarButtonItem28, Me.BarButtonItem29, Me.BarButtonItem30, Me.BarButtonItem31, Me.BarButtonItem32, Me.BarButtonItem33, Me.BarButtonItem34, Me.BarButtonItem35})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonItem11, Me.BarButtonItem12, Me.BarButtonItem13, Me.BarButtonItem14, Me.bsiInformation, Me.bsiLoggedUser, Me.BarButtonItem15, Me.BarButtonItem16, Me.BarButtonItem17, Me.BarButtonItem18, Me.BarButtonItem19, Me.BarButtonItem21, Me.BarButtonItem22, Me.BarButtonItem23, Me.BarButtonItem20, Me.BarButtonItem24, Me.BarButtonItem25, Me.BarButtonItem27, Me.BarButtonItem26, Me.BarButtonItem28, Me.BarButtonItem29, Me.BarButtonItem30, Me.BarButtonItem31, Me.BarButtonItem32, Me.BarButtonItem33, Me.BarButtonItem34, Me.BarButtonItem35, Me.BarButtonItem36})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 45
+        Me.RibbonControl.MaxItemId = 46
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage4, Me.RibbonPage3, Me.RibbonPage5})
         Me.RibbonControl.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemPictureEdit1})
@@ -368,6 +369,7 @@ Partial Class frmMain
         Me.BarButtonItem31.Id = 40
         Me.BarButtonItem31.LargeGlyph = Global.iStock.My.Resources.Resources.Magenta
         Me.BarButtonItem31.Name = "BarButtonItem31"
+        Me.BarButtonItem31.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'BarButtonItem32
         '
@@ -389,6 +391,13 @@ Partial Class frmMain
         Me.BarButtonItem34.Id = 43
         Me.BarButtonItem34.LargeGlyph = Global.iStock.My.Resources.Resources.Magenta
         Me.BarButtonItem34.Name = "BarButtonItem34"
+        '
+        'BarButtonItem35
+        '
+        Me.BarButtonItem35.Caption = "Monthly Report"
+        Me.BarButtonItem35.Id = 44
+        Me.BarButtonItem35.LargeGlyph = Global.iStock.My.Resources.Resources.Magenta
+        Me.BarButtonItem35.Name = "BarButtonItem35"
         '
         'RibbonPage1
         '
@@ -488,6 +497,7 @@ Partial Class frmMain
         Me.RibbonPageGroup10.ItemLinks.Add(Me.BarButtonItem24)
         Me.RibbonPageGroup10.ItemLinks.Add(Me.BarButtonItem25)
         Me.RibbonPageGroup10.ItemLinks.Add(Me.BarButtonItem29)
+        Me.RibbonPageGroup10.ItemLinks.Add(Me.BarButtonItem36)
         Me.RibbonPageGroup10.Name = "RibbonPageGroup10"
         Me.RibbonPageGroup10.ShowCaptionButton = False
         '
@@ -542,12 +552,12 @@ Partial Class frmMain
         Me.RibbonStatusBar1.Ribbon = Me.RibbonControl
         Me.RibbonStatusBar1.Size = New System.Drawing.Size(1034, 31)
         '
-        'BarButtonItem35
+        'BarButtonItem36
         '
-        Me.BarButtonItem35.Caption = "Monthly Report"
-        Me.BarButtonItem35.Id = 44
-        Me.BarButtonItem35.LargeGlyph = Global.iStock.My.Resources.Resources.Magenta
-        Me.BarButtonItem35.Name = "BarButtonItem35"
+        Me.BarButtonItem36.Caption = "Coin Change Calculator"
+        Me.BarButtonItem36.Id = 45
+        Me.BarButtonItem36.LargeGlyph = Global.iStock.My.Resources.Resources.Magenta
+        Me.BarButtonItem36.Name = "BarButtonItem36"
         '
         'frmMain
         '
@@ -638,6 +648,7 @@ Partial Class frmMain
     Friend WithEvents BarButtonItem33 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem34 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem35 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem36 As DevExpress.XtraBars.BarButtonItem
 
 
 End Class

@@ -112,6 +112,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="frmOverallSalaryReport.Designer.vb">
+      <DependentUpon>frmOverallSalaryReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOverallSalaryReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmCoinCalculatorAdvance.Designer.vb">
       <DependentUpon>frmCoinCalculatorAdvance.vb</DependentUpon>
     </Compile>
@@ -465,6 +471,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmOverallSalaryReport.resx">
+      <DependentUpon>frmOverallSalaryReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCoinCalculatorAdvance.resx">
       <DependentUpon>frmCoinCalculatorAdvance.vb</DependentUpon>
     </EmbeddedResource>
