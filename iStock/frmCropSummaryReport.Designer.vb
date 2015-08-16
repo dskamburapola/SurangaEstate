@@ -23,6 +23,10 @@ Partial Class frmCropSummaryReport
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.pgcAttendance = New DevExpress.XtraPivotGrid.PivotGridControl()
+        Me.PivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField2 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField3 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField4 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.leType = New DevExpress.XtraEditors.LookUpEdit()
         Me.sbGenerate = New DevExpress.XtraEditors.SimpleButton()
         Me.sbPrint = New DevExpress.XtraEditors.SimpleButton()
@@ -34,10 +38,6 @@ Partial Class frmCropSummaryReport
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
-        Me.PivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
-        Me.PivotGridField2 = New DevExpress.XtraPivotGrid.PivotGridField()
-        Me.PivotGridField3 = New DevExpress.XtraPivotGrid.PivotGridField()
-        Me.PivotGridField4 = New DevExpress.XtraPivotGrid.PivotGridField()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.pgcAttendance, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,6 +75,41 @@ Partial Class frmCropSummaryReport
         Me.pgcAttendance.OptionsView.ShowGrandTotalsForSingleValues = True
         Me.pgcAttendance.Size = New System.Drawing.Size(678, 374)
         Me.pgcAttendance.TabIndex = 16
+        '
+        'PivotGridField1
+        '
+        Me.PivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
+        Me.PivotGridField1.AreaIndex = 0
+        Me.PivotGridField1.Caption = "Month"
+        Me.PivotGridField1.FieldName = "MONTH"
+        Me.PivotGridField1.Name = "PivotGridField1"
+        '
+        'PivotGridField2
+        '
+        Me.PivotGridField2.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
+        Me.PivotGridField2.AreaIndex = 0
+        Me.PivotGridField2.Caption = "Year"
+        Me.PivotGridField2.FieldName = "YEAR"
+        Me.PivotGridField2.Name = "PivotGridField2"
+        '
+        'PivotGridField3
+        '
+        Me.PivotGridField3.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
+        Me.PivotGridField3.AreaIndex = 0
+        Me.PivotGridField3.Caption = "Crop"
+        Me.PivotGridField3.CellFormat.FormatString = "{0:N2}"
+        Me.PivotGridField3.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.PivotGridField3.FieldName = "Crop"
+        Me.PivotGridField3.Name = "PivotGridField3"
+        '
+        'PivotGridField4
+        '
+        Me.PivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
+        Me.PivotGridField4.AreaIndex = 1
+        Me.PivotGridField4.Caption = "Avg (%)"
+        Me.PivotGridField4.FieldName = "Crop"
+        Me.PivotGridField4.Name = "PivotGridField4"
+        Me.PivotGridField4.SummaryDisplayType = DevExpress.Data.PivotGrid.PivotSummaryDisplayType.PercentOfColumn
         '
         'leType
         '
@@ -191,41 +226,6 @@ Partial Class frmCropSummaryReport
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextToControlDistance = 0
         Me.LayoutControlItem2.TextVisible = False
-        '
-        'PivotGridField1
-        '
-        Me.PivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea
-        Me.PivotGridField1.AreaIndex = 0
-        Me.PivotGridField1.Caption = "Month"
-        Me.PivotGridField1.FieldName = "MONTH"
-        Me.PivotGridField1.Name = "PivotGridField1"
-        '
-        'PivotGridField2
-        '
-        Me.PivotGridField2.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
-        Me.PivotGridField2.AreaIndex = 0
-        Me.PivotGridField2.Caption = "Year"
-        Me.PivotGridField2.FieldName = "YEAR"
-        Me.PivotGridField2.Name = "PivotGridField2"
-        '
-        'PivotGridField3
-        '
-        Me.PivotGridField3.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
-        Me.PivotGridField3.AreaIndex = 0
-        Me.PivotGridField3.Caption = "Crop"
-        Me.PivotGridField3.CellFormat.FormatString = "{0:N2}"
-        Me.PivotGridField3.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.PivotGridField3.FieldName = "Crop"
-        Me.PivotGridField3.Name = "PivotGridField3"
-        '
-        'PivotGridField4
-        '
-        Me.PivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
-        Me.PivotGridField4.AreaIndex = 1
-        Me.PivotGridField4.Caption = "Avg (%)"
-        Me.PivotGridField4.FieldName = "Crop"
-        Me.PivotGridField4.Name = "PivotGridField4"
-        Me.PivotGridField4.SummaryDisplayType = DevExpress.Data.PivotGrid.PivotSummaryDisplayType.PercentOfColumn
         '
         'frmCropSummaryReport
         '

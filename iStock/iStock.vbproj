@@ -112,6 +112,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="frmDailyCropSummary.Designer.vb">
+      <DependentUpon>frmDailyCropSummary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDailyCropSummary.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmOverallSalaryReport.Designer.vb">
       <DependentUpon>frmOverallSalaryReport.vb</DependentUpon>
     </Compile>
@@ -471,6 +477,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmDailyCropSummary.resx">
+      <DependentUpon>frmDailyCropSummary.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmOverallSalaryReport.resx">
       <DependentUpon>frmOverallSalaryReport.vb</DependentUpon>
     </EmbeddedResource>
