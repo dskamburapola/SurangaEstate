@@ -22,7 +22,9 @@ Partial Class frmAttendaceAdvanceCasualReport
         Me.components = New System.ComponentModel.Container()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.cbeRange = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.gcCheckRoll = New DevExpress.XtraGrid.GridControl()
         Me.gvCheckRoll = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -37,12 +39,14 @@ Partial Class frmAttendaceAdvanceCasualReport
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.cbeRange.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcCheckRoll, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gvCheckRoll, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,6 +58,7 @@ Partial Class frmAttendaceAdvanceCasualReport
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,6 +67,7 @@ Partial Class frmAttendaceAdvanceCasualReport
         '
         'LayoutControl1
         '
+        Me.LayoutControl1.Controls.Add(Me.cbeRange)
         Me.LayoutControl1.Controls.Add(Me.SimpleButton1)
         Me.LayoutControl1.Controls.Add(Me.gcCheckRoll)
         Me.LayoutControl1.Controls.Add(Me.leYear)
@@ -75,6 +81,20 @@ Partial Class frmAttendaceAdvanceCasualReport
         Me.LayoutControl1.Size = New System.Drawing.Size(702, 502)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'cbeRange
+        '
+        Me.cbeRange.Location = New System.Drawing.Point(358, 43)
+        Me.cbeRange.Name = "cbeRange"
+        Me.cbeRange.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cbeRange.Properties.Items.AddRange(New Object() {"1-15", "16-EOM"})
+        Me.cbeRange.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
+        Me.cbeRange.Size = New System.Drawing.Size(62, 20)
+        Me.cbeRange.StyleController = Me.LayoutControl1
+        Me.cbeRange.TabIndex = 19
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.cbeRange, ConditionValidationRule1)
         '
         'SimpleButton1
         '
@@ -108,33 +128,33 @@ Partial Class frmAttendaceAdvanceCasualReport
         '
         'leYear
         '
-        Me.leYear.Location = New System.Drawing.Point(207, 43)
+        Me.leYear.Location = New System.Drawing.Point(208, 43)
         Me.leYear.Name = "leYear"
         Me.leYear.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.leYear.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Key", "Year")})
         Me.leYear.Properties.NullText = ""
-        Me.leYear.Size = New System.Drawing.Size(113, 20)
+        Me.leYear.Size = New System.Drawing.Size(112, 20)
         Me.leYear.StyleController = Me.LayoutControl1
         Me.leYear.TabIndex = 15
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "Require"
-        Me.dxvpAttendaceReport.SetValidationRule(Me.leYear, ConditionValidationRule1)
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule2.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.leYear, ConditionValidationRule2)
         '
         'meMonth
         '
-        Me.meMonth.Location = New System.Drawing.Point(57, 43)
+        Me.meMonth.Location = New System.Drawing.Point(58, 43)
         Me.meMonth.Name = "meMonth"
         Me.meMonth.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.meMonth.Size = New System.Drawing.Size(113, 20)
+        Me.meMonth.Size = New System.Drawing.Size(112, 20)
         Me.meMonth.StyleController = Me.LayoutControl1
         Me.meMonth.TabIndex = 14
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule2.ErrorText = "Require"
-        Me.dxvpAttendaceReport.SetValidationRule(Me.meMonth, ConditionValidationRule2)
+        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule3.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.meMonth, ConditionValidationRule3)
         '
         'sbGenerate
         '
-        Me.sbGenerate.Location = New System.Drawing.Point(324, 43)
+        Me.sbGenerate.Location = New System.Drawing.Point(424, 43)
         Me.sbGenerate.Name = "sbGenerate"
         Me.sbGenerate.Size = New System.Drawing.Size(146, 22)
         Me.sbGenerate.StyleController = Me.LayoutControl1
@@ -179,19 +199,19 @@ Partial Class frmAttendaceAdvanceCasualReport
         '
         Me.EmptySpaceItem3.AllowHotTrack = False
         Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(474, 0)
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(574, 0)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(208, 69)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(108, 69)
         Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlGroup2
         '
         Me.LayoutControlGroup2.CustomizationFormText = "Select Month & Year"
-        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem1})
+        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem1, Me.LayoutControlItem7})
         Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
-        Me.LayoutControlGroup2.Size = New System.Drawing.Size(474, 69)
+        Me.LayoutControlGroup2.Size = New System.Drawing.Size(574, 69)
         Me.LayoutControlGroup2.Text = "Select Month && Year"
         '
         'LayoutControlItem5
@@ -205,7 +225,7 @@ Partial Class frmAttendaceAdvanceCasualReport
         Me.LayoutControlItem5.Size = New System.Drawing.Size(150, 26)
         Me.LayoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem5.Text = "Month"
-        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(30, 13)
+        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(31, 13)
         '
         'LayoutControlItem6
         '
@@ -218,13 +238,13 @@ Partial Class frmAttendaceAdvanceCasualReport
         Me.LayoutControlItem6.Size = New System.Drawing.Size(150, 26)
         Me.LayoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem6.Text = "Year"
-        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(30, 13)
+        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(31, 13)
         '
         'LayoutControlItem1
         '
         Me.LayoutControlItem1.Control = Me.sbGenerate
         Me.LayoutControlItem1.CustomizationFormText = "LayoutControlItem1"
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(300, 0)
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(400, 0)
         Me.LayoutControlItem1.MaxSize = New System.Drawing.Size(150, 26)
         Me.LayoutControlItem1.MinSize = New System.Drawing.Size(150, 26)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
@@ -234,6 +254,19 @@ Partial Class frmAttendaceAdvanceCasualReport
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextToControlDistance = 0
         Me.LayoutControlItem1.TextVisible = False
+        '
+        'LayoutControlItem7
+        '
+        Me.LayoutControlItem7.Control = Me.cbeRange
+        Me.LayoutControlItem7.CustomizationFormText = "Range"
+        Me.LayoutControlItem7.Location = New System.Drawing.Point(300, 0)
+        Me.LayoutControlItem7.MaxSize = New System.Drawing.Size(100, 24)
+        Me.LayoutControlItem7.MinSize = New System.Drawing.Size(100, 24)
+        Me.LayoutControlItem7.Name = "LayoutControlItem7"
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(100, 26)
+        Me.LayoutControlItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
+        Me.LayoutControlItem7.Text = "Range"
+        Me.LayoutControlItem7.TextSize = New System.Drawing.Size(31, 13)
         '
         'LayoutControlItem4
         '
@@ -283,6 +316,7 @@ Partial Class frmAttendaceAdvanceCasualReport
         Me.Text = "Check Roll (Casual)"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.cbeRange.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gcCheckRoll, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gvCheckRoll, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -294,6 +328,7 @@ Partial Class frmAttendaceAdvanceCasualReport
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -321,4 +356,6 @@ Partial Class frmAttendaceAdvanceCasualReport
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem1 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents cbeRange As DevExpress.XtraEditors.ComboBoxEdit
+    Friend WithEvents LayoutControlItem7 As DevExpress.XtraLayout.LayoutControlItem
 End Class

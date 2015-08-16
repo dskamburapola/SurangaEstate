@@ -62,6 +62,7 @@ Partial Class frmMain
         Me.BarButtonItem33 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem34 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem35 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem36 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup8 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -84,7 +85,6 @@ Partial Class frmMain
         Me.RibbonPageGroup15 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RepositoryItemPictureEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit()
         Me.RibbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
-        Me.BarButtonItem36 = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ApplicationMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -399,6 +399,13 @@ Partial Class frmMain
         Me.BarButtonItem35.LargeGlyph = Global.iStock.My.Resources.Resources.Magenta
         Me.BarButtonItem35.Name = "BarButtonItem35"
         '
+        'BarButtonItem36
+        '
+        Me.BarButtonItem36.Caption = "Cash Denomination Calculator"
+        Me.BarButtonItem36.Id = 45
+        Me.BarButtonItem36.LargeGlyph = Global.iStock.My.Resources.Resources.Magenta
+        Me.BarButtonItem36.Name = "BarButtonItem36"
+        '
         'RibbonPage1
         '
         Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup8, Me.RibbonPageGroup1, Me.RibbonPageGroup4, Me.RibbonPageGroup12})
@@ -551,13 +558,6 @@ Partial Class frmMain
         Me.RibbonStatusBar1.Name = "RibbonStatusBar1"
         Me.RibbonStatusBar1.Ribbon = Me.RibbonControl
         Me.RibbonStatusBar1.Size = New System.Drawing.Size(1034, 31)
-        '
-        'BarButtonItem36
-        '
-        Me.BarButtonItem36.Caption = "Coin Change Calculator"
-        Me.BarButtonItem36.Id = 45
-        Me.BarButtonItem36.LargeGlyph = Global.iStock.My.Resources.Resources.Magenta
-        Me.BarButtonItem36.Name = "BarButtonItem36"
         '
         'frmMain
         '
