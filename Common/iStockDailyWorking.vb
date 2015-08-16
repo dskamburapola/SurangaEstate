@@ -50,6 +50,7 @@ Public Class iStockDailyWorking
     Private _IsDeleted As Boolean
 
     Private _StockID As Int64
+    Private _OverKGUpperLimit As Decimal
 
 #End Region
 
@@ -339,6 +340,15 @@ Public Class iStockDailyWorking
         End Set
     End Property
 
+    Public Property OverKGUpperLimit() As Decimal
+        Get
+            Return _OverKGUpperLimit
+        End Get
+        Set(ByVal value As Decimal)
+            _OverKGUpperLimit = value
+        End Set
+    End Property
+
 #End Region
 
 #Region "Insert Daily Working"
@@ -368,6 +378,7 @@ Public Class iStockDailyWorking
             DB.AddInParameter(DBC, "@StockID", DbType.Int64, Me.StockID)
             DB.AddInParameter(DBC, "@ETF", DbType.Decimal, Me.ETF)
             DB.AddInParameter(DBC, "@KgsPerDayNotMandatory", DbType.Decimal, Me.KgsPerDayNotMandatory)
+            DB.AddInParameter(DBC, "@OverKGUpperLimit", DbType.Decimal, Me.OverKGUpperLimit)
 
 
 
@@ -538,7 +549,13 @@ Public Class iStockDailyWorking
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
             Dim DBC As DbCommand = DB.GetStoredProcCommand("ReportAttendance")
             DB.AddInParameter(DBC, "@IssueDate", DbType.Date, currentDate)
-            DB.AddInParameter(DBC, "@WorkType", DbType.String, workType)
+            If (workType Is Nothing) Then
+                DB.AddInParameter(DBC, "@WorkType", DbType.String, String.Empty)
+            Else
+                DB.AddInParameter(DBC, "@WorkType", DbType.String, workType)
+            End If
+
+
 
             Return DB.ExecuteDataSet(DBC)
             DBC.Dispose()

@@ -246,6 +246,8 @@ Public Class frmDailyWorkings
                         .KgsPerDay = Convert.ToDecimal(lblKgsPerDay.Text.Trim)
                         .OverKgRate = Convert.ToDecimal(lblOverKgsRate.Text.Trim)
                         .KgsPerDayNotMandatory = Convert.ToDecimal(lblKgsPerDayNotMandatory.Text.Trim)
+                        .OverKGUpperLimit = Convert.ToDecimal(lblOverKgUpperLimit.Text.Trim)
+
                     Case Else
                         .KgsPerDay = 0
                         .OverKgRate = 0
@@ -332,7 +334,7 @@ Public Class frmDailyWorkings
                 Me.lblPayChit.Text = .PayChitCost
                 Me.lblKgsPerDayNotMandatory.Text = .KgsPerDayNotMandatory
                 Me.lblETF.Text = .ETF
-
+                Me.lblOverKgUpperLimit.Text = .OverKGUpperLimit
             End With
         Catch ex As Exception
             MessageError(ex.ToString)

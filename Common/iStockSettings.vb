@@ -33,6 +33,8 @@ Public Class iStockSettings
     Private _UpdatedBy As Int64
     Private _UpdatedDate As DateTime
 
+    Private _OverKGUpperLimit As Decimal
+
 
 #End Region
 
@@ -186,6 +188,14 @@ Public Class iStockSettings
             _CasualOTPayRate = value
         End Set
     End Property
+    Public Property OverKGUpperLimit() As Decimal
+        Get
+            Return _OverKGUpperLimit
+        End Get
+        Set(ByVal value As Decimal)
+            _OverKGUpperLimit = value
+        End Set
+    End Property
 
     Public Property CreatedBy() As Int64
         Get
@@ -241,6 +251,8 @@ Public Class iStockSettings
             DB.AddInParameter(DBC, "@WCPay", DbType.Decimal, Me.WCPay)
             DB.AddInParameter(DBC, "@CasualPayRate", DbType.Decimal, Me.CasualPayRate)
             DB.AddInParameter(DBC, "@CasualOTPayRate", DbType.Decimal, Me.CasualOTPayRate)
+            DB.AddInParameter(DBC, "@OverKGUpperLimit", DbType.Decimal, Me.OverKGUpperLimit)
+
 
             DB.AddInParameter(DBC, "@CreatedBy", DbType.Int64, Me.CreatedBy)
             DB.AddInParameter(DBC, "@UpdatedBy", DbType.Int64, Me.UpdatedBy)
@@ -291,6 +303,8 @@ Public Class iStockSettings
                         Me.ETF = IIf(Not IsDBNull(.Item("ETF")), Trim(.Item("ETF").ToString), 0)
                         Me.OverKgRate = IIf(Not IsDBNull(.Item("OverKgRate")), Trim(.Item("OverKgRate").ToString), 0)
                         Me.WCPay = IIf(Not IsDBNull(.Item("WCPay")), Trim(.Item("WCPay").ToString), 0)
+                        Me.OverKGUpperLimit = IIf(Not IsDBNull(.Item("OverKGUpperLimit")), Trim(.Item("OverKGUpperLimit").ToString), 0)
+
                         Me.CasualPayRate = Convert.ToDecimal(IIf(Not IsDBNull(.Item("CasualPayRate")), Trim(.Item("CasualPayRate").ToString), 0))
                         Me.CasualOTPayRate = Convert.ToDecimal(IIf(Not IsDBNull(.Item("CasualOTPayRate")), Trim(.Item("CasualOTPayRate").ToString), 0))
 
