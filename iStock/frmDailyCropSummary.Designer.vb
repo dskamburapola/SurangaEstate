@@ -20,9 +20,9 @@ Partial Class frmDailyCropSummary
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim ConditionValidationRule4 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
-        Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.sbUpdate = New DevExpress.XtraEditors.SimpleButton()
         Me.SpinEdit1 = New DevExpress.XtraEditors.SpinEdit()
@@ -47,6 +47,9 @@ Partial Class frmDailyCropSummary
         Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.RepositoryItemDateEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit()
+        Me.RepositoryItemSpinEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit()
+        Me.RepositoryItemSpinEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.SpinEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,6 +69,10 @@ Partial Class frmDailyCropSummary
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemDateEdit1.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemSpinEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemSpinEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -99,32 +106,33 @@ Partial Class frmDailyCropSummary
         'SpinEdit1
         '
         Me.SpinEdit1.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.SpinEdit1.Location = New System.Drawing.Point(79, 468)
+        Me.SpinEdit1.Location = New System.Drawing.Point(119, 468)
         Me.SpinEdit1.Name = "SpinEdit1"
         Me.SpinEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.SpinEdit1.Size = New System.Drawing.Size(79, 20)
+        Me.SpinEdit1.Size = New System.Drawing.Size(39, 20)
         Me.SpinEdit1.StyleController = Me.LayoutControl1
         Me.SpinEdit1.TabIndex = 18
         '
         'leType
         '
-        Me.leType.Location = New System.Drawing.Point(391, 43)
+        Me.leType.Location = New System.Drawing.Point(431, 43)
         Me.leType.Name = "leType"
         Me.leType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.leType.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("AbbreviationDesc", "Type")})
         Me.leType.Properties.NullText = ""
-        Me.leType.Size = New System.Drawing.Size(79, 20)
+        Me.leType.Size = New System.Drawing.Size(39, 20)
         Me.leType.StyleController = Me.LayoutControl1
         Me.leType.TabIndex = 17
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "Require"
-        Me.dxvpAttendaceReport.SetValidationRule(Me.leType, ConditionValidationRule1)
+        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule4.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.leType, ConditionValidationRule4)
         '
         'GridControl1
         '
         Me.GridControl1.Location = New System.Drawing.Point(12, 81)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemDateEdit1, Me.RepositoryItemSpinEdit1, Me.RepositoryItemSpinEdit2})
         Me.GridControl1.Size = New System.Drawing.Size(678, 383)
         Me.GridControl1.TabIndex = 16
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
@@ -142,6 +150,7 @@ Partial Class frmDailyCropSummary
         'GridColumn1
         '
         Me.GridColumn1.Caption = "Date"
+        Me.GridColumn1.ColumnEdit = Me.RepositoryItemDateEdit1
         Me.GridColumn1.Name = "GridColumn1"
         Me.GridColumn1.Visible = True
         Me.GridColumn1.VisibleIndex = 0
@@ -156,6 +165,7 @@ Partial Class frmDailyCropSummary
         'GridColumn3
         '
         Me.GridColumn3.Caption = "Factory Crop (Kg)"
+        Me.GridColumn3.ColumnEdit = Me.RepositoryItemSpinEdit1
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.Visible = True
         Me.GridColumn3.VisibleIndex = 2
@@ -163,35 +173,36 @@ Partial Class frmDailyCropSummary
         'GridColumn4
         '
         Me.GridColumn4.Caption = "Rate"
+        Me.GridColumn4.ColumnEdit = Me.RepositoryItemSpinEdit2
         Me.GridColumn4.Name = "GridColumn4"
         Me.GridColumn4.Visible = True
         Me.GridColumn4.VisibleIndex = 3
         '
         'leYear
         '
-        Me.leYear.Location = New System.Drawing.Point(241, 43)
+        Me.leYear.Location = New System.Drawing.Point(281, 43)
         Me.leYear.Name = "leYear"
         Me.leYear.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.leYear.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Key", "Year")})
         Me.leYear.Properties.NullText = ""
-        Me.leYear.Size = New System.Drawing.Size(79, 20)
+        Me.leYear.Size = New System.Drawing.Size(39, 20)
         Me.leYear.StyleController = Me.LayoutControl1
         Me.leYear.TabIndex = 15
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule2.ErrorText = "Require"
-        Me.dxvpAttendaceReport.SetValidationRule(Me.leYear, ConditionValidationRule2)
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.leYear, ConditionValidationRule1)
         '
         'meMonth
         '
-        Me.meMonth.Location = New System.Drawing.Point(91, 43)
+        Me.meMonth.Location = New System.Drawing.Point(131, 43)
         Me.meMonth.Name = "meMonth"
         Me.meMonth.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.meMonth.Size = New System.Drawing.Size(79, 20)
+        Me.meMonth.Size = New System.Drawing.Size(39, 20)
         Me.meMonth.StyleController = Me.LayoutControl1
         Me.meMonth.TabIndex = 14
-        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule3.ErrorText = "Require"
-        Me.dxvpAttendaceReport.SetValidationRule(Me.meMonth, ConditionValidationRule3)
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule2.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.meMonth, ConditionValidationRule2)
         '
         'sbGenerate
         '
@@ -232,7 +243,7 @@ Partial Class frmDailyCropSummary
         Me.LayoutControlItem5.Size = New System.Drawing.Size(150, 26)
         Me.LayoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem5.Text = "Month"
-        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(64, 13)
+        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(104, 13)
         '
         'LayoutControlItem6
         '
@@ -245,7 +256,7 @@ Partial Class frmDailyCropSummary
         Me.LayoutControlItem6.Size = New System.Drawing.Size(150, 26)
         Me.LayoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem6.Text = "Year"
-        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(64, 13)
+        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(104, 13)
         '
         'LayoutControlItem1
         '
@@ -261,6 +272,7 @@ Partial Class frmDailyCropSummary
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextToControlDistance = 0
         Me.LayoutControlItem1.TextVisible = False
+        Me.LayoutControlItem1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
         'LayoutControlItem3
         '
@@ -273,7 +285,8 @@ Partial Class frmDailyCropSummary
         Me.LayoutControlItem3.Size = New System.Drawing.Size(150, 26)
         Me.LayoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem3.Text = "Type"
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(64, 13)
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(104, 13)
+        Me.LayoutControlItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
         'LayoutControlItem2
         '
@@ -297,8 +310,8 @@ Partial Class frmDailyCropSummary
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
         Me.LayoutControlItem4.Size = New System.Drawing.Size(150, 26)
         Me.LayoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
-        Me.LayoutControlItem4.Text = "Monthly Rate"
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(64, 13)
+        Me.LayoutControlItem4.Text = "Monthly Factory Rate"
+        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(104, 13)
         '
         'LayoutControlItem7
         '
@@ -321,6 +334,25 @@ Partial Class frmDailyCropSummary
         Me.EmptySpaceItem1.Size = New System.Drawing.Size(428, 26)
         Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'RepositoryItemDateEdit1
+        '
+        Me.RepositoryItemDateEdit1.AutoHeight = False
+        Me.RepositoryItemDateEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemDateEdit1.Name = "RepositoryItemDateEdit1"
+        Me.RepositoryItemDateEdit1.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        '
+        'RepositoryItemSpinEdit1
+        '
+        Me.RepositoryItemSpinEdit1.AutoHeight = False
+        Me.RepositoryItemSpinEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.RepositoryItemSpinEdit1.Name = "RepositoryItemSpinEdit1"
+        '
+        'RepositoryItemSpinEdit2
+        '
+        Me.RepositoryItemSpinEdit2.AutoHeight = False
+        Me.RepositoryItemSpinEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.RepositoryItemSpinEdit2.Name = "RepositoryItemSpinEdit2"
         '
         'frmDailyCropSummary
         '
@@ -350,6 +382,10 @@ Partial Class frmDailyCropSummary
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemDateEdit1.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemSpinEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemSpinEdit2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -378,4 +414,7 @@ Partial Class frmDailyCropSummary
     Friend WithEvents LayoutControlItem4 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem7 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem1 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents RepositoryItemDateEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
+    Friend WithEvents RepositoryItemSpinEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit
+    Friend WithEvents RepositoryItemSpinEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit
 End Class
