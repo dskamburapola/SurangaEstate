@@ -14,7 +14,9 @@ Public Class frmDailyCropSummary
     Private _CWBSuppliers As iStockCommon.iStockSuppliers
     Private _iStockDailyWorking As iStockCommon.iStockDailyWorking
     Private _ECSSettings As iStockCommon.iStockSettings
+    Private _iStockDailyCrop As iStockCommon.iStockDailyCropSummary
 
+    Dim ds As New DataSet
 #End Region
 
 #Region "Constructor"
@@ -63,6 +65,16 @@ Public Class frmDailyCropSummary
         End Get
     End Property
 
+    Public ReadOnly Property iStockDailyCrop() As iStockCommon.iStockDailyCropSummary
+        Get
+
+            If _iStockDailyCrop Is Nothing Then
+                _iStockDailyCrop = New iStockCommon.iStockDailyCropSummary
+            End If
+
+            Return _iStockDailyCrop
+        End Get
+    End Property
 #End Region
 
 #Region "Form Events"
@@ -111,21 +123,7 @@ Public Class frmDailyCropSummary
 
     Private Sub sbGenerate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbGenerate.Click
 
-        If dxvpAttendaceReport.Validate Then
-
-            Dim currentDate As Date
-            Dim selectedMonth, selectedYear As String
-            selectedMonth = meMonth.EditValue
-            selectedYear = leYear.EditValue
-            currentDate = Convert.ToDateTime("01-" + selectedMonth + "-" + selectedYear)
-
-
-
-
-
-
-
-        End If
+        Me.LoadGrid()
 
 
     End Sub
@@ -142,12 +140,36 @@ Public Class frmDailyCropSummary
         Me.leType.Properties.DisplayMember = "AbbreviationDesc"
         Me.leType.Properties.ValueMember = "AbbreviationID"
 
-
     End Sub
-
 
 #End Region
 
 
 
+    Private Sub sbUpdate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbUpdate.Click
+
+        ds.Tables(0).TableName = "tbleDailyCropSummary"
+        iStockDailyCrop.UpdateDailyCrop(ds)
+        Me.LoadGrid()
+
+    End Sub
+
+    Private Sub LoadGrid()
+        If dxvpAttendaceReport.Validate Then
+
+            Dim selectedMonth, selectedYear As Integer
+            selectedMonth = meMonth.EditValue
+            selectedYear = leYear.EditValue
+
+            iStockDailyCrop.CurrentMonth = selectedMonth
+            iStockDailyCrop.CurrentYear = selectedYear
+            iStockDailyCrop.AbbreviationID = Convert.ToInt64(leType.EditValue)
+
+            ds = Me.iStockDailyCrop.GetDailyCropByMonthYear()
+
+            gcDailyCrop.DataSource = ds.Tables(0)
+
+
+        End If
+    End Sub
 End Class

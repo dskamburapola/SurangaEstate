@@ -6,6 +6,7 @@ Public Class frmCustomerSummary
 #Region "Variables"
     Dim _CWBCustomers As iStockCommon.iStockCustomers
     Dim _CWBSales As iStockCommon.iStockSales
+    Private _iStockDailyCrop As iStockCommon.iStockDailyCropSummary
 #End Region
 
 #Region "Constructors"

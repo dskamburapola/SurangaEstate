@@ -16,6 +16,8 @@ Public Class frmCropSummaryReport
     Private _iStockDailyWorking As iStockCommon.iStockDailyWorking
     Private _ECSSettings As iStockCommon.iStockSettings
 
+
+
 #End Region
 
 #Region "Constructor"
@@ -62,6 +64,8 @@ Public Class frmCropSummaryReport
             Return _iStockDailyWorking
         End Get
     End Property
+
+   
 #End Region
 
 #Region "Form Events"
