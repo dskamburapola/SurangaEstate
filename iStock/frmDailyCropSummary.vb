@@ -148,7 +148,6 @@ Public Class frmDailyCropSummary
 
     Private Sub sbUpdate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbUpdate.Click
 
-        ds.Tables(0).TableName = "tbleDailyCropSummary"
         iStockDailyCrop.UpdateDailyCrop(ds)
         Me.LoadGrid()
 

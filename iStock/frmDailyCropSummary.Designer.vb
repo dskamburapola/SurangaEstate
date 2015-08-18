@@ -151,7 +151,9 @@ Partial Class frmDailyCropSummary
         '
         Me.GridColumn1.Caption = "Date"
         Me.GridColumn1.ColumnEdit = Me.RepositoryItemDateEdit1
-        Me.GridColumn1.FieldName = "Date"
+        Me.GridColumn1.DisplayFormat.FormatString = "dd-MMM-yy"
+        Me.GridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.GridColumn1.FieldName = "CurrentDate"
         Me.GridColumn1.Name = "GridColumn1"
         Me.GridColumn1.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)})
         Me.GridColumn1.Visible = True

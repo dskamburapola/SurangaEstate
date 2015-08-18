@@ -105,19 +105,19 @@ Public Class iStockDailyCropSummary
             DB.AddInParameter(DBCInsert, "@FactoryCrop", DbType.Decimal, DataRowVersion.Current)
             DB.AddInParameter(DBCInsert, "@Rate", DbType.Decimal, DataRowVersion.Current)
 
-            'Dim DBCUpdate As DbCommand = DB.GetStoredProcCommand("DailyCropSummary_Update")
-            'DB.AddInParameter(DBCUpdate, "@DailyCropSummaryID", DbType.Int64, DataRowVersion.Current)
-            'DB.AddInParameter(DBCUpdate, "@Month", DbType.Int32, Me.CurrentMonth)
-            'DB.AddInParameter(DBCUpdate, "@Year", DbType.Int32, Me.CurrentYear)
-            'DB.AddInParameter(DBCUpdate, "@AbbreviationID", DbType.Int32, Me.AbbreviationID)
-            'DB.AddInParameter(DBCUpdate, "@Date", DbType.Date, DataRowVersion.Current)
-            'DB.AddInParameter(DBCUpdate, "@FactoryCrop", DbType.Decimal, DataRowVersion.Current)
-            'DB.AddInParameter(DBCUpdate, "@Rate", DbType.Decimal, DataRowVersion.Current)
+            Dim DBCUpdate As DbCommand = DB.GetStoredProcCommand("DailyCropSummary_Update")
+            DB.AddInParameter(DBCUpdate, "@DailyCropSummaryID", DbType.Int64, DataRowVersion.Current)
+            DB.AddInParameter(DBCUpdate, "@Month", DbType.Int32, Me.CurrentMonth)
+            DB.AddInParameter(DBCUpdate, "@Year", DbType.Int32, Me.CurrentYear)
+            DB.AddInParameter(DBCUpdate, "@AbbreviationID", DbType.Int32, Me.AbbreviationID)
+            DB.AddInParameter(DBCUpdate, "@CurrentDate", DbType.Date, DataRowVersion.Current)
+            DB.AddInParameter(DBCUpdate, "@FactoryCrop", DbType.Decimal, DataRowVersion.Current)
+            DB.AddInParameter(DBCUpdate, "@Rate", DbType.Decimal, DataRowVersion.Current)
 
-            'Dim DBCDelete As DbCommand = DB.GetStoredProcCommand("DailyCropSummary_Delete")
-            'DB.AddInParameter(DBCDelete, "@DailyCropSummaryID", DbType.Int64, DataRowVersion.Current)
+            Dim DBCDelete As DbCommand = DB.GetStoredProcCommand("DailyCropSummary_Delete")
+            DB.AddInParameter(DBCDelete, "@DailyCropSummaryID", DbType.Int64, DataRowVersion.Current)
 
-            DB.UpdateDataSet(ds, "tbleDailyCropSummary", DBCInsert, Nothing, Nothing, UpdateBehavior.Standard)
+            DB.UpdateDataSet(ds, ds.Tables(0).TableName, DBCInsert, DBCUpdate, DBCDelete, UpdateBehavior.Standard)
         Catch ex As Exception
             Throw
         End Try
