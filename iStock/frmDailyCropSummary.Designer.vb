@@ -154,6 +154,8 @@ Partial Class frmDailyCropSummary
         '
         'GridColumn1
         '
+        Me.GridColumn1.AppearanceCell.Options.UseTextOptions = True
+        Me.GridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.GridColumn1.Caption = "Day"
         Me.GridColumn1.ColumnEdit = Me.RepositoryItemComboBox1
         Me.GridColumn1.FieldName = "CurrentDay"

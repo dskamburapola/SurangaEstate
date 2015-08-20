@@ -148,8 +148,34 @@ Public Class frmDailyCropSummary
 
     Private Sub sbUpdate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbUpdate.Click
         gvDailyCrop.PostEditor()
-        iStockDailyCrop.UpdateDailyCrop(ds)
+
+
+        Dim selectedMonth, selectedYear As Integer
+        selectedMonth = meMonth.EditValue
+        selectedYear = leYear.EditValue
+
+        iStockDailyCrop.CurrentMonth = selectedMonth
+        iStockDailyCrop.CurrentYear = selectedYear
+        iStockDailyCrop.AbbreviationID = Convert.ToInt64(leType.EditValue)
+
+        iStockDailyCrop.DeleteDailyCrop()
+
+        For i As Integer = 0 To Me.gvDailyCrop.RowCount
+
+            iStockDailyCrop.CurrentDate = Me.gvDailyCrop.GetRowCellDisplayText(i, GridColumn1)
+            iStockDailyCrop.FactoryCrop = Me.gvDailyCrop.GetRowCellDisplayText(i, GridColumn3)
+            iStockDailyCrop.Rate = Me.gvDailyCrop.GetRowCellDisplayText(i, GridColumn4)
+            iStockDailyCrop.insertDailyCrop()
+
+        Next
+
+      
+
+
+
         Me.LoadGrid()
+
+
 
     End Sub
 

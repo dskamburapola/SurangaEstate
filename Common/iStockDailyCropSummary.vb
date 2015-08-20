@@ -90,40 +90,70 @@ Public Class iStockDailyCropSummary
 #End Region
 
 
-#Region "Update Daily Crop"
-    Public Sub UpdateDailyCrop(ByVal ds As DataSet)
-        Try
+    Public Sub insertDailyCrop()
 
-            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+        Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
 
-            Dim DBCInsert As DbCommand = DB.GetStoredProcCommand("DailyCropSummary_Insert")
+        Dim DBCInsert As DbCommand = DB.GetStoredProcCommand("DailyCropSummary_Insert")
 
-            DB.AddInParameter(DBCInsert, "@Month", DbType.Int32, Me.CurrentMonth)
-            DB.AddInParameter(DBCInsert, "@Year", DbType.Int32, Me.CurrentYear)
-            DB.AddInParameter(DBCInsert, "@AbbreviationID", DbType.Int64, Me.AbbreviationID)
-            DB.AddInParameter(DBCInsert, "@CurrentDay", DbType.Int32, DataRowVersion.Current)
-            DB.AddInParameter(DBCInsert, "@FactoryCrop", DbType.Decimal, DataRowVersion.Current)
-            DB.AddInParameter(DBCInsert, "@Rate", DbType.Decimal, DataRowVersion.Current)
+        DB.AddInParameter(DBCInsert, "@Month", DbType.Int32, Me.CurrentMonth)
+        DB.AddInParameter(DBCInsert, "@Year", DbType.Int32, Me.CurrentYear)
+        DB.AddInParameter(DBCInsert, "@AbbreviationID", DbType.Int64, Me.AbbreviationID)
+        DB.AddInParameter(DBCInsert, "@CurrentDay", DbType.Int32, Me.CurrentDate)
+        DB.AddInParameter(DBCInsert, "@FactoryCrop", DbType.Decimal, Me.FactoryCrop)
+        DB.AddInParameter(DBCInsert, "@Rate", DbType.Decimal, Me.Rate)
 
-            Dim DBCUpdate As DbCommand = DB.GetStoredProcCommand("DailyCropSummary_Update")
-            DB.AddInParameter(DBCUpdate, "@DailyCropSummaryID", DbType.Int64, DataRowVersion.Current)
-            DB.AddInParameter(DBCUpdate, "@Month", DbType.Int32, Me.CurrentMonth)
-            DB.AddInParameter(DBCUpdate, "@Year", DbType.Int32, Me.CurrentYear)
-            DB.AddInParameter(DBCUpdate, "@AbbreviationID", DbType.Int32, Me.AbbreviationID)
-            DB.AddInParameter(DBCUpdate, "@CurrentDay", DbType.Int32, DataRowVersion.Current)
-            DB.AddInParameter(DBCUpdate, "@FactoryCrop", DbType.Decimal, DataRowVersion.Current)
-            DB.AddInParameter(DBCUpdate, "@Rate", DbType.Decimal, DataRowVersion.Current)
+        DB.ExecuteNonQuery(DBCInsert)
 
-            Dim DBCDelete As DbCommand = DB.GetStoredProcCommand("DailyCropSummary_Delete")
-            DB.AddInParameter(DBCDelete, "@DailyCropSummaryID", DbType.Int64, DataRowVersion.Current)
-
-            DB.UpdateDataSet(ds, ds.Tables(0).TableName, DBCInsert, DBCUpdate, DBCDelete, UpdateBehavior.Standard)
-
-        Catch ex As Exception
-            Throw
-        End Try
     End Sub
-#End Region
+
+
+    Public Sub DeleteDailyCrop()
+
+        Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+        Dim DBCDelete As DbCommand = DB.GetStoredProcCommand("DailyCropSummary_Delete")
+        DB.AddInParameter(DBCDelete, "@Month", DbType.Int32, Me.CurrentMonth)
+        DB.AddInParameter(DBCDelete, "@Year", DbType.Int32, Me.CurrentYear)
+        DB.AddInParameter(DBCDelete, "@AbbreviationID", DbType.Int64, Me.AbbreviationID)
+
+
+        DB.ExecuteNonQuery(DBCDelete)
+    End Sub
+
+    '#Region "Update Daily Crop"
+    '    Public Sub UpdateDailyCrop(ByVal ds As DataSet)
+    '        Try
+
+    '            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+
+    '            Dim DBCInsert As DbCommand = DB.GetStoredProcCommand("DailyCropSummary_Insert")
+
+    '            DB.AddInParameter(DBCInsert, "@Month", DbType.Int32, Me.CurrentMonth)
+    '            DB.AddInParameter(DBCInsert, "@Year", DbType.Int32, Me.CurrentYear)
+    '            DB.AddInParameter(DBCInsert, "@AbbreviationID", DbType.Int64, Me.AbbreviationID)
+    '            DB.AddInParameter(DBCInsert, "@CurrentDay", DbType.Int32, DataRowVersion.Current)
+    '            DB.AddInParameter(DBCInsert, "@FactoryCrop", DbType.Decimal, DataRowVersion.Current)
+    '            DB.AddInParameter(DBCInsert, "@Rate", DbType.Decimal, DataRowVersion.Current)
+
+    '            Dim DBCUpdate As DbCommand = DB.GetStoredProcCommand("DailyCropSummary_Update")
+    '            DB.AddInParameter(DBCUpdate, "@DailyCropSummaryID", DbType.Int64, DataRowVersion.Current)
+    '            DB.AddInParameter(DBCUpdate, "@Month", DbType.Int32, Me.CurrentMonth)
+    '            DB.AddInParameter(DBCUpdate, "@Year", DbType.Int32, Me.CurrentYear)
+    '            DB.AddInParameter(DBCUpdate, "@AbbreviationID", DbType.Int32, Me.AbbreviationID)
+    '            DB.AddInParameter(DBCUpdate, "@CurrentDay", DbType.Int32, DataRowVersion.Current)
+    '            DB.AddInParameter(DBCUpdate, "@FactoryCrop", DbType.Decimal, DataRowVersion.Current)
+    '            DB.AddInParameter(DBCUpdate, "@Rate", DbType.Decimal, DataRowVersion.Current)
+
+    '            Dim DBCDelete As DbCommand = DB.GetStoredProcCommand("DailyCropSummary_Delete")
+    '            DB.AddInParameter(DBCDelete, "@DailyCropSummaryID", DbType.Int64, DataRowVersion.Current)
+
+    '            DB.UpdateDataSet(ds, ds.Tables(0).TableName, DBCInsert, DBCUpdate, DBCDelete, UpdateBehavior.Standard)
+
+    '        Catch ex As Exception
+    '            Throw
+    '        End Try
+    '    End Sub
+    '#End Region
 
 
 
