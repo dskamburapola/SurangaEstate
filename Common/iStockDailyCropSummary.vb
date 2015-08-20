@@ -101,7 +101,7 @@ Public Class iStockDailyCropSummary
             DB.AddInParameter(DBCInsert, "@Month", DbType.Int32, Me.CurrentMonth)
             DB.AddInParameter(DBCInsert, "@Year", DbType.Int32, Me.CurrentYear)
             DB.AddInParameter(DBCInsert, "@AbbreviationID", DbType.Int64, Me.AbbreviationID)
-            DB.AddInParameter(DBCInsert, "@CurrentDate", DbType.Date, DataRowVersion.Current)
+            DB.AddInParameter(DBCInsert, "@CurrentDay", DbType.Int32, DataRowVersion.Current)
             DB.AddInParameter(DBCInsert, "@FactoryCrop", DbType.Decimal, DataRowVersion.Current)
             DB.AddInParameter(DBCInsert, "@Rate", DbType.Decimal, DataRowVersion.Current)
 
@@ -110,7 +110,7 @@ Public Class iStockDailyCropSummary
             DB.AddInParameter(DBCUpdate, "@Month", DbType.Int32, Me.CurrentMonth)
             DB.AddInParameter(DBCUpdate, "@Year", DbType.Int32, Me.CurrentYear)
             DB.AddInParameter(DBCUpdate, "@AbbreviationID", DbType.Int32, Me.AbbreviationID)
-            DB.AddInParameter(DBCUpdate, "@CurrentDate", DbType.Date, DataRowVersion.Current)
+            DB.AddInParameter(DBCUpdate, "@CurrentDay", DbType.Int32, DataRowVersion.Current)
             DB.AddInParameter(DBCUpdate, "@FactoryCrop", DbType.Decimal, DataRowVersion.Current)
             DB.AddInParameter(DBCUpdate, "@Rate", DbType.Decimal, DataRowVersion.Current)
 
@@ -118,6 +118,7 @@ Public Class iStockDailyCropSummary
             DB.AddInParameter(DBCDelete, "@DailyCropSummaryID", DbType.Int64, DataRowVersion.Current)
 
             DB.UpdateDataSet(ds, ds.Tables(0).TableName, DBCInsert, DBCUpdate, DBCDelete, UpdateBehavior.Standard)
+
         Catch ex As Exception
             Throw
         End Try

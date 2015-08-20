@@ -147,7 +147,7 @@ Public Class frmDailyCropSummary
 
 
     Private Sub sbUpdate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbUpdate.Click
-
+        gvDailyCrop.PostEditor()
         iStockDailyCrop.UpdateDailyCrop(ds)
         Me.LoadGrid()
 

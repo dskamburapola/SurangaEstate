@@ -30,11 +30,13 @@ Partial Class frmDailyCropSummary
         Me.gcDailyCrop = New DevExpress.XtraGrid.GridControl()
         Me.gvDailyCrop = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemDateEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit()
+        Me.RepositoryItemComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox()
         Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemSpinEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit()
         Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemSpinEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit()
+        Me.RepositoryItemDateEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit()
+        Me.RepositoryItemDateEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit()
         Me.leYear = New DevExpress.XtraEditors.LookUpEdit()
         Me.meMonth = New DevExpress.XtraScheduler.UI.MonthEdit()
         Me.sbGenerate = New DevExpress.XtraEditors.SimpleButton()
@@ -55,10 +57,13 @@ Partial Class frmDailyCropSummary
         CType(Me.leType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcDailyCrop, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gvDailyCrop, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemDateEdit1.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemSpinEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemSpinEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemDateEdit1.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemDateEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemDateEdit2.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -131,7 +136,7 @@ Partial Class frmDailyCropSummary
         Me.gcDailyCrop.Location = New System.Drawing.Point(12, 81)
         Me.gcDailyCrop.MainView = Me.gvDailyCrop
         Me.gcDailyCrop.Name = "gcDailyCrop"
-        Me.gcDailyCrop.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemDateEdit1, Me.RepositoryItemSpinEdit1, Me.RepositoryItemSpinEdit2})
+        Me.gcDailyCrop.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemDateEdit1, Me.RepositoryItemSpinEdit1, Me.RepositoryItemSpinEdit2, Me.RepositoryItemDateEdit2, Me.RepositoryItemComboBox1})
         Me.gcDailyCrop.Size = New System.Drawing.Size(883, 383)
         Me.gcDailyCrop.TabIndex = 16
         Me.gcDailyCrop.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvDailyCrop})
@@ -149,27 +154,21 @@ Partial Class frmDailyCropSummary
         '
         'GridColumn1
         '
-        Me.GridColumn1.Caption = "Date"
-        Me.GridColumn1.ColumnEdit = Me.RepositoryItemDateEdit1
-        Me.GridColumn1.DisplayFormat.FormatString = "dd-MMM-yy"
-        Me.GridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.GridColumn1.FieldName = "CurrentDate"
+        Me.GridColumn1.Caption = "Day"
+        Me.GridColumn1.ColumnEdit = Me.RepositoryItemComboBox1
+        Me.GridColumn1.FieldName = "CurrentDay"
         Me.GridColumn1.Name = "GridColumn1"
         Me.GridColumn1.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count)})
         Me.GridColumn1.Visible = True
         Me.GridColumn1.VisibleIndex = 0
         '
-        'RepositoryItemDateEdit1
+        'RepositoryItemComboBox1
         '
-        Me.RepositoryItemDateEdit1.AutoHeight = False
-        Me.RepositoryItemDateEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemDateEdit1.DisplayFormat.FormatString = "dd-MMM-yy"
-        Me.RepositoryItemDateEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.RepositoryItemDateEdit1.EditFormat.FormatString = "dd-MMM-yy"
-        Me.RepositoryItemDateEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.RepositoryItemDateEdit1.Mask.EditMask = "dd-MMM-yy"
-        Me.RepositoryItemDateEdit1.Name = "RepositoryItemDateEdit1"
-        Me.RepositoryItemDateEdit1.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.RepositoryItemComboBox1.AutoHeight = False
+        Me.RepositoryItemComboBox1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemComboBox1.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
+        Me.RepositoryItemComboBox1.Name = "RepositoryItemComboBox1"
+        Me.RepositoryItemComboBox1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
         '
         'GridColumn3
         '
@@ -202,6 +201,20 @@ Partial Class frmDailyCropSummary
         Me.RepositoryItemSpinEdit2.AutoHeight = False
         Me.RepositoryItemSpinEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.RepositoryItemSpinEdit2.Name = "RepositoryItemSpinEdit2"
+        '
+        'RepositoryItemDateEdit1
+        '
+        Me.RepositoryItemDateEdit1.AutoHeight = False
+        Me.RepositoryItemDateEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemDateEdit1.Name = "RepositoryItemDateEdit1"
+        Me.RepositoryItemDateEdit1.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        '
+        'RepositoryItemDateEdit2
+        '
+        Me.RepositoryItemDateEdit2.AutoHeight = False
+        Me.RepositoryItemDateEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemDateEdit2.Name = "RepositoryItemDateEdit2"
+        Me.RepositoryItemDateEdit2.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         '
         'leYear
         '
@@ -379,10 +392,13 @@ Partial Class frmDailyCropSummary
         CType(Me.leType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gcDailyCrop, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gvDailyCrop, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemDateEdit1.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemSpinEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemSpinEdit2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemDateEdit1.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemDateEdit2.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemDateEdit2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -426,4 +442,6 @@ Partial Class frmDailyCropSummary
     Friend WithEvents RepositoryItemDateEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
     Friend WithEvents RepositoryItemSpinEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit
     Friend WithEvents RepositoryItemSpinEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit
+    Friend WithEvents RepositoryItemDateEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
+    Friend WithEvents RepositoryItemComboBox1 As DevExpress.XtraEditors.Repository.RepositoryItemComboBox
 End Class
