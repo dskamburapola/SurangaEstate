@@ -255,13 +255,14 @@ Public Class frmAttendaceAdvanceReport
                     gvCheckRoll.Columns(index).Caption = DatePart(DateInterval.Day, Convert.ToDateTime(gvCheckRoll.Columns(index).FieldName)).ToString()
                     'gvCheckRoll.Columns(index).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
 
+                    gvCheckRoll.Columns(index).Width = 50
+
+
                 End If
 
             Next
 
-        
-            gvCheckRoll.BestFitColumns()
-
+       
 
 
         End If

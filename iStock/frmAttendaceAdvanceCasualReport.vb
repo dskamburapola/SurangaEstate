@@ -102,15 +102,24 @@ Public Class frmAttendaceAdvanceCasualReport
 
         If dxvpAttendaceReport.Validate Then
 
+            Dim daterange As Integer = 1
             Dim currentDate As Date
-            Dim selectedMonth, selectedYear As String
+            Dim selectedMonth, selectedYear, selectedRange As String
             selectedMonth = meMonth.EditValue
             selectedYear = leYear.EditValue
             currentDate = Convert.ToDateTime("01-" + selectedMonth + "-" + selectedYear)
+            selectedRange = cbeRange.EditValue
+
+            If (selectedRange = "1-15") Then
+                daterange = 1
+            ElseIf (selectedRange = "16-EOM") Then
+                daterange = 2
+            End If
+
 
             Dim ds As New DataSet
 
-            ds = iStockDailyWorking.GetCheckRollCasualReport(currentDate)
+            ds = iStockDailyWorking.GetCheckRollCasualReport(currentDate, daterange)
 
             gcCheckRoll.DataSource = Nothing
             gcCheckRoll.DataSource = ds.Tables(0)
@@ -154,7 +163,7 @@ Public Class frmAttendaceAdvanceCasualReport
 
                     gvCheckRoll.Columns(index).Caption = DatePart(DateInterval.Day, Convert.ToDateTime(gvCheckRoll.Columns(index).FieldName)).ToString()
                     'gvCheckRoll.Columns(index).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
-
+                    gvCheckRoll.Columns(index).Width = 50
                 End If
 
             Next
