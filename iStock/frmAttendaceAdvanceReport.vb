@@ -185,6 +185,9 @@ Public Class frmAttendaceAdvanceReport
 
             ds = iStockDailyWorking.GetCheckRollReport(currentDate)
 
+         
+
+            gvCheckRoll.Columns.Clear()
             gcCheckRoll.DataSource = Nothing
             gcCheckRoll.DataSource = ds.Tables(0)
 
@@ -199,7 +202,6 @@ Public Class frmAttendaceAdvanceReport
             gvCheckRoll.Columns("EmployeeNo").Fixed = Columns.FixedStyle.Left
             gvCheckRoll.Columns("EmployeeName").Fixed = Columns.FixedStyle.Left
             gvCheckRoll.Columns("Sex").Fixed = Columns.FixedStyle.Left
-
 
             gvCheckRoll.Columns("TotalDays").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
             gvCheckRoll.Columns("PluckingKgs").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
@@ -235,11 +237,8 @@ Public Class frmAttendaceAdvanceReport
             gvCheckRoll.Columns("EPF_20").Width = 60
             gvCheckRoll.Columns("ETF_3").Width = 60
 
-
-
             gvCheckRoll.Columns("GrandTotalPay").AppearanceCell.BackColor = Color.Bisque
             gvCheckRoll.Columns("BalancePay").AppearanceCell.BackColor = Color.Thistle
-
 
             gvCheckRoll.Columns("EPFAmount").AppearanceCell.BackColor = Color.LightCoral
             gvCheckRoll.Columns("PayChit").AppearanceCell.BackColor = Color.LightCoral
@@ -255,25 +254,27 @@ Public Class frmAttendaceAdvanceReport
                     gvCheckRoll.Columns(index).Caption = DatePart(DateInterval.Day, Convert.ToDateTime(gvCheckRoll.Columns(index).FieldName)).ToString()
                     'gvCheckRoll.Columns(index).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
 
-                    gvCheckRoll.Columns(index).Width = 50
+                    gvCheckRoll.Columns(index).Width = 45
 
 
                 End If
 
             Next
 
-       
+
+
 
 
         End If
 
+     
 
+     
     End Sub
 
 
 #End Region
 
    
-    Private Sub GridControl1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-    End Sub
+  
 End Class

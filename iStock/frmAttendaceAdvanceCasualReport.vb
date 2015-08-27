@@ -121,6 +121,7 @@ Public Class frmAttendaceAdvanceCasualReport
 
             ds = iStockDailyWorking.GetCheckRollCasualReport(currentDate, daterange)
 
+            gvCheckRoll.Columns.Clear()
             gcCheckRoll.DataSource = Nothing
             gcCheckRoll.DataSource = ds.Tables(0)
 
