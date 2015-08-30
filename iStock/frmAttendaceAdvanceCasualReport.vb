@@ -72,7 +72,7 @@ Public Class frmAttendaceAdvanceCasualReport
 
 #Region "Print Preview"
     Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
-        PrintPreview(gcCheckRoll, "Check Roll Report (Casual) " + meMonth.Text + " / " + leYear.Text)
+        PrintPreview(gcCheckRoll, "Check Roll Report (Casual) " + meMonth.Text + " / " + leYear.Text + " Period - " + cbeRange.EditValue)
     End Sub
 #End Region
 
