@@ -103,7 +103,7 @@ Partial Class frmAttendaceAdvanceCasualReport
         Me.SimpleButton1.Size = New System.Drawing.Size(196, 31)
         Me.SimpleButton1.StyleController = Me.LayoutControl1
         Me.SimpleButton1.TabIndex = 18
-        Me.SimpleButton1.Text = "Coin Calculator"
+        Me.SimpleButton1.Text = "Cash Denomination"
         '
         'gcCheckRoll
         '
