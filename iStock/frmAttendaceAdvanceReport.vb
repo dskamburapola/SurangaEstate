@@ -210,7 +210,7 @@ Public Class frmAttendaceAdvanceReport
             gvCheckRoll.Columns("PluckingOrTappingPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
             gvCheckRoll.Columns("OverKgsPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
             gvCheckRoll.Columns("WCPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
-            gvCheckRoll.Columns("DevalutionAllowance").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvCheckRoll.Columns("EvalutionAllowance").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
             gvCheckRoll.Columns("GrandTotalPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
             gvCheckRoll.Columns("EPFAmount").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
             gvCheckRoll.Columns("PayChit").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
@@ -227,7 +227,7 @@ Public Class frmAttendaceAdvanceReport
             gvCheckRoll.Columns("OverKgsPay").Caption = "Over (Kg) Pay"
             gvCheckRoll.Columns("TappingL").Caption = "Tapping (L)"
 
-            gvCheckRoll.Columns("DevalutionAllowance").Caption = "Evaluation Allowance"
+            gvCheckRoll.Columns("EvalutionAllowance").Caption = "Evaluation Allowance"
 
             gvCheckRoll.Columns("EPF_12").Caption = "EPF (12%)"
             gvCheckRoll.Columns("EPF_20").Caption = "EPF (20%)"

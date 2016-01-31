@@ -286,6 +286,59 @@ Module iStockWindowsForms
     End Sub
 #End Region
 
+#Region "WorkDay Bar Button Setting"
+    Public Sub SetCWBWorkDayBarButtonClose(ByVal bbClose As DevExpress.XtraBars.BarButtonItem)
+
+        bbClose.Caption = "Close"
+
+        bbClose.Hint = CLOSE_HINT
+
+        bbClose.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.W))
+
+
+        bbClose.Glyph = iStock.My.Resources.Resources.Close
+
+
+        bbClose.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
+
+
+    End Sub
+
+    Public Sub SetCWBWorkDayBarButtonNew(ByVal bbNew As DevExpress.XtraBars.BarButtonItem)
+
+        bbNew.Caption = "New"
+
+        bbNew.Hint = NEW_HINT
+
+        bbNew.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.W))
+
+
+        bbNew.Glyph = iStock.My.Resources.Resources._New
+
+
+        bbNew.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
+
+
+    End Sub
+
+    Public Sub SetCWBWorkDayBarButtonSave(ByVal bbSave As DevExpress.XtraBars.BarButtonItem)
+
+        bbSave.Caption = "Save"
+
+        bbSave.Hint = SAVE_HINT
+
+        bbSave.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.W))
+
+
+        bbSave.Glyph = iStock.My.Resources.Resources.Save
+
+
+        bbSave.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
+
+
+    End Sub
+#End Region
+
 #Region "Summary Bar Button Settings"
     Public Sub SetSummaryBarButton(ByVal bbShowRecords As DevExpress.XtraBars.BarButtonItem, ByVal bbClose As DevExpress.XtraBars.BarButtonItem, ByVal bbRefresh As DevExpress.XtraBars.BarButtonItem)
         bbShowRecords.Caption = "Show Records"

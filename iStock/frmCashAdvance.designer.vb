@@ -319,7 +319,6 @@ Partial Class frmCashAdvance
         '
         'cmbWorkType
         '
-        Me.cmbWorkType.Enabled = False
         Me.cmbWorkType.Location = New System.Drawing.Point(273, 22)
         Me.cmbWorkType.MenuManager = Me.BarManager1
         Me.cmbWorkType.Name = "cmbWorkType"
@@ -816,7 +815,6 @@ Partial Class frmCashAdvance
         Me.LayoutControlItem11.Size = New System.Drawing.Size(455, 24)
         Me.LayoutControlItem11.Text = "WorkType"
         Me.LayoutControlItem11.TextSize = New System.Drawing.Size(82, 13)
-        Me.LayoutControlItem11.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
         'xTab1
         '

@@ -31,6 +31,9 @@ Public Class frmEmployers
     Private Sub frmEmployers_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         SetStartUpBarButton(bbSave, bbNew, bbDelete, bbClose, bbDisplaySelected, bbRefresh, bbPrint)
         Me.HideToolButtonsOnLoad()
+        deDateJoined.EditValue = Date.Today.ToShortDateString
+        deResignDate.EditValue = Date.Today.ToShortDateString
+
     End Sub
 #End Region
 
@@ -41,8 +44,11 @@ Public Class frmEmployers
                 Me.ShowToolButtonsOnNewRecordTabChange()
             Case 1
                 Me.ShowToolButtonsOnHistoryTabChange()
-                Me.PopulateGrid()
 
+              
+                    Me.PopulateGrid()
+               
+                
         End Select
     End Sub
 #End Region
@@ -183,14 +189,13 @@ Public Class frmEmployers
 
 #Region "Grid Events"
 
-    Private Sub gvEmployers_DoubleClick_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gvEmployers.DoubleClick
+    Private Sub gvEmployers_DoubleClick_1(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.DisplayRecord()
     End Sub
 #End Region
 
 #Region "Save Records"
     Private Sub SaveRecords()
-
 
 
         Try
@@ -227,6 +232,20 @@ Public Class frmEmployers
                 .Deductions = 0
                 .EPFNo = seEPFNo.Text.Trim
 
+                If cmbIsResign.Text = "No" Then
+                    .IsResigned = 0
+                    .ResignDate = Date.MinValue
+
+                Else
+                    .IsResigned = 1
+                    .ResignDate = deResignDate.EditValue
+
+                End If
+
+
+               
+
+                
                 .CreatedBy = UserID
                 .UpdatedBy = UserID
                 .Insert()
@@ -277,6 +296,7 @@ Public Class frmEmployers
                     .EmployerID = Me.gvEmployers.GetFocusedRowCellValue(GridColumn1)
                     .SelectRow()
 
+
                     lblID.Text = .EmployerID
 
                     seEmployerNo.Text = .EmployerNo
@@ -313,11 +333,33 @@ Public Class frmEmployers
                     'seFixedAllowance.Text = .FixedAllowance
                     'seOtherAllowance.Text = .OtherAllowance
                     'seDeduction.Text = .Deductions
-                    'teEPFNo.Text = .EPFNo
+                    seEPFNo.Text = .EPFNo
 
+                    If .IsResigned = True Then
+
+                        cmbIsResign.Text = "Yes"
+
+                    Else
+
+                        cmbIsResign.Text = "No"
+
+
+                    End If
+
+                    If .ResignDate = Date.MinValue Then
+                        deResignDate.EditValue = DBNull.Value
+
+                    Else
+                        deResignDate.EditValue = .ResignDate
+
+                    End If
+
+                    'deResignDate.Text = .ResignDate
 
                 End With
 
+                Me.cmbIsResign.Enabled = True
+                Me.deResignDate.Enabled = True
 
             End If
         Catch ex As Exception
@@ -332,6 +374,18 @@ Public Class frmEmployers
     Public Sub PopulateGrid()
         Try
             gcEmployers.DataSource = CWBEmployers.SelectAll.Tables(0)
+            BandedGridColumn2.Caption = "Date Joined"
+        Catch ex As Exception
+            MessageError(ex.ToString)
+        End Try
+    End Sub
+#End Region
+
+#Region "Populate Resign Employees Grid"
+    Public Sub PopulateResignEmployeesGrid()
+        Try
+            gcEmployers.DataSource = CWBEmployers.ResignedSelectAll.Tables(0)
+            BandedGridColumn2.Caption = "Resigned Date"
         Catch ex As Exception
             MessageError(ex.ToString)
         End Try
@@ -377,4 +431,17 @@ Public Class frmEmployers
 
 #End Region
 
+    Private Sub cmbEmployeeType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbEmployeeType.SelectedIndexChanged
+
+        Select Case cmbEmployeeType.Text
+
+            Case "All Employees"
+
+                Me.PopulateGrid()
+
+            Case "Resigned Employees"
+                Me.PopulateResignEmployeesGrid()
+
+        End Select
+    End Sub
 End Class

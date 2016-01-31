@@ -20,13 +20,13 @@ Partial Class frmTermDeductions
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ConditionValidationRule6 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule5 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule8 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule4 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
-        Dim ConditionValidationRule5 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
-        Dim ConditionValidationRule7 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule6 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar2 = New DevExpress.XtraBars.Bar()
         Me.bbSave = New DevExpress.XtraBars.BarButtonItem()
@@ -240,9 +240,9 @@ Partial Class frmTermDeductions
         Me.cmbDeductionType.Size = New System.Drawing.Size(156, 20)
         Me.cmbDeductionType.StyleController = Me.LayoutControl1
         Me.cmbDeductionType.TabIndex = 1
-        ConditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule6.ErrorText = "Require"
-        Me.dxvpCompany.SetValidationRule(Me.cmbDeductionType, ConditionValidationRule6)
+        ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule5.ErrorText = "Require"
+        Me.dxvpCompany.SetValidationRule(Me.cmbDeductionType, ConditionValidationRule5)
         '
         'LayoutControl1
         '
@@ -268,12 +268,11 @@ Partial Class frmTermDeductions
         '
         'cmbWorkType
         '
-        Me.cmbWorkType.Enabled = False
         Me.cmbWorkType.Location = New System.Drawing.Point(188, 29)
         Me.cmbWorkType.MenuManager = Me.BarManager1
         Me.cmbWorkType.Name = "cmbWorkType"
         Me.cmbWorkType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbWorkType.Properties.Items.AddRange(New Object() {"PERMANENT", "CASUAL"})
+        Me.cmbWorkType.Properties.Items.AddRange(New Object() {"CASUAL", "PERMANENT"})
         Me.cmbWorkType.Size = New System.Drawing.Size(156, 20)
         Me.cmbWorkType.StyleController = Me.LayoutControl1
         Me.cmbWorkType.TabIndex = 13
@@ -355,9 +354,9 @@ Partial Class frmTermDeductions
         Me.deStartMonth.Size = New System.Drawing.Size(158, 20)
         Me.deStartMonth.StyleController = Me.LayoutControl1
         Me.deStartMonth.TabIndex = 5
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "Require"
-        Me.dxvpCompany.SetValidationRule(Me.deStartMonth, ConditionValidationRule1)
+        ConditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule8.ErrorText = "Require"
+        Me.dxvpCompany.SetValidationRule(Me.deStartMonth, ConditionValidationRule8)
         '
         'sePeriod
         '
@@ -371,10 +370,10 @@ Partial Class frmTermDeductions
         Me.sePeriod.Size = New System.Drawing.Size(158, 20)
         Me.sePeriod.StyleController = Me.LayoutControl1
         Me.sePeriod.TabIndex = 4
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
-        ConditionValidationRule2.ErrorText = "Require"
-        ConditionValidationRule2.Value1 = CType(0, Long)
-        Me.dxvpCompany.SetValidationRule(Me.sePeriod, ConditionValidationRule2)
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule1.ErrorText = "Require"
+        ConditionValidationRule1.Value1 = CType(0, Long)
+        Me.dxvpCompany.SetValidationRule(Me.sePeriod, ConditionValidationRule1)
         '
         'seAmount
         '
@@ -388,10 +387,10 @@ Partial Class frmTermDeductions
         Me.seAmount.Size = New System.Drawing.Size(158, 20)
         Me.seAmount.StyleController = Me.LayoutControl1
         Me.seAmount.TabIndex = 3
-        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
-        ConditionValidationRule3.ErrorText = "Require"
-        ConditionValidationRule3.Value1 = CType(0, Long)
-        Me.dxvpCompany.SetValidationRule(Me.seAmount, ConditionValidationRule3)
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule2.ErrorText = "Require"
+        ConditionValidationRule2.Value1 = CType(0, Long)
+        Me.dxvpCompany.SetValidationRule(Me.seAmount, ConditionValidationRule2)
         '
         'leEmployeeCode
         '
@@ -405,9 +404,9 @@ Partial Class frmTermDeductions
         Me.leEmployeeCode.Size = New System.Drawing.Size(156, 20)
         Me.leEmployeeCode.StyleController = Me.LayoutControl1
         Me.leEmployeeCode.TabIndex = 0
-        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule4.ErrorText = "Require"
-        Me.dxvpCompany.SetValidationRule(Me.leEmployeeCode, ConditionValidationRule4)
+        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule3.ErrorText = "Require"
+        Me.dxvpCompany.SetValidationRule(Me.leEmployeeCode, ConditionValidationRule3)
         '
         'deIssueDate
         '
@@ -427,9 +426,9 @@ Partial Class frmTermDeductions
         Me.deIssueDate.Size = New System.Drawing.Size(156, 20)
         Me.deIssueDate.StyleController = Me.LayoutControl1
         Me.deIssueDate.TabIndex = 2
-        ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule5.ErrorText = "Require"
-        Me.dxvpCompany.SetValidationRule(Me.deIssueDate, ConditionValidationRule5)
+        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule4.ErrorText = "Require"
+        Me.dxvpCompany.SetValidationRule(Me.deIssueDate, ConditionValidationRule4)
         '
         'teEmployeeName
         '
@@ -440,9 +439,9 @@ Partial Class frmTermDeductions
         Me.teEmployeeName.Size = New System.Drawing.Size(417, 20)
         Me.teEmployeeName.StyleController = Me.LayoutControl1
         Me.teEmployeeName.TabIndex = 7
-        ConditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule7.ErrorText = "Require"
-        Me.dxvpCompany.SetValidationRule(Me.teEmployeeName, ConditionValidationRule7)
+        ConditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule6.ErrorText = "Require"
+        Me.dxvpCompany.SetValidationRule(Me.teEmployeeName, ConditionValidationRule6)
         '
         'LayoutControlGroup1
         '
@@ -570,7 +569,6 @@ Partial Class frmTermDeductions
         Me.LayoutControlItem11.Size = New System.Drawing.Size(259, 24)
         Me.LayoutControlItem11.Text = "Work Type"
         Me.LayoutControlItem11.TextSize = New System.Drawing.Size(96, 13)
-        Me.LayoutControlItem11.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
         'LayoutControlItem4
         '

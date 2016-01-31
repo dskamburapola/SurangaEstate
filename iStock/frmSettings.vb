@@ -72,21 +72,27 @@ Public Class frmSettings
 
         Try
             With ECSSettings
-
-                .PayChitCost = Me.sePayChitCost.EditValue
-                .DevalutionAllowance = Me.seDevalutionAllowance.EditValue
                 .DayRate = Me.seDayRate.EditValue
                 .OTRate = Me.seOTRate.EditValue
-                .KgsPerDay = Me.seKgsPerDay.EditValue
-                .KgsPerDayNotMandatory = Me.seKgsPerDayNotMandatory.EditValue
-                .IncentiveDays = Me.seIncentiveDays.EditValue
-                .EPF = Me.seEPF.EditValue
-                .ETF = Me.seETF.EditValue
-                .OverKgRate = Me.seOverKgsRate.EditValue
-                .WCPay = Me.seWCPay.Value
                 .CasualPayRate = Me.seCasualPayRate.EditValue
                 .CasualOTPayRate = Me.seCasualOTPayRate.EditValue
+                .PayChitCost = Me.sePayChitCost.EditValue
+                .EvalutionAllowance = Me.seEvalutionAllowance.EditValue
+                .IncentiveDays = Me.seIncentiveDays.EditValue
+                .WCPay = Me.seWCPay.Value
+                .EPF = Me.seEPF.EditValue
+                .ETF = Me.seETF.EditValue
+                .KgsPerDay = Me.seKgsPerDay.EditValue
+                .KgsPerDayNotMandatory = 0
+                .OverKgRate = Me.seOverKgsRate.EditValue
                 .OverKGUpperLimit = Me.seOverKgUpperLimit.EditValue
+                .LowerKgRate = Me.seLowerKgRate.EditValue
+                .SheetsPerDay = Me.seSheetsPerDay.EditValue
+                .OverSheetsRate = Me.seOverSheetsRate.EditValue
+                .OverSheetsUpperLimit = Me.seOverSheetsUpperLimit.EditValue
+                .LowerSheetsRate = Me.seLowerSheetsRate.EditValue
+
+
 
                 .CreatedBy = UserID
                 .UpdatedBy = UserID
@@ -116,21 +122,30 @@ Public Class frmSettings
         Try
             With ECSSettings
                 .GetSettings()
-                Me.sePayChitCost.EditValue = .PayChitCost
-                Me.seDevalutionAllowance.EditValue = .DevalutionAllowance
+
+
                 Me.seDayRate.EditValue = .DayRate
                 Me.seOTRate.EditValue = .OTRate
-                Me.seKgsPerDay.EditValue = .KgsPerDay
-                Me.seKgsPerDayNotMandatory.EditValue = .KgsPerDayNotMandatory
-                Me.seIncentiveDays.EditValue = .IncentiveDays
-                '  Me.seIncentiveRate.Text = .IncentiveRate
-                Me.seEPF.EditValue = .EPF
-                Me.seETF.EditValue = .ETF
-                Me.seOverKgsRate.EditValue = .OverKgRate
-                Me.seWCPay.EditValue = .WCPay
                 Me.seCasualPayRate.EditValue = .CasualPayRate
                 Me.seCasualOTPayRate.EditValue = .CasualOTPayRate
+                Me.sePayChitCost.EditValue = .PayChitCost
+                Me.seEvalutionAllowance.EditValue = .EvalutionAllowance
+                Me.seIncentiveDays.EditValue = .IncentiveDays
+                Me.seWCPay.EditValue = .WCPay
+                Me.seEPF.EditValue = .EPF
+                Me.seETF.EditValue = .ETF
+                Me.seKgsPerDay.EditValue = .KgsPerDay
+                '  Me.seKgsPerDayNotMandatory.EditValue = .KgsPerDayNotMandatory
+                Me.seOverKgsRate.EditValue = .OverKgRate
                 Me.seOverKgUpperLimit.EditValue = .OverKGUpperLimit
+                Me.seLowerKgRate.EditValue = .LowerKgRate
+                Me.seSheetsPerDay.EditValue = .SheetsPerDay
+                Me.seOverSheetsRate.EditValue = .OverSheetsRate
+                Me.seOverSheetsUpperLimit.EditValue = .OverSheetsUpperLimit
+                Me.seLowerSheetsRate.EditValue = .LowerSheetsRate
+
+
+
 
             End With
         Catch ex As Exception

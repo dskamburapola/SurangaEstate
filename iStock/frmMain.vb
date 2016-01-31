@@ -205,4 +205,8 @@ Public Class frmMain
     Private Sub BarButtonItem37_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem37.ItemClick
         ShowIStockForm(frmDailyCropSummary)
     End Sub
+
+    Private Sub BarButtonItem38_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem38.ItemClick
+        ShowIStockForm(frmWorkDayShedule)
+    End Sub
 End Class

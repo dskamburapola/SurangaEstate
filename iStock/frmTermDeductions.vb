@@ -189,36 +189,7 @@ Public Class frmTermDeductions
     End Sub
 #End Region
 
-#Region "Get Employee For Work"
-    Private Sub GetEmployeeForWork()
 
-        Try
-            'If cmbWorkType.Text <> String.Empty Then
-            '    Select Case cmbWorkType.Text
-
-            '        Case "CASUAL"
-            '            iStockDailyWorking.WorkType = "CASUAL LABOUR"
-
-            '        Case "PERMENANT"
-            '            iStockDailyWorking.WorkType = "PERMANENT LABOUR"
-
-
-            '    End Select
-            'End If
-            iStockDailyWorking.WorkType = "PERMANENT"
-            Me.leEmployeeCode.Properties.DataSource = iStockDailyWorking.GetEmployeeForWork.Tables(0)
-            Me.leEmployeeCode.Properties.DisplayMember = "EmployerName"
-            Me.leEmployeeCode.Properties.ValueMember = "EmployerID"
-
-
-        Catch ex As Exception
-
-            Throw
-        End Try
-
-
-    End Sub
-#End Region
 
 #Region "Get TermDeductions"
     Private Sub GetTermDeductions()
@@ -562,7 +533,28 @@ Public Class frmTermDeductions
 
 #End Region
 
+#Region "Get Employee For Work"
+    Private Sub GetEmployeeForWork()
+
+        Try
+
+            iStockDailyWorking.WorkType = cmbWorkType.Text.Trim
+            Me.leEmployeeCode.Properties.DataSource = iStockDailyWorking.GetEmployeeForWork.Tables(0)
+            Me.leEmployeeCode.Properties.DisplayMember = "EmployerNo"
+            Me.leEmployeeCode.Properties.ValueMember = "EmployerID"
 
 
+        Catch ex As Exception
 
+            Throw
+        End Try
+
+
+    End Sub
+#End Region
+
+
+    Private Sub cmbWorkType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbWorkType.SelectedIndexChanged
+        Me.GetEmployeeForWork()
+    End Sub
 End Class

@@ -90,12 +90,13 @@ Partial Class frmAttendaceReport
         Me.cbeWorkType.Location = New System.Drawing.Point(379, 43)
         Me.cbeWorkType.Name = "cbeWorkType"
         Me.cbeWorkType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Clear", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, "", Nothing, Nothing, True)})
-        Me.cbeWorkType.Properties.Items.AddRange(New Object() {"PERMANENT", "CASUAL"})
+        Me.cbeWorkType.Properties.Items.AddRange(New Object() {"ALL", "CASUAL", "PERMANENT"})
         Me.cbeWorkType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
         Me.cbeWorkType.Size = New System.Drawing.Size(121, 20)
         Me.cbeWorkType.StyleController = Me.LayoutControl1
         Me.cbeWorkType.TabIndex = 17
-        ConditionValidationRule1.ErrorText = ""
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "Require"
         Me.dxvpAttendaceReport.SetValidationRule(Me.cbeWorkType, ConditionValidationRule1)
         '
         'pgcAttendance
@@ -166,6 +167,8 @@ Partial Class frmAttendaceReport
         Me.PivotGridField4.GroupIntervalNumericRange = 12
         Me.PivotGridField4.Name = "PivotGridField4"
         Me.PivotGridField4.UnboundFieldName = "PivotGridField4"
+        Me.PivotGridField4.ValueFormat.FormatString = "n0"
+        Me.PivotGridField4.ValueFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         '
         'PivotGridField5
         '

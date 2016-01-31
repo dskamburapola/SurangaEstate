@@ -330,7 +330,7 @@ Public Class frmDailyWorkings
                 Me.lblOverKgsRate.Text = .OverKgRate
                 Me.lblWCPay.Text = .WCPay
                 Me.lblIncentiveDays.Text = .IncentiveDays
-                Me.lblIncentiveRate.Text = .DevalutionAllowance
+                Me.lblIncentiveRate.Text = .EvalutionAllowance
                 Me.lblPayChit.Text = .PayChitCost
                 Me.lblKgsPerDayNotMandatory.Text = .KgsPerDayNotMandatory
                 Me.lblETF.Text = .ETF
@@ -565,9 +565,7 @@ Public Class frmDailyWorkings
 #End Region
     
 
-    Private Sub RepositoryItemButtonEdit1_ButtonClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles RepositoryItemButtonEdit1.ButtonClick
-
-    End Sub
+  
 
 
 

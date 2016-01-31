@@ -8,6 +8,7 @@ Public Class frmCashAdvance
 
 #Region "Properties"
     Private _iStockCashAdvance As iStockCommon.iStockCashAdvance
+    Private _iStockDailyWorking As iStockCommon.iStockDailyWorking
 
 #End Region
 
@@ -24,6 +25,18 @@ Public Class frmCashAdvance
 
         End Get
     End Property
+
+    Public ReadOnly Property iStockDailyWorking() As iStockCommon.iStockDailyWorking
+        Get
+
+            If _iStockDailyWorking Is Nothing Then
+                _iStockDailyWorking = New iStockCommon.iStockDailyWorking
+            End If
+
+            Return _iStockDailyWorking
+        End Get
+    End Property
+
 #End Region
 
 #Region "Form Events"
@@ -106,37 +119,6 @@ Public Class frmCashAdvance
 
 #End Region
 
-#Region "Get Employee For Work"
-    Private Sub GetEmployeeForWork()
-
-        Try
-
-            'If cmbWorkType.Text <> String.Empty Then
-            '    Select Case cmbWorkType.Text
-
-            '        Case "CASUAL"
-            '            iStockCashAdvance.WorkType = "CASUAL LABOUR"
-
-            '        Case "PERMENANT"
-            '            iStockCashAdvance.WorkType = "PERMANENT LABOUR"
-
-
-            '    End Select
-            'End If
-            iStockCashAdvance.WorkType = "PERMANENT"
-
-            Me.leEmployee.Properties.DataSource = iStockCashAdvance.GetEmployeeForWork.Tables(0)
-            Me.leEmployee.Properties.DisplayMember = "EmployerName"
-            Me.leEmployee.Properties.ValueMember = "EmployerID"
-
-        Catch ex As Exception
-
-            Throw
-        End Try
-
-
-    End Sub
-#End Region
 
 #Region "Get Payment Details For Advance"
     Private Sub GetPaymentDetailsForAdvance()
@@ -388,7 +370,28 @@ Public Class frmCashAdvance
         End If
     End Sub
 
-    
+#Region "Get Employee For Work"
+    Private Sub GetEmployeeForWork()
+
+        Try
+
+            iStockDailyWorking.WorkType = cmbWorkType.Text.Trim
+            Me.leEmployee.Properties.DataSource = iStockDailyWorking.GetEmployeeForWork.Tables(0)
+            Me.leEmployee.Properties.DisplayMember = "EmployerNo"
+            Me.leEmployee.Properties.ValueMember = "EmployerID"
+
+
+        Catch ex As Exception
+
+            Throw
+        End Try
+
+
+    End Sub
+#End Region
    
     
+    Private Sub cmbWorkType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbWorkType.SelectedIndexChanged
+        Me.GetEmployeeForWork()
+    End Sub
 End Class

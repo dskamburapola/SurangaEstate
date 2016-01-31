@@ -81,6 +81,7 @@
     <Import Include="System.Diagnostics" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="iStockWorkDays.vb" />
     <Compile Include="iStockDailyCropSummary.vb" />
     <Compile Include="iStockCharts.vb" />
     <Compile Include="iStockOtherIncome.vb" />

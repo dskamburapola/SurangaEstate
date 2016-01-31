@@ -109,6 +109,12 @@
 
     Public Shared APPLICATION_GETSERVERDATETIME As String = "Application_GetServerDateTime"
 
+    Public Shared WORKDAYS_INSERT As String = "WorkDays_Insert"
+    Public Shared WORKDAYS_UPDATE As String = "WorkDays_Update"
+    Public Shared WORKDAYS_GETACTIVEYEAR As String = "WorkDays_GetActiveYear"
+    Public Shared WORKDAYS_GETMONTHLIST As String = "WorkDays_GetMonthList"
+    Public Shared WORKDAYSDESCRIPTION_INSERT As String = "WorkDaysDescription_Insert"
+    Public Shared WORKDAYSDESCRIPTION_DELETE As String = "WorkDaysDescription_Delete"
 
     Public Shared LOGBOOK_GETBYDATES As String = "LogBook_getByDates"
     Public Shared LOGBOOK_INSERT As String = "LogBook_Insert"
@@ -128,6 +134,7 @@
     Public Shared EMPLOYERS_GETBYID As String = "Employers_GetByID"
     Public Shared EMPLOYERS_GETBYBYDESIGNATION As String = "Employers_GetByByDesignation"
     Public Shared EMPLOYERS_GETBYEMPLOYERNO As String = "Employers_GetByEmployerNo"
+    Public Shared EMPLOYERS_RESIGNED_GETALL As String = "Employers_Resigned_GetAll"
 
     Public Shared SUPPLIERS_DELETE As String = "Suppliers_Delete"
     Public Shared SUPPLIERS_GETALL As String = "Suppliers_GetAll"
@@ -343,6 +350,8 @@
     Public Shared CASHADVANCE_GETALL_BYDATES As String = "CashAdvance_GetAll_ByDates"
 
     Public Shared REPORTATTENDANCE As String = "ReportAttendance"
+    Public Shared REPORTATTENDANCEALLCATEGORY As String = "ReportAttendance_AllCategory"
+
 
     Public Shared GETRUBBERLTRSBYDATE As String = "GetRubberLtrsByDate"
     Public Shared TBLSTOCK_GETALL As String = "tblStock_GetAll"

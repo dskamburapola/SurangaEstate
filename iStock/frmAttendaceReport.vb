@@ -111,12 +111,22 @@ Public Class frmAttendaceReport
             Dim workType As String
             workType = cbeWorkType.EditValue
 
-            Dim ds As New DataSet
+            If workType = "ALL" Then
+                Dim ds As New DataSet
 
+                ds = iStockDailyWorking.GetAttendanceReportAllCategory(currentDate)
+                pgcAttendance.DataSource = ds.Tables(0)
+                pgcAttendance.BestFitColumnArea()
 
-            ds = iStockDailyWorking.GetAttendanceReport(currentDate, workType)
-            pgcAttendance.DataSource = ds.Tables(0)
-            pgcAttendance.BestFitColumnArea()
+            Else
+
+                Dim ds As New DataSet
+
+                ds = iStockDailyWorking.GetAttendanceReport(currentDate, workType)
+                pgcAttendance.DataSource = ds.Tables(0)
+                pgcAttendance.BestFitColumnArea()
+
+            End If
 
 
 

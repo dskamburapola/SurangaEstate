@@ -40,7 +40,7 @@ Public Class iStockDailyWorking
     Private _RubberLtrs As Decimal
 
     Private _PayChitCost As Decimal
-    Private _DevalutionAllowance As Decimal
+    Private _EvalutionAllowance As Decimal
     Private _IncentiveDays As Decimal
     Private _IncentiveRate As Decimal
 
@@ -290,12 +290,12 @@ Public Class iStockDailyWorking
             _PayChitCost = value
         End Set
     End Property
-    Public Property DevalutionAllowance() As Decimal
+    Public Property EvalutionAllowance() As Decimal
         Get
-            Return _DevalutionAllowance
+            Return _EvalutionAllowance
         End Get
         Set(ByVal value As Decimal)
-            _DevalutionAllowance = value
+            _EvalutionAllowance = value
         End Set
     End Property
     Public Property IncentiveDays() As Decimal
@@ -554,6 +554,26 @@ Public Class iStockDailyWorking
             Else
                 DB.AddInParameter(DBC, "@WorkType", DbType.String, workType)
             End If
+
+
+
+            Return DB.ExecuteDataSet(DBC)
+            DBC.Dispose()
+        Catch ex As Exception
+            Return Nothing
+            Throw
+        End Try
+
+
+    End Function
+#End Region
+
+#Region "Attedence Report All Category"
+    Public Function GetAttendanceReportAllCategory(ByVal currentDate As Date) As DataSet
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand("ReportAttendance_AllCategory")
+            DB.AddInParameter(DBC, "@IssueDate", DbType.Date, currentDate)
 
 
 

@@ -11,9 +11,8 @@ Public Class iStockSettings
     Private _AbbreviationDesc As String
     Private _IsOutPutTypes As String
 
-
     Private _PayChitCost As Decimal
-    Private _DevalutionAllowance As Decimal
+    Private _EvalutionAllowance As Decimal
     Private _DayRate As Decimal
     Private _OTRate As Decimal
     Private _KgsPerDay As Decimal
@@ -35,7 +34,12 @@ Public Class iStockSettings
 
     Private _OverKGUpperLimit As Decimal
 
-
+    Private _LowerKgRate As Decimal
+    Private _SheetsPerDay As Decimal
+    Private _OverSheetsRate As Decimal
+    Private _OverSheetsUpperLimit As Decimal
+    Private _LowerSheetsRate As Decimal
+    
 #End Region
 
 #Region "Properties"
@@ -81,12 +85,12 @@ Public Class iStockSettings
             _PayChitCost = value
         End Set
     End Property
-    Public Property DevalutionAllowance() As Decimal
+    Public Property EvalutionAllowance() As Decimal
         Get
-            Return _DevalutionAllowance
+            Return _EvalutionAllowance
         End Get
         Set(ByVal value As Decimal)
-            _DevalutionAllowance = value
+            _EvalutionAllowance = value
         End Set
     End Property
     Public Property DayRate() As Decimal
@@ -188,6 +192,23 @@ Public Class iStockSettings
             _CasualOTPayRate = value
         End Set
     End Property
+    Public Property LowerKgRate() As Decimal
+        Get
+            Return _LowerKgRate
+        End Get
+        Set(ByVal value As Decimal)
+            _LowerKgRate = value
+        End Set
+    End Property
+
+    Public Property SheetsPerDay() As Decimal
+        Get
+            Return _SheetsPerDay
+        End Get
+        Set(ByVal value As Decimal)
+            _SheetsPerDay = value
+        End Set
+    End Property
     Public Property OverKGUpperLimit() As Decimal
         Get
             Return _OverKGUpperLimit
@@ -196,6 +217,48 @@ Public Class iStockSettings
             _OverKGUpperLimit = value
         End Set
     End Property
+
+    Public Property OverSheetsRate() As Decimal
+        Get
+            Return _OverSheetsRate
+        End Get
+        Set(ByVal value As Decimal)
+            _OverSheetsRate = value
+        End Set
+    End Property
+
+    Public Property OverSheetsUpperLimit() As Decimal
+        Get
+            Return _OverSheetsUpperLimit
+        End Get
+        Set(ByVal value As Decimal)
+            _OverSheetsUpperLimit = value
+        End Set
+    End Property
+
+    Public Property LowerSheetsRate() As Decimal
+        Get
+            Return _LowerSheetsRate
+        End Get
+        Set(ByVal value As Decimal)
+            _LowerSheetsRate = value
+        End Set
+    End Property
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     Public Property CreatedBy() As Int64
         Get
@@ -237,21 +300,28 @@ Public Class iStockSettings
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
             Dim DBC As DbCommand = DB.GetStoredProcCommand(SETTINGS_INSERT)
-            DB.AddInParameter(DBC, "@PayChitCost", DbType.Decimal, Me.PayChitCost)
-            DB.AddInParameter(DBC, "@DevalutionAllowance", DbType.Decimal, Me.DevalutionAllowance)
+
+
             DB.AddInParameter(DBC, "@DayRate", DbType.Decimal, Me.DayRate)
             DB.AddInParameter(DBC, "@OTRate", DbType.Decimal, Me.OTRate)
-            DB.AddInParameter(DBC, "@KgsPerDay", DbType.Decimal, Me.KgsPerDay)
-            DB.AddInParameter(DBC, "@KgsPerDayNotMandatory", DbType.Decimal, Me.KgsPerDayNotMandatory)
-            DB.AddInParameter(DBC, "@IncentiveDays", DbType.Decimal, Me.IncentiveDays)
-            ' DB.AddInParameter(DBC, "@IncentiveRate", DbType.String, Me.IncentiveRate)
-            DB.AddInParameter(DBC, "@EPF", DbType.Decimal, Me.EPF)
-            DB.AddInParameter(DBC, "@ETF", DbType.Decimal, Me.ETF)
-            DB.AddInParameter(DBC, "@OverKgRate", DbType.Decimal, Me.OverKgRate)
-            DB.AddInParameter(DBC, "@WCPay", DbType.Decimal, Me.WCPay)
             DB.AddInParameter(DBC, "@CasualPayRate", DbType.Decimal, Me.CasualPayRate)
             DB.AddInParameter(DBC, "@CasualOTPayRate", DbType.Decimal, Me.CasualOTPayRate)
+            DB.AddInParameter(DBC, "@PayChitCost", DbType.Decimal, Me.PayChitCost)
+            DB.AddInParameter(DBC, "@EvalutionAllowance", DbType.Decimal, Me.EvalutionAllowance)
+            DB.AddInParameter(DBC, "@IncentiveDays", DbType.Decimal, Me.IncentiveDays)
+            DB.AddInParameter(DBC, "@WCPay", DbType.Decimal, Me.WCPay)
+            DB.AddInParameter(DBC, "@EPF", DbType.Decimal, Me.EPF)
+            DB.AddInParameter(DBC, "@ETF", DbType.Decimal, Me.ETF)
+            DB.AddInParameter(DBC, "@KgsPerDay", DbType.Decimal, Me.KgsPerDay)
+            DB.AddInParameter(DBC, "@KgsPerDayNotMandatory", DbType.Decimal, Me.KgsPerDayNotMandatory)
+            DB.AddInParameter(DBC, "@OverKgRate", DbType.Decimal, Me.OverKgRate)
             DB.AddInParameter(DBC, "@OverKGUpperLimit", DbType.Decimal, Me.OverKGUpperLimit)
+
+            DB.AddInParameter(DBC, "@LowerKgRate", DbType.Decimal, Me.LowerKgRate)
+            DB.AddInParameter(DBC, "@SheetsPerDay", DbType.Decimal, Me.SheetsPerDay)
+            DB.AddInParameter(DBC, "@OverSheetsRate", DbType.Decimal, Me.OverSheetsRate)
+            DB.AddInParameter(DBC, "@OverSheetsUpperLimit", DbType.Decimal, Me.OverSheetsUpperLimit)
+            DB.AddInParameter(DBC, "@LowerSheetsRate", DbType.Decimal, Me.LowerSheetsRate)
 
 
             DB.AddInParameter(DBC, "@CreatedBy", DbType.Int64, Me.CreatedBy)
@@ -292,21 +362,27 @@ Public Class iStockSettings
 
                 With DR
                     Do While .Read
-                        Me.PayChitCost = IIf(Not IsDBNull(.Item("PayChitCost")), Trim(.Item("PayChitCost").ToString), 0)
-                        Me.DevalutionAllowance = IIf(Not IsDBNull(.Item("DevalutionAllowance")), Trim(.Item("DevalutionAllowance").ToString), 0)
                         Me.DayRate = IIf(Not IsDBNull(.Item("DayRate")), Trim(.Item("DayRate").ToString), 0)
                         Me.OTRate = IIf(Not IsDBNull(.Item("OTRate")), Trim(.Item("OTRate").ToString), 0)
-                        Me.KgsPerDay = IIf(Not IsDBNull(.Item("KgsPerDay")), Trim(.Item("KgsPerDay").ToString), 0)
-                        Me.KgsPerDayNotMandatory = IIf(Not IsDBNull(.Item("KgsPerDayNotMandatory")), Trim(.Item("KgsPerDayNotMandatory").ToString), 0)
-                        Me.IncentiveDays = IIf(Not IsDBNull(.Item("IncentiveDays")), Trim(.Item("IncentiveDays").ToString), 0)
-                        Me.EPF = IIf(Not IsDBNull(.Item("EPF")), Trim(.Item("EPF").ToString), 0)
-                        Me.ETF = IIf(Not IsDBNull(.Item("ETF")), Trim(.Item("ETF").ToString), 0)
-                        Me.OverKgRate = IIf(Not IsDBNull(.Item("OverKgRate")), Trim(.Item("OverKgRate").ToString), 0)
-                        Me.WCPay = IIf(Not IsDBNull(.Item("WCPay")), Trim(.Item("WCPay").ToString), 0)
-                        Me.OverKGUpperLimit = IIf(Not IsDBNull(.Item("OverKGUpperLimit")), Trim(.Item("OverKGUpperLimit").ToString), 0)
-
                         Me.CasualPayRate = Convert.ToDecimal(IIf(Not IsDBNull(.Item("CasualPayRate")), Trim(.Item("CasualPayRate").ToString), 0))
                         Me.CasualOTPayRate = Convert.ToDecimal(IIf(Not IsDBNull(.Item("CasualOTPayRate")), Trim(.Item("CasualOTPayRate").ToString), 0))
+                        Me.PayChitCost = IIf(Not IsDBNull(.Item("PayChitCost")), Trim(.Item("PayChitCost").ToString), 0)
+                        Me.EvalutionAllowance = IIf(Not IsDBNull(.Item("EvalutionAllowance")), Trim(.Item("EvalutionAllowance").ToString), 0)
+                        Me.IncentiveDays = IIf(Not IsDBNull(.Item("IncentiveDays")), Trim(.Item("IncentiveDays").ToString), 0)
+                        Me.WCPay = IIf(Not IsDBNull(.Item("WCPay")), Trim(.Item("WCPay").ToString), 0)
+                        Me.EPF = IIf(Not IsDBNull(.Item("EPF")), Trim(.Item("EPF").ToString), 0)
+                        Me.ETF = IIf(Not IsDBNull(.Item("ETF")), Trim(.Item("ETF").ToString), 0)
+                        Me.KgsPerDay = IIf(Not IsDBNull(.Item("KgsPerDay")), Trim(.Item("KgsPerDay").ToString), 0)
+                        Me.KgsPerDayNotMandatory = IIf(Not IsDBNull(.Item("KgsPerDayNotMandatory")), Trim(.Item("KgsPerDayNotMandatory").ToString), 0)
+                        Me.OverKgRate = IIf(Not IsDBNull(.Item("OverKgRate")), Trim(.Item("OverKgRate").ToString), 0)
+                        Me.OverKGUpperLimit = IIf(Not IsDBNull(.Item("OverKGUpperLimit")), Trim(.Item("OverKGUpperLimit").ToString), 0)
+
+                        Me.LowerKgRate = IIf(Not IsDBNull(.Item("LowerKgRate")), Trim(.Item("LowerKgRate").ToString), 0)
+                        Me.SheetsPerDay = IIf(Not IsDBNull(.Item("SheetsPerDay")), Trim(.Item("SheetsPerDay").ToString), 0)
+                        Me.OverSheetsRate = IIf(Not IsDBNull(.Item("OverSheetsRate")), Trim(.Item("OverSheetsRate").ToString), 0)
+                        Me.OverSheetsUpperLimit = IIf(Not IsDBNull(.Item("OverSheetsUpperLimit")), Trim(.Item("OverSheetsUpperLimit").ToString), 0)
+                        Me.LowerSheetsRate = IIf(Not IsDBNull(.Item("LowerSheetsRate")), Trim(.Item("LowerSheetsRate").ToString), 0)
+
 
 
 

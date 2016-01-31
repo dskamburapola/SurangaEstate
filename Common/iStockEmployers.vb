@@ -31,6 +31,8 @@ Public Class iStockEmployers
     Private _OtherAllowance As Decimal
     Private _Deductions As Decimal
     Private _EPFNo As String
+    Private _IsResigned As Boolean
+    Private _ResignDate As Date
     Private _CreatedBy As Int64
     Private _CreatedDate As Date
     Private _UpdatedBy As Int64
@@ -206,6 +208,22 @@ Public Class iStockEmployers
             _EPFNo = value
         End Set
     End Property
+    Public Property IsResigned() As Boolean
+        Get
+            Return _IsResigned
+        End Get
+        Set(ByVal value As Boolean)
+            _IsResigned = value
+        End Set
+    End Property
+    Public Property ResignDate() As Date
+        Get
+            Return _ResignDate
+        End Get
+        Set(ByVal value As Date)
+            _ResignDate = value
+        End Set
+    End Property
     Public Property CreatedBy() As Int64
         Get
             Return _CreatedBy
@@ -329,6 +347,16 @@ Public Class iStockEmployers
             DB.AddInParameter(DBC, "@OtherAllowance", DbType.Decimal, OtherAllowance)
             DB.AddInParameter(DBC, "@Deductions", DbType.Decimal, Deductions)
             DB.AddInParameter(DBC, "@EPFNo", DbType.String, EPFNo)
+            DB.AddInParameter(DBC, "@IsResigned", DbType.Boolean, IsResigned)
+
+            If ResignDate <> Date.MinValue Then
+                DB.AddInParameter(DBC, "@ResignDate", DbType.Date, ResignDate)
+            Else
+                DB.AddInParameter(DBC, "@ResignDate", DbType.Date, DBNull.Value)
+
+            End If
+            '   DB.AddInParameter(DBC, "@ResignDate", DbType.Date, ResignDate)
+
             DB.AddInParameter(DBC, "@CreatedBy", DbType.Int64, CreatedBy)
             DB.AddInParameter(DBC, "@UpdatedBy", DbType.Int64, UpdatedBy)
 
@@ -356,6 +384,7 @@ Public Class iStockEmployers
 #End Region
 
 #Region "Employer GetByID"
+
     Public Sub SelectRow()
         Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
         Dim DBC As DbCommand = DB.GetStoredProcCommand(EMPLOYERS_GETBYID)
@@ -396,6 +425,8 @@ Public Class iStockEmployers
                         Me.FixedAllowance = Convert.ToDecimal(IIf(Not IsDBNull(.Item("FixedAllowance")), Trim(.Item("FixedAllowance").ToString), 0))
                         Me.OtherAllowance = Convert.ToDecimal(IIf(Not IsDBNull(.Item("OtherAllowance")), Trim(.Item("OtherAllowance").ToString), 0))
                         Me.EPFNo = IIf(Not IsDBNull(.Item("EPFNo")), Trim(.Item("EPFNo").ToString), String.Empty)
+                        Me.IsResigned = Convert.ToBoolean(IIf(Not IsDBNull(.Item("IsResigned")), Trim(.Item("IsResigned").ToString), 0))
+                        Me.ResignDate = Convert.ToDateTime((IIf(Not IsDBNull(.Item("ResignDate")), Trim(.Item("ResignDate").ToString), Date.MinValue)))
                         Me.Deductions = Convert.ToDecimal(IIf(Not IsDBNull(.Item("Deductions")), Trim(.Item("Deductions").ToString), 0))
                         Me.CreatedBy = Convert.ToInt64(IIf(Not IsDBNull(.Item("CreatedBy")), Trim(.Item("CreatedBy").ToString), 0))
                         Me.CreatedDate = Convert.ToDateTime((IIf(Not IsDBNull(.Item("CreatedDate")), Trim(.Item("CreatedDate").ToString), Date.MinValue)))
@@ -424,10 +455,6 @@ Public Class iStockEmployers
 
 
     End Sub
-
-
-
-
 
 #End Region
 
@@ -569,6 +596,21 @@ Public Class iStockEmployers
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
             Dim DBC As DbCommand = DB.GetStoredProcCommand(EMPLOYERS_GETALL)
+            Return DB.ExecuteDataSet(DBC)
+            DBC.Dispose()
+        Catch ex As Exception
+            Return Nothing
+            Throw
+        End Try
+
+    End Function
+#End Region
+
+#Region "Resign Employer SelectAll"
+    Public Function ResignedSelectAll() As DataSet
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(EMPLOYERS_RESIGNED_GETALL)
             Return DB.ExecuteDataSet(DBC)
             DBC.Dispose()
         Catch ex As Exception
