@@ -317,4 +317,8 @@ Public Class frmCustomers
         frmSales.PopulateCustomerLookup()
 
     End Sub
+
+    Private Sub gcCustomers_DoubleClick(sender As Object, e As EventArgs) Handles gcCustomers.DoubleClick
+        Me.DisplayRecord()
+    End Sub
 End Class

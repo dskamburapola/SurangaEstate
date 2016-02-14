@@ -15,6 +15,7 @@ Public Class iStockDailyWorking
     Private _AbbreviationID As Int64
     Private _EmployeeID As Int64
     Private _WorkedDays As Double
+    Private _OTHours As Double
     Private _Quantity As Double
 
     Private _CheckDays As Double
@@ -154,6 +155,16 @@ Public Class iStockDailyWorking
             _WorkedDays = value
         End Set
     End Property
+
+    Public Property OTHours() As Double
+        Get
+            Return _OTHours
+        End Get
+        Set(ByVal value As Double)
+            _OTHours = value
+        End Set
+    End Property
+
     Public Property Quantity() As Double
         Get
             Return _Quantity
@@ -361,6 +372,7 @@ Public Class iStockDailyWorking
             DB.AddInParameter(DBC, "@AbbreviationID", DbType.Int64, Me.AbbreviationID)
             DB.AddInParameter(DBC, "@EmployeeID", DbType.Int64, Me.EmployeeID)
             DB.AddInParameter(DBC, "@WorkedDays", DbType.Decimal, Me.WorkedDays)
+            DB.AddInParameter(DBC, "@OTHours", DbType.Decimal, Me.OTHours)
             DB.AddInParameter(DBC, "@Quantity", DbType.Decimal, Me.Quantity)
             DB.AddInParameter(DBC, "@DayRate", DbType.Decimal, Me.DayRate)
             DB.AddInParameter(DBC, "@OTRate", DbType.Decimal, Me.OTRate)
@@ -647,6 +659,7 @@ Public Class iStockDailyWorking
             DB.AddInParameter(DBC, "@AbbreviationID", DbType.Int64, Me.AbbreviationID)
             DB.AddInParameter(DBC, "@EmployeeID", DbType.Int64, Me.EmployeeID)
             DB.AddInParameter(DBC, "@WorkedDays", DbType.Decimal, Me.WorkedDays)
+            DB.AddInParameter(DBC, "@OTHours", DbType.Decimal, Me.OTHours)
             DB.AddInParameter(DBC, "@Quantity", DbType.Decimal, Me.Quantity)
             DB.AddInParameter(DBC, "@DayRate", DbType.Decimal, Me.DayRate)
             DB.AddInParameter(DBC, "@OTRate", DbType.Decimal, Me.OTRate)

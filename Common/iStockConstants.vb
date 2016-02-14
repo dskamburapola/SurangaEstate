@@ -346,8 +346,11 @@
 
     Public Shared EMPLOYEE_CALCULATEADVANCE As String = "Employee_CalculateAdvance"
 
-    Public Shared CASHADVANCE_INSERT As String = "CashAdvance_Insert"
     Public Shared CASHADVANCE_GETALL_BYDATES As String = "CashAdvance_GetAll_ByDates"
+    Public Shared CASHADVANCE_INSERT As String = "CashAdvance_Insert"
+    Public Shared CASHADVANCE_DELETE As String = "CashAdvance_Delete"
+
+
 
     Public Shared REPORTATTENDANCE As String = "ReportAttendance"
     Public Shared REPORTATTENDANCEALLCATEGORY As String = "ReportAttendance_AllCategory"

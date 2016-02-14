@@ -411,6 +411,9 @@ Public Class frmEmployers
             ceDesignation.Text = String.Empty
             ceDepartment.Text = String.Empty
             teEmployerContactPerson.Text = String.Empty
+            cmbIsResign.Text = String.Empty
+            deResignDate.EditValue = DBNull.Value
+
             'seBasicSalary.Text = 0
             'seOTRate.Text = 0
             'seFixedAllowance.Text = 0
@@ -443,5 +446,10 @@ Public Class frmEmployers
                 Me.PopulateResignEmployeesGrid()
 
         End Select
+    End Sub
+
+   
+    Private Sub gcEmployers_DoubleClick(sender As Object, e As EventArgs) Handles gcEmployers.DoubleClick
+        Me.DisplayRecord()
     End Sub
 End Class

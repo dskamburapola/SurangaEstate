@@ -339,12 +339,51 @@ Public Class frmCashAdvance
 #End Region
 
    
-    'Private Sub leEmployee_EditValueChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles leEmployee.EditValueChanged
-    '    Me.GetPaymentDetailsForAdvance()
-    '    Me.sePaybleAmount.Focus()
-    '    SendKeys.Send("{HOME}+{END}")
-    'End Sub
+    Private Sub RepositoryItemButtonEdit1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RepositoryItemButtonEdit1.Click
 
+        lblDeleteID.Text = (Me.gvCashAdvance.GetFocusedRowCellValue(GridColumn9))
+
+        If Not lblDeleteID.Text = String.Empty Then
+            Dim frm As New frmDeleteYesNo
+            frm.lblTitle.Text = CWB_DELETE_CONFIRMATION_TITLELABEL
+            frm.lblDescription.ForeColor = Color.Red
+            frm.peImage.Image = iStock.My.Resources.Resources.ImgDelete
+            frm.lblDescription.Text = CWB_DELETE_CONFIRMATION_DESCRIPTIONLABEL
+            frm.Text = CWB_DELETE_CONFIRMATION_TITLE
+
+            If frm.ShowDialog = Windows.Forms.DialogResult.Yes Then
+                Me.DeleteCashAdvance()
+                Me.CashAdvanceGetAllByDates()
+
+            End If
+        End If
+
+
+
+
+    End Sub
+
+#Region "Delete Cash Advance"
+    Private Sub DeleteCashAdvance()
+
+        Try
+            With iStockCashAdvance
+                '.DailyWorkingID = Me.gvDailyWorking.GetFocusedRowCellValue(GridColumn1)
+                .CashAdvanceID = Convert.ToInt64(IIf(lblDeleteID.Text = String.Empty, 0, lblDeleteID.Text.ToString))
+                .CashAdvanceDelete()
+            End With
+
+
+        Catch ex As SqlClient.SqlException
+            Dim frm As New frmOk
+            frm.Text = CWB_DELETE_ERROR_CONFIRMATION_TITLE
+            frm.lblTitle.Text = CWB_DELETE_ERROR_CONFIRMATION_TITLELABEL
+            frm.lblDescription.Text = CWB_DELETE_ERROR_CONFIRMATION_DESCRIPTIONLABEL
+            frm.ShowDialog()
+        End Try
+
+    End Sub
+#End Region
     
 
    
@@ -393,5 +432,9 @@ Public Class frmCashAdvance
     
     Private Sub cmbWorkType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbWorkType.SelectedIndexChanged
         Me.GetEmployeeForWork()
+    End Sub
+
+    Private Sub gcCashAdvance_DoubleClick(sender As Object, e As EventArgs) Handles gcCashAdvance.DoubleClick
+
     End Sub
 End Class

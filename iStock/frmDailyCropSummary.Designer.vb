@@ -133,12 +133,33 @@ Partial Class frmDailyCropSummary
         '
         'gcDailyCrop
         '
+        Me.gcDailyCrop.EmbeddedNavigator.Buttons.Append.Enabled = False
+        Me.gcDailyCrop.EmbeddedNavigator.Buttons.Append.Visible = False
+        Me.gcDailyCrop.EmbeddedNavigator.Buttons.CancelEdit.Enabled = False
+        Me.gcDailyCrop.EmbeddedNavigator.Buttons.CancelEdit.Visible = False
+        Me.gcDailyCrop.EmbeddedNavigator.Buttons.Edit.Enabled = False
+        Me.gcDailyCrop.EmbeddedNavigator.Buttons.Edit.Visible = False
+        Me.gcDailyCrop.EmbeddedNavigator.Buttons.EndEdit.Enabled = False
+        Me.gcDailyCrop.EmbeddedNavigator.Buttons.EndEdit.Visible = False
+        Me.gcDailyCrop.EmbeddedNavigator.Buttons.First.Enabled = False
+        Me.gcDailyCrop.EmbeddedNavigator.Buttons.First.Visible = False
+        Me.gcDailyCrop.EmbeddedNavigator.Buttons.Last.Enabled = False
+        Me.gcDailyCrop.EmbeddedNavigator.Buttons.Last.Visible = False
+        Me.gcDailyCrop.EmbeddedNavigator.Buttons.Next.Enabled = False
+        Me.gcDailyCrop.EmbeddedNavigator.Buttons.Next.Visible = False
+        Me.gcDailyCrop.EmbeddedNavigator.Buttons.NextPage.Enabled = False
+        Me.gcDailyCrop.EmbeddedNavigator.Buttons.NextPage.Visible = False
+        Me.gcDailyCrop.EmbeddedNavigator.Buttons.Prev.Enabled = False
+        Me.gcDailyCrop.EmbeddedNavigator.Buttons.Prev.Visible = False
+        Me.gcDailyCrop.EmbeddedNavigator.Buttons.PrevPage.Enabled = False
+        Me.gcDailyCrop.EmbeddedNavigator.Buttons.PrevPage.Visible = False
         Me.gcDailyCrop.Location = New System.Drawing.Point(12, 81)
         Me.gcDailyCrop.MainView = Me.gvDailyCrop
         Me.gcDailyCrop.Name = "gcDailyCrop"
         Me.gcDailyCrop.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemDateEdit1, Me.RepositoryItemSpinEdit1, Me.RepositoryItemSpinEdit2, Me.RepositoryItemDateEdit2, Me.RepositoryItemComboBox1})
         Me.gcDailyCrop.Size = New System.Drawing.Size(883, 383)
         Me.gcDailyCrop.TabIndex = 16
+        Me.gcDailyCrop.UseEmbeddedNavigator = True
         Me.gcDailyCrop.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvDailyCrop})
         '
         'gvDailyCrop

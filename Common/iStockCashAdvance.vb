@@ -7,6 +7,8 @@ Public Class iStockCashAdvance
 
 #Region "Variables"
 
+    Private _CashAdvanceID As Int64
+
     Private _CWorkedDays As Decimal
     Private _PWorkedDays As Decimal
     Private _CAmount As Decimal
@@ -45,6 +47,16 @@ Public Class iStockCashAdvance
 #End Region
 
 #Region "Properties"
+
+
+    Public Property CashAdvanceID() As Int64
+        Get
+            Return _CashAdvanceID
+        End Get
+        Set(ByVal value As Int64)
+            _CashAdvanceID = value
+        End Set
+    End Property
 
     Public Property CWorkedDays() As Decimal
         Get
@@ -369,11 +381,11 @@ Public Class iStockCashAdvance
 #End Region
 
 #Region "DailyWorking Delete"
-    Public Sub DailyWorkingDelete()
+    Public Sub CashAdvanceDelete()
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
-            Dim DBC As DbCommand = DB.GetStoredProcCommand(DAILYWORKING_DELETE)
-            DB.AddInParameter(DBC, "@DailyWorkingID ", DbType.Int64, Me.DailyWorkingID)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(CASHADVANCE_DELETE)
+            DB.AddInParameter(DBC, "@CashAdvanceId ", DbType.Int64, Me.CashAdvanceID)
             DB.ExecuteNonQuery(DBC)
         Catch ex As Exception
             Throw
@@ -441,6 +453,60 @@ Public Class iStockCashAdvance
     End Function
 
 #End Region
+
+    '#Region "Get CashAdvance By CashAdvanceID"
+    '    Public Sub GetCustomerByID()
+    '        Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+    '        Dim DBC As DbCommand = DB.GetStoredProcCommand(CUSTOMERS_GETBYID)
+    '        Try
+
+    '            DB.AddInParameter(DBC, "@CashAdvanceID", DbType.Int64, Me.CashAdvanceID)
+    '            Using DR As IDataReader = DB.ExecuteReader(DBC)
+
+
+    '                With DR
+    '                    Do While .Read
+    '                        Me.CustomerID = Convert.ToInt64(IIf(Not IsDBNull(.Item("CustomerID")), Trim(.Item("CustomerID").ToString), 0))
+    '                        Me.CustomerNo = IIf(Not IsDBNull(.Item("CustomerNo")), Trim(.Item("CustomerNo").ToString), String.Empty)
+    '                        Me.Salutation = IIf(Not IsDBNull(.Item("Salutation")), Trim(.Item("Salutation").ToString), String.Empty)
+
+    '                        Me.CustomerName = IIf(Not IsDBNull(.Item("CustomerName")), Trim(.Item("CustomerName").ToString), String.Empty)
+    '                        Me.AddressLine1 = IIf(Not IsDBNull(.Item("AddressLine1")), Trim(.Item("AddressLine1").ToString), String.Empty)
+    '                        Me.AddressLine2 = IIf(Not IsDBNull(.Item("AddressLine2")), Trim(.Item("AddressLine2").ToString), String.Empty)
+    '                        Me.AddressLine3 = IIf(Not IsDBNull(.Item("AddressLine3")), Trim(.Item("AddressLine3").ToString), String.Empty)
+    '                        Me.Telephone = IIf(Not IsDBNull(.Item("Telephone")), Trim(.Item("Telephone").ToString), String.Empty)
+    '                        Me.Fax = IIf(Not IsDBNull(.Item("Fax")), Trim(.Item("Fax").ToString), String.Empty)
+    '                        Me.Email = IIf(Not IsDBNull(.Item("Email")), Trim(.Item("Email").ToString), String.Empty)
+    '                        Me.WebURL = IIf(Not IsDBNull(.Item("WebURL")), Trim(.Item("WebURL").ToString), String.Empty)
+    '                        Me.CreatedBy = Convert.ToInt64(IIf(Not IsDBNull(.Item("CreatedBy")), Trim(.Item("CreatedBy").ToString), 0))
+    '                        Me.UpdatedBy = Convert.ToInt64(IIf(Not IsDBNull(.Item("UpdatedBy")), Trim(.Item("UpdatedBy").ToString), 0))
+
+
+
+    '                    Loop
+    '                End With
+
+    '                If (Not DR Is Nothing) Then
+    '                    DR.Close()
+    '                End If
+
+
+    '            End Using
+
+
+
+    '        Catch ex As Exception
+    '            Throw
+    '        Finally
+    '            DBC.Dispose()
+
+
+
+    '        End Try
+
+
+    '    End Sub
+    '#End Region
 
 
 End Class

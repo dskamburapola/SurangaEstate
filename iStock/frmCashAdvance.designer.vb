@@ -23,6 +23,7 @@ Partial Class frmCashAdvance
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar2 = New DevExpress.XtraBars.Bar()
         Me.bbSave = New DevExpress.XtraBars.BarButtonItem()
@@ -99,6 +100,8 @@ Partial Class frmCashAdvance
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemButtonEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
         Me.btnDisplay = New System.Windows.Forms.Button()
         Me.deEndDate = New DevExpress.XtraEditors.DateEdit()
         Me.deStartDate = New DevExpress.XtraEditors.DateEdit()
@@ -109,6 +112,8 @@ Partial Class frmCashAdvance
         Me.LayoutControlItem16 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem4 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem14 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.lblDeleteID = New System.Windows.Forms.Label()
+        Me.LayoutControlItem19 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpCashAdvance, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.sePaybleAmount.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -167,6 +172,7 @@ Partial Class frmCashAdvance
         Me.LayoutControl4.SuspendLayout()
         CType(Me.gcCashAdvance, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gvCashAdvance, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemButtonEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.deEndDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.deEndDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.deStartDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -178,6 +184,7 @@ Partial Class frmCashAdvance
         CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem19, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarManager1
@@ -277,7 +284,7 @@ Partial Class frmCashAdvance
         'sePaybleAmount
         '
         Me.sePaybleAmount.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.sePaybleAmount.Location = New System.Drawing.Point(273, 334)
+        Me.sePaybleAmount.Location = New System.Drawing.Point(273, 358)
         Me.sePaybleAmount.MenuManager = Me.BarManager1
         Me.sePaybleAmount.Name = "sePaybleAmount"
         Me.sePaybleAmount.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 14.0!)
@@ -295,6 +302,7 @@ Partial Class frmCashAdvance
         '
         'LayoutControl1
         '
+        Me.LayoutControl1.Controls.Add(Me.lblDeleteID)
         Me.LayoutControl1.Controls.Add(Me.cmbWorkType)
         Me.LayoutControl1.Controls.Add(Me.tePaybleAmount)
         Me.LayoutControl1.Controls.Add(Me.teTotalDeductions)
@@ -319,7 +327,7 @@ Partial Class frmCashAdvance
         '
         'cmbWorkType
         '
-        Me.cmbWorkType.Location = New System.Drawing.Point(273, 22)
+        Me.cmbWorkType.Location = New System.Drawing.Point(273, 46)
         Me.cmbWorkType.MenuManager = Me.BarManager1
         Me.cmbWorkType.Name = "cmbWorkType"
         Me.cmbWorkType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -331,7 +339,7 @@ Partial Class frmCashAdvance
         'tePaybleAmount
         '
         Me.tePaybleAmount.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.tePaybleAmount.Location = New System.Drawing.Point(273, 310)
+        Me.tePaybleAmount.Location = New System.Drawing.Point(273, 334)
         Me.tePaybleAmount.MenuManager = Me.BarManager1
         Me.tePaybleAmount.Name = "tePaybleAmount"
         Me.tePaybleAmount.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -345,7 +353,7 @@ Partial Class frmCashAdvance
         'teTotalDeductions
         '
         Me.teTotalDeductions.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teTotalDeductions.Location = New System.Drawing.Point(273, 286)
+        Me.teTotalDeductions.Location = New System.Drawing.Point(273, 310)
         Me.teTotalDeductions.MenuManager = Me.BarManager1
         Me.teTotalDeductions.Name = "teTotalDeductions"
         Me.teTotalDeductions.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -359,7 +367,7 @@ Partial Class frmCashAdvance
         'teCashAdvance
         '
         Me.teCashAdvance.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teCashAdvance.Location = New System.Drawing.Point(273, 262)
+        Me.teCashAdvance.Location = New System.Drawing.Point(273, 286)
         Me.teCashAdvance.MenuManager = Me.BarManager1
         Me.teCashAdvance.Name = "teCashAdvance"
         Me.teCashAdvance.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -373,7 +381,7 @@ Partial Class frmCashAdvance
         'teLoan
         '
         Me.teLoan.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teLoan.Location = New System.Drawing.Point(273, 238)
+        Me.teLoan.Location = New System.Drawing.Point(273, 262)
         Me.teLoan.MenuManager = Me.BarManager1
         Me.teLoan.Name = "teLoan"
         Me.teLoan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -387,7 +395,7 @@ Partial Class frmCashAdvance
         'teFestivalAdvance
         '
         Me.teFestivalAdvance.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teFestivalAdvance.Location = New System.Drawing.Point(273, 214)
+        Me.teFestivalAdvance.Location = New System.Drawing.Point(273, 238)
         Me.teFestivalAdvance.MenuManager = Me.BarManager1
         Me.teFestivalAdvance.Name = "teFestivalAdvance"
         Me.teFestivalAdvance.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -401,7 +409,7 @@ Partial Class frmCashAdvance
         'teEPF
         '
         Me.teEPF.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teEPF.Location = New System.Drawing.Point(273, 190)
+        Me.teEPF.Location = New System.Drawing.Point(273, 214)
         Me.teEPF.MenuManager = Me.BarManager1
         Me.teEPF.Name = "teEPF"
         Me.teEPF.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -415,7 +423,7 @@ Partial Class frmCashAdvance
         'teLMB
         '
         Me.teLMB.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teLMB.Location = New System.Drawing.Point(273, 166)
+        Me.teLMB.Location = New System.Drawing.Point(273, 190)
         Me.teLMB.MenuManager = Me.BarManager1
         Me.teLMB.Name = "teLMB"
         Me.teLMB.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -429,7 +437,7 @@ Partial Class frmCashAdvance
         'tePayment
         '
         Me.tePayment.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.tePayment.Location = New System.Drawing.Point(273, 142)
+        Me.tePayment.Location = New System.Drawing.Point(273, 166)
         Me.tePayment.MenuManager = Me.BarManager1
         Me.tePayment.Name = "tePayment"
         Me.tePayment.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -443,7 +451,7 @@ Partial Class frmCashAdvance
         'teWorkedDays
         '
         Me.teWorkedDays.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teWorkedDays.Location = New System.Drawing.Point(273, 118)
+        Me.teWorkedDays.Location = New System.Drawing.Point(273, 142)
         Me.teWorkedDays.MenuManager = Me.BarManager1
         Me.teWorkedDays.Name = "teWorkedDays"
         Me.teWorkedDays.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -456,7 +464,7 @@ Partial Class frmCashAdvance
         '
         'leEmployee
         '
-        Me.leEmployee.Location = New System.Drawing.Point(273, 70)
+        Me.leEmployee.Location = New System.Drawing.Point(273, 94)
         Me.leEmployee.MenuManager = Me.BarManager1
         Me.leEmployee.Name = "leEmployee"
         Me.leEmployee.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -473,7 +481,7 @@ Partial Class frmCashAdvance
         '
         Me.deIssueDate.EditValue = Nothing
         Me.deIssueDate.EnterMoveNextControl = True
-        Me.deIssueDate.Location = New System.Drawing.Point(273, 46)
+        Me.deIssueDate.Location = New System.Drawing.Point(273, 70)
         Me.deIssueDate.MenuManager = Me.BarManager1
         Me.deIssueDate.Name = "deIssueDate"
         Me.deIssueDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -493,7 +501,7 @@ Partial Class frmCashAdvance
         'teEmployeeName
         '
         Me.teEmployeeName.EnterMoveNextControl = True
-        Me.teEmployeeName.Location = New System.Drawing.Point(273, 94)
+        Me.teEmployeeName.Location = New System.Drawing.Point(273, 118)
         Me.teEmployeeName.Name = "teEmployeeName"
         Me.teEmployeeName.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.teEmployeeName.Properties.Appearance.Options.UseBackColor = True
@@ -505,10 +513,10 @@ Partial Class frmCashAdvance
         'LayoutControlGroup1
         '
         Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.EmptySpaceItem1, Me.EmptySpaceItem2, Me.EmptySpaceItem3, Me.EmptySpaceItem5, Me.EmptySpaceItem6, Me.EmptySpaceItem7, Me.EmptySpaceItem8, Me.EmptySpaceItem9, Me.EmptySpaceItem10, Me.EmptySpaceItem11, Me.EmptySpaceItem12, Me.EmptySpaceItem13, Me.EmptySpaceItem14, Me.EmptySpaceItem15, Me.EmptySpaceItem16, Me.EmptySpaceItem17, Me.LayoutControlItem8, Me.LayoutControlItem9, Me.LayoutControlItem10, Me.LayoutControlItem13, Me.LayoutControlItem18, Me.LayoutControlItem1, Me.LayoutControlItem6, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem7, Me.LayoutControlItem12, Me.LayoutControlItem11})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.EmptySpaceItem1, Me.EmptySpaceItem2, Me.EmptySpaceItem3, Me.EmptySpaceItem5, Me.EmptySpaceItem6, Me.EmptySpaceItem7, Me.EmptySpaceItem8, Me.EmptySpaceItem9, Me.EmptySpaceItem10, Me.EmptySpaceItem11, Me.EmptySpaceItem12, Me.EmptySpaceItem13, Me.EmptySpaceItem14, Me.EmptySpaceItem15, Me.EmptySpaceItem16, Me.EmptySpaceItem17, Me.LayoutControlItem8, Me.LayoutControlItem9, Me.LayoutControlItem10, Me.LayoutControlItem13, Me.LayoutControlItem18, Me.LayoutControlItem1, Me.LayoutControlItem6, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem7, Me.LayoutControlItem12, Me.LayoutControlItem11, Me.LayoutControlItem19})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(834, 386)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(834, 410)
         Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
         Me.LayoutControlGroup1.TextVisible = False
         '
@@ -516,7 +524,7 @@ Partial Class frmCashAdvance
         '
         Me.EmptySpaceItem1.AllowHotTrack = False
         Me.EmptySpaceItem1.CustomizationFormText = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 0)
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 24)
         Me.EmptySpaceItem1.MaxSize = New System.Drawing.Size(0, 31)
         Me.EmptySpaceItem1.MinSize = New System.Drawing.Size(10, 10)
         Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
@@ -529,7 +537,7 @@ Partial Class frmCashAdvance
         '
         Me.EmptySpaceItem2.AllowHotTrack = False
         Me.EmptySpaceItem2.CustomizationFormText = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(176, 356)
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(176, 380)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
         Me.EmptySpaceItem2.Size = New System.Drawing.Size(638, 10)
         Me.EmptySpaceItem2.Text = "EmptySpaceItem2"
@@ -539,7 +547,7 @@ Partial Class frmCashAdvance
         '
         Me.EmptySpaceItem3.AllowHotTrack = False
         Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(631, 298)
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(631, 322)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
         Me.EmptySpaceItem3.Size = New System.Drawing.Size(183, 58)
         Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
@@ -549,7 +557,7 @@ Partial Class frmCashAdvance
         '
         Me.EmptySpaceItem5.AllowHotTrack = False
         Me.EmptySpaceItem5.CustomizationFormText = "EmptySpaceItem5"
-        Me.EmptySpaceItem5.Location = New System.Drawing.Point(631, 226)
+        Me.EmptySpaceItem5.Location = New System.Drawing.Point(631, 250)
         Me.EmptySpaceItem5.Name = "EmptySpaceItem5"
         Me.EmptySpaceItem5.Size = New System.Drawing.Size(183, 72)
         Me.EmptySpaceItem5.Text = "EmptySpaceItem5"
@@ -559,7 +567,7 @@ Partial Class frmCashAdvance
         '
         Me.EmptySpaceItem6.AllowHotTrack = False
         Me.EmptySpaceItem6.CustomizationFormText = "EmptySpaceItem6"
-        Me.EmptySpaceItem6.Location = New System.Drawing.Point(631, 202)
+        Me.EmptySpaceItem6.Location = New System.Drawing.Point(631, 226)
         Me.EmptySpaceItem6.Name = "EmptySpaceItem6"
         Me.EmptySpaceItem6.Size = New System.Drawing.Size(183, 24)
         Me.EmptySpaceItem6.Text = "EmptySpaceItem6"
@@ -569,7 +577,7 @@ Partial Class frmCashAdvance
         '
         Me.EmptySpaceItem7.AllowHotTrack = False
         Me.EmptySpaceItem7.CustomizationFormText = "EmptySpaceItem7"
-        Me.EmptySpaceItem7.Location = New System.Drawing.Point(631, 178)
+        Me.EmptySpaceItem7.Location = New System.Drawing.Point(631, 202)
         Me.EmptySpaceItem7.Name = "EmptySpaceItem7"
         Me.EmptySpaceItem7.Size = New System.Drawing.Size(183, 24)
         Me.EmptySpaceItem7.Text = "EmptySpaceItem7"
@@ -579,7 +587,7 @@ Partial Class frmCashAdvance
         '
         Me.EmptySpaceItem8.AllowHotTrack = False
         Me.EmptySpaceItem8.CustomizationFormText = "EmptySpaceItem8"
-        Me.EmptySpaceItem8.Location = New System.Drawing.Point(631, 130)
+        Me.EmptySpaceItem8.Location = New System.Drawing.Point(631, 154)
         Me.EmptySpaceItem8.Name = "EmptySpaceItem8"
         Me.EmptySpaceItem8.Size = New System.Drawing.Size(183, 48)
         Me.EmptySpaceItem8.Text = "EmptySpaceItem8"
@@ -589,7 +597,7 @@ Partial Class frmCashAdvance
         '
         Me.EmptySpaceItem9.AllowHotTrack = False
         Me.EmptySpaceItem9.CustomizationFormText = "EmptySpaceItem9"
-        Me.EmptySpaceItem9.Location = New System.Drawing.Point(631, 10)
+        Me.EmptySpaceItem9.Location = New System.Drawing.Point(631, 34)
         Me.EmptySpaceItem9.Name = "EmptySpaceItem9"
         Me.EmptySpaceItem9.Size = New System.Drawing.Size(183, 120)
         Me.EmptySpaceItem9.Text = "EmptySpaceItem9"
@@ -599,7 +607,7 @@ Partial Class frmCashAdvance
         '
         Me.EmptySpaceItem10.AllowHotTrack = False
         Me.EmptySpaceItem10.CustomizationFormText = "EmptySpaceItem10"
-        Me.EmptySpaceItem10.Location = New System.Drawing.Point(0, 356)
+        Me.EmptySpaceItem10.Location = New System.Drawing.Point(0, 380)
         Me.EmptySpaceItem10.Name = "EmptySpaceItem10"
         Me.EmptySpaceItem10.Size = New System.Drawing.Size(176, 10)
         Me.EmptySpaceItem10.Text = "EmptySpaceItem10"
@@ -609,7 +617,7 @@ Partial Class frmCashAdvance
         '
         Me.EmptySpaceItem11.AllowHotTrack = False
         Me.EmptySpaceItem11.CustomizationFormText = "EmptySpaceItem11"
-        Me.EmptySpaceItem11.Location = New System.Drawing.Point(0, 332)
+        Me.EmptySpaceItem11.Location = New System.Drawing.Point(0, 356)
         Me.EmptySpaceItem11.Name = "EmptySpaceItem11"
         Me.EmptySpaceItem11.Size = New System.Drawing.Size(176, 24)
         Me.EmptySpaceItem11.Text = "EmptySpaceItem11"
@@ -619,7 +627,7 @@ Partial Class frmCashAdvance
         '
         Me.EmptySpaceItem12.AllowHotTrack = False
         Me.EmptySpaceItem12.CustomizationFormText = "EmptySpaceItem12"
-        Me.EmptySpaceItem12.Location = New System.Drawing.Point(0, 298)
+        Me.EmptySpaceItem12.Location = New System.Drawing.Point(0, 322)
         Me.EmptySpaceItem12.Name = "EmptySpaceItem12"
         Me.EmptySpaceItem12.Size = New System.Drawing.Size(176, 34)
         Me.EmptySpaceItem12.Text = "EmptySpaceItem12"
@@ -629,7 +637,7 @@ Partial Class frmCashAdvance
         '
         Me.EmptySpaceItem13.AllowHotTrack = False
         Me.EmptySpaceItem13.CustomizationFormText = "EmptySpaceItem13"
-        Me.EmptySpaceItem13.Location = New System.Drawing.Point(0, 226)
+        Me.EmptySpaceItem13.Location = New System.Drawing.Point(0, 250)
         Me.EmptySpaceItem13.Name = "EmptySpaceItem13"
         Me.EmptySpaceItem13.Size = New System.Drawing.Size(176, 72)
         Me.EmptySpaceItem13.Text = "EmptySpaceItem13"
@@ -639,7 +647,7 @@ Partial Class frmCashAdvance
         '
         Me.EmptySpaceItem14.AllowHotTrack = False
         Me.EmptySpaceItem14.CustomizationFormText = "EmptySpaceItem14"
-        Me.EmptySpaceItem14.Location = New System.Drawing.Point(0, 202)
+        Me.EmptySpaceItem14.Location = New System.Drawing.Point(0, 226)
         Me.EmptySpaceItem14.Name = "EmptySpaceItem14"
         Me.EmptySpaceItem14.Size = New System.Drawing.Size(176, 24)
         Me.EmptySpaceItem14.Text = "EmptySpaceItem14"
@@ -649,7 +657,7 @@ Partial Class frmCashAdvance
         '
         Me.EmptySpaceItem15.AllowHotTrack = False
         Me.EmptySpaceItem15.CustomizationFormText = "EmptySpaceItem15"
-        Me.EmptySpaceItem15.Location = New System.Drawing.Point(0, 178)
+        Me.EmptySpaceItem15.Location = New System.Drawing.Point(0, 202)
         Me.EmptySpaceItem15.Name = "EmptySpaceItem15"
         Me.EmptySpaceItem15.Size = New System.Drawing.Size(176, 24)
         Me.EmptySpaceItem15.Text = "EmptySpaceItem15"
@@ -659,7 +667,7 @@ Partial Class frmCashAdvance
         '
         Me.EmptySpaceItem16.AllowHotTrack = False
         Me.EmptySpaceItem16.CustomizationFormText = "EmptySpaceItem16"
-        Me.EmptySpaceItem16.Location = New System.Drawing.Point(0, 130)
+        Me.EmptySpaceItem16.Location = New System.Drawing.Point(0, 154)
         Me.EmptySpaceItem16.Name = "EmptySpaceItem16"
         Me.EmptySpaceItem16.Size = New System.Drawing.Size(176, 48)
         Me.EmptySpaceItem16.Text = "EmptySpaceItem16"
@@ -669,7 +677,7 @@ Partial Class frmCashAdvance
         '
         Me.EmptySpaceItem17.AllowHotTrack = False
         Me.EmptySpaceItem17.CustomizationFormText = "EmptySpaceItem17"
-        Me.EmptySpaceItem17.Location = New System.Drawing.Point(0, 10)
+        Me.EmptySpaceItem17.Location = New System.Drawing.Point(0, 34)
         Me.EmptySpaceItem17.Name = "EmptySpaceItem17"
         Me.EmptySpaceItem17.Size = New System.Drawing.Size(176, 120)
         Me.EmptySpaceItem17.Text = "EmptySpaceItem17"
@@ -679,7 +687,7 @@ Partial Class frmCashAdvance
         '
         Me.LayoutControlItem8.Control = Me.teEmployeeName
         Me.LayoutControlItem8.CustomizationFormText = "Reg No"
-        Me.LayoutControlItem8.Location = New System.Drawing.Point(176, 82)
+        Me.LayoutControlItem8.Location = New System.Drawing.Point(176, 106)
         Me.LayoutControlItem8.Name = "LayoutControlItem8"
         Me.LayoutControlItem8.Size = New System.Drawing.Size(455, 24)
         Me.LayoutControlItem8.Text = "Employee Name"
@@ -690,7 +698,7 @@ Partial Class frmCashAdvance
         '
         Me.LayoutControlItem9.Control = Me.deIssueDate
         Me.LayoutControlItem9.CustomizationFormText = "Issue Date"
-        Me.LayoutControlItem9.Location = New System.Drawing.Point(176, 34)
+        Me.LayoutControlItem9.Location = New System.Drawing.Point(176, 58)
         Me.LayoutControlItem9.Name = "LayoutControlItem9"
         Me.LayoutControlItem9.Size = New System.Drawing.Size(455, 24)
         Me.LayoutControlItem9.Text = "Issue Date"
@@ -700,7 +708,7 @@ Partial Class frmCashAdvance
         '
         Me.LayoutControlItem10.Control = Me.leEmployee
         Me.LayoutControlItem10.CustomizationFormText = "Employee Code"
-        Me.LayoutControlItem10.Location = New System.Drawing.Point(176, 58)
+        Me.LayoutControlItem10.Location = New System.Drawing.Point(176, 82)
         Me.LayoutControlItem10.Name = "LayoutControlItem10"
         Me.LayoutControlItem10.Size = New System.Drawing.Size(455, 24)
         Me.LayoutControlItem10.Text = "Employee Code"
@@ -710,7 +718,7 @@ Partial Class frmCashAdvance
         '
         Me.LayoutControlItem13.Control = Me.sePaybleAmount
         Me.LayoutControlItem13.CustomizationFormText = "LayoutControlItem13"
-        Me.LayoutControlItem13.Location = New System.Drawing.Point(176, 322)
+        Me.LayoutControlItem13.Location = New System.Drawing.Point(176, 346)
         Me.LayoutControlItem13.Name = "LayoutControlItem13"
         Me.LayoutControlItem13.Size = New System.Drawing.Size(455, 34)
         Me.LayoutControlItem13.Text = "Amount"
@@ -720,7 +728,7 @@ Partial Class frmCashAdvance
         '
         Me.LayoutControlItem18.Control = Me.teWorkedDays
         Me.LayoutControlItem18.CustomizationFormText = "Worked Days"
-        Me.LayoutControlItem18.Location = New System.Drawing.Point(176, 106)
+        Me.LayoutControlItem18.Location = New System.Drawing.Point(176, 130)
         Me.LayoutControlItem18.Name = "LayoutControlItem18"
         Me.LayoutControlItem18.Size = New System.Drawing.Size(455, 24)
         Me.LayoutControlItem18.Text = "Worked Days"
@@ -730,7 +738,7 @@ Partial Class frmCashAdvance
         '
         Me.LayoutControlItem1.Control = Me.tePayment
         Me.LayoutControlItem1.CustomizationFormText = "Payment"
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(176, 130)
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(176, 154)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
         Me.LayoutControlItem1.Size = New System.Drawing.Size(455, 24)
         Me.LayoutControlItem1.Text = "Payment"
@@ -740,7 +748,7 @@ Partial Class frmCashAdvance
         '
         Me.LayoutControlItem6.Control = Me.teLMB
         Me.LayoutControlItem6.CustomizationFormText = "Last Month Debit"
-        Me.LayoutControlItem6.Location = New System.Drawing.Point(176, 154)
+        Me.LayoutControlItem6.Location = New System.Drawing.Point(176, 178)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
         Me.LayoutControlItem6.Size = New System.Drawing.Size(455, 24)
         Me.LayoutControlItem6.Text = "Last Month Debit"
@@ -750,7 +758,7 @@ Partial Class frmCashAdvance
         '
         Me.LayoutControlItem2.Control = Me.teEPF
         Me.LayoutControlItem2.CustomizationFormText = "E.P.F."
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(176, 178)
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(176, 202)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
         Me.LayoutControlItem2.Size = New System.Drawing.Size(455, 24)
         Me.LayoutControlItem2.Text = "E.P.F."
@@ -760,7 +768,7 @@ Partial Class frmCashAdvance
         '
         Me.LayoutControlItem3.Control = Me.teFestivalAdvance
         Me.LayoutControlItem3.CustomizationFormText = "Festival Advance"
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(176, 202)
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(176, 226)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
         Me.LayoutControlItem3.Size = New System.Drawing.Size(455, 24)
         Me.LayoutControlItem3.Text = "Festival Advance"
@@ -770,7 +778,7 @@ Partial Class frmCashAdvance
         '
         Me.LayoutControlItem4.Control = Me.teLoan
         Me.LayoutControlItem4.CustomizationFormText = "Loan Installment"
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(176, 226)
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(176, 250)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
         Me.LayoutControlItem4.Size = New System.Drawing.Size(455, 24)
         Me.LayoutControlItem4.Text = "Loan Installment"
@@ -780,7 +788,7 @@ Partial Class frmCashAdvance
         '
         Me.LayoutControlItem5.Control = Me.teCashAdvance
         Me.LayoutControlItem5.CustomizationFormText = "Cash Advance"
-        Me.LayoutControlItem5.Location = New System.Drawing.Point(176, 250)
+        Me.LayoutControlItem5.Location = New System.Drawing.Point(176, 274)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
         Me.LayoutControlItem5.Size = New System.Drawing.Size(455, 24)
         Me.LayoutControlItem5.Text = "Cash Advance"
@@ -790,7 +798,7 @@ Partial Class frmCashAdvance
         '
         Me.LayoutControlItem7.Control = Me.teTotalDeductions
         Me.LayoutControlItem7.CustomizationFormText = "Total Deductions"
-        Me.LayoutControlItem7.Location = New System.Drawing.Point(176, 274)
+        Me.LayoutControlItem7.Location = New System.Drawing.Point(176, 298)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
         Me.LayoutControlItem7.Size = New System.Drawing.Size(455, 24)
         Me.LayoutControlItem7.Text = "Total Deductions"
@@ -800,7 +808,7 @@ Partial Class frmCashAdvance
         '
         Me.LayoutControlItem12.Control = Me.tePaybleAmount
         Me.LayoutControlItem12.CustomizationFormText = "Payble Amount"
-        Me.LayoutControlItem12.Location = New System.Drawing.Point(176, 298)
+        Me.LayoutControlItem12.Location = New System.Drawing.Point(176, 322)
         Me.LayoutControlItem12.Name = "LayoutControlItem12"
         Me.LayoutControlItem12.Size = New System.Drawing.Size(455, 24)
         Me.LayoutControlItem12.Text = "Payble Amount"
@@ -810,7 +818,7 @@ Partial Class frmCashAdvance
         '
         Me.LayoutControlItem11.Control = Me.cmbWorkType
         Me.LayoutControlItem11.CustomizationFormText = "WorkType"
-        Me.LayoutControlItem11.Location = New System.Drawing.Point(176, 10)
+        Me.LayoutControlItem11.Location = New System.Drawing.Point(176, 34)
         Me.LayoutControlItem11.Name = "LayoutControlItem11"
         Me.LayoutControlItem11.Size = New System.Drawing.Size(455, 24)
         Me.LayoutControlItem11.Text = "WorkType"
@@ -860,13 +868,14 @@ Partial Class frmCashAdvance
         Me.gcCashAdvance.MainView = Me.gvCashAdvance
         Me.gcCashAdvance.MenuManager = Me.BarManager1
         Me.gcCashAdvance.Name = "gcCashAdvance"
+        Me.gcCashAdvance.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemButtonEdit1})
         Me.gcCashAdvance.Size = New System.Drawing.Size(827, 291)
-        Me.gcCashAdvance.TabIndex = 4
+        Me.gcCashAdvance.TabIndex = 3
         Me.gcCashAdvance.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvCashAdvance})
         '
         'gvCashAdvance
         '
-        Me.gvCashAdvance.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14, Me.GridColumn15, Me.GridColumn1, Me.GridColumn2, Me.GridColumn3})
+        Me.gvCashAdvance.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14, Me.GridColumn15, Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4})
         Me.gvCashAdvance.GridControl = Me.gcCashAdvance
         Me.gvCashAdvance.Name = "gvCashAdvance"
         Me.gvCashAdvance.OptionsView.EnableAppearanceOddRow = True
@@ -968,12 +977,27 @@ Partial Class frmCashAdvance
         Me.GridColumn3.FieldName = "UpdatedDate"
         Me.GridColumn3.Name = "GridColumn3"
         '
+        'GridColumn4
+        '
+        Me.GridColumn4.Caption = "GridColumn4"
+        Me.GridColumn4.ColumnEdit = Me.RepositoryItemButtonEdit1
+        Me.GridColumn4.Name = "GridColumn4"
+        Me.GridColumn4.Visible = True
+        Me.GridColumn4.VisibleIndex = 4
+        '
+        'RepositoryItemButtonEdit1
+        '
+        Me.RepositoryItemButtonEdit1.AutoHeight = False
+        Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Delete", 20, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Global.iStock.My.Resources.Resources.remove, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, "", Nothing, Nothing, True)})
+        Me.RepositoryItemButtonEdit1.Name = "RepositoryItemButtonEdit1"
+        Me.RepositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
+        '
         'btnDisplay
         '
         Me.btnDisplay.Location = New System.Drawing.Point(324, 43)
         Me.btnDisplay.Name = "btnDisplay"
         Me.btnDisplay.Size = New System.Drawing.Size(146, 22)
-        Me.btnDisplay.TabIndex = 7
+        Me.btnDisplay.TabIndex = 2
         Me.btnDisplay.Text = "Process"
         Me.btnDisplay.UseVisualStyleBackColor = True
         '
@@ -992,7 +1016,7 @@ Partial Class frmCashAdvance
         Me.deEndDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.deEndDate.Size = New System.Drawing.Size(119, 20)
         Me.deEndDate.StyleController = Me.LayoutControl4
-        Me.deEndDate.TabIndex = 6
+        Me.deEndDate.TabIndex = 1
         '
         'deStartDate
         '
@@ -1009,7 +1033,7 @@ Partial Class frmCashAdvance
         Me.deStartDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.deStartDate.Size = New System.Drawing.Size(119, 20)
         Me.deStartDate.StyleController = Me.LayoutControl4
-        Me.deStartDate.TabIndex = 5
+        Me.deStartDate.TabIndex = 0
         '
         'Root
         '
@@ -1095,6 +1119,25 @@ Partial Class frmCashAdvance
         Me.LayoutControlItem14.TextToControlDistance = 0
         Me.LayoutControlItem14.TextVisible = False
         '
+        'lblDeleteID
+        '
+        Me.lblDeleteID.Location = New System.Drawing.Point(12, 12)
+        Me.lblDeleteID.Name = "lblDeleteID"
+        Me.lblDeleteID.Size = New System.Drawing.Size(810, 20)
+        Me.lblDeleteID.TabIndex = 27
+        '
+        'LayoutControlItem19
+        '
+        Me.LayoutControlItem19.Control = Me.lblDeleteID
+        Me.LayoutControlItem19.CustomizationFormText = "LayoutControlItem19"
+        Me.LayoutControlItem19.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem19.Name = "LayoutControlItem19"
+        Me.LayoutControlItem19.Size = New System.Drawing.Size(814, 24)
+        Me.LayoutControlItem19.Text = "LayoutControlItem19"
+        Me.LayoutControlItem19.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem19.TextToControlDistance = 0
+        Me.LayoutControlItem19.TextVisible = False
+        '
         'frmCashAdvance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1166,6 +1209,7 @@ Partial Class frmCashAdvance
         Me.LayoutControl4.ResumeLayout(False)
         CType(Me.gcCashAdvance, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gvCashAdvance, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemButtonEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.deEndDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.deEndDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.deStartDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1177,6 +1221,7 @@ Partial Class frmCashAdvance
         CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem19, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1266,4 +1311,8 @@ Partial Class frmCashAdvance
     Friend WithEvents LayoutControlItem14 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents cmbWorkType As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents LayoutControlItem11 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents GridColumn4 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemButtonEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
+    Friend WithEvents lblDeleteID As System.Windows.Forms.Label
+    Friend WithEvents LayoutControlItem19 As DevExpress.XtraLayout.LayoutControlItem
 End Class

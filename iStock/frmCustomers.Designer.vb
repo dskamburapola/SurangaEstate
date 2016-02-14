@@ -257,11 +257,11 @@ Partial Class frmCustomers
         'cbeSalutation
         '
         Me.cbeSalutation.EnterMoveNextControl = True
-        Me.cbeSalutation.Location = New System.Drawing.Point(92, 84)
+        Me.cbeSalutation.Location = New System.Drawing.Point(91, 84)
         Me.cbeSalutation.Name = "cbeSalutation"
         Me.cbeSalutation.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cbeSalutation.Properties.Items.AddRange(New Object() {"MR.", "MRS.", "MS.", "VEN."})
-        Me.cbeSalutation.Size = New System.Drawing.Size(55, 20)
+        Me.cbeSalutation.Size = New System.Drawing.Size(56, 20)
         Me.cbeSalutation.StyleController = Me.LayoutControl1
         Me.cbeSalutation.TabIndex = 1
         '
@@ -269,11 +269,11 @@ Partial Class frmCustomers
         '
         Me.seCustomerNo.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
         Me.seCustomerNo.EnterMoveNextControl = True
-        Me.seCustomerNo.Location = New System.Drawing.Point(92, 60)
+        Me.seCustomerNo.Location = New System.Drawing.Point(91, 60)
         Me.seCustomerNo.Name = "seCustomerNo"
         Me.seCustomerNo.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.seCustomerNo.Properties.MaxValue = New Decimal(New Integer() {2147483647, 0, 0, 0})
-        Me.seCustomerNo.Size = New System.Drawing.Size(85, 20)
+        Me.seCustomerNo.Size = New System.Drawing.Size(86, 20)
         Me.seCustomerNo.StyleController = Me.LayoutControl1
         Me.seCustomerNo.TabIndex = 0
         ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
@@ -293,77 +293,77 @@ Partial Class frmCustomers
         'teWebURL
         '
         Me.teWebURL.EnterMoveNextControl = True
-        Me.teWebURL.Location = New System.Drawing.Point(430, 204)
+        Me.teWebURL.Location = New System.Drawing.Point(429, 204)
         Me.teWebURL.Name = "teWebURL"
         Me.teWebURL.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teWebURL.Properties.MaxLength = 50
-        Me.teWebURL.Size = New System.Drawing.Size(253, 20)
+        Me.teWebURL.Size = New System.Drawing.Size(254, 20)
         Me.teWebURL.StyleController = Me.LayoutControl1
         Me.teWebURL.TabIndex = 9
         '
         'teEmail
         '
         Me.teEmail.EnterMoveNextControl = True
-        Me.teEmail.Location = New System.Drawing.Point(92, 204)
+        Me.teEmail.Location = New System.Drawing.Point(91, 204)
         Me.teEmail.Name = "teEmail"
         Me.teEmail.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teEmail.Properties.MaxLength = 50
-        Me.teEmail.Size = New System.Drawing.Size(254, 20)
+        Me.teEmail.Size = New System.Drawing.Size(255, 20)
         Me.teEmail.StyleController = Me.LayoutControl1
         Me.teEmail.TabIndex = 8
         '
         'teFax
         '
         Me.teFax.EnterMoveNextControl = True
-        Me.teFax.Location = New System.Drawing.Point(430, 180)
+        Me.teFax.Location = New System.Drawing.Point(429, 180)
         Me.teFax.Name = "teFax"
         Me.teFax.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teFax.Properties.MaxLength = 50
-        Me.teFax.Size = New System.Drawing.Size(253, 20)
+        Me.teFax.Size = New System.Drawing.Size(254, 20)
         Me.teFax.StyleController = Me.LayoutControl1
         Me.teFax.TabIndex = 7
         '
         'teTelephone
         '
         Me.teTelephone.EnterMoveNextControl = True
-        Me.teTelephone.Location = New System.Drawing.Point(92, 180)
+        Me.teTelephone.Location = New System.Drawing.Point(91, 180)
         Me.teTelephone.Name = "teTelephone"
         Me.teTelephone.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teTelephone.Properties.MaxLength = 50
-        Me.teTelephone.Size = New System.Drawing.Size(254, 20)
+        Me.teTelephone.Size = New System.Drawing.Size(255, 20)
         Me.teTelephone.StyleController = Me.LayoutControl1
         Me.teTelephone.TabIndex = 6
         '
         'teAddressLine3
         '
         Me.teAddressLine3.EnterMoveNextControl = True
-        Me.teAddressLine3.Location = New System.Drawing.Point(92, 156)
+        Me.teAddressLine3.Location = New System.Drawing.Point(91, 156)
         Me.teAddressLine3.Name = "teAddressLine3"
         Me.teAddressLine3.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teAddressLine3.Properties.MaxLength = 100
-        Me.teAddressLine3.Size = New System.Drawing.Size(591, 20)
+        Me.teAddressLine3.Size = New System.Drawing.Size(592, 20)
         Me.teAddressLine3.StyleController = Me.LayoutControl1
         Me.teAddressLine3.TabIndex = 5
         '
         'teAddressLine2
         '
         Me.teAddressLine2.EnterMoveNextControl = True
-        Me.teAddressLine2.Location = New System.Drawing.Point(92, 132)
+        Me.teAddressLine2.Location = New System.Drawing.Point(91, 132)
         Me.teAddressLine2.Name = "teAddressLine2"
         Me.teAddressLine2.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teAddressLine2.Properties.MaxLength = 100
-        Me.teAddressLine2.Size = New System.Drawing.Size(591, 20)
+        Me.teAddressLine2.Size = New System.Drawing.Size(592, 20)
         Me.teAddressLine2.StyleController = Me.LayoutControl1
         Me.teAddressLine2.TabIndex = 4
         '
         'teAddressLine1
         '
         Me.teAddressLine1.EnterMoveNextControl = True
-        Me.teAddressLine1.Location = New System.Drawing.Point(92, 108)
+        Me.teAddressLine1.Location = New System.Drawing.Point(91, 108)
         Me.teAddressLine1.Name = "teAddressLine1"
         Me.teAddressLine1.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teAddressLine1.Properties.MaxLength = 100
-        Me.teAddressLine1.Size = New System.Drawing.Size(591, 20)
+        Me.teAddressLine1.Size = New System.Drawing.Size(592, 20)
         Me.teAddressLine1.StyleController = Me.LayoutControl1
         Me.teAddressLine1.TabIndex = 3
         '
@@ -564,7 +564,7 @@ Partial Class frmCustomers
         '
         Me.XtraTabPage2.Controls.Add(Me.gcCustomers)
         Me.XtraTabPage2.Name = "XtraTabPage2"
-        Me.XtraTabPage2.Size = New System.Drawing.Size(695, 357)
+        Me.XtraTabPage2.Size = New System.Drawing.Size(695, 361)
         Me.XtraTabPage2.Text = "History Data"
         '
         'gcCustomers
@@ -573,7 +573,7 @@ Partial Class frmCustomers
         Me.gcCustomers.Location = New System.Drawing.Point(0, 0)
         Me.gcCustomers.MainView = Me.gvCustomers
         Me.gcCustomers.Name = "gcCustomers"
-        Me.gcCustomers.Size = New System.Drawing.Size(695, 357)
+        Me.gcCustomers.Size = New System.Drawing.Size(695, 361)
         Me.gcCustomers.TabIndex = 0
         Me.gcCustomers.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvCustomers, Me.GridView2})
         '

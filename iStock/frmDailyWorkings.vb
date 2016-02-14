@@ -237,7 +237,8 @@ Public Class frmDailyWorkings
                 .WorkType = Me.cmbWorkType.Text.Trim
                 .AbbreviationID = Me.leWorkCategory.EditValue
                 .EmployeeID = leEmployee.EditValue 'lblID.Text.Trim
-                .WorkedDays = Me.cmbDays.Text.Trim
+                .WorkedDays = Me.seDays.Text.Trim
+                .OTHours = Me.seOTHours.Text.Trim
                 .Quantity = Me.seQuantity.Text.Trim
 
                 Select Case leWorkCategory.Text
@@ -285,7 +286,7 @@ Public Class frmDailyWorkings
                         .PayChitCost = 0
 
 
-                       
+
 
                 End Select
 
@@ -350,7 +351,8 @@ Public Class frmDailyWorkings
         Me.cmbWorkType.SelectedIndex = -1
         Me.leWorkCategory.EditValue = Nothing
         Me.leEmployee.EditValue = Nothing
-        Me.cmbDays.Text = String.Empty
+        Me.seDays.Text = 0
+        Me.seOTHours.Text = 0
         Me.seQuantity.Text = 0
         Me.leStock.EditValue = Nothing
         Me.cmbWorkType.Focus()
@@ -400,7 +402,7 @@ Public Class frmDailyWorkings
                     If .CheckDays = 1 Then
                         MsgBox("Employee Already Exists. Multiple Days Not Allowed")
 
-                    ElseIf .CheckDays = 0.5 And cmbDays.Text = 0.5 Then
+                    ElseIf .CheckDays = 0.5 And seDays.Text = 0.5 Then
                         '  MsgBox("0.5 day allowed")
                         seQuantity.Focus()
                     Else
@@ -410,7 +412,7 @@ Public Class frmDailyWorkings
 
                 Else
                     'MsgBox("no")
-                    Me.seQuantity.Focus()
+                    Me.seOTHours.Focus()
 
                 End If
             End With
@@ -457,6 +459,16 @@ Public Class frmDailyWorkings
 
     Private Sub leWorkCategory_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles leWorkCategory.EditValueChanged
 
+        Select Case leWorkCategory.Text
+
+            Case "PLUCKING"
+                Me.seQuantity.Enabled = True
+            Case "TAPPING"
+                Me.seQuantity.Enabled = True
+
+
+
+        End Select
     End Sub
 
     Private Sub seQuantity_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -511,7 +523,7 @@ Public Class frmDailyWorkings
         End If
     End Sub
 
-    Private Sub cmbDays_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cmbDays.KeyPress
+    Private Sub cmbDays_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles seDays.KeyPress
         If Asc(e.KeyChar) = 13 Then
             Me.DailyWorkingIfExists()
         End If
@@ -571,4 +583,8 @@ Public Class frmDailyWorkings
 
 
 
+    Private Sub seOTHours_KeyPress(sender As Object, e As KeyPressEventArgs) Handles seOTHours.KeyPress
+        Me.seQuantity.Focus()
+
+    End Sub
 End Class
