@@ -39,7 +39,7 @@ Public Class iStockSettings
     Private _OverSheetsRate As Decimal
     Private _OverSheetsUpperLimit As Decimal
     Private _LowerSheetsRate As Decimal
-    
+    Private _SmokingSheetsPayRate As Decimal
 #End Region
 
 #Region "Properties"
@@ -246,18 +246,14 @@ Public Class iStockSettings
     End Property
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+    Public Property SmokingSheetsPayRate As Decimal
+        Get
+            Return _SmokingSheetsPayRate
+        End Get
+        Set(ByVal value As Decimal)
+            _SmokingSheetsPayRate = value
+        End Set
+    End Property
 
 
     Public Property CreatedBy() As Int64
@@ -322,6 +318,7 @@ Public Class iStockSettings
             DB.AddInParameter(DBC, "@OverSheetsRate", DbType.Decimal, Me.OverSheetsRate)
             DB.AddInParameter(DBC, "@OverSheetsUpperLimit", DbType.Decimal, Me.OverSheetsUpperLimit)
             DB.AddInParameter(DBC, "@LowerSheetsRate", DbType.Decimal, Me.LowerSheetsRate)
+            DB.AddInParameter(DBC, "@SmokingSheetsPayRate", DbType.Decimal, Me.SmokingSheetsPayRate)
 
 
             DB.AddInParameter(DBC, "@CreatedBy", DbType.Int64, Me.CreatedBy)
@@ -382,9 +379,7 @@ Public Class iStockSettings
                         Me.OverSheetsRate = IIf(Not IsDBNull(.Item("OverSheetsRate")), Trim(.Item("OverSheetsRate").ToString), 0)
                         Me.OverSheetsUpperLimit = IIf(Not IsDBNull(.Item("OverSheetsUpperLimit")), Trim(.Item("OverSheetsUpperLimit").ToString), 0)
                         Me.LowerSheetsRate = IIf(Not IsDBNull(.Item("LowerSheetsRate")), Trim(.Item("LowerSheetsRate").ToString), 0)
-
-
-
+                        Me.SmokingSheetsPayRate = IIf(Not IsDBNull(.Item("SmokingSheetsPayRate")), Trim(.Item("SmokingSheetsPayRate").ToString), 0)
 
 
 

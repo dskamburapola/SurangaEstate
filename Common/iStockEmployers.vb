@@ -606,7 +606,22 @@ Public Class iStockEmployers
     End Function
 #End Region
 
-#Region "Resign Employer SelectAll"
+#Region "Working Employee SelectAll"
+    Public Function WorkingEmployeeSelectAll() As DataSet
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(EMPLOYERS_WORKING_GETALL)
+            Return DB.ExecuteDataSet(DBC)
+            DBC.Dispose()
+        Catch ex As Exception
+            Return Nothing
+            Throw
+        End Try
+
+    End Function
+#End Region
+
+#Region "Resigned Select All"
     Public Function ResignedSelectAll() As DataSet
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)

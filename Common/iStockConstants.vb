@@ -115,6 +115,11 @@
     Public Shared WORKDAYS_GETMONTHLIST As String = "WorkDays_GetMonthList"
     Public Shared WORKDAYSDESCRIPTION_INSERT As String = "WorkDaysDescription_Insert"
     Public Shared WORKDAYSDESCRIPTION_DELETE As String = "WorkDaysDescription_Delete"
+    Public Shared GET_SELECTEDMONTH_WORKDAYS As String = "Get_SelectedMonth_WorkDays"
+
+    Public Shared ATTENDANCE_REPORT_BY_WORKCATEGORY As String = "Attendance_Report_By_WorkCategory"
+    Public Shared ATTENDANCE_REPORT_ALL_WORKCATEGORY As String = "Attendance_Report_All_WorkCategory"
+
 
     Public Shared LOGBOOK_GETBYDATES As String = "LogBook_getByDates"
     Public Shared LOGBOOK_INSERT As String = "LogBook_Insert"
@@ -135,6 +140,10 @@
     Public Shared EMPLOYERS_GETBYBYDESIGNATION As String = "Employers_GetByByDesignation"
     Public Shared EMPLOYERS_GETBYEMPLOYERNO As String = "Employers_GetByEmployerNo"
     Public Shared EMPLOYERS_RESIGNED_GETALL As String = "Employers_Resigned_GetAll"
+    Public Shared EMPLOYERS_WORKING_GETALL As String = "Employers_Working_GetAll"
+
+
+
 
     Public Shared SUPPLIERS_DELETE As String = "Suppliers_Delete"
     Public Shared SUPPLIERS_GETALL As String = "Suppliers_GetAll"

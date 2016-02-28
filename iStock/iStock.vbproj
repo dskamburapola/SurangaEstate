@@ -184,10 +184,10 @@
     <Compile Include="frmOtherIncome.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAttendaceAdvanceCasualReport.Designer.vb">
-      <DependentUpon>frmAttendaceAdvanceCasualReport.vb</DependentUpon>
+    <Compile Include="frmCheckRollCasualReport.Designer.vb">
+      <DependentUpon>frmCheckRollCasualReport.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmAttendaceAdvanceCasualReport.vb">
+    <Compile Include="frmCheckRollCasualReport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmRubberSheets.designer.vb">
@@ -196,10 +196,10 @@
     <Compile Include="frmRubberSheets.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAttendaceAdvanceReport.Designer.vb">
-      <DependentUpon>frmAttendaceAdvanceReport.vb</DependentUpon>
+    <Compile Include="frmCheckRoll.Designer.vb">
+      <DependentUpon>frmCheckRoll.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmAttendaceAdvanceReport.vb">
+    <Compile Include="frmCheckRoll.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCropSummaryMonthlyReport.Designer.vb">
@@ -528,15 +528,15 @@
       <DependentUpon>frmOtherIncome.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAttendaceAdvanceCasualReport.resx">
-      <DependentUpon>frmAttendaceAdvanceCasualReport.vb</DependentUpon>
+    <EmbeddedResource Include="frmCheckRollCasualReport.resx">
+      <DependentUpon>frmCheckRollCasualReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRubberSheets.resx">
       <DependentUpon>frmRubberSheets.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAttendaceAdvanceReport.resx">
-      <DependentUpon>frmAttendaceAdvanceReport.vb</DependentUpon>
+    <EmbeddedResource Include="frmCheckRoll.resx">
+      <DependentUpon>frmCheckRoll.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCropSummaryMonthlyReport.resx">
       <DependentUpon>frmCropSummaryMonthlyReport.vb</DependentUpon>

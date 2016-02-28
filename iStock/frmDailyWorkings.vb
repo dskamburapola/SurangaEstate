@@ -227,6 +227,112 @@ Public Class frmDailyWorkings
     End Sub
 #End Region
 
+    '#Region "Save Daily Working"
+    '    Private Sub SaveDailyWorking()
+
+    '        Try
+    '            With iStockDailyWorking
+
+    '                .WorkingDate = Me.deWorkingDate.EditValue
+    '                .WorkType = Me.cmbWorkType.Text.Trim
+    '                .AbbreviationID = Me.leWorkCategory.EditValue
+    '                .EmployeeID = leEmployee.EditValue 'lblID.Text.Trim
+    '                .WorkedDays = Me.seDays.Text.Trim
+    '                .OTHours = Me.seOTHours.Text.Trim
+    '                .Quantity = Me.seQuantity.Text.Trim
+
+    '                Select Case leWorkCategory.Text
+    '                    Case "PLUCKING"
+
+    '                        .KgsPerDay = Convert.ToDecimal(lblKgsPerDay.Text.Trim)
+    '                        .OverKgRate = Convert.ToDecimal(lblOverKgsRate.Text.Trim)
+    '                        .KgsPerDayNotMandatory = Convert.ToDecimal(lblKgsPerDayNotMandatory.Text.Trim)
+    '                        .OverKGUpperLimit = Convert.ToDecimal(lblOverKgUpperLimit.Text.Trim)
+    '                        .LowerKgRate = Convert.ToDecimal(lblLowerKgRate.Text)
+
+    '                        .SheetsPerDay = Convert.ToDecimal(lblSheetsPerDay.Text)
+    '                        .OverSheetsUpperLimit = Convert.ToDecimal(lblOverSheetsUpperLimit.Text)
+    '                        .OverSheetsRate = Convert.ToDecimal(lblOverSheetsRate.Text)
+    '                        .LowerSheetsRate = Convert.ToDecimal(lblLowerSheetsRate.Text)
+    '                        .SmokingSheetsPayRate = Convert.ToDecimal(lblSmokingSheetsPayRate.Text)
+
+
+    '                    Case "TAPPING"
+    '                        .KgsPerDay = 0
+    '                        .OverKgRate = 0
+    '                        .KgsPerDayNotMandatory = 0
+    '                        .OverKGUpperLimit = 0
+    '                        .LowerKgRate = 0
+
+    '                        .SheetsPerDay = Convert.ToDecimal(lblSheetsPerDay.Text)
+    '                        .OverSheetsUpperLimit = Convert.ToDecimal(lblOverSheetsUpperLimit.Text)
+    '                        .OverSheetsRate = Convert.ToDecimal(lblOverSheetsRate.Text)
+    '                        .LowerSheetsRate = Convert.ToDecimal(lblLowerSheetsRate.Text)
+    '                        .SmokingSheetsPayRate = Convert.ToDecimal(lblSmokingSheetsPayRate.Text)
+
+
+    '                        Case Else
+    '                End Select
+
+
+    '                .EPF = Convert.ToDecimal(lblEPF.Text.Trim)
+    '                .ETF = Convert.ToDecimal(lblETF.Text.Trim)
+
+    '                Select Case cmbWorkType.Text
+
+    '                    Case "PERMANENT"
+    '                        .DayRate = Convert.ToDecimal(lblDayRate.Text.Trim)
+    '                        .OTRate = Convert.ToDecimal(lblOTRate.Text.Trim)
+
+    '                        .CasualPayRate = 0
+    '                        .CasualOTPayRate = 0
+    '                        .WCPay = Convert.ToDecimal(lblWCPay.Text)
+    '                        .IncentiveDays = Convert.ToDecimal(lblIncentiveDays.Text)
+    '                        .IncentiveRate = Convert.ToDecimal(lblIncentiveRate.Text)
+    '                        .PayChitCost = Convert.ToDecimal(lblPayChit.Text)
+
+    '                    Case "CASUAL"
+    '                        .DayRate = 0
+    '                        .OTRate = 0
+
+    '                        .CasualPayRate = Convert.ToDecimal(lblCasualPayRate.Text.Trim)
+    '                        .CasualOTPayRate = Convert.ToDecimal(lblCasualOTPayRate.Text.Trim)
+
+    '                        .WCPay = 0
+    '                        .IncentiveDays = 0
+    '                        .IncentiveRate = 0
+    '                        .PayChitCost = 0
+
+    '                End Select
+
+    '                .IsDeleted = 0
+    '                .CreatedBy = UserID
+    '                .StockID = leStock.EditValue
+
+
+    '                .InsertDailyWorking()
+
+    '                Dim frm As New frmSavedOk
+    '                frm.Text = CWB_SAVESUCCESS_CONFIRMATION_TITLE
+    '                frm.lblTitle.Text = CWB_SAVESUCCESS_CONFIRMATION_TITLELABEL
+    '                frm.lblDescription.Text = CWB_SAVESUCCESS_CONFIRMATION_DESCRIPTIONLABEL
+    '                frm.ShowDialog()
+    '            End With
+
+
+    '            Me.DailyWorkingGetByDate()
+    '            Me.ClearFormData()
+
+    '        Catch ex As Exception
+    '            MessageError(ex.ToString)
+    '        End Try
+
+
+
+
+    '    End Sub
+    '#End Region
+
 #Region "Save Daily Working"
     Private Sub SaveDailyWorking()
 
@@ -244,14 +350,22 @@ Public Class frmDailyWorkings
                 Select Case leWorkCategory.Text
                     Case "PLUCKING"
 
-                        .KgsPerDay = Convert.ToDecimal(lblKgsPerDay.Text.Trim)
-                        .OverKgRate = Convert.ToDecimal(lblOverKgsRate.Text.Trim)
-                        .KgsPerDayNotMandatory = Convert.ToDecimal(lblKgsPerDayNotMandatory.Text.Trim)
-                        .OverKGUpperLimit = Convert.ToDecimal(lblOverKgUpperLimit.Text.Trim)
+                        If Val(seQuantity.Text) >= 25 Then
+                            .NameDays = 1
+                        Else
+                            .NameDays = 0
+                        End If
+
+
+                    Case "TAPPING"
+                        If Val(seQuantity.Text) >= 12 Then
+                            .NameDays = 1
+                        Else
+                            .NameDays = 0
+                        End If
 
                     Case Else
-                        .KgsPerDay = 0
-                        .OverKgRate = 0
+                        .NameDays = Me.seDays.Text.Trim
 
                 End Select
 
@@ -276,7 +390,6 @@ Public Class frmDailyWorkings
                         .DayRate = 0
                         .OTRate = 0
 
-
                         .CasualPayRate = Convert.ToDecimal(lblCasualPayRate.Text.Trim)
                         .CasualOTPayRate = Convert.ToDecimal(lblCasualOTPayRate.Text.Trim)
 
@@ -285,14 +398,24 @@ Public Class frmDailyWorkings
                         .IncentiveRate = 0
                         .PayChitCost = 0
 
-
-
-
                 End Select
 
                 .IsDeleted = 0
                 .CreatedBy = UserID
                 .StockID = leStock.EditValue
+                '.OverKGUpperLimit = lblOverKgUpperLimit.Text
+                .KgsPerDay = Convert.ToDecimal(lblKgsPerDay.Text.Trim)
+                .OverKgRate = Convert.ToDecimal(lblOverKgsRate.Text.Trim)
+                .KgsPerDayNotMandatory = Convert.ToDecimal(lblKgsPerDayNotMandatory.Text.Trim)
+                .OverKGUpperLimit = Convert.ToDecimal(lblOverKgUpperLimit.Text.Trim)
+                .LowerKgRate = Convert.ToDecimal(lblLowerkgRate.Text)
+                .SheetsPerDay = Convert.ToDecimal(lblSheetsPerDay.Text)
+                .OverSheetsUpperLimit = Convert.ToDecimal(lblOverSheetsUpperLimit.Text)
+                .OverSheetsRate = Convert.ToDecimal(lblOverSheetsRate.Text)
+                .LowerSheetsRate = Convert.ToDecimal(lblLowerSheetsRate.Text)
+                .SmokingSheetsPayRate = Convert.ToDecimal(lblSmokingSheetsPayRate.Text)
+
+
                 .InsertDailyWorking()
 
                 Dim frm As New frmSavedOk
@@ -336,6 +459,14 @@ Public Class frmDailyWorkings
                 Me.lblKgsPerDayNotMandatory.Text = .KgsPerDayNotMandatory
                 Me.lblETF.Text = .ETF
                 Me.lblOverKgUpperLimit.Text = .OverKGUpperLimit
+                Me.lblLowerKgRate.Text = .LowerKgRate
+                Me.lblSheetsPerDay.Text = .SheetsPerDay
+                Me.lblOverSheetsUpperLimit.Text = .OverSheetsUpperLimit
+                Me.lblOverSheetsRate.Text = .OverSheetsRate
+                Me.lblLowerSheetsRate.Text = .LowerSheetsRate
+                Me.lblSmokingSheetsPayRate.Text = .SmokingSheetsPayRate
+
+
             End With
         Catch ex As Exception
             MessageError(ex.ToString)

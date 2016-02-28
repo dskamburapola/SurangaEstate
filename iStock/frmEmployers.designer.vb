@@ -20,12 +20,12 @@ Partial Class frmEmployers
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim ConditionValidationRule7 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule4 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule5 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
-        Dim ConditionValidationRule6 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.xTab1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
@@ -408,9 +408,9 @@ Partial Class frmEmployers
         Me.deDateJoined.Size = New System.Drawing.Size(339, 20)
         Me.deDateJoined.StyleController = Me.LayoutControl1
         Me.deDateJoined.TabIndex = 2
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "This value is not valid"
-        Me.dxvpEmployers.SetValidationRule(Me.deDateJoined, ConditionValidationRule1)
+        ConditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule7.ErrorText = "This value is not valid"
+        Me.dxvpEmployers.SetValidationRule(Me.deDateJoined, ConditionValidationRule7)
         '
         'teTelephone
         '
@@ -431,9 +431,9 @@ Partial Class frmEmployers
         Me.teNICNo.Size = New System.Drawing.Size(339, 20)
         Me.teNICNo.StyleController = Me.LayoutControl1
         Me.teNICNo.TabIndex = 6
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule2.ErrorText = "This value is not valid"
-        Me.dxvpEmployers.SetValidationRule(Me.teNICNo, ConditionValidationRule2)
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "This value is not valid"
+        Me.dxvpEmployers.SetValidationRule(Me.teNICNo, ConditionValidationRule1)
         '
         'ceSex
         '
@@ -447,9 +447,9 @@ Partial Class frmEmployers
         Me.ceSex.Size = New System.Drawing.Size(339, 20)
         Me.ceSex.StyleController = Me.LayoutControl1
         Me.ceSex.TabIndex = 7
-        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule3.ErrorText = "Can not be Blank"
-        Me.dxvpEmployers.SetValidationRule(Me.ceSex, ConditionValidationRule3)
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule2.ErrorText = "Can not be Blank"
+        Me.dxvpEmployers.SetValidationRule(Me.ceSex, ConditionValidationRule2)
         '
         'teCity
         '
@@ -464,7 +464,7 @@ Partial Class frmEmployers
         'teAddressLine2
         '
         Me.teAddressLine2.EnterMoveNextControl = True
-        Me.teAddressLine2.Location = New System.Drawing.Point(320, 332)
+        Me.teAddressLine2.Location = New System.Drawing.Point(320, 356)
         Me.teAddressLine2.Name = "teAddressLine2"
         Me.teAddressLine2.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teAddressLine2.Size = New System.Drawing.Size(339, 20)
@@ -474,7 +474,7 @@ Partial Class frmEmployers
         'teAdressLine1
         '
         Me.teAdressLine1.EnterMoveNextControl = True
-        Me.teAdressLine1.Location = New System.Drawing.Point(320, 356)
+        Me.teAdressLine1.Location = New System.Drawing.Point(320, 332)
         Me.teAdressLine1.Name = "teAdressLine1"
         Me.teAdressLine1.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teAdressLine1.Size = New System.Drawing.Size(339, 20)
@@ -490,9 +490,9 @@ Partial Class frmEmployers
         Me.teEmployerName.Size = New System.Drawing.Size(339, 20)
         Me.teEmployerName.StyleController = Me.LayoutControl1
         Me.teEmployerName.TabIndex = 5
-        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule4.ErrorText = "Can not be Blank"
-        Me.dxvpEmployers.SetValidationRule(Me.teEmployerName, ConditionValidationRule4)
+        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule3.ErrorText = "Can not be Blank"
+        Me.dxvpEmployers.SetValidationRule(Me.teEmployerName, ConditionValidationRule3)
         '
         'deDOB
         '
@@ -523,10 +523,10 @@ Partial Class frmEmployers
         Me.seEmployerNo.Size = New System.Drawing.Size(339, 20)
         Me.seEmployerNo.StyleController = Me.LayoutControl1
         Me.seEmployerNo.TabIndex = 3
-        ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
-        ConditionValidationRule5.ErrorText = "Must be a Valid No, Not 0"
-        ConditionValidationRule5.Value1 = 0
-        Me.dxvpEmployers.SetValidationRule(Me.seEmployerNo, ConditionValidationRule5)
+        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule4.ErrorText = "Must be a Valid No, Not 0"
+        ConditionValidationRule4.Value1 = 0
+        Me.dxvpEmployers.SetValidationRule(Me.seEmployerNo, ConditionValidationRule4)
         '
         'seEPFNo
         '
@@ -540,9 +540,9 @@ Partial Class frmEmployers
         Me.seEPFNo.Size = New System.Drawing.Size(339, 20)
         Me.seEPFNo.StyleController = Me.LayoutControl1
         Me.seEPFNo.TabIndex = 4
-        ConditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule6.ErrorText = "This value is not valid"
-        Me.dxvpEmployers.SetValidationRule(Me.seEPFNo, ConditionValidationRule6)
+        ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule5.ErrorText = "This value is not valid"
+        Me.dxvpEmployers.SetValidationRule(Me.seEPFNo, ConditionValidationRule5)
         '
         'LayoutControlGroup1
         '
@@ -684,7 +684,7 @@ Partial Class frmEmployers
         'LayoutControlGroup3
         '
         Me.LayoutControlGroup3.CustomizationFormText = "Personal Information"
-        Me.LayoutControlGroup3.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.LayoutControlItem9, Me.LayoutControlItem8, Me.LayoutControlItem7, Me.LayoutControlItem5, Me.LayoutControlItem4, Me.LayoutControlItem6, Me.LayoutControlItem10, Me.LayoutControlItem22})
+        Me.LayoutControlGroup3.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.LayoutControlItem9, Me.LayoutControlItem8, Me.LayoutControlItem7, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem10, Me.LayoutControlItem22, Me.LayoutControlItem4})
         Me.LayoutControlGroup3.Location = New System.Drawing.Point(163, 193)
         Me.LayoutControlGroup3.Name = "LayoutControlGroup3"
         Me.LayoutControlGroup3.Size = New System.Drawing.Size(500, 259)
@@ -746,7 +746,7 @@ Partial Class frmEmployers
         '
         Me.LayoutControlItem5.Control = Me.teAddressLine2
         Me.LayoutControlItem5.CustomizationFormText = "Address Line 2"
-        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 96)
+        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 120)
         Me.LayoutControlItem5.MaxSize = New System.Drawing.Size(0, 24)
         Me.LayoutControlItem5.MinSize = New System.Drawing.Size(187, 24)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
@@ -759,7 +759,7 @@ Partial Class frmEmployers
         '
         Me.LayoutControlItem4.Control = Me.teAdressLine1
         Me.LayoutControlItem4.CustomizationFormText = "Address Line 1"
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 120)
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 96)
         Me.LayoutControlItem4.MaxSize = New System.Drawing.Size(0, 24)
         Me.LayoutControlItem4.MinSize = New System.Drawing.Size(187, 24)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
@@ -862,7 +862,7 @@ Partial Class frmEmployers
         Me.cmbEmployeeType.MenuManager = Me.BarManager1
         Me.cmbEmployeeType.Name = "cmbEmployeeType"
         Me.cmbEmployeeType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbEmployeeType.Properties.Items.AddRange(New Object() {"All Employees", "Resigned Employees"})
+        Me.cmbEmployeeType.Properties.Items.AddRange(New Object() {"All Employees", "Working Employees", "Resigned Employees"})
         Me.cmbEmployeeType.Size = New System.Drawing.Size(182, 20)
         Me.cmbEmployeeType.StyleController = Me.LayoutControl2
         Me.cmbEmployeeType.TabIndex = 8

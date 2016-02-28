@@ -1,6 +1,7 @@
 Imports iStockCommon.iStockStock
 Imports iStockCommon.iStockSuppliers
 Imports iStockCommon.iStockConstants
+Imports iStockCommon.iStockWorkDays
 Imports DevExpress.XtraGrid
 Imports DevExpress.XtraEditors.Controls
 Imports DevExpress.XtraEditors
@@ -9,10 +10,14 @@ Imports DevExpress.XtraPivotGrid
 
 Public Class frmAttendaceReport
 
+    Dim varWD As Integer
+
 #Region "Variables"
     Private _CWBStock As iStockCommon.iStockStock
     Private _CWBSuppliers As iStockCommon.iStockSuppliers
     Private _iStockDailyWorking As iStockCommon.iStockDailyWorking
+    Private _iStockWorkDays As iStockCommon.iStockWorkDays
+
 
 #End Region
 
@@ -50,6 +55,18 @@ Public Class frmAttendaceReport
             Return _iStockDailyWorking
         End Get
     End Property
+
+    Public ReadOnly Property iStockWorkDays() As iStockCommon.iStockWorkDays
+        Get
+
+            If _iStockWorkDays Is Nothing Then
+                _iStockWorkDays = New iStockCommon.iStockWorkDays
+            End If
+
+            Return _iStockWorkDays
+        End Get
+    End Property
+
 #End Region
 
 #Region "Form Events"
@@ -59,7 +76,7 @@ Public Class frmAttendaceReport
     End Sub
 
     Private Sub frmStockBalance_Activated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Activated
-        pgcAttendance.BestFitColumnArea()
+        ' pgcAttendance.BestFitColumnArea()
     End Sub
 
     Private Sub frmStockBalance_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles MyBase.KeyPress
@@ -72,7 +89,7 @@ Public Class frmAttendaceReport
 
 #Region "Print Preview"
     Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
-        PrintPivotPreview(pgcAttendance, "Attendance Report")
+        '    PrintPivotPreview(pgcAttendance, "Attendance Report")
     End Sub
 #End Region
 
@@ -99,34 +116,142 @@ Public Class frmAttendaceReport
 #Region "Button Events"
 
     Private Sub sbGenerate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbGenerate.Click
+        Dim currentDate As Date
+        Dim selectedMonth, selectedYear, workType As String
+        Dim workDays As Int32
 
         If dxvpAttendaceReport.Validate Then
 
-            Dim currentDate As Date
-            Dim selectedMonth, selectedYear As String
+            With iStockWorkDays
+
+                .MonthName = Me.meMonth.Text
+                .YearName = leYear.Text
+
+                .GetSelectedMonthWorkDays()
+
+                workDays = .WorkDays
+                'MsgBox(varWD)
+
+
+            End With
+
+
             selectedMonth = meMonth.EditValue
             selectedYear = leYear.EditValue
             currentDate = Convert.ToDateTime("01-" + selectedMonth + "-" + selectedYear)
 
-            Dim workType As String
             workType = cbeWorkType.EditValue
 
             If workType = "ALL" Then
+
                 Dim ds As New DataSet
 
-                ds = iStockDailyWorking.GetAttendanceReportAllCategory(currentDate)
-                pgcAttendance.DataSource = ds.Tables(0)
-                pgcAttendance.BestFitColumnArea()
+                ds = iStockDailyWorking.GetAttendanceReportAllWorkCategory(currentDate, workDays)
+
+
+
+                gvAttendance.Columns.Clear()
+                gcAttendance.DataSource = Nothing
+                gcAttendance.DataSource = ds.Tables(0)
+
+                gvAttendance.BestFitColumns()
+
+                gvAttendance.Columns("EmployeeID").Visible = False
+
+                gvAttendance.Columns("EmployeeNo").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+                gvAttendance.Columns("EmployeeName").Width = 150
+
+                gvAttendance.Columns("EmployeeNo").Fixed = Columns.FixedStyle.Left
+                gvAttendance.Columns("EmployeeName").Fixed = Columns.FixedStyle.Left
+
+                gvAttendance.Columns("TotalDays").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+                gvAttendance.Columns("MWA").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+
+                gvAttendance.Columns("MWA").Caption = "Monthly Work Average"
+
+
+                For index = 0 To gvAttendance.Columns.Count - 1
+
+                    If IsDate(gvAttendance.Columns(index).FieldName) Then
+
+                        gvAttendance.Columns(index).Caption = DatePart(DateInterval.Day, Convert.ToDateTime(gvAttendance.Columns(index).FieldName)).ToString()
+                        'gvAttendance.Columns(index).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+
+                        gvAttendance.Columns(index).Width = 45
+
+
+                    End If
+
+                Next
+
 
             Else
 
+
                 Dim ds As New DataSet
 
-                ds = iStockDailyWorking.GetAttendanceReport(currentDate, workType)
-                pgcAttendance.DataSource = ds.Tables(0)
-                pgcAttendance.BestFitColumnArea()
+                ds = iStockDailyWorking.GetAttendanceReportByWorkCategory(currentDate, workType, workDays)
+
+
+
+                gvAttendance.Columns.Clear()
+                gcAttendance.DataSource = Nothing
+                gcAttendance.DataSource = ds.Tables(0)
+
+                gvAttendance.BestFitColumns()
+
+                gvAttendance.Columns("EmployeeID").Visible = False
+
+                gvAttendance.Columns("EmployeeNo").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+                gvAttendance.Columns("EmployeeName").Width = 150
+
+                gvAttendance.Columns("EmployeeNo").Fixed = Columns.FixedStyle.Left
+                gvAttendance.Columns("EmployeeName").Fixed = Columns.FixedStyle.Left
+
+                gvAttendance.Columns("TotalDays").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+                gvAttendance.Columns("MWA").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+
+                gvAttendance.Columns("MWA").Caption = "Monthly Work Average"
+
+
+                For index = 0 To gvAttendance.Columns.Count - 1
+
+                    If IsDate(gvAttendance.Columns(index).FieldName) Then
+
+                        gvAttendance.Columns(index).Caption = DatePart(DateInterval.Day, Convert.ToDateTime(gvAttendance.Columns(index).FieldName)).ToString()
+                        'gvAttendance.Columns(index).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+
+                        gvAttendance.Columns(index).Width = 45
+
+
+                    End If
+
+                Next
+
 
             End If
+
+
+
+
+
+
+            'If workType = "ALL" Then
+            '    Dim ds As New DataSet
+
+            '    ds = iStockDailyWorking.GetAttendanceReportAllCategory(currentDate)
+            '    pgcAttendance.DataSource = ds.Tables(0)
+            '    pgcAttendance.BestFitColumnArea()
+
+            'Else
+
+            '    Dim ds As New DataSet
+
+            '    ds = iStockDailyWorking.GetAttendanceReport(currentDate, workType)
+            '    pgcAttendance.DataSource = ds.Tables(0)
+            '    pgcAttendance.BestFitColumnArea()
+
+            'End If
 
 
 
@@ -141,7 +266,7 @@ Public Class frmAttendaceReport
 
 #Region "Pivot Grid events"
 
-    Private Sub pgcAttendance_CustomDrawFieldValue(ByVal sender As System.Object, ByVal e As DevExpress.XtraPivotGrid.PivotCustomDrawFieldValueEventArgs) Handles pgcAttendance.CustomDrawFieldValue
+    Private Sub pgcAttendance_CustomDrawFieldValue(ByVal sender As System.Object, ByVal e As DevExpress.XtraPivotGrid.PivotCustomDrawFieldValueEventArgs)
 
         If (e.ValueType = PivotGridValueType.GrandTotal) Then
             ' e.Info.Caption = "Total"

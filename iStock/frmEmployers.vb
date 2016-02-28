@@ -381,6 +381,17 @@ Public Class frmEmployers
     End Sub
 #End Region
 
+#Region "Populate Working Employees Grid"
+    Public Sub PopulateWorkingEmployeesGrid()
+        Try
+            gcEmployers.DataSource = CWBEmployers.WorkingEmployeeSelectAll.Tables(0)
+            ' BandedGridColumn2.Caption = "Resigned Date"
+        Catch ex As Exception
+            MessageError(ex.ToString)
+        End Try
+    End Sub
+#End Region
+
 #Region "Populate Resign Employees Grid"
     Public Sub PopulateResignEmployeesGrid()
         Try
@@ -439,8 +450,11 @@ Public Class frmEmployers
         Select Case cmbEmployeeType.Text
 
             Case "All Employees"
-
                 Me.PopulateGrid()
+
+            Case "Working Employees"
+                Me.PopulateWorkingEmployeesGrid()
+
 
             Case "Resigned Employees"
                 Me.PopulateResignEmployeesGrid()
