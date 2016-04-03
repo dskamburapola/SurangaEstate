@@ -20,7 +20,7 @@ Partial Class frmWorkDayShedule
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim CompareAgainstControlValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule = New DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule()
+        Dim CompareAgainstControlValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule = New DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule()
         Me.deFromDate = New DevExpress.XtraEditors.DateEdit()
         Me.LayoutControl2 = New DevExpress.XtraLayout.LayoutControl()
         Me.sbProcess = New DevExpress.XtraEditors.SimpleButton()
@@ -176,10 +176,10 @@ Partial Class frmWorkDayShedule
         Me.deToDate.Size = New System.Drawing.Size(119, 20)
         Me.deToDate.StyleController = Me.LayoutControl2
         Me.deToDate.TabIndex = 1
-        CompareAgainstControlValidationRule2.CompareControlOperator = DevExpress.XtraEditors.DXErrorProvider.CompareControlOperator.GreaterOrEqual
-        CompareAgainstControlValidationRule2.Control = Me.deFromDate
-        CompareAgainstControlValidationRule2.ErrorText = "Value must be a recent Date"
-        Me.dxvpHistoryData.SetValidationRule(Me.deToDate, CompareAgainstControlValidationRule2)
+        CompareAgainstControlValidationRule1.CompareControlOperator = DevExpress.XtraEditors.DXErrorProvider.CompareControlOperator.GreaterOrEqual
+        CompareAgainstControlValidationRule1.Control = Me.deFromDate
+        CompareAgainstControlValidationRule1.ErrorText = "Value must be a recent Date"
+        Me.dxvpHistoryData.SetValidationRule(Me.deToDate, CompareAgainstControlValidationRule1)
         '
         'gcExpenses
         '

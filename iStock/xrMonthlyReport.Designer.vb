@@ -72,12 +72,12 @@ Partial Public Class xrMonthlyReport
         Me.XrTableRow37 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell39 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell35 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell22 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrAdvancePermenant = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell24 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow38 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell40 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell36 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell26 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrAdvanceStaff = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell27 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow39 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell28 = New DevExpress.XtraReports.UI.XRTableCell()
@@ -546,7 +546,7 @@ Partial Public Class xrMonthlyReport
         '
         'XrTableRow37
         '
-        Me.XrTableRow37.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell39, Me.XrTableCell35, Me.XrTableCell22, Me.XrTableCell24})
+        Me.XrTableRow37.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell39, Me.XrTableCell35, Me.xrAdvancePermenant, Me.XrTableCell24})
         Me.XrTableRow37.Name = "XrTableRow37"
         Me.XrTableRow37.Weight = 1.0R
         '
@@ -562,10 +562,10 @@ Partial Public Class xrMonthlyReport
         Me.XrTableCell35.Text = "Permanent" & Global.Microsoft.VisualBasic.ChrW(9)
         Me.XrTableCell35.Weight = 0.54013693204380342R
         '
-        'XrTableCell22
+        'xrAdvancePermenant
         '
-        Me.XrTableCell22.Name = "XrTableCell22"
-        Me.XrTableCell22.Weight = 0.8338149888900499R
+        Me.xrAdvancePermenant.Name = "xrAdvancePermenant"
+        Me.xrAdvancePermenant.Weight = 0.8338149888900499R
         '
         'XrTableCell24
         '
@@ -576,7 +576,7 @@ Partial Public Class xrMonthlyReport
         '
         'XrTableRow38
         '
-        Me.XrTableRow38.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell40, Me.XrTableCell36, Me.XrTableCell26, Me.XrTableCell27})
+        Me.XrTableRow38.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell40, Me.XrTableCell36, Me.xrAdvanceStaff, Me.XrTableCell27})
         Me.XrTableRow38.Name = "XrTableRow38"
         Me.XrTableRow38.Weight = 1.0R
         '
@@ -592,10 +592,10 @@ Partial Public Class xrMonthlyReport
         Me.XrTableCell36.Text = "Casual"
         Me.XrTableCell36.Weight = 0.54013693204380342R
         '
-        'XrTableCell26
+        'xrAdvanceStaff
         '
-        Me.XrTableCell26.Name = "XrTableCell26"
-        Me.XrTableCell26.Weight = 0.8338149888900499R
+        Me.xrAdvanceStaff.Name = "xrAdvanceStaff"
+        Me.xrAdvanceStaff.Weight = 0.8338149888900499R
         '
         'XrTableCell27
         '
@@ -1605,10 +1605,10 @@ Partial Public Class xrMonthlyReport
     Friend WithEvents XrTableCell18 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell20 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow37 As DevExpress.XtraReports.UI.XRTableRow
-    Friend WithEvents XrTableCell22 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents xrAdvancePermenant As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell24 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow38 As DevExpress.XtraReports.UI.XRTableRow
-    Friend WithEvents XrTableCell26 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents xrAdvanceStaff As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell27 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableRow39 As DevExpress.XtraReports.UI.XRTableRow
     Friend WithEvents XrTableCell28 As DevExpress.XtraReports.UI.XRTableCell

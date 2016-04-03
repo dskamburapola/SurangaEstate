@@ -66,6 +66,7 @@ Partial Class frmMain
         Me.BarButtonItem37 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem38 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem39 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem40 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup8 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -88,7 +89,6 @@ Partial Class frmMain
         Me.RibbonPageGroup15 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RepositoryItemPictureEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit()
         Me.RibbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
-        Me.BarButtonItem40 = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ApplicationMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -429,8 +429,15 @@ Partial Class frmMain
         '
         Me.BarButtonItem39.Caption = "Expenses"
         Me.BarButtonItem39.Id = 48
-        Me.BarButtonItem39.LargeGlyph = Global.iStock.My.Resources.Resources.Alert
+        Me.BarButtonItem39.LargeGlyph = Global.iStock.My.Resources.Resources.Magenta
         Me.BarButtonItem39.Name = "BarButtonItem39"
+        '
+        'BarButtonItem40
+        '
+        Me.BarButtonItem40.Caption = "Staff Salary Pay"
+        Me.BarButtonItem40.Id = 49
+        Me.BarButtonItem40.LargeGlyph = Global.iStock.My.Resources.Resources.Close
+        Me.BarButtonItem40.Name = "BarButtonItem40"
         '
         'RibbonPage1
         '
@@ -588,13 +595,6 @@ Partial Class frmMain
         Me.RibbonStatusBar1.Name = "RibbonStatusBar1"
         Me.RibbonStatusBar1.Ribbon = Me.RibbonControl
         Me.RibbonStatusBar1.Size = New System.Drawing.Size(1034, 31)
-        '
-        'BarButtonItem40
-        '
-        Me.BarButtonItem40.Caption = "Staff Salary Pay"
-        Me.BarButtonItem40.Id = 49
-        Me.BarButtonItem40.LargeGlyph = Global.iStock.My.Resources.Resources.Close
-        Me.BarButtonItem40.Name = "BarButtonItem40"
         '
         'frmMain
         '

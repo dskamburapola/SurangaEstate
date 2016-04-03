@@ -55,12 +55,15 @@
             Dim dt3 As DataTable
             Dim dt4 As DataTable
             Dim dt5 As DataTable
+            Dim dt6 As DataTable
 
             dt1 = ds.Tables(0)
             dt2 = ds.Tables(1)
             dt3 = ds.Tables(2)
             dt4 = ds.Tables(3)
             dt5 = ds.Tables(4)
+            dt6 = ds.Tables(5)
+
 
 
             Dim report As New xrMonthlyReport
@@ -229,6 +232,45 @@
 
             End If
 
+            '**********************************************************
+            If (dt6.Rows.Count > 0) Then
+
+                For i = 0 To dt6.Rows.Count - 1
+
+                    If dt6.Rows(i)("Designation").ToString() = "PERMANENT" Then
+
+                        report.xrAdvancePermenant.Text = dt6.Rows(i)("Advance").ToString()
+
+                    End If
+
+                    If dt6.Rows(i)("Designation").ToString() = "STAFF" Then
+
+                        report.xrAdvanceStaff.Text = dt6.Rows(i)("Advance").ToString()
+
+                    End If
+
+
+                    'Select Case i
+
+                    '    Case 0
+                    '        report.xrRubberSheetDes1.Text = "[" + dt6.Rows(i)("EmployerNo").ToString() + "] " + dt6.Rows(i)("EmployerName").ToString()
+                    '        report.xrRubberSheetAmt1.Text = dt6.Rows(i)("Quantity").ToString()
+
+                    '    Case 1
+                    '        report.xrRubberSheetDes2.Text = "[" + dt6.Rows(i)("EmployerNo").ToString() + "] " + dt6.Rows(i)("EmployerName").ToString()
+                    '        report.xrRubberSheetAmt2.Text = dt6.Rows(i)("Quantity").ToString()
+
+                    '    Case 2
+                    '        report.xrRubberSheetDes3.Text = "[" + dt6.Rows(i)("EmployerNo").ToString() + "] " + dt6.Rows(i)("EmployerName").ToString()
+                    '        report.xrRubberSheetAmt3.Text = dt6.Rows(i)("Quantity").ToString()
+
+
+                    'End Select
+
+                Next
+
+            End If
+            '********************************************************
 
             report.CreateDocument()
             report.BringToFront()

@@ -257,4 +257,9 @@ Public Class frmWorkDayShedule
         Me.DeleteWorkDayDescription()
         Me.SaveWorkDayDescription()
     End Sub
+
+    Private Sub bbClose_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbClose.ItemClick
+        Me.Close()
+
+    End Sub
 End Class

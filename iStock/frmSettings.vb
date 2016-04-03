@@ -91,6 +91,8 @@ Public Class frmSettings
                 .OverSheetsRate = Me.seOverSheetsRate.EditValue
                 .OverSheetsUpperLimit = Me.seOverSheetsUpperLimit.EditValue
                 .LowerSheetsRate = Me.seLowerSheetsRate.EditValue
+                .SmokingSheetsPayRate = seSmokingSheetsPayRate.EditValue
+
 
 
 
@@ -143,6 +145,7 @@ Public Class frmSettings
                 Me.seOverSheetsRate.EditValue = .OverSheetsRate
                 Me.seOverSheetsUpperLimit.EditValue = .OverSheetsUpperLimit
                 Me.seLowerSheetsRate.EditValue = .LowerSheetsRate
+                Me.seSmokingSheetsPayRate.EditValue = .SmokingSheetsPayRate
 
 
 

@@ -46,6 +46,11 @@ Partial Class frmSettings
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.seLowerSheetsRate = New DevExpress.XtraEditors.SpinEdit()
+        Me.seOverSheetsUpperLimit = New DevExpress.XtraEditors.SpinEdit()
+        Me.seOverSheetsRate = New DevExpress.XtraEditors.SpinEdit()
+        Me.seSheetsPerDay = New DevExpress.XtraEditors.SpinEdit()
+        Me.seLowerKgRate = New DevExpress.XtraEditors.SpinEdit()
         Me.seOverKgUpperLimit = New DevExpress.XtraEditors.SpinEdit()
         Me.cmbOutputType = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.seCasualOTPayRate = New DevExpress.XtraEditors.SpinEdit()
@@ -79,41 +84,43 @@ Partial Class frmSettings
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem3 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.dxvpSettings = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
-        Me.dxvpCodes = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
-        Me.LayoutControlItem20 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem12 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem17 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem16 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem13 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem15 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem9 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem11 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem21 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem14 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem6 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem7 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem8 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.seLowerKgRate = New DevExpress.XtraEditors.SpinEdit()
-        Me.LayoutControlItem22 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.seSheetsPerDay = New DevExpress.XtraEditors.SpinEdit()
-        Me.LayoutControlItem23 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.seOverSheetsRate = New DevExpress.XtraEditors.SpinEdit()
-        Me.LayoutControlItem24 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.seOverSheetsUpperLimit = New DevExpress.XtraEditors.SpinEdit()
-        Me.LayoutControlItem25 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.seLowerSheetsRate = New DevExpress.XtraEditors.SpinEdit()
-        Me.LayoutControlItem26 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlGroup4 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem13 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem21 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem22 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlGroup5 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem23 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem24 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem25 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem26 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlGroup6 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem16 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem14 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem11 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem17 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem12 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem15 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem9 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.dxvpSettings = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.dxvpCodes = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.LayoutControlItem20 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.seSmokingSheetsPayRate = New DevExpress.XtraEditors.SpinEdit()
+        Me.LayoutControlItem19 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.seLowerSheetsRate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.seOverSheetsUpperLimit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.seOverSheetsRate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.seSheetsPerDay.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.seLowerKgRate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.seOverKgUpperLimit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbOutputType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.seCasualOTPayRate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -145,38 +152,35 @@ Partial Class frmSettings
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dxvpSettings, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dxvpCodes, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem20, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem21, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.seLowerKgRate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem22, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.seSheetsPerDay.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem23, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.seOverSheetsRate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem24, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.seOverSheetsUpperLimit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem25, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.seLowerSheetsRate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem26, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem21, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem22, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem23, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem24, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem25, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem26, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dxvpSettings, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dxvpCodes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem20, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.seSmokingSheetsPayRate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem19, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarManager1
@@ -277,6 +281,7 @@ Partial Class frmSettings
         '
         'LayoutControl1
         '
+        Me.LayoutControl1.Controls.Add(Me.seSmokingSheetsPayRate)
         Me.LayoutControl1.Controls.Add(Me.seLowerSheetsRate)
         Me.LayoutControl1.Controls.Add(Me.seOverSheetsUpperLimit)
         Me.LayoutControl1.Controls.Add(Me.seOverSheetsRate)
@@ -308,6 +313,61 @@ Partial Class frmSettings
         Me.LayoutControl1.Size = New System.Drawing.Size(888, 605)
         Me.LayoutControl1.TabIndex = 4
         Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'seLowerSheetsRate
+        '
+        Me.seLowerSheetsRate.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.seLowerSheetsRate.Location = New System.Drawing.Point(676, 462)
+        Me.seLowerSheetsRate.MenuManager = Me.BarManager1
+        Me.seLowerSheetsRate.Name = "seLowerSheetsRate"
+        Me.seLowerSheetsRate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.seLowerSheetsRate.Size = New System.Drawing.Size(71, 20)
+        Me.seLowerSheetsRate.StyleController = Me.LayoutControl1
+        Me.seLowerSheetsRate.TabIndex = 37
+        '
+        'seOverSheetsUpperLimit
+        '
+        Me.seOverSheetsUpperLimit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.seOverSheetsUpperLimit.Location = New System.Drawing.Point(676, 438)
+        Me.seOverSheetsUpperLimit.MenuManager = Me.BarManager1
+        Me.seOverSheetsUpperLimit.Name = "seOverSheetsUpperLimit"
+        Me.seOverSheetsUpperLimit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.seOverSheetsUpperLimit.Size = New System.Drawing.Size(71, 20)
+        Me.seOverSheetsUpperLimit.StyleController = Me.LayoutControl1
+        Me.seOverSheetsUpperLimit.TabIndex = 36
+        '
+        'seOverSheetsRate
+        '
+        Me.seOverSheetsRate.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.seOverSheetsRate.Location = New System.Drawing.Point(676, 414)
+        Me.seOverSheetsRate.MenuManager = Me.BarManager1
+        Me.seOverSheetsRate.Name = "seOverSheetsRate"
+        Me.seOverSheetsRate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.seOverSheetsRate.Size = New System.Drawing.Size(71, 20)
+        Me.seOverSheetsRate.StyleController = Me.LayoutControl1
+        Me.seOverSheetsRate.TabIndex = 35
+        '
+        'seSheetsPerDay
+        '
+        Me.seSheetsPerDay.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.seSheetsPerDay.Location = New System.Drawing.Point(676, 390)
+        Me.seSheetsPerDay.MenuManager = Me.BarManager1
+        Me.seSheetsPerDay.Name = "seSheetsPerDay"
+        Me.seSheetsPerDay.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.seSheetsPerDay.Size = New System.Drawing.Size(71, 20)
+        Me.seSheetsPerDay.StyleController = Me.LayoutControl1
+        Me.seSheetsPerDay.TabIndex = 34
+        '
+        'seLowerKgRate
+        '
+        Me.seLowerKgRate.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.seLowerKgRate.Location = New System.Drawing.Point(356, 462)
+        Me.seLowerKgRate.MenuManager = Me.BarManager1
+        Me.seLowerKgRate.Name = "seLowerKgRate"
+        Me.seLowerKgRate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.seLowerKgRate.Size = New System.Drawing.Size(72, 20)
+        Me.seLowerKgRate.StyleController = Me.LayoutControl1
+        Me.seLowerKgRate.TabIndex = 33
         '
         'seOverKgUpperLimit
         '
@@ -574,7 +634,7 @@ Partial Class frmSettings
         'LayoutControlGroup1
         '
         Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlGroup3, Me.EmptySpaceItem1, Me.EmptySpaceItem2, Me.EmptySpaceItem3, Me.EmptySpaceItem6, Me.EmptySpaceItem7, Me.EmptySpaceItem8, Me.LayoutControlGroup4, Me.LayoutControlGroup5, Me.LayoutControlGroup6})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlGroup3, Me.EmptySpaceItem1, Me.EmptySpaceItem2, Me.EmptySpaceItem3, Me.EmptySpaceItem6, Me.EmptySpaceItem7, Me.EmptySpaceItem8, Me.LayoutControlGroup4, Me.LayoutControlGroup5, Me.LayoutControlGroup6, Me.LayoutControlItem19})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(888, 605)
@@ -714,147 +774,6 @@ Partial Class frmSettings
         Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
-        'LayoutControlItem20
-        '
-        Me.LayoutControlItem20.Control = Me.seOverKgsRate
-        Me.LayoutControlItem20.CustomizationFormText = "Over Kg Rate"
-        Me.LayoutControlItem20.Location = New System.Drawing.Point(336, 48)
-        Me.LayoutControlItem20.Name = "LayoutControlItem13"
-        Me.LayoutControlItem20.Size = New System.Drawing.Size(279, 24)
-        Me.LayoutControlItem20.Text = "Over Kgs Rate (Rs.)"
-        Me.LayoutControlItem20.TextSize = New System.Drawing.Size(196, 13)
-        Me.LayoutControlItem20.TextToControlDistance = 5
-        '
-        'LayoutControlItem1
-        '
-        Me.LayoutControlItem1.Control = Me.seDayRate
-        Me.LayoutControlItem1.CustomizationFormText = "Day Rate"
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(307, 24)
-        Me.LayoutControlItem1.Text = "Day Pay Rate (Rs.)"
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(217, 13)
-        '
-        'LayoutControlItem12
-        '
-        Me.LayoutControlItem12.Control = Me.seOTRate
-        Me.LayoutControlItem12.CustomizationFormText = "OT Rate"
-        Me.LayoutControlItem12.Location = New System.Drawing.Point(307, 0)
-        Me.LayoutControlItem12.Name = "LayoutControlItem12"
-        Me.LayoutControlItem12.Size = New System.Drawing.Size(308, 24)
-        Me.LayoutControlItem12.Text = "OT Pay Rate (Rs.)"
-        Me.LayoutControlItem12.TextSize = New System.Drawing.Size(217, 13)
-        '
-        'LayoutControlItem4
-        '
-        Me.LayoutControlItem4.Control = Me.seCasualPayRate
-        Me.LayoutControlItem4.CustomizationFormText = "Casual Pay Rate"
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 24)
-        Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(307, 24)
-        Me.LayoutControlItem4.Text = "Casual Pay Rate (Rs.)"
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(217, 13)
-        '
-        'LayoutControlItem17
-        '
-        Me.LayoutControlItem17.Control = Me.seCasualOTPayRate
-        Me.LayoutControlItem17.CustomizationFormText = "Casual OT Pay Rate"
-        Me.LayoutControlItem17.Location = New System.Drawing.Point(307, 24)
-        Me.LayoutControlItem17.Name = "LayoutControlItem17"
-        Me.LayoutControlItem17.Size = New System.Drawing.Size(308, 24)
-        Me.LayoutControlItem17.Text = "Casual OT Pay Rate (Rs.)"
-        Me.LayoutControlItem17.TextSize = New System.Drawing.Size(217, 13)
-        '
-        'LayoutControlItem16
-        '
-        Me.LayoutControlItem16.Control = Me.seETF
-        Me.LayoutControlItem16.CustomizationFormText = "ETF"
-        Me.LayoutControlItem16.Location = New System.Drawing.Point(308, 96)
-        Me.LayoutControlItem16.Name = "LayoutControlItem16"
-        Me.LayoutControlItem16.Size = New System.Drawing.Size(307, 24)
-        Me.LayoutControlItem16.Text = "ETF (%)"
-        Me.LayoutControlItem16.TextSize = New System.Drawing.Size(217, 13)
-        '
-        'LayoutControlItem13
-        '
-        Me.LayoutControlItem13.Control = Me.seOverKgsRate
-        Me.LayoutControlItem13.CustomizationFormText = "Over Kg Rate"
-        Me.LayoutControlItem13.Location = New System.Drawing.Point(0, 24)
-        Me.LayoutControlItem13.Name = "LayoutControlItem13"
-        Me.LayoutControlItem13.Size = New System.Drawing.Size(296, 24)
-        Me.LayoutControlItem13.Text = "Over Kgs Rate (Rs.)"
-        Me.LayoutControlItem13.TextSize = New System.Drawing.Size(217, 13)
-        '
-        'LayoutControlItem3
-        '
-        Me.LayoutControlItem3.Control = Me.seIncentiveDays
-        Me.LayoutControlItem3.CustomizationFormText = "Incentive Days"
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 72)
-        Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(307, 24)
-        Me.LayoutControlItem3.Text = "Evaluation Margin (Days)"
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(217, 13)
-        '
-        'LayoutControlItem2
-        '
-        Me.LayoutControlItem2.Control = Me.seKgsPerDay
-        Me.LayoutControlItem2.CustomizationFormText = "Kgs per Day"
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(296, 24)
-        Me.LayoutControlItem2.Text = "Mandatory over Kg margin per Day (Kgs)"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(217, 13)
-        '
-        'LayoutControlItem15
-        '
-        Me.LayoutControlItem15.Control = Me.seEPF
-        Me.LayoutControlItem15.CustomizationFormText = "EPF "
-        Me.LayoutControlItem15.Location = New System.Drawing.Point(0, 96)
-        Me.LayoutControlItem15.Name = "LayoutControlItem15"
-        Me.LayoutControlItem15.Size = New System.Drawing.Size(308, 24)
-        Me.LayoutControlItem15.Text = "EPF (%)"
-        Me.LayoutControlItem15.TextSize = New System.Drawing.Size(217, 13)
-        '
-        'LayoutControlItem9
-        '
-        Me.LayoutControlItem9.Control = Me.sePayChitCost
-        Me.LayoutControlItem9.CustomizationFormText = "LayoutControlItem9"
-        Me.LayoutControlItem9.Location = New System.Drawing.Point(0, 48)
-        Me.LayoutControlItem9.Name = "LayoutControlItem9"
-        Me.LayoutControlItem9.Size = New System.Drawing.Size(307, 24)
-        Me.LayoutControlItem9.Text = "Pay Chit Cost (Rs.)"
-        Me.LayoutControlItem9.TextSize = New System.Drawing.Size(217, 13)
-        '
-        'LayoutControlItem11
-        '
-        Me.LayoutControlItem11.Control = Me.seEvalutionAllowance
-        Me.LayoutControlItem11.CustomizationFormText = "Devalution Allowance"
-        Me.LayoutControlItem11.Location = New System.Drawing.Point(307, 48)
-        Me.LayoutControlItem11.Name = "LayoutControlItem11"
-        Me.LayoutControlItem11.Size = New System.Drawing.Size(308, 24)
-        Me.LayoutControlItem11.Text = "Evaluation Allowance (Rs.)"
-        Me.LayoutControlItem11.TextSize = New System.Drawing.Size(217, 13)
-        '
-        'LayoutControlItem21
-        '
-        Me.LayoutControlItem21.Control = Me.seOverKgUpperLimit
-        Me.LayoutControlItem21.CustomizationFormText = "Over Kg Upper Limit (Kg)"
-        Me.LayoutControlItem21.Location = New System.Drawing.Point(0, 48)
-        Me.LayoutControlItem21.Name = "LayoutControlItem21"
-        Me.LayoutControlItem21.Size = New System.Drawing.Size(296, 24)
-        Me.LayoutControlItem21.Text = "Over Kg Upper Limit (Kg)"
-        Me.LayoutControlItem21.TextSize = New System.Drawing.Size(217, 13)
-        '
-        'LayoutControlItem14
-        '
-        Me.LayoutControlItem14.Control = Me.seWCPay
-        Me.LayoutControlItem14.CustomizationFormText = "WC Pay"
-        Me.LayoutControlItem14.Location = New System.Drawing.Point(307, 72)
-        Me.LayoutControlItem14.Name = "LayoutControlItem14"
-        Me.LayoutControlItem14.Size = New System.Drawing.Size(308, 24)
-        Me.LayoutControlItem14.Text = "WC Pay Rate (Rs.)"
-        Me.LayoutControlItem14.TextSize = New System.Drawing.Size(217, 13)
-        '
         'EmptySpaceItem6
         '
         Me.EmptySpaceItem6.AllowHotTrack = False
@@ -869,9 +788,9 @@ Partial Class frmSettings
         '
         Me.EmptySpaceItem7.AllowHotTrack = False
         Me.EmptySpaceItem7.CustomizationFormText = "EmptySpaceItem7"
-        Me.EmptySpaceItem7.Location = New System.Drawing.Point(112, 541)
+        Me.EmptySpaceItem7.Location = New System.Drawing.Point(112, 510)
         Me.EmptySpaceItem7.Name = "EmptySpaceItem7"
-        Me.EmptySpaceItem7.Size = New System.Drawing.Size(639, 14)
+        Me.EmptySpaceItem7.Size = New System.Drawing.Size(639, 45)
         Me.EmptySpaceItem7.Text = "EmptySpaceItem7"
         Me.EmptySpaceItem7.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -879,22 +798,50 @@ Partial Class frmSettings
         '
         Me.EmptySpaceItem8.AllowHotTrack = False
         Me.EmptySpaceItem8.CustomizationFormText = "EmptySpaceItem8"
-        Me.EmptySpaceItem8.Location = New System.Drawing.Point(112, 486)
+        Me.EmptySpaceItem8.Location = New System.Drawing.Point(431, 486)
         Me.EmptySpaceItem8.Name = "EmptySpaceItem8"
-        Me.EmptySpaceItem8.Size = New System.Drawing.Size(639, 55)
+        Me.EmptySpaceItem8.Size = New System.Drawing.Size(320, 24)
         Me.EmptySpaceItem8.Text = "EmptySpaceItem8"
         Me.EmptySpaceItem8.TextSize = New System.Drawing.Size(0, 0)
         '
-        'seLowerKgRate
+        'LayoutControlGroup4
         '
-        Me.seLowerKgRate.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.seLowerKgRate.Location = New System.Drawing.Point(356, 462)
-        Me.seLowerKgRate.MenuManager = Me.BarManager1
-        Me.seLowerKgRate.Name = "seLowerKgRate"
-        Me.seLowerKgRate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.seLowerKgRate.Size = New System.Drawing.Size(72, 20)
-        Me.seLowerKgRate.StyleController = Me.LayoutControl1
-        Me.seLowerKgRate.TabIndex = 33
+        Me.LayoutControlGroup4.CustomizationFormText = "Plucking"
+        Me.LayoutControlGroup4.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem13, Me.LayoutControlItem21, Me.LayoutControlItem22})
+        Me.LayoutControlGroup4.Location = New System.Drawing.Point(112, 347)
+        Me.LayoutControlGroup4.Name = "LayoutControlGroup4"
+        Me.LayoutControlGroup4.Size = New System.Drawing.Size(320, 139)
+        Me.LayoutControlGroup4.Text = "Plucking"
+        '
+        'LayoutControlItem2
+        '
+        Me.LayoutControlItem2.Control = Me.seKgsPerDay
+        Me.LayoutControlItem2.CustomizationFormText = "Kgs per Day"
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem2.Name = "LayoutControlItem2"
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(296, 24)
+        Me.LayoutControlItem2.Text = "Mandatory over Kg margin per Day (Kgs)"
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(217, 13)
+        '
+        'LayoutControlItem13
+        '
+        Me.LayoutControlItem13.Control = Me.seOverKgsRate
+        Me.LayoutControlItem13.CustomizationFormText = "Over Kg Rate"
+        Me.LayoutControlItem13.Location = New System.Drawing.Point(0, 24)
+        Me.LayoutControlItem13.Name = "LayoutControlItem13"
+        Me.LayoutControlItem13.Size = New System.Drawing.Size(296, 24)
+        Me.LayoutControlItem13.Text = "Over Kgs Rate (Rs.)"
+        Me.LayoutControlItem13.TextSize = New System.Drawing.Size(217, 13)
+        '
+        'LayoutControlItem21
+        '
+        Me.LayoutControlItem21.Control = Me.seOverKgUpperLimit
+        Me.LayoutControlItem21.CustomizationFormText = "Over Kg Upper Limit (Kg)"
+        Me.LayoutControlItem21.Location = New System.Drawing.Point(0, 48)
+        Me.LayoutControlItem21.Name = "LayoutControlItem21"
+        Me.LayoutControlItem21.Size = New System.Drawing.Size(296, 24)
+        Me.LayoutControlItem21.Text = "Over Kg Upper Limit (Kg)"
+        Me.LayoutControlItem21.TextSize = New System.Drawing.Size(217, 13)
         '
         'LayoutControlItem22
         '
@@ -906,16 +853,14 @@ Partial Class frmSettings
         Me.LayoutControlItem22.Text = "Lower Kg Rate (Rs.)"
         Me.LayoutControlItem22.TextSize = New System.Drawing.Size(217, 13)
         '
-        'seSheetsPerDay
+        'LayoutControlGroup5
         '
-        Me.seSheetsPerDay.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.seSheetsPerDay.Location = New System.Drawing.Point(676, 390)
-        Me.seSheetsPerDay.MenuManager = Me.BarManager1
-        Me.seSheetsPerDay.Name = "seSheetsPerDay"
-        Me.seSheetsPerDay.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.seSheetsPerDay.Size = New System.Drawing.Size(71, 20)
-        Me.seSheetsPerDay.StyleController = Me.LayoutControl1
-        Me.seSheetsPerDay.TabIndex = 34
+        Me.LayoutControlGroup5.CustomizationFormText = "Tapping"
+        Me.LayoutControlGroup5.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem23, Me.LayoutControlItem24, Me.LayoutControlItem25, Me.LayoutControlItem26})
+        Me.LayoutControlGroup5.Location = New System.Drawing.Point(432, 347)
+        Me.LayoutControlGroup5.Name = "LayoutControlGroup5"
+        Me.LayoutControlGroup5.Size = New System.Drawing.Size(319, 139)
+        Me.LayoutControlGroup5.Text = "Tapping"
         '
         'LayoutControlItem23
         '
@@ -927,17 +872,6 @@ Partial Class frmSettings
         Me.LayoutControlItem23.Text = "Mandatory over Sheets margin per Day (Kgs)"
         Me.LayoutControlItem23.TextSize = New System.Drawing.Size(217, 13)
         '
-        'seOverSheetsRate
-        '
-        Me.seOverSheetsRate.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.seOverSheetsRate.Location = New System.Drawing.Point(676, 414)
-        Me.seOverSheetsRate.MenuManager = Me.BarManager1
-        Me.seOverSheetsRate.Name = "seOverSheetsRate"
-        Me.seOverSheetsRate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.seOverSheetsRate.Size = New System.Drawing.Size(71, 20)
-        Me.seOverSheetsRate.StyleController = Me.LayoutControl1
-        Me.seOverSheetsRate.TabIndex = 35
-        '
         'LayoutControlItem24
         '
         Me.LayoutControlItem24.Control = Me.seOverSheetsRate
@@ -947,17 +881,6 @@ Partial Class frmSettings
         Me.LayoutControlItem24.Size = New System.Drawing.Size(295, 24)
         Me.LayoutControlItem24.Text = " Over Sheets Rate (Rs.)"
         Me.LayoutControlItem24.TextSize = New System.Drawing.Size(217, 13)
-        '
-        'seOverSheetsUpperLimit
-        '
-        Me.seOverSheetsUpperLimit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.seOverSheetsUpperLimit.Location = New System.Drawing.Point(676, 438)
-        Me.seOverSheetsUpperLimit.MenuManager = Me.BarManager1
-        Me.seOverSheetsUpperLimit.Name = "seOverSheetsUpperLimit"
-        Me.seOverSheetsUpperLimit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.seOverSheetsUpperLimit.Size = New System.Drawing.Size(71, 20)
-        Me.seOverSheetsUpperLimit.StyleController = Me.LayoutControl1
-        Me.seOverSheetsUpperLimit.TabIndex = 36
         '
         'LayoutControlItem25
         '
@@ -969,17 +892,6 @@ Partial Class frmSettings
         Me.LayoutControlItem25.Text = "Over Sheets Upper Limit"
         Me.LayoutControlItem25.TextSize = New System.Drawing.Size(217, 13)
         '
-        'seLowerSheetsRate
-        '
-        Me.seLowerSheetsRate.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.seLowerSheetsRate.Location = New System.Drawing.Point(676, 462)
-        Me.seLowerSheetsRate.MenuManager = Me.BarManager1
-        Me.seLowerSheetsRate.Name = "seLowerSheetsRate"
-        Me.seLowerSheetsRate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.seLowerSheetsRate.Size = New System.Drawing.Size(71, 20)
-        Me.seLowerSheetsRate.StyleController = Me.LayoutControl1
-        Me.seLowerSheetsRate.TabIndex = 37
-        '
         'LayoutControlItem26
         '
         Me.LayoutControlItem26.Control = Me.seLowerSheetsRate
@@ -990,24 +902,6 @@ Partial Class frmSettings
         Me.LayoutControlItem26.Text = "Lower Sheets Rate (Rs.)"
         Me.LayoutControlItem26.TextSize = New System.Drawing.Size(217, 13)
         '
-        'LayoutControlGroup4
-        '
-        Me.LayoutControlGroup4.CustomizationFormText = "Plucking"
-        Me.LayoutControlGroup4.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem13, Me.LayoutControlItem21, Me.LayoutControlItem22})
-        Me.LayoutControlGroup4.Location = New System.Drawing.Point(112, 347)
-        Me.LayoutControlGroup4.Name = "LayoutControlGroup4"
-        Me.LayoutControlGroup4.Size = New System.Drawing.Size(320, 139)
-        Me.LayoutControlGroup4.Text = "Plucking"
-        '
-        'LayoutControlGroup5
-        '
-        Me.LayoutControlGroup5.CustomizationFormText = "Tapping"
-        Me.LayoutControlGroup5.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem23, Me.LayoutControlItem24, Me.LayoutControlItem25, Me.LayoutControlItem26})
-        Me.LayoutControlGroup5.Location = New System.Drawing.Point(432, 347)
-        Me.LayoutControlGroup5.Name = "LayoutControlGroup5"
-        Me.LayoutControlGroup5.Size = New System.Drawing.Size(319, 139)
-        Me.LayoutControlGroup5.Text = "Tapping"
-        '
         'LayoutControlGroup6
         '
         Me.LayoutControlGroup6.CustomizationFormText = "General"
@@ -1016,6 +910,138 @@ Partial Class frmSettings
         Me.LayoutControlGroup6.Name = "LayoutControlGroup6"
         Me.LayoutControlGroup6.Size = New System.Drawing.Size(639, 163)
         Me.LayoutControlGroup6.Text = "General"
+        '
+        'LayoutControlItem16
+        '
+        Me.LayoutControlItem16.Control = Me.seETF
+        Me.LayoutControlItem16.CustomizationFormText = "ETF"
+        Me.LayoutControlItem16.Location = New System.Drawing.Point(308, 96)
+        Me.LayoutControlItem16.Name = "LayoutControlItem16"
+        Me.LayoutControlItem16.Size = New System.Drawing.Size(307, 24)
+        Me.LayoutControlItem16.Text = "ETF (%)"
+        Me.LayoutControlItem16.TextSize = New System.Drawing.Size(217, 13)
+        '
+        'LayoutControlItem14
+        '
+        Me.LayoutControlItem14.Control = Me.seWCPay
+        Me.LayoutControlItem14.CustomizationFormText = "WC Pay"
+        Me.LayoutControlItem14.Location = New System.Drawing.Point(307, 72)
+        Me.LayoutControlItem14.Name = "LayoutControlItem14"
+        Me.LayoutControlItem14.Size = New System.Drawing.Size(308, 24)
+        Me.LayoutControlItem14.Text = "WC Pay Rate (Rs.)"
+        Me.LayoutControlItem14.TextSize = New System.Drawing.Size(217, 13)
+        '
+        'LayoutControlItem11
+        '
+        Me.LayoutControlItem11.Control = Me.seEvalutionAllowance
+        Me.LayoutControlItem11.CustomizationFormText = "Devalution Allowance"
+        Me.LayoutControlItem11.Location = New System.Drawing.Point(307, 48)
+        Me.LayoutControlItem11.Name = "LayoutControlItem11"
+        Me.LayoutControlItem11.Size = New System.Drawing.Size(308, 24)
+        Me.LayoutControlItem11.Text = "Evaluation Allowance (Rs.)"
+        Me.LayoutControlItem11.TextSize = New System.Drawing.Size(217, 13)
+        '
+        'LayoutControlItem17
+        '
+        Me.LayoutControlItem17.Control = Me.seCasualOTPayRate
+        Me.LayoutControlItem17.CustomizationFormText = "Casual OT Pay Rate"
+        Me.LayoutControlItem17.Location = New System.Drawing.Point(307, 24)
+        Me.LayoutControlItem17.Name = "LayoutControlItem17"
+        Me.LayoutControlItem17.Size = New System.Drawing.Size(308, 24)
+        Me.LayoutControlItem17.Text = "Casual OT Pay Rate (Rs.)"
+        Me.LayoutControlItem17.TextSize = New System.Drawing.Size(217, 13)
+        '
+        'LayoutControlItem12
+        '
+        Me.LayoutControlItem12.Control = Me.seOTRate
+        Me.LayoutControlItem12.CustomizationFormText = "OT Rate"
+        Me.LayoutControlItem12.Location = New System.Drawing.Point(307, 0)
+        Me.LayoutControlItem12.Name = "LayoutControlItem12"
+        Me.LayoutControlItem12.Size = New System.Drawing.Size(308, 24)
+        Me.LayoutControlItem12.Text = "OT Pay Rate (Rs.)"
+        Me.LayoutControlItem12.TextSize = New System.Drawing.Size(217, 13)
+        '
+        'LayoutControlItem15
+        '
+        Me.LayoutControlItem15.Control = Me.seEPF
+        Me.LayoutControlItem15.CustomizationFormText = "EPF "
+        Me.LayoutControlItem15.Location = New System.Drawing.Point(0, 96)
+        Me.LayoutControlItem15.Name = "LayoutControlItem15"
+        Me.LayoutControlItem15.Size = New System.Drawing.Size(308, 24)
+        Me.LayoutControlItem15.Text = "EPF (%)"
+        Me.LayoutControlItem15.TextSize = New System.Drawing.Size(217, 13)
+        '
+        'LayoutControlItem3
+        '
+        Me.LayoutControlItem3.Control = Me.seIncentiveDays
+        Me.LayoutControlItem3.CustomizationFormText = "Incentive Days"
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 72)
+        Me.LayoutControlItem3.Name = "LayoutControlItem3"
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(307, 24)
+        Me.LayoutControlItem3.Text = "Evaluation Margin (Days)"
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(217, 13)
+        '
+        'LayoutControlItem9
+        '
+        Me.LayoutControlItem9.Control = Me.sePayChitCost
+        Me.LayoutControlItem9.CustomizationFormText = "LayoutControlItem9"
+        Me.LayoutControlItem9.Location = New System.Drawing.Point(0, 48)
+        Me.LayoutControlItem9.Name = "LayoutControlItem9"
+        Me.LayoutControlItem9.Size = New System.Drawing.Size(307, 24)
+        Me.LayoutControlItem9.Text = "Pay Chit Cost (Rs.)"
+        Me.LayoutControlItem9.TextSize = New System.Drawing.Size(217, 13)
+        '
+        'LayoutControlItem4
+        '
+        Me.LayoutControlItem4.Control = Me.seCasualPayRate
+        Me.LayoutControlItem4.CustomizationFormText = "Casual Pay Rate"
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 24)
+        Me.LayoutControlItem4.Name = "LayoutControlItem4"
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(307, 24)
+        Me.LayoutControlItem4.Text = "Casual Pay Rate (Rs.)"
+        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(217, 13)
+        '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.seDayRate
+        Me.LayoutControlItem1.CustomizationFormText = "Day Rate"
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(307, 24)
+        Me.LayoutControlItem1.Text = "Day Pay Rate (Rs.)"
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(217, 13)
+        '
+        'LayoutControlItem20
+        '
+        Me.LayoutControlItem20.Control = Me.seOverKgsRate
+        Me.LayoutControlItem20.CustomizationFormText = "Over Kg Rate"
+        Me.LayoutControlItem20.Location = New System.Drawing.Point(336, 48)
+        Me.LayoutControlItem20.Name = "LayoutControlItem13"
+        Me.LayoutControlItem20.Size = New System.Drawing.Size(279, 24)
+        Me.LayoutControlItem20.Text = "Over Kgs Rate (Rs.)"
+        Me.LayoutControlItem20.TextSize = New System.Drawing.Size(196, 13)
+        Me.LayoutControlItem20.TextToControlDistance = 5
+        '
+        'seSmokingSheetsPayRate
+        '
+        Me.seSmokingSheetsPayRate.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.seSmokingSheetsPayRate.Location = New System.Drawing.Point(344, 498)
+        Me.seSmokingSheetsPayRate.MenuManager = Me.BarManager1
+        Me.seSmokingSheetsPayRate.Name = "seSmokingSheetsPayRate"
+        Me.seSmokingSheetsPayRate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.seSmokingSheetsPayRate.Size = New System.Drawing.Size(95, 20)
+        Me.seSmokingSheetsPayRate.StyleController = Me.LayoutControl1
+        Me.seSmokingSheetsPayRate.TabIndex = 38
+        '
+        'LayoutControlItem19
+        '
+        Me.LayoutControlItem19.Control = Me.seSmokingSheetsPayRate
+        Me.LayoutControlItem19.CustomizationFormText = "Smoking Sheets Pay Rate"
+        Me.LayoutControlItem19.Location = New System.Drawing.Point(112, 486)
+        Me.LayoutControlItem19.Name = "LayoutControlItem19"
+        Me.LayoutControlItem19.Size = New System.Drawing.Size(319, 24)
+        Me.LayoutControlItem19.Text = "Smoking Sheets Pay Rate"
+        Me.LayoutControlItem19.TextSize = New System.Drawing.Size(217, 13)
         '
         'frmSettings
         '
@@ -1033,6 +1059,11 @@ Partial Class frmSettings
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.seLowerSheetsRate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.seOverSheetsUpperLimit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.seOverSheetsRate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.seSheetsPerDay.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.seLowerKgRate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.seOverKgUpperLimit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbOutputType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.seCasualOTPayRate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1064,38 +1095,35 @@ Partial Class frmSettings
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dxvpSettings, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dxvpCodes, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem20, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem21, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.seLowerKgRate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem22, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.seSheetsPerDay.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem23, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.seOverSheetsRate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem24, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.seOverSheetsUpperLimit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem25, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.seLowerSheetsRate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem26, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem21, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem22, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem23, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem24, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem25, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem26, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dxvpSettings, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dxvpCodes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem20, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.seSmokingSheetsPayRate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem19, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1179,4 +1207,6 @@ Partial Class frmSettings
     Friend WithEvents LayoutControlItem25 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem26 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlGroup6 As DevExpress.XtraLayout.LayoutControlGroup
+    Friend WithEvents seSmokingSheetsPayRate As DevExpress.XtraEditors.SpinEdit
+    Friend WithEvents LayoutControlItem19 As DevExpress.XtraLayout.LayoutControlItem
 End Class
