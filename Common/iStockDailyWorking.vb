@@ -1381,12 +1381,12 @@ Public Class iStockDailyWorking
     End Function
 #End Region
 
+
 #Region "Field Performance Report"
-    Public Function FeildPerformanceReport(ByVal type As Long, ByVal currentDate As Date) As DataSet
+    Public Function FeildPerformanceReport(ByVal currentDate As Date) As DataSet
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
-            Dim DBC As DbCommand = DB.GetStoredProcCommand("ReportFieldPerformance")
-            DB.AddInParameter(DBC, "@AbreviationID", DbType.Int64, type)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand("FIELDPERFORMANCE")
             DB.AddInParameter(DBC, "@IssueDate", DbType.Date, currentDate)
 
             Return DB.ExecuteDataSet(DBC)
@@ -1399,5 +1399,25 @@ Public Class iStockDailyWorking
 
     End Function
 #End Region
+
+
+    '#Region "Field Performance Report"
+    '    Public Function FeildPerformanceReport(ByVal type As Long, ByVal currentDate As Date) As DataSet
+    '        Try
+    '            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+    '            Dim DBC As DbCommand = DB.GetStoredProcCommand("ReportFieldPerformance")
+    '            DB.AddInParameter(DBC, "@AbreviationID", DbType.Int64, type)
+    '            DB.AddInParameter(DBC, "@IssueDate", DbType.Date, currentDate)
+
+    '            Return DB.ExecuteDataSet(DBC)
+    '            DBC.Dispose()
+    '        Catch ex As Exception
+    '            Return Nothing
+    '            Throw
+    '        End Try
+
+
+    '    End Function
+    '#End Region
 
 End Class

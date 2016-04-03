@@ -83,7 +83,7 @@ Public Class frmOtherIncome
     End Sub
 
     Private Sub frmOtherIncome_Activated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Activated
-        PopulateStockItemsGridLookup()
+        '   PopulateStockItemsGridLookup()
     End Sub
 
 #End Region
@@ -218,7 +218,7 @@ Public Class frmOtherIncome
         Me.seRate.EditValue = 0
         Me.seQuantity.EditValue = 0
         dxvpOtherIncomes.RemoveControlError(lupOtherIncomeType)
-        Me.leStock.EditValue = Nothing
+        Me.seDeduction.EditValue = Nothing
         Me.lupOtherIncomeType.Focus()
 
     End Sub
@@ -306,7 +306,7 @@ Public Class frmOtherIncome
                 .Note = Me.meNote.EditValue
                 .CreatedBy = UserID
                 .UpdatedBy = UserID
-                .StockID = leStock.EditValue
+                .Deduction = seDeduction.EditValue
                 .InsertOtherIncome(_DB, _Transaction)
 
                 With CWBCollection
@@ -377,7 +377,7 @@ Public Class frmOtherIncome
                 .Note = Me.meNote.EditValue
                 .CreatedBy = UserID
                 .UpdatedBy = UserID
-                .StockID = leStock.EditValue
+                .Deduction = seDeduction.EditValue
 
                 .InsertOtherIncome(_DB, _Transaction)
 
@@ -508,7 +508,7 @@ Public Class frmOtherIncome
                 seRate.EditValue = .Rate
                 seQuantity.EditValue = .Quantity
                 meNote.EditValue = .Note
-                leStock.EditValue = .StockID
+                seDeduction.EditValue = .Deduction
 
             End With
         End If
@@ -538,22 +538,31 @@ Public Class frmOtherIncome
     End Sub
 #End Region
 
-#Region "Populate Stock Items Grid Lookup"
-    Public Sub PopulateStockItemsGridLookup()
+    '#Region "Populate Stock Items Grid Lookup"
+    '    Public Sub PopulateStockItemsGridLookup()
 
-        Try
-            With leStock
-                .Properties.DataSource = iStockItems.GetAllStockItems.Tables(0)
-                .Properties.DisplayMember = "StockCode"
-                .Properties.ValueMember = "StockID"
-            End With
+    '        Try
+    '            With leStock
+    '                .Properties.DataSource = iStockItems.GetAllStockItems.Tables(0)
+    '                .Properties.DisplayMember = "StockCode"
+    '                .Properties.ValueMember = "StockID"
+    '            End With
 
 
-        Catch ex As Exception
-            MessageError(ex.ToString)
-        End Try
-    End Sub
-#End Region
+    '        Catch ex As Exception
+    '            MessageError(ex.ToString)
+    '        End Try
+    '    End Sub
+    '#End Region
 
   
+    Private Sub seQuantity_EditValueChanged(sender As Object, e As EventArgs) Handles seQuantity.EditValueChanged
+
+        seAmount.Text = seQuantity.EditValue * seRate.EditValue
+
+    End Sub
+
+    Private Sub seRate_EditValueChanged(sender As Object, e As EventArgs) Handles seRate.EditValueChanged
+        seAmount.Text = seQuantity.EditValue * seRate.EditValue
+    End Sub
 End Class

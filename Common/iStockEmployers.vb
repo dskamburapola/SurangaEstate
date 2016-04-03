@@ -355,8 +355,7 @@ Public Class iStockEmployers
                 DB.AddInParameter(DBC, "@ResignDate", DbType.Date, DBNull.Value)
 
             End If
-            '   DB.AddInParameter(DBC, "@ResignDate", DbType.Date, ResignDate)
-
+    
             DB.AddInParameter(DBC, "@CreatedBy", DbType.Int64, CreatedBy)
             DB.AddInParameter(DBC, "@UpdatedBy", DbType.Int64, UpdatedBy)
 

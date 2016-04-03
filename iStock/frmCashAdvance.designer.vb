@@ -20,10 +20,10 @@ Partial Class frmCashAdvance
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim ConditionValidationRule4 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
-        Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
-        Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar2 = New DevExpress.XtraBars.Bar()
         Me.bbSave = New DevExpress.XtraBars.BarButtonItem()
@@ -40,6 +40,7 @@ Partial Class frmCashAdvance
         Me.dxvpCashAdvance = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         Me.sePaybleAmount = New DevExpress.XtraEditors.SpinEdit()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.lblDeleteID = New System.Windows.Forms.Label()
         Me.cmbWorkType = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.tePaybleAmount = New DevExpress.XtraEditors.SpinEdit()
         Me.teTotalDeductions = New DevExpress.XtraEditors.SpinEdit()
@@ -84,6 +85,7 @@ Partial Class frmCashAdvance
         Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem12 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem11 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem19 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.xTab1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
         Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
@@ -112,8 +114,6 @@ Partial Class frmCashAdvance
         Me.LayoutControlItem16 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem4 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem14 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.lblDeleteID = New System.Windows.Forms.Label()
-        Me.LayoutControlItem19 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpCashAdvance, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.sePaybleAmount.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -164,6 +164,7 @@ Partial Class frmCashAdvance
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem19, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.xTab1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.xTab1.SuspendLayout()
         Me.XtraTabPage1.SuspendLayout()
@@ -184,7 +185,6 @@ Partial Class frmCashAdvance
         CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem19, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarManager1
@@ -295,10 +295,10 @@ Partial Class frmCashAdvance
         Me.sePaybleAmount.Size = New System.Drawing.Size(366, 30)
         Me.sePaybleAmount.StyleController = Me.LayoutControl1
         Me.sePaybleAmount.TabIndex = 16
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals
-        ConditionValidationRule1.ErrorText = "This value is not valid"
-        ConditionValidationRule1.Value1 = "0"
-        Me.dxvpCashAdvance.SetValidationRule(Me.sePaybleAmount, ConditionValidationRule1)
+        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals
+        ConditionValidationRule4.ErrorText = "This value is not valid"
+        ConditionValidationRule4.Value1 = "0"
+        Me.dxvpCashAdvance.SetValidationRule(Me.sePaybleAmount, ConditionValidationRule4)
         '
         'LayoutControl1
         '
@@ -325,13 +325,20 @@ Partial Class frmCashAdvance
         Me.LayoutControl1.TabIndex = 5
         Me.LayoutControl1.Text = "LayoutControl1"
         '
+        'lblDeleteID
+        '
+        Me.lblDeleteID.Location = New System.Drawing.Point(12, 12)
+        Me.lblDeleteID.Name = "lblDeleteID"
+        Me.lblDeleteID.Size = New System.Drawing.Size(810, 20)
+        Me.lblDeleteID.TabIndex = 27
+        '
         'cmbWorkType
         '
         Me.cmbWorkType.Location = New System.Drawing.Point(273, 46)
         Me.cmbWorkType.MenuManager = Me.BarManager1
         Me.cmbWorkType.Name = "cmbWorkType"
         Me.cmbWorkType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbWorkType.Properties.Items.AddRange(New Object() {"PERMANENT", "CASUAL"})
+        Me.cmbWorkType.Properties.Items.AddRange(New Object() {"CASUAL", "PERMANENT", "STAFF"})
         Me.cmbWorkType.Size = New System.Drawing.Size(366, 20)
         Me.cmbWorkType.StyleController = Me.LayoutControl1
         Me.cmbWorkType.TabIndex = 26
@@ -473,9 +480,9 @@ Partial Class frmCashAdvance
         Me.leEmployee.Size = New System.Drawing.Size(366, 20)
         Me.leEmployee.StyleController = Me.LayoutControl1
         Me.leEmployee.TabIndex = 13
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule2.ErrorText = "This value is not valid"
-        Me.dxvpCashAdvance.SetValidationRule(Me.leEmployee, ConditionValidationRule2)
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "This value is not valid"
+        Me.dxvpCashAdvance.SetValidationRule(Me.leEmployee, ConditionValidationRule1)
         '
         'deIssueDate
         '
@@ -494,9 +501,9 @@ Partial Class frmCashAdvance
         Me.deIssueDate.Size = New System.Drawing.Size(366, 20)
         Me.deIssueDate.StyleController = Me.LayoutControl1
         Me.deIssueDate.TabIndex = 12
-        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule3.ErrorText = "This value is not valid"
-        Me.dxvpCashAdvance.SetValidationRule(Me.deIssueDate, ConditionValidationRule3)
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule2.ErrorText = "This value is not valid"
+        Me.dxvpCashAdvance.SetValidationRule(Me.deIssueDate, ConditionValidationRule2)
         '
         'teEmployeeName
         '
@@ -824,6 +831,18 @@ Partial Class frmCashAdvance
         Me.LayoutControlItem11.Text = "WorkType"
         Me.LayoutControlItem11.TextSize = New System.Drawing.Size(82, 13)
         '
+        'LayoutControlItem19
+        '
+        Me.LayoutControlItem19.Control = Me.lblDeleteID
+        Me.LayoutControlItem19.CustomizationFormText = "LayoutControlItem19"
+        Me.LayoutControlItem19.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem19.Name = "LayoutControlItem19"
+        Me.LayoutControlItem19.Size = New System.Drawing.Size(814, 24)
+        Me.LayoutControlItem19.Text = "LayoutControlItem19"
+        Me.LayoutControlItem19.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem19.TextToControlDistance = 0
+        Me.LayoutControlItem19.TextVisible = False
+        '
         'xTab1
         '
         Me.xTab1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -988,7 +1007,7 @@ Partial Class frmCashAdvance
         'RepositoryItemButtonEdit1
         '
         Me.RepositoryItemButtonEdit1.AutoHeight = False
-        Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Delete", 20, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Global.iStock.My.Resources.Resources.remove, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, "", Nothing, Nothing, True)})
+        Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Delete", 20, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Global.iStock.My.Resources.Resources.remove, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject2, "", Nothing, Nothing, True)})
         Me.RepositoryItemButtonEdit1.Name = "RepositoryItemButtonEdit1"
         Me.RepositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
         '
@@ -1119,25 +1138,6 @@ Partial Class frmCashAdvance
         Me.LayoutControlItem14.TextToControlDistance = 0
         Me.LayoutControlItem14.TextVisible = False
         '
-        'lblDeleteID
-        '
-        Me.lblDeleteID.Location = New System.Drawing.Point(12, 12)
-        Me.lblDeleteID.Name = "lblDeleteID"
-        Me.lblDeleteID.Size = New System.Drawing.Size(810, 20)
-        Me.lblDeleteID.TabIndex = 27
-        '
-        'LayoutControlItem19
-        '
-        Me.LayoutControlItem19.Control = Me.lblDeleteID
-        Me.LayoutControlItem19.CustomizationFormText = "LayoutControlItem19"
-        Me.LayoutControlItem19.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem19.Name = "LayoutControlItem19"
-        Me.LayoutControlItem19.Size = New System.Drawing.Size(814, 24)
-        Me.LayoutControlItem19.Text = "LayoutControlItem19"
-        Me.LayoutControlItem19.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem19.TextToControlDistance = 0
-        Me.LayoutControlItem19.TextVisible = False
-        '
         'frmCashAdvance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1201,6 +1201,7 @@ Partial Class frmCashAdvance
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem19, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.xTab1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.xTab1.ResumeLayout(False)
         Me.XtraTabPage1.ResumeLayout(False)
@@ -1221,7 +1222,6 @@ Partial Class frmCashAdvance
         CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem19, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

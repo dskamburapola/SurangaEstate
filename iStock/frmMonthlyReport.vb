@@ -72,6 +72,7 @@
 
                 report.xrTeaDes.Text = dt1.Rows(0)("TeaCropQty").ToString() + " X " + dt1.Rows(0)("TeaRate").ToString()
                 report.xrTeaAmt.Text = dt1.Rows(0)("TeaAmt").ToString()
+                report.xrTeaDeductions.Text = dt1.Rows(0)("TeaDeductions").ToString()
                 report.xrRubberLatexDes.Text = dt1.Rows(0)("RubberLatextCropQty").ToString() + " X " + dt1.Rows(0)("RubberLatexRate").ToString()
                 report.xrRubberLatexAmt.Text = dt1.Rows(0)("RubberLatexAmt").ToString()
                 report.xrRubberSheetDes.Text = dt1.Rows(0)("RubberSheetQty").ToString() + " X " + dt1.Rows(0)("RubberSheeRate").ToString()
@@ -82,6 +83,8 @@
                 report.xrEPF12.Text = dt1.Rows(0)("EPF12Amt").ToString()
                 report.xrETF3.Text = dt1.Rows(0)("ETF3Amt").ToString()
                 report.xrOthers.Text = dt1.Rows(0)("OthersAmt").ToString()
+                report.xrWater.Text = dt1.Rows(0)("WaterExp").ToString()
+
                 report.xrTotal.Text = dt1.Rows(0)("Total").ToString()
 
             End If
@@ -185,6 +188,33 @@
                             report.xrAttendanceSheets2.Text = dt5.Rows(i)("RubberSheet").ToString()
 
                         Case 2
+                            report.xrAttendanceName3.Text = "[" + dt5.Rows(i)("EmployerNo").ToString() + "] " + dt5.Rows(i)("EmployerName").ToString()
+                            report.xrAttendanceDays3.Text = dt5.Rows(i)("WorkedDays").ToString()
+                            report.xrAttendanceDaysPerc3.Text = dt5.Rows(i)("DaysAvg").ToString()
+                            report.xrAttendancePluck3.Text = dt5.Rows(i)("Plucking").ToString()
+                            report.xrAttendanceLatex3.Text = dt5.Rows(i)("Tapping").ToString()
+                            report.xrAttendanceSheets3.Text = dt5.Rows(i)("RubberSheet").ToString()
+
+
+                        Case 3
+                            report.xrAttendanceName3.Text = "[" + dt5.Rows(i)("EmployerNo").ToString() + "] " + dt5.Rows(i)("EmployerName").ToString()
+                            report.xrAttendanceDays3.Text = dt5.Rows(i)("WorkedDays").ToString()
+                            report.xrAttendanceDaysPerc3.Text = dt5.Rows(i)("DaysAvg").ToString()
+                            report.xrAttendancePluck3.Text = dt5.Rows(i)("Plucking").ToString()
+                            report.xrAttendanceLatex3.Text = dt5.Rows(i)("Tapping").ToString()
+                            report.xrAttendanceSheets3.Text = dt5.Rows(i)("RubberSheet").ToString()
+
+
+                        Case 4
+                            report.xrAttendanceName3.Text = "[" + dt5.Rows(i)("EmployerNo").ToString() + "] " + dt5.Rows(i)("EmployerName").ToString()
+                            report.xrAttendanceDays3.Text = dt5.Rows(i)("WorkedDays").ToString()
+                            report.xrAttendanceDaysPerc3.Text = dt5.Rows(i)("DaysAvg").ToString()
+                            report.xrAttendancePluck3.Text = dt5.Rows(i)("Plucking").ToString()
+                            report.xrAttendanceLatex3.Text = dt5.Rows(i)("Tapping").ToString()
+                            report.xrAttendanceSheets3.Text = dt5.Rows(i)("RubberSheet").ToString()
+
+
+                        Case 5
                             report.xrAttendanceName3.Text = "[" + dt5.Rows(i)("EmployerNo").ToString() + "] " + dt5.Rows(i)("EmployerName").ToString()
                             report.xrAttendanceDays3.Text = dt5.Rows(i)("WorkedDays").ToString()
                             report.xrAttendanceDaysPerc3.Text = dt5.Rows(i)("DaysAvg").ToString()

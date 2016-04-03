@@ -109,6 +109,11 @@
 
     Public Shared APPLICATION_GETSERVERDATETIME As String = "Application_GetServerDateTime"
 
+
+    Public Shared FIELDPERFORMANCE As String = "FieldPerformance"
+
+    Public Shared REPORTATTENDANCEADVANCE As String = "ReportAttendanceAdvance"
+
     Public Shared WORKDAYS_INSERT As String = "WorkDays_Insert"
     Public Shared WORKDAYS_UPDATE As String = "WorkDays_Update"
     Public Shared WORKDAYS_GETACTIVEYEAR As String = "WorkDays_GetActiveYear"
@@ -142,7 +147,9 @@
     Public Shared EMPLOYERS_RESIGNED_GETALL As String = "Employers_Resigned_GetAll"
     Public Shared EMPLOYERS_WORKING_GETALL As String = "Employers_Working_GetAll"
 
-
+    Public Shared STAFFPAY_INSERT As String = "StaffPay_Insert"
+    Public Shared STAFFPAY_GETALL As String = "StaffPay_GetAll"
+    Public Shared GETSTAFFPAYBYID As String = "GetStaffPayByID"
 
 
     Public Shared SUPPLIERS_DELETE As String = "Suppliers_Delete"

@@ -20,12 +20,12 @@ Partial Class frmEmployers
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ConditionValidationRule7 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule4 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule5 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule6 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.xTab1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
@@ -77,10 +77,10 @@ Partial Class frmEmployers
         Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem10 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem22 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlGroup4 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem13 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -160,10 +160,10 @@ Partial Class frmEmployers
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem22, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -375,7 +375,7 @@ Partial Class frmEmployers
         Me.ceDesignation.Name = "ceDesignation"
         Me.ceDesignation.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.ceDesignation.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.ceDesignation.Properties.Items.AddRange(New Object() {"PERMANENT", "CASUAL"})
+        Me.ceDesignation.Properties.Items.AddRange(New Object() {"CASUAL", "PERMANENT", "STAFF"})
         Me.ceDesignation.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
         Me.ceDesignation.Size = New System.Drawing.Size(339, 20)
         Me.ceDesignation.StyleController = Me.LayoutControl1
@@ -408,9 +408,9 @@ Partial Class frmEmployers
         Me.deDateJoined.Size = New System.Drawing.Size(339, 20)
         Me.deDateJoined.StyleController = Me.LayoutControl1
         Me.deDateJoined.TabIndex = 2
-        ConditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule7.ErrorText = "This value is not valid"
-        Me.dxvpEmployers.SetValidationRule(Me.deDateJoined, ConditionValidationRule7)
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "This value is not valid"
+        Me.dxvpEmployers.SetValidationRule(Me.deDateJoined, ConditionValidationRule1)
         '
         'teTelephone
         '
@@ -431,9 +431,9 @@ Partial Class frmEmployers
         Me.teNICNo.Size = New System.Drawing.Size(339, 20)
         Me.teNICNo.StyleController = Me.LayoutControl1
         Me.teNICNo.TabIndex = 6
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "This value is not valid"
-        Me.dxvpEmployers.SetValidationRule(Me.teNICNo, ConditionValidationRule1)
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule2.ErrorText = "This value is not valid"
+        Me.dxvpEmployers.SetValidationRule(Me.teNICNo, ConditionValidationRule2)
         '
         'ceSex
         '
@@ -447,9 +447,9 @@ Partial Class frmEmployers
         Me.ceSex.Size = New System.Drawing.Size(339, 20)
         Me.ceSex.StyleController = Me.LayoutControl1
         Me.ceSex.TabIndex = 7
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule2.ErrorText = "Can not be Blank"
-        Me.dxvpEmployers.SetValidationRule(Me.ceSex, ConditionValidationRule2)
+        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule3.ErrorText = "Can not be Blank"
+        Me.dxvpEmployers.SetValidationRule(Me.ceSex, ConditionValidationRule3)
         '
         'teCity
         '
@@ -490,9 +490,9 @@ Partial Class frmEmployers
         Me.teEmployerName.Size = New System.Drawing.Size(339, 20)
         Me.teEmployerName.StyleController = Me.LayoutControl1
         Me.teEmployerName.TabIndex = 5
-        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule3.ErrorText = "Can not be Blank"
-        Me.dxvpEmployers.SetValidationRule(Me.teEmployerName, ConditionValidationRule3)
+        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule4.ErrorText = "Can not be Blank"
+        Me.dxvpEmployers.SetValidationRule(Me.teEmployerName, ConditionValidationRule4)
         '
         'deDOB
         '
@@ -523,10 +523,10 @@ Partial Class frmEmployers
         Me.seEmployerNo.Size = New System.Drawing.Size(339, 20)
         Me.seEmployerNo.StyleController = Me.LayoutControl1
         Me.seEmployerNo.TabIndex = 3
-        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
-        ConditionValidationRule4.ErrorText = "Must be a Valid No, Not 0"
-        ConditionValidationRule4.Value1 = 0
-        Me.dxvpEmployers.SetValidationRule(Me.seEmployerNo, ConditionValidationRule4)
+        ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule5.ErrorText = "Must be a Valid No, Not 0"
+        ConditionValidationRule5.Value1 = 0
+        Me.dxvpEmployers.SetValidationRule(Me.seEmployerNo, ConditionValidationRule5)
         '
         'seEPFNo
         '
@@ -540,9 +540,9 @@ Partial Class frmEmployers
         Me.seEPFNo.Size = New System.Drawing.Size(339, 20)
         Me.seEPFNo.StyleController = Me.LayoutControl1
         Me.seEPFNo.TabIndex = 4
-        ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule5.ErrorText = "This value is not valid"
-        Me.dxvpEmployers.SetValidationRule(Me.seEPFNo, ConditionValidationRule5)
+        ConditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule6.ErrorText = "This value is not valid"
+        Me.dxvpEmployers.SetValidationRule(Me.seEPFNo, ConditionValidationRule6)
         '
         'LayoutControlGroup1
         '
@@ -755,19 +755,6 @@ Partial Class frmEmployers
         Me.LayoutControlItem5.Text = "Address Line 2"
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(130, 13)
         '
-        'LayoutControlItem4
-        '
-        Me.LayoutControlItem4.Control = Me.teAdressLine1
-        Me.LayoutControlItem4.CustomizationFormText = "Address Line 1"
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 96)
-        Me.LayoutControlItem4.MaxSize = New System.Drawing.Size(0, 24)
-        Me.LayoutControlItem4.MinSize = New System.Drawing.Size(187, 24)
-        Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(476, 24)
-        Me.LayoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
-        Me.LayoutControlItem4.Text = "Address Line 1"
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(130, 13)
-        '
         'LayoutControlItem6
         '
         Me.LayoutControlItem6.Control = Me.teCity
@@ -806,6 +793,19 @@ Partial Class frmEmployers
         Me.LayoutControlItem22.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem22.Text = "Emergency Contact Person"
         Me.LayoutControlItem22.TextSize = New System.Drawing.Size(130, 13)
+        '
+        'LayoutControlItem4
+        '
+        Me.LayoutControlItem4.Control = Me.teAdressLine1
+        Me.LayoutControlItem4.CustomizationFormText = "Address Line 1"
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 96)
+        Me.LayoutControlItem4.MaxSize = New System.Drawing.Size(0, 24)
+        Me.LayoutControlItem4.MinSize = New System.Drawing.Size(187, 24)
+        Me.LayoutControlItem4.Name = "LayoutControlItem4"
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(476, 24)
+        Me.LayoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
+        Me.LayoutControlItem4.Text = "Address Line 1"
+        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(130, 13)
         '
         'LayoutControlGroup4
         '
@@ -1182,10 +1182,10 @@ Partial Class frmEmployers
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem22, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()

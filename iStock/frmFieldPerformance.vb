@@ -106,7 +106,7 @@ Public Class frmFieldPerformance
 
             Dim ds As New DataSet
 
-            ds = iStockDailyWorking.FeildPerformanceReport(currentType, currentDate)
+            ds = iStockDailyWorking.FeildPerformanceReport(currentDate)
             gcFieldPerfomance.DataSource = ds.Tables(0)
 
         End If

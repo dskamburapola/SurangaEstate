@@ -232,7 +232,7 @@ Public Class frmEmployers
                 .Deductions = 0
                 .EPFNo = seEPFNo.Text.Trim
 
-                If cmbIsResign.Text = "No" Then
+                If cmbIsResign.Text = "No" Or cmbIsResign.Text = String.Empty Then
                     .IsResigned = 0
                     .ResignDate = Date.MinValue
 
@@ -243,9 +243,6 @@ Public Class frmEmployers
                 End If
 
 
-               
-
-                
                 .CreatedBy = UserID
                 .UpdatedBy = UserID
                 .Insert()

@@ -23,6 +23,16 @@ Public Class iStockExpenses
     Private _FromDate As DateTime
     Private _ToDate As DateTime
 
+    Private _EmployerID As Int64
+    Private _PayDate As Date
+    Private _StaffPayID As Int64
+    Private _EmployerNo As Int64
+    Private _EmployerName As String
+
+    Private _Department As String
+
+
+
 #End Region
 
 #Region "Porperties"
@@ -140,6 +150,154 @@ Public Class iStockExpenses
             _ToDate = Value
         End Set
     End Property
+
+    Public Property EmployerID() As Int64
+        Get
+            Return _EmployerID
+        End Get
+        Set(ByVal value As Int64)
+            _EmployerID = value
+        End Set
+    End Property
+
+    Public Property PayDate() As Date
+        Get
+            Return _PayDate
+        End Get
+        Set(ByVal value As Date)
+            _PayDate = value
+        End Set
+    End Property
+
+    Public Property StaffPayID() As Int64
+        Get
+            Return _StaffPayID
+        End Get
+        Set(ByVal value As Int64)
+            _StaffPayID = value
+        End Set
+    End Property
+
+    Public Property EmployerNo() As Int64
+        Get
+            Return _EmployerNo
+        End Get
+        Set(ByVal value As Int64)
+            _EmployerNo = value
+        End Set
+    End Property
+
+    Public Property EmployerName() As String
+        Get
+            Return _EmployerName
+        End Get
+        Set(ByVal value As String)
+            _EmployerName = value
+        End Set
+    End Property
+
+    Public Property Department() As String
+        Get
+            Return _Department
+        End Get
+        Set(ByVal value As String)
+            _Department = value
+        End Set
+    End Property
+
+#End Region
+
+#Region "Insert Staff Pay"
+    Public Sub InsertStaffPay()
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(STAFFPAY_INSERT)
+            DB.AddInParameter(DBC, "@StaffPayID", DbType.Int64, StaffPayID)
+            DB.AddInParameter(DBC, "@Department", DbType.String, Department)
+
+            DB.AddInParameter(DBC, "@EmployerID", DbType.Int64, EmployerID)
+            If PayDate <> Date.MinValue Then
+                DB.AddInParameter(DBC, "@PayDate", DbType.Date, PayDate)
+            Else
+                DB.AddInParameter(DBC, "@PayDate", DbType.Date, DBNull.Value)
+            End If
+            DB.AddInParameter(DBC, "@Amount", DbType.Decimal, Amount)
+            DB.AddInParameter(DBC, "@CreatedBy", DbType.Int64, CreatedBy)
+            DB.AddInParameter(DBC, "@UpdatedBy", DbType.Int64, UpdatedBy)
+
+
+            DB.ExecuteNonQuery(DBC)
+        Catch ex As Exception
+            Throw
+        End Try
+    End Sub
+#End Region
+
+#Region "Get Staff Pay By Staff Pay ID"
+    Public Sub SelectStaffPayByID()
+
+
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(GETSTAFFPAYBYID)
+
+        Try
+            DB.AddInParameter(DBC, "@StaffPayID", DbType.Int64, Me.StaffPayID)
+            Using DR As IDataReader = DB.ExecuteReader(DBC)
+
+
+                With DR
+                    Do While .Read
+
+                        Me.StaffPayID = Convert.ToInt64(IIf(Not IsDBNull(.Item("StaffPayID")), Trim(.Item("StaffPayID").ToString), 0))
+                        Me.Department = IIf(Not IsDBNull(.Item("Department")), Trim(.Item("Department").ToString), String.Empty)
+                        Me.EmployerID = IIf(Not IsDBNull(.Item("EmployerID")), Trim(.Item("EmployerID").ToString), String.Empty)
+                        ' Me.EmployerNo = IIf(Not IsDBNull(.Item("EmployerNo")), Trim(.Item("EmployerNo").ToString), String.Empty)
+                        Me.PayDate = IIf(Not IsDBNull(.Item("PayDate")), Trim(.Item("PayDate").ToString), String.Empty)
+                        Me.Amount = IIf(Not IsDBNull(.Item("Amount")), Trim(.Item("Amount").ToString), String.Empty)
+
+                    Loop
+                End With
+
+                If (Not DR Is Nothing) Then
+                    DR.Close()
+                End If
+
+
+            End Using
+
+
+
+        Catch ex As Exception
+            Throw
+        Finally
+            DBC.Dispose()
+
+
+
+        End Try
+
+
+    End Sub
+#End Region
+
+#Region "StaffPay GetAll"
+    Public Function StaffPayGetAll() As DataSet
+
+        Try
+            Dim db As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = db.GetStoredProcCommand(STAFFPAY_GETALL)
+
+            Return db.ExecuteDataSet(DBC)
+        Catch ex As Exception
+            Return Nothing
+            Throw
+        End Try
+
+
+
+
+
+    End Function
 #End Region
 
 #Region "Expense Insert"

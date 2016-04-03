@@ -25,11 +25,21 @@ Public Class iStockOtherIncome
     Private _FromDate As DateTime
     Private _ToDate As DateTime
     Private _StcokID As Int64
+    Private _Deduction As Decimal
 
 
 #End Region
 
 #Region "Porperties"
+
+    Public Property Deduction() As Decimal
+        Get
+            Return _Deduction
+        End Get
+        Set(ByVal value As Decimal)
+            _Deduction = value
+        End Set
+    End Property
 
     Public Property StockID() As Int64
         Get
@@ -194,7 +204,7 @@ Public Class iStockOtherIncome
             db.AddOutParameter(DBC, "@CurrentOtherIncomeID", DbType.Int64, 0)
             db.AddInParameter(DBC, "@CreatedBy", DbType.Int64, CreatedBy)
             db.AddInParameter(DBC, "@UpdatedBy", DbType.Int64, UpdatedBy)
-            db.AddInParameter(DBC, "@StockID", DbType.Int64, Me.StockID)
+            db.AddInParameter(DBC, "@Deduction", DbType.Decimal, Me.Deduction)
 
 
             db.ExecuteNonQuery(DBC, transaction)
@@ -273,7 +283,7 @@ Public Class iStockOtherIncome
                         Me.CreatedDate = Convert.ToDateTime((IIf(Not IsDBNull(.Item("CreatedDate")), Trim(.Item("CreatedDate").ToString), Date.MinValue)))
                         Me.UpdatedBy = Convert.ToInt64(IIf(Not IsDBNull(.Item("UpdatedBy")), Trim(.Item("UpdatedBy").ToString), 0))
                         Me.UpdatedDate = Convert.ToDateTime((IIf(Not IsDBNull(.Item("UpdatedDate")), Trim(.Item("UpdatedDate").ToString), Date.MinValue)))
-                        Me.StockID = Convert.ToInt64(IIf(Not IsDBNull(.Item("StockID")), Trim(.Item("StockID").ToString), String.Empty))
+                        Me.Deduction = Convert.ToDecimal(IIf(Not IsDBNull(.Item("Deduction")), Trim(.Item("Deduction").ToString), String.Empty))
 
                     Loop
                 End With
