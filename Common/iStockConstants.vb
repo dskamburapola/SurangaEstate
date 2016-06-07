@@ -349,6 +349,7 @@
 
     Public Shared EMPLOYEE_DETAILS_GETBYREGNO As String = "Employee_Details_GetByRegNo"
     Public Shared EMPLOYEE_GETALL_WORKERS As String = "Employee_GetAll_Workers"
+    'Public Shared EMPLOYEE_GETALL_STAFF As String = "Employee_GetAll_Staff"
 
     Public Shared TERMDEDUCTIONS_INSERT As String = "TermDeductions_Insert"
     Public Shared TERMDEDUCTIONDESCRIPTION_INSERT As String = "TermDeductionDescription_Insert"

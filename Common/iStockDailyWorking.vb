@@ -1126,6 +1126,24 @@ Public Class iStockDailyWorking
 
 #End Region
 
+#Region "Get Employee For Work"
+    Public Function GetAllStaff() As DataSet
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(EMPLOYEE_GETALL_WORKERS)
+            DB.AddInParameter(DBC, "@Designation", DbType.String, Me.WorkType)
+            Return DB.ExecuteDataSet(DBC)
+            DBC.Dispose()
+        Catch ex As Exception
+            Return Nothing
+            Throw
+        End Try
+
+
+    End Function
+
+#End Region
+
     '#Region "Attedence Report"
     '    Public Function GetAttendanceReport(ByVal currentDate As Date, ByVal workType As String) As DataSet
     '        Try
