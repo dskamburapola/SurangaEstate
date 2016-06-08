@@ -114,6 +114,12 @@
 
     Public Shared REPORTATTENDANCEADVANCE As String = "ReportAttendanceAdvance"
 
+    Public Shared HOLYDAY_INSERT As String = "Holyday_Insert"
+    Public Shared HOLYDAY_GET_ALL As String = "Holyday_Get_All"
+    Public Shared HOLYDAY_DELETE As String = "Holyday_Delete"
+    Public Shared HOLYDAY_ISEXISTS As String = "Holyday_IsExists"
+
+
     Public Shared WORKDAYS_INSERT As String = "WorkDays_Insert"
     Public Shared WORKDAYS_UPDATE As String = "WorkDays_Update"
     Public Shared WORKDAYS_GETACTIVEYEAR As String = "WorkDays_GetActiveYear"
@@ -339,7 +345,7 @@
     Public Shared DAILYWORKING_GETRUBBER_BYDATES As String = "DailyWorking_GetRubber_ByDates"
     Public Shared DAILYWORKING_GETBYID As String = "DailyWorking_GetByID"
 
-
+    Public Shared CURRENT_WORKERS_GETALL As String = "Current_Workers_GetAll"
 
 
     Public Shared DAILYWORKING_UPDATERATE As String = "DailyWorking_UpdateRate"

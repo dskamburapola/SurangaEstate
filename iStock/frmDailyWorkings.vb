@@ -201,6 +201,8 @@ Public Class frmDailyWorkings
     End Sub
 #End Region
 
+
+
 #Region "Daily Working Get All By Dates"
     Private Sub DailyWorkingGetAllByDates()
 
@@ -332,6 +334,8 @@ Public Class frmDailyWorkings
 
     End Sub
 #End Region
+
+
 
 #Region "Display Settings"
     Private Sub DisplaySettings()
@@ -470,7 +474,20 @@ Public Class frmDailyWorkings
 #Region "Editors Events"
 
     Private Sub deWorkingDate_EditValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles deWorkingDate.EditValueChanged
-        Me.DailyWorkingGetByDate()
+
+        iStockDailyWorking.WorkingDate = deWorkingDate.EditValue
+
+        If iStockDailyWorking.HolidayIsExits() = True Then
+
+
+            MessageBox.Show("You can not enter data on holyday", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            deWorkingDate.Focus()
+
+
+        Else
+            Me.DailyWorkingGetByDate()
+        End If
+
 
     End Sub
 
@@ -599,4 +616,7 @@ Public Class frmDailyWorkings
         Me.seQuantity.Focus()
 
     End Sub
+
+   
+    
 End Class

@@ -1144,51 +1144,6 @@ Public Class iStockDailyWorking
 
 #End Region
 
-    '#Region "Attedence Report"
-    '    Public Function GetAttendanceReport(ByVal currentDate As Date, ByVal workType As String) As DataSet
-    '        Try
-    '            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
-    '            Dim DBC As DbCommand = DB.GetStoredProcCommand("ReportAttendance")
-    '            DB.AddInParameter(DBC, "@IssueDate", DbType.Date, currentDate)
-    '            If (workType Is Nothing) Then
-    '                DB.AddInParameter(DBC, "@WorkType", DbType.String, String.Empty)
-    '            Else
-    '                DB.AddInParameter(DBC, "@WorkType", DbType.String, workType)
-    '            End If
-
-
-
-    '            Return DB.ExecuteDataSet(DBC)
-    '            DBC.Dispose()
-    '        Catch ex As Exception
-    '            Return Nothing
-    '            Throw
-    '        End Try
-
-
-    '    End Function
-    '#End Region
-
-    '#Region "Attedence Report All Category"
-    '    Public Function GetAttendanceReportAllCategory(ByVal currentDate As Date) As DataSet
-    '        Try
-    '            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
-    '            Dim DBC As DbCommand = DB.GetStoredProcCommand("ReportAttendance_AllCategory")
-    '            DB.AddInParameter(DBC, "@IssueDate", DbType.Date, currentDate)
-
-
-
-    '            Return DB.ExecuteDataSet(DBC)
-    '            DBC.Dispose()
-    '        Catch ex As Exception
-    '            Return Nothing
-    '            Throw
-    '        End Try
-
-
-    '    End Function
-    '#End Region
-
 #Region "DailyWorking IfExists"
     Public Sub DailyWorkingIfExists()
         Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
@@ -1418,6 +1373,29 @@ Public Class iStockDailyWorking
     End Function
 #End Region
 
+#Region "Holiday Is Exits"
+    Public Function HolidayIsExits() As Boolean
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(HOLYDAY_ISEXISTS)
+
+            DB.AddInParameter(DBC, "@WorkingDate", DbType.Date, WorkingDate)
+            DB.AddOutParameter(DBC, "@IsExists", DbType.Int64, 0)
+            DB.ExecuteNonQuery(DBC)
+
+            If DB.GetParameterValue(DBC, "@IsExists") = 1 Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Return False
+            Throw
+
+        End Try
+
+    End Function
+#End Region
 
     '#Region "Field Performance Report"
     '    Public Function FeildPerformanceReport(ByVal type As Long, ByVal currentDate As Date) As DataSet
