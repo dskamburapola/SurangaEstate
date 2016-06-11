@@ -360,7 +360,7 @@ Public Class iStockCashAdvance
 
 #End Region
 
-#Region "Daily Working GetAll ByDates"
+#Region "Cash Advance Get All By Dates"
     Public Function CashAdvanceGetAllByDates() As DataSet
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
@@ -380,7 +380,7 @@ Public Class iStockCashAdvance
 
 #End Region
 
-#Region "DailyWorking Delete"
+#Region "CashAdvance Delete"
     Public Sub CashAdvanceDelete()
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
@@ -454,59 +454,61 @@ Public Class iStockCashAdvance
 
 #End Region
 
-    '#Region "Get CashAdvance By CashAdvanceID"
-    '    Public Sub GetCustomerByID()
-    '        Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
-    '        Dim DBC As DbCommand = DB.GetStoredProcCommand(CUSTOMERS_GETBYID)
-    '        Try
+    '----------------------------------------- Festival Recovery ------------------------------------
 
-    '            DB.AddInParameter(DBC, "@CashAdvanceID", DbType.Int64, Me.CashAdvanceID)
-    '            Using DR As IDataReader = DB.ExecuteReader(DBC)
+#Region "Insert Festival Recovery"
+    Public Sub InsertFestivalRecovery()
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(FESTIVALRECOVERY_INSERT)
+            DB.AddInParameter(DBC, "@EmployerId", DbType.Int64, Me.EmployeeID)
+            DB.AddInParameter(DBC, "@IssueDate", DbType.Date, Me.IssueDate)
+            DB.AddInParameter(DBC, "@AdvanceAmount", DbType.Decimal, Me.AdvanceAmount)
 
-
-    '                With DR
-    '                    Do While .Read
-    '                        Me.CustomerID = Convert.ToInt64(IIf(Not IsDBNull(.Item("CustomerID")), Trim(.Item("CustomerID").ToString), 0))
-    '                        Me.CustomerNo = IIf(Not IsDBNull(.Item("CustomerNo")), Trim(.Item("CustomerNo").ToString), String.Empty)
-    '                        Me.Salutation = IIf(Not IsDBNull(.Item("Salutation")), Trim(.Item("Salutation").ToString), String.Empty)
-
-    '                        Me.CustomerName = IIf(Not IsDBNull(.Item("CustomerName")), Trim(.Item("CustomerName").ToString), String.Empty)
-    '                        Me.AddressLine1 = IIf(Not IsDBNull(.Item("AddressLine1")), Trim(.Item("AddressLine1").ToString), String.Empty)
-    '                        Me.AddressLine2 = IIf(Not IsDBNull(.Item("AddressLine2")), Trim(.Item("AddressLine2").ToString), String.Empty)
-    '                        Me.AddressLine3 = IIf(Not IsDBNull(.Item("AddressLine3")), Trim(.Item("AddressLine3").ToString), String.Empty)
-    '                        Me.Telephone = IIf(Not IsDBNull(.Item("Telephone")), Trim(.Item("Telephone").ToString), String.Empty)
-    '                        Me.Fax = IIf(Not IsDBNull(.Item("Fax")), Trim(.Item("Fax").ToString), String.Empty)
-    '                        Me.Email = IIf(Not IsDBNull(.Item("Email")), Trim(.Item("Email").ToString), String.Empty)
-    '                        Me.WebURL = IIf(Not IsDBNull(.Item("WebURL")), Trim(.Item("WebURL").ToString), String.Empty)
-    '                        Me.CreatedBy = Convert.ToInt64(IIf(Not IsDBNull(.Item("CreatedBy")), Trim(.Item("CreatedBy").ToString), 0))
-    '                        Me.UpdatedBy = Convert.ToInt64(IIf(Not IsDBNull(.Item("UpdatedBy")), Trim(.Item("UpdatedBy").ToString), 0))
+            DB.AddInParameter(DBC, "@CreatedBy", DbType.Int64, Me.CreatedBy)
+            DB.AddInParameter(DBC, "@UpdatedBy", DbType.Int64, Me.UpdatedBy)
 
 
 
-    '                    Loop
-    '                End With
 
-    '                If (Not DR Is Nothing) Then
-    '                    DR.Close()
-    '                End If
+            DB.ExecuteNonQuery(DBC)
+        Catch ex As Exception
+            Throw
+        End Try
+    End Sub
+#End Region
+
+#Region "Festival Recovery Delete"
+    Public Sub FestivalRecoveryDelete()
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(FESTIVALRECOVERY_DELETE)
+            DB.AddInParameter(DBC, "FestivalRecoveryId", DbType.Int64, Me.CashAdvanceID)
+            DB.ExecuteNonQuery(DBC)
+        Catch ex As Exception
+            Throw
+        End Try
+
+    End Sub
+#End Region
+
+#Region "Festival Recovery Get All By Dates"
+    Public Function FestivalRecoveryGetAllByDates() As DataSet
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(FESTIVALRECOVERY_GETALL_BYDATES)
+            DB.AddInParameter(DBC, "@StartDate", DbType.Date, Me.StartDate)
+            DB.AddInParameter(DBC, "@EndDate", DbType.Date, Me.EndDate)
+
+            Return DB.ExecuteDataSet(DBC)
+            DBC.Dispose()
+        Catch ex As Exception
+            Return Nothing
+            Throw
+        End Try
 
 
-    '            End Using
+    End Function
 
-
-
-    '        Catch ex As Exception
-    '            Throw
-    '        Finally
-    '            DBC.Dispose()
-
-
-
-    '        End Try
-
-
-    '    End Sub
-    '#End Region
-
-
+#End Region
 End Class

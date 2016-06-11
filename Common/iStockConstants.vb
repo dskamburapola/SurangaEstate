@@ -387,6 +387,14 @@
     Public Shared STOCK_REMOVEFROMRUBBERSHEET As String = "Stock_RemoveFromRubberSheet"
     Public Shared DAILYWORKINGDESCRIPTION_DELETE As String = "DailyWorkingDescription_Delete"
 
+    Public Shared FESTIVALRECOVERY_INSERT As String = "FestivalRecovery_Insert"
+
+    Public Shared FESTIVALRECOVERY_DELETE As String = "FestivalRecovery_Delete"
+
+    Public Shared FESTIVALRECOVERY_GETALL_BYDATES As String = "FestivalRecovery_GetAll_ByDates"
+
+
+
     '**************************************************
     Public Shared ALLINFOSP As String = "AllInfosp"
 
