@@ -109,7 +109,7 @@
                 For i = 0 To dt1.Rows.Count - 1
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
-                    Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
+                    Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
 
 
 
@@ -118,12 +118,14 @@
                     cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
                     cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
                     cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+                    cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
 
                     cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
                     cell1.Text = "Balance Salary"
                     cell2.Text = "Permanent"
@@ -139,12 +141,15 @@
                     End If
 
                     cell5.Text = String.Empty
+                    cell6.Text = "Total"
 
                     tr.Cells.Add(cell1)
                     tr.Cells.Add(cell2)
                     tr.Cells.Add(cell3)
                     tr.Cells.Add(cell4)
                     tr.Cells.Add(cell5)
+                    tr.Cells.Add(cell6)
+
 
                     report.xrMainTable.Rows.Add(tr)
 
@@ -162,7 +167,7 @@
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
 
-                    Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
+                    Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
 
 
 
@@ -171,12 +176,14 @@
                     cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
                     cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
                     cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+                    cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
 
                     cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
                     cell1.Text = ""
                     cell2.Text = "Casual 1 - 15"
@@ -191,12 +198,14 @@
 
                     cell4.Text = String.Empty
                     cell5.Text = String.Empty
+                    cell6.Text = String.Empty
 
                     tr.Cells.Add(cell1)
                     tr.Cells.Add(cell2)
                     tr.Cells.Add(cell3)
                     tr.Cells.Add(cell4)
                     tr.Cells.Add(cell5)
+                    tr.Cells.Add(cell6)
 
                     report.xrMainTable.Rows.Add(tr)
 
@@ -212,7 +221,7 @@
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
 
-                    Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
+                    Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
 
 
                     cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
@@ -220,6 +229,7 @@
                     cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
                     cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
                     cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+                    cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
 
                     cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
@@ -227,6 +237,7 @@
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
                     cell1.Text = ""
                     cell2.Text = "Casual 15 - EOM"
@@ -247,6 +258,8 @@
                     tr.Cells.Add(cell3)
                     tr.Cells.Add(cell4)
                     tr.Cells.Add(cell5)
+                    tr.Cells.Add(cell6)
+
                     report.xrMainTable.Rows.Add(tr)
 
                 Next
@@ -264,7 +277,7 @@
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
 
-                    Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
+                    Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
 
 
                     cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
@@ -272,12 +285,14 @@
                     cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
                     cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
                     cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+                    cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
 
                     cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
                     cell1.Text = ""
                     cell2.Text = "KP's Balance Salary"
@@ -293,12 +308,15 @@
 
                     TotalSalary = PermanentSalaryTotal + CasualSalaryTotal + StaffSalaryTotal
                     cell5.Text = FormatNumber(TotalSalary.ToString(), 2, TriState.True) & " "
+                    cell6.Text = String.Empty
 
                     tr.Cells.Add(cell1)
                     tr.Cells.Add(cell2)
                     tr.Cells.Add(cell3)
                     tr.Cells.Add(cell4)
                     tr.Cells.Add(cell5)
+                    tr.Cells.Add(cell6)
+
                     report.xrMainTable.Rows.Add(tr)
 
                 Next
@@ -310,10 +328,46 @@
             '---------------------------Empty Row as Separator  - START ----------------------------------------------------------------
 
             Dim trEmpty As New DevExpress.XtraReports.UI.XRTableRow
-            Dim cellEmpty As New DevExpress.XtraReports.UI.XRTableCell
-            cellEmpty.Size = New Size(report.xrMainTable.WidthF, 25)
-            cellEmpty.Text = " "
-            trEmpty.Cells.Add(cellEmpty)
+            Dim cellEmpty1, cellEmpty2, cellEmpty3, cellEmpty4, cellEmpty5, cellEmpty6 As New DevExpress.XtraReports.UI.XRTableCell
+            cellEmpty1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
+            cellEmpty2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
+            cellEmpty3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
+            cellEmpty4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
+            cellEmpty5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+            cellEmpty6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
+
+            cellEmpty1.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellEmpty1.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+            cellEmpty1.Borders = DevExpress.XtraPrinting.BorderSide.Left
+
+            cellEmpty2.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellEmpty2.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+
+            cellEmpty3.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellEmpty3.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+
+            cellEmpty4.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellEmpty4.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+
+            cellEmpty5.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellEmpty5.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+
+            cellEmpty6.Borders = DevExpress.XtraPrinting.BorderSide.All
+            
+
+            cellEmpty1.Text = String.Empty
+            cellEmpty2.Text = String.Empty
+            cellEmpty3.Text = String.Empty
+            cellEmpty4.Text = String.Empty
+            cellEmpty5.Text = String.Empty
+            cellEmpty6.Text = "JJJ"
+
+            trEmpty.Cells.Add(cellEmpty1)
+            trEmpty.Cells.Add(cellEmpty2)
+            trEmpty.Cells.Add(cellEmpty3)
+            trEmpty.Cells.Add(cellEmpty4)
+            trEmpty.Cells.Add(cellEmpty5)
+            trEmpty.Cells.Add(cellEmpty6)
             report.xrMainTable.Rows.Add(trEmpty)
 
             '---------------------------Empty Row as Separator  - END ----------------------------------------------------------------
@@ -326,19 +380,21 @@
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
 
-                    Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
+                    Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
 
                     cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
                     cell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
                     cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
                     cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
                     cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+                    cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
 
                     cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
 
                     If i = 0 Then
@@ -366,8 +422,9 @@
                         cell4.Text = String.Empty
                         cell5.Text = String.Empty
 
-                    End If
 
+                    End If
+                    cell6.Text = String.Empty
 
 
                     tr.Cells.Add(cell1)
@@ -375,6 +432,7 @@
                     tr.Cells.Add(cell3)
                     tr.Cells.Add(cell4)
                     tr.Cells.Add(cell5)
+                    tr.Cells.Add(cell6)
 
                     report.xrMainTable.Rows.Add(tr)
 
@@ -390,19 +448,22 @@
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
 
-                    Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
+                    Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
 
                     cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
                     cell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
                     cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
                     cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
                     cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+                    cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
 
                     cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+
 
 
                     If i = 0 Then
@@ -431,7 +492,7 @@
                         cell5.Text = String.Empty
 
                     End If
-
+                    cell6.Text = String.Empty
 
 
                     tr.Cells.Add(cell1)
@@ -439,6 +500,7 @@
                     tr.Cells.Add(cell3)
                     tr.Cells.Add(cell4)
                     tr.Cells.Add(cell5)
+                    tr.Cells.Add(cell6)
 
                     report.xrMainTable.Rows.Add(tr)
 
@@ -452,19 +514,22 @@
                 For i = 0 To dt11.Rows.Count - 1
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
-                    Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
+                    Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
 
                     cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
                     cell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
                     cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
                     cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
                     cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+                    cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
 
                     cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+
 
                     If i = 0 Then
                         cell1.Text = "Cash Advance - Staff"
@@ -497,12 +562,15 @@
 
                     End If
 
+                    cell6.Text = String.Empty
+
 
                     tr.Cells.Add(cell1)
                     tr.Cells.Add(cell2)
                     tr.Cells.Add(cell3)
                     tr.Cells.Add(cell4)
                     tr.Cells.Add(cell5)
+                    tr.Cells.Add(cell6)
 
                     report.xrMainTable.Rows.Add(tr)
 
@@ -519,19 +587,22 @@
                 For i = 0 To dt7.Rows.Count - 1
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
-                    Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
+                    Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
 
                     cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
                     cell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
                     cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
                     cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
                     cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+                    cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
 
                     cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+
 
                     If i = 0 Then
                         cell1.Text = "Festival Advance"
@@ -562,13 +633,14 @@
                         cell5.Text = String.Empty
 
                     End If
-
+                    cell6.Text = String.Empty
 
                     tr.Cells.Add(cell1)
                     tr.Cells.Add(cell2)
                     tr.Cells.Add(cell3)
                     tr.Cells.Add(cell4)
                     tr.Cells.Add(cell5)
+                    tr.Cells.Add(cell6)
 
                     report.xrMainTable.Rows.Add(tr)
 
@@ -578,10 +650,10 @@
 
             '---------------------------Empty Row as Separator  - START ----------------------------------------------------------------
             Dim trEmpty2 As New DevExpress.XtraReports.UI.XRTableRow
-            Dim cellEmpty2 As New DevExpress.XtraReports.UI.XRTableCell
-            cellEmpty2.Size = New Size(report.xrMainTable.WidthF, 25)
-            cellEmpty2.Text = " "
-            trEmpty2.Cells.Add(cellEmpty2)
+            Dim cellEmpty12 As New DevExpress.XtraReports.UI.XRTableCell
+            cellEmpty12.Size = New Size(report.xrMainTable.WidthF, 25)
+            cellEmpty12.Text = " "
+            trEmpty2.Cells.Add(cellEmpty12)
             report.xrMainTable.Rows.Add(trEmpty2)
 
 
@@ -595,19 +667,22 @@
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
 
-                    Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
+                    Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
 
                     cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
                     cell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
                     cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
                     cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
                     cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+                    cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
 
                     cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+
 
 
                     If i = 0 Then
@@ -636,6 +711,7 @@
                         cell5.Text = String.Empty
 
                     End If
+                    cell6.Text = String.Empty
 
 
 
@@ -644,7 +720,7 @@
                     tr.Cells.Add(cell3)
                     tr.Cells.Add(cell4)
                     tr.Cells.Add(cell5)
-
+                    tr.Cells.Add(cell6)
                     report.xrMainTable.Rows.Add(tr)
 
                 Next
@@ -652,10 +728,10 @@
 
             '---------------------------Empty Row as Separator  - START ----------------------------------------------------------------
             Dim trEmpty3 As New DevExpress.XtraReports.UI.XRTableRow
-            Dim cellEmpty3 As New DevExpress.XtraReports.UI.XRTableCell
-            cellEmpty3.Size = New Size(report.xrMainTable.WidthF, 10)
-            cellEmpty3.Text = " "
-            trEmpty3.Cells.Add(cellEmpty3)
+            Dim cellEmpty13 As New DevExpress.XtraReports.UI.XRTableCell
+            cellEmpty13.Size = New Size(report.xrMainTable.WidthF, 10)
+            cellEmpty13.Text = " "
+            trEmpty3.Cells.Add(cellEmpty13)
             report.xrMainTable.Rows.Add(trEmpty3)
 
 
@@ -668,20 +744,22 @@
                 For i = 0 To dt9.Rows.Count - 1
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
-
-                    Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
+                    Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
 
                     cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
                     cell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
                     cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
                     cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
                     cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+                    cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
 
                     cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+
 
 
                     If i = 0 Then
@@ -711,6 +789,7 @@
                         cell5.Text = String.Empty
 
                     End If
+                    cell6.Text = String.Empty
 
 
 
@@ -719,6 +798,7 @@
                     tr.Cells.Add(cell3)
                     tr.Cells.Add(cell4)
                     tr.Cells.Add(cell5)
+                    tr.Cells.Add(cell6)
 
                     report.xrMainTable.Rows.Add(tr)
 
@@ -727,10 +807,10 @@
 
             '---------------------------Empty Row as Separator  - START ----------------------------------------------------------------
             Dim trEmpty4 As New DevExpress.XtraReports.UI.XRTableRow
-            Dim cellEmpty4 As New DevExpress.XtraReports.UI.XRTableCell
-            cellEmpty4.Size = New Size(report.xrMainTable.WidthF, 10)
-            cellEmpty4.Text = " "
-            trEmpty4.Cells.Add(cellEmpty4)
+            Dim cellEmpty14 As New DevExpress.XtraReports.UI.XRTableCell
+            cellEmpty14.Size = New Size(report.xrMainTable.WidthF, 10)
+            cellEmpty14.Text = " "
+            trEmpty4.Cells.Add(cellEmpty14)
             report.xrMainTable.Rows.Add(trEmpty4)
 
 
@@ -744,20 +824,21 @@
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
 
-                    Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
+                    Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
 
                     cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
                     cell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
                     cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
                     cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
                     cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
-
+                    cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
 
                     cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
                     cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
                     If i = 0 Then
                         cell1.Text = "OTHER"
@@ -787,13 +868,15 @@
 
                     End If
 
-
+                    cell6.Text = String.Empty
 
                     tr.Cells.Add(cell1)
                     tr.Cells.Add(cell2)
                     tr.Cells.Add(cell3)
                     tr.Cells.Add(cell4)
                     tr.Cells.Add(cell5)
+                    tr.Cells.Add(cell6)
+
 
                     report.xrMainTable.Rows.Add(tr)
 
@@ -806,27 +889,28 @@
 
             Dim trT As New DevExpress.XtraReports.UI.XRTableRow
 
-            Dim Tcell1, Tcell2, Tcell3, Tcell4, Tcell5 As New DevExpress.XtraReports.UI.XRTableCell
+            Dim Tcell1, Tcell2, Tcell3, Tcell4, Tcell5, Tcell6 As New DevExpress.XtraReports.UI.XRTableCell
 
             Tcell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
             Tcell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
             Tcell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
             Tcell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
             Tcell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
-
+            Tcell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
 
             Tcell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
             Tcell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
             Tcell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
             Tcell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
             Tcell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-
+            Tcell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
             Tcell1.Text = "GRAND TOTAL"
-            Tcell2.Text = " "
+            Tcell2.Text = String.Empty
             Tcell3.Text = String.Empty
-            Tcell4.Text = " "
-            Tcell5.Text = FormatNumber((TotalSalary + TotalAdvPay + FestivalAdvanceTotal + OtherExpenseTotal + EPFTotal + ETFTotal), 2, TriState.True)
+            Tcell4.Text = String.Empty
+            Tcell5.Text = String.Empty
+            Tcell6.Text = FormatNumber((TotalSalary + TotalAdvPay + FestivalAdvanceTotal + OtherExpenseTotal + EPFTotal + ETFTotal), 2, TriState.True)
 
 
 
@@ -888,6 +972,8 @@
                         cell5.Text = String.Empty
 
                     End If
+
+                    'Adding values to Total Column
 
 
 

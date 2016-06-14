@@ -31,6 +31,7 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
+        Me.XrTableCell5 = New DevExpress.XtraReports.UI.XRTableCell()
         CType(Me.xrMainTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
@@ -59,7 +60,7 @@ Partial Public Class xrpMonthlyExpensesDetails
         '
         'XrTableRow1
         '
-        Me.XrTableRow1.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell1, Me.XrTableCell2, Me.XrTableCell4, Me.XrTableCell61, Me.XrTableCell3})
+        Me.XrTableRow1.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell1, Me.XrTableCell2, Me.XrTableCell4, Me.XrTableCell61, Me.XrTableCell3, Me.XrTableCell5})
         Me.XrTableRow1.Name = "XrTableRow1"
         Me.XrTableRow1.Weight = 1.0R
         '
@@ -78,27 +79,28 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.XrTableCell2.Name = "XrTableCell2"
         Me.XrTableCell2.StylePriority.UseBorders = False
         Me.XrTableCell2.Text = "Description"
-        Me.XrTableCell2.Weight = 0.98281768484213927R
+        Me.XrTableCell2.Weight = 0.69415789102770631R
         '
         'XrTableCell4
         '
-        Me.XrTableCell4.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Top Or DevExpress.XtraPrinting.BorderSide.Right) _
-            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrTableCell4.Borders = CType((DevExpress.XtraPrinting.BorderSide.Top Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrTableCell4.Name = "XrTableCell4"
         Me.XrTableCell4.StylePriority.UseBorders = False
-        Me.XrTableCell4.Weight = 0.42697587160720041R
+        Me.XrTableCell4.Weight = 0.32044669554405614R
         '
         'XrTableCell61
         '
+        Me.XrTableCell61.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Top Or DevExpress.XtraPrinting.BorderSide.Right) _
+            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrTableCell61.Name = "XrTableCell61"
-        Me.XrTableCell61.Text = "Amount"
-        Me.XrTableCell61.Weight = 0.440721643192252R
+        Me.XrTableCell61.StylePriority.UseBorders = False
+        Me.XrTableCell61.Weight = 0.39604813723220056R
         '
         'XrTableCell3
         '
         Me.XrTableCell3.Name = "XrTableCell3"
-        Me.XrTableCell3.Text = "Total"
-        Me.XrTableCell3.Weight = 0.60309282125885955R
+        Me.XrTableCell3.Text = "Amount"
+        Me.XrTableCell3.Weight = 0.47336764935365649R
         '
         'TopMargin
         '
@@ -137,6 +139,12 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.BottomMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
         '
+        'XrTableCell5
+        '
+        Me.XrTableCell5.Name = "XrTableCell5"
+        Me.XrTableCell5.Text = "Total"
+        Me.XrTableCell5.Weight = 0.56958764774283188R
+        '
         'xrpMonthlyExpensesDetails
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin})
@@ -162,4 +170,5 @@ Partial Public Class xrpMonthlyExpensesDetails
     Friend WithEvents XrTableCell61 As DevExpress.XtraReports.UI.XRTableCell
     Public WithEvents xrMainTable As DevExpress.XtraReports.UI.XRTable
     Friend WithEvents XrTableCell4 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableCell5 As DevExpress.XtraReports.UI.XRTableCell
 End Class
