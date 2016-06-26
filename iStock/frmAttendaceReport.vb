@@ -89,7 +89,7 @@ Public Class frmAttendaceReport
 
 #Region "Print Preview"
     Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
-        '    PrintPivotPreview(pgcAttendance, "Attendance Report")
+        PrintPreview(gcAttendance, "Attendance Report")
     End Sub
 #End Region
 
