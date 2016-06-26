@@ -225,4 +225,8 @@ Public Class frmMain
     Private Sub BarButtonItem42_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem42.ItemClick
         ShowIStockForm(frmFestivalRecovery)
     End Sub
+
+    Private Sub BarButtonItem43_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem43.ItemClick
+        ShowIStockForm(frmMonthlyIncome)
+    End Sub
 End Class

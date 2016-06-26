@@ -112,6 +112,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="frmMonthlyIncome.Designer.vb">
+      <DependentUpon>frmMonthlyIncome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMonthlyIncome.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmFestivalRecovery.designer.vb">
       <DependentUpon>frmFestivalRecovery.vb</DependentUpon>
     </Compile>
@@ -135,6 +141,12 @@
     </Compile>
     <Compile Include="frmMonthlyExpenses.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xrpIncomeReport.Designer.vb">
+      <DependentUpon>xrpIncomeReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xrpIncomeReport.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="xrpMonthlyExpensesDetails.Designer.vb">
       <DependentUpon>xrpMonthlyExpensesDetails.vb</DependentUpon>
@@ -525,6 +537,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmMonthlyIncome.resx">
+      <DependentUpon>frmMonthlyIncome.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmFestivalRecovery.resx">
       <DependentUpon>frmFestivalRecovery.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -539,6 +554,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMonthlyExpenses.resx">
       <DependentUpon>frmMonthlyExpenses.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xrpIncomeReport.resx">
+      <DependentUpon>xrpIncomeReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="xrpMonthlyExpensesDetails.resx">
       <DependentUpon>xrpMonthlyExpensesDetails.vb</DependentUpon>

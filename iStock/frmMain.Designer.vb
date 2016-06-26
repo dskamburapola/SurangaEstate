@@ -68,6 +68,7 @@ Partial Class frmMain
         Me.BarButtonItem39 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem40 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem41 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem42 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup8 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -90,7 +91,7 @@ Partial Class frmMain
         Me.RibbonPageGroup15 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RepositoryItemPictureEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit()
         Me.RibbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
-        Me.BarButtonItem42 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem43 = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ApplicationMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -120,14 +121,14 @@ Partial Class frmMain
         Me.RibbonControl.ApplicationButtonDropDownControl = Me.ApplicationMenu1
         Me.RibbonControl.ApplicationIcon = Global.iStock.My.Resources.Resources.i
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonItem11, Me.BarButtonItem12, Me.BarButtonItem13, Me.BarButtonItem14, Me.bsiInformation, Me.bsiLoggedUser, Me.BarButtonItem15, Me.BarButtonItem16, Me.BarButtonItem17, Me.BarButtonItem18, Me.BarButtonItem19, Me.BarButtonItem21, Me.BarButtonItem22, Me.BarButtonItem23, Me.BarButtonItem20, Me.BarButtonItem24, Me.BarButtonItem25, Me.BarButtonItem27, Me.BarButtonItem26, Me.BarButtonItem28, Me.BarButtonItem29, Me.BarButtonItem30, Me.BarButtonItem31, Me.BarButtonItem32, Me.BarButtonItem33, Me.BarButtonItem34, Me.BarButtonItem35, Me.BarButtonItem36, Me.BarButtonItem37, Me.BarButtonItem38, Me.BarButtonItem39, Me.BarButtonItem40, Me.BarButtonItem41, Me.BarButtonItem42})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonItem11, Me.BarButtonItem12, Me.BarButtonItem13, Me.BarButtonItem14, Me.bsiInformation, Me.bsiLoggedUser, Me.BarButtonItem15, Me.BarButtonItem16, Me.BarButtonItem17, Me.BarButtonItem18, Me.BarButtonItem19, Me.BarButtonItem21, Me.BarButtonItem22, Me.BarButtonItem23, Me.BarButtonItem20, Me.BarButtonItem24, Me.BarButtonItem25, Me.BarButtonItem27, Me.BarButtonItem26, Me.BarButtonItem28, Me.BarButtonItem29, Me.BarButtonItem30, Me.BarButtonItem31, Me.BarButtonItem32, Me.BarButtonItem33, Me.BarButtonItem34, Me.BarButtonItem35, Me.BarButtonItem36, Me.BarButtonItem37, Me.BarButtonItem38, Me.BarButtonItem39, Me.BarButtonItem40, Me.BarButtonItem41, Me.BarButtonItem42, Me.BarButtonItem43})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 52
+        Me.RibbonControl.MaxItemId = 53
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage4, Me.RibbonPage3, Me.RibbonPage5})
         Me.RibbonControl.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemPictureEdit1})
         Me.RibbonControl.ShowToolbarCustomizeItem = False
-        Me.RibbonControl.Size = New System.Drawing.Size(1034, 144)
+        Me.RibbonControl.Size = New System.Drawing.Size(1120, 144)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar1
         Me.RibbonControl.Toolbar.ShowCustomizeItem = False
         '
@@ -449,6 +450,13 @@ Partial Class frmMain
         Me.BarButtonItem41.LargeWidth = 75
         Me.BarButtonItem41.Name = "BarButtonItem41"
         '
+        'BarButtonItem42
+        '
+        Me.BarButtonItem42.Caption = "Festival Recovery"
+        Me.BarButtonItem42.Id = 51
+        Me.BarButtonItem42.LargeGlyph = Global.iStock.My.Resources.Resources.ImgOK
+        Me.BarButtonItem42.Name = "BarButtonItem42"
+        '
         'RibbonPage1
         '
         Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup8, Me.RibbonPageGroup1, Me.RibbonPageGroup4, Me.RibbonPageGroup12})
@@ -569,6 +577,7 @@ Partial Class frmMain
         Me.RibbonPageGroup14.ItemLinks.Add(Me.BarButtonItem31)
         Me.RibbonPageGroup14.ItemLinks.Add(Me.BarButtonItem35)
         Me.RibbonPageGroup14.ItemLinks.Add(Me.BarButtonItem39)
+        Me.RibbonPageGroup14.ItemLinks.Add(Me.BarButtonItem43)
         Me.RibbonPageGroup14.Name = "RibbonPageGroup14"
         Me.RibbonPageGroup14.ShowCaptionButton = False
         '
@@ -606,14 +615,13 @@ Partial Class frmMain
         Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 486)
         Me.RibbonStatusBar1.Name = "RibbonStatusBar1"
         Me.RibbonStatusBar1.Ribbon = Me.RibbonControl
-        Me.RibbonStatusBar1.Size = New System.Drawing.Size(1034, 31)
+        Me.RibbonStatusBar1.Size = New System.Drawing.Size(1120, 31)
         '
-        'BarButtonItem42
+        'BarButtonItem43
         '
-        Me.BarButtonItem42.Caption = "Festival Recovery"
-        Me.BarButtonItem42.Id = 51
-        Me.BarButtonItem42.LargeGlyph = Global.iStock.My.Resources.Resources.ImgOK
-        Me.BarButtonItem42.Name = "BarButtonItem42"
+        Me.BarButtonItem43.Caption = "BarButtonItem43"
+        Me.BarButtonItem43.Id = 52
+        Me.BarButtonItem43.Name = "BarButtonItem43"
         '
         'frmMain
         '
@@ -623,7 +631,7 @@ Partial Class frmMain
         Me.Appearance.Options.UseFont = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1034, 517)
+        Me.ClientSize = New System.Drawing.Size(1120, 517)
         Me.Controls.Add(Me.RibbonStatusBar1)
         Me.Controls.Add(Me.RibbonControl)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -711,6 +719,7 @@ Partial Class frmMain
     Friend WithEvents BarButtonItem40 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem41 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem42 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem43 As DevExpress.XtraBars.BarButtonItem
 
 
 End Class

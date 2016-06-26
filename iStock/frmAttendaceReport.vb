@@ -208,6 +208,8 @@ Public Class frmAttendaceReport
                 gvAttendance.Columns("EmployeeNo").Fixed = Columns.FixedStyle.Left
                 gvAttendance.Columns("EmployeeName").Fixed = Columns.FixedStyle.Left
 
+                gvAttendance.Columns("Designation").Fixed = Columns.FixedStyle.Left
+               
                 gvAttendance.Columns("TotalDays").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
                 gvAttendance.Columns("MWA").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
 
@@ -230,30 +232,6 @@ Public Class frmAttendaceReport
 
 
             End If
-
-
-
-
-
-
-            'If workType = "ALL" Then
-            '    Dim ds As New DataSet
-
-            '    ds = iStockDailyWorking.GetAttendanceReportAllCategory(currentDate)
-            '    pgcAttendance.DataSource = ds.Tables(0)
-            '    pgcAttendance.BestFitColumnArea()
-
-            'Else
-
-            '    Dim ds As New DataSet
-
-            '    ds = iStockDailyWorking.GetAttendanceReport(currentDate, workType)
-            '    pgcAttendance.DataSource = ds.Tables(0)
-            '    pgcAttendance.BestFitColumnArea()
-
-            'End If
-
-
 
 
         End If
