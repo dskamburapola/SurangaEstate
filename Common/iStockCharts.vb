@@ -10,6 +10,7 @@ Public Class iStockCharts
     Private _IncomeType As Long
     Private _ExpenseType As Long
     Private _Year As Integer
+    Private _Month As Integer
 
 #End Region
 
@@ -43,6 +44,16 @@ Public Class iStockCharts
 
     End Property
 
+
+    Public Property Month() As Long
+        Get
+            Return _Month
+        End Get
+        Set(ByVal value As Long)
+            _Month = value
+        End Set
+
+    End Property
 #End Region
 
 #Region "Charts income"
@@ -85,5 +96,25 @@ Public Class iStockCharts
 
 #End Region
 
+
+#Region "Charts attendance"
+    Public Function ChartAttendance() As DataSet
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand("Charts_Attendance")
+            DB.AddInParameter(DBC, "@Month", DbType.Int64, Me.Month)
+            DB.AddInParameter(DBC, "@Year", DbType.Int32, Me.Year)
+
+            Return DB.ExecuteDataSet(DBC)
+            DBC.Dispose()
+        Catch ex As Exception
+            Return Nothing
+            Throw
+        End Try
+
+
+    End Function
+
+#End Region
 
 End Class
