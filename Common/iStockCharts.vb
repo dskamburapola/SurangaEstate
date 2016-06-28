@@ -96,12 +96,31 @@ Public Class iStockCharts
 
 #End Region
 
-
 #Region "Charts attendance"
     Public Function ChartAttendance() As DataSet
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
             Dim DBC As DbCommand = DB.GetStoredProcCommand("Charts_Attendance")
+            DB.AddInParameter(DBC, "@Month", DbType.Int64, Me.Month)
+            DB.AddInParameter(DBC, "@Year", DbType.Int32, Me.Year)
+
+            Return DB.ExecuteDataSet(DBC)
+            DBC.Dispose()
+        Catch ex As Exception
+            Return Nothing
+            Throw
+        End Try
+
+
+    End Function
+
+#End Region
+
+#Region "Charts crop summary"
+    Public Function ChartCropSummary() As DataSet
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand("Charts_CropSummary")
             DB.AddInParameter(DBC, "@Month", DbType.Int64, Me.Month)
             DB.AddInParameter(DBC, "@Year", DbType.Int32, Me.Year)
 

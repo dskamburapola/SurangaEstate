@@ -1,4 +1,6 @@
-﻿Public Class frmChart_Attendance
+﻿Imports DevExpress.XtraCharts
+
+Public Class frmChart_CropSummary
 
 #Region "Variables"
 
@@ -85,7 +87,7 @@
 
 
     Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
-        PrintChartPreview(Chart, "Attendance chart")
+        PrintChartPreview(Chart, "Crop Summary")
     End Sub
 #End Region
 
@@ -97,25 +99,28 @@
 
         CWBCharts.Year = leYear.EditValue
         CWBCharts.Month = meMonth.EditValue
-        Chart.DataSource = CWBCharts.ChartAttendance().Tables(0)
+        Chart.DataSource = CWBCharts.ChartCropSummary().Tables(0)
 
         'Chart.SeriesDataMember = "EmpCount"
         'Chart.SeriesTemplate.ArgumentDataMember = "EmpCount"
         'Chart.SeriesTemplate.ValueDataMembers.AddRange(New String() {"MonthDay"})
 
-        Chart.SeriesDataMember = "EmpTotalCount"
+        Chart.SeriesDataMember = "AbbreviationDesc"
         Chart.SeriesTemplate.ArgumentDataMember = "MonthDay"
-        Chart.SeriesTemplate.ValueDataMembers.AddRange(New String() {"EmpCount"})
+        Chart.SeriesTemplate.ValueDataMembers.AddRange(New String() {"CropTotal"})
+
+
+
 
         Dim ct As New DevExpress.XtraCharts.ChartTitle
-        ct.Text = "Attendance " + leYear.Text + " - " + meMonth.Text
+        ct.Text = "Crop Summary " + leYear.Text + " - " + meMonth.Text
         Chart.Titles.Clear()
         Chart.Titles.Add(ct)
 
-        Chart.SeriesTemplate.LegendText = "Number of Employees"
-        Chart.SeriesTemplate.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative
-     
+        Chart.SeriesTemplate.LegendText = "Plucking (Kg)"
+        'Chart.SeriesTemplate.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Numerical
 
+      
 
     End Sub
 
