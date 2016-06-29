@@ -110,10 +110,13 @@ Public Class frmChart_CropSummary
 
         Chart.Series("Plucking").ArgumentDataMember = "MonthDay"
         Chart.Series("Plucking").ValueDataMembers.AddRange(New String() {"Plucking"})
+        Chart.Series("FactoryCrop").ArgumentDataMember = "MonthDay"
+        Chart.Series("FactoryCrop").ValueDataMembers.AddRange(New String() {"FactoryCrop"})
+
 
         '
         Dim ct As New DevExpress.XtraCharts.ChartTitle
-        ct.Text = "Crop Summary " + leYear.Text + " - " + meMonth.Text
+        ct.Text = "Plucking Weight and Factory Weight " + leYear.Text + " - " + meMonth.Text
         Chart.Titles.Clear()
         Chart.Titles.Add(ct)
 

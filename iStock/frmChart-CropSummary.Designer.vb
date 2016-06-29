@@ -24,7 +24,9 @@ Partial Class frmChart_CropSummary
         Dim XyDiagram1 As DevExpress.XtraCharts.XYDiagram = New DevExpress.XtraCharts.XYDiagram()
         Dim Series1 As DevExpress.XtraCharts.Series = New DevExpress.XtraCharts.Series()
         Dim SideBySideBarSeriesLabel1 As DevExpress.XtraCharts.SideBySideBarSeriesLabel = New DevExpress.XtraCharts.SideBySideBarSeriesLabel()
+        Dim Series2 As DevExpress.XtraCharts.Series = New DevExpress.XtraCharts.Series()
         Dim SideBySideBarSeriesLabel2 As DevExpress.XtraCharts.SideBySideBarSeriesLabel = New DevExpress.XtraCharts.SideBySideBarSeriesLabel()
+        Dim SideBySideBarSeriesLabel3 As DevExpress.XtraCharts.SideBySideBarSeriesLabel = New DevExpress.XtraCharts.SideBySideBarSeriesLabel()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.meMonth = New DevExpress.XtraScheduler.UI.MonthEdit()
         Me.sbPrint = New DevExpress.XtraEditors.SimpleButton()
@@ -48,7 +50,9 @@ Partial Class frmChart_CropSummary
         CType(XyDiagram1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Series1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(SideBySideBarSeriesLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Series2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(SideBySideBarSeriesLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(SideBySideBarSeriesLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -123,10 +127,16 @@ Partial Class frmChart_CropSummary
         SideBySideBarSeriesLabel1.LineVisible = True
         SideBySideBarSeriesLabel1.ShowForZeroValues = True
         Series1.Label = SideBySideBarSeriesLabel1
+        Series1.LegendText = "Plucking Weight(Kg)"
         Series1.Name = "Plucking"
-        Me.Chart.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series1}
+        Series2.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative
         SideBySideBarSeriesLabel2.LineVisible = True
-        Me.Chart.SeriesTemplate.Label = SideBySideBarSeriesLabel2
+        Series2.Label = SideBySideBarSeriesLabel2
+        Series2.LegendText = "Factory Weight(Kg)"
+        Series2.Name = "FactoryCrop"
+        Me.Chart.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series1, Series2}
+        SideBySideBarSeriesLabel3.LineVisible = True
+        Me.Chart.SeriesTemplate.Label = SideBySideBarSeriesLabel3
         Me.Chart.Size = New System.Drawing.Size(848, 390)
         Me.Chart.TabIndex = 6
         '
@@ -256,6 +266,8 @@ Partial Class frmChart_CropSummary
         CType(SideBySideBarSeriesLabel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Series1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(SideBySideBarSeriesLabel2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Series2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(SideBySideBarSeriesLabel3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Chart, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()

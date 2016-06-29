@@ -160,18 +160,25 @@ Public Class frmDailyCropSummary
 
         iStockDailyCrop.DeleteDailyCrop()
 
-        For i As Integer = 0 To Me.gvDailyCrop.RowCount
+        For i As Integer = 0 To Me.gvDailyCrop.RowCount - 1
 
-            iStockDailyCrop.CurrentDate = Me.gvDailyCrop.GetRowCellDisplayText(i, GridColumn1)
-            iStockDailyCrop.FactoryCrop = Me.gvDailyCrop.GetRowCellDisplayText(i, GridColumn3)
-            iStockDailyCrop.Rate = Me.gvDailyCrop.GetRowCellDisplayText(i, GridColumn4)
-            iStockDailyCrop.insertDailyCrop()
+            If (Me.gvDailyCrop.GetRowCellDisplayText(i, GridColumn1) <> "") Then
 
+
+                iStockDailyCrop.CurrentDate = Me.gvDailyCrop.GetRowCellDisplayText(i, GridColumn1)
+                iStockDailyCrop.FactoryCrop = Me.gvDailyCrop.GetRowCellDisplayText(i, GridColumn3)
+                iStockDailyCrop.Rate = IIf(Me.gvDailyCrop.GetRowCellDisplayText(i, GridColumn4) = "", 0, Me.gvDailyCrop.GetRowCellDisplayText(i, GridColumn4))
+                iStockDailyCrop.insertDailyCrop()
+            End If
         Next
 
       
 
-
+        Dim frm As New frmSavedOk
+        frm.Text = CWB_SAVESUCCESS_CONFIRMATION_TITLE
+        frm.lblTitle.Text = CWB_SAVESUCCESS_CONFIRMATION_TITLELABEL
+        frm.lblDescription.Text = CWB_SAVESUCCESS_CONFIRMATION_DESCRIPTIONLABEL
+        frm.ShowDialog()
 
         Me.LoadGrid()
 

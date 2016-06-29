@@ -99,7 +99,7 @@ Public Class iStockDailyCropSummary
         DB.AddInParameter(DBCInsert, "@Month", DbType.Int32, Me.CurrentMonth)
         DB.AddInParameter(DBCInsert, "@Year", DbType.Int32, Me.CurrentYear)
         DB.AddInParameter(DBCInsert, "@AbbreviationID", DbType.Int64, Me.AbbreviationID)
-        DB.AddInParameter(DBCInsert, "@CurrentDay", DbType.Int32, Me.CurrentDate)
+        DB.AddInParameter(DBCInsert, "@CurrentDay", DbType.Date, Me.CurrentDate)
         DB.AddInParameter(DBCInsert, "@FactoryCrop", DbType.Decimal, Me.FactoryCrop)
         DB.AddInParameter(DBCInsert, "@Rate", DbType.Decimal, Me.Rate)
 
