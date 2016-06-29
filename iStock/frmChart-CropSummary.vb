@@ -101,17 +101,17 @@ Public Class frmChart_CropSummary
         CWBCharts.Month = meMonth.EditValue
         Chart.DataSource = CWBCharts.ChartCropSummary().Tables(0)
 
-        'Chart.SeriesDataMember = "EmpCount"
-        'Chart.SeriesTemplate.ArgumentDataMember = "EmpCount"
-        'Chart.SeriesTemplate.ValueDataMembers.AddRange(New String() {"MonthDay"})
+        'CWBCharts.ChartCropSummary().Tables(0).WriteXml("d:\crop.xml")
 
-        Chart.SeriesDataMember = "AbbreviationDesc"
-        Chart.SeriesTemplate.ArgumentDataMember = "MonthDay"
-        Chart.SeriesTemplate.ValueDataMembers.AddRange(New String() {"CropTotal"})
+        'Chart.SeriesDataMember = "Plucking"
+        'Chart.SeriesTemplate.ArgumentDataMember = "MonthDay"
+        'Chart.SeriesTemplate.ValueDataMembers.AddRange(New String() {"Plucking"})
 
 
+        Chart.Series("Plucking").ArgumentDataMember = "MonthDay"
+        Chart.Series("Plucking").ValueDataMembers.AddRange(New String() {"Plucking"})
 
-
+        '
         Dim ct As New DevExpress.XtraCharts.ChartTitle
         ct.Text = "Crop Summary " + leYear.Text + " - " + meMonth.Text
         Chart.Titles.Clear()

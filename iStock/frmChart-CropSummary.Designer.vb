@@ -21,7 +21,10 @@ Partial Class frmChart_CropSummary
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim XyDiagram1 As DevExpress.XtraCharts.XYDiagram = New DevExpress.XtraCharts.XYDiagram()
+        Dim Series1 As DevExpress.XtraCharts.Series = New DevExpress.XtraCharts.Series()
         Dim SideBySideBarSeriesLabel1 As DevExpress.XtraCharts.SideBySideBarSeriesLabel = New DevExpress.XtraCharts.SideBySideBarSeriesLabel()
+        Dim SideBySideBarSeriesLabel2 As DevExpress.XtraCharts.SideBySideBarSeriesLabel = New DevExpress.XtraCharts.SideBySideBarSeriesLabel()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.meMonth = New DevExpress.XtraScheduler.UI.MonthEdit()
         Me.sbPrint = New DevExpress.XtraEditors.SimpleButton()
@@ -42,7 +45,10 @@ Partial Class frmChart_CropSummary
         CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Chart, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(XyDiagram1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Series1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(SideBySideBarSeriesLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(SideBySideBarSeriesLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,7 +71,7 @@ Partial Class frmChart_CropSummary
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.LayoutControlGroup1
-        Me.LayoutControl1.Size = New System.Drawing.Size(583, 474)
+        Me.LayoutControl1.Size = New System.Drawing.Size(872, 474)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -74,13 +80,13 @@ Partial Class frmChart_CropSummary
         Me.meMonth.Location = New System.Drawing.Point(45, 12)
         Me.meMonth.Name = "meMonth"
         Me.meMonth.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.meMonth.Size = New System.Drawing.Size(53, 20)
+        Me.meMonth.Size = New System.Drawing.Size(99, 20)
         Me.meMonth.StyleController = Me.LayoutControl1
         Me.meMonth.TabIndex = 9
         '
         'sbPrint
         '
-        Me.sbPrint.Location = New System.Drawing.Point(425, 432)
+        Me.sbPrint.Location = New System.Drawing.Point(714, 432)
         Me.sbPrint.Name = "sbPrint"
         Me.sbPrint.Size = New System.Drawing.Size(146, 30)
         Me.sbPrint.StyleController = Me.LayoutControl1
@@ -89,7 +95,7 @@ Partial Class frmChart_CropSummary
         '
         'leYear
         '
-        Me.leYear.Location = New System.Drawing.Point(135, 12)
+        Me.leYear.Location = New System.Drawing.Point(181, 12)
         Me.leYear.Name = "leYear"
         Me.leYear.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.leYear.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Value", "Year")})
@@ -104,17 +110,29 @@ Partial Class frmChart_CropSummary
         'Chart
         '
         Me.Chart.Cursor = System.Windows.Forms.Cursors.Arrow
+        XyDiagram1.AxisX.Range.ScrollingRange.SideMarginsEnabled = True
+        XyDiagram1.AxisX.Range.SideMarginsEnabled = True
+        XyDiagram1.AxisX.VisibleInPanesSerializable = "-1"
+        XyDiagram1.AxisY.Range.ScrollingRange.SideMarginsEnabled = True
+        XyDiagram1.AxisY.Range.SideMarginsEnabled = True
+        XyDiagram1.AxisY.VisibleInPanesSerializable = "-1"
+        Me.Chart.Diagram = XyDiagram1
         Me.Chart.Location = New System.Drawing.Point(12, 38)
         Me.Chart.Name = "Chart"
-        Me.Chart.SeriesSerializable = New DevExpress.XtraCharts.Series(-1) {}
+        Series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative
         SideBySideBarSeriesLabel1.LineVisible = True
-        Me.Chart.SeriesTemplate.Label = SideBySideBarSeriesLabel1
-        Me.Chart.Size = New System.Drawing.Size(559, 390)
+        SideBySideBarSeriesLabel1.ShowForZeroValues = True
+        Series1.Label = SideBySideBarSeriesLabel1
+        Series1.Name = "Plucking"
+        Me.Chart.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series1}
+        SideBySideBarSeriesLabel2.LineVisible = True
+        Me.Chart.SeriesTemplate.Label = SideBySideBarSeriesLabel2
+        Me.Chart.Size = New System.Drawing.Size(848, 390)
         Me.Chart.TabIndex = 6
         '
         'sbProcess
         '
-        Me.sbProcess.Location = New System.Drawing.Point(252, 12)
+        Me.sbProcess.Location = New System.Drawing.Point(298, 12)
         Me.sbProcess.Name = "sbProcess"
         Me.sbProcess.Size = New System.Drawing.Size(96, 22)
         Me.sbProcess.StyleController = Me.LayoutControl1
@@ -129,7 +147,7 @@ Partial Class frmChart_CropSummary
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3, Me.EmptySpaceItem1, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.EmptySpaceItem2, Me.LayoutControlItem1})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(583, 474)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(872, 474)
         Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
         Me.LayoutControlGroup1.TextVisible = False
         '
@@ -137,7 +155,7 @@ Partial Class frmChart_CropSummary
         '
         Me.LayoutControlItem2.Control = Me.sbProcess
         Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(240, 0)
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(286, 0)
         Me.LayoutControlItem2.MaxSize = New System.Drawing.Size(100, 26)
         Me.LayoutControlItem2.MinSize = New System.Drawing.Size(100, 26)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
@@ -154,7 +172,7 @@ Partial Class frmChart_CropSummary
         Me.LayoutControlItem3.CustomizationFormText = "LayoutControlItem3"
         Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 26)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(563, 394)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(852, 394)
         Me.LayoutControlItem3.Text = "LayoutControlItem3"
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem3.TextToControlDistance = 0
@@ -164,9 +182,9 @@ Partial Class frmChart_CropSummary
         '
         Me.EmptySpaceItem1.AllowHotTrack = False
         Me.EmptySpaceItem1.CustomizationFormText = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(340, 0)
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(386, 0)
         Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(223, 26)
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(466, 26)
         Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -174,7 +192,7 @@ Partial Class frmChart_CropSummary
         '
         Me.LayoutControlItem4.Control = Me.leYear
         Me.LayoutControlItem4.CustomizationFormText = "Year"
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(90, 0)
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(136, 0)
         Me.LayoutControlItem4.MaxSize = New System.Drawing.Size(150, 24)
         Me.LayoutControlItem4.MinSize = New System.Drawing.Size(150, 24)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
@@ -187,7 +205,7 @@ Partial Class frmChart_CropSummary
         '
         Me.LayoutControlItem5.Control = Me.sbPrint
         Me.LayoutControlItem5.CustomizationFormText = "LayoutControlItem5"
-        Me.LayoutControlItem5.Location = New System.Drawing.Point(413, 420)
+        Me.LayoutControlItem5.Location = New System.Drawing.Point(702, 420)
         Me.LayoutControlItem5.MaxSize = New System.Drawing.Size(150, 34)
         Me.LayoutControlItem5.MinSize = New System.Drawing.Size(150, 34)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
@@ -204,7 +222,7 @@ Partial Class frmChart_CropSummary
         Me.EmptySpaceItem2.CustomizationFormText = "EmptySpaceItem2"
         Me.EmptySpaceItem2.Location = New System.Drawing.Point(0, 420)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(413, 34)
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(702, 34)
         Me.EmptySpaceItem2.Text = "EmptySpaceItem2"
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -216,7 +234,7 @@ Partial Class frmChart_CropSummary
         Me.LayoutControlItem1.MaxSize = New System.Drawing.Size(0, 24)
         Me.LayoutControlItem1.MinSize = New System.Drawing.Size(87, 24)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(90, 26)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(136, 26)
         Me.LayoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem1.Text = "Month"
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(30, 13)
@@ -225,7 +243,7 @@ Partial Class frmChart_CropSummary
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(583, 474)
+        Me.ClientSize = New System.Drawing.Size(872, 474)
         Me.Controls.Add(Me.LayoutControl1)
         Me.KeyPreview = True
         Me.Name = "frmChart_CropSummary"
@@ -234,7 +252,10 @@ Partial Class frmChart_CropSummary
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(XyDiagram1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(SideBySideBarSeriesLabel1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Series1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(SideBySideBarSeriesLabel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Chart, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
