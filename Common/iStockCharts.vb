@@ -78,6 +78,7 @@ Public Class iStockCharts
 #End Region
 
 #Region "Charts expenses"
+
     Public Function ChartExpenses() As DataSet
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
@@ -98,6 +99,7 @@ Public Class iStockCharts
 #End Region
 
 #Region "Charts attendance"
+
     Public Function ChartAttendance() As DataSet
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
@@ -118,6 +120,7 @@ Public Class iStockCharts
 #End Region
 
 #Region "Charts crop summary"
+
     Public Function ChartCropSummary() As DataSet
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
