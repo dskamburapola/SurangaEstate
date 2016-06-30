@@ -1,8 +1,8 @@
-﻿Public Class frmChart_expense
+﻿Public Class frmChart_Expenses
 
 #Region "Variables"
 
-    Private _CWBExpenses As iStockCommon.iStockExpenses
+    Private _CWBOtherIncome As iStockCommon.iStockOtherIncome
     Private _CWBCharts As iStockCommon.iStockCharts
 
 #End Region
@@ -20,14 +20,14 @@
         End Get
     End Property
 
-    Public ReadOnly Property CWBExpenses() As iStockCommon.iStockExpenses
+    Public ReadOnly Property CWBOtherIncome() As iStockCommon.iStockOtherIncome
         Get
 
-            If _CWBExpenses Is Nothing Then
-                _CWBExpenses = New iStockCommon.iStockExpenses()
+            If _CWBOtherIncome Is Nothing Then
+                _CWBOtherIncome = New iStockCommon.iStockOtherIncome()
             End If
 
-            Return _CWBExpenses
+            Return _CWBOtherIncome
         End Get
     End Property
 
@@ -37,14 +37,14 @@
 
     Private Sub frmChart_income_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.LoadYears()
+
     End Sub
 
     Private Sub frmChart_income_Activated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Activated
-        PopulateOtherIncomeTypesLookup()
+
     End Sub
 
-
-    Private Sub frmChart_expense_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles MyBase.KeyPress
+    Private Sub frmChart_income_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles MyBase.KeyPress
         If e.KeyChar = Chr(27) Then
             Me.Close()
         End If
@@ -72,23 +72,7 @@
 
 #End Region
 
-#Region "Populate expense Lookup"
-    Public Sub PopulateOtherIncomeTypesLookup()
 
-        Try
-            With lupExpenseType
-                .Properties.DataSource = CWBExpenses.ExpenseTypesGetAll().Tables(0)
-                .Properties.DisplayMember = "Description"
-                .Properties.ValueMember = "ExpenseTypeID"
-
-            End With
-
-
-        Catch ex As Exception
-
-        End Try
-    End Sub
-#End Region
 
 #Region "Editor Events"
 
@@ -98,14 +82,10 @@
         End If
     End Sub
 
-    Private Sub lupOtherIncomeType_ButtonClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles lupExpenseType.ButtonClick
-        If e.Button.Index = 1 Then
-            lupExpenseType.EditValue = Nothing
-        End If
-    End Sub
+
 
     Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
-        PrintChartPreview(Chart, "Expense chart")
+        PrintChartPreview(Chart, "Attendance chart")
     End Sub
 #End Region
 
@@ -114,22 +94,33 @@
     Private Sub BindChart()
 
 
-        CWBCharts.IncomeType = lupExpenseType.EditValue
-        CWBCharts.Year = leYear.EditValue
-        Chart.DataSource = CWBCharts.ChartExpenses.Tables(0)
 
-        Chart.SeriesDataMember = "Description"
-        Chart.SeriesTemplate.ArgumentDataMember = "Month"
-        Chart.SeriesTemplate.ValueDataMembers.AddRange(New String() {"Amount"})
+        CWBCharts.Year = leYear.EditValue
+        CWBCharts.Month = meMonth.EditValue
+        Chart.DataSource = CWBCharts.ChartExpenses().Tables(0)
+
+        'Chart.SeriesDataMember = "EmpCount"
+        'Chart.SeriesTemplate.ArgumentDataMember = "EmpCount"
+        'Chart.SeriesTemplate.ValueDataMembers.AddRange(New String() {"MonthDay"})
+
+        Chart.SeriesDataMember = "EmpTotalCount"
+        Chart.SeriesTemplate.ArgumentDataMember = "MonthDay"
+        Chart.SeriesTemplate.ValueDataMembers.AddRange(New String() {"EmpCount"})
 
         Dim ct As New DevExpress.XtraCharts.ChartTitle
-        ct.Text = lupExpenseType.Text + " " + leYear.Text
+        ct.Text = "Attendance " + leYear.Text + " - " + meMonth.Text
         Chart.Titles.Clear()
         Chart.Titles.Add(ct)
+
+        Chart.SeriesTemplate.LegendText = "Number of Employees"
+        Chart.SeriesTemplate.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative
+
+
 
     End Sub
 
 #End Region
+
 
 
 End Class

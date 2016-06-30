@@ -112,6 +112,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="frmChart-Expenses.Designer.vb">
+      <DependentUpon>frmChart-Expenses.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmChart-Expenses.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmChart-CropSummary.Designer.vb">
       <DependentUpon>frmChart-CropSummary.vb</DependentUpon>
     </Compile>
@@ -200,12 +206,6 @@
       <DependentUpon>frmFieldPerformance.vb</DependentUpon>
     </Compile>
     <Compile Include="frmFieldPerformance.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmChart-expense.Designer.vb">
-      <DependentUpon>frmChart-expense.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmChart-expense.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmChart-income.Designer.vb">
@@ -549,6 +549,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmChart-Expenses.resx">
+      <DependentUpon>frmChart-Expenses.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChart-CropSummary.resx">
       <DependentUpon>frmChart-CropSummary.vb</DependentUpon>
     </EmbeddedResource>
@@ -597,9 +600,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFieldPerformance.resx">
       <DependentUpon>frmFieldPerformance.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmChart-expense.resx">
-      <DependentUpon>frmChart-expense.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChart-income.resx">
       <DependentUpon>frmChart-income.vb</DependentUpon>

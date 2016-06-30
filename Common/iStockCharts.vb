@@ -57,6 +57,7 @@ Public Class iStockCharts
 #End Region
 
 #Region "Charts income"
+
     Public Function ChartIncome() As DataSet
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
@@ -81,7 +82,7 @@ Public Class iStockCharts
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
             Dim DBC As DbCommand = DB.GetStoredProcCommand("Charts_Expense")
-            DB.AddInParameter(DBC, "@ExpnseType", DbType.Int64, Me.ExpenseType)
+            DB.AddInParameter(DBC, "@Month", DbType.Int64, Me.Month)
             DB.AddInParameter(DBC, "@Year", DbType.Int32, Me.Year)
 
             Return DB.ExecuteDataSet(DBC)

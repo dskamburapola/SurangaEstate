@@ -27,7 +27,7 @@ Public Class frmMain
 
 #Region "Bar Button Events"
     Private Sub BarButtonItem33_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem33.ItemClick
-        ShowIStockForm(frmChart_expense)
+        ShowIStockForm(frmChart_Expenses)
     End Sub
     Private Sub BarButtonItem32_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem32.ItemClick
         ShowIStockForm(frmChart_income)

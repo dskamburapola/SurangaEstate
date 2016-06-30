@@ -74,8 +74,6 @@ Public Class frmChart_CropSummary
 
 #End Region
 
-
-
 #Region "Editor Events"
 
     Private Sub sbProcess_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbProcess.Click
