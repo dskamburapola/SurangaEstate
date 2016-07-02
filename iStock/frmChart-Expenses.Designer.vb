@@ -21,6 +21,12 @@ Partial Class frmChart_Expenses
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim SimpleDiagram1 As DevExpress.XtraCharts.SimpleDiagram = New DevExpress.XtraCharts.SimpleDiagram()
+        Dim Series1 As DevExpress.XtraCharts.Series = New DevExpress.XtraCharts.Series()
+        Dim PieSeriesLabel1 As DevExpress.XtraCharts.PieSeriesLabel = New DevExpress.XtraCharts.PieSeriesLabel()
+        Dim PiePointOptions1 As DevExpress.XtraCharts.PiePointOptions = New DevExpress.XtraCharts.PiePointOptions()
+        Dim PiePointOptions2 As DevExpress.XtraCharts.PiePointOptions = New DevExpress.XtraCharts.PiePointOptions()
+        Dim PieSeriesView1 As DevExpress.XtraCharts.PieSeriesView = New DevExpress.XtraCharts.PieSeriesView()
         Dim SideBySideBarSeriesLabel1 As DevExpress.XtraCharts.SideBySideBarSeriesLabel = New DevExpress.XtraCharts.SideBySideBarSeriesLabel()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.meMonth = New DevExpress.XtraScheduler.UI.MonthEdit()
@@ -42,6 +48,10 @@ Partial Class frmChart_Expenses
         CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Chart, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(SimpleDiagram1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Series1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(PieSeriesLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(PieSeriesView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(SideBySideBarSeriesLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -104,9 +114,27 @@ Partial Class frmChart_Expenses
         'Chart
         '
         Me.Chart.Cursor = System.Windows.Forms.Cursors.Arrow
+        SimpleDiagram1.CustomPanel = Nothing
+        SimpleDiagram1.EqualPieSize = False
+        SimpleDiagram1.LabelsResolveOverlappingMinIndent = 10
+        Me.Chart.Diagram = SimpleDiagram1
         Me.Chart.Location = New System.Drawing.Point(12, 38)
         Me.Chart.Name = "Chart"
-        Me.Chart.SeriesSerializable = New DevExpress.XtraCharts.Series(-1) {}
+        Series1.ArgumentDataMember = "Description"
+        PieSeriesLabel1.LineVisible = True
+        PiePointOptions1.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.Percent
+        PieSeriesLabel1.PointOptions = PiePointOptions1
+        PieSeriesLabel1.ResolveOverlappingMode = DevExpress.XtraCharts.ResolveOverlappingMode.[Default]
+        Series1.Label = PieSeriesLabel1
+        PiePointOptions2.PointView = DevExpress.XtraCharts.PointView.Argument
+        PiePointOptions2.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.Percent
+        Series1.LegendPointOptions = PiePointOptions2
+        Series1.Name = "Expense"
+        Series1.SynchronizePointOptions = False
+        Series1.ValueDataMembersSerializable = "Amount"
+        PieSeriesView1.RuntimeExploding = False
+        Series1.View = PieSeriesView1
+        Me.Chart.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series1}
         SideBySideBarSeriesLabel1.LineVisible = True
         Me.Chart.SeriesTemplate.Label = SideBySideBarSeriesLabel1
         Me.Chart.Size = New System.Drawing.Size(559, 390)
@@ -234,6 +262,10 @@ Partial Class frmChart_Expenses
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(SimpleDiagram1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(PieSeriesLabel1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(PieSeriesView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Series1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(SideBySideBarSeriesLabel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Chart, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()

@@ -99,21 +99,24 @@
         CWBCharts.Month = meMonth.EditValue
         Chart.DataSource = CWBCharts.ChartExpenses().Tables(0)
 
-        'Chart.SeriesDataMember = "EmpCount"
-        'Chart.SeriesTemplate.ArgumentDataMember = "EmpCount"
-        'Chart.SeriesTemplate.ValueDataMembers.AddRange(New String() {"MonthDay"})
+        
+        'Chart.SeriesDataMember = "Description"
+        'Chart.SeriesTemplate.ArgumentDataMember = "Description"
+        'Chart.SeriesTemplate.ValueDataMembers.AddRange(New String() {"Amount"})
 
-        Chart.SeriesDataMember = "EmpTotalCount"
-        Chart.SeriesTemplate.ArgumentDataMember = "MonthDay"
-        Chart.SeriesTemplate.ValueDataMembers.AddRange(New String() {"EmpCount"})
+        'Chart.Series("Expense").ArgumentDataMember = "Description"
+        'Chart.Series("Expense").ValueDataMembers.AddRange(New String() {"Amount"})
 
         Dim ct As New DevExpress.XtraCharts.ChartTitle
-        ct.Text = "Attendance " + leYear.Text + " - " + meMonth.Text
+        ct.Text = "Expenses " + leYear.Text + " - " + meMonth.Text
         Chart.Titles.Clear()
         Chart.Titles.Add(ct)
 
-        Chart.SeriesTemplate.LegendText = "Number of Employees"
-        Chart.SeriesTemplate.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative
+
+
+
+        'Chart.SeriesTemplate.LegendText = "Number of Employees"
+        'Chart.SeriesTemplate.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative
 
 
 
