@@ -112,6 +112,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="frmChart-Income.Designer.vb">
+      <DependentUpon>frmChart-Income.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmChart-Income.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmCashRewards.designer.vb">
       <DependentUpon>frmCashRewards.vb</DependentUpon>
     </Compile>
@@ -212,12 +218,6 @@
       <DependentUpon>frmFieldPerformance.vb</DependentUpon>
     </Compile>
     <Compile Include="frmFieldPerformance.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmChart-income.Designer.vb">
-      <DependentUpon>frmChart-income.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmChart-income.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCoinCalculator.Designer.vb">
@@ -555,6 +555,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmChart-Income.resx">
+      <DependentUpon>frmChart-Income.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCashRewards.resx">
       <DependentUpon>frmCashRewards.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -610,9 +613,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFieldPerformance.resx">
       <DependentUpon>frmFieldPerformance.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmChart-income.resx">
-      <DependentUpon>frmChart-income.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCoinCalculator.resx">
       <DependentUpon>frmCoinCalculator.vb</DependentUpon>

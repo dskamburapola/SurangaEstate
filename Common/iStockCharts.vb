@@ -62,7 +62,7 @@ Public Class iStockCharts
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
             Dim DBC As DbCommand = DB.GetStoredProcCommand("Charts_Income")
-            DB.AddInParameter(DBC, "@IncomeType", DbType.Int64, Me.IncomeType)
+            DB.AddInParameter(DBC, "@Month", DbType.Int64, Me.Month)
             DB.AddInParameter(DBC, "@Year", DbType.Int32, Me.Year)
 
             Return DB.ExecuteDataSet(DBC)

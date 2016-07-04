@@ -108,7 +108,7 @@
         Chart.SeriesTemplate.ValueDataMembers.AddRange(New String() {"EmpCount"})
 
         Dim ct As New DevExpress.XtraCharts.ChartTitle
-        ct.Text = "Attendance " + leYear.Text + " - " + meMonth.Text
+        ct.Text = "Attendance - " + leYear.Text + " - " + meMonth.Text
         Chart.Titles.Clear()
         Chart.Titles.Add(ct)
 

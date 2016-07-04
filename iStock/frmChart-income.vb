@@ -1,4 +1,4 @@
-﻿Public Class frmChart_income
+﻿Public Class frmChart_Income
 
 #Region "Variables"
 
@@ -41,7 +41,7 @@
     End Sub
 
     Private Sub frmChart_income_Activated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Activated
-        PopulateOtherIncomeTypesLookup()
+
     End Sub
 
     Private Sub frmChart_income_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles MyBase.KeyPress
@@ -72,24 +72,6 @@
 
 #End Region
 
-#Region "Populate OtherIncomeTypes Lookup"
-    Public Sub PopulateOtherIncomeTypesLookup()
-
-        Try
-            With lupOtherIncomeType
-                .Properties.DataSource = CWBOtherIncome.OtherIncomeTypesGetAll().Tables(0)
-                .Properties.DisplayMember = "Description"
-                .Properties.ValueMember = "OtherIncomeTypeID"
-
-            End With
-
-
-        Catch ex As Exception
-
-        End Try
-    End Sub
-#End Region
-
 #Region "Editor Events"
 
     Private Sub sbProcess_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbProcess.Click
@@ -98,15 +80,10 @@
         End If
     End Sub
 
-    Private Sub lupOtherIncomeType_ButtonClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles lupOtherIncomeType.ButtonClick
-        If e.Button.Index = 1 Then
-            lupOtherIncomeType.EditValue = Nothing
-        End If
+    Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
+        PrintChartPreview(Chart, "Income, Expenses and Profit chart")
     End Sub
 
-    Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
-        PrintChartPreview(Chart, "Income chart")
-    End Sub
 #End Region
 
 #Region "Bind Chart"
@@ -114,23 +91,36 @@
     Private Sub BindChart()
 
 
-        CWBCharts.IncomeType = lupOtherIncomeType.EditValue
+
         CWBCharts.Year = leYear.EditValue
+        CWBCharts.Month = meMonth.EditValue
         Chart.DataSource = CWBCharts.ChartIncome().Tables(0)
 
-        Chart.SeriesDataMember = "Description"
-        Chart.SeriesTemplate.ArgumentDataMember = "Month"
-        Chart.SeriesTemplate.ValueDataMembers.AddRange(New String() {"Amount"})
+
+        'Chart.SeriesDataMember = "Description"
+        'Chart.SeriesTemplate.ArgumentDataMember = "Description"
+        'Chart.SeriesTemplate.ValueDataMembers.AddRange(New String() {"Amount"})
+
+        'Chart.Series("Expense").ArgumentDataMember = "Description"
+        'Chart.Series("Expense").ValueDataMembers.AddRange(New String() {"Amount"})
 
         Dim ct As New DevExpress.XtraCharts.ChartTitle
-        ct.Text = lupOtherIncomeType.Text + " " + leYear.Text
+        ct.Text = "Income, Expenses and Profit - " + leYear.Text + " - " + meMonth.Text
         Chart.Titles.Clear()
         Chart.Titles.Add(ct)
-      
+
+
+
+
+        'Chart.SeriesTemplate.LegendText = "Number of Employees"
+        'Chart.SeriesTemplate.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative
+
+
+
     End Sub
 
 #End Region
 
-   
-    
+
+
 End Class

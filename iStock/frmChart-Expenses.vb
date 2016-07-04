@@ -85,7 +85,7 @@
 
 
     Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
-        PrintChartPreview(Chart, "Attendance chart")
+        PrintChartPreview(Chart, "Expenses chart")
     End Sub
 #End Region
 
@@ -108,7 +108,7 @@
         'Chart.Series("Expense").ValueDataMembers.AddRange(New String() {"Amount"})
 
         Dim ct As New DevExpress.XtraCharts.ChartTitle
-        ct.Text = "Expenses " + leYear.Text + " - " + meMonth.Text
+        ct.Text = "Expenses - " + leYear.Text + " - " + meMonth.Text
         Chart.Titles.Clear()
         Chart.Titles.Add(ct)
 

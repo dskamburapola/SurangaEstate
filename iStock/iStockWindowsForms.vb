@@ -474,11 +474,19 @@ Module iStockWindowsForms
             a.Header.Content.Add(" ")
             a.Header.Content.Add("" + _CWBCompany.CompanyName + vbCrLf + reportheadername + vbCrLf + "Printed On -" + Date.Now.ToString("dd-MMM-yy hh:mm:tt"))
 
+
             frmPrint.PrintControl1.PrintingSystem = Link.PrintingSystem
+
+            Link.PaperKind = Printing.PaperKind.A4
+            Link.Landscape = True
+
 
 
             Link.Margins = New System.Drawing.Printing.Margins(50, 50, 100, 50)
             Link.CreateDocument()
+
+            Link.PrintingSystem.Document.AutoFitToPagesWidth = 1
+
             frmPrint.MdiParent = frmMain
             frmPrint.Show()
             frmPrint.BringToFront()

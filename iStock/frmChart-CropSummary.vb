@@ -114,7 +114,7 @@ Public Class frmChart_CropSummary
 
         '
         Dim ct As New DevExpress.XtraCharts.ChartTitle
-        ct.Text = "Plucking Weight and Factory Weight " + leYear.Text + " - " + meMonth.Text
+        ct.Text = "Plucking Weight and Factory Weight - " + leYear.Text + " - " + meMonth.Text
         Chart.Titles.Clear()
         Chart.Titles.Add(ct)
 
