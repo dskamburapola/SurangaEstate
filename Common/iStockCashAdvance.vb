@@ -7,6 +7,7 @@ Public Class iStockCashAdvance
 
 #Region "Variables"
 
+    Private _CashRewardsID As Int64
     Private _CashAdvanceID As Int64
 
     Private _CWorkedDays As Decimal
@@ -55,6 +56,15 @@ Public Class iStockCashAdvance
         End Get
         Set(ByVal value As Int64)
             _CashAdvanceID = value
+        End Set
+    End Property
+
+    Public Property CashRewardsID() As Int64
+        Get
+            Return _CashRewardsID
+        End Get
+        Set(ByVal value As Int64)
+            _CashRewardsID = value
         End Set
     End Property
 
@@ -364,7 +374,7 @@ Public Class iStockCashAdvance
     Public Function CashAdvanceGetAllByDates() As DataSet
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
-            Dim DBC As DbCommand = DB.GetStoredProcCommand(CASHADVANCE_GETALL_BYDATES)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(CASHREWARDS_GETALL_BYDATES)
             DB.AddInParameter(DBC, "@StartDate", DbType.Date, Me.StartDate)
             DB.AddInParameter(DBC, "@EndDate", DbType.Date, Me.EndDate)
 
@@ -385,7 +395,7 @@ Public Class iStockCashAdvance
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
             Dim DBC As DbCommand = DB.GetStoredProcCommand(CASHADVANCE_DELETE)
-            DB.AddInParameter(DBC, "@CashAdvanceId ", DbType.Int64, Me.CashAdvanceID)
+            DB.AddInParameter(DBC, "@CashAdvanceId ", DbType.Int64, Me.CashRewardsID)
             DB.ExecuteNonQuery(DBC)
         Catch ex As Exception
             Throw
@@ -431,6 +441,62 @@ Public Class iStockCashAdvance
         Catch ex As Exception
             Throw
         End Try
+    End Sub
+#End Region
+
+#Region "Insert CashRewards"
+    Public Sub InsertCashRewards()
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(CASHREWARDS_INSERT)
+            DB.AddInParameter(DBC, "@EmployerId", DbType.Int64, Me.EmployeeID)
+            DB.AddInParameter(DBC, "@IssueDate", DbType.Date, Me.IssueDate)
+            DB.AddInParameter(DBC, "@AdvanceAmount", DbType.Decimal, Me.AdvanceAmount)
+
+            DB.AddInParameter(DBC, "@CreatedBy", DbType.Int64, Me.CreatedBy)
+            DB.AddInParameter(DBC, "@UpdatedBy", DbType.Int64, Me.UpdatedBy)
+
+
+
+
+            DB.ExecuteNonQuery(DBC)
+        Catch ex As Exception
+            Throw
+        End Try
+    End Sub
+#End Region
+
+#Region "Cash Rewards Get All By Dates"
+    Public Function CashRewardsGetAllByDates() As DataSet
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(CASHREWARDS_GETALL_BYDATES)
+            DB.AddInParameter(DBC, "@StartDate", DbType.Date, Me.StartDate)
+            DB.AddInParameter(DBC, "@EndDate", DbType.Date, Me.EndDate)
+
+            Return DB.ExecuteDataSet(DBC)
+            DBC.Dispose()
+        Catch ex As Exception
+            Return Nothing
+            Throw
+        End Try
+
+
+    End Function
+
+#End Region
+
+#Region "CashRewards Delete"
+    Public Sub CashRewardsDelete()
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(CASHREWARDS_DELETE)
+            DB.AddInParameter(DBC, "@CashRewardsId ", DbType.Int64, Me.CashRewardsID)
+            DB.ExecuteNonQuery(DBC)
+        Catch ex As Exception
+            Throw
+        End Try
+
     End Sub
 #End Region
 

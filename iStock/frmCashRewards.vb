@@ -4,7 +4,7 @@ Imports iStockCommon.iStockEmployers
 Imports iStockCommon.iStockCashAdvance
 
 
-Public Class frmFestivalRecovery
+Public Class frmCashRewards
 
 #Region "Properties"
     Private _iStockCashAdvance As iStockCommon.iStockCashAdvance
@@ -41,7 +41,6 @@ Public Class frmFestivalRecovery
 
 #Region "Form Events"
 
-
     Private Sub frmCashAdvance_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         SetStartUpBarButton(bbSave, bbNew, bbDelete, bbClose, bbDisplaySelected, bbRefresh, bbPrint)
@@ -60,6 +59,7 @@ Public Class frmFestivalRecovery
             Me.Close()
         End If
     End Sub
+
 #End Region
 
 #Region "Hide Tool Buttons On Load"
@@ -84,7 +84,7 @@ Public Class frmFestivalRecovery
 
         If dxvpCashAdvance.Validate Then
 
-            Me.SaveFestivalRecovery()
+            Me.SaveCashRewards()
             Me.ClearFormData()
         End If
 
@@ -190,7 +190,7 @@ Public Class frmFestivalRecovery
 #End Region
 
 #Region "Save CashAdvance"
-    Private Sub SaveFestivalRecovery()
+    Private Sub SaveCashRewards()
 
         Try
             With iStockCashAdvance
@@ -200,7 +200,8 @@ Public Class frmFestivalRecovery
                 .AdvanceAmount = Convert.ToDecimal(Me.sePaybleAmount.Text)
                 .CreatedBy = UserID
                 .UpdatedBy = UserID
-                .InsertFestivalRecovery()
+                .InsertCashRewards()
+
                 Dim frm As New frmSavedOk
                 frm.Text = CWB_SAVESUCCESS_CONFIRMATION_TITLE
                 frm.lblTitle.Text = CWB_SAVESUCCESS_CONFIRMATION_TITLELABEL
@@ -247,19 +248,16 @@ Public Class frmFestivalRecovery
     End Sub
 #End Region
 
-#Region "Festival Recovery Get All By Dates"
-    Private Sub FestivalRecoveryGetAllByDates()
+#Region "Cash Rewards Get All ByDates"
+    Private Sub CashRewardsGetAllByDates()
 
         Try
 
-
             With iStockCashAdvance
-
-
 
                 .StartDate = deStartDate.EditValue
                 .EndDate = deEndDate.EditValue
-                gcCashAdvance.DataSource = .FestivalRecoveryGetAllByDates.Tables(0)
+                gcCashAdvance.DataSource = .CashRewardsGetAllByDates.Tables(0)
 
 
 
@@ -308,7 +306,7 @@ Public Class frmFestivalRecovery
 
 
     Private Sub btnDisplay_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDisplay.Click
-        Me.FestivalRecoveryGetAllByDates()
+        Me.CashRewardsGetAllByDates()
     End Sub
 
 #End Region
@@ -351,8 +349,8 @@ Public Class frmFestivalRecovery
             frm.Text = CWB_DELETE_CONFIRMATION_TITLE
 
             If frm.ShowDialog = Windows.Forms.DialogResult.Yes Then
-                Me.DeleteFestivalRecovery()
-                Me.FestivalRecoveryGetAllByDates()
+                Me.DeleteCashAdvance()
+                Me.CashRewardsGetAllByDates()
 
             End If
         End If
@@ -363,11 +361,10 @@ Public Class frmFestivalRecovery
     End Sub
 
 #Region "Delete Cash Advance"
-    Private Sub DeleteFestivalRecovery()
+    Private Sub DeleteCashAdvance()
 
         Try
             With iStockCashAdvance
-
                 .CashRewardsID = Convert.ToInt64(IIf(lblDeleteID.Text = String.Empty, 0, lblDeleteID.Text.ToString))
                 .CashRewardsDelete()
             End With
@@ -401,7 +398,7 @@ Public Class frmFestivalRecovery
 
             If dxvpCashAdvance.Validate Then
 
-                Me.SaveFestivalRecovery()
+                Me.SaveCashRewards()
                 Me.ClearFormData()
             End If
 

@@ -368,9 +368,9 @@ Public Class frmCashAdvance
 
         Try
             With iStockCashAdvance
-                '.DailyWorkingID = Me.gvDailyWorking.GetFocusedRowCellValue(GridColumn1)
-                .CashAdvanceID = Convert.ToInt64(IIf(lblDeleteID.Text = String.Empty, 0, lblDeleteID.Text.ToString))
-                .CashAdvanceDelete()
+
+                .CashRewardsID = Convert.ToInt64(IIf(lblDeleteID.Text = String.Empty, 0, lblDeleteID.Text.ToString))
+                .CashRewardsDelete()
             End With
 
 

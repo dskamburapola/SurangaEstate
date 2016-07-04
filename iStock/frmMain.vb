@@ -237,4 +237,8 @@ Public Class frmMain
     Private Sub BarButtonItem45_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem45.ItemClick
         ShowIStockForm(frmChart_CropSummary)
     End Sub
+
+    Private Sub BarButtonItem46_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem46.ItemClick
+        ShowIStockForm(frmCashRewards)
+    End Sub
 End Class

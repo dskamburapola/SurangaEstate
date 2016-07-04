@@ -27,11 +27,11 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.XrTableCell4 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell61 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell3 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell5 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
-        Me.XrTableCell5 = New DevExpress.XtraReports.UI.XRTableCell()
         CType(Me.xrMainTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
@@ -102,6 +102,12 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.XrTableCell3.Text = "Amount"
         Me.XrTableCell3.Weight = 0.47336764935365649R
         '
+        'XrTableCell5
+        '
+        Me.XrTableCell5.Name = "XrTableCell5"
+        Me.XrTableCell5.Text = "Total"
+        Me.XrTableCell5.Weight = 0.28479382387141594R
+        '
         'TopMargin
         '
         Me.TopMargin.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel2, Me.XrLabel1})
@@ -138,12 +144,6 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.BottomMargin.Name = "BottomMargin"
         Me.BottomMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
-        '
-        'XrTableCell5
-        '
-        Me.XrTableCell5.Name = "XrTableCell5"
-        Me.XrTableCell5.Text = "Total"
-        Me.XrTableCell5.Weight = 0.56958764774283188R
         '
         'xrpMonthlyExpensesDetails
         '

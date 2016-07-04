@@ -373,6 +373,10 @@
     Public Shared CASHADVANCE_INSERT As String = "CashAdvance_Insert"
     Public Shared CASHADVANCE_DELETE As String = "CashAdvance_Delete"
 
+    Public Shared CASHREWARDS_GETALL_BYDATES As String = "CashRewards_GetAll_ByDates"
+    Public Shared CASHREWARDS_INSERT As String = "CashRewards_Insert"
+    Public Shared CASHREWARDS_DELETE As String = "CashRewards_Delete"
+
 
 
     Public Shared REPORTATTENDANCE As String = "ReportAttendance"
