@@ -143,7 +143,7 @@ Public Class frmOverallSalaryReport
             Next
 
 
-            dr("EmployeeName") = gvCheckRoll.GetRowCellValue(i, gvCheckRoll.Columns("EmployeeName"))
+            dr("Type") = gvCheckRoll.GetRowCellValue(i, gvCheckRoll.Columns("Type"))
             dr("BalancePay") = gvCheckRoll.GetRowCellValue(i, gvCheckRoll.Columns("BalancePay"))
 
             dr("1000") = numofCoinUsed(8)
@@ -165,7 +165,7 @@ Public Class frmOverallSalaryReport
 
         ShowIStockForm(frmCoinCalculatorAdvance)
         frmCoinCalculatorAdvance.BringToFront()
-        frmCoinCalculatorAdvance.lblTitle.Text = "Check Roll (Permanent/Casual)"
+        frmCoinCalculatorAdvance.lblTitle.Text = "Check Roll (Permanent/Casual) " + meMonth.Text + " - " + leYear.Text
 
 
 
@@ -188,9 +188,21 @@ Public Class frmOverallSalaryReport
             ds2 = iStockDailyWorking.GetCheckRollCasualReport(currentDate)
 
             Dim dt1, dt2 As New DataTable
-            dt1 = ds.Tables(0).DefaultView.ToTable(False, "EmployeeNo", "EmployeeName", "Sex", "BalancePay")
 
-            dt2 = ds2.Tables(0).DefaultView.ToTable(False, "EmployeeNo", "EmployeeName", "Sex", "BalancePay")
+            dt1.Columns.Add("Type", GetType(String))
+            dt1.Columns.Add("BalancePay", GetType(Decimal))
+
+            dt2.Columns.Add("Type", GetType(String))
+            dt2.Columns.Add("BalancePay", GetType(Decimal))
+
+
+            dt1.Rows.Add("Permanent Salary", 15000)
+            dt2.Rows.Add("Casual Salary", 25000)
+
+
+            'dt1 = ds.Tables(0).DefaultView.ToTable(False, "EmployeeNo", "EmployeeName", "Sex", "BalancePay")
+
+            'dt2 = ds2.Tables(0).DefaultView.ToTable(False, "EmployeeNo", "EmployeeName", "Sex", "BalancePay")
 
             dt1.Merge(dt2)
 

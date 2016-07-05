@@ -92,19 +92,22 @@ Partial Class frmCoinCalculatorAdvance
         '
         'GridColumn3
         '
-        Me.GridColumn3.Caption = "Employee"
-        Me.GridColumn3.FieldName = "EmployeeName"
+        Me.GridColumn3.Caption = "Type"
+        Me.GridColumn3.FieldName = "Type"
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.Visible = True
         Me.GridColumn3.VisibleIndex = 0
+        Me.GridColumn3.Width = 150
         '
         'GridColumn15
         '
         Me.GridColumn15.Caption = "Balance Pay"
         Me.GridColumn15.FieldName = "BalancePay"
         Me.GridColumn15.Name = "GridColumn15"
+        Me.GridColumn15.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
         Me.GridColumn15.Visible = True
         Me.GridColumn15.VisibleIndex = 1
+        Me.GridColumn15.Width = 45
         '
         'GridColumn6
         '
@@ -114,6 +117,7 @@ Partial Class frmCoinCalculatorAdvance
         Me.GridColumn6.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
         Me.GridColumn6.Visible = True
         Me.GridColumn6.VisibleIndex = 2
+        Me.GridColumn6.Width = 45
         '
         'GridColumn7
         '
@@ -123,6 +127,7 @@ Partial Class frmCoinCalculatorAdvance
         Me.GridColumn7.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
         Me.GridColumn7.Visible = True
         Me.GridColumn7.VisibleIndex = 3
+        Me.GridColumn7.Width = 45
         '
         'GridColumn8
         '
@@ -132,6 +137,7 @@ Partial Class frmCoinCalculatorAdvance
         Me.GridColumn8.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
         Me.GridColumn8.Visible = True
         Me.GridColumn8.VisibleIndex = 4
+        Me.GridColumn8.Width = 45
         '
         'GridColumn9
         '
@@ -141,6 +147,7 @@ Partial Class frmCoinCalculatorAdvance
         Me.GridColumn9.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
         Me.GridColumn9.Visible = True
         Me.GridColumn9.VisibleIndex = 5
+        Me.GridColumn9.Width = 45
         '
         'GridColumn10
         '
@@ -150,6 +157,7 @@ Partial Class frmCoinCalculatorAdvance
         Me.GridColumn10.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
         Me.GridColumn10.Visible = True
         Me.GridColumn10.VisibleIndex = 6
+        Me.GridColumn10.Width = 45
         '
         'GridColumn11
         '
@@ -159,6 +167,7 @@ Partial Class frmCoinCalculatorAdvance
         Me.GridColumn11.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
         Me.GridColumn11.Visible = True
         Me.GridColumn11.VisibleIndex = 7
+        Me.GridColumn11.Width = 45
         '
         'GridColumn12
         '
@@ -168,6 +177,7 @@ Partial Class frmCoinCalculatorAdvance
         Me.GridColumn12.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
         Me.GridColumn12.Visible = True
         Me.GridColumn12.VisibleIndex = 8
+        Me.GridColumn12.Width = 45
         '
         'GridColumn13
         '
@@ -177,6 +187,7 @@ Partial Class frmCoinCalculatorAdvance
         Me.GridColumn13.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
         Me.GridColumn13.Visible = True
         Me.GridColumn13.VisibleIndex = 9
+        Me.GridColumn13.Width = 45
         '
         'GridColumn14
         '
@@ -186,6 +197,7 @@ Partial Class frmCoinCalculatorAdvance
         Me.GridColumn14.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
         Me.GridColumn14.Visible = True
         Me.GridColumn14.VisibleIndex = 10
+        Me.GridColumn14.Width = 55
         '
         'sbPrint
         '
