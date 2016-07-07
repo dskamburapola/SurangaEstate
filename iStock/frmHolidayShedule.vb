@@ -215,6 +215,7 @@ Public Class frmHolidayShedule
 
     Private Sub btnMarkHoliday_Click(sender As Object, e As EventArgs) Handles btnMarkHoliday.Click
         Me.SaveHoliday()
+        Me.PopulateGrid()
     End Sub
 
     

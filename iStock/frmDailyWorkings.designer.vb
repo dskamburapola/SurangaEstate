@@ -1219,6 +1219,7 @@ Partial Class frmDailyWorkings
         Me.LayoutControlItem36.Size = New System.Drawing.Size(820, 143)
         Me.LayoutControlItem36.Text = "LayoutControlItem36"
         Me.LayoutControlItem36.TextSize = New System.Drawing.Size(166, 13)
+        Me.LayoutControlItem36.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
         'LayoutControl2
         '

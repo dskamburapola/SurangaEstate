@@ -1282,6 +1282,25 @@ Public Class iStockDailyWorking
     End Function
 #End Region
 
+#Region "Staff Check Roll Report"
+    Public Function GetStaffCheckRollReport(ByVal currentDate As Date) As DataSet
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand("StaffPaysheet")
+            DB.AddInParameter(DBC, "@IssueDate", DbType.Date, currentDate)
+
+
+            Return DB.ExecuteDataSet(DBC)
+            DBC.Dispose()
+        Catch ex As Exception
+            Return Nothing
+            Throw
+        End Try
+
+
+    End Function
+#End Region
+
 #Region "Check Roll Report Casual"
     Public Function GetCheckRollCasualReport(ByVal currentDate As Date, ByVal range As Integer) As DataSet
         Try

@@ -112,6 +112,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="frmStaffCheckRoll.Designer.vb">
+      <DependentUpon>frmStaffCheckRoll.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmStaffCheckRoll.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmChart-Income.Designer.vb">
       <DependentUpon>frmChart-Income.vb</DependentUpon>
     </Compile>
@@ -555,6 +561,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmStaffCheckRoll.resx">
+      <DependentUpon>frmStaffCheckRoll.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChart-Income.resx">
       <DependentUpon>frmChart-Income.vb</DependentUpon>
     </EmbeddedResource>

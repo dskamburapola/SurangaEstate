@@ -119,6 +119,8 @@
     Public Shared HOLYDAY_DELETE As String = "Holyday_Delete"
     Public Shared HOLYDAY_ISEXISTS As String = "Holyday_IsExists"
 
+  
+
 
     Public Shared WORKDAYS_INSERT As String = "WorkDays_Insert"
     Public Shared WORKDAYS_UPDATE As String = "WorkDays_Update"

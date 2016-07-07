@@ -116,18 +116,8 @@ Public Class frmStaffSalary
                 CWBEmployers.EmployerNo = Mid(Me.leEmployee.Text.Trim, 1, 3)
 
 
-                'If CWBEmployers.IsEmployerExits() = True Then
-                '    Dim frm As New frmAlreadyExists
-
-                '    frm.Text = CWB_EMPLOYER_CONFIRMATION_TITLE
-                '    frm.lblTitle.Text = CWB_EMPLOYER_CONFIRMATION_TITLELABEL
-                '    frm.lblDescription.Text = CWB_EMPLOYER_CONFIRMATION_DESCRIPTIONLABEL
-                '    frm.ShowDialog()
-                '    Me.leEmployee.Focus()
-                'Else
 
                 Me.SaveRecords()
-                'End If
 
 
             Else
@@ -141,7 +131,6 @@ Public Class frmStaffSalary
                 If frm.ShowDialog = Windows.Forms.DialogResult.Yes Then
 
                     CWBEmployers.EmployerNo = Mid(Me.leEmployee.Text.Trim, 1, 3)
-                    'CWBEmployers.GetByEmployerNo()
 
                         Me.SaveRecords()
             
@@ -357,7 +346,7 @@ Public Class frmStaffSalary
 
         Try
 
-            iStockDailyWorking.WorkType = "s"
+            iStockDailyWorking.WorkType = ceDepartment.Text
             Me.leEmployee.Properties.DataSource = iStockDailyWorking.GetEmployeeForWork.Tables(1)
             Me.leEmployee.Properties.DisplayMember = "EmployerNo"
             Me.leEmployee.Properties.ValueMember = "EmployerID"

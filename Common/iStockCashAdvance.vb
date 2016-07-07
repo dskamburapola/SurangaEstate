@@ -374,7 +374,7 @@ Public Class iStockCashAdvance
     Public Function CashAdvanceGetAllByDates() As DataSet
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
-            Dim DBC As DbCommand = DB.GetStoredProcCommand(CASHREWARDS_GETALL_BYDATES)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(CASHADVANCE_GETALL_BYDATES)
             DB.AddInParameter(DBC, "@StartDate", DbType.Date, Me.StartDate)
             DB.AddInParameter(DBC, "@EndDate", DbType.Date, Me.EndDate)
 

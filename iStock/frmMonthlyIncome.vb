@@ -75,16 +75,16 @@
             ds = PL.GetMonthlyIncome()
 
             Dim dt1 As DataTable 'Tea
-            'Dim dt2 As DataTable 'Rubber
-            'Dim dt3 As DataTable 'Other
-            'Dim dt4 As DataTable 'SDP
+            Dim dt2 As DataTable 'Rubber
+            Dim dt3 As DataTable 'Other
+            Dim dt4 As DataTable 'SDP
 
 
 
             dt1 = ds.Tables(0)
-            'dt2 = ds.Tables(1)
-            'dt3 = ds.Tables(2)
-            'dt4 = ds.Tables(3)
+            dt2 = ds.Tables(1)
+            dt3 = ds.Tables(2)
+            dt4 = ds.Tables(3)
           
 
 
@@ -127,9 +127,6 @@
                             cell2.Text = "  "
                         End If
 
-                        '    cell2.Text = (dt1.Rows(i).Item("OtherIncomeDate").ToString())
-                        'FormatNumber(CStr((dt1.Rows(i).Item("OtherIncomeDate"))) & Space(1), 2, TriState.True)
-                      
                     End If
 
 
@@ -138,8 +135,7 @@
                         cell3.Text = " "
                     Else
                         cell3.Text = (dt1.Rows(i).Item("Note").ToString)
-                        'FormatNumber(CStr((dt1.Rows(i).Item("Note"))) & Space(1), 2, TriState.True)
-                       
+                        
                     End If
 
 
@@ -177,61 +173,63 @@
                     report.xrMainTable.Rows.Add(tr)
 
 
-                    If (dt1.Rows(i).Item("Description")).ToString.ToUpper = "TEA" And Convert.ToDecimal((dt1.Rows(i).Item("Deduction"))) > 0 Then
+                    'If (dt1.Rows(i).Item("Description")).ToString.ToUpper = "TEA" And Convert.ToDecimal((dt1.Rows(i).Item("Deduction"))) > 0 Then
 
-                        'If (dt1.Rows(i).Item("Description")).ToString = "Tea" And Val(dt1.Rows(i).Item("Deduction")) > 0 Then
+                    '**********************************************************************************************
 
-                        '**********************************************************************************************
-                        Dim tra As New DevExpress.XtraReports.UI.XRTableRow
-                        Dim cell1a, cell2a, cell3a, cell4a, cell5a, cell6a, cell7a As New DevExpress.XtraReports.UI.XRTableCell
-
+                    Dim tra As New DevExpress.XtraReports.UI.XRTableRow
+                    Dim cell1a, cell2a, cell3a, cell4a, cell5a, cell6a, cell7a As New DevExpress.XtraReports.UI.XRTableCell
 
 
-                        cell1a.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
-                        cell2a.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
-                        cell3a.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
-                        cell4a.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
-                        cell5a.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
-                        cell6a.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
-                        cell7a.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
 
-                        cell1a.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-                        cell2a.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-                        cell3a.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-                        cell4a.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-                        cell5a.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-                        cell6a.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-                        cell7a.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell1a.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
+                    cell2a.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
+                    cell3a.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
+                    cell4a.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
+                    cell5a.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+                    cell6a.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
+                    cell7a.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
 
-
-                        cell1a.Text = "cell1a "
-                        cell2a.Text = "cell2a "
-                        cell3a.Text = "cell3a "
-                        cell4a.Text = "cell4a "
-                        cell5a.Text = "Deduction "
-                        'cell6a.Text = "cell6a "
-                        'cell7a.Text = "cell7a "
-
-                        If IsDBNull(dt1.Rows(i).Item("Deduction")) Then
-                            cell6a.Text = " "
-                        Else
-                            cell6a.Text = FormatNumber(CStr((dt1.Rows(i).Item("Deduction"))) & Space(1), 2, TriState.True)
-
-                        End If
-                        cell7a.Text = " "
-
-                        tra.Cells.Add(cell1a)
-                        tra.Cells.Add(cell2a)
-                        tra.Cells.Add(cell3a)
-                        tra.Cells.Add(cell4a)
-                        tra.Cells.Add(cell5a)
-                        tra.Cells.Add(cell6a)
-                        tra.Cells.Add(cell7a)
+                    cell1a.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell2a.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell3a.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell4a.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+                    cell5a.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell6a.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell7a.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
 
-                        report.xrMainTable.Rows.Add(tra)
+                    cell1a.Text = "  "
+                    cell2a.Text = "  "
+                    cell3a.Text = "  "
+                    cell4a.Text = "  "
+                    cell5a.Text = "Deduction "
+
+                    If IsDBNull(dt1.Rows(i).Item("Deduction")) Then
+                        cell6a.Text = " "
+                    Else
+                        cell6a.Text = FormatNumber(CStr((dt1.Rows(i).Item("Deduction"))) & Space(1), 2, TriState.True)
 
                     End If
+
+                    Dim a, b As Decimal
+
+                    a = Convert.ToDecimal(dt1.Rows(i).Item("Amount"))
+                    b = Convert.ToDecimal(dt1.Rows(i).Item("Deduction"))
+
+                    cell7a.Text = FormatNumber(CStr(a - b) & Space(1), 2, TriState.True)
+
+                    tra.Cells.Add(cell1a)
+                    tra.Cells.Add(cell2a)
+                    tra.Cells.Add(cell3a)
+                    tra.Cells.Add(cell4a)
+                    tra.Cells.Add(cell5a)
+                    tra.Cells.Add(cell6a)
+                    tra.Cells.Add(cell7a)
+
+
+                    report.xrMainTable.Rows.Add(tra)
+
                     '**********************************************************************************************
 
 
@@ -239,836 +237,639 @@
             End If
 
 
+            '---------------------------Empty Row as Separator  - START ----------------------------------------------------------------
 
+            Dim trTE As New DevExpress.XtraReports.UI.XRTableRow
+            Dim cellTC1, cellTC2, cellTC3, cellTC4, cellTC5, cellTC6, cellTC7 As New DevExpress.XtraReports.UI.XRTableCell
 
-            ''******************************* Casual 1-15 Salary **************************************************************************
+            cellTC1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
+            cellTC2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
+            cellTC3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
+            cellTC4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
+            cellTC5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+            cellTC6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
 
-            'If dt2.Rows.Count > 0 Then
-            '    Dim i As Int64
-            '    For i = 0 To dt2.Rows.Count - 1
+            cellTC1.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellTC1.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+            cellTC1.Borders = DevExpress.XtraPrinting.BorderSide.Left
 
-            '        Dim tr As New DevExpress.XtraReports.UI.XRTableRow
+            cellTC2.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellTC2.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
-            '        Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
+            cellTC3.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellTC3.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
+            cellTC4.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellTC4.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
+            cellTC5.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellTC5.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
-            '        cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
-            '        cell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
-            '        cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
-            '        cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
-            '        cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
-            '        cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
+            cellTC6.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellTC6.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
-            '        cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+            cellTC7.Borders = DevExpress.XtraPrinting.BorderSide.All
 
-            '        cell1.Text = ""
-            '        cell2.Text = "Casual 1 - 15"
 
-            '        If IsDBNull(dt2.Rows(i).Item("CasualTotalto15")) Then
-            '            cell3.Text = "0.00 "
-            '        Else
-            '            cell3.Text = FormatNumber(CStr((dt2.Rows(i).Item("CasualTotalto15"))), 2, TriState.True) & " "
-            '            CasualSalaryTotal = Convert.ToDecimal(dt2.Rows(i).Item("CasualTotalto15").ToString())
-            '        End If
+            cellTC1.Text = String.Empty
+            cellTC2.Text = String.Empty
+            cellTC3.Text = String.Empty
+            cellTC4.Text = String.Empty
+            cellTC5.Text = String.Empty
+            cellTC6.Text = String.Empty
+            celltc7.Text = String.Empty
 
 
-            '        cell4.Text = String.Empty
-            '        cell5.Text = String.Empty
-            '        cell6.Text = String.Empty
+            trTE.Cells.Add(cellTC1)
+            trTE.Cells.Add(cellTC2)
+            trTE.Cells.Add(cellTC3)
+            trTE.Cells.Add(cellTC4)
+            trTE.Cells.Add(cellTC5)
+            trTE.Cells.Add(cellTC6)
+            trTE.Cells.Add(cellTC7)
+            report.xrMainTable.Rows.Add(trTE)
 
-            '        tr.Cells.Add(cell1)
-            '        tr.Cells.Add(cell2)
-            '        tr.Cells.Add(cell3)
-            '        tr.Cells.Add(cell4)
-            '        tr.Cells.Add(cell5)
-            '        tr.Cells.Add(cell6)
+            '---------------------------Empty Row as Separator  - END ----------------------------------------------------------------
 
-            '        report.xrMainTable.Rows.Add(tr)
+            '***************************************************************************************************************************************************
 
-            '    Next
-            'End If
+            If dt2.Rows.Count > 0 Then
+                Dim i As Int64
+                For i = 0 To dt2.Rows.Count - 1
 
+                    Dim trRB As New DevExpress.XtraReports.UI.XRTableRow
+                    Dim cell1R, cell2R, cell3R, cell4R, cell5R, cell6R, cell7R As New DevExpress.XtraReports.UI.XRTableCell
 
-            ''******************************* Casual 1-EOM Total **************************************************************************
 
-            'If dt3.Rows.Count > 0 Then
-            '    Dim i As Int64
-            '    For i = 0 To dt3.Rows.Count - 1
 
-            '        Dim tr As New DevExpress.XtraReports.UI.XRTableRow
+                    cell1R.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
+                    cell2R.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
+                    cell3R.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
+                    cell4R.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
+                    cell5R.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+                    cell6R.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
+                    cell7R.Size = New Size(report.xrMainTable.Rows(0).Cells(6).WidthF, 25)
 
-            '        Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
+                    cell1R.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell2R.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell3R.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell4R.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+                    cell5R.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell6R.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell7R.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
 
-            '        cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
-            '        cell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
-            '        cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
-            '        cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
-            '        cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
-            '        cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
+                    cell1R.Text = "RUBBER"
 
-            '        cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    If IsDBNull(dt2.Rows(i).Item("OtherIncomeDate")) Then
+                        cell2R.Text = "  "
+                    Else
+                        Dim tempDate As Date
+                        If DateTime.TryParse(CStr(dt2.Rows(i).Item("OtherIncomeDate").ToString), tempDate) Then
+                            cell2R.Text = tempDate.ToShortDateString
+                        Else
+                            cell2R.Text = "  "
+                        End If
 
-            '        cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                     
+                    End If
 
-            '        cell1.Text = ""
-            '        cell2.Text = "Casual 15 - EOM"
 
-            '        If IsDBNull(dt3.Rows(i).Item("CasualTotal5toEOM")) Then
-            '            cell3.Text = "0.00 "
-            '        Else
-            '            cell3.Text = FormatNumber(CStr((dt3.Rows(i).Item("CasualTotal5toEOM"))), 2, TriState.True) & " "
-            '            CasualSalaryTotal = CasualSalaryTotal + Convert.ToDecimal((dt3.Rows(i).Item("CasualTotal5toEOM").ToString))
-            '        End If
 
-            '        cell4.Text = FormatNumber(CasualSalaryTotal.ToString(), 2, TriState.True) & " "
+                    If IsDBNull(dt2.Rows(i).Item("Note")) Then
+                        cell3R.Text = " "
+                    Else
+                        cell3R.Text = (dt2.Rows(i).Item("Note").ToString)
+                        'FormatNumber(CStr((dt2.Rows(i).Item("Note"))) & Space(1), 2, TriState.True)
 
-            '        cell5.Text = String.Empty
+                    End If
 
-            '        tr.Cells.Add(cell1)
-            '        tr.Cells.Add(cell2)
-            '        tr.Cells.Add(cell3)
-            '        tr.Cells.Add(cell4)
-            '        tr.Cells.Add(cell5)
-            '        tr.Cells.Add(cell6)
 
-            '        report.xrMainTable.Rows.Add(tr)
+                    If IsDBNull(dt2.Rows(i).Item("Quantity")) Then
+                        cell4R.Text = " "
+                    Else
+                        cell4R.Text = FormatNumber(CStr((dt2.Rows(i).Item("Quantity"))) & Space(1), 2, TriState.True)
 
-            '    Next
-            'End If
+                    End If
 
+                    If IsDBNull(dt2.Rows(i).Item("Rate")) Then
+                        cell5R.Text = " "
+                    Else
+                        cell5R.Text = FormatNumber(CStr((dt2.Rows(i).Item("Rate"))) & Space(1), 2, TriState.True)
 
+                    End If
 
+                    If IsDBNull(dt2.Rows(i).Item("Amount")) Then
+                        cell6R.Text = " "
+                    Else
+                        cell6R.Text = FormatNumber(CStr((dt2.Rows(i).Item("Amount"))) & Space(1), 2, TriState.True)
 
+                    End If
 
-            ''******************************* Staff Salary [KP] **************************************************************************
 
-            'If dt4.Rows.Count > 0 Then
-            '    Dim i As Int64
-            '    For i = 0 To dt4.Rows.Count - 1
+                    trRB.Cells.Add(cell1R)
+                    trRB.Cells.Add(cell2R)
+                    trRB.Cells.Add(cell3R)
+                    trRB.Cells.Add(cell4R)
+                    trRB.Cells.Add(cell5R)
+                    trRB.Cells.Add(cell6R)
+                    trRB.Cells.Add(cell7R)
 
-            '        Dim tr As New DevExpress.XtraReports.UI.XRTableRow
 
-            '        Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
+                    report.xrMainTable.Rows.Add(trRB)
 
 
-            '        cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
-            '        cell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
-            '        cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
-            '        cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
-            '        cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
-            '        cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
+                    
+                    
+                        '**********************************************************************************************
+                    Dim trSa As New DevExpress.XtraReports.UI.XRTableRow
+                    Dim cell1aS, cell2aR, cell3aR, cell4aR, cell5aR, cell6aR, cell7aR As New DevExpress.XtraReports.UI.XRTableCell
 
-            '        cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
-            '        cell1.Text = ""
-            '        cell2.Text = "KP's Balance Salary"
-            '        cell3.Text = String.Empty
-            '        If IsDBNull(dt4.Rows(i).Item("KPB")) Then
-            '            cell4.Text = "0.00 "
-            '        Else
-            '            cell4.Text = FormatNumber(CStr((dt4.Rows(i).Item("KPB"))), 2, TriState.True) & " "
-            '            StaffSalaryTotal = Convert.ToDecimal(dt4.Rows(i).Item("KPB").ToString())
 
+                    cell1aS.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
+                    cell2aR.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
+                    cell3aR.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
+                    cell4aR.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
+                    cell5aR.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+                    cell6aR.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
+                    cell7aR.Size = New Size(report.xrMainTable.Rows(0).Cells(6).WidthF, 25)
 
-            '        End If
+                    cell1aS.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell2aR.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell3aR.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell4aR.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+                    cell5aR.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell6aR.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell7aR.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
-            '        TotalSalary = PermanentSalaryTotal + CasualSalaryTotal + StaffSalaryTotal
-            '        cell5.Text = FormatNumber(TotalSalary.ToString(), 2, TriState.True) & " "
-            '        cell6.Text = String.Empty
 
-            '        tr.Cells.Add(cell1)
-            '        tr.Cells.Add(cell2)
-            '        tr.Cells.Add(cell3)
-            '        tr.Cells.Add(cell4)
-            '        tr.Cells.Add(cell5)
-            '        tr.Cells.Add(cell6)
+                    cell1aS.Text = "  "
+                    cell2aR.Text = "  "
+                    cell3aR.Text = "  "
+                    cell4aR.Text = "  "
+                    cell5aR.Text = "Deduction "
+                    'cell6aR.Text = "cell6aR "
+                    'cell7aR.Text = "cell7aR "
 
-            '        report.xrMainTable.Rows.Add(tr)
+                    If IsDBNull(dt2.Rows(i).Item("Deduction")) Then
+                        cell6aR.Text = " "
+                    Else
+                        cell6aR.Text = FormatNumber(CStr((dt2.Rows(i).Item("Deduction"))) & Space(1), 2, TriState.True)
 
-            '    Next
-            'End If
+                    End If
 
+                    Dim a, b As Decimal
 
+                    a = Convert.ToDecimal(dt2.Rows(i).Item("Amount"))
+                    b = Convert.ToDecimal(dt2.Rows(i).Item("Deduction"))
 
+                    cell7aR.Text = FormatNumber(CStr(a - b) & Space(1), 2, TriState.True)
 
-            ''---------------------------Empty Row as Separator  - START ----------------------------------------------------------------
+                    trSa.Cells.Add(cell1aS)
+                    trSa.Cells.Add(cell2aR)
+                    trSa.Cells.Add(cell3aR)
+                    trSa.Cells.Add(cell4aR)
+                    trSa.Cells.Add(cell5aR)
+                    trSa.Cells.Add(cell6aR)
+                    trSa.Cells.Add(cell7aR)
 
-            'Dim trEmpty As New DevExpress.XtraReports.UI.XRTableRow
-            'Dim cellEmpty1, cellEmpty2, cellEmpty3, cellEmpty4, cellEmpty5, cellEmpty6 As New DevExpress.XtraReports.UI.XRTableCell
-            'cellEmpty1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
-            'cellEmpty2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
-            'cellEmpty3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
-            'cellEmpty4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
-            'cellEmpty5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
-            'cellEmpty6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
 
-            'cellEmpty1.Borders = DevExpress.XtraPrinting.BorderSide.Top
-            'cellEmpty1.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
-            'cellEmpty1.Borders = DevExpress.XtraPrinting.BorderSide.Left
+                    report.xrMainTable.Rows.Add(trSa)
 
-            'cellEmpty2.Borders = DevExpress.XtraPrinting.BorderSide.Top
-            'cellEmpty2.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    '**********************************************************************************************
 
-            'cellEmpty3.Borders = DevExpress.XtraPrinting.BorderSide.Top
-            'cellEmpty3.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
-            'cellEmpty4.Borders = DevExpress.XtraPrinting.BorderSide.Top
-            'cellEmpty4.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                Next
+            End If
 
-            'cellEmpty5.Borders = DevExpress.XtraPrinting.BorderSide.Top
-            'cellEmpty5.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
-            'cellEmpty6.Borders = DevExpress.XtraPrinting.BorderSide.All
+            '---------------------------Empty Row as Separator  - START ----------------------------------------------------------------
 
+            Dim trRE As New DevExpress.XtraReports.UI.XRTableRow
+            Dim cellRB1, cellRB2, cellRB3, cellRB4, cellRB5, cellRB6, cellRB7 As New DevExpress.XtraReports.UI.XRTableCell
 
-            'cellEmpty1.Text = String.Empty
-            'cellEmpty2.Text = String.Empty
-            'cellEmpty3.Text = String.Empty
-            'cellEmpty4.Text = String.Empty
-            'cellEmpty5.Text = String.Empty
-            'cellEmpty6.Text = "JJJ"
+            cellRB1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
+            cellRB2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
+            cellRB3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
+            cellRB4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
+            cellRB5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+            cellRB6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
+            cellRB7.Size = New Size(report.xrMainTable.Rows(0).Cells(6).WidthF, 25)
 
-            'trEmpty.Cells.Add(cellEmpty1)
-            'trEmpty.Cells.Add(cellEmpty2)
-            'trEmpty.Cells.Add(cellEmpty3)
-            'trEmpty.Cells.Add(cellEmpty4)
-            'trEmpty.Cells.Add(cellEmpty5)
-            'trEmpty.Cells.Add(cellEmpty6)
-            'report.xrMainTable.Rows.Add(trEmpty)
+            cellRB1.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellRB1.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+            cellRB1.Borders = DevExpress.XtraPrinting.BorderSide.Left
 
-            ''---------------------------Empty Row as Separator  - END ----------------------------------------------------------------
+            cellRB2.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellRB2.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
+            cellRB3.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellRB3.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
+            cellRB4.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellRB4.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
-            'If dt5.Rows.Count > 0 Then
-            '    Dim i As Int64
-            '    For i = 0 To dt5.Rows.Count - 1
+            cellRB5.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellRB5.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
-            '        Dim tr As New DevExpress.XtraReports.UI.XRTableRow
+            cellRB6.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellRB6.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
-            '        Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
+            cellRB7.Borders = DevExpress.XtraPrinting.BorderSide.All
 
-            '        cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
-            '        cell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
-            '        cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
-            '        cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
-            '        cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
-            '        cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
 
-            '        cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+            cellRB1.Text = String.Empty
+            cellRB2.Text = String.Empty
+            cellRB3.Text = String.Empty
+            cellRB4.Text = String.Empty
+            cellRB5.Text = String.Empty
+            cellRB6.Text = String.Empty
+            cellRB7.Text = String.Empty
 
 
-            '        If i = 0 Then
-            '            cell1.Text = "Cash Advance-Permanent"
-            '        End If
+            trRE.Cells.Add(cellRB1)
+            trRE.Cells.Add(cellRB2)
+            trRE.Cells.Add(cellRB3)
+            trRE.Cells.Add(cellRB4)
+            trRE.Cells.Add(cellRB5)
+            trRE.Cells.Add(cellRB6)
+            trRE.Cells.Add(cellRB7)
 
-            '        If IsDBNull(dt5.Rows(i).Item("EmployeeName")) Then
-            '            cell2.Text = "0.00 "
-            '        Else
-            '            cell2.Text = CStr((dt5.Rows(i).Item("EmployeeName")))
-            '        End If
+            report.xrMainTable.Rows.Add(trRE)
 
-            '        If IsDBNull(dt5.Rows(i).Item("CashAdvance")) Then
-            '            cell3.Text = "0.00 "
-            '        Else
-            '            cell3.Text = FormatNumber(CStr((dt5.Rows(i).Item("CashAdvance"))), 2, TriState.True) & " "
-            '            PermanentAdvPay = PermanentAdvPay + Convert.ToDecimal((dt5.Rows(i).Item("CashAdvance").ToString))
-            '        End If
 
-            '        If i = dt5.Rows.Count - 1 Then
-            '            cell4.Text = FormatNumber(PermanentAdvPay.ToString(), 2, TriState.True) & " "
-            '            cell5.Text = String.Empty
 
-            '        Else
-            '            cell4.Text = String.Empty
-            '            cell5.Text = String.Empty
+            '***************************************************************************************************************************************************
 
 
-            '        End If
-            '        cell6.Text = String.Empty
+            '***************************************************************************************************************************************************
 
+            If dt3.Rows.Count > 0 Then
+                Dim i As Int64
+                For i = 0 To dt3.Rows.Count - 1
 
-            '        tr.Cells.Add(cell1)
-            '        tr.Cells.Add(cell2)
-            '        tr.Cells.Add(cell3)
-            '        tr.Cells.Add(cell4)
-            '        tr.Cells.Add(cell5)
-            '        tr.Cells.Add(cell6)
+                    Dim trRB As New DevExpress.XtraReports.UI.XRTableRow
+                    Dim cell1O, cell2O, cell3O, cell4O, cell5O, cell6O, cell7O As New DevExpress.XtraReports.UI.XRTableCell
 
-            '        report.xrMainTable.Rows.Add(tr)
 
-            '    Next
-            'End If
 
+                    cell1O.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
+                    cell2O.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
+                    cell3O.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
+                    cell4O.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
+                    cell5O.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+                    cell6O.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
+                    cell7O.Size = New Size(report.xrMainTable.Rows(0).Cells(6).WidthF, 25)
 
+                    cell1O.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell2O.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell3O.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell4O.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+                    cell5O.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell6O.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell7O.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
 
-            'If dt6.Rows.Count > 0 Then
-            '    Dim i As Int64
-            '    For i = 0 To dt6.Rows.Count - 1
+                    cell1O.Text = "OTHER"
 
-            '        Dim tr As New DevExpress.XtraReports.UI.XRTableRow
+                    If IsDBNull(dt3.Rows(i).Item("OtherIncomeDate")) Then
+                        cell2O.Text = "  "
+                    Else
+                        Dim tempDate As Date
+                        If DateTime.TryParse(CStr(dt3.Rows(i).Item("OtherIncomeDate").ToString), tempDate) Then
+                            cell2O.Text = tempDate.ToShortDateString
+                        Else
+                            cell2O.Text = "  "
+                        End If
 
-            '        Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
 
-            '        cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
-            '        cell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
-            '        cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
-            '        cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
-            '        cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
-            '        cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
+                    End If
 
-            '        cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
 
+                    If IsDBNull(dt3.Rows(i).Item("Note")) Then
+                        cell3O.Text = " "
+                    Else
+                        cell3O.Text = (dt3.Rows(i).Item("Note").ToString)
+                        'FormatNumber(CStr((dt3.Rows(i).Item("Note"))) & Space(1), 2, TriState.True)
 
-            '        If i = 0 Then
-            '            cell1.Text = "Cash Advance-Permanent"
-            '        End If
+                    End If
 
-            '        If IsDBNull(dt6.Rows(i).Item("EmployeeName")) Then
-            '            cell2.Text = "0.00 "
-            '        Else
-            '            cell2.Text = CStr((dt6.Rows(i).Item("EmployeeName")))
-            '        End If
 
-            '        If IsDBNull(dt6.Rows(i).Item("CashAdvance")) Then
-            '            cell3.Text = "0.00 "
-            '        Else
-            '            cell3.Text = FormatNumber(CStr((dt6.Rows(i).Item("CashAdvance"))), 2, TriState.True) & " "
-            '            CasualAdvPay = CasualAdvPay + Convert.ToDecimal((dt6.Rows(i).Item("CashAdvance").ToString))
-            '        End If
+                    If IsDBNull(dt3.Rows(i).Item("Quantity")) Then
+                        cell4O.Text = " "
+                    Else
+                        cell4O.Text = FormatNumber(CStr((dt3.Rows(i).Item("Quantity"))) & Space(1), 2, TriState.True)
 
-            '        If i = dt6.Rows.Count - 1 Then
-            '            cell4.Text = FormatNumber(CasualAdvPay.ToString(), 2, TriState.True) & " "
-            '            cell5.Text = String.Empty
+                    End If
 
-            '        Else
-            '            cell4.Text = String.Empty
-            '            cell5.Text = String.Empty
+                    If IsDBNull(dt3.Rows(i).Item("Rate")) Then
+                        cell5O.Text = " "
+                    Else
+                        cell5O.Text = FormatNumber(CStr((dt3.Rows(i).Item("Rate"))) & Space(1), 2, TriState.True)
 
-            '        End If
-            '        cell6.Text = String.Empty
+                    End If
 
+                    If IsDBNull(dt3.Rows(i).Item("Amount")) Then
+                        cell6O.Text = " "
+                    Else
+                        cell6O.Text = FormatNumber(CStr((dt3.Rows(i).Item("Amount"))) & Space(1), 2, TriState.True)
 
-            '        tr.Cells.Add(cell1)
-            '        tr.Cells.Add(cell2)
-            '        tr.Cells.Add(cell3)
-            '        tr.Cells.Add(cell4)
-            '        tr.Cells.Add(cell5)
-            '        tr.Cells.Add(cell6)
+                    End If
 
-            '        report.xrMainTable.Rows.Add(tr)
 
-            '    Next
-            'End If
+                    trRB.Cells.Add(cell1O)
+                    trRB.Cells.Add(cell2O)
+                    trRB.Cells.Add(cell3O)
+                    trRB.Cells.Add(cell4O)
+                    trRB.Cells.Add(cell5O)
+                    trRB.Cells.Add(cell6O)
+                    trRB.Cells.Add(cell7O)
 
 
+                    report.xrMainTable.Rows.Add(trRB)
 
-            'If dt11.Rows.Count > 0 Then
-            '    Dim i As Int64
-            '    For i = 0 To dt11.Rows.Count - 1
 
-            '        Dim tr As New DevExpress.XtraReports.UI.XRTableRow
-            '        Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
 
-            '        cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
-            '        cell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
-            '        cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
-            '        cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
-            '        cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
-            '        cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
 
-            '        cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    '**********************************************************************************************
+                    Dim trSa As New DevExpress.XtraReports.UI.XRTableRow
+                    Dim cell1aS, cell2aR, cell3aR, cell4aR, cell5aR, cell6aR, cell7aR As New DevExpress.XtraReports.UI.XRTableCell
 
 
-            '        If i = 0 Then
-            '            cell1.Text = "Cash Advance - Staff"
-            '        End If
 
-            '        If IsDBNull(dt11.Rows(i).Item("EmployeeName")) Then
-            '            cell2.Text = "0.00 "
-            '        Else
-            '            cell2.Text = CStr((dt11.Rows(i).Item("EmployeeName")))
-            '        End If
+                    cell1aS.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
+                    cell2aR.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
+                    cell3aR.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
+                    cell4aR.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
+                    cell5aR.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+                    cell6aR.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
+                    cell7aR.Size = New Size(report.xrMainTable.Rows(0).Cells(6).WidthF, 25)
 
-            '        cell3.Text = String.Empty
+                    cell1aS.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell2aR.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell3aR.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell4aR.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+                    cell5aR.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell6aR.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell7aR.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
 
-            '        If IsDBNull(dt11.Rows(i).Item("StaffAdvance")) Then
-            '            cell4.Text = "0.00 "
-            '        Else
-            '            cell4.Text = FormatNumber(CStr((dt11.Rows(i).Item("StaffAdvance"))), 2, TriState.True) & " "
-            '            StaffAdvPay = StaffAdvPay + Convert.ToDecimal((dt11.Rows(i).Item("StaffAdvance").ToString))
-            '        End If
+                    cell1aS.Text = "  "
+                    cell2aR.Text = "  "
+                    cell3aR.Text = "  "
+                    cell4aR.Text = "  "
+                    cell5aR.Text = "Deduction "
+                    'cell6aR.Text = "cell6aR "
+                    'cell7aR.Text = "cell7aR "
 
-            '        TotalAdvPay = PermanentAdvPay + CasualAdvPay + StaffAdvPay
+                    If IsDBNull(dt3.Rows(i).Item("Deduction")) Then
+                        cell6aR.Text = " "
+                    Else
+                        cell6aR.Text = FormatNumber(CStr((dt3.Rows(i).Item("Deduction"))) & Space(1), 2, TriState.True)
 
-            '        If i = dt11.Rows.Count - 1 Then
+                    End If
 
-            '            cell5.Text = FormatNumber(TotalAdvPay.ToString(), 2, TriState.True) & " "
+                    Dim a, b As Decimal
 
-            '        Else
-            '            cell5.Text = String.Empty
+                    a = Convert.ToDecimal(dt3.Rows(i).Item("Amount"))
+                    b = Convert.ToDecimal(dt3.Rows(i).Item("Deduction"))
 
-            '        End If
+                    cell7aR.Text = FormatNumber(CStr(a - b) & Space(1), 2, TriState.True)
 
-            '        cell6.Text = String.Empty
+                    trSa.Cells.Add(cell1aS)
+                    trSa.Cells.Add(cell2aR)
+                    trSa.Cells.Add(cell3aR)
+                    trSa.Cells.Add(cell4aR)
+                    trSa.Cells.Add(cell5aR)
+                    trSa.Cells.Add(cell6aR)
+                    trSa.Cells.Add(cell7aR)
 
 
-            '        tr.Cells.Add(cell1)
-            '        tr.Cells.Add(cell2)
-            '        tr.Cells.Add(cell3)
-            '        tr.Cells.Add(cell4)
-            '        tr.Cells.Add(cell5)
-            '        tr.Cells.Add(cell6)
+                    report.xrMainTable.Rows.Add(trSa)
 
-            '        report.xrMainTable.Rows.Add(tr)
+                    '**********************************************************************************************
 
-            '    Next
-            'End If
 
+                Next
+            End If
 
 
+            '---------------------------Empty Row as Separator  - START ----------------------------------------------------------------
 
-            ''Dim FPT As Decimal = 0
+            Dim trOE As New DevExpress.XtraReports.UI.XRTableRow
+            Dim cellRO1, cellRO2, cellRO3, cellRO4, cellRO5, cellRO6, cellRO7 As New DevExpress.XtraReports.UI.XRTableCell
 
-            'If dt7.Rows.Count > 0 Then
-            '    Dim i As Int64
-            '    For i = 0 To dt7.Rows.Count - 1
+            cellRO1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
+            cellRO2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
+            cellRO3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
+            cellRO4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
+            cellRO5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+            cellRO6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
+            cellRO7.Size = New Size(report.xrMainTable.Rows(0).Cells(6).WidthF, 25)
 
-            '        Dim tr As New DevExpress.XtraReports.UI.XRTableRow
-            '        Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
+            cellRO1.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellRO1.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+            cellRO1.Borders = DevExpress.XtraPrinting.BorderSide.Left
 
-            '        cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
-            '        cell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
-            '        cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
-            '        cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
-            '        cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
-            '        cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
+            cellRO2.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellRO2.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
-            '        cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+            cellRO3.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellRO3.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
+            cellRO4.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellRO4.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
-            '        If i = 0 Then
-            '            cell1.Text = "Festival Advance"
-            '        End If
+            cellRO5.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellRO5.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
-            '        If IsDBNull(dt7.Rows(i).Item("Designation")) Then
-            '            cell2.Text = "0.00 "
-            '        Else
-            '            cell2.Text = CStr((dt7.Rows(i).Item("Designation")))
-            '        End If
+            cellRO6.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            cellRO6.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
-            '        cell3.Text = String.Empty
+            cellRO7.Borders = DevExpress.XtraPrinting.BorderSide.All
 
 
-            '        If IsDBNull(dt7.Rows(i).Item("FestivalAdvance")) Then
-            '            cell4.Text = "0.00 "
-            '        Else
-            '            cell4.Text = CStr((dt7.Rows(i).Item("FestivalAdvance")))
-            '            FestivalAdvanceTotal = FestivalAdvanceTotal + Convert.ToDecimal((dt7.Rows(i).Item("FestivalAdvance").ToString))
-            '        End If
+            cellRO1.Text = String.Empty
+            cellRO2.Text = String.Empty
+            cellRO3.Text = String.Empty
+            cellRO4.Text = String.Empty
+            cellRO5.Text = String.Empty
+            cellRO6.Text = String.Empty
+            cellRO7.Text = String.Empty
 
-            '        If i = dt7.Rows.Count - 1 Then
 
+            trOE.Cells.Add(cellRO1)
+            trOE.Cells.Add(cellRO2)
+            trOE.Cells.Add(cellRO3)
+            trOE.Cells.Add(cellRO4)
+            trOE.Cells.Add(cellRO5)
+            trOE.Cells.Add(cellRO6)
+            trOE.Cells.Add(cellRO7)
 
-            '            cell5.Text = FormatNumber(FestivalAdvanceTotal, 2, TriState.True)
+            report.xrMainTable.Rows.Add(trOE)
 
-            '        Else
-            '            cell5.Text = String.Empty
 
-            '        End If
-            '        cell6.Text = String.Empty
 
-            '        tr.Cells.Add(cell1)
-            '        tr.Cells.Add(cell2)
-            '        tr.Cells.Add(cell3)
-            '        tr.Cells.Add(cell4)
-            '        tr.Cells.Add(cell5)
-            '        tr.Cells.Add(cell6)
+            '***************************************************************************************************************************************************
 
-            '        report.xrMainTable.Rows.Add(tr)
+            '***************************************************************************************************************************************************
 
-            '    Next
-            'End If
+            If dt4.Rows.Count > 0 Then
+                Dim i As Int64
+                For i = 0 To dt4.Rows.Count - 1
 
+                    Dim trRB As New DevExpress.XtraReports.UI.XRTableRow
+                    Dim cell1S, cell2S, cell3S, cell4S, cell5S, cell6S, cell7S As New DevExpress.XtraReports.UI.XRTableCell
 
-            ''---------------------------Empty Row as Separator  - START ----------------------------------------------------------------
-            'Dim trEmpty2 As New DevExpress.XtraReports.UI.XRTableRow
-            'Dim cellEmpty12 As New DevExpress.XtraReports.UI.XRTableCell
-            'cellEmpty12.Size = New Size(report.xrMainTable.WidthF, 25)
-            'cellEmpty12.Text = " "
-            'trEmpty2.Cells.Add(cellEmpty12)
-            'report.xrMainTable.Rows.Add(trEmpty2)
+                    Dim tot As Decimal
 
 
-            ''---------------------------Empty Row as Separator  - END ----------------------------------------------------------------
+                    cell1S.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
+                    cell2S.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
+                    cell3S.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
+                    cell4S.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
+                    cell5S.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+                    cell6S.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
+                    cell7S.Size = New Size(report.xrMainTable.Rows(0).Cells(6).WidthF, 25)
 
+                    cell1S.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell2S.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell3S.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell4S.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+                    cell5S.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell6S.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell7S.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
 
-            'If dt8.Rows.Count > 0 Then
-            '    Dim i As Int64
-            '    For i = 0 To dt8.Rows.Count - 1
+                    cell1S.Text = "other"
 
-            '        Dim tr As New DevExpress.XtraReports.UI.XRTableRow
+                    If IsDBNull(dt4.Rows(i).Item("OtherIncomeDate")) Then
+                        cell2S.Text = "  "
+                    Else
+                        Dim tempDate As Date
+                        If DateTime.TryParse(CStr(dt4.Rows(i).Item("OtherIncomeDate").ToString), tempDate) Then
+                            cell2S.Text = tempDate.ToShortDateString
+                        Else
+                            cell2S.Text = "  "
+                        End If
 
-            '        Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
 
-            '        cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
-            '        cell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
-            '        cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
-            '        cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
-            '        cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
-            '        cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
+                    End If
 
-            '        cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
 
+                    If IsDBNull(dt4.Rows(i).Item("Note")) Then
+                        cell3S.Text = " "
+                    Else
+                        cell3S.Text = (dt4.Rows(i).Item("Note").ToString)
+                        'FormatNumber(CStr((dt4.Rows(i).Item("Note"))) & Space(1), 2, TriState.True)
 
-            '        If i = 0 Then
-            '            cell1.Text = "ETF 12%"
-            '        End If
+                    End If
 
-            '        If IsDBNull(dt8.Rows(i).Item("EmployeeName")) Then
-            '            cell2.Text = "0.00 "
-            '        Else
-            '            cell2.Text = CStr((dt8.Rows(i).Item("EmployeeName")))
-            '        End If
 
-            '        cell3.Text = String.Empty
+                    If IsDBNull(dt4.Rows(i).Item("Quantity")) Then
+                        cell4S.Text = " "
+                    Else
+                        cell4S.Text = FormatNumber(CStr((dt4.Rows(i).Item("Quantity"))) & Space(1), 2, TriState.True)
 
-            '        If IsDBNull(dt8.Rows(i).Item("EPF_12")) Then
-            '            cell4.Text = "0.00 "
-            '        Else
-            '            cell4.Text = FormatNumber(CStr((dt8.Rows(i).Item("EPF_12"))), 2, TriState.True) & " "
-            '            EPFTotal = EPFTotal + Convert.ToDecimal((dt8.Rows(i).Item("EPF_12").ToString))
-            '        End If
+                    End If
 
-            '        If i = dt8.Rows.Count - 1 Then
-            '            cell5.Text = FormatNumber(EPFTotal.ToString(), 2, TriState.True) & " "
+                    If IsDBNull(dt4.Rows(i).Item("Rate")) Then
+                        cell5S.Text = " "
+                    Else
+                        cell5S.Text = FormatNumber(CStr((dt4.Rows(i).Item("Rate"))) & Space(1), 2, TriState.True)
 
-            '        Else
-            '            cell5.Text = String.Empty
+                    End If
 
-            '        End If
-            '        cell6.Text = String.Empty
+                    If IsDBNull(dt4.Rows(i).Item("Amount")) Then
+                        cell6S.Text = " "
+                    Else
+                        cell6S.Text = FormatNumber(CStr((dt4.Rows(i).Item("Amount"))) & Space(1), 2, TriState.True)
+                        tot = tot + Convert.ToDecimal(dt4.Rows(i).Item("Amount"))
+                    End If
 
 
+                    trRB.Cells.Add(cell1S)
+                    trRB.Cells.Add(cell2S)
+                    trRB.Cells.Add(cell3S)
+                    trRB.Cells.Add(cell4S)
+                    trRB.Cells.Add(cell5S)
+                    trRB.Cells.Add(cell6S)
+                    trRB.Cells.Add(cell7S)
 
-            '        tr.Cells.Add(cell1)
-            '        tr.Cells.Add(cell2)
-            '        tr.Cells.Add(cell3)
-            '        tr.Cells.Add(cell4)
-            '        tr.Cells.Add(cell5)
-            '        tr.Cells.Add(cell6)
-            '        report.xrMainTable.Rows.Add(tr)
 
-            '    Next
-            'End If
+                    report.xrMainTable.Rows.Add(trRB)
 
-            ''---------------------------Empty Row as Separator  - START ----------------------------------------------------------------
-            'Dim trEmpty3 As New DevExpress.XtraReports.UI.XRTableRow
-            'Dim cellEmpty13 As New DevExpress.XtraReports.UI.XRTableCell
-            'cellEmpty13.Size = New Size(report.xrMainTable.WidthF, 10)
-            'cellEmpty13.Text = " "
-            'trEmpty3.Cells.Add(cellEmpty13)
-            'report.xrMainTable.Rows.Add(trEmpty3)
 
 
-            ''---------------------------Empty Row as Separator  - END ----------------------------------------------------------------
 
+                    ''**********************************************************************************************
+                    'Dim trSa As New DevExpress.XtraReports.UI.XRTableRow
+                    'Dim cell1aS, cell2aS, cell3aS, cell4aS, cell5aS, cell6aS, cell7aS As New DevExpress.XtraReports.UI.XRTableCell
 
 
-            'If dt9.Rows.Count > 0 Then
-            '    Dim i As Int64
-            '    For i = 0 To dt9.Rows.Count - 1
 
-            '        Dim tr As New DevExpress.XtraReports.UI.XRTableRow
-            '        Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
+                    'cell1aS.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
+                    'cell2aS.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
+                    'cell3aS.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
+                    'cell4aS.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
+                    'cell5aS.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+                    'cell6aS.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
+                    'cell7aS.Size = New Size(report.xrMainTable.Rows(0).Cells(6).WidthF, 25)
 
-            '        cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
-            '        cell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
-            '        cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
-            '        cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
-            '        cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
-            '        cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
+                    'cell1aS.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    'cell2aS.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    'cell3aS.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    'cell4aS.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+                    'cell5aS.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    'cell6aS.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    'cell7aS.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
-            '        cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
+                    'cell1aS.Text = "  "
+                    'cell2aS.Text = "  "
+                    'cell3aS.Text = "  "
+                    'cell4aS.Text = "  "
+                    'cell5aS.Text = "Deduction "
+                    ''cell6aS.Text = "cell6aS "
+                    ''cell7aS.Text = "cell7aS "
 
+                    'If IsDBNull(dt4.Rows(i).Item("Deduction")) Then
+                    '    cell6aS.Text = " "
+                    'Else
+                    '    cell6aS.Text = FormatNumber(CStr((dt4.Rows(i).Item("Deduction"))) & Space(1), 2, TriState.True)
 
-            '        If i = 0 Then
-            '            cell1.Text = "ETF 3%"
-            '        End If
+                    'End If
 
-            '        If IsDBNull(dt9.Rows(i).Item("EmployeeName")) Then
-            '            cell2.Text = "0.00 "
-            '        Else
-            '            cell2.Text = CStr((dt9.Rows(i).Item("EmployeeName")))
-            '        End If
+                    'Dim a, b As Decimal
 
-            '        cell3.Text = String.Empty
+                    'a = Convert.ToDecimal(dt4.Rows(i).Item("Amount"))
+                    'b = Convert.ToDecimal(dt4.Rows(i).Item("Deduction"))
 
-            '        If IsDBNull(dt9.Rows(i).Item("ETF_3")) Then
-            '            cell4.Text = "0.00 "
-            '        Else
-            '            cell4.Text = FormatNumber(CStr((dt9.Rows(i).Item("ETF_3"))), 2, TriState.True) & " "
-            '            ETFTotal = ETFTotal + Convert.ToDecimal((dt9.Rows(i).Item("ETF_3").ToString))
-            '        End If
+                    'cell7aS.Text = FormatNumber(CStr(a - b) & Space(1), 2, TriState.True)
 
-            '        If i = dt9.Rows.Count - 1 Then
-            '            cell5.Text = FormatNumber(ETFTotal.ToString(), 2, TriState.True) & " "
+                    'trSa.Cells.Add(cell1aS)
+                    'trSa.Cells.Add(cell2aS)
+                    'trSa.Cells.Add(cell3aS)
+                    'trSa.Cells.Add(cell4aS)
+                    'trSa.Cells.Add(cell5aS)
+                    'trSa.Cells.Add(cell6aS)
+                    'trSa.Cells.Add(cell7aS)
 
 
-            '        Else
-            '            cell5.Text = String.Empty
+                    'report.xrMainTable.Rows.Add(trSa)
 
-            '        End If
-            '        cell6.Text = String.Empty
+                    ''**********************************************************************************************
 
+                    cell7S.Text = tot
 
+                Next
 
-            '        tr.Cells.Add(cell1)
-            '        tr.Cells.Add(cell2)
-            '        tr.Cells.Add(cell3)
-            '        tr.Cells.Add(cell4)
-            '        tr.Cells.Add(cell5)
-            '        tr.Cells.Add(cell6)
+                
+            End If
 
-            '    report.xrMainTable.Rows.Add(tr)
-
-            '        Next
-            'End If
-
-            ''---------------------------Empty Row as Separator  - START ----------------------------------------------------------------
-            'Dim trEmpty4 As New DevExpress.XtraReports.UI.XRTableRow
-            'Dim cellEmpty14 As New DevExpress.XtraReports.UI.XRTableCell
-            'cellEmpty14.Size = New Size(report.xrMainTable.WidthF, 10)
-            'cellEmpty14.Text = " "
-            'trEmpty4.Cells.Add(cellEmpty14)
-            'report.xrMainTable.Rows.Add(trEmpty4)
-
-
-            ''---------------------------Empty Row as Separator  - END ----------------------------------------------------------------
-
-
-
-            'If dt10.Rows.Count > 0 Then
-            '    Dim i As Int64
-            '    For i = 0 To dt10.Rows.Count - 1
-
-            '        Dim tr As New DevExpress.XtraReports.UI.XRTableRow
-
-            '        Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
-
-            '        cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
-            '        cell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
-            '        cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
-            '        cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
-            '        cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
-            '        cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
-
-            '        cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-
-            '        If i = 0 Then
-            '            cell1.Text = "OTHER"
-            '        End If
-
-            '        If IsDBNull(dt10.Rows(i).Item("Description")) Then
-            '            cell2.Text = "0.00 "
-            '        Else
-            '            cell2.Text = CStr((dt10.Rows(i).Item("Description")))
-            '        End If
-
-            '        cell3.Text = String.Empty
-
-            '        If IsDBNull(dt10.Rows(i).Item("Amount")) Then
-            '            cell4.Text = "0.00 "
-            '        Else
-            '            cell4.Text = FormatNumber(CStr((dt10.Rows(i).Item("Amount"))), 2, TriState.True) & " "
-            '            OtherExpenseTotal = OtherExpenseTotal + Convert.ToDecimal((dt10.Rows(i).Item("Amount").ToString))
-            '        End If
-
-            '        If i = dt10.Rows.Count - 1 Then
-            '            cell5.Text = FormatNumber(OtherExpenseTotal.ToString(), 2, TriState.True) & " "
-
-
-            '        Else
-            '            cell5.Text = String.Empty
-
-            '        End If
-
-            '        cell6.Text = String.Empty
-
-            '        tr.Cells.Add(cell1)
-            '        tr.Cells.Add(cell2)
-            '        tr.Cells.Add(cell3)
-            '        tr.Cells.Add(cell4)
-            '        tr.Cells.Add(cell5)
-            '        tr.Cells.Add(cell6)
-
-
-            '        report.xrMainTable.Rows.Add(tr)
-
-            '    Next
-            'End If
-
-
-
-
-
-            'Dim trT As New DevExpress.XtraReports.UI.XRTableRow
-
-            'Dim Tcell1, Tcell2, Tcell3, Tcell4, Tcell5, Tcell6 As New DevExpress.XtraReports.UI.XRTableCell
-
-            'Tcell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
-            'Tcell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
-            'Tcell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
-            'Tcell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
-            'Tcell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
-            'Tcell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
-
-            'Tcell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            'Tcell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            'Tcell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            'Tcell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            'Tcell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            'Tcell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-
-            'Tcell1.Text = "GRAND TOTAL"
-            'Tcell2.Text = String.Empty
-            'Tcell3.Text = String.Empty
-            'Tcell4.Text = String.Empty
-            'Tcell5.Text = String.Empty
-            'Tcell6.Text = FormatNumber((TotalSalary + TotalAdvPay + FestivalAdvanceTotal + OtherExpenseTotal + EPFTotal + ETFTotal), 2, TriState.True)
-
-
-
-
-            'trT.Cells.Add(Tcell1)
-            'trT.Cells.Add(Tcell2)
-            'trT.Cells.Add(Tcell3)
-            'trT.Cells.Add(Tcell4)
-            'trT.Cells.Add(Tcell5)
-
-            'report.xrMainTable.Rows.Add(trT)
-
-
-            'If dt12.Rows.Count > 0 Then
-            '    Dim i As Int64
-            '    For i = 0 To dt12.Rows.Count - 1
-
-            '        Dim tr As New DevExpress.XtraReports.UI.XRTableRow
-
-            '        Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
-
-            '        cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
-            '        cell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
-            '        cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
-            '        cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
-            '        cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
-
-
-            '        cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            '        cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            '        cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-
-            '        If i = 0 Then
-            '            cell1.Text = "EXPENSES OF INVESTMENTS"
-            '        End If
-
-            '        If IsDBNull(dt12.Rows(i).Item("Description")) Then
-            '            cell2.Text = "0.00 "
-            '        Else
-            '            cell2.Text = CStr((dt12.Rows(i).Item("Description")))
-            '        End If
-
-            '        cell3.Text = String.Empty
-
-            '        If IsDBNull(dt12.Rows(i).Item("Amount")) Then
-            '            cell4.Text = "0.00 "
-            '        Else
-            '            cell4.Text = ""
-
-            '        End If
-
-            '        If i = dt12.Rows.Count - 1 Then
-            '            cell5.Text = FormatNumber(CStr((dt12.Rows(i).Item("Amount"))), 2, TriState.True) & " "
-
-
-            '        Else
-            '            cell5.Text = String.Empty
-
-            '        End If
-
-            '        'Adding values to Total Column
-
-
-
-            '        tr.Cells.Add(cell1)
-            '        tr.Cells.Add(cell2)
-            '        tr.Cells.Add(cell3)
-            '        tr.Cells.Add(cell4)
-            '        tr.Cells.Add(cell5)
-
-            '        report.xrMainTable.Rows.Add(tr)
-
-            '    Next
-            'End If
 
 
 
