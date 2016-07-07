@@ -349,7 +349,7 @@ Public Class frmCashRewards
             frm.Text = CWB_DELETE_CONFIRMATION_TITLE
 
             If frm.ShowDialog = Windows.Forms.DialogResult.Yes Then
-                Me.DeleteCashAdvance()
+                Me.DeleteCashRewards()
                 Me.CashRewardsGetAllByDates()
 
             End If
@@ -361,7 +361,7 @@ Public Class frmCashRewards
     End Sub
 
 #Region "Delete Cash Advance"
-    Private Sub DeleteCashAdvance()
+    Private Sub DeleteCashRewards()
 
         Try
             With iStockCashAdvance
@@ -430,7 +430,5 @@ Public Class frmCashRewards
         Me.GetEmployeeForWork()
     End Sub
 
-    Private Sub gcCashAdvance_DoubleClick(sender As Object, e As EventArgs) Handles gcCashAdvance.DoubleClick
-
-    End Sub
+ 
 End Class

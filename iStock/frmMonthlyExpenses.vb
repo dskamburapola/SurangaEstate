@@ -103,7 +103,7 @@
             dt9 = ds.Tables(8)
             dt10 = ds.Tables(9)
             dt11 = ds.Tables(10)
-            dt12 = ds.Tables(10)
+            dt12 = ds.Tables(11)
 
     
             '******************************* Permenant Salary **************************************************************************
@@ -1079,11 +1079,11 @@
 
                     cell3c.Text = String.Empty
 
-                    If IsDBNull(dt11.Rows(i).Item("CashRewards")) Then
+                    If IsDBNull(dt11.Rows(i).Item("Description")) Then
                         cell4c.Text = "0.00 "
                     Else
-                        cell4c.Text = FormatNumber(CStr((dt11.Rows(i).Item("CashRewards"))), 2, TriState.True) & " "
-                        PermanentAdvPay = PermanentAdvPay + Convert.ToDecimal((dt11.Rows(i).Item("CashRewards").ToString))
+                        cell4c.Text = FormatNumber(CStr((dt11.Rows(i).Item("Description"))), 2, TriState.True) & " "
+                        PermanentAdvPay = PermanentAdvPay + Convert.ToDecimal((dt11.Rows(i).Item("Description").ToString))
                     End If
 
                     If i = dt11.Rows.Count - 1 Then
