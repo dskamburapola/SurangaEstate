@@ -20,8 +20,8 @@ Partial Class frmCheckRoll
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.gcCheckRoll = New DevExpress.XtraGrid.GridControl()
@@ -101,6 +101,8 @@ Partial Class frmCheckRoll
         Me.gvCheckRoll.Name = "gvCheckRoll"
         Me.gvCheckRoll.OptionsBehavior.Editable = False
         Me.gvCheckRoll.OptionsBehavior.SummariesIgnoreNullValues = True
+        Me.gvCheckRoll.OptionsSelection.EnableAppearanceFocusedRow = False
+        Me.gvCheckRoll.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect
         Me.gvCheckRoll.OptionsView.ColumnAutoWidth = False
         Me.gvCheckRoll.OptionsView.EnableAppearanceOddRow = True
         Me.gvCheckRoll.OptionsView.ShowFooter = True
@@ -116,9 +118,9 @@ Partial Class frmCheckRoll
         Me.leYear.Size = New System.Drawing.Size(113, 20)
         Me.leYear.StyleController = Me.LayoutControl1
         Me.leYear.TabIndex = 15
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "Require"
-        Me.dxvpAttendaceReport.SetValidationRule(Me.leYear, ConditionValidationRule1)
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule2.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.leYear, ConditionValidationRule2)
         '
         'meMonth
         '
@@ -128,9 +130,9 @@ Partial Class frmCheckRoll
         Me.meMonth.Size = New System.Drawing.Size(113, 20)
         Me.meMonth.StyleController = Me.LayoutControl1
         Me.meMonth.TabIndex = 14
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule2.ErrorText = "Require"
-        Me.dxvpAttendaceReport.SetValidationRule(Me.meMonth, ConditionValidationRule2)
+        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule3.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.meMonth, ConditionValidationRule3)
         '
         'sbGenerate
         '
@@ -272,14 +274,14 @@ Partial Class frmCheckRoll
         Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
-        'frmAttendaceAdvanceReport
+        'frmCheckRoll
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(702, 502)
         Me.Controls.Add(Me.LayoutControl1)
         Me.KeyPreview = True
-        Me.Name = "frmAttendaceAdvanceReport"
+        Me.Name = "frmCheckRoll"
         Me.Text = "Check Roll (Permanent)"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)

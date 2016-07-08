@@ -10,14 +10,28 @@ Imports DevExpress.XtraPivotGrid
 Public Class frmCheckRoll
 
 #Region "Variables"
+
     Private _CWBStock As iStockCommon.iStockStock
     Private _CWBSuppliers As iStockCommon.iStockSuppliers
     Private _iStockDailyWorking As iStockCommon.iStockDailyWorking
+    Private _CWBWorkDays As iStockCommon.iStockWorkDays
+    Dim dtholiday As New DataTable
+    Dim listDays As New List(Of String)
 
 #End Region
 
 #Region "Constructor"
 
+    Public ReadOnly Property CWBWorkDays() As iStockCommon.iStockWorkDays
+        Get
+
+            If _CWBWorkDays Is Nothing Then
+                _CWBWorkDays = New iStockCommon.iStockWorkDays()
+            End If
+
+            Return _CWBWorkDays
+        End Get
+    End Property
     Public ReadOnly Property CWBStock() As iStockCommon.iStockStock
         Get
 
@@ -56,6 +70,9 @@ Public Class frmCheckRoll
 
     Private Sub frmAttendaceReport_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         LoadYears()
+
+     
+
     End Sub
 
     Private Sub frmStockBalance_Activated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Activated
@@ -185,6 +202,15 @@ Public Class frmCheckRoll
 
             ds = iStockDailyWorking.GetCheckRollReport(currentDate)
 
+            CWBWorkDays.YearName = selectedYear
+            CWBWorkDays.MonthName = meMonth.Text
+            dtholiday = CWBWorkDays.GetHolyDaysAll.Tables(1)
+
+
+            For Each row As DataRow In dtholiday.Rows
+                listDays.Add(Convert.ToDateTime(row("Hdate")).Day.ToString)
+            Next
+
 
 
             gvCheckRoll.Columns.Clear()
@@ -286,10 +312,9 @@ Public Class frmCheckRoll
 
 
         End If
-
-
-
-
+        gcCheckRoll.Refresh()
+        gcCheckRoll.RefreshDataSource()
+     
     End Sub
 
 
@@ -297,4 +322,31 @@ Public Class frmCheckRoll
 
 
 
+    Private Sub gvCheckRoll_CustomColumnDisplayText(sender As Object, e As Views.Base.CustomColumnDisplayTextEventArgs) Handles gvCheckRoll.CustomColumnDisplayText
+        If (e.DisplayText = String.Empty) Then
+
+            If listDays.Count <> 0 Then
+
+                If listDays.Contains(e.Column.Caption) Then
+
+                    e.Column.AppearanceCell.BackColor = Color.Red
+
+                Else
+                    e.DisplayText = "ab"
+                End If
+
+            Else
+                e.DisplayText = "ab"
+            End If
+
+
+
+        End If
+    End Sub
+
+    Private Sub gvCheckRoll_CustomDrawCell(sender As Object, e As Views.Base.RowCellCustomDrawEventArgs) Handles gvCheckRoll.CustomDrawCell
+
+     
+
+    End Sub
 End Class

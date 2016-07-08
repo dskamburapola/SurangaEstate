@@ -6,6 +6,7 @@ Imports System.Data
 Imports System.Data.Common
 Imports iStockCommon.iStockEnums
 Imports System.Xml
+Imports System.Globalization
 
 
 Public Class frmHolidayShedule
@@ -51,7 +52,7 @@ Public Class frmHolidayShedule
     End Sub
 
     Private Sub frmExpenses_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-      
+
         SetCWBWorkDayBarButtonClose(bbClose)
 
 
@@ -123,7 +124,7 @@ Public Class frmHolidayShedule
             _Connection.Open()
             _Transaction = _Connection.BeginTransaction()
 
-          
+
             With CWBWorkDays
 
                 .HDate = deHoliday.EditValue
@@ -218,9 +219,11 @@ Public Class frmHolidayShedule
         Me.PopulateGrid()
     End Sub
 
-    
+
     Private Sub cmbMonths_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbMonths.SelectedIndexChanged
         PopulateGridByMonths()
+
+        deHoliday.EditValue = New DateTime(DateTime.Now.Year, DateTime.ParseExact(cmbMonths.Text, "MMMM", CultureInfo.CurrentCulture).Month, 1)
     End Sub
 
     Private Sub gcHoliday_Click(sender As Object, e As EventArgs) Handles gcHoliday.Click

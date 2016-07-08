@@ -305,14 +305,14 @@ Partial Class frmCheckRollCasualReport
         Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
-        'frmAttendaceAdvanceCasualReport
+        'frmCheckRollCasualReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(702, 502)
         Me.Controls.Add(Me.LayoutControl1)
         Me.KeyPreview = True
-        Me.Name = "frmAttendaceAdvanceCasualReport"
+        Me.Name = "frmCheckRollCasualReport"
         Me.Text = "Check Roll (Casual)"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
