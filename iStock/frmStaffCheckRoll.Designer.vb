@@ -110,8 +110,6 @@ Partial Class frmStaffCheckRoll
         '
         Me.leYear.Location = New System.Drawing.Point(207, 43)
         Me.leYear.Name = "leYear"
-        Me.leYear.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.leYear.Properties.Appearance.Options.UseBackColor = True
         Me.leYear.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.leYear.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Key", "Year")})
         Me.leYear.Properties.NullText = ""
@@ -282,7 +280,7 @@ Partial Class frmStaffCheckRoll
         Me.Controls.Add(Me.LayoutControl1)
         Me.KeyPreview = True
         Me.Name = "frmStaffCheckRoll"
-        Me.Text = "Check Roll (Permanent)"
+        Me.Text = "Staff Pay Sheet"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.gcCheckRoll, System.ComponentModel.ISupportInitialize).EndInit()

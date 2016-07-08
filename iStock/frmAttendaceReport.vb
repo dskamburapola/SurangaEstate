@@ -169,6 +169,7 @@ Public Class frmAttendaceReport
 
                 gvAttendance.Columns("MWA").Caption = "Monthly Work Average"
 
+                gvAttendance.Columns("MWA").Width = 150
 
                 For index = 0 To gvAttendance.Columns.Count - 1
 
@@ -215,6 +216,7 @@ Public Class frmAttendaceReport
 
                 gvAttendance.Columns("MWA").Caption = "Monthly Work Average"
 
+                gvAttendance.Columns("MWA").Width = 150
 
                 For index = 0 To gvAttendance.Columns.Count - 1
 
@@ -258,5 +260,16 @@ Public Class frmAttendaceReport
         If e.Button.Index = 1 Then
             cbeWorkType.EditValue = Nothing
         End If
+    End Sub
+
+    Private Sub gvAttendance_CustomColumnDisplayText(sender As Object, e As Views.Base.CustomColumnDisplayTextEventArgs) Handles gvAttendance.CustomColumnDisplayText
+        If (e.DisplayText = String.Empty) Then
+            e.DisplayText = "ab"
+        ElseIf IsNumeric(e.DisplayText) Then
+            e.DisplayText = e.DisplayText.Replace(".00", "")
+            e.DisplayText = e.DisplayText.Replace(".50", ".5")
+
+        End If
+
     End Sub
 End Class
