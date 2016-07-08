@@ -20,8 +20,8 @@ Partial Class frmHolidayShedule
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim CompareAgainstControlValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule = New DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule()
-        Dim SerializableAppearanceObject4 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim CompareAgainstControlValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule = New DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule()
+        Dim SerializableAppearanceObject3 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.deFromDate = New DevExpress.XtraEditors.DateEdit()
         Me.LayoutControl2 = New DevExpress.XtraLayout.LayoutControl()
         Me.sbProcess = New DevExpress.XtraEditors.SimpleButton()
@@ -57,6 +57,7 @@ Partial Class frmHolidayShedule
         Me.dxvpExpenses = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         Me.dxvpHistoryData = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.txtDeleteID = New DevExpress.XtraEditors.TextEdit()
         Me.cmbMonths = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.txtDescription = New DevExpress.XtraEditors.TextEdit()
         Me.lblYear = New DevExpress.XtraEditors.LabelControl()
@@ -68,6 +69,7 @@ Partial Class frmHolidayShedule
         Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemButtonEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
+        Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemTextEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
@@ -81,9 +83,8 @@ Partial Class frmHolidayShedule
         Me.EmptySpaceItem4 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem8 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.txtDeleteID = New DevExpress.XtraEditors.TextEdit()
         Me.LayoutControlItem11 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.EmptySpaceItem5 = New DevExpress.XtraLayout.EmptySpaceItem()
         CType(Me.deFromDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.deFromDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,6 +107,7 @@ Partial Class frmHolidayShedule
         CType(Me.dxvpHistoryData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.txtDeleteID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbMonths.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtDescription.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.deHoliday.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -126,8 +128,8 @@ Partial Class frmHolidayShedule
         CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtDeleteID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'deFromDate
@@ -188,10 +190,10 @@ Partial Class frmHolidayShedule
         Me.deToDate.Size = New System.Drawing.Size(119, 20)
         Me.deToDate.StyleController = Me.LayoutControl2
         Me.deToDate.TabIndex = 1
-        CompareAgainstControlValidationRule2.CompareControlOperator = DevExpress.XtraEditors.DXErrorProvider.CompareControlOperator.GreaterOrEqual
-        CompareAgainstControlValidationRule2.Control = Me.deFromDate
-        CompareAgainstControlValidationRule2.ErrorText = "Value must be a recent Date"
-        Me.dxvpHistoryData.SetValidationRule(Me.deToDate, CompareAgainstControlValidationRule2)
+        CompareAgainstControlValidationRule1.CompareControlOperator = DevExpress.XtraEditors.DXErrorProvider.CompareControlOperator.GreaterOrEqual
+        CompareAgainstControlValidationRule1.Control = Me.deFromDate
+        CompareAgainstControlValidationRule1.ErrorText = "Value must be a recent Date"
+        Me.dxvpHistoryData.SetValidationRule(Me.deToDate, CompareAgainstControlValidationRule1)
         '
         'gcExpenses
         '
@@ -483,30 +485,39 @@ Partial Class frmHolidayShedule
         Me.LayoutControl1.TabIndex = 9
         Me.LayoutControl1.Text = "LayoutControl1"
         '
+        'txtDeleteID
+        '
+        Me.txtDeleteID.Location = New System.Drawing.Point(117, 34)
+        Me.txtDeleteID.MenuManager = Me.BarManager1
+        Me.txtDeleteID.Name = "txtDeleteID"
+        Me.txtDeleteID.Size = New System.Drawing.Size(620, 20)
+        Me.txtDeleteID.StyleController = Me.LayoutControl1
+        Me.txtDeleteID.TabIndex = 13
+        '
         'cmbMonths
         '
-        Me.cmbMonths.Location = New System.Drawing.Point(546, 59)
+        Me.cmbMonths.Location = New System.Drawing.Point(117, 107)
         Me.cmbMonths.MenuManager = Me.BarManager1
         Me.cmbMonths.Name = "cmbMonths"
         Me.cmbMonths.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbMonths.Properties.Items.AddRange(New Object() {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"})
-        Me.cmbMonths.Size = New System.Drawing.Size(191, 20)
+        Me.cmbMonths.Size = New System.Drawing.Size(50, 20)
         Me.cmbMonths.StyleController = Me.LayoutControl1
         Me.cmbMonths.TabIndex = 12
         '
         'txtDescription
         '
-        Me.txtDescription.Location = New System.Drawing.Point(276, 113)
+        Me.txtDescription.Location = New System.Drawing.Point(435, 107)
         Me.txtDescription.MenuManager = Me.BarManager1
         Me.txtDescription.Name = "txtDescription"
-        Me.txtDescription.Size = New System.Drawing.Size(305, 20)
+        Me.txtDescription.Size = New System.Drawing.Size(146, 20)
         Me.txtDescription.StyleController = Me.LayoutControl1
         Me.txtDescription.TabIndex = 11
         '
         'lblYear
         '
         Me.lblYear.Appearance.Font = New System.Drawing.Font("Tahoma", 14.0!)
-        Me.lblYear.Location = New System.Drawing.Point(12, 59)
+        Me.lblYear.Location = New System.Drawing.Point(12, 58)
         Me.lblYear.Name = "lblYear"
         Me.lblYear.Size = New System.Drawing.Size(126, 23)
         Me.lblYear.StyleController = Me.LayoutControl1
@@ -515,9 +526,9 @@ Partial Class frmHolidayShedule
         '
         'btnMarkHoliday
         '
-        Me.btnMarkHoliday.Location = New System.Drawing.Point(585, 113)
+        Me.btnMarkHoliday.Location = New System.Drawing.Point(585, 107)
         Me.btnMarkHoliday.Name = "btnMarkHoliday"
-        Me.btnMarkHoliday.Size = New System.Drawing.Size(152, 22)
+        Me.btnMarkHoliday.Size = New System.Drawing.Size(86, 22)
         Me.btnMarkHoliday.StyleController = Me.LayoutControl1
         Me.btnMarkHoliday.TabIndex = 9
         Me.btnMarkHoliday.Text = "Mark as Holiday"
@@ -525,10 +536,15 @@ Partial Class frmHolidayShedule
         'deHoliday
         '
         Me.deHoliday.EditValue = Nothing
-        Me.deHoliday.Location = New System.Drawing.Point(117, 113)
+        Me.deHoliday.Location = New System.Drawing.Point(276, 107)
         Me.deHoliday.MenuManager = Me.BarManager1
         Me.deHoliday.Name = "deHoliday"
         Me.deHoliday.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.deHoliday.Properties.DisplayFormat.FormatString = "dd-MMM-yy"
+        Me.deHoliday.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.deHoliday.Properties.EditFormat.FormatString = "dd-MMM-yy"
+        Me.deHoliday.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.deHoliday.Properties.Mask.EditMask = "dd-MMM-yy"
         Me.deHoliday.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.deHoliday.Size = New System.Drawing.Size(50, 20)
         Me.deHoliday.StyleController = Me.LayoutControl1
@@ -536,12 +552,12 @@ Partial Class frmHolidayShedule
         '
         'gcHoliday
         '
-        Me.gcHoliday.Location = New System.Drawing.Point(12, 149)
+        Me.gcHoliday.Location = New System.Drawing.Point(12, 133)
         Me.gcHoliday.MainView = Me.gvHoliday
         Me.gcHoliday.MenuManager = Me.BarManager1
         Me.gcHoliday.Name = "gcHoliday"
         Me.gcHoliday.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1, Me.RepositoryItemButtonEdit1})
-        Me.gcHoliday.Size = New System.Drawing.Size(725, 121)
+        Me.gcHoliday.Size = New System.Drawing.Size(725, 123)
         Me.gcHoliday.TabIndex = 5
         Me.gcHoliday.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvHoliday})
         '
@@ -550,10 +566,14 @@ Partial Class frmHolidayShedule
         Me.gvHoliday.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14})
         Me.gvHoliday.GridControl = Me.gcHoliday
         Me.gvHoliday.Name = "gvHoliday"
+        Me.gvHoliday.OptionsCustomization.AllowGroup = False
+        Me.gvHoliday.OptionsView.ShowGroupPanel = False
         '
         'GridColumn11
         '
         Me.GridColumn11.Caption = "Date"
+        Me.GridColumn11.DisplayFormat.FormatString = "dd-MMM-yy"
+        Me.GridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.GridColumn11.FieldName = "HDate"
         Me.GridColumn11.Name = "GridColumn11"
         Me.GridColumn11.Visible = True
@@ -577,9 +597,15 @@ Partial Class frmHolidayShedule
         'RepositoryItemButtonEdit1
         '
         Me.RepositoryItemButtonEdit1.AutoHeight = False
-        Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", 5, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Global.iStock.My.Resources.Resources._15, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject4, "", Nothing, Nothing, True)})
+        Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", 5, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Global.iStock.My.Resources.Resources._15, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject3, "", Nothing, Nothing, True)})
         Me.RepositoryItemButtonEdit1.Name = "RepositoryItemButtonEdit1"
         Me.RepositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
+        '
+        'GridColumn14
+        '
+        Me.GridColumn14.Caption = "HolydayID"
+        Me.GridColumn14.FieldName = "HolydayID"
+        Me.GridColumn14.Name = "GridColumn14"
         '
         'RepositoryItemTextEdit1
         '
@@ -591,7 +617,7 @@ Partial Class frmHolidayShedule
         Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
         Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup1.GroupBordersVisible = False
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.EmptySpaceItem1, Me.EmptySpaceItem3, Me.LayoutControlItem2, Me.LayoutControlItem1, Me.LayoutControlItem5, Me.EmptySpaceItem7, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.EmptySpaceItem4, Me.EmptySpaceItem8, Me.LayoutControlItem6, Me.LayoutControlItem11})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.EmptySpaceItem1, Me.EmptySpaceItem3, Me.LayoutControlItem2, Me.LayoutControlItem1, Me.LayoutControlItem5, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.EmptySpaceItem4, Me.EmptySpaceItem8, Me.LayoutControlItem11, Me.LayoutControlItem6, Me.EmptySpaceItem5, Me.EmptySpaceItem7})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(749, 439)
@@ -604,7 +630,7 @@ Partial Class frmHolidayShedule
         Me.EmptySpaceItem1.CustomizationFormText = "EmptySpaceItem1"
         Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 0)
         Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(729, 23)
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(729, 22)
         Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -612,9 +638,9 @@ Partial Class frmHolidayShedule
         '
         Me.EmptySpaceItem3.AllowHotTrack = False
         Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(0, 74)
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(0, 73)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(729, 27)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(729, 22)
         Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -622,9 +648,9 @@ Partial Class frmHolidayShedule
         '
         Me.LayoutControlItem2.Control = Me.gcHoliday
         Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 137)
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 121)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(729, 125)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(729, 127)
         Me.LayoutControlItem2.Text = "LayoutControlItem2"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextToControlDistance = 0
@@ -634,7 +660,7 @@ Partial Class frmHolidayShedule
         '
         Me.LayoutControlItem1.Control = Me.deHoliday
         Me.LayoutControlItem1.CustomizationFormText = "LayoutControlItem1"
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 101)
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(159, 95)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
         Me.LayoutControlItem1.Size = New System.Drawing.Size(159, 26)
         Me.LayoutControlItem1.Text = "Date"
@@ -644,9 +670,9 @@ Partial Class frmHolidayShedule
         '
         Me.LayoutControlItem5.Control = Me.btnMarkHoliday
         Me.LayoutControlItem5.CustomizationFormText = "LayoutControlItem5"
-        Me.LayoutControlItem5.Location = New System.Drawing.Point(573, 101)
+        Me.LayoutControlItem5.Location = New System.Drawing.Point(573, 95)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(156, 26)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(90, 26)
         Me.LayoutControlItem5.Text = "LayoutControlItem5"
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem5.TextToControlDistance = 0
@@ -656,9 +682,9 @@ Partial Class frmHolidayShedule
         '
         Me.EmptySpaceItem7.AllowHotTrack = False
         Me.EmptySpaceItem7.CustomizationFormText = "EmptySpaceItem7"
-        Me.EmptySpaceItem7.Location = New System.Drawing.Point(0, 127)
+        Me.EmptySpaceItem7.Location = New System.Drawing.Point(663, 95)
         Me.EmptySpaceItem7.Name = "EmptySpaceItem7"
-        Me.EmptySpaceItem7.Size = New System.Drawing.Size(729, 10)
+        Me.EmptySpaceItem7.Size = New System.Drawing.Size(66, 26)
         Me.EmptySpaceItem7.Text = "EmptySpaceItem7"
         Me.EmptySpaceItem7.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -666,7 +692,7 @@ Partial Class frmHolidayShedule
         '
         Me.LayoutControlItem3.Control = Me.lblYear
         Me.LayoutControlItem3.CustomizationFormText = "LayoutControlItem3"
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 47)
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 46)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
         Me.LayoutControlItem3.Size = New System.Drawing.Size(130, 27)
         Me.LayoutControlItem3.Text = "LayoutControlItem3"
@@ -678,9 +704,9 @@ Partial Class frmHolidayShedule
         '
         Me.LayoutControlItem4.Control = Me.txtDescription
         Me.LayoutControlItem4.CustomizationFormText = "Description"
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(159, 101)
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(318, 95)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(414, 26)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(255, 26)
         Me.LayoutControlItem4.Text = "Description"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(102, 13)
         '
@@ -688,9 +714,9 @@ Partial Class frmHolidayShedule
         '
         Me.EmptySpaceItem4.AllowHotTrack = False
         Me.EmptySpaceItem4.CustomizationFormText = "EmptySpaceItem4"
-        Me.EmptySpaceItem4.Location = New System.Drawing.Point(0, 262)
+        Me.EmptySpaceItem4.Location = New System.Drawing.Point(0, 248)
         Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
-        Me.EmptySpaceItem4.Size = New System.Drawing.Size(729, 157)
+        Me.EmptySpaceItem4.Size = New System.Drawing.Size(729, 148)
         Me.EmptySpaceItem4.Text = "EmptySpaceItem4"
         Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -698,9 +724,9 @@ Partial Class frmHolidayShedule
         '
         Me.EmptySpaceItem8.AllowHotTrack = False
         Me.EmptySpaceItem8.CustomizationFormText = "EmptySpaceItem8"
-        Me.EmptySpaceItem8.Location = New System.Drawing.Point(130, 47)
+        Me.EmptySpaceItem8.Location = New System.Drawing.Point(130, 46)
         Me.EmptySpaceItem8.Name = "EmptySpaceItem8"
-        Me.EmptySpaceItem8.Size = New System.Drawing.Size(299, 27)
+        Me.EmptySpaceItem8.Size = New System.Drawing.Size(599, 27)
         Me.EmptySpaceItem8.Text = "EmptySpaceItem8"
         Me.EmptySpaceItem8.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -708,39 +734,32 @@ Partial Class frmHolidayShedule
         '
         Me.LayoutControlItem6.Control = Me.cmbMonths
         Me.LayoutControlItem6.CustomizationFormText = "Months"
-        Me.LayoutControlItem6.Location = New System.Drawing.Point(429, 47)
+        Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 95)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
-        Me.LayoutControlItem6.Size = New System.Drawing.Size(300, 27)
+        Me.LayoutControlItem6.Size = New System.Drawing.Size(159, 26)
         Me.LayoutControlItem6.Text = "Months"
         Me.LayoutControlItem6.TextSize = New System.Drawing.Size(102, 13)
-        '
-        'txtDeleteID
-        '
-        Me.txtDeleteID.Location = New System.Drawing.Point(117, 35)
-        Me.txtDeleteID.MenuManager = Me.BarManager1
-        Me.txtDeleteID.Name = "txtDeleteID"
-        Me.txtDeleteID.Size = New System.Drawing.Size(620, 20)
-        Me.txtDeleteID.StyleController = Me.LayoutControl1
-        Me.txtDeleteID.TabIndex = 13
         '
         'LayoutControlItem11
         '
         Me.LayoutControlItem11.Control = Me.txtDeleteID
         Me.LayoutControlItem11.CustomizationFormText = "LayoutControlItem11"
-        Me.LayoutControlItem11.Location = New System.Drawing.Point(0, 23)
+        Me.LayoutControlItem11.Location = New System.Drawing.Point(0, 22)
         Me.LayoutControlItem11.Name = "LayoutControlItem11"
         Me.LayoutControlItem11.Size = New System.Drawing.Size(729, 24)
         Me.LayoutControlItem11.Text = "LayoutControlItem11"
         Me.LayoutControlItem11.TextSize = New System.Drawing.Size(102, 13)
         Me.LayoutControlItem11.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
-        'GridColumn14
+        'EmptySpaceItem5
         '
-        Me.GridColumn14.Caption = "HolydayID"
-        Me.GridColumn14.FieldName = "HolydayID"
-        Me.GridColumn14.Name = "GridColumn14"
-        Me.GridColumn14.Visible = True
-        Me.GridColumn14.VisibleIndex = 3
+        Me.EmptySpaceItem5.AllowHotTrack = False
+        Me.EmptySpaceItem5.CustomizationFormText = "EmptySpaceItem5"
+        Me.EmptySpaceItem5.Location = New System.Drawing.Point(0, 396)
+        Me.EmptySpaceItem5.Name = "EmptySpaceItem5"
+        Me.EmptySpaceItem5.Size = New System.Drawing.Size(729, 23)
+        Me.EmptySpaceItem5.Text = "EmptySpaceItem5"
+        Me.EmptySpaceItem5.TextSize = New System.Drawing.Size(0, 0)
         '
         'frmHolidayShedule
         '
@@ -777,6 +796,7 @@ Partial Class frmHolidayShedule
         CType(Me.dxvpHistoryData, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.txtDeleteID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbMonths.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtDescription.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.deHoliday.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -797,8 +817,8 @@ Partial Class frmHolidayShedule
         CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtDeleteID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -865,4 +885,5 @@ Partial Class frmHolidayShedule
     Friend WithEvents txtDeleteID As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LayoutControlItem11 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents GridColumn14 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents EmptySpaceItem5 As DevExpress.XtraLayout.EmptySpaceItem
 End Class

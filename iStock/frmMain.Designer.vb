@@ -448,7 +448,7 @@ Partial Class frmMain
         '
         'BarButtonItem41
         '
-        Me.BarButtonItem41.Caption = "Holiday Shedule"
+        Me.BarButtonItem41.Caption = "Holiday Schedule"
         Me.BarButtonItem41.Id = 50
         Me.BarButtonItem41.LargeGlyph = Global.iStock.My.Resources.Resources.Alert
         Me.BarButtonItem41.LargeWidth = 75
