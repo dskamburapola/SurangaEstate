@@ -101,6 +101,9 @@ Partial Class frmStaffCheckRoll
         Me.gvCheckRoll.Name = "gvCheckRoll"
         Me.gvCheckRoll.OptionsBehavior.Editable = False
         Me.gvCheckRoll.OptionsBehavior.SummariesIgnoreNullValues = True
+        Me.gvCheckRoll.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.gvCheckRoll.OptionsSelection.EnableAppearanceFocusedRow = False
+        Me.gvCheckRoll.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect
         Me.gvCheckRoll.OptionsView.ColumnAutoWidth = False
         Me.gvCheckRoll.OptionsView.EnableAppearanceOddRow = True
         Me.gvCheckRoll.OptionsView.ShowFooter = True

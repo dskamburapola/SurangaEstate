@@ -242,7 +242,7 @@ Public Class frmStaffCheckRoll
             'gvCheckRoll.Columns("EPF_20").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
             'gvCheckRoll.Columns("ETF_3").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
 
-            
+
             'gvCheckRoll.Columns("EvalutionAllowance").Caption = "Evaluation Allowance"
 
             'gvCheckRoll.Columns("EPF_12").Caption = "EPF (12%)"
@@ -295,29 +295,16 @@ Public Class frmStaffCheckRoll
 
 
     Private Sub gvCheckRoll_CustomColumnDisplayText(sender As Object, e As Views.Base.CustomColumnDisplayTextEventArgs) Handles gvCheckRoll.CustomColumnDisplayText
-        If (e.DisplayText = String.Empty) Then
 
+        If listDays.Contains(e.Column.Caption) Then
 
-            If listDays.Count <> 0 Then
+            e.Column.AppearanceCell.BackColor = Color.Red
 
-                If listDays.Contains(e.Column.Caption) Then
-
-                    e.Column.AppearanceCell.BackColor = Color.Red
-
-                Else
-                    e.DisplayText = "ab"
-                End If
-
-            Else
+        Else
+            If (e.DisplayText = String.Empty) Then
                 e.DisplayText = "ab"
             End If
-
-            e.DisplayText = "ab"
-        ElseIf IsNumeric(e.DisplayText) Then
-            e.DisplayText = e.DisplayText.Replace(".00", "")
-            e.DisplayText = e.DisplayText.Replace(".50", ".5")
-
         End If
-
     End Sub
+
 End Class

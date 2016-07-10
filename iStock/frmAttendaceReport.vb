@@ -291,28 +291,21 @@ Public Class frmAttendaceReport
     End Sub
 
     Private Sub gvAttendance_CustomColumnDisplayText(sender As Object, e As Views.Base.CustomColumnDisplayTextEventArgs) Handles gvAttendance.CustomColumnDisplayText
-        If (e.DisplayText = String.Empty) Then
+       
 
+        If listDays.Contains(e.Column.Caption) Then
 
-            If listDays.Count <> 0 Then
-
-                If listDays.Contains(e.Column.Caption) Then
-
-                    e.Column.AppearanceCell.BackColor = Color.Red
-
-                Else
-                    e.DisplayText = "ab"
-                End If
-
-            Else
-                e.DisplayText = "ab"
-            End If
-
-            e.DisplayText = "ab"
-        ElseIf IsNumeric(e.DisplayText) Then
+            e.Column.AppearanceCell.BackColor = Color.Red
             e.DisplayText = e.DisplayText.Replace(".00", "")
             e.DisplayText = e.DisplayText.Replace(".50", ".5")
 
+        Else
+            If (e.DisplayText = String.Empty) Then
+                e.DisplayText = "ab"
+            ElseIf IsNumeric(e.DisplayText) Then
+                e.DisplayText = e.DisplayText.Replace(".00", "")
+                e.DisplayText = e.DisplayText.Replace(".50", ".5")
+            End If
         End If
 
     End Sub

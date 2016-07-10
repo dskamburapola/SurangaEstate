@@ -304,24 +304,19 @@ Public Class frmCheckRollCasualReport
     End Sub
 
     Private Sub gvCheckRoll_CustomColumnDisplayText(sender As Object, e As Views.Base.CustomColumnDisplayTextEventArgs) Handles gvCheckRoll.CustomColumnDisplayText
-        If (e.DisplayText = String.Empty) Then
+        If listDays.Contains(e.Column.Caption) Then
 
-            If listDays.Count <> 0 Then
+            e.Column.AppearanceCell.BackColor = Color.Red
+            e.DisplayText = e.DisplayText.Replace(".00", "")
+            e.DisplayText = e.DisplayText.Replace(".50", ".5")
 
-                If listDays.Contains(e.Column.Caption) Then
-
-                    e.Column.AppearanceCell.BackColor = Color.Red
-
-                Else
-                    e.DisplayText = "ab"
-                End If
-
-            Else
+        Else
+            If (e.DisplayText = String.Empty) Then
                 e.DisplayText = "ab"
+            ElseIf IsNumeric(e.DisplayText) Then
+                e.DisplayText = e.DisplayText.Replace(".00", "")
+                e.DisplayText = e.DisplayText.Replace(".50", ".5")
             End If
-
-
-
         End If
     End Sub
 End Class
