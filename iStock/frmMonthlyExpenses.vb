@@ -104,6 +104,7 @@
             dt10 = ds.Tables(9)
             dt11 = ds.Tables(10)
             dt12 = ds.Tables(11)
+            dt13 = ds.Tables(12)
 
     
             '******************************* Permenant Salary **************************************************************************
@@ -367,7 +368,7 @@
             cellEmpty3.Text = String.Empty
             cellEmpty4.Text = String.Empty
             cellEmpty5.Text = String.Empty
-            cellEmpty6.Text = "JJJ"
+            cellEmpty6.Text = String.Empty
 
             trEmpty.Cells.Add(cellEmpty1)
             trEmpty.Cells.Add(cellEmpty2)
@@ -424,7 +425,7 @@
                     End If
 
                     If i = dt5.Rows.Count - 1 Then
-                        cell5.Text = FormatNumber(PermanentAdvPay.ToString(), 2, TriState.True) & " "
+                        cell5.Text = String.Empty 'FormatNumber(PermanentAdvPay.ToString(), 2, TriState.True) & " "
                         cell6.Text = String.Empty
 
                     Else
@@ -475,7 +476,7 @@
 
 
                     If i = 0 Then
-                        cell1.Text = "Cash Advance-Permanent"
+                        cell1.Text = "Cash Advance-Casual"
                     End If
 
                     If IsDBNull(dt6.Rows(i).Item("EmployeeName")) Then
@@ -618,10 +619,10 @@
                         cell1.Text = "Festival Advance"
                     End If
 
-                    If IsDBNull(dt7.Rows(i).Item("Designation")) Then
+                    If IsDBNull(dt7.Rows(i).Item("EmployerName")) Then
                         cell2.Text = "0.00 "
                     Else
-                        cell2.Text = CStr((dt7.Rows(i).Item("Designation")))
+                        cell2.Text = CStr((dt7.Rows(i).Item("EmployerName")))
                     End If
 
                     cell3.Text = String.Empty
@@ -934,7 +935,19 @@
                 tr.Cells.Add(cell6)
 
 
-                report.xrMainTable.Rows.Add(tr)
+                    report.xrMainTable.Rows.Add(tr)
+
+                    '---------------------------Empty Row as Separator  - START ----------------------------------------------------------------
+                    Dim trE1 As New DevExpress.XtraReports.UI.XRTableRow
+                    Dim cellE1 As New DevExpress.XtraReports.UI.XRTableCell
+                    cellE1.Size = New Size(report.xrMainTable.WidthF, 10)
+                    cellE1.Text = " "
+                    trE1.Cells.Add(cellE1)
+                    report.xrMainTable.Rows.Add(trE1)
+
+
+                    '---------------------------Empty Row as Separator  - END ----------------------------------------------------------------
+
 
             Next
         End If
@@ -943,41 +956,7 @@
 
 
 
-        Dim trT As New DevExpress.XtraReports.UI.XRTableRow
-
-        Dim Tcell1, Tcell2, Tcell3, Tcell4, Tcell5, Tcell6 As New DevExpress.XtraReports.UI.XRTableCell
-
-        Tcell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
-        Tcell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
-        Tcell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
-        Tcell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
-        Tcell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
-        Tcell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
-
-        Tcell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Tcell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Tcell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-        Tcell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-        Tcell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-        Tcell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-
-        Tcell1.Text = "GRAND TOTAL"
-        Tcell2.Text = String.Empty
-        Tcell3.Text = String.Empty
-        Tcell4.Text = String.Empty
-        Tcell5.Text = String.Empty
-        Tcell6.Text = FormatNumber((TotalSalary + TotalAdvPay + FestivalAdvanceTotal + OtherExpenseTotal + EPFTotal + ETFTotal), 2, TriState.True)
-
-
-
-
-        trT.Cells.Add(Tcell1)
-        trT.Cells.Add(Tcell2)
-        trT.Cells.Add(Tcell3)
-        trT.Cells.Add(Tcell4)
-        trT.Cells.Add(Tcell5)
-
-        report.xrMainTable.Rows.Add(trT)
+       
 
 
         If dt12.Rows.Count > 0 Then
@@ -1044,9 +1023,9 @@
                 Next
             End If
 
-            If dt11.Rows.Count > 0 Then
+            If dt13.Rows.Count > 0 Then
                 Dim i As Int64
-                For i = 0 To dt11.Rows.Count - 1
+                For i = 0 To dt13.Rows.Count - 1
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
 
@@ -1071,22 +1050,22 @@
                         cell1c.Text = "Cash Rewards"
                     End If
 
-                    If IsDBNull(dt11.Rows(i).Item("EmployeeName")) Then
+                    If IsDBNull(dt13.Rows(i).Item("EmployeeName")) Then
                         cell2c.Text = "0.00 "
                     Else
-                        cell2c.Text = CStr((dt11.Rows(i).Item("EmployeeName")))
+                        cell2c.Text = CStr((dt13.Rows(i).Item("EmployeeName")))
                     End If
 
                     cell3c.Text = String.Empty
 
-                    If IsDBNull(dt11.Rows(i).Item("Description")) Then
+                    If IsDBNull(dt13.Rows(i).Item("CashRewards")) Then
                         cell4c.Text = "0.00 "
                     Else
-                        cell4c.Text = FormatNumber(CStr((dt11.Rows(i).Item("Description"))), 2, TriState.True) & " "
-                        PermanentAdvPay = PermanentAdvPay + Convert.ToDecimal((dt11.Rows(i).Item("Description").ToString))
+                        cell4c.Text = FormatNumber(CStr((dt13.Rows(i).Item("CashRewards"))), 2, TriState.True) & " "
+                        PermanentAdvPay = PermanentAdvPay + Convert.ToDecimal((dt13.Rows(i).Item("CashRewards").ToString))
                     End If
 
-                    If i = dt11.Rows.Count - 1 Then
+                    If i = dt13.Rows.Count - 1 Then
                         cell5c.Text = FormatNumber(PermanentAdvPay.ToString(), 2, TriState.True) & " "
                         cell6c.Text = String.Empty
 
@@ -1111,7 +1090,41 @@
             End If
 
 
+            Dim trT As New DevExpress.XtraReports.UI.XRTableRow
 
+            Dim Tcell1, Tcell2, Tcell3, Tcell4, Tcell5, Tcell6 As New DevExpress.XtraReports.UI.XRTableCell
+
+            Tcell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
+            Tcell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
+            Tcell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF, 25)
+            Tcell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
+            Tcell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+            Tcell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
+
+            Tcell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+            Tcell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+            Tcell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+            Tcell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+            Tcell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+            Tcell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+
+            Tcell1.Text = "GRAND TOTAL"
+            Tcell2.Text = String.Empty
+            Tcell3.Text = String.Empty
+            Tcell4.Text = String.Empty
+            Tcell5.Text = String.Empty
+            Tcell6.Text = FormatNumber((TotalSalary + TotalAdvPay + FestivalAdvanceTotal + OtherExpenseTotal + EPFTotal + ETFTotal), 2, TriState.True)
+
+
+
+
+            trT.Cells.Add(Tcell1)
+            trT.Cells.Add(Tcell2)
+            trT.Cells.Add(Tcell3)
+            trT.Cells.Add(Tcell4)
+            trT.Cells.Add(Tcell5)
+
+            report.xrMainTable.Rows.Add(trT)
 
 
 

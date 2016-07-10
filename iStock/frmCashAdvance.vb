@@ -370,7 +370,7 @@ Public Class frmCashAdvance
             With iStockCashAdvance
 
                 .CashRewardsID = Convert.ToInt64(IIf(lblDeleteID.Text = String.Empty, 0, lblDeleteID.Text.ToString))
-                .CashRewardsDelete()
+                .CashAdvanceDelete()
             End With
 
 
