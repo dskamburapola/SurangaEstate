@@ -5,11 +5,22 @@
     Private _CWBOtherIncome As iStockCommon.iStockOtherIncome
     Private _CWBCharts As iStockCommon.iStockCharts
     Private _iStockDailyWorking As iStockCommon.iStockDailyWorking
-
+    Private _PL As iStockCommon.iStockProfitAndLoss
 #End Region
 
 #Region "Constructor"
 
+
+    Public ReadOnly Property PL() As iStockCommon.iStockProfitAndLoss
+        Get
+
+            If _PL Is Nothing Then
+                _PL = New iStockCommon.iStockProfitAndLoss
+            End If
+
+            Return _PL
+        End Get
+    End Property
     Public ReadOnly Property iStockDailyWorking() As iStockCommon.iStockDailyWorking
         Get
 
@@ -110,41 +121,119 @@
         selectedYear = leYear.EditValue
         currentDate = Convert.ToDateTime("01-" + selectedMonth + "-" + selectedYear)
 
+        'Dim ds As New DataSet
+        '
+
+        'ds = iStockDailyWorking.GetCheckRollReport(currentDate)
+
+        'Dim salarypermanent As Decimal = 0
+        'Dim epf12 As Decimal = 0
+        'Dim etf3 As Decimal = 0
+
+        'If (ds IsNot Nothing And ds.Tables.Count > 0) Then
+
+        '    For Each dr As DataRow In ds.Tables(0).Rows
+        '        salarypermanent = salarypermanent + Convert.ToDecimal(dr("GrandTotalPay").ToString)
+        '        epf12 = epf12 + Convert.ToDecimal(dr("EPF_12").ToString)
+        '        etf3 = epf12 + Convert.ToDecimal(dr("ETF_3").ToString)
+        '    Next
+
+        'End If
+
+        'Dim ds1 As New DataSet
+
+        'Dim salarycasual As Decimal = 0
+        'ds1 = iStockDailyWorking.GetCheckRollCasualReport(currentDate, 0)
+
+        'If (ds1 IsNot Nothing And ds1.Tables.Count > 0) Then
+        '    For Each dr As DataRow In ds1.Tables(0).Rows
+        '        salarycasual = salarycasual + Convert.ToDecimal(dr("GrandTotalPay").ToString)
+
+        '    Next
+        'End If
+
+        Dim totalSalary As Decimal
+        Dim PermenentTotal As Decimal
+        Dim CasualTotalto15 As Decimal
+        Dim CasualTotal5toEOM As Decimal
+        Dim cashAdvancePermanent As Decimal
+        Dim cashAdvanceCasual As Decimal
+        Dim cashAdvanceAdmin As Decimal
+        Dim cashAdvanceTotal As Decimal
+        Dim cashRewards As Decimal
+        Dim festivalAdvance As Decimal
+        Dim KPB As Decimal
+        Dim EPF_12 As Decimal
+        Dim ETF_3 As Decimal
+
         Dim ds As New DataSet
-        Dim dt As New DataTable
-
-        ds = iStockDailyWorking.GetCheckRollReport(currentDate)
-
-        Dim salarypermanent As Decimal = 0
-        Dim epf12 As Decimal = 0
-        Dim etf3 As Decimal = 0
+        PL.FromDate = currentDate
+        ds = PL.GetMonthlyExpenses()
 
         If (ds IsNot Nothing And ds.Tables.Count > 0) Then
 
             For Each dr As DataRow In ds.Tables(0).Rows
-                salarypermanent = salarypermanent + Convert.ToDecimal(dr("GrandTotalPay").ToString)
-                epf12 = epf12 + Convert.ToDecimal(dr("EPF_12").ToString)
-                etf3 = epf12 + Convert.ToDecimal(dr("ETF_3").ToString)
+                PermenentTotal = PermenentTotal + Convert.ToDecimal(dr("PermenentTotal").ToString)
             Next
+
+            For Each dr As DataRow In ds.Tables(1).Rows
+                CasualTotalto15 = CasualTotalto15 + Convert.ToDecimal(dr("CasualTotalto15").ToString)
+            Next
+
+            For Each dr As DataRow In ds.Tables(2).Rows
+                CasualTotal5toEOM = CasualTotal5toEOM + Convert.ToDecimal(dr("CasualTotal5toEOM").ToString)
+            Next
+
+            For Each dr As DataRow In ds.Tables(3).Rows
+                KPB = KPB + Convert.ToDecimal(dr("KPB").ToString) 'admin salary
+            Next
+
+            For Each dr As DataRow In ds.Tables(4).Rows
+                cashAdvancePermanent = cashAdvancePermanent + Convert.ToDecimal(dr("CashAdvance").ToString)
+            Next
+
+            For Each dr As DataRow In ds.Tables(5).Rows
+                cashAdvanceCasual = cashAdvanceCasual + Convert.ToDecimal(dr("CashAdvance").ToString)
+            Next
+
+
+            For Each dr As DataRow In ds.Tables(10).Rows
+                cashAdvanceAdmin = cashAdvanceAdmin + Convert.ToDecimal(dr("StaffAdvance").ToString)
+            Next
+
+            For Each dr As DataRow In ds.Tables(6).Rows
+                festivalAdvance = festivalAdvance + Convert.ToDecimal(dr("FestivalAdvance").ToString)
+            Next
+
+
+            For Each dr As DataRow In ds.Tables(7).Rows
+                EPF_12 = EPF_12 + Convert.ToDecimal(dr("EPF_12").ToString)
+            Next
+
+
+            For Each dr As DataRow In ds.Tables(8).Rows
+                ETF_3 = ETF_3 + Convert.ToDecimal(dr("ETF_3").ToString)
+            Next
+
+            For Each dr As DataRow In ds.Tables(12).Rows
+                cashRewards = cashRewards + Convert.ToDecimal(dr("CashRewards").ToString)
+            Next
+
+
+            totalSalary = PermenentTotal + CasualTotalto15 + CasualTotal5toEOM + KPB
+            cashAdvanceTotal = cashAdvancePermanent + cashAdvanceCasual + cashAdvanceAdmin
 
         End If
 
-        Dim ds1 As New DataSet
 
-        Dim salarycasual As Decimal = 0
-        ds1 = iStockDailyWorking.GetCheckRollCasualReport(currentDate, 0)
 
-        If (ds1 IsNot Nothing And ds1.Tables.Count > 0) Then
-            For Each dr As DataRow In ds1.Tables(0).Rows
-                salarycasual = salarycasual + Convert.ToDecimal(dr("GrandTotalPay").ToString)
-
-            Next
-        End If
 
 
 
         CWBCharts.Year = leYear.EditValue
         CWBCharts.Month = meMonth.EditValue
+
+        Dim dt As New DataTable
         dt = CWBCharts.ChartExpenses().Tables(0)
 
         If (dt IsNot Nothing And dt.Rows.Count > 0) Then
@@ -153,11 +242,16 @@
             For index = 0 To dt.Rows.Count - 1
 
                 If (dt.Rows(index)("Description") = "Balance Salary") Then
-                    dt.Rows(index)("Amount") = salarypermanent + salarycasual
+                    dt.Rows(index)("Amount") = totalSalary
+                ElseIf (dt.Rows(index)("Description") = "Cash Advance") Then
+                    dt.Rows(index)("Amount") = cashAdvanceTotal
+                ElseIf (dt.Rows(index)("Description") = "Cash Rewards") Then
+                    dt.Rows(index)("Amount") = cashRewards
                 ElseIf (dt.Rows(index)("Description") = "EPF 12%") Then
-                    dt.Rows(index)("Amount") = epf12
+                    dt.Rows(index)("Amount") = EPF_12
                 ElseIf (dt.Rows(index)("Description") = "EPF 3%") Then
-                    dt.Rows(index)("Amount") = etf3
+                    dt.Rows(index)("Amount") = ETF_3
+
                 End If
 
             Next
