@@ -94,8 +94,6 @@
 
 #End Region
 
-
-
 #Region "Editor Events"
 
     Private Sub sbProcess_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbProcess.Click
@@ -121,36 +119,7 @@
         selectedYear = leYear.EditValue
         currentDate = Convert.ToDateTime("01-" + selectedMonth + "-" + selectedYear)
 
-        'Dim ds As New DataSet
-        '
-
-        'ds = iStockDailyWorking.GetCheckRollReport(currentDate)
-
-        'Dim salarypermanent As Decimal = 0
-        'Dim epf12 As Decimal = 0
-        'Dim etf3 As Decimal = 0
-
-        'If (ds IsNot Nothing And ds.Tables.Count > 0) Then
-
-        '    For Each dr As DataRow In ds.Tables(0).Rows
-        '        salarypermanent = salarypermanent + Convert.ToDecimal(dr("GrandTotalPay").ToString)
-        '        epf12 = epf12 + Convert.ToDecimal(dr("EPF_12").ToString)
-        '        etf3 = epf12 + Convert.ToDecimal(dr("ETF_3").ToString)
-        '    Next
-
-        'End If
-
-        'Dim ds1 As New DataSet
-
-        'Dim salarycasual As Decimal = 0
-        'ds1 = iStockDailyWorking.GetCheckRollCasualReport(currentDate, 0)
-
-        'If (ds1 IsNot Nothing And ds1.Tables.Count > 0) Then
-        '    For Each dr As DataRow In ds1.Tables(0).Rows
-        '        salarycasual = salarycasual + Convert.ToDecimal(dr("GrandTotalPay").ToString)
-
-        '    Next
-        'End If
+       
 
         Dim totalSalary As Decimal
         Dim PermenentTotal As Decimal
@@ -272,7 +241,6 @@
     End Sub
 
 #End Region
-
 
 
 End Class

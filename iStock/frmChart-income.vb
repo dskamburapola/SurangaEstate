@@ -4,6 +4,7 @@
 
     Private _CWBOtherIncome As iStockCommon.iStockOtherIncome
     Private _CWBCharts As iStockCommon.iStockCharts
+    Private _PL As iStockCommon.iStockProfitAndLoss
 
 #End Region
 
@@ -30,7 +31,16 @@
             Return _CWBOtherIncome
         End Get
     End Property
+    Public ReadOnly Property PL() As iStockCommon.iStockProfitAndLoss
+        Get
 
+            If _PL Is Nothing Then
+                _PL = New iStockCommon.iStockProfitAndLoss
+            End If
+
+            Return _PL
+        End Get
+    End Property
 #End Region
 
 #Region "Form Events"
@@ -94,27 +104,125 @@
 
         CWBCharts.Year = leYear.EditValue
         CWBCharts.Month = meMonth.EditValue
-        Chart.DataSource = CWBCharts.ChartIncome().Tables(0)
+        Dim dt As New DataTable
+        dt = CWBCharts.ChartIncome().Tables(0)
+        
+
+        Dim totalSalary As Decimal
+        Dim PermenentTotal As Decimal
+        Dim CasualTotalto15 As Decimal
+        Dim CasualTotal5toEOM As Decimal
+        Dim cashAdvancePermanent As Decimal
+        Dim cashAdvanceCasual As Decimal
+        Dim cashAdvanceAdmin As Decimal
+        Dim cashAdvanceTotal As Decimal
+        Dim cashRewards As Decimal
+        Dim festivalAdvance As Decimal
+        Dim KPB As Decimal
+        Dim EPF_12 As Decimal
+        Dim ETF_3 As Decimal
+        Dim totalExpenes As Decimal
+
+        Dim selectedMonth, selectedYear As String
+        Dim currentDate As Date
+        selectedMonth = meMonth.EditValue
+        selectedYear = leYear.EditValue
 
 
-        'Chart.SeriesDataMember = "Description"
-        'Chart.SeriesTemplate.ArgumentDataMember = "Description"
-        'Chart.SeriesTemplate.ValueDataMembers.AddRange(New String() {"Amount"})
+        currentDate = Convert.ToDateTime("01-" + selectedMonth + "-" + selectedYear)
 
-        'Chart.Series("Expense").ArgumentDataMember = "Description"
-        'Chart.Series("Expense").ValueDataMembers.AddRange(New String() {"Amount"})
+        Dim ds As New DataSet
+        PL.FromDate = currentDate
+        ds = PL.GetMonthlyExpenses()
+
+        If (ds IsNot Nothing And ds.Tables.Count > 0) Then
+
+            For Each dr As DataRow In ds.Tables(0).Rows
+                PermenentTotal = PermenentTotal + Convert.ToDecimal(dr("PermenentTotal").ToString)
+            Next
+
+            For Each dr As DataRow In ds.Tables(1).Rows
+                CasualTotalto15 = CasualTotalto15 + Convert.ToDecimal(dr("CasualTotalto15").ToString)
+            Next
+
+            For Each dr As DataRow In ds.Tables(2).Rows
+                CasualTotal5toEOM = CasualTotal5toEOM + Convert.ToDecimal(dr("CasualTotal5toEOM").ToString)
+            Next
+
+            For Each dr As DataRow In ds.Tables(3).Rows
+                KPB = KPB + Convert.ToDecimal(dr("KPB").ToString) 'admin salary
+            Next
+
+            For Each dr As DataRow In ds.Tables(4).Rows
+                cashAdvancePermanent = cashAdvancePermanent + Convert.ToDecimal(dr("CashAdvance").ToString)
+            Next
+
+            For Each dr As DataRow In ds.Tables(5).Rows
+                cashAdvanceCasual = cashAdvanceCasual + Convert.ToDecimal(dr("CashAdvance").ToString)
+            Next
+
+
+            For Each dr As DataRow In ds.Tables(10).Rows
+                cashAdvanceAdmin = cashAdvanceAdmin + Convert.ToDecimal(dr("StaffAdvance").ToString)
+            Next
+
+            For Each dr As DataRow In ds.Tables(6).Rows
+                festivalAdvance = festivalAdvance + Convert.ToDecimal(dr("FestivalAdvance").ToString)
+            Next
+
+
+            For Each dr As DataRow In ds.Tables(7).Rows
+                EPF_12 = EPF_12 + Convert.ToDecimal(dr("EPF_12").ToString)
+            Next
+
+
+            For Each dr As DataRow In ds.Tables(8).Rows
+                ETF_3 = ETF_3 + Convert.ToDecimal(dr("ETF_3").ToString)
+            Next
+
+            For Each dr As DataRow In ds.Tables(12).Rows
+                cashRewards = cashRewards + Convert.ToDecimal(dr("CashRewards").ToString)
+            Next
+
+
+            totalSalary = PermenentTotal + CasualTotalto15 + CasualTotal5toEOM + KPB
+            cashAdvanceTotal = cashAdvancePermanent + cashAdvanceCasual + cashAdvanceAdmin
+
+        End If
+
+
+        totalExpenes = totalSalary + cashAdvanceTotal + cashRewards + festivalAdvance + EPF_12 + ETF_3
+
+
+        If (dt IsNot Nothing And dt.Rows.Count > 0) Then
+
+            Dim Allexpenses As Decimal
+            Dim AllIncome As Decimal
+
+            Dim index As Integer
+            For index = 0 To dt.Rows.Count - 1
+
+                If (dt.Rows(index)("Description") = "Expenses") Then
+                    dt.Rows(index)("Amount") = dt.Rows(index)("Amount") + totalExpenes
+                    Allexpenses = Convert.ToDecimal(dt.Rows(index)("Amount"))
+                ElseIf (dt.Rows(index)("Description") = "Income") Then
+                    dt.Rows(index)("Amount") = 2500000
+                    AllIncome = Convert.ToDecimal(dt.Rows(index)("Amount"))
+                ElseIf (dt.Rows(index)("Description") = "Profit") Then
+                    dt.Rows(index)("Amount") = AllIncome - Allexpenses
+
+                End If
+
+            Next
+
+        End If
+
+        Chart.DataSource = dt
 
         Dim ct As New DevExpress.XtraCharts.ChartTitle
         ct.Text = "Income, Expenses and Profit - " + leYear.Text + " - " + meMonth.Text
         Chart.Titles.Clear()
         Chart.Titles.Add(ct)
-
-
-
-
-        'Chart.SeriesTemplate.LegendText = "Number of Employees"
-        'Chart.SeriesTemplate.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative
-
 
 
     End Sub
