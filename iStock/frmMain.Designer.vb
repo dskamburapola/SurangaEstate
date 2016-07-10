@@ -463,7 +463,7 @@ Partial Class frmMain
         '
         'BarButtonItem43
         '
-        Me.BarButtonItem43.Caption = "BarButtonItem43"
+        Me.BarButtonItem43.Caption = "Monthly Income"
         Me.BarButtonItem43.Id = 52
         Me.BarButtonItem43.LargeGlyph = Global.iStock.My.Resources.Resources.Magenta
         Me.BarButtonItem43.Name = "BarButtonItem43"

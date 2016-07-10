@@ -243,4 +243,7 @@
 #End Region
 
 
+    Private Sub Chart_CustomDrawSeriesPoint(sender As Object, e As DevExpress.XtraCharts.CustomDrawSeriesPointEventArgs) Handles Chart.CustomDrawSeriesPoint
+        e.LabelText = e.LabelText + " (" + e.SeriesPoint.Values(0).ToString() + ")"
+    End Sub
 End Class

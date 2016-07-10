@@ -130,6 +130,7 @@ Partial Class frmChart_Expenses
         PiePointOptions2.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.Percent
         Series1.LegendPointOptions = PiePointOptions2
         Series1.Name = "Expense"
+        Series1.SeriesPointsSorting = DevExpress.XtraCharts.SortingMode.Ascending
         Series1.SynchronizePointOptions = False
         Series1.ValueDataMembersSerializable = "Amount"
         PieSeriesView1.RuntimeExploding = False
