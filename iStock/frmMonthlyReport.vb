@@ -56,6 +56,8 @@
             Dim dt4 As DataTable
             Dim dt5 As DataTable
             Dim dt6 As DataTable
+            Dim dt7 As DataTable
+            Dim dt8 As DataTable
 
             dt1 = ds.Tables(0)
             dt2 = ds.Tables(1)
@@ -63,6 +65,8 @@
             dt4 = ds.Tables(3)
             dt5 = ds.Tables(4)
             dt6 = ds.Tables(5)
+            dt7 = ds.Tables(6)
+            dt8 = ds.Tables(7)
 
 
 
@@ -74,21 +78,42 @@
             If (dt1.Rows.Count > 0) Then
 
                 report.xrTeaDes.Text = dt1.Rows(0)("TeaCropQty").ToString() + " X " + dt1.Rows(0)("TeaRate").ToString()
-                report.xrTeaAmt.Text = dt1.Rows(0)("TeaAmt").ToString()
-                report.xrTeaDeductions.Text = dt1.Rows(0)("TeaDeductions").ToString()
-                report.xrRubberLatexDes.Text = dt1.Rows(0)("RubberLatextCropQty").ToString() + " X " + dt1.Rows(0)("RubberLatexRate").ToString()
-                report.xrRubberLatexAmt.Text = dt1.Rows(0)("RubberLatexAmt").ToString()
-                report.xrRubberSheetDes.Text = dt1.Rows(0)("RubberSheetQty").ToString() + " X " + dt1.Rows(0)("RubberSheeRate").ToString()
-                report.xrRubberSheetAmt.Text = dt1.Rows(0)("RubberSheeAmt").ToString()
-                report.xrOtherAmt.Text = dt1.Rows(0)("OtherAmt").ToString()
-                report.xrCroptTotalAmt.Text = dt1.Rows(0)("CropTotal").ToString()
-                report.xrEmployeeSalary.Text = dt1.Rows(0)("EmployeeSalaryAmt").ToString()
-                report.xrEPF12.Text = dt1.Rows(0)("EPF12Amt").ToString()
-                report.xrETF3.Text = dt1.Rows(0)("ETF3Amt").ToString()
-                report.xrOthers.Text = dt1.Rows(0)("OthersAmt").ToString()
-                report.xrWater.Text = dt1.Rows(0)("WaterExp").ToString()
+                report.xrTeaAmt.Text = FormatNumber(dt1.Rows(0)("TeaAmt").ToString(), 2, TriState.True)
+                report.xrTeaDeductions.Text = FormatNumber(dt1.Rows(0)("TeaDeductions").ToString(), 2, TriState.True)
+                report.xrTeaTotal.Text = FormatNumber(Val(dt1.Rows(0)("TeaAmt").ToString()) - Val(dt1.Rows(0)("TeaDeductions").ToString()), 2, TriState.True)
 
-                report.xrTotal.Text = dt1.Rows(0)("Total").ToString()
+                report.xrRubberLatexDes.Text = dt1.Rows(0)("RubberLatextCropQty").ToString() + " X " + dt1.Rows(0)("RubberLatexRate").ToString()
+                report.xrRubberLatexAmt.Text = FormatNumber(dt1.Rows(0)("RubberLatexAmt").ToString(), 2, TriState.True)
+                report.xrRLTotal.Text = FormatNumber(dt1.Rows(0)("RubberLatexAmt").ToString(), 2, TriState.True)
+
+                report.xrRubberSheetDes.Text = dt1.Rows(0)("RubberSheetQty").ToString() + " X " + dt1.Rows(0)("RubberSheeRate").ToString()
+                report.xrRubberSheetAmt.Text = FormatNumber(dt1.Rows(0)("RubberSheeAmt").ToString(), 2, TriState.True)
+                report.xrRSTotal.Text = FormatNumber(dt1.Rows(0)("RubberSheeAmt").ToString(), 2, TriState.True)
+
+                report.xrOTotal.Text = FormatNumber("0", 2, TriState.True)
+
+                Dim a, b, c, d, t As Decimal
+
+                a = IIf(report.xrTeaTotal.Text = String.Empty, 0, Convert.ToDecimal(report.xrTeaTotal.Text))
+                b = IIf(report.xrRLTotal.Text = String.Empty, 0, Convert.ToDecimal(report.xrRLTotal.Text))
+                c = IIf(report.xrRSTotal.Text = String.Empty, 0, Convert.ToDecimal(report.xrRSTotal.Text))
+                d = IIf(report.xrOTotal.Text = String.Empty, 0, Convert.ToDecimal(report.xrOTotal.Text))
+                t = a + b + c + d
+
+                report.xrIncomeTotal.Text = FormatNumber(t, 2, TriState.True)
+
+                report.xrISDPTotal.Text = FormatNumber(dt1.Rows(0)("OtherAmt").ToString(), 2, TriState.True)
+                report.xrISDPTotal.Text = FormatNumber(dt1.Rows(0)("OtherAmt").ToString(), 2, TriState.True)
+
+
+                '  report.xrCroptTotalAmt.Text = dt1.Rows(0)("CropTotal").ToString()
+                report.xrEmployeeSalary.Text = FormatNumber(dt1.Rows(0)("EmployeeSalaryAmt").ToString(), 2, TriState.True)
+                report.xrEPF12.Text = FormatNumber(dt1.Rows(0)("EPF12Amt").ToString(), 2, TriState.True)
+                report.xrETF3.Text = FormatNumber(dt1.Rows(0)("ETF3Amt").ToString(), 2, TriState.True)
+                'report.xrOthers.Text = FormatNumber(dt1.Rows(0)("OthersAmt").ToString(), 2, TriState.True)
+                report.dff.Text = FormatNumber(dt1.Rows(0)("WaterExp").ToString(), 2, TriState.True)
+
+                '   report.xrTotal.Text = FormatNumber(dt1.Rows(0)("Total").ToString(), 2, TriState.True)
 
             End If
 
@@ -239,38 +264,177 @@
 
                     If dt6.Rows(i)("Designation").ToString() = "PERMANENT" Then
 
-                        report.xrAdvancePermenant.Text = dt6.Rows(i)("Advance").ToString()
+                        report.xrAdvancePermenant.Text = FormatNumber(dt6.Rows(i)("Advance").ToString(), 2, TriState.True)
+                    
+                    End If
 
+                    If dt6.Rows(i)("Designation").ToString() = "CASUAL" Then
+
+                        report.xrAdvanceCasual.Text = FormatNumber(dt6.Rows(i)("Advance").ToString(), 2, TriState.True)
+                    Else
+                        report.xrAdvanceCasual.Text = 0
                     End If
 
                     If dt6.Rows(i)("Designation").ToString() = "STAFF" Then
 
-                        report.xrAdvanceStaff.Text = dt6.Rows(i)("Advance").ToString()
+                        report.xrAdvanceStaff.Text = FormatNumber(dt6.Rows(i)("Advance").ToString(), 2, TriState.True)
+                    Else
+                        report.xrAdvanceStaff.Text = 0
 
                     End If
 
-
-                    'Select Case i
-
-                    '    Case 0
-                    '        report.xrRubberSheetDes1.Text = "[" + dt6.Rows(i)("EmployerNo").ToString() + "] " + dt6.Rows(i)("EmployerName").ToString()
-                    '        report.xrRubberSheetAmt1.Text = dt6.Rows(i)("Quantity").ToString()
-
-                    '    Case 1
-                    '        report.xrRubberSheetDes2.Text = "[" + dt6.Rows(i)("EmployerNo").ToString() + "] " + dt6.Rows(i)("EmployerName").ToString()
-                    '        report.xrRubberSheetAmt2.Text = dt6.Rows(i)("Quantity").ToString()
-
-                    '    Case 2
-                    '        report.xrRubberSheetDes3.Text = "[" + dt6.Rows(i)("EmployerNo").ToString() + "] " + dt6.Rows(i)("EmployerName").ToString()
-                    '        report.xrRubberSheetAmt3.Text = dt6.Rows(i)("Quantity").ToString()
-
-
-                    'End Select
-
+                  
                 Next
+
+                Dim pad, pac, pas, pat As Decimal
+
+                'pad = IIf(report.xrAdvancePermenant.Text = String.Empty, 0, Convert.ToDecimal(report.xrAdvancePermenant.Text))
+                'pac = IIf(report.xrAdvanceCasual.Text = String.Empty, 0, Convert.ToDecimal(report.xrAdvanceCasual.Text))
+                'pas = IIf(report.xrAdvanceStaff.Text = String.Empty, 0, Convert.ToDecimal(report.xrAdvanceStaff.Text))
+
+                pad = Convert.ToDecimal(report.xrAdvancePermenant.Text)
+                pac = Convert.ToDecimal(report.xrAdvanceCasual.Text)
+                pas = Convert.ToDecimal(report.xrAdvanceStaff.Text)
+
+
+                pat = pad + pac + pas
+                report.xrAdvanceTotal.Text = FormatNumber(pat, 2, TriState.True)
+
 
             End If
             '********************************************************
+
+            '**********************************************************
+            If (dt7.Rows.Count > 0) Then
+
+                For i = 0 To dt7.Rows.Count - 1
+
+                    If dt7.Rows(i)("Designation").ToString() = "PERMANENT" Then
+
+                        report.xrFadvPermanent.Text = FormatNumber(dt7.Rows(i)("FestivalAdvance").ToString(), 2, TriState.True)
+
+                    Else
+                        report.xrFadvPermanent.Text = 0
+                    End If
+
+                    If dt7.Rows(i)("Designation").ToString() = "CASUAL" Then
+
+                        report.xrFadvCasual.Text = FormatNumber(dt7.Rows(i)("FestivalAdvance").ToString(), 2, TriState.True)
+                    End If
+
+                    If dt7.Rows(i)("Designation").ToString() = "STAFF" Then
+
+                        report.xrFadvStaff.Text = FormatNumber(dt7.Rows(i)("FestivalAdvance").ToString(), 2, TriState.True)
+                    Else
+                        report.xrFadvStaff.Text = 0
+                    End If
+
+
+                Next
+
+                Dim fad, fac, fas, fat As Decimal
+
+                'pad = IIf(report.xrAdvancePermenant.Text = String.Empty, 0, Convert.ToDecimal(report.xrAdvancePermenant.Text))
+                'pac = IIf(report.xrAdvanceCasual.Text = String.Empty, 0, Convert.ToDecimal(report.xrAdvanceCasual.Text))
+                'pas = IIf(report.xrAdvanceStaff.Text = String.Empty, 0, Convert.ToDecimal(report.xrAdvanceStaff.Text))
+
+                fad = Convert.ToDecimal(report.xrFadvPermanent.Text)
+                fac = Convert.ToDecimal(report.xrFadvCasual.Text)
+                fas = Convert.ToDecimal(report.xrFadvStaff.Text)
+
+
+                fat = fad + fac + fas
+                report.xrFadvTotal.Text = FormatNumber(fat, 2, TriState.True)
+
+                Dim TS, TA, TF, TST As Decimal
+
+
+                TS = Convert.ToDecimal(report.xrEmployeeSalary.Text)
+
+                TA = Convert.ToDecimal(report.xrAdvanceTotal.Text)
+                TF = Convert.ToDecimal(report.xrFadvTotal.Text)
+
+                TST = TS + TA + TF
+
+                report.xrSalaryTotal.Text = FormatNumber(TST, 2, TriState.True)
+
+
+
+                '---------------------------------------------------------------------------------
+
+                '**********************************************************
+                If (dt8.Rows.Count > 0) Then
+
+                    For i = 0 To dt8.Rows.Count - 1
+
+                        If dt8.Rows(i)("Description").ToString() = "WATER" Then
+
+                            report.xrWater.Text = FormatNumber(dt8.Rows(i)("OtherExpense").ToString(), 2, TriState.True)
+
+                        End If
+
+                        If dt8.Rows(i)("Description").ToString() = "ELECTRICITY BILL - BUNGALOW" Then
+
+                            report.xrElectricity.Text = FormatNumber(dt8.Rows(i)("OtherExpense").ToString(), 2, TriState.True)
+
+                        End If
+
+                        If dt8.Rows(i)("Description").ToString() = "MOTIVATION PAYMENTS" Then
+
+                            report.xrMotivation.Text = FormatNumber(dt8.Rows(i)("OtherExpense").ToString(), 2, TriState.True)
+
+                        End If
+
+
+                        If dt8.Rows(i)("Description").ToString() = "CASH REWARDS" Then
+
+                            report.xrCashRewards.Text = FormatNumber(dt8.Rows(i)("OtherExpense").ToString(), 2, TriState.True)
+
+                        End If
+
+
+                        If dt8.Rows(i)("Description").ToString() = "OTHER" Then
+
+                            report.xrOtherExp.Text = FormatNumber(dt8.Rows(i)("OtherExpense").ToString(), 2, TriState.True)
+
+                        End If
+
+
+                    Next
+
+                    Dim wt, el, mo, cr, oth, toe As Decimal
+
+                    wt = Convert.ToDecimal(report.xrWater.Text)
+                    el = Convert.ToDecimal(report.xrElectricity.Text)
+                    mo = Convert.ToDecimal(report.xrMotivation.Text)
+                    cr = Convert.ToDecimal(report.xrCashRewards.Text)
+                    oth = Convert.ToDecimal(report.xrOtherExp.Text)
+
+
+                    toe = wt + el + mo + cr + oth
+
+                    report.xrtotalOtherExpenses.Text = FormatNumber(toe, 2, TriState.True)
+
+                    report.xrNettProfit.Text = FormatNumber((Convert.ToDecimal(report.xrIncomeTotal.Text) - Convert.ToDecimal(report.xrTotalExpenses.Text)), 2, TriState.True)
+
+
+
+                End If
+                '********************************************************
+
+                Dim a, b, c, d, tt As Decimal
+
+                a = Convert.ToDecimal(report.xrSalaryTotal.Text)
+                b = Convert.ToDecimal(report.xrEPF12.Text)
+                c = Convert.ToDecimal(report.xrETF3.Text)
+                d = Convert.ToDecimal(report.xrtotalOtherExpenses.Text)
+                tt = a + b + c + d
+
+                report.xrTotalExpenses.Text = FormatNumber(tt, 2, TriState.True)
+
+                '---------------------------------------------------------------------------------
+            End If
+            '**
 
             report.CreateDocument()
             report.BringToFront()

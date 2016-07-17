@@ -159,7 +159,8 @@
                         cell6.Text = FormatNumber(CStr((dt1.Rows(i).Item("Amount"))) & Space(1), 2, TriState.True)
 
                     End If
-                    
+
+                    cell7.Text = " Done end"
 
                     tr.Cells.Add(cell1)
                     tr.Cells.Add(cell2)
@@ -366,6 +367,8 @@
 
                     End If
 
+
+                    cell7R.Text = " mash"
 
                     trRB.Cells.Add(cell1R)
                     trRB.Cells.Add(cell2R)
