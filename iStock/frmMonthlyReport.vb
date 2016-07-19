@@ -224,31 +224,9 @@
                             report.xrAttendanceSheets3.Text = dt5.Rows(i)("RubberSheet").ToString()
 
 
-                        Case 3
-                            report.xrAttendanceName3.Text = "[" + dt5.Rows(i)("EmployerNo").ToString() + "] " + dt5.Rows(i)("EmployerName").ToString()
-                            report.xrAttendanceDays3.Text = dt5.Rows(i)("WorkedDays").ToString()
-                            report.xrAttendanceDaysPerc3.Text = dt5.Rows(i)("DaysAvg").ToString()
-                            report.xrAttendancePluck3.Text = dt5.Rows(i)("Plucking").ToString()
-                            report.xrAttendanceLatex3.Text = dt5.Rows(i)("Tapping").ToString()
-                            report.xrAttendanceSheets3.Text = dt5.Rows(i)("RubberSheet").ToString()
+                      
 
-
-                        Case 4
-                            report.xrAttendanceName3.Text = "[" + dt5.Rows(i)("EmployerNo").ToString() + "] " + dt5.Rows(i)("EmployerName").ToString()
-                            report.xrAttendanceDays3.Text = dt5.Rows(i)("WorkedDays").ToString()
-                            report.xrAttendanceDaysPerc3.Text = dt5.Rows(i)("DaysAvg").ToString()
-                            report.xrAttendancePluck3.Text = dt5.Rows(i)("Plucking").ToString()
-                            report.xrAttendanceLatex3.Text = dt5.Rows(i)("Tapping").ToString()
-                            report.xrAttendanceSheets3.Text = dt5.Rows(i)("RubberSheet").ToString()
-
-
-                        Case 5
-                            report.xrAttendanceName3.Text = "[" + dt5.Rows(i)("EmployerNo").ToString() + "] " + dt5.Rows(i)("EmployerName").ToString()
-                            report.xrAttendanceDays3.Text = dt5.Rows(i)("WorkedDays").ToString()
-                            report.xrAttendanceDaysPerc3.Text = dt5.Rows(i)("DaysAvg").ToString()
-                            report.xrAttendancePluck3.Text = dt5.Rows(i)("Plucking").ToString()
-                            report.xrAttendanceLatex3.Text = dt5.Rows(i)("Tapping").ToString()
-                            report.xrAttendanceSheets3.Text = dt5.Rows(i)("RubberSheet").ToString()
+                       
 
 
                     End Select
@@ -415,8 +393,7 @@
 
                     report.xrtotalOtherExpenses.Text = FormatNumber(toe, 2, TriState.True)
 
-                    report.xrNettProfit.Text = FormatNumber((Convert.ToDecimal(report.xrIncomeTotal.Text) - Convert.ToDecimal(report.xrTotalExpenses.Text)), 2, TriState.True)
-
+                
 
 
                 End If
@@ -431,6 +408,9 @@
                 tt = a + b + c + d
 
                 report.xrTotalExpenses.Text = FormatNumber(tt, 2, TriState.True)
+
+
+                report.xrNettProfit.Text = FormatNumber((Convert.ToDecimal(report.xrIncomeTotal.Text) - Convert.ToDecimal(report.xrTotalExpenses.Text)), 2, TriState.True)
 
                 '---------------------------------------------------------------------------------
             End If

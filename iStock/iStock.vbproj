@@ -112,6 +112,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="frmRecoverySummary.Designer.vb">
+      <DependentUpon>frmRecoverySummary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecoverySummary.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmStaffCheckRoll.Designer.vb">
       <DependentUpon>frmStaffCheckRoll.vb</DependentUpon>
     </Compile>
@@ -561,6 +567,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmRecoverySummary.resx">
+      <DependentUpon>frmRecoverySummary.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmStaffCheckRoll.resx">
       <DependentUpon>frmStaffCheckRoll.vb</DependentUpon>
     </EmbeddedResource>

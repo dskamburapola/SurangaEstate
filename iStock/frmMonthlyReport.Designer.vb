@@ -123,11 +123,11 @@ Partial Class frmMonthlyReport
         '
         Me.leYear.Location = New System.Drawing.Point(207, 43)
         Me.leYear.Name = "leYear"
-        Me.leYear.Properties.Appearance.BackColor = System.Drawing.Color.DarkOrange
+        Me.leYear.Properties.Appearance.BackColor = System.Drawing.Color.White
         Me.leYear.Properties.Appearance.Options.UseBackColor = True
         Me.leYear.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.leYear.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Key", "Year")})
-        Me.leYear.Properties.NullText = "2016"
+        Me.leYear.Properties.NullText = ""
         Me.leYear.Size = New System.Drawing.Size(113, 20)
         Me.leYear.StyleController = Me.LayoutControl2
         Me.leYear.TabIndex = 15
@@ -153,7 +153,6 @@ Partial Class frmMonthlyReport
         Me.meMonth.Location = New System.Drawing.Point(57, 43)
         Me.meMonth.Name = "meMonth"
         Me.meMonth.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.meMonth.Properties.NullText = "October"
         Me.meMonth.Size = New System.Drawing.Size(113, 20)
         Me.meMonth.StyleController = Me.LayoutControl2
         Me.meMonth.TabIndex = 14
