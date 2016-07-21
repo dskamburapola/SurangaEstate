@@ -204,7 +204,7 @@ Partial Public Class xrpMonthlyExpenses
         Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(10.00001!, 10.00001!)
         Me.XrTable1.Name = "XrTable1"
         Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow1, Me.XrTableRow2, Me.XrTableRow3, Me.XrTableRow4, Me.XrTableRow5, Me.XrTableRow6, Me.XrTableRow7, Me.XrTableRow8, Me.XrTableRow9, Me.XrTableRow10, Me.XrTableRow22, Me.XrTableRow11, Me.XrTableRow12, Me.XrTableRow13, Me.XrTableRow14, Me.XrTableRow23, Me.XrTableRow15, Me.XrTableRow24, Me.XrTableRow16, Me.XrTableRow25, Me.XrTableRow17, Me.XrTableRow26, Me.XrTableRow18, Me.XrTableRow27, Me.XrTableRow19, Me.XrTableRow28, Me.XrTableRow20, Me.XrTableRow21})
-        Me.XrTable1.SizeF = New System.Drawing.SizeF(606.25!, 786.4584!)
+        Me.XrTable1.SizeF = New System.Drawing.SizeF(706.9999!, 786.4583!)
         Me.XrTable1.StylePriority.UseFont = False
         Me.XrTable1.StylePriority.UseTextAlignment = False
         Me.XrTable1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
@@ -1262,6 +1262,7 @@ Partial Public Class xrpMonthlyExpenses
         'TopMargin
         '
         Me.TopMargin.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel2, Me.XrLabel1})
+        Me.TopMargin.HeightF = 85.0!
         Me.TopMargin.Name = "TopMargin"
         Me.TopMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
@@ -1292,6 +1293,7 @@ Partial Public Class xrpMonthlyExpenses
         '
         'BottomMargin
         '
+        Me.BottomMargin.HeightF = 50.0!
         Me.BottomMargin.Name = "BottomMargin"
         Me.BottomMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
@@ -1299,6 +1301,7 @@ Partial Public Class xrpMonthlyExpenses
         'xrpMonthlyExpenses
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin})
+        Me.Margins = New System.Drawing.Printing.Margins(50, 50, 85, 50)
         Me.PageHeight = 1169
         Me.PageWidth = 827
         Me.PaperKind = System.Drawing.Printing.PaperKind.A4

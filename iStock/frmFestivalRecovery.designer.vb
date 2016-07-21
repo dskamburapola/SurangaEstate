@@ -284,7 +284,7 @@ Partial Class frmFestivalRecovery
         'sePaybleAmount
         '
         Me.sePaybleAmount.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.sePaybleAmount.Location = New System.Drawing.Point(273, 332)
+        Me.sePaybleAmount.Location = New System.Drawing.Point(273, 358)
         Me.sePaybleAmount.MenuManager = Me.BarManager1
         Me.sePaybleAmount.Name = "sePaybleAmount"
         Me.sePaybleAmount.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 14.0!)
@@ -327,14 +327,14 @@ Partial Class frmFestivalRecovery
         '
         'lblDeleteID
         '
-        Me.lblDeleteID.Location = New System.Drawing.Point(12, -14)
+        Me.lblDeleteID.Location = New System.Drawing.Point(12, 12)
         Me.lblDeleteID.Name = "lblDeleteID"
         Me.lblDeleteID.Size = New System.Drawing.Size(810, 20)
         Me.lblDeleteID.TabIndex = 27
         '
         'cmbWorkType
         '
-        Me.cmbWorkType.Location = New System.Drawing.Point(273, 20)
+        Me.cmbWorkType.Location = New System.Drawing.Point(273, 46)
         Me.cmbWorkType.MenuManager = Me.BarManager1
         Me.cmbWorkType.Name = "cmbWorkType"
         Me.cmbWorkType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -346,7 +346,7 @@ Partial Class frmFestivalRecovery
         'tePaybleAmount
         '
         Me.tePaybleAmount.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.tePaybleAmount.Location = New System.Drawing.Point(273, 308)
+        Me.tePaybleAmount.Location = New System.Drawing.Point(273, 334)
         Me.tePaybleAmount.MenuManager = Me.BarManager1
         Me.tePaybleAmount.Name = "tePaybleAmount"
         Me.tePaybleAmount.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -360,7 +360,7 @@ Partial Class frmFestivalRecovery
         'teTotalDeductions
         '
         Me.teTotalDeductions.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teTotalDeductions.Location = New System.Drawing.Point(273, 284)
+        Me.teTotalDeductions.Location = New System.Drawing.Point(273, 310)
         Me.teTotalDeductions.MenuManager = Me.BarManager1
         Me.teTotalDeductions.Name = "teTotalDeductions"
         Me.teTotalDeductions.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -374,7 +374,7 @@ Partial Class frmFestivalRecovery
         'teCashAdvance
         '
         Me.teCashAdvance.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teCashAdvance.Location = New System.Drawing.Point(273, 260)
+        Me.teCashAdvance.Location = New System.Drawing.Point(273, 286)
         Me.teCashAdvance.MenuManager = Me.BarManager1
         Me.teCashAdvance.Name = "teCashAdvance"
         Me.teCashAdvance.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -388,7 +388,7 @@ Partial Class frmFestivalRecovery
         'teLoan
         '
         Me.teLoan.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teLoan.Location = New System.Drawing.Point(273, 236)
+        Me.teLoan.Location = New System.Drawing.Point(273, 262)
         Me.teLoan.MenuManager = Me.BarManager1
         Me.teLoan.Name = "teLoan"
         Me.teLoan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -402,7 +402,7 @@ Partial Class frmFestivalRecovery
         'teFestivalAdvance
         '
         Me.teFestivalAdvance.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teFestivalAdvance.Location = New System.Drawing.Point(273, 212)
+        Me.teFestivalAdvance.Location = New System.Drawing.Point(273, 238)
         Me.teFestivalAdvance.MenuManager = Me.BarManager1
         Me.teFestivalAdvance.Name = "teFestivalAdvance"
         Me.teFestivalAdvance.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -416,7 +416,7 @@ Partial Class frmFestivalRecovery
         'teEPF
         '
         Me.teEPF.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teEPF.Location = New System.Drawing.Point(273, 188)
+        Me.teEPF.Location = New System.Drawing.Point(273, 214)
         Me.teEPF.MenuManager = Me.BarManager1
         Me.teEPF.Name = "teEPF"
         Me.teEPF.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -430,7 +430,7 @@ Partial Class frmFestivalRecovery
         'teLMB
         '
         Me.teLMB.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teLMB.Location = New System.Drawing.Point(273, 164)
+        Me.teLMB.Location = New System.Drawing.Point(273, 190)
         Me.teLMB.MenuManager = Me.BarManager1
         Me.teLMB.Name = "teLMB"
         Me.teLMB.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -444,7 +444,7 @@ Partial Class frmFestivalRecovery
         'tePayment
         '
         Me.tePayment.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.tePayment.Location = New System.Drawing.Point(273, 140)
+        Me.tePayment.Location = New System.Drawing.Point(273, 166)
         Me.tePayment.MenuManager = Me.BarManager1
         Me.tePayment.Name = "tePayment"
         Me.tePayment.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -458,7 +458,7 @@ Partial Class frmFestivalRecovery
         'teWorkedDays
         '
         Me.teWorkedDays.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.teWorkedDays.Location = New System.Drawing.Point(273, 116)
+        Me.teWorkedDays.Location = New System.Drawing.Point(273, 142)
         Me.teWorkedDays.MenuManager = Me.BarManager1
         Me.teWorkedDays.Name = "teWorkedDays"
         Me.teWorkedDays.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -471,7 +471,7 @@ Partial Class frmFestivalRecovery
         '
         'leEmployee
         '
-        Me.leEmployee.Location = New System.Drawing.Point(273, 68)
+        Me.leEmployee.Location = New System.Drawing.Point(273, 94)
         Me.leEmployee.MenuManager = Me.BarManager1
         Me.leEmployee.Name = "leEmployee"
         Me.leEmployee.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -488,7 +488,7 @@ Partial Class frmFestivalRecovery
         '
         Me.deIssueDate.EditValue = Nothing
         Me.deIssueDate.EnterMoveNextControl = True
-        Me.deIssueDate.Location = New System.Drawing.Point(273, 44)
+        Me.deIssueDate.Location = New System.Drawing.Point(273, 70)
         Me.deIssueDate.MenuManager = Me.BarManager1
         Me.deIssueDate.Name = "deIssueDate"
         Me.deIssueDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -508,7 +508,7 @@ Partial Class frmFestivalRecovery
         'teEmployeeName
         '
         Me.teEmployeeName.EnterMoveNextControl = True
-        Me.teEmployeeName.Location = New System.Drawing.Point(273, 92)
+        Me.teEmployeeName.Location = New System.Drawing.Point(273, 118)
         Me.teEmployeeName.Name = "teEmployeeName"
         Me.teEmployeeName.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.teEmployeeName.Properties.Appearance.Options.UseBackColor = True
@@ -521,7 +521,7 @@ Partial Class frmFestivalRecovery
         '
         Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.EmptySpaceItem1, Me.EmptySpaceItem2, Me.EmptySpaceItem3, Me.EmptySpaceItem5, Me.EmptySpaceItem6, Me.EmptySpaceItem7, Me.EmptySpaceItem8, Me.EmptySpaceItem9, Me.EmptySpaceItem10, Me.EmptySpaceItem11, Me.EmptySpaceItem12, Me.EmptySpaceItem13, Me.EmptySpaceItem14, Me.EmptySpaceItem15, Me.EmptySpaceItem16, Me.EmptySpaceItem17, Me.LayoutControlItem8, Me.LayoutControlItem9, Me.LayoutControlItem10, Me.LayoutControlItem13, Me.LayoutControlItem18, Me.LayoutControlItem1, Me.LayoutControlItem6, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem7, Me.LayoutControlItem12, Me.LayoutControlItem11, Me.LayoutControlItem19})
-        Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, -26)
+        Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(834, 410)
         Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
@@ -1150,7 +1150,7 @@ Partial Class frmFestivalRecovery
         Me.Controls.Add(Me.barDockControlTop)
         Me.KeyPreview = True
         Me.Name = "frmFestivalRecovery"
-        Me.Text = "Monthly Cash Advance"
+        Me.Text = "Festival Advance Recovery"
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dxvpCashAdvance, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.sePaybleAmount.Properties, System.ComponentModel.ISupportInitialize).EndInit()

@@ -316,9 +316,9 @@
                 'pac = IIf(report.xrAdvanceCasual.Text = String.Empty, 0, Convert.ToDecimal(report.xrAdvanceCasual.Text))
                 'pas = IIf(report.xrAdvanceStaff.Text = String.Empty, 0, Convert.ToDecimal(report.xrAdvanceStaff.Text))
 
-                fad = Convert.ToDecimal(report.xrFadvPermanent.Text)
-                fac = Convert.ToDecimal(report.xrFadvCasual.Text)
-                fas = Convert.ToDecimal(report.xrFadvStaff.Text)
+                fad = Convert.ToDecimal(IIf(report.xrFadvPermanent.Text = String.Empty, "0", report.xrFadvPermanent.Text))
+                fac = Convert.ToDecimal(IIf(report.xrFadvCasual.Text = String.Empty, "0", report.xrFadvCasual.Text))
+                fas = Convert.ToDecimal(IIf(report.xrFadvStaff.Text = String.Empty, "0", report.xrFadvStaff.Text))
 
 
                 fat = fad + fac + fas

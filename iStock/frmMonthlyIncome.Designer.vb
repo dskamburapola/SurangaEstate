@@ -19,7 +19,6 @@ Partial Class frmMonthlyIncome
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -28,7 +27,7 @@ Partial Class frmMonthlyIncome
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.LayoutControlGroup3 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlGroup4 = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.dxvpMonthlyReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.dxvpMonthlyReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider()
         Me.leYear = New DevExpress.XtraEditors.LookUpEdit()
         Me.LayoutControl2 = New DevExpress.XtraLayout.LayoutControl()
         Me.meMonth = New DevExpress.XtraScheduler.UI.MonthEdit()
@@ -40,6 +39,8 @@ Partial Class frmMonthlyIncome
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,6 +59,7 @@ Partial Class frmMonthlyIncome
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControlItem5
@@ -135,6 +137,7 @@ Partial Class frmMonthlyIncome
         '
         'LayoutControl2
         '
+        Me.LayoutControl2.Controls.Add(Me.Button1)
         Me.LayoutControl2.Controls.Add(Me.leYear)
         Me.LayoutControl2.Controls.Add(Me.meMonth)
         Me.LayoutControl2.Controls.Add(Me.sbGenerate)
@@ -181,19 +184,19 @@ Partial Class frmMonthlyIncome
         '
         Me.EmptySpaceItem3.AllowHotTrack = False
         Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(474, 0)
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(498, 0)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(264, 69)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(240, 69)
         Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlGroup6
         '
         Me.LayoutControlGroup6.CustomizationFormText = "Select Month & Year"
-        Me.LayoutControlGroup6.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem6, Me.LayoutControlItem2})
+        Me.LayoutControlGroup6.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem6, Me.LayoutControlItem2, Me.LayoutControlItem3})
         Me.LayoutControlGroup6.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup6.Name = "LayoutControlGroup2"
-        Me.LayoutControlGroup6.Size = New System.Drawing.Size(474, 69)
+        Me.LayoutControlGroup6.Size = New System.Drawing.Size(498, 69)
         Me.LayoutControlGroup6.Text = "Select Month && Year"
         '
         'LayoutControlItem1
@@ -247,14 +250,35 @@ Partial Class frmMonthlyIncome
         Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
-        'frmMonthlyExpenses
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(474, 43)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(20, 22)
+        Me.Button1.TabIndex = 16
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'LayoutControlItem3
+        '
+        Me.LayoutControlItem3.Control = Me.Button1
+        Me.LayoutControlItem3.CustomizationFormText = "LayoutControlItem3"
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(450, 0)
+        Me.LayoutControlItem3.Name = "LayoutControlItem3"
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(24, 26)
+        Me.LayoutControlItem3.Text = "LayoutControlItem3"
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem3.TextToControlDistance = 0
+        Me.LayoutControlItem3.TextVisible = False
+        '
+        'frmMonthlyIncome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(758, 459)
         Me.Controls.Add(Me.LayoutControl2)
         Me.Controls.Add(Me.LayoutControl1)
-        Me.Name = "frmMonthlyExpenses"
+        Me.Name = "frmMonthlyIncome"
         Me.Text = "Monthly Report"
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -274,6 +298,7 @@ Partial Class frmMonthlyIncome
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -295,4 +320,6 @@ Partial Class frmMonthlyIncome
     Friend WithEvents LayoutControlItem6 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem1 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
 End Class
