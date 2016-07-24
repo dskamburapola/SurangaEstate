@@ -50,6 +50,7 @@ Public Class frmFestivalRecovery
 
         Me.deIssueDate.Focus()
         Me.GetEmployeeForWork()
+        Me.GetFestivalAdvance()
         Me.deStartDate.EditValue = Date.Today
         Me.deEndDate.EditValue = Date.Today
 
@@ -119,77 +120,77 @@ Public Class frmFestivalRecovery
 
 #End Region
 
-#Region "Get Payment Details For Advance"
-    Private Sub GetPaymentDetailsForAdvance()
+    '#Region "Get Payment Details For Advance"
+    '    Private Sub GetPaymentDetailsForAdvance()
 
-        Try
-            With iStockCashAdvance
-                .EmployeeID = Me.leEmployee.EditValue
-                .IssueDate = Me.deIssueDate.EditValue
+    '        Try
+    '            With iStockCashAdvance
+    '                .EmployeeID = Me.leEmployee.EditValue
+    '                .IssueDate = Me.deIssueDate.EditValue
 
-                Dim ds As New DataSet
-                ds = .GetPaymentDetailsForAdvance()
+    '                Dim ds As New DataSet
+    '                ds = .GetPaymentDetailsForAdvance()
 
-                If (ds IsNot Nothing And ds.Tables.Count > 0 And ds.Tables(1) IsNot Nothing And ds.Tables(1).Rows.Count > 0) Then
+    '                If (ds IsNot Nothing And ds.Tables.Count > 0 And ds.Tables(1) IsNot Nothing And ds.Tables(1).Rows.Count > 0) Then
 
-                    Me.teWorkedDays.Text = IIf(ds.Tables(1).Rows(0)("PWorkedDays") IsNot Nothing And ds.Tables(1).Rows(0)("PWorkedDays").ToString() <> String.Empty, ds.Tables(1).Rows(0)("PWorkedDays").ToString(), 0)
-                    Me.tePayment.Text = IIf(ds.Tables(1).Rows(0)("PAmount") IsNot Nothing And ds.Tables(1).Rows(0)("PAmount").ToString() <> String.Empty, ds.Tables(1).Rows(0)("PAmount").ToString(), 0)
-                    Me.teEPF.Text = IIf(ds.Tables(1).Rows(0)("EPF") IsNot Nothing And ds.Tables(1).Rows(0)("EPF").ToString() <> String.Empty, ds.Tables(1).Rows(0)("EPF").ToString(), 0)
+    '                    Me.teWorkedDays.Text = IIf(ds.Tables(1).Rows(0)("PWorkedDays") IsNot Nothing And ds.Tables(1).Rows(0)("PWorkedDays").ToString() <> String.Empty, ds.Tables(1).Rows(0)("PWorkedDays").ToString(), 0)
+    '                    Me.tePayment.Text = IIf(ds.Tables(1).Rows(0)("PAmount") IsNot Nothing And ds.Tables(1).Rows(0)("PAmount").ToString() <> String.Empty, ds.Tables(1).Rows(0)("PAmount").ToString(), 0)
+    '                    Me.teEPF.Text = IIf(ds.Tables(1).Rows(0)("EPF") IsNot Nothing And ds.Tables(1).Rows(0)("EPF").ToString() <> String.Empty, ds.Tables(1).Rows(0)("EPF").ToString(), 0)
 
-                Else
-                    Me.teWorkedDays.Text = 0
-                    Me.tePayment.Text = 0
-                    Me.teEPF.Text = 0
-                End If
+    '                Else
+    '                    Me.teWorkedDays.Text = 0
+    '                    Me.tePayment.Text = 0
+    '                    Me.teEPF.Text = 0
+    '                End If
 
-                If (ds IsNot Nothing And ds.Tables.Count > 0 And ds.Tables(2) IsNot Nothing And ds.Tables(2).Rows.Count > 0) Then
+    '                If (ds IsNot Nothing And ds.Tables.Count > 0 And ds.Tables(2) IsNot Nothing And ds.Tables(2).Rows.Count > 0) Then
 
-                    Me.teFestivalAdvance.Text = IIf(ds.Tables(2).Rows(0)("FestivalAdvance") IsNot Nothing And ds.Tables(2).Rows(0)("FestivalAdvance").ToString() <> String.Empty, ds.Tables(2).Rows(0)("FestivalAdvance").ToString(), 0)
+    '                    Me.teFestivalAdvance.Text = IIf(ds.Tables(2).Rows(0)("FestivalAdvance") IsNot Nothing And ds.Tables(2).Rows(0)("FestivalAdvance").ToString() <> String.Empty, ds.Tables(2).Rows(0)("FestivalAdvance").ToString(), 0)
 
-                Else
-                    Me.teFestivalAdvance.Text = 0
+    '                Else
+    '                    Me.teFestivalAdvance.Text = 0
 
-                End If
+    '                End If
 
-                If (ds IsNot Nothing And ds.Tables.Count > 0 And ds.Tables(3) IsNot Nothing And ds.Tables(3).Rows.Count > 0) Then
+    '                If (ds IsNot Nothing And ds.Tables.Count > 0 And ds.Tables(3) IsNot Nothing And ds.Tables(3).Rows.Count > 0) Then
 
-                    Me.teLoan.Text = IIf(ds.Tables(3).Rows(0)("Loan") IsNot Nothing And ds.Tables(3).Rows(0)("Loan").ToString() <> String.Empty, ds.Tables(3).Rows(0)("Loan").ToString(), 0)
-                Else
-                    Me.teLoan.Text = 0
-                End If
+    '                    Me.teLoan.Text = IIf(ds.Tables(3).Rows(0)("Loan") IsNot Nothing And ds.Tables(3).Rows(0)("Loan").ToString() <> String.Empty, ds.Tables(3).Rows(0)("Loan").ToString(), 0)
+    '                Else
+    '                    Me.teLoan.Text = 0
+    '                End If
 
-                If (ds IsNot Nothing And ds.Tables.Count > 0 And ds.Tables(4) IsNot Nothing And ds.Tables(4).Rows.Count > 0) Then
+    '                If (ds IsNot Nothing And ds.Tables.Count > 0 And ds.Tables(4) IsNot Nothing And ds.Tables(4).Rows.Count > 0) Then
 
-                    Me.teCashAdvance.Text = IIf(ds.Tables(4).Rows(0)("AdvanceAmount") IsNot Nothing And ds.Tables(4).Rows(0)("AdvanceAmount").ToString() <> String.Empty, ds.Tables(4).Rows(0)("AdvanceAmount").ToString(), 0)
-                Else
-                    Me.teCashAdvance.Text = 0
-                End If
-
-
-                If (ds IsNot Nothing And ds.Tables.Count > 0 And ds.Tables(5) IsNot Nothing And ds.Tables(5).Rows.Count > 0) Then
-
-                    Me.teLMB.Text = IIf(ds.Tables(5).Rows(0)("LmbValue") IsNot Nothing And ds.Tables(5).Rows(0)("LmbValue").ToString() <> String.Empty, ds.Tables(5).Rows(0)("LmbValue").ToString(), 0)
-                Else
-                    Me.teLMB.Text = 0
-
-                End If
+    '                    Me.teCashAdvance.Text = IIf(ds.Tables(4).Rows(0)("AdvanceAmount") IsNot Nothing And ds.Tables(4).Rows(0)("AdvanceAmount").ToString() <> String.Empty, ds.Tables(4).Rows(0)("AdvanceAmount").ToString(), 0)
+    '                Else
+    '                    Me.teCashAdvance.Text = 0
+    '                End If
 
 
-            End With
+    '                If (ds IsNot Nothing And ds.Tables.Count > 0 And ds.Tables(5) IsNot Nothing And ds.Tables(5).Rows.Count > 0) Then
 
-            Me.teTotalDeductions.Text = Convert.ToDecimal(teLMB.EditValue) + Convert.ToDecimal(teEPF.EditValue) + Convert.ToDecimal(teFestivalAdvance.EditValue) + Convert.ToDecimal(teLoan.EditValue) + Convert.ToDecimal(teCashAdvance.EditValue)
+    '                    Me.teLMB.Text = IIf(ds.Tables(5).Rows(0)("LmbValue") IsNot Nothing And ds.Tables(5).Rows(0)("LmbValue").ToString() <> String.Empty, ds.Tables(5).Rows(0)("LmbValue").ToString(), 0)
+    '                Else
+    '                    Me.teLMB.Text = 0
 
-            Me.tePaybleAmount.Text = Convert.ToDecimal(tePayment.EditValue) - Convert.ToDecimal(teTotalDeductions.EditValue)
-        Catch ex As Exception
-
-            Throw
-        End Try
+    '                End If
 
 
-    End Sub
-#End Region
+    '            End With
 
-#Region "Save CashAdvance"
+    '            Me.teTotalDeductions.Text = Convert.ToDecimal(teLMB.EditValue) + Convert.ToDecimal(teEPF.EditValue) + Convert.ToDecimal(teFestivalAdvance.EditValue) + Convert.ToDecimal(teLoan.EditValue) + Convert.ToDecimal(teCashAdvance.EditValue)
+
+    '            Me.tePaybleAmount.Text = Convert.ToDecimal(tePayment.EditValue) - Convert.ToDecimal(teTotalDeductions.EditValue)
+    '        Catch ex As Exception
+
+    '            Throw
+    '        End Try
+
+
+    '    End Sub
+    '#End Region
+
+#Region "Save Festival Advance"
     Private Sub SaveFestivalRecovery()
 
         Try
@@ -200,6 +201,7 @@ Public Class frmFestivalRecovery
                 .AdvanceAmount = Convert.ToDecimal(Me.sePaybleAmount.Text)
                 .CreatedBy = UserID
                 .UpdatedBy = UserID
+                .TermDeductionID = Me.leFestival.EditValue
                 .InsertFestivalRecovery()
                 Dim frm As New frmSavedOk
                 frm.Text = CWB_SAVESUCCESS_CONFIRMATION_TITLE
@@ -229,16 +231,16 @@ Public Class frmFestivalRecovery
 
         '  Me.deIssueDate.Text = Date.Today
         Me.leEmployee.Text = String.Empty
-        Me.teCashAdvance.Text = String.Empty
+        ' Me.teCashAdvance.Text = String.Empty
         Me.teEmployeeName.Text = String.Empty
-        Me.teEPF.Text = String.Empty
-        Me.teFestivalAdvance.Text = String.Empty
-        Me.teLMB.Text = String.Empty
-        Me.teLoan.Text = String.Empty
+        'Me.teEPF.Text = String.Empty
+        'Me.teFestivalAdvance.Text = String.Empty
+        'Me.teLMB.Text = String.Empty
+        'Me.teLoan.Text = String.Empty
         Me.sePaybleAmount.Text = String.Empty
-        Me.tePayment.Text = String.Empty
-        Me.teTotalDeductions.Text = String.Empty
-        Me.teWorkedDays.Text = String.Empty
+        ' Me.tePayment.Text = String.Empty
+        ' Me.teTotalDeductions.Text = String.Empty
+        'Me.teWorkedDays.Text = String.Empty
         Me.cmbWorkType.Text = String.Empty
 
         Me.deIssueDate.Focus()
@@ -303,10 +305,6 @@ Public Class frmFestivalRecovery
 
     End Sub
 
-
-
-
-
     Private Sub btnDisplay_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDisplay.Click
         Me.FestivalRecoveryGetAllByDates()
     End Sub
@@ -368,8 +366,8 @@ Public Class frmFestivalRecovery
         Try
             With iStockCashAdvance
 
-                .CashRewardsID = Convert.ToInt64(IIf(lblDeleteID.Text = String.Empty, 0, lblDeleteID.Text.ToString))
-                .CashRewardsDelete()
+                .FestivalRecoveryId = Convert.ToInt64(IIf(lblDeleteID.Text = String.Empty, 0, lblDeleteID.Text.ToString))
+                .FestivalRecoveryDelete()
             End With
 
 
@@ -388,7 +386,7 @@ Public Class frmFestivalRecovery
 
     Private Sub leEmployee_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles leEmployee.KeyPress
         If Asc(e.KeyChar) = 13 Then
-            Me.GetPaymentDetailsForAdvance()
+            '  Me.GetPaymentDetailsForAdvance()
             Me.sePaybleAmount.Focus()
             SendKeys.Send("{HOME}+{END}")
         End If
@@ -428,12 +426,29 @@ Public Class frmFestivalRecovery
     End Sub
 #End Region
 
+#Region "Get Festival Advance"
+    Private Sub GetFestivalAdvance()
+
+        Try
+
+            Me.leFestival.Properties.DataSource = iStockDailyWorking.GetFestivalAdvance.Tables(0)
+            Me.leFestival.Properties.DisplayMember = "Description"
+            Me.leFestival.Properties.ValueMember = "TermDeductionID"
+
+
+        Catch ex As Exception
+
+            Throw
+        End Try
+
+
+    End Sub
+#End Region
+
 
     Private Sub cmbWorkType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbWorkType.SelectedIndexChanged
         Me.GetEmployeeForWork()
     End Sub
 
-    Private Sub gcCashAdvance_DoubleClick(sender As Object, e As EventArgs) Handles gcCashAdvance.DoubleClick
-
-    End Sub
+  
 End Class

@@ -9,6 +9,8 @@ Public Class iStockCashAdvance
 
     Private _CashRewardsID As Int64
     Private _CashAdvanceID As Int64
+    Private _FestivalRecoveryId As Int64
+
 
     Private _CWorkedDays As Decimal
     Private _PWorkedDays As Decimal
@@ -45,6 +47,10 @@ Public Class iStockCashAdvance
     Private _CreatedDate As DateTime
     Private _UpdatedBy As Int64
     Private _UpdatedDate As DateTime
+
+    Private _TermDeductionID As Int64
+
+
 #End Region
 
 #Region "Properties"
@@ -67,6 +73,16 @@ Public Class iStockCashAdvance
             _CashRewardsID = value
         End Set
     End Property
+
+    Public Property FestivalRecoveryId() As Int64
+        Get
+            Return _FestivalRecoveryId
+        End Get
+        Set(ByVal value As Int64)
+            _FestivalRecoveryId = value
+        End Set
+    End Property
+
 
     Public Property CWorkedDays() As Decimal
         Get
@@ -317,6 +333,17 @@ Public Class iStockCashAdvance
             _UpdatedDate = value
         End Set
     End Property
+
+    Public Property TermDeductionID() As Int64
+        Get
+            Return _TermDeductionID
+        End Get
+        Set(ByVal value As Int64)
+            _TermDeductionID = value
+        End Set
+    End Property
+
+
 #End Region
 
 #Region "Insert Daily Working"
@@ -530,7 +557,7 @@ Public Class iStockCashAdvance
             DB.AddInParameter(DBC, "@EmployerId", DbType.Int64, Me.EmployeeID)
             DB.AddInParameter(DBC, "@IssueDate", DbType.Date, Me.IssueDate)
             DB.AddInParameter(DBC, "@AdvanceAmount", DbType.Decimal, Me.AdvanceAmount)
-
+            DB.AddInParameter(DBC, "@TermDeductionID", DbType.Int64, Me.TermDeductionID)
             DB.AddInParameter(DBC, "@CreatedBy", DbType.Int64, Me.CreatedBy)
             DB.AddInParameter(DBC, "@UpdatedBy", DbType.Int64, Me.UpdatedBy)
 
@@ -549,7 +576,7 @@ Public Class iStockCashAdvance
         Try
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
             Dim DBC As DbCommand = DB.GetStoredProcCommand(FESTIVALRECOVERY_DELETE)
-            DB.AddInParameter(DBC, "FestivalRecoveryId", DbType.Int64, Me.CashAdvanceID)
+            DB.AddInParameter(DBC, "FestivalRecoveryId", DbType.Int64, Me.FestivalRecoveryId)
             DB.ExecuteNonQuery(DBC)
         Catch ex As Exception
             Throw
