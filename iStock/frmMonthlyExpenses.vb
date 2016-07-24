@@ -1157,9 +1157,9 @@
 
 
                     If IsDBNull(dv(i).Item("Note")) Then
-                        cell2.Text = "0.00 "
+                        cell2.Text = String.Empty
                     Else
-                        cell2.Text = CStr((dv(i).Item("Note")))
+                        cell2.Text = CStr((dv(i).Item("Note").ToString.Trim))
                     End If
 
                     If IsDBNull(dv(i).Item("Amount")) Then
