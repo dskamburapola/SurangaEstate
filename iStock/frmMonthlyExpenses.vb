@@ -371,132 +371,66 @@
 
 
 
-
-            'Dim FPT As Decimal = 0
-
             If dt7.Rows.Count > 0 Then
                 Dim i As Int64
+
+                Dim xx As New DevExpress.XtraReports.UI.XRTable
+
                 For i = 0 To dt7.Rows.Count - 1
 
-                    'Dim tr As New DevExpress.XtraReports.UI.XRTableRow
-                    'Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
 
-                    'cell1.Size = New Size(report.xrMainTableheader.Rows(0).Cells(0).WidthF, 25)
-                    'cell2.Size = New Size(report.xrMainTableheader.Rows(0).Cells(1).WidthF, 25)
-                    'cell3.Size = New Size(report.xrMainTableheader.Rows(0).Cells(2).WidthF, 25)
-                    'cell4.Size = New Size(report.xrMainTableheader.Rows(0).Cells(3).WidthF, 25)
-                    'cell5.Size = New Size(report.xrMainTableheader.Rows(0).Cells(4).WidthF, 25)
-                    'cell6.Size = New Size(report.xrMainTableheader.Rows(0).Cells(5).WidthF, 25)
+                    Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
+                    xx.WidthF = 499
 
-                    'cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-                    'cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-                    'cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-                    'cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-                    'cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-                    'cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.None
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
 
-                    'If i = 0 Then
-                    '    cell1.Text = "Festival Advance"
-                    'End If
+                    cell1.Size = New Size(120, 25)
+                    cell2.Size = New Size(249, 25)
+                    cell3.Size = New Size(130, 25)
 
-                    'If IsDBNull(dt7.Rows(i).Item("EmployerName")) Then
-                    '    cell2.Text = "0.00 "
-                    'Else
-                    '    cell2.Text = CStr((dt7.Rows(i).Item("EmployerName")))
-                    'End If
-
-                    'cell3.Text = String.Empty
+                    cell1.Text = ""
 
 
-                    'If IsDBNull(dt7.Rows(i).Item("FestivalAdvance")) Then
-                    '    cell4.Text = "0.00 "
-                    'Else
-                    '    cell4.Text = CStr((dt7.Rows(i).Item("FestivalAdvance")))
-                    '    FestivalAdvanceTotal = FestivalAdvanceTotal + Convert.ToDecimal((dt7.Rows(i).Item("FestivalAdvance").ToString))
-
-                    '    SubTotal1 = SubTotal1 + FestivalAdvanceTotal
-
-                    'End If
+                    If IsDBNull(dt7.Rows(i).Item("TDDate")) Then
+                        cell1.Text = ""
+                    Else
+                        cell1.Text = Convert.ToDateTime(dt7.Rows(i).Item("TDDate").ToString).ToString("dd-MMM-yy")
+                    End If
 
 
-                    'If i = dt7.Rows.Count - 1 Then
+                    cell2.Text = CStr((dt7.Rows(i).Item("EmployerName")))
+
+                    If IsDBNull(dt7.Rows(i).Item("TDAmount")) Then
+                        cell3.Text = "0.00 "
+                    Else
+                        cell3.Text = FormatNumber(CStr((dt7.Rows(i).Item("TDAmount"))), 2, TriState.True) & " "
+                        PermanentAdvPay = PermanentAdvPay + Convert.ToDecimal((dt7.Rows(i).Item("TDAmount").ToString))
+                    End If
 
 
-                    '    cell5.Text = FormatNumber(FestivalAdvanceTotal, 2, TriState.True)
+                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+                    cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
-                    'Else
-                    '    cell5.Text = String.Empty
 
-                    'End If
-                    'cell6.Text = String.Empty
+                    Dim tr As New DevExpress.XtraReports.UI.XRTableRow
+                    tr.Cells.Add(cell1)
+                    tr.Cells.Add(cell2)
+                    tr.Cells.Add(cell3)
 
-                    'tr.Cells.Add(cell1)
-                    'tr.Cells.Add(cell2)
-                    'tr.Cells.Add(cell3)
-                    'tr.Cells.Add(cell4)
-                    'tr.Cells.Add(cell5)
-                    'tr.Cells.Add(cell6)
+                    xx.Rows.Add(tr)
 
-                    'report.xrMainTableheader.Rows.Add(tr)
 
                 Next
+
+                report.xrMainTable.Rows(12).Cells("rFestivalAdvancePermanent").Controls.Add(xx)
+
             End If
 
 
-
-
-            '-----------------------------Sub Total - Start--------------------------------------------------------------------
-
-
-
-            'Dim trT1 As New DevExpress.XtraReports.UI.XRTableRow
-            'Dim cell1T, cell2T, cell3T, cell4T, cell5T, cell6T As New DevExpress.XtraReports.UI.XRTableCell
-
-            'cell1T.Size = New Size(report.xrMainTableheader.Rows(0).Cells(0).WidthF, 25)
-            'cell2T.Size = New Size(report.xrMainTableheader.Rows(0).Cells(1).WidthF, 25)
-            'cell3T.Size = New Size(report.xrMainTableheader.Rows(0).Cells(2).WidthF, 25)
-            'cell4T.Size = New Size(report.xrMainTableheader.Rows(0).Cells(3).WidthF, 25)
-            'cell5T.Size = New Size(report.xrMainTableheader.Rows(0).Cells(4).WidthF, 25)
-            'cell6T.Size = New Size(report.xrMainTableheader.Rows(0).Cells(5).WidthF, 25)
-
-            'cell1T.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            'cell2T.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            'cell3T.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            'cell4T.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            'cell5T.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            'cell6T.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-
-
-            'cell6T.Text = FormatNumber(SubTotal1, 2, TriState.True)
-
-
-            'trT1.Cells.Add(cell1T)
-            'trT1.Cells.Add(cell2T)
-            'trT1.Cells.Add(cell3T)
-            'trT1.Cells.Add(cell4T)
-            'trT1.Cells.Add(cell5T)
-            'trT1.Cells.Add(cell6T)
-
-            'report.xrMainTableheader.Rows.Add(trT1)
-
-
-
-            '-----------------------------Sub Total - End--------------------------------------------------------------------
-
-
-
-
-            '---------------------------Empty Row as Separator  - START ----------------------------------------------------------------
-            'Dim trEmpty2 As New DevExpress.XtraReports.UI.XRTableRow
-            'Dim cellEmpty12 As New DevExpress.XtraReports.UI.XRTableCell
-            'cellEmpty12.Size = New Size(report.xrMainTableheader.WidthF, 25)
-            'cellEmpty12.Text = " "
-            'trEmpty2.Cells.Add(cellEmpty12)
-            'report.xrMainTableheader.Rows.Add(trEmpty2)
-
-
-            '---------------------------Empty Row as Separator  - END ----------------------------------------------------------------
 
 
 
