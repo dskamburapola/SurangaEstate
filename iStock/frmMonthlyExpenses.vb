@@ -13,10 +13,13 @@
     Dim TotalAdvPay As Decimal = 0
 
     Dim FestivalAdvanceTotal As Decimal = 0
+    Dim total As Decimal = 0
     Dim OtherExpenseTotal As Decimal = 0
 
     Dim EPFTotal As Decimal = 0
     Dim ETFTotal As Decimal = 0
+
+    Dim GrandTotal As Decimal = 0
 
     Private _PL As iStockCommon.iStockProfitAndLoss
 
@@ -83,13 +86,17 @@
             Dim dt4 As DataTable 'KP Balance 
             Dim dt5 As DataTable 'Permenant Cash Advance 
             Dim dt6 As DataTable 'Casual Cash Advance 
-            Dim dt7 As DataTable 'Festival Advance 
+            Dim dt7 As DataTable 'Festival Advance - permnent
             Dim dt8 As DataTable 'EPF 12% 
             Dim dt9 As DataTable 'ETF 3%
             Dim dt10 As DataTable ' Other Expenses
             Dim dt11 As DataTable 'KP Advance
             Dim dt12 As DataTable 'Investments
             Dim dt13 As DataTable 'CashRewards
+            Dim dt14 As DataTable 'Festival Advance - Casual
+            Dim dt15 As DataTable 'Festival Advance - Staff
+
+
 
 
             dt1 = ds.Tables(0)
@@ -105,9 +112,13 @@
             dt11 = ds.Tables(10)
             dt12 = ds.Tables(11)
             dt13 = ds.Tables(12)
+            dt14 = ds.Tables(13)
+            dt15 = ds.Tables(14)
 
 
-            '******************************* Permenant Salary **************************************************************************
+
+            'Balance Salary - Permanent
+
             If dt1.Rows.Count > 0 Then
 
 
@@ -121,8 +132,8 @@
 
             End If
 
-
-            '******************************* Casual 1-15 Salary **************************************************************************
+            
+            'Balance Salary - Casual (1-15)
 
             If dt2.Rows.Count > 0 Then
 
@@ -136,7 +147,7 @@
             End If
 
 
-            '******************************* Casual 1-EOM Total **************************************************************************
+            'Balance Salary - Casual (1-EOM)
 
             If dt3.Rows.Count > 0 Then
 
@@ -147,15 +158,12 @@
                     CasualSalaryTotal = CasualSalaryTotal + Convert.ToDecimal((dt3.Rows(0).Item("CasualTotal5toEOM").ToString))
                 End If
 
-           
-             
             End If
 
 
             report.xrMainTable.Rows(3).Cells("r3casualTotal").Text = FormatNumber(CasualSalaryTotal.ToString, 2, TriState.True)
 
-
-            '******************************* Staff Salary [KP] **************************************************************************
+            'Balance Salary - Staff 
 
             If dt4.Rows.Count > 0 Then
 
@@ -172,7 +180,7 @@
 
             report.xrMainTable.Rows(5).Cells("balanceSalaryTotal").Text = FormatNumber((PermanentSalaryTotal + CasualSalaryTotal + StaffSalaryTotal).ToString, 2, TriState.True)
 
-
+            'Cash Advance - Permanent
 
             If dt5.Rows.Count > 0 Then
 
@@ -182,7 +190,7 @@
 
                 For i = 0 To dt5.Rows.Count - 1
 
-               
+
                     Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
                     xx.WidthF = 499
 
@@ -230,10 +238,7 @@
             End If
 
 
-
-
-
-
+            'Cash Advance - Casual
 
             If dt6.Rows.Count > 0 Then
                 Dim i As Int64
@@ -297,78 +302,9 @@
 
             report.xrMainTable.Rows(9).Cells("rCashAdvanceTotal").Text = FormatNumber((PermanentAdvPay).ToString, 2, TriState.True)
 
-           
-
-            If dt11.Rows.Count > 0 Then
-                Dim i As Int64
-                For i = 0 To dt11.Rows.Count - 1
-
-                    'Dim tr As New DevExpress.XtraReports.UI.XRTableRow
-                    'Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
-
-                    'cell1.Size = New Size(report.xrMainTableheader.Rows(0).Cells(0).WidthF, 25)
-                    'cell2.Size = New Size(report.xrMainTableheader.Rows(0).Cells(1).WidthF, 25)
-                    'cell3.Size = New Size(report.xrMainTableheader.Rows(0).Cells(2).WidthF, 25)
-                    'cell4.Size = New Size(report.xrMainTableheader.Rows(0).Cells(3).WidthF, 25)
-                    'cell5.Size = New Size(report.xrMainTableheader.Rows(0).Cells(4).WidthF, 25)
-                    'cell6.Size = New Size(report.xrMainTableheader.Rows(0).Cells(5).WidthF, 25)
-
-                    'cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-                    'cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-                    'cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-                    'cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-                    'cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-                    'cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
 
-                    'If i = 0 Then
-                    '    cell1.Text = "Cash Advance - Staff"
-                    'End If
-
-                    'If IsDBNull(dt11.Rows(i).Item("EmployeeName")) Then
-                    '    cell2.Text = "0.00 "
-                    'Else
-                    '    cell2.Text = CStr((dt11.Rows(i).Item("EmployeeName")))
-                    'End If
-
-                    'cell3.Text = String.Empty
-
-
-                    'If IsDBNull(dt11.Rows(i).Item("StaffAdvance")) Then
-                    '    cell4.Text = "0.00 "
-                    'Else
-                    '    cell4.Text = FormatNumber(CStr((dt11.Rows(i).Item("StaffAdvance"))), 2, TriState.True) & " "
-                    '    StaffAdvPay = StaffAdvPay + Convert.ToDecimal((dt11.Rows(i).Item("StaffAdvance").ToString))
-                    'End If
-
-                    'TotalAdvPay = PermanentAdvPay + CasualAdvPay + StaffAdvPay
-                    'SubTotal1 = SubTotal1 + PermanentAdvPay + CasualAdvPay + StaffAdvPay
-
-
-                    'If i = dt11.Rows.Count - 1 Then
-
-                    '    cell5.Text = FormatNumber(TotalAdvPay.ToString(), 2, TriState.True) & " "
-
-                    'Else
-                    '    cell5.Text = String.Empty
-
-                    'End If
-
-                    'cell6.Text = String.Empty
-
-
-                    'tr.Cells.Add(cell1)
-                    'tr.Cells.Add(cell2)
-                    'tr.Cells.Add(cell3)
-                    'tr.Cells.Add(cell4)
-                    'tr.Cells.Add(cell5)
-                    'tr.Cells.Add(cell6)
-
-                    'report.xrMainTableheader.Rows.Add(tr)
-
-                Next
-            End If
-
+            'Festival Advance - Permanent
 
 
             If dt7.Rows.Count > 0 Then
@@ -407,7 +343,7 @@
                         cell3.Text = "0.00 "
                     Else
                         cell3.Text = FormatNumber(CStr((dt7.Rows(i).Item("TDAmount"))), 2, TriState.True) & " "
-                        PermanentAdvPay = PermanentAdvPay + Convert.ToDecimal((dt7.Rows(i).Item("TDAmount").ToString))
+                        FestivalAdvanceTotal = FestivalAdvanceTotal + Convert.ToDecimal((dt7.Rows(i).Item("TDAmount").ToString))
                     End If
 
 
@@ -430,9 +366,138 @@
 
             End If
 
+            'Festival Advance - Casual
+
+
+            If dt14.Rows.Count > 0 Then
+                Dim i As Int64
+
+                Dim xx As New DevExpress.XtraReports.UI.XRTable
+
+                For i = 0 To dt14.Rows.Count - 1
+
+
+                    Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
+                    xx.WidthF = 499
+
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.None
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+
+
+                    cell1.Size = New Size(120, 25)
+                    cell2.Size = New Size(249, 25)
+                    cell3.Size = New Size(130, 25)
+
+                    cell1.Text = ""
+
+
+                    If IsDBNull(dt14.Rows(i).Item("TDDate")) Then
+                        cell1.Text = ""
+                    Else
+                        cell1.Text = Convert.ToDateTime(dt14.Rows(i).Item("TDDate").ToString).ToString("dd-MMM-yy")
+                    End If
+
+
+                    cell2.Text = CStr((dt14.Rows(i).Item("EmployerName")))
+
+                    If IsDBNull(dt14.Rows(i).Item("TDAmount")) Then
+                        cell3.Text = "0.00 "
+                    Else
+                        cell3.Text = FormatNumber(CStr((dt14.Rows(i).Item("TDAmount"))), 2, TriState.True) & " "
+                        FestivalAdvanceTotal = FestivalAdvanceTotal + Convert.ToDecimal((dt14.Rows(i).Item("TDAmount").ToString))
+                    End If
+
+
+                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+                    cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+
+
+                    Dim tr As New DevExpress.XtraReports.UI.XRTableRow
+                    tr.Cells.Add(cell1)
+                    tr.Cells.Add(cell2)
+                    tr.Cells.Add(cell3)
+
+                    xx.Rows.Add(tr)
+
+
+                Next
+
+                report.xrMainTable.Rows(14).Cells("rFestivalAdvanceCasual").Controls.Add(xx)
+
+            End If
+
+            'Festival Advance - Staff
+
+
+            If dt15.Rows.Count > 0 Then
+                Dim i As Int64
+
+                Dim xx As New DevExpress.XtraReports.UI.XRTable
+
+                For i = 0 To dt15.Rows.Count - 1
+
+
+                    Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
+                    xx.WidthF = 499
+
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.None
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+
+
+                    cell1.Size = New Size(120, 25)
+                    cell2.Size = New Size(249, 25)
+                    cell3.Size = New Size(130, 25)
+
+                    cell1.Text = ""
+
+
+                    If IsDBNull(dt15.Rows(i).Item("TDDate")) Then
+                        cell1.Text = ""
+                    Else
+                        cell1.Text = Convert.ToDateTime(dt15.Rows(i).Item("TDDate").ToString).ToString("dd-MMM-yy")
+                    End If
+
+
+                    cell2.Text = CStr((dt15.Rows(i).Item("EmployerName")))
+
+                    If IsDBNull(dt15.Rows(i).Item("TDAmount")) Then
+                        cell3.Text = "0.00 "
+                    Else
+                        cell3.Text = FormatNumber(CStr((dt15.Rows(i).Item("TDAmount"))), 2, TriState.True) & " "
+                        FestivalAdvanceTotal = FestivalAdvanceTotal + Convert.ToDecimal((dt15.Rows(i).Item("TDAmount").ToString))
+                    End If
+
+
+                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+                    cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+
+
+                    Dim tr As New DevExpress.XtraReports.UI.XRTableRow
+                    tr.Cells.Add(cell1)
+                    tr.Cells.Add(cell2)
+                    tr.Cells.Add(cell3)
+
+                    xx.Rows.Add(tr)
+
+
+                Next
+
+                report.xrMainTable.Rows(16).Cells("rFestivalAdvanceStaff").Controls.Add(xx)
 
 
 
+            End If
+
+            report.xrMainTable.Rows(16).Cells("rFestivalAdvance").Text = FormatNumber((FestivalAdvanceTotal).ToString, 2, TriState.True)
+            total = FestivalAdvanceTotal + PermanentAdvPay + PermanentSalaryTotal + CasualSalaryTotal + StaffSalaryTotal
+
+            report.xrMainTable.Rows(16).Cells("rTotal").Text = FormatNumber((total).ToString, 2, TriState.True)
+
+            'EPF 12 %
 
             If dt8.Rows.Count > 0 Then
                 Dim i As Int64
@@ -442,64 +507,7 @@
 
                 For i = 0 To dt8.Rows.Count - 1
 
-                    'Dim tr As New DevExpress.XtraReports.UI.XRTableRow
 
-                    'Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
-
-                    'cell1.Size = New Size(report.xrMainTableheader.Rows(0).Cells(0).WidthF, 25)
-                    'cell2.Size = New Size(report.xrMainTableheader.Rows(0).Cells(1).WidthF, 25)
-                    'cell3.Size = New Size(report.xrMainTableheader.Rows(0).Cells(2).WidthF, 25)
-                    'cell4.Size = New Size(report.xrMainTableheader.Rows(0).Cells(3).WidthF, 25)
-                    'cell5.Size = New Size(report.xrMainTableheader.Rows(0).Cells(4).WidthF, 25)
-                    'cell6.Size = New Size(report.xrMainTableheader.Rows(0).Cells(5).WidthF, 25)
-
-                    'cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-                    'cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-                    'cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-                    'cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-                    'cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-                    'cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-
-
-
-                    'If i = 0 Then
-                    '    cell1.Text = "ETF 12%"
-                    'End If
-
-                    'If IsDBNull(dt8.Rows(i).Item("EmployeeName")) Then
-                    '    cell2.Text = "0.00 "
-                    'Else
-                    '    cell2.Text = CStr((dt8.Rows(i).Item("EmployeeName")))
-                    'End If
-
-                    'cell3.Text = String.Empty
-                    'cell4.Text = String.Empty
-
-                    'If IsDBNull(dt8.Rows(i).Item("EPF_12")) Then
-                    '    cell5.Text = "0.00 "
-                    'Else
-                    '    cell5.Text = FormatNumber(CStr((dt8.Rows(i).Item("EPF_12"))), 2, TriState.True) & " "
-                    '    EPFTotal = EPFTotal + Convert.ToDecimal((dt8.Rows(i).Item("EPF_12").ToString))
-                    'End If
-
-                    'If i = dt8.Rows.Count - 1 Then
-                    '    cell6.Text = FormatNumber(EPFTotal.ToString(), 2, TriState.True) & " "
-
-                    'Else
-                    '    cell6.Text = String.Empty
-
-                    'End If
-
-
-
-
-                    'tr.Cells.Add(cell1)
-                    'tr.Cells.Add(cell2)
-                    'tr.Cells.Add(cell3)
-                    'tr.Cells.Add(cell4)
-                    'tr.Cells.Add(cell5)
-                    'tr.Cells.Add(cell6)
-                    'report.xrMainTableheader.Rows.Add(tr)
 
                     Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
                     xx.WidthF = 499
@@ -546,18 +554,10 @@
 
             End If
 
-            '---------------------------Empty Row as Separator  - START ----------------------------------------------------------------
-            'Dim trEmpty3 As New DevExpress.XtraReports.UI.XRTableRow
-            'Dim cellEmpty13 As New DevExpress.XtraReports.UI.XRTableCell
-            'cellEmpty13.Size = New Size(report.xrMainTableheader.WidthF, 10)
-            'cellEmpty13.Text = " "
-            'trEmpty3.Cells.Add(cellEmpty13)
-            'report.xrMainTableheader.Rows.Add(trEmpty3)
+            report.xrMainTable.Rows(17).Cells("rEPFTotal").Text = FormatNumber((EPFTotal).ToString, 2, TriState.True)
+            report.xrMainTable.Rows(17).Cells("rEPFTotal1").Text = FormatNumber((EPFTotal).ToString, 2, TriState.True)
 
-
-            '---------------------------Empty Row as Separator  - END ----------------------------------------------------------------
-
-
+            'ETF 3%
 
             If dt9.Rows.Count > 0 Then
                 Dim i As Int64
@@ -566,64 +566,6 @@
 
                 For i = 0 To dt9.Rows.Count - 1
 
-                    'Dim tr As New DevExpress.XtraReports.UI.XRTableRow
-                    'Dim cell1, cell2, cell3, cell4, cell5, cell6 As New DevExpress.XtraReports.UI.XRTableCell
-
-                    'cell1.Size = New Size(report.xrMainTableheader.Rows(0).Cells(0).WidthF, 25)
-                    'cell2.Size = New Size(report.xrMainTableheader.Rows(0).Cells(1).WidthF, 25)
-                    'cell3.Size = New Size(report.xrMainTableheader.Rows(0).Cells(2).WidthF, 25)
-                    'cell4.Size = New Size(report.xrMainTableheader.Rows(0).Cells(3).WidthF, 25)
-                    'cell5.Size = New Size(report.xrMainTableheader.Rows(0).Cells(4).WidthF, 25)
-                    'cell6.Size = New Size(report.xrMainTableheader.Rows(0).Cells(5).WidthF, 25)
-
-                    'cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-                    'cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-                    'cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-                    'cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-                    'cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-                    'cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-
-
-
-                    'If i = 0 Then
-                    '    cell1.Text = "ETF 3%"
-                    'End If
-
-                    'If IsDBNull(dt9.Rows(i).Item("EmployeeName")) Then
-                    '    cell2.Text = "0.00 "
-                    'Else
-                    '    cell2.Text = CStr((dt9.Rows(i).Item("EmployeeName")))
-                    'End If
-
-                    'cell3.Text = String.Empty
-                    'cell4.Text = String.Empty
-
-                    'If IsDBNull(dt9.Rows(i).Item("ETF_3")) Then
-                    '    cell5.Text = "0.00 "
-                    'Else
-                    '    cell5.Text = FormatNumber(CStr((dt9.Rows(i).Item("ETF_3"))), 2, TriState.True) & " "
-                    '    ETFTotal = ETFTotal + Convert.ToDecimal((dt9.Rows(i).Item("ETF_3").ToString))
-                    'End If
-
-                    'If i = dt9.Rows.Count - 1 Then
-                    '    cell6.Text = FormatNumber(ETFTotal.ToString(), 2, TriState.True) & " "
-
-
-                    'Else
-                    '    cell6.Text = String.Empty
-
-                    'End If
-
-
-
-                    'tr.Cells.Add(cell1)
-                    'tr.Cells.Add(cell2)
-                    'tr.Cells.Add(cell3)
-                    'tr.Cells.Add(cell4)
-                    'tr.Cells.Add(cell5)
-                    'tr.Cells.Add(cell6)
-
-                    'report.xrMainTableheader.Rows.Add(tr)
 
 
                     Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
@@ -671,18 +613,10 @@
 
             End If
 
-            '---------------------------Empty Row as Separator  - START ----------------------------------------------------------------
-            'Dim trEmpty4 As New DevExpress.XtraReports.UI.XRTableRow
-            'Dim cellEmpty14 As New DevExpress.XtraReports.UI.XRTableCell
-            'cellEmpty14.Size = New Size(report.xrMainTableheader.WidthF, 10)
-            'cellEmpty14.Text = " "
-            'trEmpty4.Cells.Add(cellEmpty14)
-            'report.xrMainTableheader.Rows.Add(trEmpty4)
+            report.xrMainTable.Rows(19).Cells("rEPF3Total").Text = FormatNumber((ETFTotal).ToString, 2, TriState.True)
+            report.xrMainTable.Rows(19).Cells("rEPF3Total1").Text = FormatNumber((ETFTotal).ToString, 2, TriState.True)
 
-
-            '---------------------------Empty Row as Separator  - END ----------------------------------------------------------------
-
-
+            'Exepenses
 
             If dt10.Rows.Count > 0 Then
 
@@ -697,8 +631,6 @@
 
 
                 For i = 0 To dv.Count - 1
-
-                   
 
 
                     Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
@@ -748,84 +680,20 @@
                 report.xrMainTable.Rows(21).Cells("rExpenses").Controls.Add(xx)
 
 
-
-
-
-
-
-
             End If
 
 
+            report.xrMainTable.Rows(21).Cells("rExpenseTotal").Text = FormatNumber((OtherExpenseTotal).ToString, 2, TriState.True)
 
+            report.xrMainTable.Rows(21).Cells("rExpenseTotal1").Text = FormatNumber((OtherExpenseTotal).ToString, 2, TriState.True)
 
-       
+            GrandTotal = OtherExpenseTotal + ETFTotal + EPFTotal + total + FestivalAdvanceTotal
 
-
-
-            If dt12.Rows.Count > 0 Then
-                Dim i As Int64
-                For i = 0 To dt12.Rows.Count - 1
-
-                    'Dim tr As New DevExpress.XtraReports.UI.XRTableRow
-
-                    'Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
-
-                    'cell1.Size = New Size(report.xrMainTableheader.Rows(0).Cells(0).WidthF, 25)
-                    'cell2.Size = New Size(report.xrMainTableheader.Rows(0).Cells(1).WidthF, 25)
-                    'cell3.Size = New Size(report.xrMainTableheader.Rows(0).Cells(2).WidthF, 25)
-                    'cell4.Size = New Size(report.xrMainTableheader.Rows(0).Cells(3).WidthF, 25)
-                    'cell5.Size = New Size(report.xrMainTableheader.Rows(0).Cells(4).WidthF, 25)
-
-
-                    'cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-                    'cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-                    'cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-                    'cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-                    'cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-
-                    'If i = 0 Then
-                    '    cell1.Text = "EXPENSES OF INVESTMENTS"
-                    'End If
-
-                    'If IsDBNull(dt12.Rows(i).Item("Description")) Then
-                    '    cell2.Text = "0.00 "
-                    'Else
-                    '    cell2.Text = CStr((dt12.Rows(i).Item("Description")))
-                    'End If
-
-                    'cell3.Text = String.Empty
-
-                    'If IsDBNull(dt12.Rows(i).Item("Amount")) Then
-                    '    cell4.Text = "0.00 "
-                    'Else
-                    '    cell4.Text = ""
-
-                    'End If
-
-                    'If i = dt12.Rows.Count - 1 Then
-                    '    cell5.Text = FormatNumber(CStr((dt12.Rows(i).Item("Amount"))), 2, TriState.True) & " "
-
-
-                    'Else
-                    '    cell5.Text = String.Empty
-
-                    'End If
-
-                    ''Adding values to Total Column
+            report.xrMainTable.Rows(23).Cells("rGrandTotal").Text = FormatNumber((GrandTotal).ToString, 2, TriState.True)
 
 
 
-                    'tr.Cells.Add(cell1)
-                    'tr.Cells.Add(cell2)
-                    'tr.Cells.Add(cell3)
-                    'tr.Cells.Add(cell4)
-                    'tr.Cells.Add(cell5)
-
-                    'report.xrMainTableheader.Rows.Add(tr)
-
-                Next
-            End If
+        
 
             If dt13.Rows.Count > 0 Then
                 Dim i As Int64
@@ -894,42 +762,7 @@
             End If
 
 
-            'Dim trT As New DevExpress.XtraReports.UI.XRTableRow
-
-            'Dim Tcell1, Tcell2, Tcell3, Tcell4, Tcell5, Tcell6 As New DevExpress.XtraReports.UI.XRTableCell
-
-            'Tcell1.Size = New Size(report.xrMainTableheader.Rows(0).Cells(0).WidthF, 25)
-            'Tcell2.Size = New Size(report.xrMainTableheader.Rows(0).Cells(1).WidthF, 25)
-            'Tcell3.Size = New Size(report.xrMainTableheader.Rows(0).Cells(2).WidthF, 25)
-            'Tcell4.Size = New Size(report.xrMainTableheader.Rows(0).Cells(3).WidthF, 25)
-            'Tcell5.Size = New Size(report.xrMainTableheader.Rows(0).Cells(4).WidthF, 25)
-            'Tcell6.Size = New Size(report.xrMainTableheader.Rows(0).Cells(5).WidthF, 25)
-
-            'Tcell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            'Tcell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-            'Tcell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            'Tcell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            'Tcell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-            'Tcell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-
-            'Tcell1.Text = "GRAND TOTAL"
-            'Tcell2.Text = String.Empty
-            'Tcell3.Text = String.Empty
-            'Tcell4.Text = String.Empty
-            'Tcell5.Text = String.Empty
-            'Tcell6.Text = FormatNumber((TotalSalary + TotalAdvPay + FestivalAdvanceTotal + OtherExpenseTotal + EPFTotal + ETFTotal), 2, TriState.True)
-
-
-
-
-            'trT.Cells.Add(Tcell1)
-            'trT.Cells.Add(Tcell2)
-            'trT.Cells.Add(Tcell3)
-            'trT.Cells.Add(Tcell4)
-            'trT.Cells.Add(Tcell5)
-
-            'report.xrMainTableheader.Rows.Add(trT)
-
+            
 
 
             report.CreateDocument()
