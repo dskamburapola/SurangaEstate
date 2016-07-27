@@ -210,7 +210,7 @@
                     End If
 
 
-                    cell2.Text = CStr((dt5.Rows(i).Item("EmployeeName")))
+                    cell2.Text = "[" + CStr((dt5.Rows(i).Item("EmployerNo"))) + "] " + CStr((dt5.Rows(i).Item("EmployeeName")))
 
                     If IsDBNull(dt5.Rows(i).Item("AdvanceAmount")) Then
                         cell3.Text = "0.00 "
@@ -270,7 +270,7 @@
                     End If
 
 
-                    cell2.Text = CStr((dt6.Rows(i).Item("EmployeeName")))
+                    cell2.Text = "[" + CStr((dt5.Rows(i).Item("EmployerNo"))) + "] " + CStr((dt6.Rows(i).Item("EmployeeName")))
 
                     If IsDBNull(dt6.Rows(i).Item("AdvanceAmount")) Then
                         cell3.Text = "0.00 "
@@ -337,7 +337,7 @@
                     End If
 
 
-                    cell2.Text = CStr((dt7.Rows(i).Item("EmployerName")))
+                    cell2.Text = "[" + CStr((dt5.Rows(i).Item("EmployerNo"))) + "] " + CStr((dt7.Rows(i).Item("EmployerName")))
 
                     If IsDBNull(dt7.Rows(i).Item("TDAmount")) Then
                         cell3.Text = "0.00 "
@@ -399,7 +399,7 @@
                     End If
 
 
-                    cell2.Text = CStr((dt14.Rows(i).Item("EmployerName")))
+                    cell2.Text = "[" + CStr((dt5.Rows(i).Item("EmployerNo"))) + "] " + CStr((dt14.Rows(i).Item("EmployerName")))
 
                     If IsDBNull(dt14.Rows(i).Item("TDAmount")) Then
                         cell3.Text = "0.00 "
@@ -461,7 +461,7 @@
                     End If
 
 
-                    cell2.Text = CStr((dt15.Rows(i).Item("EmployerName")))
+                    cell2.Text = "[" + CStr((dt5.Rows(i).Item("EmployerNo"))) + "] " + CStr((dt15.Rows(i).Item("EmployerName")))
 
                     If IsDBNull(dt15.Rows(i).Item("TDAmount")) Then
                         cell3.Text = "0.00 "
@@ -524,7 +524,7 @@
                     cell1.Text = ""
 
 
-                    cell2.Text = CStr((dt8.Rows(i).Item("EmployeeName")))
+                    cell2.Text = "[" + CStr((dt5.Rows(i).Item("EmployerNo"))) + "] " + CStr((dt8.Rows(i).Item("EmployeeName")))
 
 
                     If IsDBNull(dt8.Rows(i).Item("EPF_12")) Then
@@ -583,7 +583,7 @@
                     cell1.Text = ""
 
 
-                    cell2.Text = CStr((dt9.Rows(i).Item("EmployeeName")))
+                    cell2.Text = "[" + CStr((dt5.Rows(i).Item("EmployerNo"))) + "] " + CStr((dt9.Rows(i).Item("EmployeeName")))
 
 
                     If IsDBNull(dt9.Rows(i).Item("ETF_3")) Then
@@ -687,7 +687,7 @@
 
             report.xrMainTable.Rows(21).Cells("rExpenseTotal1").Text = FormatNumber((OtherExpenseTotal).ToString, 2, TriState.True)
 
-            GrandTotal = OtherExpenseTotal + ETFTotal + EPFTotal + total + FestivalAdvanceTotal
+            GrandTotal = total + EPFTotal + ETFTotal + OtherExpenseTotal
 
             report.xrMainTable.Rows(23).Cells("rGrandTotal").Text = FormatNumber((GrandTotal).ToString, 2, TriState.True)
 
