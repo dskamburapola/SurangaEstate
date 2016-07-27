@@ -157,9 +157,9 @@
                 KPB = KPB + Convert.ToDecimal(dr("KPB").ToString) 'admin salary
             Next
 
-            For Each dr As DataRow In ds.Tables(4).Rows
-                cashAdvancePermanent = cashAdvancePermanent + Convert.ToDecimal(dr("CashAdvance").ToString)
-            Next
+            'For Each dr As DataRow In ds.Tables(4).Rows
+            '    cashAdvancePermanent = cashAdvancePermanent + Convert.ToDecimal(dr("CashAdvance").ToString)
+            'Next
 
             For Each dr As DataRow In ds.Tables(5).Rows
                 cashAdvanceCasual = cashAdvanceCasual + Convert.ToDecimal(dr("CashAdvance").ToString)
