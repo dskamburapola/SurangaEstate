@@ -139,58 +139,99 @@
         PL.FromDate = currentDate
         ds = PL.GetMonthlyExpenses()
 
+
+        Dim dt1 As DataTable 'Permenant Salary
+        Dim dt2 As DataTable 'Casual Salary 1-15
+        Dim dt3 As DataTable 'Casual Salary 15-EOM
+        Dim dt4 As DataTable 'KP Balance 
+        Dim dt5 As DataTable 'Permenant Cash Advance 
+        Dim dt6 As DataTable 'Casual Cash Advance 
+        Dim dt7 As DataTable 'Festival Advance - permnent
+        Dim dt8 As DataTable 'EPF 12% 
+        Dim dt9 As DataTable 'ETF 3%
+        Dim dt10 As DataTable ' Other Expenses
+        Dim dt11 As DataTable 'KP Advance
+        Dim dt12 As DataTable 'Investments
+        Dim dt13 As DataTable 'CashRewards
+        Dim dt14 As DataTable 'Festival Advance - Casual
+        Dim dt15 As DataTable 'Festival Advance - Staff
+
+
+
+
+        dt1 = ds.Tables(0)
+        dt2 = ds.Tables(1)
+        dt3 = ds.Tables(2)
+        dt4 = ds.Tables(3)
+        dt5 = ds.Tables(4)
+        dt6 = ds.Tables(5)
+        dt7 = ds.Tables(6)
+        dt8 = ds.Tables(7)
+        dt9 = ds.Tables(8)
+        dt10 = ds.Tables(9)
+        dt11 = ds.Tables(10)
+        dt12 = ds.Tables(11)
+        dt13 = ds.Tables(12)
+        dt14 = ds.Tables(13)
+        dt15 = ds.Tables(14)
+
         If (ds IsNot Nothing And ds.Tables.Count > 0) Then
 
-            For Each dr As DataRow In ds.Tables(0).Rows
+            For Each dr As DataRow In dt1.Rows
                 PermenentTotal = PermenentTotal + Convert.ToDecimal(dr("PermenentTotal").ToString)
             Next
 
-            For Each dr As DataRow In ds.Tables(1).Rows
+            For Each dr As DataRow In dt2.Rows
                 CasualTotalto15 = CasualTotalto15 + Convert.ToDecimal(dr("CasualTotalto15").ToString)
             Next
 
-            For Each dr As DataRow In ds.Tables(2).Rows
+            For Each dr As DataRow In dt3.Rows
                 CasualTotal5toEOM = CasualTotal5toEOM + Convert.ToDecimal(dr("CasualTotal5toEOM").ToString)
             Next
 
-            For Each dr As DataRow In ds.Tables(3).Rows
+            For Each dr As DataRow In dt4.Rows
                 KPB = KPB + Convert.ToDecimal(dr("KPB").ToString) 'admin salary
             Next
 
-            'For Each dr As DataRow In ds.Tables(4).Rows
-            '    cashAdvancePermanent = cashAdvancePermanent + Convert.ToDecimal(dr("CashAdvance").ToString)
+            'cash advance permanent
+            For Each dr As DataRow In dt5.Rows
+                cashAdvancePermanent = cashAdvancePermanent + Convert.ToDecimal(dr("AdvanceAmount").ToString)
+            Next
+
+            'cash advance casual
+
+            For Each dr As DataRow In dt6.Rows
+                cashAdvanceCasual = cashAdvanceCasual + Convert.ToDecimal(dr("AdvanceAmount").ToString)
+            Next
+
+            ''stafff advance
+            'For Each dr As DataRow In dt11.Rows
+            '    cashAdvanceAdmin = cashAdvanceAdmin + Convert.ToDecimal(dr("staffAdvance").ToString)
             'Next
 
-            For Each dr As DataRow In ds.Tables(5).Rows
-                cashAdvanceCasual = cashAdvanceCasual + Convert.ToDecimal(dr("CashAdvance").ToString)
+   
+            'festival advance
+            For Each dr As DataRow In dt7.Rows
+                festivalAdvance = festivalAdvance + Convert.ToDecimal(dr("TDAmount").ToString)
             Next
 
 
-            For Each dr As DataRow In ds.Tables(10).Rows
-                cashAdvanceAdmin = cashAdvanceAdmin + Convert.ToDecimal(dr("StaffAdvance").ToString)
-            Next
-
-            For Each dr As DataRow In ds.Tables(6).Rows
-                festivalAdvance = festivalAdvance + Convert.ToDecimal(dr("FestivalAdvance").ToString)
-            Next
-
-
-            For Each dr As DataRow In ds.Tables(7).Rows
+            For Each dr As DataRow In dt8.Rows
                 EPF_12 = EPF_12 + Convert.ToDecimal(dr("EPF_12").ToString)
             Next
 
 
-            For Each dr As DataRow In ds.Tables(8).Rows
+            For Each dr As DataRow In dt9.Rows
                 ETF_3 = ETF_3 + Convert.ToDecimal(dr("ETF_3").ToString)
             Next
 
-            For Each dr As DataRow In ds.Tables(12).Rows
-                cashRewards = cashRewards + Convert.ToDecimal(dr("CashRewards").ToString)
-            Next
+            'For Each dr As DataRow In ds.Tables(12).Rows
+            '    cashRewards = cashRewards + Convert.ToDecimal(dr("CashRewards").ToString)
+            'Next
 
 
             totalSalary = PermenentTotal + CasualTotalto15 + CasualTotal5toEOM + KPB
-            cashAdvanceTotal = cashAdvancePermanent + cashAdvanceCasual + cashAdvanceAdmin
+            cashAdvanceTotal = cashAdvancePermanent + cashAdvanceCasual
 
         End If
 
@@ -214,8 +255,8 @@
                     dt.Rows(index)("Amount") = totalSalary
                 ElseIf (dt.Rows(index)("Description") = "Cash Advance") Then
                     dt.Rows(index)("Amount") = cashAdvanceTotal
-                ElseIf (dt.Rows(index)("Description") = "Cash Rewards") Then
-                    dt.Rows(index)("Amount") = cashRewards
+                ElseIf (dt.Rows(index)("Description") = "Festival Advance") Then
+                    dt.Rows(index)("Amount") = festivalAdvance
                 ElseIf (dt.Rows(index)("Description") = "EPF 12%") Then
                     dt.Rows(index)("Amount") = EPF_12
                 ElseIf (dt.Rows(index)("Description") = "EPF 3%") Then
