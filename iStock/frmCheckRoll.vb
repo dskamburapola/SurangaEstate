@@ -161,6 +161,7 @@ Public Class frmCheckRoll
 
 
             dr("EmployeeName") = gvCheckRoll.GetRowCellValue(i, gvCheckRoll.Columns("EmployeeName"))
+            dr("EmployeeNo") = gvCheckRoll.GetRowCellValue(i, gvCheckRoll.Columns("EmployeeNo"))
             dr("BalancePay") = gvCheckRoll.GetRowCellValue(i, gvCheckRoll.Columns("BalancePay"))
 
             dr("1000") = numofCoinUsed(8)

@@ -232,6 +232,7 @@ Public Class frmTermDeductions
                 .EmployerID = Convert.ToInt64(Me.leEmployeeCode.EditValue)
                 .TDAmount = Convert.ToDecimal(Me.seAmount.EditValue)
                 .TDInstallments = Convert.ToInt64(Me.sePeriod.EditValue)
+                .Description = teDescription.Text
                 .CreatedBy = UserID
                 .UpdatedBy = UserID
 

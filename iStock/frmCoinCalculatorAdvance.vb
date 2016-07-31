@@ -11,7 +11,8 @@ Public Class frmCoinCalculatorAdvance
 
         Dim dt As New DataTable
 
-        dt.Columns.Add("Type", GetType(String))
+        dt.Columns.Add("EmployeeName", GetType(String))
+        dt.Columns.Add("EmployeeNo", GetType(String))
         dt.Columns.Add("BalancePay", GetType(Decimal))
         dt.Columns.Add("1000", GetType(Integer))
         dt.Columns.Add("500", GetType(Integer))

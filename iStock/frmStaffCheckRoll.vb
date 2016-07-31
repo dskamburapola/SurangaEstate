@@ -156,6 +156,7 @@ Public Class frmStaffCheckRoll
 
 
             dr("EmployeeName") = gvCheckRoll.GetRowCellValue(i, gvCheckRoll.Columns("EmployeeName"))
+            dr("EmployeeNo") = gvCheckRoll.GetRowCellValue(i, gvCheckRoll.Columns("EmployeeNo"))
             dr("BalancePay") = gvCheckRoll.GetRowCellValue(i, gvCheckRoll.Columns("BalancePay"))
 
             dr("1000") = numofCoinUsed(8)
@@ -177,7 +178,7 @@ Public Class frmStaffCheckRoll
 
         ShowIStockForm(frmCoinCalculatorAdvance)
         frmCoinCalculatorAdvance.BringToFront()
-        frmCoinCalculatorAdvance.lblTitle.Text = "Check Roll (Permanent)"
+        frmCoinCalculatorAdvance.lblTitle.Text = "Check Roll (Staff)"
 
 
 

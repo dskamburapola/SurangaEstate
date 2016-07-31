@@ -1270,7 +1270,7 @@ Partial Public Class xrpMonthlyExpenses
         'XrLabel2
         '
         Me.XrLabel2.Font = New System.Drawing.Font("Calibri", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(10.00001!, 49.5!)
+        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(60.375!, 49.5!)
         Me.XrLabel2.Name = "XrLabel2"
         Me.XrLabel2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel2.SizeF = New System.Drawing.SizeF(606.25!, 35.5!)
@@ -1282,7 +1282,7 @@ Partial Public Class xrpMonthlyExpenses
         'XrLabel1
         '
         Me.XrLabel1.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(10.00001!, 10.0!)
+        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(60.375!, 10.0!)
         Me.XrLabel1.Name = "XrLabel1"
         Me.XrLabel1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel1.SizeF = New System.Drawing.SizeF(606.25!, 35.5!)

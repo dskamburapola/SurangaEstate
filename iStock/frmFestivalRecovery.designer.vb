@@ -20,10 +20,9 @@ Partial Class frmFestivalRecovery
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
-        Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
-        Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar2 = New DevExpress.XtraBars.Bar()
         Me.bbSave = New DevExpress.XtraBars.BarButtonItem()
@@ -88,6 +87,7 @@ Partial Class frmFestivalRecovery
         Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemButtonEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
+        Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.btnDisplay = New System.Windows.Forms.Button()
         Me.deEndDate = New DevExpress.XtraEditors.DateEdit()
         Me.deStartDate = New DevExpress.XtraEditors.DateEdit()
@@ -98,7 +98,6 @@ Partial Class frmFestivalRecovery
         Me.LayoutControlItem16 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem4 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem14 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpCashAdvance, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.sePaybleAmount.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -264,10 +263,10 @@ Partial Class frmFestivalRecovery
         Me.sePaybleAmount.Size = New System.Drawing.Size(375, 30)
         Me.sePaybleAmount.StyleController = Me.LayoutControl1
         Me.sePaybleAmount.TabIndex = 16
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals
-        ConditionValidationRule1.ErrorText = "This value is not valid"
-        ConditionValidationRule1.Value1 = "0"
-        Me.dxvpCashAdvance.SetValidationRule(Me.sePaybleAmount, ConditionValidationRule1)
+        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals
+        ConditionValidationRule3.ErrorText = "This value is not valid"
+        ConditionValidationRule3.Value1 = "0"
+        Me.dxvpCashAdvance.SetValidationRule(Me.sePaybleAmount, ConditionValidationRule3)
         '
         'LayoutControl1
         '
@@ -292,7 +291,7 @@ Partial Class frmFestivalRecovery
         Me.leFestival.MenuManager = Me.BarManager1
         Me.leFestival.Name = "leFestival"
         Me.leFestival.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.leFestival.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("TermDeductionID", "TermDeductionID"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "Description")})
+        Me.leFestival.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("TermDeductionID", "TermDeductionID", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "Description"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("EmployerID", "EmployerID")})
         Me.leFestival.Properties.NullText = ""
         Me.leFestival.Size = New System.Drawing.Size(375, 20)
         Me.leFestival.StyleController = Me.LayoutControl1
@@ -327,9 +326,6 @@ Partial Class frmFestivalRecovery
         Me.leEmployee.Size = New System.Drawing.Size(375, 20)
         Me.leEmployee.StyleController = Me.LayoutControl1
         Me.leEmployee.TabIndex = 13
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule2.ErrorText = "This value is not valid"
-        Me.dxvpCashAdvance.SetValidationRule(Me.leEmployee, ConditionValidationRule2)
         '
         'deIssueDate
         '
@@ -348,9 +344,9 @@ Partial Class frmFestivalRecovery
         Me.deIssueDate.Size = New System.Drawing.Size(375, 20)
         Me.deIssueDate.StyleController = Me.LayoutControl1
         Me.deIssueDate.TabIndex = 12
-        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule3.ErrorText = "This value is not valid"
-        Me.dxvpCashAdvance.SetValidationRule(Me.deIssueDate, ConditionValidationRule3)
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "This value is not valid"
+        Me.dxvpCashAdvance.SetValidationRule(Me.deIssueDate, ConditionValidationRule1)
         '
         'teEmployeeName
         '
@@ -567,6 +563,7 @@ Partial Class frmFestivalRecovery
         Me.LayoutControlItem10.Size = New System.Drawing.Size(464, 24)
         Me.LayoutControlItem10.Text = "Employee Code"
         Me.LayoutControlItem10.TextSize = New System.Drawing.Size(82, 13)
+        Me.LayoutControlItem10.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
         'LayoutControlItem13
         '
@@ -587,6 +584,7 @@ Partial Class frmFestivalRecovery
         Me.LayoutControlItem11.Size = New System.Drawing.Size(464, 24)
         Me.LayoutControlItem11.Text = "WorkType"
         Me.LayoutControlItem11.TextSize = New System.Drawing.Size(82, 13)
+        Me.LayoutControlItem11.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
         'LayoutControlItem19
         '
@@ -774,9 +772,17 @@ Partial Class frmFestivalRecovery
         'RepositoryItemButtonEdit1
         '
         Me.RepositoryItemButtonEdit1.AutoHeight = False
-        Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Delete", 20, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Global.iStock.My.Resources.Resources.remove, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, "", Nothing, Nothing, True)})
+        Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Delete", 20, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Global.iStock.My.Resources.Resources.remove, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject2, "", Nothing, Nothing, True)})
         Me.RepositoryItemButtonEdit1.Name = "RepositoryItemButtonEdit1"
         Me.RepositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
+        '
+        'GridColumn5
+        '
+        Me.GridColumn5.Caption = "Description"
+        Me.GridColumn5.FieldName = "Description"
+        Me.GridColumn5.Name = "GridColumn5"
+        Me.GridColumn5.Visible = True
+        Me.GridColumn5.VisibleIndex = 0
         '
         'btnDisplay
         '
@@ -904,14 +910,6 @@ Partial Class frmFestivalRecovery
         Me.LayoutControlItem14.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem14.TextToControlDistance = 0
         Me.LayoutControlItem14.TextVisible = False
-        '
-        'GridColumn5
-        '
-        Me.GridColumn5.Caption = "Description"
-        Me.GridColumn5.FieldName = "Description"
-        Me.GridColumn5.Name = "GridColumn5"
-        Me.GridColumn5.Visible = True
-        Me.GridColumn5.VisibleIndex = 0
         '
         'frmFestivalRecovery
         '

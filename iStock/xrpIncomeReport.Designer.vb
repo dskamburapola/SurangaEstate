@@ -32,12 +32,16 @@ Partial Public Class xrpIncomeReport
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
+        Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.PageHeader = New DevExpress.XtraReports.UI.PageHeaderBand()
+        Me.PageFooter = New DevExpress.XtraReports.UI.PageFooterBand()
         CType(Me.xrMainTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'Detail
         '
         Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrMainTable})
+        Me.Detail.HeightF = 25.0!
         Me.Detail.Name = "Detail"
         Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
@@ -47,10 +51,10 @@ Partial Public Class xrpIncomeReport
         Me.xrMainTable.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
             Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
-        Me.xrMainTable.LocationFloat = New DevExpress.Utils.PointFloat(10.00001!, 10.00001!)
+        Me.xrMainTable.LocationFloat = New DevExpress.Utils.PointFloat(10.00001!, 0.0!)
         Me.xrMainTable.Name = "xrMainTable"
         Me.xrMainTable.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow1})
-        Me.xrMainTable.SizeF = New System.Drawing.SizeF(629.9999!, 25.0!)
+        Me.xrMainTable.SizeF = New System.Drawing.SizeF(730.0!, 25.0!)
         Me.xrMainTable.StylePriority.UseBorders = False
         '
         'XrTableRow1
@@ -103,29 +107,58 @@ Partial Public Class xrpIncomeReport
         '
         'TopMargin
         '
-        Me.TopMargin.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel1})
+        Me.TopMargin.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel2, Me.XrLabel1})
+        Me.TopMargin.HeightF = 85.0!
         Me.TopMargin.Name = "TopMargin"
         Me.TopMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
-        Me.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
+        Me.TopMargin.StylePriority.UseTextAlignment = False
+        Me.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
         '
         'XrLabel1
         '
-        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(168.9583!, 33.29167!)
+        Me.XrLabel1.Font = New System.Drawing.Font("Tahoma", 16.0!)
+        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(71.875!, 45.50001!)
         Me.XrLabel1.Name = "XrLabel1"
         Me.XrLabel1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel1.SizeF = New System.Drawing.SizeF(386.5885!, 23.0!)
-        Me.XrLabel1.Text = "XrLabel1"
+        Me.XrLabel1.SizeF = New System.Drawing.SizeF(606.2499!, 31.33334!)
+        Me.XrLabel1.StylePriority.UseFont = False
         '
         'BottomMargin
         '
+        Me.BottomMargin.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BottomMargin.HeightF = 50.0!
         Me.BottomMargin.Name = "BottomMargin"
         Me.BottomMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
+        Me.BottomMargin.StylePriority.UseFont = False
         Me.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
+        '
+        'XrLabel2
+        '
+        Me.XrLabel2.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(71.875!, 10.00001!)
+        Me.XrLabel2.Name = "XrLabel2"
+        Me.XrLabel2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel2.SizeF = New System.Drawing.SizeF(606.25!, 35.5!)
+        Me.XrLabel2.StylePriority.UseFont = False
+        Me.XrLabel2.StylePriority.UseTextAlignment = False
+        Me.XrLabel2.Text = "HALWATHURA ESTATE"
+        Me.XrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        '
+        'PageHeader
+        '
+        Me.PageHeader.HeightF = 0.0!
+        Me.PageHeader.Name = "PageHeader"
+        '
+        'PageFooter
+        '
+        Me.PageFooter.HeightF = 0.0!
+        Me.PageFooter.Name = "PageFooter"
         '
         'xrpIncomeReport
         '
-        Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin})
-        Me.Margins = New System.Drawing.Printing.Margins(100, 41, 100, 100)
+        Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin, Me.PageHeader, Me.PageFooter})
+        Me.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Margins = New System.Drawing.Printing.Margins(50, 50, 85, 50)
         Me.ScriptLanguage = DevExpress.XtraReports.ScriptLanguage.VisualBasic
         Me.Version = "12.2"
         CType(Me.xrMainTable, System.ComponentModel.ISupportInitialize).EndInit()
@@ -145,4 +178,7 @@ Partial Public Class xrpIncomeReport
     Friend WithEvents XrTableCell6 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell7 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrLabel1 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel2 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents PageHeader As DevExpress.XtraReports.UI.PageHeaderBand
+    Friend WithEvents PageFooter As DevExpress.XtraReports.UI.PageFooterBand
 End Class

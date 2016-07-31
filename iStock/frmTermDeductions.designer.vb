@@ -20,13 +20,13 @@ Partial Class frmTermDeductions
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ConditionValidationRule6 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule7 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule8 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule4 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule5 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
-        Dim ConditionValidationRule7 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar2 = New DevExpress.XtraBars.Bar()
         Me.bbSave = New DevExpress.XtraBars.BarButtonItem()
@@ -69,7 +69,6 @@ Partial Class frmTermDeductions
         Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem11 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.EmptySpaceItem3 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
         Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
@@ -90,6 +89,8 @@ Partial Class frmTermDeductions
         Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem9 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.teDescription = New DevExpress.XtraEditors.TextEdit()
+        Me.LayoutControlItem12 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpCompany, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbDeductionType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -119,7 +120,6 @@ Partial Class frmTermDeductions
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabControl1.SuspendLayout()
         Me.XtraTabPage1.SuspendLayout()
@@ -130,6 +130,8 @@ Partial Class frmTermDeductions
         CType(Me.gvTermDeductioDetails, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.teDescription.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarManager1
@@ -240,12 +242,13 @@ Partial Class frmTermDeductions
         Me.cmbDeductionType.Size = New System.Drawing.Size(156, 20)
         Me.cmbDeductionType.StyleController = Me.LayoutControl1
         Me.cmbDeductionType.TabIndex = 1
-        ConditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule6.ErrorText = "Require"
-        Me.dxvpCompany.SetValidationRule(Me.cmbDeductionType, ConditionValidationRule6)
+        ConditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule7.ErrorText = "Require"
+        Me.dxvpCompany.SetValidationRule(Me.cmbDeductionType, ConditionValidationRule7)
         '
         'LayoutControl1
         '
+        Me.LayoutControl1.Controls.Add(Me.teDescription)
         Me.LayoutControl1.Controls.Add(Me.cmbWorkType)
         Me.LayoutControl1.Controls.Add(Me.lblID)
         Me.LayoutControl1.Controls.Add(Me.gcTermDeductions)
@@ -281,7 +284,7 @@ Partial Class frmTermDeductions
         '
         Me.lblID.Location = New System.Drawing.Point(89, 12)
         Me.lblID.Name = "lblID"
-        Me.lblID.Size = New System.Drawing.Size(516, 13)
+        Me.lblID.Size = New System.Drawing.Size(524, 13)
         Me.lblID.StyleController = Me.LayoutControl1
         Me.lblID.TabIndex = 12
         '
@@ -291,7 +294,7 @@ Partial Class frmTermDeductions
         Me.gcTermDeductions.MainView = Me.gvTermDeductions
         Me.gcTermDeductions.MenuManager = Me.BarManager1
         Me.gcTermDeductions.Name = "gcTermDeductions"
-        Me.gcTermDeductions.Size = New System.Drawing.Size(516, 223)
+        Me.gcTermDeductions.Size = New System.Drawing.Size(524, 223)
         Me.gcTermDeductions.TabIndex = 6
         Me.gcTermDeductions.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvTermDeductions})
         '
@@ -351,12 +354,12 @@ Partial Class frmTermDeductions
         Me.deStartMonth.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.deStartMonth.Properties.Mask.EditMask = "MMM-yy"
         Me.deStartMonth.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.deStartMonth.Size = New System.Drawing.Size(158, 20)
+        Me.deStartMonth.Size = New System.Drawing.Size(166, 20)
         Me.deStartMonth.StyleController = Me.LayoutControl1
         Me.deStartMonth.TabIndex = 5
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "Require"
-        Me.dxvpCompany.SetValidationRule(Me.deStartMonth, ConditionValidationRule1)
+        ConditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule8.ErrorText = "Require"
+        Me.dxvpCompany.SetValidationRule(Me.deStartMonth, ConditionValidationRule8)
         '
         'sePeriod
         '
@@ -367,13 +370,13 @@ Partial Class frmTermDeductions
         Me.sePeriod.Name = "sePeriod"
         Me.sePeriod.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.sePeriod.Properties.MaxValue = New Decimal(New Integer() {10000000, 0, 0, 0})
-        Me.sePeriod.Size = New System.Drawing.Size(158, 20)
+        Me.sePeriod.Size = New System.Drawing.Size(166, 20)
         Me.sePeriod.StyleController = Me.LayoutControl1
         Me.sePeriod.TabIndex = 4
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
-        ConditionValidationRule2.ErrorText = "Require"
-        ConditionValidationRule2.Value1 = CType(0, Long)
-        Me.dxvpCompany.SetValidationRule(Me.sePeriod, ConditionValidationRule2)
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule1.ErrorText = "Require"
+        ConditionValidationRule1.Value1 = CType(0, Long)
+        Me.dxvpCompany.SetValidationRule(Me.sePeriod, ConditionValidationRule1)
         '
         'seAmount
         '
@@ -384,13 +387,13 @@ Partial Class frmTermDeductions
         Me.seAmount.Name = "seAmount"
         Me.seAmount.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.seAmount.Properties.MaxValue = New Decimal(New Integer() {10000000, 0, 0, 0})
-        Me.seAmount.Size = New System.Drawing.Size(158, 20)
+        Me.seAmount.Size = New System.Drawing.Size(166, 20)
         Me.seAmount.StyleController = Me.LayoutControl1
         Me.seAmount.TabIndex = 3
-        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
-        ConditionValidationRule3.ErrorText = "Require"
-        ConditionValidationRule3.Value1 = CType(0, Long)
-        Me.dxvpCompany.SetValidationRule(Me.seAmount, ConditionValidationRule3)
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater
+        ConditionValidationRule2.ErrorText = "Require"
+        ConditionValidationRule2.Value1 = CType(0, Long)
+        Me.dxvpCompany.SetValidationRule(Me.seAmount, ConditionValidationRule2)
         '
         'leEmployeeCode
         '
@@ -404,9 +407,9 @@ Partial Class frmTermDeductions
         Me.leEmployeeCode.Size = New System.Drawing.Size(156, 20)
         Me.leEmployeeCode.StyleController = Me.LayoutControl1
         Me.leEmployeeCode.TabIndex = 0
-        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule4.ErrorText = "Require"
-        Me.dxvpCompany.SetValidationRule(Me.leEmployeeCode, ConditionValidationRule4)
+        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule3.ErrorText = "Require"
+        Me.dxvpCompany.SetValidationRule(Me.leEmployeeCode, ConditionValidationRule3)
         '
         'deIssueDate
         '
@@ -426,9 +429,9 @@ Partial Class frmTermDeductions
         Me.deIssueDate.Size = New System.Drawing.Size(156, 20)
         Me.deIssueDate.StyleController = Me.LayoutControl1
         Me.deIssueDate.TabIndex = 2
-        ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule5.ErrorText = "Require"
-        Me.dxvpCompany.SetValidationRule(Me.deIssueDate, ConditionValidationRule5)
+        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule4.ErrorText = "Require"
+        Me.dxvpCompany.SetValidationRule(Me.deIssueDate, ConditionValidationRule4)
         '
         'teEmployeeName
         '
@@ -436,19 +439,19 @@ Partial Class frmTermDeductions
         Me.teEmployeeName.Location = New System.Drawing.Point(188, 125)
         Me.teEmployeeName.MenuManager = Me.BarManager1
         Me.teEmployeeName.Name = "teEmployeeName"
-        Me.teEmployeeName.Size = New System.Drawing.Size(417, 20)
+        Me.teEmployeeName.Size = New System.Drawing.Size(425, 20)
         Me.teEmployeeName.StyleController = Me.LayoutControl1
         Me.teEmployeeName.TabIndex = 7
-        ConditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule7.ErrorText = "Require"
-        Me.dxvpCompany.SetValidationRule(Me.teEmployeeName, ConditionValidationRule7)
+        ConditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule5.ErrorText = "Require"
+        Me.dxvpCompany.SetValidationRule(Me.teEmployeeName, ConditionValidationRule5)
         '
         'LayoutControlGroup1
         '
         Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
         Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup1.GroupBordersVisible = False
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem2, Me.LayoutControlItem8, Me.LayoutControlItem10, Me.EmptySpaceItem1, Me.EmptySpaceItem2, Me.LayoutControlItem3, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem11, Me.LayoutControlItem4, Me.EmptySpaceItem3})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem2, Me.LayoutControlItem8, Me.LayoutControlItem10, Me.EmptySpaceItem1, Me.EmptySpaceItem2, Me.LayoutControlItem3, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem11, Me.LayoutControlItem4, Me.LayoutControlItem12})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(697, 384)
@@ -481,7 +484,7 @@ Partial Class frmTermDeductions
         Me.LayoutControlItem8.CustomizationFormText = "LayoutControlItem8"
         Me.LayoutControlItem8.Location = New System.Drawing.Point(77, 137)
         Me.LayoutControlItem8.Name = "LayoutControlItem8"
-        Me.LayoutControlItem8.Size = New System.Drawing.Size(520, 227)
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(528, 227)
         Me.LayoutControlItem8.Text = "LayoutControlItem8"
         Me.LayoutControlItem8.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem8.TextToControlDistance = 0
@@ -493,7 +496,7 @@ Partial Class frmTermDeductions
         Me.LayoutControlItem10.CustomizationFormText = "LayoutControlItem10"
         Me.LayoutControlItem10.Location = New System.Drawing.Point(77, 0)
         Me.LayoutControlItem10.Name = "LayoutControlItem10"
-        Me.LayoutControlItem10.Size = New System.Drawing.Size(520, 17)
+        Me.LayoutControlItem10.Size = New System.Drawing.Size(528, 17)
         Me.LayoutControlItem10.Text = "LayoutControlItem10"
         Me.LayoutControlItem10.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem10.TextToControlDistance = 0
@@ -514,9 +517,9 @@ Partial Class frmTermDeductions
         '
         Me.EmptySpaceItem2.AllowHotTrack = False
         Me.EmptySpaceItem2.CustomizationFormText = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(597, 0)
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(605, 0)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(80, 364)
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(72, 364)
         Me.EmptySpaceItem2.Text = "EmptySpaceItem2"
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -536,7 +539,7 @@ Partial Class frmTermDeductions
         Me.LayoutControlItem5.CustomizationFormText = "Amount"
         Me.LayoutControlItem5.Location = New System.Drawing.Point(336, 41)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(261, 24)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(269, 24)
         Me.LayoutControlItem5.Text = "Amount"
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(96, 13)
         '
@@ -546,7 +549,7 @@ Partial Class frmTermDeductions
         Me.LayoutControlItem6.CustomizationFormText = "Period"
         Me.LayoutControlItem6.Location = New System.Drawing.Point(336, 65)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
-        Me.LayoutControlItem6.Size = New System.Drawing.Size(261, 24)
+        Me.LayoutControlItem6.Size = New System.Drawing.Size(269, 24)
         Me.LayoutControlItem6.Text = "Period"
         Me.LayoutControlItem6.TextSize = New System.Drawing.Size(96, 13)
         '
@@ -556,7 +559,7 @@ Partial Class frmTermDeductions
         Me.LayoutControlItem7.CustomizationFormText = "Start Month"
         Me.LayoutControlItem7.Location = New System.Drawing.Point(336, 89)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
-        Me.LayoutControlItem7.Size = New System.Drawing.Size(261, 24)
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(269, 24)
         Me.LayoutControlItem7.Text = "Start Month"
         Me.LayoutControlItem7.TextSize = New System.Drawing.Size(96, 13)
         '
@@ -576,21 +579,10 @@ Partial Class frmTermDeductions
         Me.LayoutControlItem4.CustomizationFormText = "LayoutControlItem4"
         Me.LayoutControlItem4.Location = New System.Drawing.Point(77, 113)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(520, 24)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(528, 24)
         Me.LayoutControlItem4.Text = "LayoutControlItem4"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(96, 13)
         Me.LayoutControlItem4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        '
-        'EmptySpaceItem3
-        '
-        Me.EmptySpaceItem3.AllowHotTrack = False
-        Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(336, 17)
-        Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(261, 24)
-        Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
-        Me.EmptySpaceItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
         'XtraTabControl1
         '
@@ -669,7 +661,7 @@ Partial Class frmTermDeductions
         'GridColumn5
         '
         Me.GridColumn5.Caption = "Type"
-        Me.GridColumn5.FieldName = "TDType"
+        Me.GridColumn5.FieldName = "TDdescription"
         Me.GridColumn5.Name = "GridColumn5"
         Me.GridColumn5.OptionsColumn.AllowEdit = False
         Me.GridColumn5.OptionsColumn.AllowFocus = False
@@ -783,6 +775,25 @@ Partial Class frmTermDeductions
         Me.LayoutControlItem9.TextToControlDistance = 0
         Me.LayoutControlItem9.TextVisible = False
         '
+        'teDescription
+        '
+        Me.teDescription.Location = New System.Drawing.Point(447, 29)
+        Me.teDescription.MenuManager = Me.BarManager1
+        Me.teDescription.Name = "teDescription"
+        Me.teDescription.Size = New System.Drawing.Size(166, 20)
+        Me.teDescription.StyleController = Me.LayoutControl1
+        Me.teDescription.TabIndex = 14
+        '
+        'LayoutControlItem12
+        '
+        Me.LayoutControlItem12.Control = Me.teDescription
+        Me.LayoutControlItem12.CustomizationFormText = "Description"
+        Me.LayoutControlItem12.Location = New System.Drawing.Point(336, 17)
+        Me.LayoutControlItem12.Name = "LayoutControlItem12"
+        Me.LayoutControlItem12.Size = New System.Drawing.Size(269, 24)
+        Me.LayoutControlItem12.Text = "Description"
+        Me.LayoutControlItem12.TextSize = New System.Drawing.Size(96, 13)
+        '
         'frmTermDeductions
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -825,7 +836,6 @@ Partial Class frmTermDeductions
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabControl1.ResumeLayout(False)
         Me.XtraTabPage1.ResumeLayout(False)
@@ -836,6 +846,8 @@ Partial Class frmTermDeductions
         CType(Me.gvTermDeductioDetails, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.teDescription.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -901,5 +913,6 @@ Partial Class frmTermDeductions
     Friend WithEvents GridColumn15 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents cmbWorkType As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents LayoutControlItem11 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents EmptySpaceItem3 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents teDescription As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LayoutControlItem12 As DevExpress.XtraLayout.LayoutControlItem
 End Class

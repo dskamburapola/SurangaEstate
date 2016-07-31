@@ -17,7 +17,7 @@ Public Class iStockTermDeductions
     Private _CreatedDate As DateTime
     Private _UpdatedBy As Int64
     Private _UpdatedDate As DateTime
-
+    Private _Description As String
     Private _TDMonthName As String
     Private _TDInsAmount As Decimal
 
@@ -115,6 +115,14 @@ Public Class iStockTermDeductions
             _UpdatedDate = value
         End Set
     End Property
+    Public Property Description() As String
+        Get
+            Return _Description
+        End Get
+        Set(ByVal value As String)
+            _Description = value
+        End Set
+    End Property
     Public Property TDMonthName() As String
         Get
             Return _TDMonthName
@@ -152,7 +160,9 @@ Public Class iStockTermDeductions
             DB.AddInParameter(DBC, "@TDType", DbType.String, Me.TDType)
             DB.AddInParameter(DBC, "@EmployerID", DbType.Int64, Me.EmployerID)
             DB.AddInParameter(DBC, "@TDAmount", DbType.Decimal, Me.TDAmount)
-            DB.AddInParameter(DBC, "@TDInstallments", DbType.Int64, Me.TDInstallments)
+            db.AddInParameter(DBC, "@TDInstallments", DbType.Int64, Me.TDInstallments)
+            db.AddInParameter(DBC, "@TDdescription", DbType.String, Me.Description)
+
             DB.AddInParameter(DBC, "@CreatedBy", DbType.Int64, Me.CreatedBy)
             DB.AddInParameter(DBC, "@UpdatedBy", DbType.Int64, Me.UpdatedBy)
 
@@ -167,7 +177,7 @@ Public Class iStockTermDeductions
     End Sub
 #End Region
 
-#Region "Insert TermDeductions"
+#Region "Update TermDeductions"
     Public Sub UpdateTermDeductions(ByVal db As Database, ByVal transaction As DbTransaction)
         Try
             ' Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
@@ -180,6 +190,8 @@ Public Class iStockTermDeductions
             db.AddInParameter(DBC, "@EmployerID", DbType.Int64, Me.EmployerID)
             db.AddInParameter(DBC, "@TDAmount", DbType.Decimal, Me.TDAmount)
             db.AddInParameter(DBC, "@TDInstallments", DbType.Int64, Me.TDInstallments)
+            db.AddInParameter(DBC, "@TDdescription", DbType.String, Me.Description)
+
             db.AddInParameter(DBC, "@UpdatedBy", DbType.Int64, Me.UpdatedBy)
 
             db.ExecuteNonQuery(DBC, transaction)

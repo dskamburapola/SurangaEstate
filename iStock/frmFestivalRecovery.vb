@@ -196,7 +196,8 @@ Public Class frmFestivalRecovery
         Try
             With iStockCashAdvance
 
-                .EmployeeID = Me.leEmployee.EditValue
+                ' .EmployeeID = Me.leEmployee.EditValue
+                .EmployeeID = leFestival.GetColumnValue("EmployerID")
                 .IssueDate = Me.deIssueDate.Text
                 .AdvanceAmount = Convert.ToDecimal(Me.sePaybleAmount.Text)
                 .CreatedBy = UserID

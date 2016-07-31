@@ -40,6 +40,7 @@ Partial Class frmCoinCalculatorAdvance
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.gcSummary, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,7 +85,7 @@ Partial Class frmCoinCalculatorAdvance
         '
         'gvSummary
         '
-        Me.gvSummary.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn3, Me.GridColumn15, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14})
+        Me.gvSummary.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn3, Me.GridColumn15, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14})
         Me.gvSummary.GridControl = Me.gcSummary
         Me.gvSummary.Name = "gvSummary"
         Me.gvSummary.OptionsBehavior.Editable = False
@@ -92,8 +93,8 @@ Partial Class frmCoinCalculatorAdvance
         '
         'GridColumn3
         '
-        Me.GridColumn3.Caption = "Type"
-        Me.GridColumn3.FieldName = "Type"
+        Me.GridColumn3.Caption = "Employee Name"
+        Me.GridColumn3.FieldName = "EmployeeName"
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.Visible = True
         Me.GridColumn3.VisibleIndex = 0
@@ -269,6 +270,14 @@ Partial Class frmCoinCalculatorAdvance
         Me.LayoutControlItem1.TextToControlDistance = 0
         Me.LayoutControlItem1.TextVisible = False
         '
+        'GridColumn1
+        '
+        Me.GridColumn1.Caption = "Employee No"
+        Me.GridColumn1.FieldName = "EmployeeNo"
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 0
+        '
         'frmCoinCalculatorAdvance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -310,4 +319,5 @@ Partial Class frmCoinCalculatorAdvance
     Friend WithEvents GridColumn15 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents lblTitle As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

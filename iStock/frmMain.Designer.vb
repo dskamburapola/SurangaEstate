@@ -417,6 +417,7 @@ Partial Class frmMain
         Me.BarButtonItem36.Id = 45
         Me.BarButtonItem36.LargeGlyph = Global.iStock.My.Resources.Resources.Magenta
         Me.BarButtonItem36.Name = "BarButtonItem36"
+        Me.BarButtonItem36.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'BarButtonItem37
         '
@@ -486,14 +487,16 @@ Partial Class frmMain
         'BarButtonItem46
         '
         Me.BarButtonItem46.Caption = "Cash Rewards"
+        Me.BarButtonItem46.Enabled = False
         Me.BarButtonItem46.Id = 55
         Me.BarButtonItem46.LargeGlyph = Global.iStock.My.Resources.Resources.DisplaySelected
         Me.BarButtonItem46.LargeWidth = 75
         Me.BarButtonItem46.Name = "BarButtonItem46"
+        Me.BarButtonItem46.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'BarButtonItem47
         '
-        Me.BarButtonItem47.Caption = "Staff Pay Sheet"
+        Me.BarButtonItem47.Caption = "Check Roll (Staff)"
         Me.BarButtonItem47.Id = 56
         Me.BarButtonItem47.LargeGlyph = Global.iStock.My.Resources.Resources.Magenta
         Me.BarButtonItem47.LargeWidth = 75
@@ -502,9 +505,11 @@ Partial Class frmMain
         'BarButtonItem48
         '
         Me.BarButtonItem48.Caption = "Festival Recovery Summary"
+        Me.BarButtonItem48.Enabled = False
         Me.BarButtonItem48.Id = 57
         Me.BarButtonItem48.LargeGlyph = Global.iStock.My.Resources.Resources.Magenta
         Me.BarButtonItem48.Name = "BarButtonItem48"
+        Me.BarButtonItem48.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'RibbonPage1
         '
