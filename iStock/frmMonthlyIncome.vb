@@ -235,7 +235,9 @@
 
 
                 cell1xa.Text = "GRAND TOTAL"
+                cell1xa.Font = New Font(Me.Font.FontFamily, Me.Font.Size, FontStyle.Bold)
                 cell2xa.Text = FormatNumber(grandatotal, TriState.True)
+                cell2xa.Font = New Font(Me.Font.FontFamily, Me.Font.Size, FontStyle.Bold)
 
                 trx.Cells.Add(cell1xa)
                 trx.Cells.Add(cell2xa)

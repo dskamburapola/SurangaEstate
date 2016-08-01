@@ -20,14 +20,14 @@ Partial Class frmChart_Income
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
-        Dim SimpleDiagram2 As DevExpress.XtraCharts.SimpleDiagram = New DevExpress.XtraCharts.SimpleDiagram()
-        Dim Series2 As DevExpress.XtraCharts.Series = New DevExpress.XtraCharts.Series()
-        Dim PieSeriesLabel2 As DevExpress.XtraCharts.PieSeriesLabel = New DevExpress.XtraCharts.PieSeriesLabel()
-        Dim PiePointOptions3 As DevExpress.XtraCharts.PiePointOptions = New DevExpress.XtraCharts.PiePointOptions()
-        Dim PiePointOptions4 As DevExpress.XtraCharts.PiePointOptions = New DevExpress.XtraCharts.PiePointOptions()
-        Dim PieSeriesView2 As DevExpress.XtraCharts.PieSeriesView = New DevExpress.XtraCharts.PieSeriesView()
-        Dim SideBySideBarSeriesLabel2 As DevExpress.XtraCharts.SideBySideBarSeriesLabel = New DevExpress.XtraCharts.SideBySideBarSeriesLabel()
+        Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim SimpleDiagram1 As DevExpress.XtraCharts.SimpleDiagram = New DevExpress.XtraCharts.SimpleDiagram()
+        Dim Series1 As DevExpress.XtraCharts.Series = New DevExpress.XtraCharts.Series()
+        Dim PieSeriesLabel1 As DevExpress.XtraCharts.PieSeriesLabel = New DevExpress.XtraCharts.PieSeriesLabel()
+        Dim PiePointOptions1 As DevExpress.XtraCharts.PiePointOptions = New DevExpress.XtraCharts.PiePointOptions()
+        Dim PiePointOptions2 As DevExpress.XtraCharts.PiePointOptions = New DevExpress.XtraCharts.PiePointOptions()
+        Dim PieSeriesView1 As DevExpress.XtraCharts.PieSeriesView = New DevExpress.XtraCharts.PieSeriesView()
+        Dim SideBySideBarSeriesLabel1 As DevExpress.XtraCharts.SideBySideBarSeriesLabel = New DevExpress.XtraCharts.SideBySideBarSeriesLabel()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.meMonth = New DevExpress.XtraScheduler.UI.MonthEdit()
         Me.sbPrint = New DevExpress.XtraEditors.SimpleButton()
@@ -48,11 +48,11 @@ Partial Class frmChart_Income
         CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Chart, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(SimpleDiagram2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Series2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(PieSeriesLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(PieSeriesView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(SideBySideBarSeriesLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(SimpleDiagram1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Series1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(PieSeriesLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(PieSeriesView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(SideBySideBarSeriesLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,36 +107,36 @@ Partial Class frmChart_Income
         Me.leYear.Size = New System.Drawing.Size(113, 20)
         Me.leYear.StyleController = Me.LayoutControl1
         Me.leYear.TabIndex = 7
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule2.ErrorText = "Require"
-        Me.dxvpCommon.SetValidationRule(Me.leYear, ConditionValidationRule2)
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "Require"
+        Me.dxvpCommon.SetValidationRule(Me.leYear, ConditionValidationRule1)
         '
         'Chart
         '
         Me.Chart.Cursor = System.Windows.Forms.Cursors.Arrow
-        SimpleDiagram2.CustomPanel = Nothing
-        SimpleDiagram2.EqualPieSize = False
-        SimpleDiagram2.LabelsResolveOverlappingMinIndent = 10
-        Me.Chart.Diagram = SimpleDiagram2
+        SimpleDiagram1.CustomPanel = Nothing
+        SimpleDiagram1.EqualPieSize = False
+        SimpleDiagram1.LabelsResolveOverlappingMinIndent = 10
+        Me.Chart.Diagram = SimpleDiagram1
         Me.Chart.Location = New System.Drawing.Point(12, 38)
         Me.Chart.Name = "Chart"
-        Series2.ArgumentDataMember = "Description"
-        PieSeriesLabel2.LineVisible = True
-        PiePointOptions3.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.Percent
-        PieSeriesLabel2.PointOptions = PiePointOptions3
-        PieSeriesLabel2.ResolveOverlappingMode = DevExpress.XtraCharts.ResolveOverlappingMode.[Default]
-        Series2.Label = PieSeriesLabel2
-        PiePointOptions4.PointView = DevExpress.XtraCharts.PointView.Argument
-        PiePointOptions4.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.Percent
-        Series2.LegendPointOptions = PiePointOptions4
-        Series2.Name = "Expense"
-        Series2.SynchronizePointOptions = False
-        Series2.ValueDataMembersSerializable = "Amount"
-        PieSeriesView2.RuntimeExploding = False
-        Series2.View = PieSeriesView2
-        Me.Chart.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series2}
-        SideBySideBarSeriesLabel2.LineVisible = True
-        Me.Chart.SeriesTemplate.Label = SideBySideBarSeriesLabel2
+        Series1.ArgumentDataMember = "Description"
+        PieSeriesLabel1.LineVisible = True
+        PiePointOptions1.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.Percent
+        PieSeriesLabel1.PointOptions = PiePointOptions1
+        PieSeriesLabel1.ResolveOverlappingMode = DevExpress.XtraCharts.ResolveOverlappingMode.[Default]
+        Series1.Label = PieSeriesLabel1
+        PiePointOptions2.PointView = DevExpress.XtraCharts.PointView.Argument
+        PiePointOptions2.ValueNumericOptions.Format = DevExpress.XtraCharts.NumericFormat.Percent
+        Series1.LegendPointOptions = PiePointOptions2
+        Series1.Name = "Expense"
+        Series1.SynchronizePointOptions = False
+        Series1.ValueDataMembersSerializable = "Amount"
+        PieSeriesView1.RuntimeExploding = False
+        Series1.View = PieSeriesView1
+        Me.Chart.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series1}
+        SideBySideBarSeriesLabel1.LineVisible = True
+        Me.Chart.SeriesTemplate.Label = SideBySideBarSeriesLabel1
         Me.Chart.Size = New System.Drawing.Size(559, 390)
         Me.Chart.TabIndex = 6
         '
@@ -262,11 +262,11 @@ Partial Class frmChart_Income
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(SimpleDiagram2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(PieSeriesLabel2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(PieSeriesView2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Series2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(SideBySideBarSeriesLabel2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(SimpleDiagram1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(PieSeriesLabel1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(PieSeriesView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Series1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(SideBySideBarSeriesLabel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Chart, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()

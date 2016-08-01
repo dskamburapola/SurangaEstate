@@ -127,13 +127,12 @@
         Dim CasualTotal5toEOM As Decimal
         Dim cashAdvancePermanent As Decimal
         Dim cashAdvanceCasual As Decimal
-        Dim cashAdvanceAdmin As Decimal
         Dim cashAdvanceTotal As Decimal
-        Dim cashRewards As Decimal
         Dim festivalAdvance As Decimal
         Dim KPB As Decimal
         Dim EPF_12 As Decimal
         Dim ETF_3 As Decimal
+        Dim OtherExpenseTotal As Decimal
 
         Dim ds As New DataSet
         PL.FromDate = currentDate
@@ -230,6 +229,9 @@
             'Next
 
 
+
+
+
             totalSalary = PermenentTotal + CasualTotalto15 + CasualTotal5toEOM + KPB
             cashAdvanceTotal = cashAdvancePermanent + cashAdvanceCasual
 
@@ -285,6 +287,6 @@
 
 
     Private Sub Chart_CustomDrawSeriesPoint(sender As Object, e As DevExpress.XtraCharts.CustomDrawSeriesPointEventArgs) Handles Chart.CustomDrawSeriesPoint
-        e.LabelText = e.LabelText + " (" + e.SeriesPoint.Values(0).ToString() + ")"
+        e.LabelText = e.LabelText + " (" + FormatNumber(e.SeriesPoint.Values(0).ToString(), TriState.True) + ")"
     End Sub
 End Class

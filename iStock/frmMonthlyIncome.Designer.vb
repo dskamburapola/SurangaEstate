@@ -255,7 +255,7 @@ Partial Class frmMonthlyIncome
         Me.Controls.Add(Me.LayoutControl2)
         Me.Controls.Add(Me.LayoutControl1)
         Me.Name = "frmMonthlyIncome"
-        Me.Text = "Monthly Report"
+        Me.Text = "Monthly Income Report"
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
