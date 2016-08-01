@@ -107,19 +107,6 @@
         Dim dt As New DataTable
         dt = CWBCharts.ChartIncome().Tables(0)
         
-
-        'Dim totalSalary As Decimal
-        'Dim PermenentTotal As Decimal
-        'Dim CasualTotalto15 As Decimal
-        'Dim CasualTotal5toEOM As Decimal
-        'Dim cashAdvancePermanent As Decimal
-        'Dim cashAdvanceCasual As Decimal
-        'Dim cashAdvanceAdmin As Decimal
-        'Dim cashAdvanceTotal As Decimal
-        'Dim festivalAdvance As Decimal
-        'Dim KPB As Decimal
-        'Dim EPF_12 As Decimal
-        'Dim ETF_3 As Decimal
         Dim totalExpenes As Decimal
 
         Dim selectedMonth, selectedYear As String
