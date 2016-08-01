@@ -73,7 +73,7 @@
             Dim report As New xrMonthlyReport
             frmPrint.PrintControl1.PrintingSystem = report.PrintingSystem
 
-            report.xrMonth.Text = meMonth.Text.ToString + "-" + leYear.EditValue.ToString
+            report.xrMonth.Text = "MONTHLY REPORT - " + meMonth.Text.ToString + "-" + leYear.EditValue.ToString
 
             If (dt1.Rows.Count > 0) Then
 

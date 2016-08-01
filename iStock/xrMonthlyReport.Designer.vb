@@ -263,8 +263,8 @@ Partial Public Class xrMonthlyReport
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.PageHeader = New DevExpress.XtraReports.UI.PageHeaderBand()
         Me.xrMonth = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
         Me.PageFooter = New DevExpress.XtraReports.UI.PageFooterBand()
+        Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
@@ -1890,7 +1890,7 @@ Partial Public Class xrMonthlyReport
         '
         'TopMargin
         '
-        Me.TopMargin.HeightF = 25.0!
+        Me.TopMargin.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel2, Me.xrMonth})
         Me.TopMargin.Name = "TopMargin"
         Me.TopMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
@@ -1904,42 +1904,42 @@ Partial Public Class xrMonthlyReport
         '
         'PageHeader
         '
-        Me.PageHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrMonth, Me.XrLabel1})
-        Me.PageHeader.HeightF = 65.625!
+        Me.PageHeader.HeightF = 28.125!
         Me.PageHeader.Name = "PageHeader"
         '
         'xrMonth
         '
         Me.xrMonth.Font = New System.Drawing.Font("Tahoma", 14.0!)
-        Me.xrMonth.LocationFloat = New DevExpress.Utils.PointFloat(325.0!, 26.0!)
+        Me.xrMonth.LocationFloat = New DevExpress.Utils.PointFloat(96.87503!, 45.50001!)
         Me.xrMonth.Name = "xrMonth"
         Me.xrMonth.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.xrMonth.SizeF = New System.Drawing.SizeF(162.5!, 25.0!)
+        Me.xrMonth.SizeF = New System.Drawing.SizeF(606.2499!, 34.375!)
         Me.xrMonth.StylePriority.UseFont = False
         Me.xrMonth.StylePriority.UseTextAlignment = False
+        Me.xrMonth.Text = "MONTHLY REPORT - SEPTEMBER - 2016"
         Me.xrMonth.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        '
-        'XrLabel1
-        '
-        Me.XrLabel1.Font = New System.Drawing.Font("Tahoma", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(325.0!, 0.0!)
-        Me.XrLabel1.Name = "XrLabel1"
-        Me.XrLabel1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel1.SizeF = New System.Drawing.SizeF(162.5!, 25.0!)
-        Me.XrLabel1.StylePriority.UseFont = False
-        Me.XrLabel1.StylePriority.UseTextAlignment = False
-        Me.XrLabel1.Text = "Monthly Report"
-        Me.XrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         '
         'PageFooter
         '
         Me.PageFooter.Name = "PageFooter"
         '
+        'XrLabel2
+        '
+        Me.XrLabel2.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(96.875!, 10.00001!)
+        Me.XrLabel2.Name = "XrLabel2"
+        Me.XrLabel2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel2.SizeF = New System.Drawing.SizeF(606.25!, 35.5!)
+        Me.XrLabel2.StylePriority.UseFont = False
+        Me.XrLabel2.StylePriority.UseTextAlignment = False
+        Me.XrLabel2.Text = "HALWATHURA ESTATE"
+        Me.XrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        '
         'xrMonthlyReport
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin, Me.PageHeader, Me.PageFooter})
         Me.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Margins = New System.Drawing.Printing.Margins(25, 25, 25, 25)
+        Me.Margins = New System.Drawing.Printing.Margins(25, 25, 100, 25)
         Me.ScriptLanguage = DevExpress.XtraReports.ScriptLanguage.VisualBasic
         Me.Version = "12.2"
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1950,7 +1950,6 @@ Partial Public Class xrMonthlyReport
     Friend WithEvents TopMargin As DevExpress.XtraReports.UI.TopMarginBand
     Friend WithEvents BottomMargin As DevExpress.XtraReports.UI.BottomMarginBand
     Friend WithEvents PageHeader As DevExpress.XtraReports.UI.PageHeaderBand
-    Friend WithEvents XrLabel1 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents PageFooter As DevExpress.XtraReports.UI.PageFooterBand
     Friend WithEvents XrTable1 As DevExpress.XtraReports.UI.XRTable
     Friend WithEvents XrTableRow1 As DevExpress.XtraReports.UI.XRTableRow
@@ -2192,4 +2191,5 @@ Partial Public Class xrMonthlyReport
     Friend WithEvents xrFadvStaff As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents xrFadvTotal As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents xrSalaryTotal As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrLabel2 As DevExpress.XtraReports.UI.XRLabel
 End Class
