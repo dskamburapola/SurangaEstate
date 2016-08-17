@@ -172,6 +172,22 @@ Public Class iStockDailyCropSummary
             Return Nothing
         End Try
     End Function
+
+    Public Function GetDailyCropByMonthYearReport() As DataSet
+        Try
+
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand("DailyCropSummary_GetByMonthYear_report")
+            DB.AddInParameter(DBC, "@SelecteMonth", DbType.Int32, Me.CurrentMonth)
+            DB.AddInParameter(DBC, "@SelectedYear", DbType.Int32, Me.CurrentYear)
+            DB.AddInParameter(DBC, "@TypeID", DbType.Int32, Me.AbbreviationID)
+
+            Return DB.ExecuteDataSet(DBC)
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
 #End Region
 
 End Class

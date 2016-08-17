@@ -112,6 +112,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="frmFactoryWeight.Designer.vb">
+      <DependentUpon>frmFactoryWeight.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFactoryWeight.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmRecoverySummary.Designer.vb">
       <DependentUpon>frmRecoverySummary.vb</DependentUpon>
     </Compile>
@@ -567,6 +573,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmFactoryWeight.resx">
+      <DependentUpon>frmFactoryWeight.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRecoverySummary.resx">
       <DependentUpon>frmRecoverySummary.vb</DependentUpon>
     </EmbeddedResource>

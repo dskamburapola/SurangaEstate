@@ -249,4 +249,8 @@ Public Class frmMain
     Private Sub BarButtonItem48_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem48.ItemClick
         ShowIStockForm(frmRecoverySummary)
     End Sub
+
+    Private Sub BarButtonItem49_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem49.ItemClick
+        ShowIStockForm(frmFactoryWeight)
+    End Sub
 End Class
