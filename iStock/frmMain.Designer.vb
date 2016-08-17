@@ -421,7 +421,7 @@ Partial Class frmMain
         '
         'BarButtonItem37
         '
-        Me.BarButtonItem37.Caption = "Daily Crop"
+        Me.BarButtonItem37.Caption = "Factory Crop"
         Me.BarButtonItem37.Id = 46
         Me.BarButtonItem37.LargeGlyph = Global.iStock.My.Resources.Resources.Company
         Me.BarButtonItem37.Name = "BarButtonItem37"

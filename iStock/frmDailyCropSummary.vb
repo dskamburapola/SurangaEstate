@@ -6,6 +6,8 @@ Imports DevExpress.XtraEditors.Controls
 Imports DevExpress.XtraEditors
 Imports DevExpress.XtraEditors.ViewInfo
 Imports DevExpress.XtraPivotGrid
+Imports DevExpress.Utils.Win
+Imports DevExpress.XtraEditors.Popup
 
 Public Class frmDailyCropSummary
 
@@ -122,10 +124,7 @@ Public Class frmDailyCropSummary
 #Region "Button Events"
 
     Private Sub sbGenerate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbGenerate.Click
-
         Me.LoadGrid()
-
-
     End Sub
 
 
@@ -166,13 +165,13 @@ Public Class frmDailyCropSummary
 
 
                 iStockDailyCrop.CurrentDate = Me.gvDailyCrop.GetRowCellDisplayText(i, GridColumn1)
-                iStockDailyCrop.FactoryCrop = Me.gvDailyCrop.GetRowCellDisplayText(i, GridColumn3)
+                iStockDailyCrop.FactoryCrop = IIf(Me.gvDailyCrop.GetRowCellDisplayText(i, GridColumn3) = String.Empty, 0, Me.gvDailyCrop.GetRowCellDisplayText(i, GridColumn3))
                 iStockDailyCrop.Rate = IIf(Me.gvDailyCrop.GetRowCellDisplayText(i, GridColumn4) = "", 0, Me.gvDailyCrop.GetRowCellDisplayText(i, GridColumn4))
                 iStockDailyCrop.insertDailyCrop()
             End If
         Next
 
-      
+
 
         Dim frm As New frmSavedOk
         frm.Text = CWB_SAVESUCCESS_CONFIRMATION_TITLE
@@ -187,6 +186,7 @@ Public Class frmDailyCropSummary
     End Sub
 
     Private Sub LoadGrid()
+
         If dxvpAttendaceReport.Validate Then
 
             Dim selectedMonth, selectedYear As Integer
@@ -199,9 +199,60 @@ Public Class frmDailyCropSummary
 
             ds = Me.iStockDailyCrop.GetDailyCropByMonthYear()
 
+            Dim daysinmonth As Integer
+
+            daysinmonth = System.DateTime.DaysInMonth(selectedYear, selectedMonth)
+
+            If ds.Tables(0).Rows.Count = 0 Then
+
+
+                For index = 1 To daysinmonth
+
+                    Dim dr As DataRow
+                    dr = ds.Tables(0).NewRow
+
+                    dr("CurrentDay") = Convert.ToDateTime("" + index.ToString + "-" + selectedMonth.ToString + "-" + selectedYear.ToString)
+                    ds.Tables(0).Rows.Add(dr)
+
+                Next
+
+            End If
+
             gcDailyCrop.DataSource = ds.Tables(0)
 
 
         End If
+    End Sub
+
+    Private Sub RepositoryItemDateEdit1_Popup(sender As Object, e As EventArgs) Handles RepositoryItemDateEdit1.Popup
+        Dim c As DateEditCalendar = TryCast((TryCast((TryCast(sender, IPopupControl)).PopupWindow, PopupDateEditForm)).Calendar, DateEditCalendar)
+        c.DateTime = Convert.ToDateTime("01-" + meMonth.EditValue.ToString + "-" + leYear.EditValue.ToString)
+    End Sub
+
+
+
+    Private Sub RepositoryItemDateEdit1_EditValueChanging(sender As Object, e As ChangingEventArgs) Handles RepositoryItemDateEdit1.EditValueChanging
+
+
+    End Sub
+
+    Private Sub RepositoryItemDateEdit1_Enter(sender As Object, e As EventArgs) Handles RepositoryItemDateEdit1.Enter
+
+    End Sub
+
+    Private Sub RepositoryItemDateEdit1_EditValueChanged(sender As Object, e As EventArgs) Handles RepositoryItemDateEdit1.EditValueChanged
+
+    End Sub
+
+    Private Sub gvDailyCrop_ShownEditor(sender As Object, e As EventArgs) Handles gvDailyCrop.ShownEditor
+        ' gvDailyCrop.ActiveEditor.EditValue = Convert.ToDateTime("01-" + meMonth.EditValue.ToString + "-" + leYear.EditValue.ToString)
+    End Sub
+
+    Private Sub gvDailyCrop_CellValueChanging(sender As Object, e As Views.Base.CellValueChangedEventArgs) Handles gvDailyCrop.CellValueChanging
+    End Sub
+
+    Private Sub gvDailyCrop_FocusedColumnChanged(sender As Object, e As Views.Base.FocusedColumnChangedEventArgs) Handles gvDailyCrop.FocusedColumnChanged
+
+
     End Sub
 End Class
