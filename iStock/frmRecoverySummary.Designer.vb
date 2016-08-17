@@ -34,6 +34,11 @@ Partial Class frmRecoverySummary
         Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn10 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn15 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.leYear = New DevExpress.XtraEditors.LookUpEdit()
         Me.sbGenerate = New DevExpress.XtraEditors.SimpleButton()
         Me.sbPrint = New DevExpress.XtraEditors.SimpleButton()
@@ -45,11 +50,7 @@ Partial Class frmRecoverySummary
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.dxvpFieldPerformance = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
-        Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn15 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn16 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.gcFieldPerfomance, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,7 +76,7 @@ Partial Class frmRecoverySummary
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.LayoutControlGroup1
-        Me.LayoutControl1.Size = New System.Drawing.Size(813, 502)
+        Me.LayoutControl1.Size = New System.Drawing.Size(1597, 666)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -84,13 +85,13 @@ Partial Class frmRecoverySummary
         Me.gcFieldPerfomance.Location = New System.Drawing.Point(12, 81)
         Me.gcFieldPerfomance.MainView = Me.gvFieldPerformance
         Me.gcFieldPerfomance.Name = "gcFieldPerfomance"
-        Me.gcFieldPerfomance.Size = New System.Drawing.Size(789, 374)
+        Me.gcFieldPerfomance.Size = New System.Drawing.Size(1573, 538)
         Me.gcFieldPerfomance.TabIndex = 20
         Me.gcFieldPerfomance.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvFieldPerformance})
         '
         'gvFieldPerformance
         '
-        Me.gvFieldPerformance.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14, Me.GridColumn15})
+        Me.gvFieldPerformance.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn2, Me.GridColumn14, Me.GridColumn1, Me.GridColumn3, Me.GridColumn15, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn16})
         Me.gvFieldPerformance.GridControl = Me.gcFieldPerfomance
         Me.gvFieldPerformance.Name = "gvFieldPerformance"
         Me.gvFieldPerformance.OptionsBehavior.Editable = False
@@ -102,7 +103,7 @@ Partial Class frmRecoverySummary
         Me.GridColumn1.FieldName = "EmployeeNo"
         Me.GridColumn1.Name = "GridColumn1"
         Me.GridColumn1.Visible = True
-        Me.GridColumn1.VisibleIndex = 0
+        Me.GridColumn1.VisibleIndex = 2
         '
         'GridColumn2
         '
@@ -110,11 +111,11 @@ Partial Class frmRecoverySummary
         Me.GridColumn2.FieldName = "EPFNO"
         Me.GridColumn2.Name = "GridColumn2"
         Me.GridColumn2.Visible = True
-        Me.GridColumn2.VisibleIndex = 1
+        Me.GridColumn2.VisibleIndex = 0
         '
         'GridColumn3
         '
-        Me.GridColumn3.Caption = "EmployeeName"
+        Me.GridColumn3.Caption = "Name of Employee"
         Me.GridColumn3.FieldName = "EmployeeName"
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantity", "{0:N2}")})
@@ -127,7 +128,7 @@ Partial Class frmRecoverySummary
         Me.GridColumn4.FieldName = "MAY"
         Me.GridColumn4.Name = "GridColumn4"
         Me.GridColumn4.Visible = True
-        Me.GridColumn4.VisibleIndex = 4
+        Me.GridColumn4.VisibleIndex = 5
         '
         'GridColumn5
         '
@@ -177,6 +178,46 @@ Partial Class frmRecoverySummary
         Me.GridColumn10.Visible = True
         Me.GridColumn10.VisibleIndex = 11
         '
+        'GridColumn11
+        '
+        Me.GridColumn11.Caption = "DEC"
+        Me.GridColumn11.FieldName = "DEC"
+        Me.GridColumn11.Name = "GridColumn11"
+        Me.GridColumn11.Visible = True
+        Me.GridColumn11.VisibleIndex = 12
+        '
+        'GridColumn12
+        '
+        Me.GridColumn12.Caption = "JAN"
+        Me.GridColumn12.FieldName = "JAN"
+        Me.GridColumn12.Name = "GridColumn12"
+        Me.GridColumn12.Visible = True
+        Me.GridColumn12.VisibleIndex = 13
+        '
+        'GridColumn13
+        '
+        Me.GridColumn13.Caption = "FEB"
+        Me.GridColumn13.FieldName = "FEB"
+        Me.GridColumn13.Name = "GridColumn13"
+        Me.GridColumn13.Visible = True
+        Me.GridColumn13.VisibleIndex = 14
+        '
+        'GridColumn14
+        '
+        Me.GridColumn14.Caption = "Work Type"
+        Me.GridColumn14.FieldName = "WorkType"
+        Me.GridColumn14.Name = "GridColumn14"
+        Me.GridColumn14.Visible = True
+        Me.GridColumn14.VisibleIndex = 1
+        '
+        'GridColumn15
+        '
+        Me.GridColumn15.Caption = "Amount (Rs)"
+        Me.GridColumn15.FieldName = "Amount"
+        Me.GridColumn15.Name = "GridColumn15"
+        Me.GridColumn15.Visible = True
+        Me.GridColumn15.VisibleIndex = 4
+        '
         'leYear
         '
         Me.leYear.Location = New System.Drawing.Point(49, 43)
@@ -202,7 +243,7 @@ Partial Class frmRecoverySummary
         '
         'sbPrint
         '
-        Me.sbPrint.Location = New System.Drawing.Point(12, 459)
+        Me.sbPrint.Location = New System.Drawing.Point(12, 623)
         Me.sbPrint.Name = "sbPrint"
         Me.sbPrint.Size = New System.Drawing.Size(196, 31)
         Me.sbPrint.StyleController = Me.LayoutControl1
@@ -215,7 +256,7 @@ Partial Class frmRecoverySummary
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.EmptySpaceItem3, Me.LayoutControlGroup2, Me.LayoutControlItem2})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "Root"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(813, 502)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(1597, 666)
         Me.LayoutControlGroup1.Text = "Root"
         Me.LayoutControlGroup1.TextVisible = False
         '
@@ -223,11 +264,11 @@ Partial Class frmRecoverySummary
         '
         Me.LayoutControlItem3.Control = Me.sbPrint
         Me.LayoutControlItem3.CustomizationFormText = "LayoutControlItem3"
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 447)
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 611)
         Me.LayoutControlItem3.MaxSize = New System.Drawing.Size(200, 35)
         Me.LayoutControlItem3.MinSize = New System.Drawing.Size(200, 35)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(793, 35)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(1577, 35)
         Me.LayoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem3.Text = "LayoutControlItem3"
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
@@ -240,7 +281,7 @@ Partial Class frmRecoverySummary
         Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
         Me.EmptySpaceItem3.Location = New System.Drawing.Point(324, 0)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(469, 69)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(1253, 69)
         Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -287,57 +328,24 @@ Partial Class frmRecoverySummary
         Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
         Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 69)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(793, 378)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(1577, 542)
         Me.LayoutControlItem2.Text = "LayoutControlItem2"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextToControlDistance = 0
         Me.LayoutControlItem2.TextVisible = False
         '
-        'GridColumn11
+        'GridColumn16
         '
-        Me.GridColumn11.Caption = "DEC"
-        Me.GridColumn11.FieldName = "DEC"
-        Me.GridColumn11.Name = "GridColumn11"
-        Me.GridColumn11.Visible = True
-        Me.GridColumn11.VisibleIndex = 12
-        '
-        'GridColumn12
-        '
-        Me.GridColumn12.Caption = "JAN"
-        Me.GridColumn12.FieldName = "JAN"
-        Me.GridColumn12.Name = "GridColumn12"
-        Me.GridColumn12.Visible = True
-        Me.GridColumn12.VisibleIndex = 13
-        '
-        'GridColumn13
-        '
-        Me.GridColumn13.Caption = "FEB"
-        Me.GridColumn13.FieldName = "FEB"
-        Me.GridColumn13.Name = "GridColumn13"
-        Me.GridColumn13.Visible = True
-        Me.GridColumn13.VisibleIndex = 14
-        '
-        'GridColumn14
-        '
-        Me.GridColumn14.Caption = "Work Type"
-        Me.GridColumn14.FieldName = "WorkType"
-        Me.GridColumn14.Name = "GridColumn14"
-        Me.GridColumn14.Visible = True
-        Me.GridColumn14.VisibleIndex = 2
-        '
-        'GridColumn15
-        '
-        Me.GridColumn15.Caption = "Amount"
-        Me.GridColumn15.FieldName = "Amount"
-        Me.GridColumn15.Name = "GridColumn15"
-        Me.GridColumn15.Visible = True
-        Me.GridColumn15.VisibleIndex = 5
+        Me.GridColumn16.Caption = "Remarks"
+        Me.GridColumn16.Name = "GridColumn16"
+        Me.GridColumn16.Visible = True
+        Me.GridColumn16.VisibleIndex = 15
         '
         'frmRecoverySummary
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(813, 502)
+        Me.ClientSize = New System.Drawing.Size(1597, 666)
         Me.Controls.Add(Me.LayoutControl1)
         Me.KeyPreview = True
         Me.Name = "frmRecoverySummary"
@@ -388,4 +396,5 @@ Partial Class frmRecoverySummary
     Friend WithEvents GridColumn13 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn14 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn15 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn16 As DevExpress.XtraGrid.Columns.GridColumn
 End Class
