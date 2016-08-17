@@ -59,6 +59,13 @@
             Dim dt7 As DataTable
             Dim dt8 As DataTable
 
+            Dim dt9 As DataTable
+            Dim dt10 As DataTable
+            Dim dt11 As DataTable
+            Dim dt12 As DataTable
+            Dim dt13 As DataTable
+            Dim dt14 As DataTable
+
             dt1 = ds.Tables(0)
             dt2 = ds.Tables(1)
             dt3 = ds.Tables(2)
@@ -67,6 +74,13 @@
             dt6 = ds.Tables(5)
             dt7 = ds.Tables(6)
             dt8 = ds.Tables(7)
+
+            dt9 = ds.Tables(8)
+            dt10 = ds.Tables(9)
+            dt11 = ds.Tables(10)
+            dt12 = ds.Tables(11)
+            dt13 = ds.Tables(12)
+            dt14 = ds.Tables(13)
 
 
 
@@ -351,8 +365,8 @@
 
                         End If
 
-                        If dt8.Rows(i)("Description").ToString() = "ELECTRICITY BILL - BUNGALOW" Then
-
+                        '  If dt8.Rows(i)("Description").ToString() = "ELECTRICITY BILL - BUNGALOW" Then
+                        If dt8.Rows(i)("Description").ToString() = "ELECTRICITY" Then
                             report.xrElectricity.Text = FormatNumber(dt8.Rows(i)("OtherExpense").ToString(), 2, TriState.True)
 
                         End If
@@ -371,7 +385,7 @@
                         End If
 
 
-                        If dt8.Rows(i)("Description").ToString() = "OTHER" Then
+                        If dt8.Rows(i)("Description").ToString() = "MIX" Then
 
                             report.xrOtherExp.Text = FormatNumber(dt8.Rows(i)("OtherExpense").ToString(), 2, TriState.True)
 
@@ -415,6 +429,51 @@
                 '---------------------------------------------------------------------------------
             End If
             '**
+
+            If (dt9.Rows.Count > 0) Then
+                report.xrtFW.Text = dt9.Rows(0)("FW").ToString()
+            End If
+
+            If (dt10.Rows.Count > 0) Then
+                report.xrtPW.Text = dt10.Rows(0)("RW").ToString()
+                report.xrtAVC.Text = dt10.Rows(0)("RW").ToString()
+            End If
+
+            report.xrtEXCESS.Text = Val(report.xrtFW.Text) - Val(report.xrtPW.Text)
+
+            If (dt11.Rows.Count > 0) Then
+                report.xrtAVP.Text = FormatNumber(dt11.Rows(0)("PLUCKER").ToString(), 0)
+            End If
+
+            report.xrtAVG.Text = FormatNumber(Val(report.xrtPW.Text) / Val(report.xrtAVP.Text), 2, TriState.True)
+
+
+
+
+
+
+            If (dt11.Rows.Count > 0) Then
+                report.xrtPL.Text = FormatNumber(dt11.Rows(0)("PLUCKER").ToString(), 0)
+            End If
+
+
+            If (dt12.Rows.Count > 0) Then
+                report.xrtSU.Text = FormatNumber(dt12.Rows(0)("SUNDRAY").ToString(), 0)
+            End If
+
+
+            If (dt13.Rows.Count > 0) Then
+                report.xrtWT.Text = FormatNumber(dt13.Rows(0)("WATCHER").ToString(), 0)
+            End If
+
+
+
+            If (dt14.Rows.Count > 0) Then
+                report.xrtST.Text = FormatNumber(dt14.Rows(0)("STAFF").ToString(), 0)
+            End If
+
+            report.xrtTO.Text = FormatNumber(Val(report.xrtPL.Text) + Val(report.xrtSU.Text) + Val(report.xrtWT.Text) + Val(report.xrtST.Text), 0, TriState.False)
+
 
             report.CreateDocument()
             report.BringToFront()
