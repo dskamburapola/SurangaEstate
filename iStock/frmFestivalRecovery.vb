@@ -433,7 +433,7 @@ Public Class frmFestivalRecovery
         Try
 
             Me.leFestival.Properties.DataSource = iStockDailyWorking.GetFestivalAdvance.Tables(0)
-            Me.leFestival.Properties.DisplayMember = "Description"
+            Me.leFestival.Properties.DisplayMember = "TDdescription"
             Me.leFestival.Properties.ValueMember = "TermDeductionID"
 
 

@@ -197,7 +197,8 @@ Public Class frmCheckRoll
             Dim selectedMonth, selectedYear As String
             selectedMonth = meMonth.EditValue
             selectedYear = leYear.EditValue
-            currentDate = Convert.ToDateTime("01-" + selectedMonth + "-" + selectedYear)
+            '   currentDate = Convert.ToDateTime("01-" + selectedMonth + "-" + selectedYear)
+            currentDate = Convert.ToDateTime(selectedYear + "-" + selectedMonth + "-" + "01")
 
             Dim ds As New DataSet
 
