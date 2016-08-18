@@ -85,7 +85,7 @@ Public Class frmRecoverySummary
 
 #Region "Print Preview"
     Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
-        PrintPreview(gcFieldPerfomance, "Field Performance - " + leYear.Text)
+        PrintPreview(gcFieldPerfomance, "Festival Recovery - " + leYear.Text)
     End Sub
 #End Region
 
@@ -99,13 +99,14 @@ Public Class frmRecoverySummary
             Dim selectedYear As String
 
             selectedYear = leYear.EditValue
-            currentDate = Convert.ToDateTime("01-" + "October-" + selectedYear)
+            ' currentDate = Convert.ToDateTime("01-" + "October-" + selectedYear)
 
             
             Dim ds As New DataSet
 
-            ds = iStockDailyWorking.FeildPerformanceReport(currentDate)
+            ds = iStockDailyWorking.RecoverySummary(selectedYear)
             gcFieldPerfomance.DataSource = ds.Tables(0)
+            gvFieldPerformance.BestFitColumns()
 
         End If
 

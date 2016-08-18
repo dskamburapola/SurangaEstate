@@ -1,0 +1,18 @@
+ALTER PROCEDURE [dbo].[RecoverySummary]
+
+ @year int
+
+AS
+Select E.EPFNo, E.Designation, E.EmployerNo, E.EmployerName,TD.TDAmount as Amount,  Z.*,'' as Remarks from tblEmployers E
+inner join  [dbo].[tblTermDeductions] TD on TD.EmployerID=E.EmployerID
+
+
+inner join (
+
+select * from 
+(
+	select TermDeductionID, LEFT(DATENAME(MONTH,[IssueDate]),3) MN,AdvanceAmount from [tblFestivalRecovery]
+)	as X
+
+pivot (max(AdvanceAmount) for MN in ([May],[Jun],[Jul],[Aug],[Sep],[Oct],[Nov],[Dec],[Jan],[Feb],[Mar])) as Y
+) Z on TD.TermDeductionID = Z.TermDeductionID

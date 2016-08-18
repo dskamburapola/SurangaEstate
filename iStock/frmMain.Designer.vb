@@ -134,7 +134,7 @@ Partial Class frmMain
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage4, Me.RibbonPage3, Me.RibbonPage5})
         Me.RibbonControl.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemPictureEdit1})
         Me.RibbonControl.ShowToolbarCustomizeItem = False
-        Me.RibbonControl.Size = New System.Drawing.Size(1691, 144)
+        Me.RibbonControl.Size = New System.Drawing.Size(1368, 144)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar1
         Me.RibbonControl.Toolbar.ShowCustomizeItem = False
         '
@@ -507,7 +507,7 @@ Partial Class frmMain
         '
         'BarButtonItem48
         '
-        Me.BarButtonItem48.Caption = "Festival Recovery Summary"
+        Me.BarButtonItem48.Caption = "Festival Recovery"
         Me.BarButtonItem48.Id = 57
         Me.BarButtonItem48.LargeGlyph = Global.iStock.My.Resources.Resources.Magenta
         Me.BarButtonItem48.Name = "BarButtonItem48"
@@ -683,7 +683,7 @@ Partial Class frmMain
         Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 486)
         Me.RibbonStatusBar1.Name = "RibbonStatusBar1"
         Me.RibbonStatusBar1.Ribbon = Me.RibbonControl
-        Me.RibbonStatusBar1.Size = New System.Drawing.Size(1691, 31)
+        Me.RibbonStatusBar1.Size = New System.Drawing.Size(1368, 31)
         '
         'frmMain
         '
@@ -693,7 +693,7 @@ Partial Class frmMain
         Me.Appearance.Options.UseFont = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1691, 517)
+        Me.ClientSize = New System.Drawing.Size(1368, 517)
         Me.Controls.Add(Me.RibbonStatusBar1)
         Me.Controls.Add(Me.RibbonControl)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
