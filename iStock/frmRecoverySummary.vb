@@ -108,6 +108,14 @@ Public Class frmRecoverySummary
             gcFieldPerfomance.DataSource = ds.Tables(0)
             gvFieldPerformance.BestFitColumns()
 
+
+            Dim Total As String
+            Total = Convert.ToDecimal(grdMay.SummaryText) + Convert.ToDecimal(grdMay.SummaryText) + Convert.ToDecimal(grdJun.SummaryText) + Convert.ToDecimal(grdJul.SummaryText) + Convert.ToDecimal(grdAug.SummaryText) + Convert.ToDecimal(grdSep.SummaryText) + Convert.ToDecimal(grdOct.SummaryText) + Convert.ToDecimal(grdNov.SummaryText) + Convert.ToDecimal(grdDec.SummaryText) + Convert.ToDecimal(grdJan.SummaryText) + Convert.ToDecimal(grdFeb.SummaryText)
+
+
+            Dim item As GridColumnSummaryItem = New GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, "Remarks", Total.ToString)
+            gvFieldPerformance.Columns("Remarks").Summary.Add(item)
+
         End If
 
 

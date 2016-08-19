@@ -29,17 +29,17 @@ Partial Class frmRecoverySummary
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn15 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn10 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn16 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.grdMay = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.grdJun = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.grdJul = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.grdAug = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.grdSep = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.grdOct = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.grdNov = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.grdDec = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.grdJan = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.grdFeb = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.grdRemarks = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.leYear = New DevExpress.XtraEditors.LookUpEdit()
         Me.sbGenerate = New DevExpress.XtraEditors.SimpleButton()
         Me.sbPrint = New DevExpress.XtraEditors.SimpleButton()
@@ -91,7 +91,7 @@ Partial Class frmRecoverySummary
         '
         'gvFieldPerformance
         '
-        Me.gvFieldPerformance.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn2, Me.GridColumn14, Me.GridColumn1, Me.GridColumn3, Me.GridColumn15, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn16})
+        Me.gvFieldPerformance.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn2, Me.GridColumn14, Me.GridColumn1, Me.GridColumn3, Me.GridColumn15, Me.grdMay, Me.grdJun, Me.grdJul, Me.grdAug, Me.grdSep, Me.grdOct, Me.grdNov, Me.grdDec, Me.grdJan, Me.grdFeb, Me.grdRemarks})
         Me.gvFieldPerformance.GridControl = Me.gcFieldPerfomance
         Me.gvFieldPerformance.Name = "gvFieldPerformance"
         Me.gvFieldPerformance.OptionsBehavior.Editable = False
@@ -141,103 +141,103 @@ Partial Class frmRecoverySummary
         Me.GridColumn15.Visible = True
         Me.GridColumn15.VisibleIndex = 4
         '
-        'GridColumn4
+        'grdMay
         '
-        Me.GridColumn4.Caption = "MAY"
-        Me.GridColumn4.FieldName = "May"
-        Me.GridColumn4.Name = "GridColumn4"
-        Me.GridColumn4.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
-        Me.GridColumn4.Visible = True
-        Me.GridColumn4.VisibleIndex = 5
+        Me.grdMay.Caption = "MAY"
+        Me.grdMay.FieldName = "May"
+        Me.grdMay.Name = "grdMay"
+        Me.grdMay.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
+        Me.grdMay.Visible = True
+        Me.grdMay.VisibleIndex = 5
         '
-        'GridColumn5
+        'grdJun
         '
-        Me.GridColumn5.Caption = "JUN"
-        Me.GridColumn5.FieldName = "Jun"
-        Me.GridColumn5.Name = "GridColumn5"
-        Me.GridColumn5.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
-        Me.GridColumn5.Visible = True
-        Me.GridColumn5.VisibleIndex = 6
+        Me.grdJun.Caption = "JUN"
+        Me.grdJun.FieldName = "Jun"
+        Me.grdJun.Name = "grdJun"
+        Me.grdJun.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
+        Me.grdJun.Visible = True
+        Me.grdJun.VisibleIndex = 6
         '
-        'GridColumn6
+        'grdJul
         '
-        Me.GridColumn6.Caption = "JUL"
-        Me.GridColumn6.FieldName = "Jul"
-        Me.GridColumn6.Name = "GridColumn6"
-        Me.GridColumn6.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
-        Me.GridColumn6.Visible = True
-        Me.GridColumn6.VisibleIndex = 7
+        Me.grdJul.Caption = "JUL"
+        Me.grdJul.FieldName = "Jul"
+        Me.grdJul.Name = "grdJul"
+        Me.grdJul.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
+        Me.grdJul.Visible = True
+        Me.grdJul.VisibleIndex = 7
         '
-        'GridColumn7
+        'grdAug
         '
-        Me.GridColumn7.Caption = "AUG"
-        Me.GridColumn7.FieldName = "Aug"
-        Me.GridColumn7.Name = "GridColumn7"
-        Me.GridColumn7.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
-        Me.GridColumn7.Visible = True
-        Me.GridColumn7.VisibleIndex = 8
+        Me.grdAug.Caption = "AUG"
+        Me.grdAug.FieldName = "Aug"
+        Me.grdAug.Name = "grdAug"
+        Me.grdAug.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
+        Me.grdAug.Visible = True
+        Me.grdAug.VisibleIndex = 8
         '
-        'GridColumn8
+        'grdSep
         '
-        Me.GridColumn8.Caption = "SEP"
-        Me.GridColumn8.FieldName = "Sep"
-        Me.GridColumn8.Name = "GridColumn8"
-        Me.GridColumn8.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
-        Me.GridColumn8.Visible = True
-        Me.GridColumn8.VisibleIndex = 9
+        Me.grdSep.Caption = "SEP"
+        Me.grdSep.FieldName = "Sep"
+        Me.grdSep.Name = "grdSep"
+        Me.grdSep.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
+        Me.grdSep.Visible = True
+        Me.grdSep.VisibleIndex = 9
         '
-        'GridColumn9
+        'grdOct
         '
-        Me.GridColumn9.Caption = "OCT"
-        Me.GridColumn9.FieldName = "Oct"
-        Me.GridColumn9.Name = "GridColumn9"
-        Me.GridColumn9.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
-        Me.GridColumn9.Visible = True
-        Me.GridColumn9.VisibleIndex = 10
+        Me.grdOct.Caption = "OCT"
+        Me.grdOct.FieldName = "Oct"
+        Me.grdOct.Name = "grdOct"
+        Me.grdOct.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
+        Me.grdOct.Visible = True
+        Me.grdOct.VisibleIndex = 10
         '
-        'GridColumn10
+        'grdNov
         '
-        Me.GridColumn10.Caption = "NOV"
-        Me.GridColumn10.FieldName = "Nov"
-        Me.GridColumn10.Name = "GridColumn10"
-        Me.GridColumn10.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
-        Me.GridColumn10.Visible = True
-        Me.GridColumn10.VisibleIndex = 11
+        Me.grdNov.Caption = "NOV"
+        Me.grdNov.FieldName = "Nov"
+        Me.grdNov.Name = "grdNov"
+        Me.grdNov.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
+        Me.grdNov.Visible = True
+        Me.grdNov.VisibleIndex = 11
         '
-        'GridColumn11
+        'grdDec
         '
-        Me.GridColumn11.Caption = "DEC"
-        Me.GridColumn11.FieldName = "Dec"
-        Me.GridColumn11.Name = "GridColumn11"
-        Me.GridColumn11.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
-        Me.GridColumn11.Visible = True
-        Me.GridColumn11.VisibleIndex = 12
+        Me.grdDec.Caption = "DEC"
+        Me.grdDec.FieldName = "Dec"
+        Me.grdDec.Name = "grdDec"
+        Me.grdDec.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
+        Me.grdDec.Visible = True
+        Me.grdDec.VisibleIndex = 12
         '
-        'GridColumn12
+        'grdJan
         '
-        Me.GridColumn12.Caption = "JAN"
-        Me.GridColumn12.FieldName = "Jan"
-        Me.GridColumn12.Name = "GridColumn12"
-        Me.GridColumn12.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
-        Me.GridColumn12.Visible = True
-        Me.GridColumn12.VisibleIndex = 13
+        Me.grdJan.Caption = "JAN"
+        Me.grdJan.FieldName = "Jan"
+        Me.grdJan.Name = "grdJan"
+        Me.grdJan.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
+        Me.grdJan.Visible = True
+        Me.grdJan.VisibleIndex = 13
         '
-        'GridColumn13
+        'grdFeb
         '
-        Me.GridColumn13.Caption = "FEB"
-        Me.GridColumn13.FieldName = "Feb"
-        Me.GridColumn13.Name = "GridColumn13"
-        Me.GridColumn13.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
-        Me.GridColumn13.Visible = True
-        Me.GridColumn13.VisibleIndex = 14
+        Me.grdFeb.Caption = "FEB"
+        Me.grdFeb.FieldName = "Feb"
+        Me.grdFeb.Name = "grdFeb"
+        Me.grdFeb.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
+        Me.grdFeb.Visible = True
+        Me.grdFeb.VisibleIndex = 14
         '
-        'GridColumn16
+        'grdRemarks
         '
-        Me.GridColumn16.Caption = "Remarks"
-        Me.GridColumn16.FieldName = "Remarks"
-        Me.GridColumn16.Name = "GridColumn16"
-        Me.GridColumn16.Visible = True
-        Me.GridColumn16.VisibleIndex = 15
+        Me.grdRemarks.Caption = "Remarks"
+        Me.grdRemarks.FieldName = "Remarks"
+        Me.grdRemarks.Name = "grdRemarks"
+        Me.grdRemarks.Visible = True
+        Me.grdRemarks.VisibleIndex = 15
         '
         'leYear
         '
@@ -398,17 +398,17 @@ Partial Class frmRecoverySummary
     Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn2 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn3 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn4 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn5 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn6 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn7 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn8 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn9 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn10 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn11 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn12 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn13 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents grdMay As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents grdJun As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents grdJul As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents grdAug As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents grdSep As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents grdOct As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents grdNov As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents grdDec As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents grdJan As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents grdFeb As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn14 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn15 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn16 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents grdRemarks As DevExpress.XtraGrid.Columns.GridColumn
 End Class
