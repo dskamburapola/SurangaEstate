@@ -20,7 +20,7 @@ Partial Class frmWorkDayShedule
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim CompareAgainstControlValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule = New DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule()
+        Dim CompareAgainstControlValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule = New DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule()
         Me.deFromDate = New DevExpress.XtraEditors.DateEdit()
         Me.LayoutControl2 = New DevExpress.XtraLayout.LayoutControl()
         Me.sbProcess = New DevExpress.XtraEditors.SimpleButton()
@@ -176,10 +176,10 @@ Partial Class frmWorkDayShedule
         Me.deToDate.Size = New System.Drawing.Size(119, 20)
         Me.deToDate.StyleController = Me.LayoutControl2
         Me.deToDate.TabIndex = 1
-        CompareAgainstControlValidationRule1.CompareControlOperator = DevExpress.XtraEditors.DXErrorProvider.CompareControlOperator.GreaterOrEqual
-        CompareAgainstControlValidationRule1.Control = Me.deFromDate
-        CompareAgainstControlValidationRule1.ErrorText = "Value must be a recent Date"
-        Me.dxvpHistoryData.SetValidationRule(Me.deToDate, CompareAgainstControlValidationRule1)
+        CompareAgainstControlValidationRule2.CompareControlOperator = DevExpress.XtraEditors.DXErrorProvider.CompareControlOperator.GreaterOrEqual
+        CompareAgainstControlValidationRule2.Control = Me.deFromDate
+        CompareAgainstControlValidationRule2.ErrorText = "Value must be a recent Date"
+        Me.dxvpHistoryData.SetValidationRule(Me.deToDate, CompareAgainstControlValidationRule2)
         '
         'gcExpenses
         '
@@ -481,16 +481,19 @@ Partial Class frmWorkDayShedule
         '
         'txtYearName
         '
-        Me.txtYearName.Location = New System.Drawing.Point(277, 71)
+        Me.txtYearName.Enabled = False
+        Me.txtYearName.Location = New System.Drawing.Point(265, 107)
         Me.txtYearName.MenuManager = Me.BarManager1
         Me.txtYearName.Name = "txtYearName"
-        Me.txtYearName.Size = New System.Drawing.Size(288, 20)
+        Me.txtYearName.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!)
+        Me.txtYearName.Properties.Appearance.Options.UseFont = True
+        Me.txtYearName.Size = New System.Drawing.Size(312, 26)
         Me.txtYearName.StyleController = Me.LayoutControl1
         Me.txtYearName.TabIndex = 7
         '
         'txtWorkDayID
         '
-        Me.txtWorkDayID.Location = New System.Drawing.Point(277, 95)
+        Me.txtWorkDayID.Location = New System.Drawing.Point(277, 71)
         Me.txtWorkDayID.MenuManager = Me.BarManager1
         Me.txtWorkDayID.Name = "txtWorkDayID"
         Me.txtWorkDayID.Size = New System.Drawing.Size(288, 20)
@@ -499,12 +502,12 @@ Partial Class frmWorkDayShedule
         '
         'gcWorkDay
         '
-        Me.gcWorkDay.Location = New System.Drawing.Point(166, 170)
+        Me.gcWorkDay.Location = New System.Drawing.Point(166, 154)
         Me.gcWorkDay.MainView = Me.gvWorkDay
         Me.gcWorkDay.MenuManager = Me.BarManager1
         Me.gcWorkDay.Name = "gcWorkDay"
         Me.gcWorkDay.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1})
-        Me.gcWorkDay.Size = New System.Drawing.Size(411, 116)
+        Me.gcWorkDay.Size = New System.Drawing.Size(411, 128)
         Me.gcWorkDay.TabIndex = 5
         Me.gcWorkDay.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvWorkDay})
         '
@@ -541,7 +544,7 @@ Partial Class frmWorkDayShedule
         Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
         Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup1.GroupBordersVisible = False
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.EmptySpaceItem1, Me.EmptySpaceItem3, Me.EmptySpaceItem4, Me.EmptySpaceItem5, Me.LayoutControlItem2, Me.EmptySpaceItem6, Me.EmptySpaceItem7, Me.EmptySpaceItem8, Me.LayoutControlGroup4})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.EmptySpaceItem1, Me.EmptySpaceItem3, Me.EmptySpaceItem4, Me.EmptySpaceItem5, Me.LayoutControlItem2, Me.EmptySpaceItem6, Me.EmptySpaceItem7, Me.EmptySpaceItem8, Me.LayoutControlGroup4, Me.LayoutControlItem4})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(749, 439)
@@ -562,9 +565,9 @@ Partial Class frmWorkDayShedule
         '
         Me.EmptySpaceItem3.AllowHotTrack = False
         Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(154, 119)
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(154, 125)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(415, 39)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(415, 17)
         Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -592,9 +595,9 @@ Partial Class frmWorkDayShedule
         '
         Me.LayoutControlItem2.Control = Me.gcWorkDay
         Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(154, 158)
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(154, 142)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(415, 120)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(415, 132)
         Me.LayoutControlItem2.Text = "LayoutControlItem2"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextToControlDistance = 0
@@ -614,9 +617,9 @@ Partial Class frmWorkDayShedule
         '
         Me.EmptySpaceItem7.AllowHotTrack = False
         Me.EmptySpaceItem7.CustomizationFormText = "EmptySpaceItem7"
-        Me.EmptySpaceItem7.Location = New System.Drawing.Point(154, 278)
+        Me.EmptySpaceItem7.Location = New System.Drawing.Point(154, 274)
         Me.EmptySpaceItem7.Name = "EmptySpaceItem7"
-        Me.EmptySpaceItem7.Size = New System.Drawing.Size(415, 10)
+        Me.EmptySpaceItem7.Size = New System.Drawing.Size(415, 11)
         Me.EmptySpaceItem7.Text = "EmptySpaceItem7"
         Me.EmptySpaceItem7.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -624,19 +627,19 @@ Partial Class frmWorkDayShedule
         '
         Me.EmptySpaceItem8.AllowHotTrack = False
         Me.EmptySpaceItem8.CustomizationFormText = "EmptySpaceItem8"
-        Me.EmptySpaceItem8.Location = New System.Drawing.Point(154, 288)
+        Me.EmptySpaceItem8.Location = New System.Drawing.Point(154, 285)
         Me.EmptySpaceItem8.Name = "EmptySpaceItem8"
-        Me.EmptySpaceItem8.Size = New System.Drawing.Size(415, 29)
+        Me.EmptySpaceItem8.Size = New System.Drawing.Size(415, 32)
         Me.EmptySpaceItem8.Text = "EmptySpaceItem8"
         Me.EmptySpaceItem8.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlGroup4
         '
         Me.LayoutControlGroup4.CustomizationFormText = "LayoutControlGroup4"
-        Me.LayoutControlGroup4.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem4, Me.LayoutControlItem3})
+        Me.LayoutControlGroup4.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3})
         Me.LayoutControlGroup4.Location = New System.Drawing.Point(154, 28)
         Me.LayoutControlGroup4.Name = "LayoutControlGroup4"
-        Me.LayoutControlGroup4.Size = New System.Drawing.Size(415, 91)
+        Me.LayoutControlGroup4.Size = New System.Drawing.Size(415, 67)
         Me.LayoutControlGroup4.Text = "LayoutControlGroup4"
         Me.LayoutControlGroup4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
@@ -644,18 +647,17 @@ Partial Class frmWorkDayShedule
         '
         Me.LayoutControlItem4.Control = Me.txtYearName
         Me.LayoutControlItem4.CustomizationFormText = "LayoutControlItem4"
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(154, 95)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(391, 24)
-        Me.LayoutControlItem4.Text = "LayoutControlItem4"
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(415, 30)
+        Me.LayoutControlItem4.Text = "Active year   "
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(96, 13)
-        Me.LayoutControlItem4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
         'LayoutControlItem3
         '
         Me.LayoutControlItem3.Control = Me.txtWorkDayID
         Me.LayoutControlItem3.CustomizationFormText = "LayoutControlItem3"
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 24)
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
         Me.LayoutControlItem3.Size = New System.Drawing.Size(391, 24)
         Me.LayoutControlItem3.Text = "LayoutControlItem3"

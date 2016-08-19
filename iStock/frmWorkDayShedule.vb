@@ -239,12 +239,24 @@ Public Class frmWorkDayShedule
 
     Private Sub bbNewYear_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbNew.ItemClick
         If Date.Now.Year.ToString = txtYearName.Text Then
-            MsgBox("Year already created.")
+            MessageBox.Show("Workday Shedule for Year " + Date.Now.Year.ToString + " already created.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information)
         ElseIf Convert.ToInt32(Date.Now.Year.ToString) = Convert.ToInt32(txtYearName.Text) + 1 Then
-            MsgBox("Proceed")
-            Me.SaveWorkDay()
-            Me.DisplayActiveYear()
-            Me.PopulateGrid()
+
+            Dim Result As Integer
+
+            Result = MessageBox.Show("Do you want to create Workday Shedule for year " + Date.Now.Year.ToString + ". This process can not undo. Do you want to proceed?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
+
+            'MsgBox(Result)
+
+            If Result = vbYes Then
+
+                'MsgBox("Proceed")
+                Me.SaveWorkDay()
+                Me.DisplayActiveYear()
+                Me.PopulateGrid()
+            End If
+
+
 
 
         Else
