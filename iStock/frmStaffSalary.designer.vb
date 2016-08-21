@@ -22,6 +22,8 @@ Partial Class frmStaffSalary
         Me.components = New System.ComponentModel.Container()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule4 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.xTab1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
@@ -67,7 +69,7 @@ Partial Class frmStaffSalary
         Me.LayoutControlGroup5 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.dxvpEmployers = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.dxvpStaffPay = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         Me.GridBand1 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
         Me.GridBand4 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
         Me.EmptySpaceItem5 = New DevExpress.XtraLayout.EmptySpaceItem()
@@ -101,7 +103,7 @@ Partial Class frmStaffSalary
         CType(Me.LayoutControlGroup5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dxvpEmployers, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dxvpStaffPay, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -157,6 +159,9 @@ Partial Class frmStaffSalary
         Me.ceDepartment.Size = New System.Drawing.Size(531, 20)
         Me.ceDepartment.StyleController = Me.LayoutControl1
         Me.ceDepartment.TabIndex = 0
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "Can not be Blank"
+        Me.dxvpStaffPay.SetValidationRule(Me.ceDepartment, ConditionValidationRule1)
         '
         'deDatePaid
         '
@@ -175,9 +180,9 @@ Partial Class frmStaffSalary
         Me.deDatePaid.Size = New System.Drawing.Size(531, 20)
         Me.deDatePaid.StyleController = Me.LayoutControl1
         Me.deDatePaid.TabIndex = 2
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "This value is not valid"
-        Me.dxvpEmployers.SetValidationRule(Me.deDatePaid, ConditionValidationRule1)
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule2.ErrorText = "This value is not valid"
+        Me.dxvpStaffPay.SetValidationRule(Me.deDatePaid, ConditionValidationRule2)
         '
         'seAmount
         '
@@ -191,9 +196,9 @@ Partial Class frmStaffSalary
         Me.seAmount.Size = New System.Drawing.Size(531, 20)
         Me.seAmount.StyleController = Me.LayoutControl1
         Me.seAmount.TabIndex = 4
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule2.ErrorText = "This value is not valid"
-        Me.dxvpEmployers.SetValidationRule(Me.seAmount, ConditionValidationRule2)
+        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule3.ErrorText = "This value is not valid"
+        Me.dxvpStaffPay.SetValidationRule(Me.seAmount, ConditionValidationRule3)
         '
         'leEmployee
         '
@@ -207,6 +212,9 @@ Partial Class frmStaffSalary
         Me.leEmployee.Size = New System.Drawing.Size(531, 20)
         Me.leEmployee.StyleController = Me.LayoutControl1
         Me.leEmployee.TabIndex = 3
+        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule4.ErrorText = "Can not be Blank"
+        Me.dxvpStaffPay.SetValidationRule(Me.leEmployee, ConditionValidationRule4)
         '
         'LayoutControlGroup1
         '
@@ -602,7 +610,7 @@ Partial Class frmStaffSalary
         CType(Me.LayoutControlGroup5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dxvpEmployers, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dxvpStaffPay, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -628,7 +636,7 @@ Partial Class frmStaffSalary
     Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents ceDepartment As DevExpress.XtraEditors.ComboBoxEdit
-    Friend WithEvents dxvpEmployers As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
+    Friend WithEvents dxvpStaffPay As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
     Friend WithEvents GridBand1 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
     Friend WithEvents GridBand4 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
     Friend WithEvents lblID As DevExpress.XtraEditors.LabelControl

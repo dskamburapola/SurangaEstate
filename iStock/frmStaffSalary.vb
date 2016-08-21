@@ -110,7 +110,7 @@ Public Class frmStaffSalary
 
 #Region "Bar Button Events"
     Private Sub bbSave_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbSave.ItemClick
-        If dxvpEmployers.Validate Then
+        If dxvpStaffPay.Validate Then
             If lblID.Text = String.Empty Then
 
                 CWBEmployers.EmployerNo = Mid(Me.leEmployee.Text.Trim, 1, 3)
@@ -132,8 +132,8 @@ Public Class frmStaffSalary
 
                     CWBEmployers.EmployerNo = Mid(Me.leEmployee.Text.Trim, 1, 3)
 
-                        Me.SaveRecords()
-            
+                    Me.SaveRecords()
+
                 End If
             End If
 
@@ -198,7 +198,7 @@ Public Class frmStaffSalary
 
         Try
             With CWBExpenses
-                .StaffPayID = 0 'Convert.ToInt64(IIf(lblID.Text = String.Empty, 0, lblID.Text))
+                .StaffPayID = Convert.ToInt64(IIf(lblID.Text = String.Empty, 0, lblID.Text))
 
                 .EmployerID = Convert.ToInt64(leEmployee.EditValue)
 
@@ -235,9 +235,11 @@ Public Class frmStaffSalary
     Private Sub Delete(ByVal EmployerID As Int64)
 
         Try
-            With CWBEmployers
-                .EmployerID = EmployerID
-                .Delete()
+            With CWBExpenses
+                .StaffPayID = Convert.ToInt64(IIf(lblID.Text = String.Empty, 0, lblID.Text))
+
+
+                .StaffPayDelete()
             End With
             Me.ClearFormData()
 
@@ -303,36 +305,12 @@ Public Class frmStaffSalary
 
     Private Sub ClearFormData()
         Try
-            'lblID.Text = String.Empty
-            'seEmployerNo.Text = String.Empty
-            'teEmployerName.Text = String.Empty
-            '' peEmployer.EditValue = DBNull.Value
-            'teAdressLine1.Text = String.Empty
-            'teAddressLine2.Text = String.Empty
-            'teCity.Text = String.Empty
-            'deDOB.EditValue = DBNull.Value
-            'deDatePaid.EditValue = DBNull.Value
-            'ceSex.Text = String.Empty
-            'teNICNo.Text = String.Empty
-            'teTelephone.Text = String.Empty
-            'ceDesignation.Text = String.Empty
-            'ceDepartment.Text = String.Empty
-            'teEmployerContactPerson.Text = String.Empty
-            'cmbIsResign.Text = String.Empty
-            'deResignDate.EditValue = DBNull.Value
-
-            ''seBasicSalary.Text = 0
-            ''seOTRate.Text = 0
-            ''seFixedAllowance.Text = 0
-            ''seOtherAllowance.Text = 0.0
-            ''seDeduction.Text = 0
-            'seAmount.Text = String.Empty
-            'dxvpEmployers.RemoveControlError(seEmployerNo)
-            'dxvpEmployers.RemoveControlError(teEmployerName)
-            'dxvpEmployers.RemoveControlError(ceSex)
-
-
-            'seEmployerNo.Focus()
+            lblID.Text = String.Empty
+            ceDepartment.Text = String.Empty
+            deDatePaid.EditValue = String.Empty
+            leEmployee.EditValue = DBNull.Value
+            seAmount.Text = String.Empty
+           
         Catch ex As Exception
             MessageError(ex.ToString)
         End Try

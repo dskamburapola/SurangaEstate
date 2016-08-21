@@ -158,7 +158,7 @@
     Public Shared STAFFPAY_INSERT As String = "StaffPay_Insert"
     Public Shared STAFFPAY_GETALL As String = "StaffPay_GetAll"
     Public Shared GETSTAFFPAYBYID As String = "GetStaffPayByID"
-
+    Public Shared STAFFPAY_DELETE As String = "StaffPay_Delete"
 
     Public Shared SUPPLIERS_DELETE As String = "Suppliers_Delete"
     Public Shared SUPPLIERS_GETALL As String = "Suppliers_GetAll"

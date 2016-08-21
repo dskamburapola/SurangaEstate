@@ -60,6 +60,10 @@ Partial Public Class xrMonthlyReport
         Me.XrTable5 = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow57 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell115 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableRow58 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell63 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell89 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell99 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow64 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell142 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.xrtPL = New DevExpress.XtraReports.UI.XRTableCell()
@@ -329,10 +333,6 @@ Partial Public Class xrMonthlyReport
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.PageHeader = New DevExpress.XtraReports.UI.PageHeaderBand()
         Me.PageFooter = New DevExpress.XtraReports.UI.PageFooterBand()
-        Me.XrTableRow58 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell63 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell89 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell99 = New DevExpress.XtraReports.UI.XRTableCell()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -639,6 +639,27 @@ Partial Public Class xrMonthlyReport
         Me.XrTableCell115.Text = "RATIO OF WORKER'S"
         Me.XrTableCell115.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
         Me.XrTableCell115.Weight = 2.4751970088448645R
+        '
+        'XrTableRow58
+        '
+        Me.XrTableRow58.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell63, Me.XrTableCell89, Me.XrTableCell99})
+        Me.XrTableRow58.Name = "XrTableRow58"
+        Me.XrTableRow58.Weight = 1.0R
+        '
+        'XrTableCell63
+        '
+        Me.XrTableCell63.Name = "XrTableCell63"
+        Me.XrTableCell63.Weight = 1.0449532764014147R
+        '
+        'XrTableCell89
+        '
+        Me.XrTableCell89.Name = "XrTableCell89"
+        Me.XrTableCell89.Weight = 0.59044806311792608R
+        '
+        'XrTableCell99
+        '
+        Me.XrTableCell99.Name = "XrTableCell99"
+        Me.XrTableCell99.Weight = 0.83979566932552341R
         '
         'XrTableRow64
         '
@@ -1097,6 +1118,7 @@ Partial Public Class xrMonthlyReport
         '
         'XrTableCell14
         '
+        Me.XrTableCell14.CanGrow = False
         Me.XrTableCell14.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
         Me.XrTableCell14.Name = "XrTableCell14"
         Me.XrTableCell14.StylePriority.UseFont = False
@@ -2436,27 +2458,6 @@ Partial Public Class xrMonthlyReport
         'PageFooter
         '
         Me.PageFooter.Name = "PageFooter"
-        '
-        'XrTableRow58
-        '
-        Me.XrTableRow58.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell63, Me.XrTableCell89, Me.XrTableCell99})
-        Me.XrTableRow58.Name = "XrTableRow58"
-        Me.XrTableRow58.Weight = 1.0R
-        '
-        'XrTableCell63
-        '
-        Me.XrTableCell63.Name = "XrTableCell63"
-        Me.XrTableCell63.Weight = 1.0449532764014147R
-        '
-        'XrTableCell89
-        '
-        Me.XrTableCell89.Name = "XrTableCell89"
-        Me.XrTableCell89.Weight = 0.59044806311792608R
-        '
-        'XrTableCell99
-        '
-        Me.XrTableCell99.Name = "XrTableCell99"
-        Me.XrTableCell99.Weight = 0.83979566932552341R
         '
         'xrMonthlyReport
         '

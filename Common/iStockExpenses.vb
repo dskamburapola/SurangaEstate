@@ -300,6 +300,25 @@ Public Class iStockExpenses
     End Function
 #End Region
 
+
+#Region "Expense Delete"
+    Public Sub StaffPayDelete()
+
+        Try
+            Dim db As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = db.GetStoredProcCommand(STAFFPAY_DELETE)
+            db.AddInParameter(DBC, "@StaffPayID", DbType.Int64, Me.StaffPayID)
+            db.ExecuteNonQuery(DBC)
+
+        Catch ex As Exception
+            Throw
+
+        End Try
+
+    End Sub
+#End Region
+
+
 #Region "Expense Insert"
     Public Sub InsertExpnese(ByVal db As Database, ByVal transaction As DbTransaction)
 

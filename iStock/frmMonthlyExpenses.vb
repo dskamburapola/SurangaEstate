@@ -69,6 +69,13 @@
 
         If dxvpMonthlyReport.Validate Then
 
+            total = 0
+            FestivalAdvanceTotal = 0
+            PermanentAdvPay = 0
+            PermanentSalaryTotal = 0
+            CasualSalaryTotal = 0
+            StaffSalaryTotal = 0
+
 
             SubTotal1 = 0
 
@@ -1036,6 +1043,7 @@
             Dim r24 As New DevExpress.XtraReports.UI.XRTableRow
             r24 = report.xrMainTable.Rows("row24")
             r24.Cells("rGrandTotal").Text = FormatNumber((GrandTotal).ToString, 2, TriState.True)
+            r24.Cells("rGrandTotal").ForeColor = Color.Red
 
 
 
