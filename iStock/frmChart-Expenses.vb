@@ -135,8 +135,10 @@
         Dim OtherExpenseTotal As Decimal
 
         Dim ds As New DataSet
+
+
         PL.FromDate = currentDate
-        ds = PL.GetMonthlyExpenses()
+        ds = PL.GetMonthlyExpensesChart()
 
 
         Dim dt1 As DataTable 'Permenant Salary
@@ -154,6 +156,7 @@
         Dim dt13 As DataTable 'CashRewards
         Dim dt14 As DataTable 'Festival Advance - Casual
         Dim dt15 As DataTable 'Festival Advance - Staff
+        'Dim dt16 As DataTable 'Festival Advance - Other Exps
 
 
 
@@ -173,6 +176,7 @@
         dt13 = ds.Tables(12)
         dt14 = ds.Tables(13)
         dt15 = ds.Tables(14)
+        'dt16 = ds.Tables(15)
 
         If (ds IsNot Nothing And ds.Tables.Count > 0) Then
 
@@ -224,8 +228,8 @@
                 ETF_3 = ETF_3 + Convert.ToDecimal(dr("ETF_3").ToString)
             Next
 
-            'For Each dr As DataRow In ds.Tables(12).Rows
-            '    cashRewards = cashRewards + Convert.ToDecimal(dr("CashRewards").ToString)
+            'For Each dr As DataRow In ds.Tables(15).Rows
+            '    OtherExpenseTotal = OtherExpenseTotal + Convert.ToDecimal(dr("OtherExs").ToString)
             'Next
 
 

@@ -203,6 +203,24 @@ Public Class iStockProfitAndLoss
 
 #End Region
 
+#Region "Monthly Expenses"
+
+    Function GetMonthlyExpensesChart() As DataSet
+
+        Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+        Dim DBC As DbCommand = DB.GetStoredProcCommand("MonthlyExpenses_Chart")
+
+        DB.AddInParameter(DBC, "@ReportDate", DbType.Date, Me.FromDate)
+
+        Return DB.ExecuteDataSet(DBC)
+
+    End Function
+
+
+
+
+#End Region
+
 #Region "Monthly Income"
 
     Function GetMonthlyIncome() As DataSet

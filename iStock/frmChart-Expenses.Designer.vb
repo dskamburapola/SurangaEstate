@@ -19,7 +19,6 @@ Partial Class frmChart_Expenses
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim SimpleDiagram1 As DevExpress.XtraCharts.SimpleDiagram = New DevExpress.XtraCharts.SimpleDiagram()
         Dim Series1 As DevExpress.XtraCharts.Series = New DevExpress.XtraCharts.Series()
@@ -42,7 +41,7 @@ Partial Class frmChart_Expenses
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.dxvpCommon = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.dxvpCommon = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.meMonth.Properties, System.ComponentModel.ISupportInitialize).BeginInit()

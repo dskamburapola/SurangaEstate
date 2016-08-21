@@ -353,7 +353,7 @@
 
 
                 '---------------------------------------------------------------------------------
-
+                Dim OtherEx As Decimal
                 '**********************************************************
                 If (dt8.Rows.Count > 0) Then
 
@@ -385,15 +385,16 @@
                         End If
 
 
-                        If dt8.Rows(i)("Description").ToString() = "MIX" Then
+                        If dt8.Rows(i)("Description").ToString() <> "WATER" And dt8.Rows(i)("Description").ToString() <> "ELECTRICITY" And dt8.Rows(i)("Description").ToString() <> "MOTIVATION PAYMENTS" And dt8.Rows(i)("Description").ToString() <> "CASH REWARDS" Then
 
-                            report.xrOtherExp.Text = FormatNumber(dt8.Rows(i)("OtherExpense").ToString(), 2, TriState.True)
+                            OtherEx = OtherEx + Convert.ToDecimal(dt8.Rows(i)("OtherExpense").ToString())
+
 
                         End If
 
 
                     Next
-
+                    report.xrOtherExp.Text = FormatNumber(OtherEx, 2, TriState.True)
                     Dim wt, el, mo, cr, oth, toe As Decimal
 
                     wt = Convert.ToDecimal(report.xrWater.Text)
