@@ -125,7 +125,7 @@
                 report.xrEPF12.Text = FormatNumber(dt1.Rows(0)("EPF12Amt").ToString(), 2, TriState.True)
                 report.xrETF3.Text = FormatNumber(dt1.Rows(0)("ETF3Amt").ToString(), 2, TriState.True)
                 'report.xrOthers.Text = FormatNumber(dt1.Rows(0)("OthersAmt").ToString(), 2, TriState.True)
-                report.dff.Text = FormatNumber(dt1.Rows(0)("WaterExp").ToString(), 2, TriState.True)
+                ' report.dff.Text = FormatNumber(dt1.Rows(0)("WaterExp").ToString(), 2, TriState.True)
 
                 '   report.xrTotal.Text = FormatNumber(dt1.Rows(0)("Total").ToString(), 2, TriState.True)
 

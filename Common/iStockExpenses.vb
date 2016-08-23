@@ -14,6 +14,7 @@ Public Class iStockExpenses
     Private _ExpenseDate As Date
     Private _Amount As Decimal
     Private _Note As String
+    Private _Remarks As String
     Private _Description As String
     Private _CurrentExpenseID As Int64
     Private _CreatedBy As Int64
@@ -82,6 +83,14 @@ Public Class iStockExpenses
         End Get
         Set(ByVal value As String)
             _Note = value
+        End Set
+    End Property
+    Public Property Remarks() As String
+        Get
+            Return _Remarks
+        End Get
+        Set(ByVal value As String)
+            _Remarks = value
         End Set
     End Property
     Public Property Description() As String
@@ -333,6 +342,7 @@ Public Class iStockExpenses
             db.AddInParameter(DBC, "@ExpenseDate", DbType.Date, Me.ExpenseDate)
             db.AddInParameter(DBC, "@Amount", DbType.Decimal, Me.Amount)
             db.AddInParameter(DBC, "@Note", DbType.String, Me.Note)
+            db.AddInParameter(DBC, "@Remarks", DbType.String, Me.Remarks)
             db.AddOutParameter(DBC, "@CurrentExpenseID", DbType.Int64, 0)
             db.AddInParameter(DBC, "@CreatedBy", DbType.Int64, CreatedBy)
             db.AddInParameter(DBC, "@UpdatedBy", DbType.Int64, UpdatedBy)
@@ -406,6 +416,7 @@ Public Class iStockExpenses
                         Me.ExpenseDate = (IIf(Not IsDBNull(.Item("ExpenseDate")), Trim(.Item("ExpenseDate")), String.Empty))
                         Me.Amount = IIf(Not IsDBNull(.Item("Amount")), Trim(.Item("Amount").ToString), String.Empty)
                         Me.Note = IIf(Not IsDBNull(.Item("Note")), Trim(.Item("Note").ToString), String.Empty)
+                        Me.Remarks = IIf(Not IsDBNull(.Item("Remarks")), Trim(.Item("Remarks").ToString), String.Empty)
                         Me.CreatedBy = Convert.ToInt64(IIf(Not IsDBNull(.Item("CreatedBy")), Trim(.Item("CreatedBy").ToString), 0))
                         Me.CreatedDate = Convert.ToDateTime((IIf(Not IsDBNull(.Item("CreatedDate")), Trim(.Item("CreatedDate").ToString), Date.MinValue)))
                         Me.UpdatedBy = Convert.ToInt64(IIf(Not IsDBNull(.Item("UpdatedBy")), Trim(.Item("UpdatedBy").ToString), 0))

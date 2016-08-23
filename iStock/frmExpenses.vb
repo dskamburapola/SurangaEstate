@@ -84,6 +84,8 @@ Public Class frmExpenses
         If dxvpExpenses.Validate Then
             If lblID.Text = String.Empty Then
                 Me.SaveRecords()
+                Me.ClearFormData()
+
             Else
                 Dim frm As New frmUpdateYesNo
                 frm.peImage.Image = iStock.My.Resources.Resources.ImgUpdate
@@ -194,7 +196,8 @@ Public Class frmExpenses
     Private Sub ClearFormData()
         Me.lupExpenseType.EditValue = DBNull.Value
         Me.seAmount.EditValue = 0
-        Me.meNote.Text = String.Empty
+        Me.meRemarks.Text = String.Empty
+        Me.teNote.Text = String.Empty
         Me.lblID.Text = String.Empty
         dxvpExpenses.RemoveControlError(lupExpenseType)
         Me.lupExpenseType.Focus()
@@ -279,7 +282,8 @@ Public Class frmExpenses
 
                 .ExpenseDate = Me.deDate.EditValue
                 .Amount = Me.seAmount.EditValue
-                .Note = Me.meNote.EditValue
+                .Note = Me.teNote.Text
+                .Remarks = meRemarks.EditValue
                 .CreatedBy = UserID
                 .UpdatedBy = UserID
                 .InsertExpnese(_DB, _Transaction)
@@ -346,7 +350,8 @@ Public Class frmExpenses
 
                 .ExpenseDate = Me.deDate.EditValue
                 .Amount = Me.seAmount.EditValue
-                .Note = Me.meNote.EditValue
+                .Note = Me.teNote.Text
+                .Remarks = meRemarks.EditValue
                 .CreatedBy = UserID
                 .UpdatedBy = UserID
                 .InsertExpnese(_DB, _Transaction)
@@ -477,7 +482,8 @@ Public Class frmExpenses
 
                 deDate.EditValue = .ExpenseDate
                 seAmount.EditValue = .Amount
-                meNote.EditValue = .Note
+                teNote.Text = .Note
+                meRemarks.EditValue = .Remarks
 
 
             End With
