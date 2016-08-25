@@ -85,6 +85,21 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.XrTableCell65 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell66 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell67 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableRow3 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell117 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell118 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell120 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell121 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell124 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell125 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell126 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell127 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableRow2 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell79 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.rCashAdvanceCasual = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell113 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell115 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell116 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow9 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell11 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell19 = New DevExpress.XtraReports.UI.XRTableCell()
@@ -226,7 +241,7 @@ Partial Public Class xrpMonthlyExpensesDetails
         'Detail
         '
         Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrMainTable})
-        Me.Detail.HeightF = 700.0012!
+        Me.Detail.HeightF = 750.0013!
         Me.Detail.Name = "Detail"
         Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
@@ -239,8 +254,8 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.xrMainTable.LocationFloat = New DevExpress.Utils.PointFloat(12.5!, 0.0!)
         Me.xrMainTable.Name = "xrMainTable"
         Me.xrMainTable.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.xrMainTable.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.row0, Me.XrTableRow4, Me.row2, Me.row3, Me.XrTableRow6, Me.row5, Me.XrTableRow8, Me.row7, Me.XrTableRow9, Me.row9, Me.XrTableRow11, Me.XrTableRow13, Me.row12, Me.XrTableRow12, Me.row14, Me.XrTableRow16, Me.row16, Me.row18, Me.XrTableRow19, Me.row20, Me.row2000, Me.row22, Me.row23, Me.row25, Me.row26, Me.row27, Me.r2222, Me.row24})
-        Me.xrMainTable.SizeF = New System.Drawing.SizeF(1049.0!, 700.0012!)
+        Me.xrMainTable.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.row0, Me.XrTableRow4, Me.row2, Me.row3, Me.XrTableRow6, Me.row5, Me.XrTableRow8, Me.row7, Me.XrTableRow3, Me.XrTableRow2, Me.XrTableRow9, Me.row9, Me.XrTableRow11, Me.XrTableRow13, Me.row12, Me.XrTableRow12, Me.row14, Me.XrTableRow16, Me.row16, Me.row18, Me.XrTableRow19, Me.row20, Me.row2000, Me.row22, Me.row23, Me.row25, Me.row26, Me.row27, Me.r2222, Me.row24})
+        Me.xrMainTable.SizeF = New System.Drawing.SizeF(1049.0!, 750.0013!)
         Me.xrMainTable.StylePriority.UseBorders = False
         Me.xrMainTable.StylePriority.UseFont = False
         Me.xrMainTable.StylePriority.UsePadding = False
@@ -388,6 +403,7 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.XrTableCell16.Name = "XrTableCell16"
         Me.XrTableCell16.StylePriority.UseBorders = False
         Me.XrTableCell16.StylePriority.UseFont = False
+        Me.XrTableCell16.StylePriority.UseTextAlignment = False
         Me.XrTableCell16.Text = "BALANCE SALARY"
         Me.XrTableCell16.Weight = 0.591523212334351R
         '
@@ -461,7 +477,7 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.XrTableCell10.Name = "XrTableCell10"
         Me.XrTableCell10.StylePriority.UseFont = False
         Me.XrTableCell10.StylePriority.UseTextAlignment = False
-        Me.XrTableCell10.Text = "DAYS 1-EOM"
+        Me.XrTableCell10.Text = "DAYS 16-EOM"
         Me.XrTableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         Me.XrTableCell10.Weight = 0.41322301504176706R
         '
@@ -619,8 +635,10 @@ Partial Public Class xrpMonthlyExpensesDetails
         '
         'xrtccashAdvance2
         '
+        Me.xrtccashAdvance2.Borders = CType((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.xrtccashAdvance2.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
         Me.xrtccashAdvance2.Name = "xrtccashAdvance2"
+        Me.xrtccashAdvance2.StylePriority.UseBorders = False
         Me.xrtccashAdvance2.StylePriority.UseFont = False
         Me.xrtccashAdvance2.StylePriority.UseTextAlignment = False
         Me.xrtccashAdvance2.Text = "PERMANENT"
@@ -629,12 +647,16 @@ Partial Public Class xrpMonthlyExpensesDetails
         '
         'xrtccashAdvance3
         '
+        Me.xrtccashAdvance3.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.xrtccashAdvance3.Name = "xrtccashAdvance3"
+        Me.xrtccashAdvance3.StylePriority.UseBorders = False
         Me.xrtccashAdvance3.Weight = 0.25090828204446186R
         '
         'xrtccashAdvance4
         '
+        Me.xrtccashAdvance4.Borders = CType((DevExpress.XtraPrinting.BorderSide.Right Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.xrtccashAdvance4.Name = "xrtccashAdvance4"
+        Me.xrtccashAdvance4.StylePriority.UseBorders = False
         Me.xrtccashAdvance4.Weight = 0.34876218881183751R
         '
         'XrTableCell51
@@ -667,8 +689,11 @@ Partial Public Class xrpMonthlyExpensesDetails
         '
         Me.XrTableCell59.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
             Or DevExpress.XtraPrinting.BorderSide.Right), DevExpress.XtraPrinting.BorderSide)
+        Me.XrTableCell59.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
         Me.XrTableCell59.Name = "XrTableCell59"
         Me.XrTableCell59.StylePriority.UseBorders = False
+        Me.XrTableCell59.StylePriority.UseFont = False
+        Me.XrTableCell59.Text = "CASH ADVANCE"
         Me.XrTableCell59.Weight = 0.591523212334351R
         '
         'rCashAdvancePermanent
@@ -695,6 +720,106 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.XrTableCell67.Name = "XrTableCell67"
         Me.XrTableCell67.Weight = 0.263393656896295R
         '
+        'XrTableRow3
+        '
+        Me.XrTableRow3.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell117, Me.XrTableCell118, Me.XrTableCell120, Me.XrTableCell121, Me.XrTableCell124, Me.XrTableCell125, Me.XrTableCell126, Me.XrTableCell127})
+        Me.XrTableRow3.Name = "XrTableRow3"
+        Me.XrTableRow3.Weight = 1.0R
+        '
+        'XrTableCell117
+        '
+        Me.XrTableCell117.Borders = CType((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right), DevExpress.XtraPrinting.BorderSide)
+        Me.XrTableCell117.Name = "XrTableCell117"
+        Me.XrTableCell117.StylePriority.UseBorders = False
+        Me.XrTableCell117.Weight = 0.591523212334351R
+        '
+        'XrTableCell118
+        '
+        Me.XrTableCell118.Name = "XrTableCell118"
+        Me.XrTableCell118.Weight = 0.32171416143670412R
+        '
+        'XrTableCell120
+        '
+        Me.XrTableCell120.Borders = CType((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrTableCell120.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.XrTableCell120.Name = "XrTableCell120"
+        Me.XrTableCell120.StylePriority.UseBorders = False
+        Me.XrTableCell120.StylePriority.UseFont = False
+        Me.XrTableCell120.StylePriority.UseTextAlignment = False
+        Me.XrTableCell120.Text = "Casual"
+        Me.XrTableCell120.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrTableCell120.Weight = 0.41322301504176706R
+        '
+        'XrTableCell121
+        '
+        Me.XrTableCell121.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+        Me.XrTableCell121.Name = "XrTableCell121"
+        Me.XrTableCell121.StylePriority.UseBorders = False
+        Me.XrTableCell121.Weight = 0.25090828204446186R
+        '
+        'XrTableCell124
+        '
+        Me.XrTableCell124.Borders = CType((DevExpress.XtraPrinting.BorderSide.Right Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrTableCell124.Name = "XrTableCell124"
+        Me.XrTableCell124.StylePriority.UseBorders = False
+        Me.XrTableCell124.Weight = 0.34876218881183751R
+        '
+        'XrTableCell125
+        '
+        Me.XrTableCell125.Borders = CType((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right), DevExpress.XtraPrinting.BorderSide)
+        Me.XrTableCell125.Name = "XrTableCell125"
+        Me.XrTableCell125.StylePriority.UseBorders = False
+        Me.XrTableCell125.Weight = 0.34819852135243978R
+        '
+        'XrTableCell126
+        '
+        Me.XrTableCell126.Borders = CType((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right), DevExpress.XtraPrinting.BorderSide)
+        Me.XrTableCell126.Name = "XrTableCell126"
+        Me.XrTableCell126.StylePriority.UseBorders = False
+        Me.XrTableCell126.Weight = 0.263393656896295R
+        '
+        'XrTableCell127
+        '
+        Me.XrTableCell127.Name = "XrTableCell127"
+        Me.XrTableCell127.Weight = 0.263393656896295R
+        '
+        'XrTableRow2
+        '
+        Me.XrTableRow2.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell79, Me.rCashAdvanceCasual, Me.XrTableCell113, Me.XrTableCell115, Me.XrTableCell116})
+        Me.XrTableRow2.Name = "XrTableRow2"
+        Me.XrTableRow2.Weight = 1.0R
+        '
+        'XrTableCell79
+        '
+        Me.XrTableCell79.Name = "XrTableCell79"
+        Me.XrTableCell79.Weight = 0.591523212334351R
+        '
+        'rCashAdvanceCasual
+        '
+        Me.rCashAdvanceCasual.Name = "rCashAdvanceCasual"
+        Me.rCashAdvanceCasual.StylePriority.UseTextAlignment = False
+        Me.rCashAdvanceCasual.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.rCashAdvanceCasual.Weight = 1.3346076473347706R
+        '
+        'XrTableCell113
+        '
+        Me.XrTableCell113.Borders = CType((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right), DevExpress.XtraPrinting.BorderSide)
+        Me.XrTableCell113.Name = "XrTableCell113"
+        Me.XrTableCell113.StylePriority.UseBorders = False
+        Me.XrTableCell113.Weight = 0.34819852135243978R
+        '
+        'XrTableCell115
+        '
+        Me.XrTableCell115.Borders = CType((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right), DevExpress.XtraPrinting.BorderSide)
+        Me.XrTableCell115.Name = "XrTableCell115"
+        Me.XrTableCell115.StylePriority.UseBorders = False
+        Me.XrTableCell115.Weight = 0.263393656896295R
+        '
+        'XrTableCell116
+        '
+        Me.XrTableCell116.Name = "XrTableCell116"
+        Me.XrTableCell116.Weight = 0.263393656896295R
+        '
         'XrTableRow9
         '
         Me.XrTableRow9.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell11, Me.XrTableCell19, Me.XrTableCell36, Me.XrTableCell54, Me.XrTableCell55, Me.XrTableCell56, Me.XrTableCell57, Me.XrTableCell58})
@@ -708,7 +833,7 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.XrTableCell11.Name = "XrTableCell11"
         Me.XrTableCell11.StylePriority.UseBorders = False
         Me.XrTableCell11.StylePriority.UseFont = False
-        Me.XrTableCell11.Text = "CASH ADVANCE"
+        Me.XrTableCell11.StylePriority.UseTextAlignment = False
         Me.XrTableCell11.Weight = 0.591523212334351R
         '
         'XrTableCell19
@@ -718,8 +843,10 @@ Partial Public Class xrpMonthlyExpensesDetails
         '
         'XrTableCell36
         '
+        Me.XrTableCell36.Borders = CType((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrTableCell36.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
         Me.XrTableCell36.Name = "XrTableCell36"
+        Me.XrTableCell36.StylePriority.UseBorders = False
         Me.XrTableCell36.StylePriority.UseFont = False
         Me.XrTableCell36.StylePriority.UseTextAlignment = False
         Me.XrTableCell36.Text = "STAFF"
@@ -728,12 +855,16 @@ Partial Public Class xrpMonthlyExpensesDetails
         '
         'XrTableCell54
         '
+        Me.XrTableCell54.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.XrTableCell54.Name = "XrTableCell54"
+        Me.XrTableCell54.StylePriority.UseBorders = False
         Me.XrTableCell54.Weight = 0.25090828204446186R
         '
         'XrTableCell55
         '
+        Me.XrTableCell55.Borders = CType((DevExpress.XtraPrinting.BorderSide.Right Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrTableCell55.Name = "XrTableCell55"
+        Me.XrTableCell55.StylePriority.UseBorders = False
         Me.XrTableCell55.Weight = 0.34876218881183751R
         '
         'XrTableCell56
@@ -847,8 +978,10 @@ Partial Public Class xrpMonthlyExpensesDetails
         '
         'XrTableCell86
         '
+        Me.XrTableCell86.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.XrTableCell86.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
         Me.XrTableCell86.Name = "XrTableCell86"
+        Me.XrTableCell86.StylePriority.UseBorders = False
         Me.XrTableCell86.StylePriority.UseFont = False
         Me.XrTableCell86.StylePriority.UseTextAlignment = False
         Me.XrTableCell86.Text = "PERMANENT"
@@ -857,12 +990,16 @@ Partial Public Class xrpMonthlyExpensesDetails
         '
         'XrTableCell87
         '
+        Me.XrTableCell87.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.XrTableCell87.Name = "XrTableCell87"
+        Me.XrTableCell87.StylePriority.UseBorders = False
         Me.XrTableCell87.Weight = 0.25090828204446186R
         '
         'XrTableCell88
         '
+        Me.XrTableCell88.Borders = CType((DevExpress.XtraPrinting.BorderSide.Right Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrTableCell88.Name = "XrTableCell88"
+        Me.XrTableCell88.StylePriority.UseBorders = False
         Me.XrTableCell88.Weight = 0.34876218881183751R
         '
         'XrTableCell89
@@ -897,6 +1034,7 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.XrTableCell73.Name = "XrTableCell73"
         Me.XrTableCell73.StylePriority.UseBorders = False
         Me.XrTableCell73.StylePriority.UseFont = False
+        Me.XrTableCell73.StylePriority.UseTextAlignment = False
         Me.XrTableCell73.Text = "FESTIVAL ADVANCE"
         Me.XrTableCell73.Weight = 0.591523212334351R
         '
@@ -944,8 +1082,10 @@ Partial Public Class xrpMonthlyExpensesDetails
         '
         'XrTableCell50
         '
+        Me.XrTableCell50.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.XrTableCell50.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
         Me.XrTableCell50.Name = "XrTableCell50"
+        Me.XrTableCell50.StylePriority.UseBorders = False
         Me.XrTableCell50.StylePriority.UseFont = False
         Me.XrTableCell50.StylePriority.UseTextAlignment = False
         Me.XrTableCell50.Text = "CASUAL"
@@ -954,12 +1094,16 @@ Partial Public Class xrpMonthlyExpensesDetails
         '
         'XrTableCell60
         '
+        Me.XrTableCell60.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.XrTableCell60.Name = "XrTableCell60"
+        Me.XrTableCell60.StylePriority.UseBorders = False
         Me.XrTableCell60.Weight = 0.25090828204446186R
         '
         'XrTableCell69
         '
+        Me.XrTableCell69.Borders = CType((DevExpress.XtraPrinting.BorderSide.Right Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrTableCell69.Name = "XrTableCell69"
+        Me.XrTableCell69.StylePriority.UseBorders = False
         Me.XrTableCell69.Weight = 0.34876218881183751R
         '
         'XrTableCell70
@@ -1038,8 +1182,10 @@ Partial Public Class xrpMonthlyExpensesDetails
         '
         'XrTableCell97
         '
+        Me.XrTableCell97.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.XrTableCell97.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
         Me.XrTableCell97.Name = "XrTableCell97"
+        Me.XrTableCell97.StylePriority.UseBorders = False
         Me.XrTableCell97.StylePriority.UseFont = False
         Me.XrTableCell97.StylePriority.UseTextAlignment = False
         Me.XrTableCell97.Text = "STAFF"
@@ -1048,12 +1194,16 @@ Partial Public Class xrpMonthlyExpensesDetails
         '
         'XrTableCell98
         '
+        Me.XrTableCell98.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.XrTableCell98.Name = "XrTableCell98"
+        Me.XrTableCell98.StylePriority.UseBorders = False
         Me.XrTableCell98.Weight = 0.25090828204446186R
         '
         'XrTableCell99
         '
+        Me.XrTableCell99.Borders = CType((DevExpress.XtraPrinting.BorderSide.Right Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrTableCell99.Name = "XrTableCell99"
+        Me.XrTableCell99.StylePriority.UseBorders = False
         Me.XrTableCell99.Weight = 0.34876218881183751R
         '
         'XrTableCell100
@@ -1182,6 +1332,7 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.XrTableCell108.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
         Me.XrTableCell108.Name = "XrTableCell108"
         Me.XrTableCell108.StylePriority.UseFont = False
+        Me.XrTableCell108.StylePriority.UseTextAlignment = False
         Me.XrTableCell108.Text = "EPF 3%"
         Me.XrTableCell108.Weight = 0.591523212334351R
         '
@@ -1235,6 +1386,7 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.XrTableCell109.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
         Me.XrTableCell109.Name = "XrTableCell109"
         Me.XrTableCell109.StylePriority.UseFont = False
+        Me.XrTableCell109.StylePriority.UseTextAlignment = False
         Me.XrTableCell109.Text = "WATER"
         Me.XrTableCell109.Weight = 0.591523212334351R
         '
@@ -1273,6 +1425,7 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.XrTableCell27.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
         Me.XrTableCell27.Name = "XrTableCell27"
         Me.XrTableCell27.StylePriority.UseFont = False
+        Me.XrTableCell27.StylePriority.UseTextAlignment = False
         Me.XrTableCell27.Text = "ELECTRICITY"
         Me.XrTableCell27.Weight = 0.591523212334351R
         '
@@ -1311,6 +1464,7 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.XrTableCell34.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
         Me.XrTableCell34.Name = "XrTableCell34"
         Me.XrTableCell34.StylePriority.UseFont = False
+        Me.XrTableCell34.StylePriority.UseTextAlignment = False
         Me.XrTableCell34.Text = "MOTIVATION PAYMENT"
         Me.XrTableCell34.Weight = 0.591523212334351R
         '
@@ -1349,6 +1503,7 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.XrTableCell35.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
         Me.XrTableCell35.Name = "XrTableCell35"
         Me.XrTableCell35.StylePriority.UseFont = False
+        Me.XrTableCell35.StylePriority.UseTextAlignment = False
         Me.XrTableCell35.Text = "CASH REWARDS"
         Me.XrTableCell35.Weight = 0.591523212334351R
         '
@@ -1387,6 +1542,7 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.XrTableCell43.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
         Me.XrTableCell43.Name = "XrTableCell43"
         Me.XrTableCell43.StylePriority.UseFont = False
+        Me.XrTableCell43.StylePriority.UseTextAlignment = False
         Me.XrTableCell43.Text = "OTHER"
         Me.XrTableCell43.Weight = 0.591523212334351R
         '
@@ -1689,7 +1845,6 @@ Partial Public Class xrpMonthlyExpensesDetails
     Friend WithEvents XrTableCell91 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell19 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell36 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell55 As DevExpress.XtraReports.UI.XRTableCell
     Public WithEvents rCashAdvancePermanent As DevExpress.XtraReports.UI.XRTableCell
     Public WithEvents xrtccashAdvance1 As DevExpress.XtraReports.UI.XRTableCell
     Public WithEvents xrtccashAdvance2 As DevExpress.XtraReports.UI.XRTableCell
@@ -1744,7 +1899,6 @@ Partial Public Class xrpMonthlyExpensesDetails
     Friend WithEvents XrTableCell134 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell135 As DevExpress.XtraReports.UI.XRTableCell
     Public WithEvents xrtccashAdvance4 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell54 As DevExpress.XtraReports.UI.XRTableCell
     Public WithEvents r6c4 As DevExpress.XtraReports.UI.XRTableCell
     Public WithEvents r3c5 As DevExpress.XtraReports.UI.XRTableCell
     Public WithEvents r3casualTotal As DevExpress.XtraReports.UI.XRTableCell
@@ -1805,4 +1959,21 @@ Partial Public Class xrpMonthlyExpensesDetails
     Public WithEvents rExprenesOtherTotal1 As DevExpress.XtraReports.UI.XRTableCell
     Public WithEvents rExprenesOtherTotal As DevExpress.XtraReports.UI.XRTableCell
     Public WithEvents row27 As DevExpress.XtraReports.UI.XRTableRow
+    Friend WithEvents XrTableCell54 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableCell55 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableRow3 As DevExpress.XtraReports.UI.XRTableRow
+    Friend WithEvents XrTableCell117 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableCell118 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableCell120 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableCell121 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableCell124 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableCell125 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableCell126 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableCell127 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableRow2 As DevExpress.XtraReports.UI.XRTableRow
+    Friend WithEvents XrTableCell79 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents rCashAdvanceCasual As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableCell113 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableCell115 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableCell116 As DevExpress.XtraReports.UI.XRTableCell
 End Class

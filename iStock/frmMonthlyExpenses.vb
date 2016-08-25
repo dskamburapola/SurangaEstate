@@ -99,7 +99,7 @@
             Dim dt3 As DataTable 'Casual Salary 15-EOM
             Dim dt4 As DataTable 'KP Balance 
             Dim dt5 As DataTable 'Permenant Cash Advance 
-            Dim dt6 As DataTable 'Casual Cash Advance 
+            Dim dt6 As DataTable 'Staff Cash Advance 
             Dim dt7 As DataTable 'Festival Advance - permnent
             Dim dt8 As DataTable 'EPF 12% 
             Dim dt9 As DataTable 'ETF 3%
@@ -109,7 +109,7 @@
             Dim dt13 As DataTable 'CashRewards
             Dim dt14 As DataTable 'Festival Advance - Casual
             Dim dt15 As DataTable 'Festival Advance - Staff
-
+            Dim dt16 As DataTable 'Casual Cash Advance 
 
 
 
@@ -128,6 +128,7 @@
             dt13 = ds.Tables(12)
             dt14 = ds.Tables(13)
             dt15 = ds.Tables(14)
+            dt16 = ds.Tables(15)
 
 
 
@@ -218,6 +219,7 @@
 
                 For i = 0 To dt5.Rows.Count - 1
 
+                    '      Dim AdvTot As Decimal
 
                     Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
                     xx.WidthF = 499
@@ -230,6 +232,7 @@
                     cell1.Size = New Size(120, 25)
                     cell2.Size = New Size(249, 25)
                     cell3.Size = New Size(130, 25)
+
 
                     If IsDBNull(dt5.Rows(i).Item("IssueDate")) Then
                         cell1.Text = ""
@@ -247,15 +250,24 @@
                         PermanentAdvPay = PermanentAdvPay + Convert.ToDecimal((dt5.Rows(i).Item("AdvanceAmount").ToString))
                     End If
 
+                    'AdvTot = AdvTot + (dt5.Rows(i).Item("AdvanceAmount"))
+
+                    'If i = dt5.Rows.Count - 1 Then
+                    '    cell4.Text = FormatNumber(AdvTot, 2, TriState.True)
+                    'End If
+
+
+
                     cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-
+                   
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
                     tr.Cells.Add(cell1)
                     tr.Cells.Add(cell2)
                     tr.Cells.Add(cell3)
+
 
                     xx.Rows.Add(tr)
 
@@ -268,7 +280,77 @@
             End If
 
 
+
+            '*****************************************************************************************
             'Cash Advance - Casual
+
+
+            If dt16.Rows.Count > 0 Then
+
+                Dim i As Int64
+
+                Dim xx As New DevExpress.XtraReports.UI.XRTable
+
+                For i = 0 To dt16.Rows.Count - 1
+
+
+                    Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
+                    xx.WidthF = 499
+
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.None
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+
+
+                    cell1.Size = New Size(120, 25)
+                    cell2.Size = New Size(249, 25)
+                    cell3.Size = New Size(130, 25)
+
+                    cell1.Text = ""
+
+
+                    If IsDBNull(dt16.Rows(i).Item("IssueDate")) Then
+                        cell1.Text = ""
+                    Else
+                        cell1.Text = Convert.ToDateTime(dt16.Rows(i).Item("IssueDate").ToString).ToString("dd-MMM-yy")
+                    End If
+
+
+                    cell2.Text = "[" + CStr((dt5.Rows(i).Item("EmployerNo"))) + "] " + CStr((dt16.Rows(i).Item("EmployeeName")))
+
+                    If IsDBNull(dt16.Rows(i).Item("AdvanceAmount")) Then
+                        cell3.Text = "0.00 "
+                    Else
+                        cell3.Text = FormatNumber(CStr((dt16.Rows(i).Item("AdvanceAmount"))), 2, TriState.True) & " "
+                        PermanentAdvPay = PermanentAdvPay + Convert.ToDecimal((dt16.Rows(i).Item("AdvanceAmount").ToString))
+                    End If
+
+
+                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+                    cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+
+
+                    Dim tr As New DevExpress.XtraReports.UI.XRTableRow
+                    tr.Cells.Add(cell1)
+                    tr.Cells.Add(cell2)
+                    tr.Cells.Add(cell3)
+
+                    xx.Rows.Add(tr)
+
+
+                Next
+
+                Dim r9 As New DevExpress.XtraReports.UI.XRTableRow
+                r9 = report.xrMainTable.Rows("row9")
+                r9.Cells("rCashAdvanceCasual").Controls.Add(xx)
+                r9.Cells("rCashAdvanceTotal").Text = FormatNumber((PermanentAdvPay).ToString, 2, TriState.True)
+
+            End If
+
+            '*****************************************************************************************
+
+            'Cash Advance - Staff
 
             If dt6.Rows.Count > 0 Then
 
@@ -607,7 +689,7 @@
             Dim r18a As New DevExpress.XtraReports.UI.XRTableRow
             r18a = report.xrMainTable.Rows("row18")
 
-            r18a.Cells("rEPFTotal").Text = FormatNumber((EPFTotal).ToString, 2, TriState.True)
+            '   r18a.Cells("rEPFTotal").Text = FormatNumber((EPFTotal).ToString, 2, TriState.True)
             r18a.Cells("rEPFTotal1").Text = FormatNumber((EPFTotal).ToString, 2, TriState.True)
 
             'ETF 3%
@@ -671,7 +753,7 @@
             Dim r20a As New DevExpress.XtraReports.UI.XRTableRow
             r20a = report.xrMainTable.Rows("row20")
 
-            r20a.Cells("rEPF3Total").Text = FormatNumber((ETFTotal).ToString, 2, TriState.True)
+            ' r20a.Cells("rEPF3Total").Text = FormatNumber((ETFTotal).ToString, 2, TriState.True)
             r20a.Cells("rEPF3Total1").Text = FormatNumber((ETFTotal).ToString, 2, TriState.True)
 
             'Exepenses Water
@@ -743,7 +825,7 @@
                 Dim r22a As New DevExpress.XtraReports.UI.XRTableRow
                 r22a = report.xrMainTable.Rows("row22")
 
-                r22a.Cells("rExpenseWaterTotal").Text = FormatNumber((ExpenseWaterTotal).ToString, 2, TriState.True)
+                ' r22a.Cells("rExpenseWaterTotal").Text = FormatNumber((ExpenseWaterTotal).ToString, 2, TriState.True)
                 r22a.Cells("rExpenseWaterTotal1").Text = FormatNumber((ExpenseWaterTotal).ToString, 2, TriState.True)
 
             End If
@@ -814,7 +896,7 @@
                 Dim r23a As New DevExpress.XtraReports.UI.XRTableRow
                 r23a = report.xrMainTable.Rows("row23")
 
-                r23a.Cells("rExpenseElectrityTotal").Text = FormatNumber((ExpenseElectricityTotal).ToString, 2, TriState.True)
+                ' r23a.Cells("rExpenseElectrityTotal").Text = FormatNumber((ExpenseElectricityTotal).ToString, 2, TriState.True)
                 r23a.Cells("rExpenseElectrityTotal1").Text = FormatNumber((ExpenseElectricityTotal).ToString, 2, TriState.True)
 
 
@@ -887,7 +969,7 @@
                 Dim r25a As New DevExpress.XtraReports.UI.XRTableRow
                 r25a = report.xrMainTable.Rows("row25")
 
-                r25a.Cells("rExprenesMotivationTotal").Text = FormatNumber((ExpenseMotivationTotal).ToString, 2, TriState.True)
+                ' r25a.Cells("rExprenesMotivationTotal").Text = FormatNumber((ExpenseMotivationTotal).ToString, 2, TriState.True)
                 r25a.Cells("rExprenesMotivationTotal1").Text = FormatNumber((ExpenseMotivationTotal).ToString, 2, TriState.True)
 
 
@@ -959,7 +1041,7 @@
                 Dim r25a As New DevExpress.XtraReports.UI.XRTableRow
                 r25a = report.xrMainTable.Rows("row26")
 
-                r25a.Cells("rExprenesCashRewardsTotal").Text = FormatNumber((ExpenseCachRewardsTotal).ToString, 2, TriState.True)
+                'r25a.Cells("rExprenesCashRewardsTotal").Text = FormatNumber((ExpenseCachRewardsTotal).ToString, 2, TriState.True)
                 r25a.Cells("rExprenesCashRewardsTotal1").Text = FormatNumber((ExpenseCachRewardsTotal).ToString, 2, TriState.True)
 
 
@@ -1031,7 +1113,7 @@
                 Dim r27a As New DevExpress.XtraReports.UI.XRTableRow
                 r27a = report.xrMainTable.Rows("row27")
 
-                r27a.Cells("rExprenesOtherTotal").Text = FormatNumber((ExpenseOtherTotal).ToString, 2, TriState.True)
+                '  r27a.Cells("rExprenesOtherTotal").Text = FormatNumber((ExpenseOtherTotal).ToString, 2, TriState.True)
                 r27a.Cells("rExprenesOtherTotal1").Text = FormatNumber((ExpenseOtherTotal).ToString, 2, TriState.True)
 
 

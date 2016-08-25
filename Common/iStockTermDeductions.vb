@@ -20,7 +20,7 @@ Public Class iStockTermDeductions
     Private _Description As String
     Private _TDMonthName As String
     Private _TDInsAmount As Decimal
-
+    Private _Designation As String
     Private _ActiveDate As Date
 
 #End Region
@@ -147,6 +147,15 @@ Public Class iStockTermDeductions
             _ActiveDate = value
         End Set
     End Property
+    Public Property Designation() As String
+        Get
+            Return _Designation
+        End Get
+        Set(ByVal value As String)
+            _Designation = value
+        End Set
+    End Property
+
 #End Region
 
 #Region "Insert TermDeductions"
@@ -257,8 +266,8 @@ Public Class iStockTermDeductions
                 With DR
                     Do While .Read
                         Me.TDDate = Convert.ToDateTime(IIf(Not IsDBNull(.Item("TDDate")), Trim(.Item("TDDate").ToString), Date.MinValue))
-
-                        '   Me.TDDate = IIf(Not IsDBNull(.Item("TDDate")), Trim(.Item("TDDate").ToString), String.Empty)
+                        Me.Designation = IIf(Not IsDBNull(.Item("Designation")), Trim(.Item("Designation").ToString), String.Empty)
+                        Me.Description = IIf(Not IsDBNull(.Item("TDdescription")), Trim(.Item("TDdescription").ToString), String.Empty)
                         Me.TDType = IIf(Not IsDBNull(.Item("TDType")), Trim(.Item("TDType").ToString), String.Empty)
                         Me.EmployerID = Convert.ToInt64(IIf(Not IsDBNull(.Item("EmployerID")), Trim(.Item("EmployerID").ToString), 0))
                         Me.TDAmount = Convert.ToDecimal(IIf(Not IsDBNull(.Item("TDAmount")), Trim(.Item("TDAmount").ToString), 0))

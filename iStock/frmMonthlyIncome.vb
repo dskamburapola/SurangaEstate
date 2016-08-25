@@ -180,9 +180,9 @@
 
                     cell1a.Text = ""
                     cell2a.Text = ""
-                    cell3a.Text = ""
+                    cell3a.Text = "Deduction"
                     cell4a.Text = ""
-                    cell5a.Text = "Deduction "
+                    cell5a.Text = " "
 
                     If IsDBNull(dt1.Rows(i).Item("Deduction")) Then
                         cell6a.Text = " "
@@ -246,9 +246,120 @@
 
             End If
 
-
+            'xrNonCalculate
            
+            Dim dt2 As DataTable 'Tea
 
+            dt2 = ds.Tables(1)
+
+            Dim NonCalTotal As Decimal
+
+            If dt2.Rows.Count > 0 Then
+                Dim i As Int64
+                For i = 0 To dt2.Rows.Count - 1
+
+                    Dim tr As New DevExpress.XtraReports.UI.XRTableRow
+                    Dim cell1, cell2, cell3, cell4, cell5, cell6, cell7 As New DevExpress.XtraReports.UI.XRTableCell
+
+                    cell1.Size = New Size(report.xrMainTable.Rows(0).Cells(0).WidthF, 25)
+                    cell2.Size = New Size(report.xrMainTable.Rows(0).Cells(1).WidthF, 25)
+                    cell3.Size = New Size(report.xrMainTable.Rows(0).Cells(2).WidthF + 2, 25)
+                    cell4.Size = New Size(report.xrMainTable.Rows(0).Cells(3).WidthF, 25)
+                    cell5.Size = New Size(report.xrMainTable.Rows(0).Cells(4).WidthF, 25)
+                    cell6.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
+                    cell7.Size = New Size(report.xrMainTable.Rows(0).Cells(5).WidthF, 25)
+
+                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+                    cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+                    cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+
+                    cell1.Text = "IOSDP" 'dt2.Rows(i).Item("Description")
+
+                    If IsDBNull(dt2.Rows(i).Item("OtherIncomeDate")) Then
+                        cell2.Text = ""
+                    Else
+                        Dim tempDate As Date
+                        If DateTime.TryParse(CStr(dt2.Rows(i).Item("OtherIncomeDate").ToString), tempDate) Then
+                            cell2.Text = tempDate.ToString("dd-MMM-yy")
+                        Else
+                            cell2.Text = ""
+                        End If
+
+                    End If
+
+
+
+                    If IsDBNull(dt2.Rows(i).Item("Note")) Then
+                        cell3.Text = ""
+                    Else
+                        cell3.Text = (dt2.Rows(i).Item("Note").ToString)
+
+                    End If
+
+                    cell3.Borders = DevExpress.XtraPrinting.BorderSide.Left
+                    cell3.Borders = DevExpress.XtraPrinting.BorderSide.Top
+                    cell3.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+
+                    cell4.Borders = DevExpress.XtraPrinting.BorderSide.Top
+                    cell4.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+
+                    cell5.Borders = DevExpress.XtraPrinting.BorderSide.Top
+                    cell5.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+
+
+                  
+
+                    'If IsDBNull(dt2.Rows(i).Item("Quantity")) Then
+                    '    cell4.Text = ""
+                    'Else
+                    '    cell4.Text = FormatNumber(CStr((dt2.Rows(i).Item("Quantity"))) & Space(1), 2, TriState.True)
+
+                    'End If
+
+                    'If IsDBNull(dt2.Rows(i).Item("Rate")) Then
+                    '    cell5.Text = ""
+                    'Else
+                    '    cell5.Text = FormatNumber(CStr((dt2.Rows(i).Item("Rate"))) & Space(1), 2, TriState.True)
+
+                    'End If
+
+                    If IsDBNull(dt2.Rows(i).Item("Amount")) Then
+                        cell6.Text = ""
+                    Else
+                        cell6.Text = FormatNumber(CStr((dt2.Rows(i).Item("Amount"))) & Space(1), 2, TriState.True)
+
+                    End If
+
+                    cell7.Text = ""
+
+                    tr.Cells.Add(cell1)
+                    tr.Cells.Add(cell2)
+                    tr.Cells.Add(cell3)
+                    tr.Cells.Add(cell4)
+                    tr.Cells.Add(cell5)
+                    tr.Cells.Add(cell6)
+                    tr.Cells.Add(cell7)
+
+                    report.xrNonCalculate.Rows.Add(tr)
+
+
+
+                    NonCalTotal = NonCalTotal + dt2.Rows(i).Item("Amount")
+
+                    If i = (dt2.Rows.Count - 1) Then
+                        cell7.Text = FormatNumber(NonCalTotal, 2, TriState.True)
+
+                    End If
+
+                Next
+
+               
+
+            End If
 
 
 

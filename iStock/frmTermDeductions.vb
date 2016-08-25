@@ -129,25 +129,35 @@ Public Class frmTermDeductions
 
     Private Sub bbSave_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbSave.ItemClick
 
-        If dxvpCompany.Validate Then
+        Dim a As Integer
 
-            If lblID.Text = String.Empty Then
-                Me.SaveTermDeductions()
-            Else
-                Dim frm As New frmUpdateYesNo
-                frm.peImage.Image = iStock.My.Resources.Resources.ImgUpdate
-                frm.Text = CWB_UPDATE_CONFIRMATION_TITLE
-                frm.lblTitle.Text = CWB_UPDATE_CONFIRMATION_TITLELABEL
-                frm.lblDescription.Text = CWB_UPDATE_CONFIRMATION_DESCRIPTIONLABEL
+        a = Val(gvTermDeductions.RowCount.ToString)
+        If a > 1 Then
+
+            If dxvpCompany.Validate Then
+
+                If lblID.Text = String.Empty Then
+                    Me.SaveTermDeductions()
+                Else
+                    Dim frm As New frmUpdateYesNo
+                    frm.peImage.Image = iStock.My.Resources.Resources.ImgUpdate
+                    frm.Text = CWB_UPDATE_CONFIRMATION_TITLE
+                    frm.lblTitle.Text = CWB_UPDATE_CONFIRMATION_TITLELABEL
+                    frm.lblDescription.Text = CWB_UPDATE_CONFIRMATION_DESCRIPTIONLABEL
 
 
-                If frm.ShowDialog = Windows.Forms.DialogResult.Yes Then
-                    Me.UpdateTermDeductions()
-                    Me.ClearFormData()
+                    If frm.ShowDialog = Windows.Forms.DialogResult.Yes Then
+                        Me.UpdateTermDeductions()
+                        Me.ClearFormData()
+                    End If
+
                 End If
-
             End If
+        Else
+            MessageBox.Show("Incomplete Data.Check Again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
         End If
+        
 
     End Sub
 
@@ -436,11 +446,13 @@ Public Class frmTermDeductions
                     .GetTermDeductionsByID()
 
                     'lblRegNo.Text = .EmpID
+                    cmbWorkType.Text = .Designation
                     deIssueDate.EditValue = .TDDate
                     cmbDeductionType.Text = .TDType
                     leEmployeeCode.EditValue = .EmployerID
                     seAmount.EditValue = FormatNumber(.TDAmount, 2, TriState.True)
                     sePeriod.EditValue = .TDInstallments
+                    teDescription.Text = .Description
 
                 End With
 
@@ -493,7 +505,7 @@ Public Class frmTermDeductions
         lblID.Text = String.Empty
         Me.GetEmployeeForWork()
         Me.leEmployeeCode.Focus()
-
+        teDescription.Text = String.Empty
     End Sub
 #End Region
 
@@ -557,5 +569,11 @@ Public Class frmTermDeductions
 
     Private Sub cmbWorkType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbWorkType.SelectedIndexChanged
         Me.GetEmployeeForWork()
+    End Sub
+
+    Private Sub seAmount_KeyPress(sender As Object, e As KeyPressEventArgs) Handles seAmount.KeyPress
+        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
+            sePeriod.Focus()
+        End If
     End Sub
 End Class
