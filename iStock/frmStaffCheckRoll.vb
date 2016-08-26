@@ -84,7 +84,7 @@ Public Class frmStaffCheckRoll
 
 #Region "Print Preview"
     Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
-        PrintPreview(gcCheckRoll, "Check Roll Report (Permanent) " + meMonth.Text + " / " + leYear.Text)
+        PrintPreview(gcPrint, "Check Roll Report (Permanent) " + meMonth.Text + " / " + leYear.Text)
     End Sub
 #End Region
 
@@ -228,48 +228,70 @@ Public Class frmStaffCheckRoll
             gvCheckRoll.Columns("TotalDays").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
             gvCheckRoll.Columns("TotalDays").DisplayFormat.FormatString = "c1"
             gvCheckRoll.Columns("TotalDays").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-
-            'gvCheckRoll.Columns("BasicPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
-            'gvCheckRoll.Columns("WCPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
-            'gvCheckRoll.Columns("EvalutionAllowance").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
-            'gvCheckRoll.Columns("GrandTotalPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
-            'gvCheckRoll.Columns("EPFAmount").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
-            'gvCheckRoll.Columns("PayChit").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
-            'gvCheckRoll.Columns("FestivalAdvance").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
             gvCheckRoll.Columns("CashAdvance").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
-            'gvCheckRoll.Columns("TotalDeductions").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
             gvCheckRoll.Columns("BalancePay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
-            'gvCheckRoll.Columns("EPF_12").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
-            'gvCheckRoll.Columns("EPF_20").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
-            'gvCheckRoll.Columns("ETF_3").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
-
-
-            'gvCheckRoll.Columns("EvalutionAllowance").Caption = "Evaluation Allowance"
-
-            'gvCheckRoll.Columns("EPF_12").Caption = "EPF (12%)"
-            'gvCheckRoll.Columns("EPF_20").Caption = "EPF (20%)"
-            'gvCheckRoll.Columns("ETF_3").Caption = "ETF (3%)"
-
-            'gvCheckRoll.Columns("EPF_12").Width = 60
-            'gvCheckRoll.Columns("EPF_20").Width = 60
-            'gvCheckRoll.Columns("ETF_3").Width = 60
-
             gvCheckRoll.Columns("GrandTotalPay").AppearanceCell.BackColor = Color.Bisque
             gvCheckRoll.Columns("BalancePay").AppearanceCell.BackColor = Color.Thistle
 
-            'gvCheckRoll.Columns("EPFAmount").AppearanceCell.BackColor = Color.LightCoral
-            'gvCheckRoll.Columns("PayChit").AppearanceCell.BackColor = Color.LightCoral
-            'gvCheckRoll.Columns("FestivalAdvance").AppearanceCell.BackColor = Color.LightCoral
-            'gvCheckRoll.Columns("CashAdvance").AppearanceCell.BackColor = Color.LightCoral
-            'gvCheckRoll.Columns("TotalDeductions").AppearanceCell.BackColor = Color.LightCoral
 
 
+            '-----------------------------------
+
+            gvPrint.Columns.Clear()
+            gcPrint.DataSource = Nothing
+            gcPrint.DataSource = ds.Tables(0)
+
+            gvPrint.BestFitColumns()
+
+          
+            gvPrint.Columns("EmployeeNo").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+            gvPrint.Columns("EmployeeName").Width = 150
+            gvPrint.Columns("Sex").Width = 60
+
+            gvPrint.Columns("EmployeeNo").Fixed = Columns.FixedStyle.Left
+            gvPrint.Columns("EmployeeName").Fixed = Columns.FixedStyle.Left
+            gvPrint.Columns("Sex").Fixed = Columns.FixedStyle.Left
+
+            gvPrint.Columns("TotalDays").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("TotalDays").DisplayFormat.FormatString = "c1"
+            gvPrint.Columns("TotalDays").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+            gvPrint.Columns("CashAdvance").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("BalancePay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            'gvPrint.Columns("GrandTotalPay").AppearanceCell.BackColor = Color.Bisque
+            'gvPrint.Columns("BalancePay").AppearanceCell.BackColor = Color.Thistle
+
+
+            gvPrint.Columns("EmployeeID").Visible = False
+
+            gvPrint.Columns("EmployeeNo").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+            gvPrint.Columns("EmployeeName").Width = 150
+            gvPrint.Columns("Sex").Visible = False
+
+            gvPrint.Columns("TotalDays").Visible = False
+            gvPrint.Columns("CashAdvance").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("BalancePay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            'gvPrint.Columns("GrandTotalPay").AppearanceCell.BackColor = Color.Bisque
+            'gvPrint.Columns("BalancePay").AppearanceCell.BackColor = Color.Thistle
+
+
+            For index = 0 To gvPrint.Columns.Count - 1
+
+                If IsDate(gvPrint.Columns(index).FieldName) Then
+
+                    gvPrint.Columns(index).Visible = False
+
+                   
+
+                End If
+
+            Next
+
+            '-----------------------------------
             For index = 0 To gvCheckRoll.Columns.Count - 1
 
                 If IsDate(gvCheckRoll.Columns(index).FieldName) Then
 
                     gvCheckRoll.Columns(index).Caption = DatePart(DateInterval.Day, Convert.ToDateTime(gvCheckRoll.Columns(index).FieldName)).ToString()
-                    'gvCheckRoll.Columns(index).SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
 
                     gvCheckRoll.Columns(index).Width = 45
 

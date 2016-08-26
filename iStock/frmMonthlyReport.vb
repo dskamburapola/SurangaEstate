@@ -179,6 +179,17 @@
 
                 Next
 
+            Else
+
+               
+
+
+                            report.xrRubberLatexDes1.Text = "N/A"
+                            report.xrRubberLatexDes2.Text = "N/A"
+                            report.xrRubberLatexDes3.Text = "N/A"
+
+
+
             End If
 
             If (dt4.Rows.Count > 0) Then
@@ -204,6 +215,15 @@
 
                 Next
 
+            Else
+
+                
+                report.xrRubberSheetDes1.Text = "N/A"
+                report.xrRubberSheetDes2.Text = "N/A"
+                report.xrRubberSheetDes3.Text = "N/A"
+
+                   
+
             End If
 
             If (dt5.Rows.Count > 0) Then
@@ -215,32 +235,36 @@
                         Case 0
                             report.xrAttendanceName1.Text = "[" + dt5.Rows(i)("EmployerNo").ToString() + "] " + dt5.Rows(i)("EmployerName").ToString()
                             report.xrAttendanceDays1.Text = dt5.Rows(i)("WorkedDays").ToString()
-                            report.xrAttendanceDaysPerc1.Text = dt5.Rows(i)("DaysAvg").ToString()
+                            report.xrAttendanceDaysPerc1.Text = FormatNumber(dt5.Rows(i)("DaysAvg").ToString(), 2, TriState.True)
                             report.xrAttendancePluck1.Text = dt5.Rows(i)("Plucking").ToString()
                             report.xrAttendanceLatex1.Text = dt5.Rows(i)("Tapping").ToString()
                             report.xrAttendanceSheets1.Text = dt5.Rows(i)("RubberSheet").ToString()
+                            report.xrAttendanceScrapping1.Text = dt5.Rows(i)("Scrapping").ToString()
 
 
                         Case 1
                             report.xrAttendanceName2.Text = "[" + dt5.Rows(i)("EmployerNo").ToString() + "] " + dt5.Rows(i)("EmployerName").ToString()
                             report.xrAttendanceDays2.Text = dt5.Rows(i)("WorkedDays").ToString()
-                            report.xrAttendanceDaysPerc2.Text = dt5.Rows(i)("DaysAvg").ToString()
+                            report.xrAttendanceDaysPerc2.Text = FormatNumber(dt5.Rows(i)("DaysAvg").ToString(), 2, TriState.True)
                             report.xrAttendancePluck2.Text = dt5.Rows(i)("Plucking").ToString()
                             report.xrAttendanceLatex2.Text = dt5.Rows(i)("Tapping").ToString()
                             report.xrAttendanceSheets2.Text = dt5.Rows(i)("RubberSheet").ToString()
+                            report.xrAttendanceScrapping2.Text = dt5.Rows(i)("Scrapping").ToString()
+
 
                         Case 2
                             report.xrAttendanceName3.Text = "[" + dt5.Rows(i)("EmployerNo").ToString() + "] " + dt5.Rows(i)("EmployerName").ToString()
                             report.xrAttendanceDays3.Text = dt5.Rows(i)("WorkedDays").ToString()
-                            report.xrAttendanceDaysPerc3.Text = dt5.Rows(i)("DaysAvg").ToString()
+                            report.xrAttendanceDaysPerc3.Text = FormatNumber(dt5.Rows(i)("DaysAvg").ToString(), 2, TriState.True)
                             report.xrAttendancePluck3.Text = dt5.Rows(i)("Plucking").ToString()
                             report.xrAttendanceLatex3.Text = dt5.Rows(i)("Tapping").ToString()
                             report.xrAttendanceSheets3.Text = dt5.Rows(i)("RubberSheet").ToString()
+                            report.xrAttendanceScrapping3.Text = dt5.Rows(i)("Scrapping").ToString()
 
 
-                      
 
-                       
+
+
 
 
                     End Select
@@ -257,7 +281,7 @@
                     If dt6.Rows(i)("Designation").ToString() = "PERMANENT" Then
 
                         report.xrAdvancePermenant.Text = FormatNumber(dt6.Rows(i)("Advance").ToString(), 2, TriState.True)
-                    
+
                     End If
 
                     If dt6.Rows(i)("Designation").ToString() = "CASUAL" Then
@@ -275,7 +299,7 @@
 
                     End If
 
-                  
+
                 Next
 
                 Dim pad, pac, pas, pat As Decimal
@@ -408,7 +432,7 @@
 
                     report.xrtotalOtherExpenses.Text = FormatNumber(toe, 2, TriState.True)
 
-                
+
 
 
                 End If
@@ -475,6 +499,7 @@
 
             report.xrtTO.Text = FormatNumber(Val(report.xrtPL.Text) + Val(report.xrtSU.Text) + Val(report.xrtWT.Text) + Val(report.xrtST.Text), 0, TriState.False)
 
+            report.xrtAVWT.Text = FormatNumber(Val(Val(report.xrtWT.Text) / Val(report.xrtTO.Text)) * 100, 2, TriState.True)
 
             report.CreateDocument()
             report.BringToFront()

@@ -44,6 +44,9 @@ Partial Class frmCheckRollCasualReport
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.gcPayrollPrint = New DevExpress.XtraGrid.GridControl()
+        Me.gvPayrollPrint = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.cbeRange.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,10 +66,14 @@ Partial Class frmCheckRollCasualReport
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gcPayrollPrint, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gvPayrollPrint, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
         '
+        Me.LayoutControl1.Controls.Add(Me.gcPayrollPrint)
         Me.LayoutControl1.Controls.Add(Me.cbeRange)
         Me.LayoutControl1.Controls.Add(Me.SimpleButton1)
         Me.LayoutControl1.Controls.Add(Me.gcCheckRoll)
@@ -110,7 +117,7 @@ Partial Class frmCheckRollCasualReport
         Me.gcCheckRoll.Location = New System.Drawing.Point(12, 81)
         Me.gcCheckRoll.MainView = Me.gvCheckRoll
         Me.gcCheckRoll.Name = "gcCheckRoll"
-        Me.gcCheckRoll.Size = New System.Drawing.Size(678, 374)
+        Me.gcCheckRoll.Size = New System.Drawing.Size(678, 226)
         Me.gcCheckRoll.TabIndex = 17
         Me.gcCheckRoll.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvCheckRoll})
         '
@@ -173,7 +180,7 @@ Partial Class frmCheckRollCasualReport
         'LayoutControlGroup1
         '
         Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.EmptySpaceItem3, Me.LayoutControlGroup2, Me.LayoutControlItem4, Me.LayoutControlItem2, Me.EmptySpaceItem1})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.EmptySpaceItem3, Me.LayoutControlGroup2, Me.LayoutControlItem4, Me.LayoutControlItem2, Me.EmptySpaceItem1, Me.LayoutControlItem8})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "Root"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(702, 502)
@@ -274,7 +281,7 @@ Partial Class frmCheckRollCasualReport
         Me.LayoutControlItem4.CustomizationFormText = "LayoutControlItem4"
         Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 69)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(682, 378)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(682, 230)
         Me.LayoutControlItem4.Text = "LayoutControlItem4"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem4.TextToControlDistance = 0
@@ -305,6 +312,36 @@ Partial Class frmCheckRollCasualReport
         Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
+        'gcPayrollPrint
+        '
+        Me.gcPayrollPrint.Location = New System.Drawing.Point(12, 311)
+        Me.gcPayrollPrint.MainView = Me.gvPayrollPrint
+        Me.gcPayrollPrint.Name = "gcPayrollPrint"
+        Me.gcPayrollPrint.Size = New System.Drawing.Size(678, 144)
+        Me.gcPayrollPrint.TabIndex = 20
+        Me.gcPayrollPrint.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvPayrollPrint})
+        '
+        'gvPayrollPrint
+        '
+        Me.gvPayrollPrint.BestFitMaxRowCount = 1
+        Me.gvPayrollPrint.GridControl = Me.gcPayrollPrint
+        Me.gvPayrollPrint.Name = "gvPayrollPrint"
+        Me.gvPayrollPrint.OptionsView.ColumnAutoWidth = False
+        '
+        'LayoutControlItem8
+        '
+        Me.LayoutControlItem8.Control = Me.gcPayrollPrint
+        Me.LayoutControlItem8.CustomizationFormText = "LayoutControlItem8"
+        Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 299)
+        Me.LayoutControlItem8.Name = "LayoutControlItem8"
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(682, 148)
+        Me.LayoutControlItem8.Text = "LayoutControlItem8"
+        Me.LayoutControlItem8.TextLocation = DevExpress.Utils.Locations.Top
+        Me.LayoutControlItem8.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem8.TextToControlDistance = 0
+        Me.LayoutControlItem8.TextVisible = False
+        Me.LayoutControlItem8.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        '
         'frmCheckRollCasualReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -333,6 +370,9 @@ Partial Class frmCheckRollCasualReport
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gcPayrollPrint, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gvPayrollPrint, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -358,4 +398,7 @@ Partial Class frmCheckRollCasualReport
     Friend WithEvents EmptySpaceItem1 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents cbeRange As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents LayoutControlItem7 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents gcPayrollPrint As DevExpress.XtraGrid.GridControl
+    Friend WithEvents gvPayrollPrint As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents LayoutControlItem8 As DevExpress.XtraLayout.LayoutControlItem
 End Class

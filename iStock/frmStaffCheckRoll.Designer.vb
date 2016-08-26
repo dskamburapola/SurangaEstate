@@ -41,6 +41,9 @@ Partial Class frmStaffCheckRoll
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.gcPrint = New DevExpress.XtraGrid.GridControl()
+        Me.gvPrint = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.gcCheckRoll, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,10 +61,14 @@ Partial Class frmStaffCheckRoll
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gcPrint, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gvPrint, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
         '
+        Me.LayoutControl1.Controls.Add(Me.gcPrint)
         Me.LayoutControl1.Controls.Add(Me.SimpleButton1)
         Me.LayoutControl1.Controls.Add(Me.gcCheckRoll)
         Me.LayoutControl1.Controls.Add(Me.leYear)
@@ -90,7 +97,7 @@ Partial Class frmStaffCheckRoll
         Me.gcCheckRoll.Location = New System.Drawing.Point(12, 81)
         Me.gcCheckRoll.MainView = Me.gvCheckRoll
         Me.gcCheckRoll.Name = "gcCheckRoll"
-        Me.gcCheckRoll.Size = New System.Drawing.Size(678, 374)
+        Me.gcCheckRoll.Size = New System.Drawing.Size(678, 258)
         Me.gcCheckRoll.TabIndex = 17
         Me.gcCheckRoll.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvCheckRoll})
         '
@@ -156,7 +163,7 @@ Partial Class frmStaffCheckRoll
         'LayoutControlGroup1
         '
         Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.EmptySpaceItem3, Me.LayoutControlGroup2, Me.LayoutControlItem4, Me.LayoutControlItem2, Me.EmptySpaceItem1})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.EmptySpaceItem3, Me.LayoutControlGroup2, Me.LayoutControlItem4, Me.LayoutControlItem2, Me.EmptySpaceItem1, Me.LayoutControlItem7})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "Root"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(702, 502)
@@ -244,7 +251,7 @@ Partial Class frmStaffCheckRoll
         Me.LayoutControlItem4.CustomizationFormText = "LayoutControlItem4"
         Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 69)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(682, 378)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(682, 262)
         Me.LayoutControlItem4.Text = "LayoutControlItem4"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem4.TextToControlDistance = 0
@@ -275,6 +282,35 @@ Partial Class frmStaffCheckRoll
         Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
+        'gcPrint
+        '
+        Me.gcPrint.Location = New System.Drawing.Point(12, 343)
+        Me.gcPrint.MainView = Me.gvPrint
+        Me.gcPrint.Name = "gcPrint"
+        Me.gcPrint.Size = New System.Drawing.Size(678, 112)
+        Me.gcPrint.TabIndex = 19
+        Me.gcPrint.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvPrint})
+        '
+        'gvPrint
+        '
+        Me.gvPrint.BestFitMaxRowCount = 1
+        Me.gvPrint.GridControl = Me.gcPrint
+        Me.gvPrint.Name = "gvPrint"
+        Me.gvPrint.OptionsView.ColumnAutoWidth = False
+        '
+        'LayoutControlItem7
+        '
+        Me.LayoutControlItem7.Control = Me.gcPrint
+        Me.LayoutControlItem7.CustomizationFormText = "LayoutControlItem7"
+        Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 331)
+        Me.LayoutControlItem7.Name = "LayoutControlItem7"
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(682, 116)
+        Me.LayoutControlItem7.Text = "LayoutControlItem7"
+        Me.LayoutControlItem7.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem7.TextToControlDistance = 0
+        Me.LayoutControlItem7.TextVisible = False
+        Me.LayoutControlItem7.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        '
         'frmStaffCheckRoll
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -301,6 +337,9 @@ Partial Class frmStaffCheckRoll
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gcPrint, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gvPrint, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -324,4 +363,7 @@ Partial Class frmStaffCheckRoll
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem1 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents gcPrint As DevExpress.XtraGrid.GridControl
+    Friend WithEvents gvPrint As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents LayoutControlItem7 As DevExpress.XtraLayout.LayoutControlItem
 End Class

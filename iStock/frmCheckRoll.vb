@@ -89,7 +89,7 @@ Public Class frmCheckRoll
 
 #Region "Print Preview"
     Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
-        PrintPreview(gcCheckRoll, "Check Roll Report (Permanent) " + meMonth.Text + " / " + leYear.Text)
+        PrintPreview(gcPrint, "Check Roll Report (Permanent) " + meMonth.Text + " / " + leYear.Text)
     End Sub
 #End Region
 
@@ -220,6 +220,14 @@ Public Class frmCheckRoll
 
             gvCheckRoll.BestFitColumns()
 
+
+            gvPrint.Columns.Clear()
+            gcPrint.DataSource = Nothing
+            gcPrint.DataSource = ds.Tables(0)
+
+            gvPrint.BestFitColumns()
+
+
             gvCheckRoll.Columns("EmployeeID").Visible = False
 
             gvCheckRoll.Columns("EmployeeNo").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
@@ -293,7 +301,128 @@ Public Class frmCheckRoll
             gvCheckRoll.Columns("CashAdvance").AppearanceCell.BackColor = Color.LightCoral
             gvCheckRoll.Columns("TotalDeductions").AppearanceCell.BackColor = Color.LightCoral
 
+            '*********************************************
 
+
+            gvPrint.Columns("EmployeeID").Visible = False
+
+            gvPrint.Columns("EmployeeNo").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count
+            gvPrint.Columns("EmployeeName").Width = 150
+            gvPrint.Columns("Sex").Width = 60
+
+            gvPrint.Columns("EmployeeNo").Fixed = Columns.FixedStyle.Left
+            gvPrint.Columns("EmployeeName").Fixed = Columns.FixedStyle.Left
+            gvPrint.Columns("Sex").Fixed = Columns.FixedStyle.Left
+            gvPrint.Columns("TotalDays").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("TotalDays").DisplayFormat.FormatString = "c1"
+            gvPrint.Columns("TotalDays").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+            gvPrint.Columns("NameDays").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("NameDays").DisplayFormat.FormatString = "f1"
+            gvPrint.Columns("NameDays").DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+            gvPrint.Columns("PluckingKgs").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("TappingL").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("SmokingS").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("OverKgs").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("LowerKgs").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("OverSheets").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("LowerSheets").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("OTHours").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("BasicPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("OverKgsPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("LowerKgsPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("OverSheetsPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("LowerSheetsPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("SmokingSheetsPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("OTPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("WCPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("EvalutionAllowance").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("GrandTotalPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("EPFAmount").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("PayChit").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("FestivalAdvance").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("CashAdvance").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("TotalDeductions").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("BalancePay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("EPF_12").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("EPF_20").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("ETF_3").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("PluckingKgs").Caption = "Plucking (Kg)"
+            gvPrint.Columns("OverKgs").Caption = "Over (Kg)"
+            gvPrint.Columns("OverKgsPay").Caption = "Over (Kg) Pay"
+            gvPrint.Columns("TappingL").Caption = "Tapping (L)"
+            gvPrint.Columns("SmokingS").Caption = "Smoking Sheets"
+            gvPrint.Columns("EvalutionAllowance").Caption = "Evaluation Allowance"
+            gvPrint.Columns("EPF_12").Caption = "EPF (12%)"
+            gvPrint.Columns("EPF_20").Caption = "EPF (20%)"
+            gvPrint.Columns("ETF_3").Caption = "ETF (3%)"
+
+            gvPrint.Columns("EPF_12").Width = 60
+            gvPrint.Columns("EPF_20").Width = 60
+            gvPrint.Columns("ETF_3").Width = 60
+
+            'gvPrint.Columns("GrandTotalPay").AppearanceCell.BackColor = Color.Bisque
+            'gvPrint.Columns("BalancePay").AppearanceCell.BackColor = Color.Thistle
+
+            'gvPrint.Columns("EPFAmount").AppearanceCell.BackColor = Color.LightCoral
+            'gvPrint.Columns("PayChit").AppearanceCell.BackColor = Color.LightCoral
+            'gvPrint.Columns("FestivalAdvance").AppearanceCell.BackColor = Color.LightCoral
+            'gvPrint.Columns("CashAdvance").AppearanceCell.BackColor = Color.LightCoral
+            'gvPrint.Columns("TotalDeductions").AppearanceCell.BackColor = Color.LightCoral
+
+
+            gvPrint.Columns("EmployeeID").Visible = False
+            gvPrint.Columns("Sex").Visible = False
+            gvPrint.Columns("TotalDays").Visible = False
+            gvPrint.Columns("NameDays").Visible = False
+            gvPrint.Columns("PluckingKgs").Visible = False
+            gvPrint.Columns("TappingL").Visible = False
+            gvPrint.Columns("SmokingS").Visible = False
+            gvPrint.Columns("OverKgs").Visible = False
+            gvPrint.Columns("LowerKgs").Visible = False
+            gvPrint.Columns("OverSheets").Visible = False
+            gvPrint.Columns("LowerSheets").Visible = False
+            gvPrint.Columns("OTHours").Visible = False
+            gvPrint.Columns("BasicPay").Visible = False
+            gvPrint.Columns("OverKgsPay").Visible = False
+            gvPrint.Columns("LowerKgsPay").Visible = False
+            gvPrint.Columns("OverSheetsPay").Visible = False
+            gvPrint.Columns("LowerSheetsPay").Visible = False
+            gvPrint.Columns("SmokingSheetsPay").Visible = False
+            gvPrint.Columns("OTPay").Visible = False
+            gvPrint.Columns("WCPay").Visible = False
+            gvPrint.Columns("EvalutionAllowance").Visible = False
+            gvPrint.Columns("GrandTotalPay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("EPFAmount").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("PayChit").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("FestivalAdvance").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("CashAdvance").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("TotalDeductions").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("BalancePay").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("EPF_12").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("EPF_20").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            gvPrint.Columns("ETF_3").SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+           
+            gvPrint.Columns("EPF_12").Caption = "EPF (12%)"
+            gvPrint.Columns("EPF_20").Caption = "EPF (20%)"
+            gvPrint.Columns("ETF_3").Caption = "ETF (3%)"
+
+            gvPrint.Columns("EPF_12").Width = 60
+            gvPrint.Columns("EPF_20").Width = 60
+            gvPrint.Columns("ETF_3").Width = 60
+
+            For index = 0 To gvPrint.Columns.Count - 1
+
+                If IsDate(gvPrint.Columns(index).FieldName) Then
+
+                    gvPrint.Columns(index).Visible = False
+
+
+                End If
+
+            Next
+
+
+            '*********************************************
             For index = 0 To gvCheckRoll.Columns.Count - 1
 
                 If IsDate(gvCheckRoll.Columns(index).FieldName) Then

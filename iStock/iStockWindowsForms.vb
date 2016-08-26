@@ -364,18 +364,7 @@ Module iStockWindowsForms
 #Region "Print Preview"
     Public Sub PrintPreview(ByVal grid As DevExpress.XtraGrid.GridControl, ByVal reportheadername As String)
         Try
-            'Dim Link As New PrintableComponentLink()
-            'Link.PrintingSystem = New PrintingSystem
-            'Link.Component = grid
-
-
-            'frmPrint.PrintControl1.PrintingSystem = Link.PrintingSystem
-
-            'Link.Margins = New System.Drawing.Printing.Margins(50, 50, 100, 50)
-            'Link.CreateDocument()
-            'frmPrint.MdiParent = frmMain
-            'frmPrint.Show()
-            'frmPrint.BringToFront()
+            
 
             Dim _CWBCompany As New iStockCommon.iStockCompany
             _CWBCompany.GetCompany()
