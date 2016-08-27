@@ -65,6 +65,8 @@
             Dim dt12 As DataTable
             Dim dt13 As DataTable
             Dim dt14 As DataTable
+            Dim dt15 As DataTable
+            Dim dt16 As DataTable
 
             dt1 = ds.Tables(0)
             dt2 = ds.Tables(1)
@@ -81,6 +83,10 @@
             dt12 = ds.Tables(11)
             dt13 = ds.Tables(12)
             dt14 = ds.Tables(13)
+            dt15 = ds.Tables(14)
+            dt16 = ds.Tables(15)
+
+
 
 
 
@@ -117,8 +123,78 @@
                 report.xrIncomeTotal.Text = FormatNumber(t, 2, TriState.True)
 
                 report.xrISDPTotal.Text = FormatNumber(dt1.Rows(0)("OtherAmt").ToString(), 2, TriState.True)
-                report.xrISDPTotal.Text = FormatNumber(dt1.Rows(0)("OtherAmt").ToString(), 2, TriState.True)
+                'report.xrISDPTotal.Text = FormatNumber(dt1.Rows(0)("OtherAmt").ToString(), 2, TriState.True)
 
+
+                '********************************************************************************************************************************
+
+                If dt15.Rows.Count > 0 Then
+
+                    Dim i As Int64
+
+                    Dim xx As New DevExpress.XtraReports.UI.XRTable
+
+                    For i = 0 To dt15.Rows.Count - 1
+
+
+                        Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
+                        xx.WidthF = 345
+
+                        xx.Borders = DevExpress.XtraPrinting.BorderSide.None
+                        xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
+                        xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+
+                        '  xx.Borders = DevExpress.XtraPrinting.BorderSide.All
+
+
+                        cell1.Size = New Size(200, 21)
+                        cell2.Size = New Size(145, 21)
+
+                        cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                        cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+
+
+                        cell1.Text = ""
+
+
+                        If IsDBNull(dt15.Rows(i).Item("Note")) Then
+                            cell1.Text = ""
+                        Else
+                            cell1.Text = dt15.Rows(i).Item("Note").ToString
+                        End If
+
+
+                      
+                        If IsDBNull(dt15.Rows(i).Item("Amount")) Then
+                            cell2.Text = "0.00 "
+                        Else
+                            cell2.Text = FormatNumber(CStr((dt15.Rows(i).Item("Amount"))), 2, TriState.True) & " "
+                            ' PermanentAdvPay = PermanentAdvPay + Convert.ToDecimal((dt15.Rows(i).Item("AdvanceAmount").ToString))
+                        End If
+
+
+                      
+
+
+                        Dim tr As New DevExpress.XtraReports.UI.XRTableRow
+                        tr.Cells.Add(cell1)
+                        tr.Cells.Add(cell2)
+                        'tr.Cells.Add(cell3)
+
+                        xx.Rows.Add(tr)
+
+
+                    Next
+
+                    Dim rISDP As New DevExpress.XtraReports.UI.XRTableRow
+                    rISDP = report.XrTable1.Rows("rowISDP")
+                    rISDP.Cells("xrtISDP").Controls.Add(xx)
+                    ' r91.Cells("rCashAdvanceTotal").Text = FormatNumber((PermanentAdvPay).ToString, 2, TriState.True)
+
+                End If
+
+
+                '********************************************************************************************************************************
 
                 '  report.xrCroptTotalAmt.Text = dt1.Rows(0)("CropTotal").ToString()
                 report.xrEmployeeSalary.Text = FormatNumber(dt1.Rows(0)("EmployeeSalaryAmt").ToString(), 2, TriState.True)
@@ -499,7 +575,21 @@
 
             report.xrtTO.Text = FormatNumber(Val(report.xrtPL.Text) + Val(report.xrtSU.Text) + Val(report.xrtWT.Text) + Val(report.xrtST.Text), 0, TriState.False)
 
+            report.xrtAVPL.Text = FormatNumber(Val(Val(report.xrtPL.Text) / Val(report.xrtTO.Text)) * 100, 2, TriState.True)
+
+            report.xrtAVSU.Text = FormatNumber(Val(Val(report.xrtSU.Text) / Val(report.xrtTO.Text)) * 100, 2, TriState.True)
+
+            report.xrtAVTA.Text = FormatNumber(Val(Val(report.xrtTA.Text) / Val(report.xrtTO.Text)) * 100, 2, TriState.True)
+
             report.xrtAVWT.Text = FormatNumber(Val(Val(report.xrtWT.Text) / Val(report.xrtTO.Text)) * 100, 2, TriState.True)
+
+            report.xrtAVST.Text = FormatNumber(Val(Val(report.xrtST.Text) / Val(report.xrtTO.Text)) * 100, 2, TriState.True)
+
+            If (dt16.Rows.Count > 0) Then
+                report.xrtNOD.Text = "NOD = " & dt16.Rows(0)("WorkDays").ToString()
+            End If
+
+            report.xrtNOE.Text = "NOE = " & report.xrtTO.Text
 
             report.CreateDocument()
             report.BringToFront()
