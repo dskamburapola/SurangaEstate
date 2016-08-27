@@ -128,7 +128,7 @@
             dt13 = ds.Tables(12)
             dt14 = ds.Tables(13)
             dt15 = ds.Tables(14)
-            dt16 = ds.Tables(15)
+            ' dt16 = ds.Tables(15)
 
 
 
@@ -285,68 +285,68 @@
             'Cash Advance - Casual
 
 
-            If dt16.Rows.Count > 0 Then
+            'If dt16.Rows.Count > 0 Then
 
-                Dim i As Int64
+            '    Dim i As Int64
 
-                Dim xx As New DevExpress.XtraReports.UI.XRTable
+            '    Dim xx As New DevExpress.XtraReports.UI.XRTable
 
-                For i = 0 To dt16.Rows.Count - 1
-
-
-                    Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
-                    xx.WidthF = 499
-
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.None
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+            '    For i = 0 To dt16.Rows.Count - 1
 
 
-                    cell1.Size = New Size(120, 25)
-                    cell2.Size = New Size(249, 25)
-                    cell3.Size = New Size(130, 25)
+            '        Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
+            '        xx.WidthF = 499
 
-                    cell1.Text = ""
-
-
-                    If IsDBNull(dt16.Rows(i).Item("IssueDate")) Then
-                        cell1.Text = ""
-                    Else
-                        cell1.Text = Convert.ToDateTime(dt16.Rows(i).Item("IssueDate").ToString).ToString("dd-MMM-yy")
-                    End If
+            '        xx.Borders = DevExpress.XtraPrinting.BorderSide.None
+            '        xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
+            '        xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
 
-                    cell2.Text = "[" + CStr((dt5.Rows(i).Item("EmployerNo"))) + "] " + CStr((dt16.Rows(i).Item("EmployeeName")))
+            '        cell1.Size = New Size(120, 25)
+            '        cell2.Size = New Size(249, 25)
+            '        cell3.Size = New Size(130, 25)
 
-                    If IsDBNull(dt16.Rows(i).Item("AdvanceAmount")) Then
-                        cell3.Text = "0.00 "
-                    Else
-                        cell3.Text = FormatNumber(CStr((dt16.Rows(i).Item("AdvanceAmount"))), 2, TriState.True) & " "
-                        PermanentAdvPay = PermanentAdvPay + Convert.ToDecimal((dt16.Rows(i).Item("AdvanceAmount").ToString))
-                    End If
+            '        cell1.Text = ""
 
 
-                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
-                    cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-                    cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+            '        If IsDBNull(dt16.Rows(i).Item("IssueDate")) Then
+            '            cell1.Text = ""
+            '        Else
+            '            cell1.Text = Convert.ToDateTime(dt16.Rows(i).Item("IssueDate").ToString).ToString("dd-MMM-yy")
+            '        End If
 
 
-                    Dim tr As New DevExpress.XtraReports.UI.XRTableRow
-                    tr.Cells.Add(cell1)
-                    tr.Cells.Add(cell2)
-                    tr.Cells.Add(cell3)
+            '        cell2.Text = "[" + CStr((dt5.Rows(i).Item("EmployerNo"))) + "] " + CStr((dt16.Rows(i).Item("EmployeeName")))
 
-                    xx.Rows.Add(tr)
+            '        If IsDBNull(dt16.Rows(i).Item("AdvanceAmount")) Then
+            '            cell3.Text = "0.00 "
+            '        Else
+            '            cell3.Text = FormatNumber(CStr((dt16.Rows(i).Item("AdvanceAmount"))), 2, TriState.True) & " "
+            '            PermanentAdvPay = PermanentAdvPay + Convert.ToDecimal((dt16.Rows(i).Item("AdvanceAmount").ToString))
+            '        End If
 
 
-                Next
+            '        cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+            '        cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+            '        cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
-                Dim r9 As New DevExpress.XtraReports.UI.XRTableRow
-                r9 = report.xrMainTable.Rows("row9")
-                r9.Cells("rCashAdvanceCasual").Controls.Add(xx)
-                r9.Cells("rCashAdvanceTotal").Text = FormatNumber((PermanentAdvPay).ToString, 2, TriState.True)
 
-            End If
+            '        Dim tr As New DevExpress.XtraReports.UI.XRTableRow
+            '        tr.Cells.Add(cell1)
+            '        tr.Cells.Add(cell2)
+            '        tr.Cells.Add(cell3)
+
+            '        xx.Rows.Add(tr)
+
+
+            '    Next
+
+            '    Dim r9 As New DevExpress.XtraReports.UI.XRTableRow
+            '    r9 = report.xrMainTable.Rows("row9")
+            '    r9.Cells("rCashAdvanceCasual").Controls.Add(xx)
+            '    r9.Cells("rCashAdvanceTotal").Text = FormatNumber((PermanentAdvPay).ToString, 2, TriState.True)
+
+            'End If
 
             '*****************************************************************************************
 
@@ -795,7 +795,9 @@
                     If IsDBNull(dv(i).Item("Description")) Then
                         cell2.Text = String.Empty
                     Else
-                        cell2.Text = CStr((dv(i).Item("Description").ToString.Trim)) + "-" + IIf(IsDBNull(dv(i).Item("Note")), String.Empty, dv(i).Item("Note").ToString)
+                        'cell2.Text = CStr((dv(i).Item("Description").ToString.Trim)) + "-" + IIf(IsDBNull(dv(i).Item("Note")), String.Empty, dv(i).Item("Note").ToString)
+                        cell2.Text = IIf(IsDBNull(dv(i).Item("Note")), String.Empty, dv(i).Item("Note").ToString)
+
                     End If
 
                     If IsDBNull(dv(i).Item("Amount")) Then
@@ -867,7 +869,9 @@
                     If IsDBNull(dv(i).Item("Description")) Then
                         cell2.Text = String.Empty
                     Else
-                        cell2.Text = CStr((dv(i).Item("Description").ToString.Trim)) + "-" + IIf(IsDBNull(dv(i).Item("Note")), String.Empty, dv(i).Item("Note").ToString)
+                        'cell2.Text = CStr((dv(i).Item("Description").ToString.Trim)) + "-" + IIf(IsDBNull(dv(i).Item("Note")), String.Empty, dv(i).Item("Note").ToString)
+                        cell2.Text = IIf(IsDBNull(dv(i).Item("Note")), String.Empty, dv(i).Item("Note").ToString)
+
                     End If
 
                     If IsDBNull(dv(i).Item("Amount")) Then
@@ -940,7 +944,9 @@
                     If IsDBNull(dv(i).Item("Description")) Then
                         cell2.Text = String.Empty
                     Else
-                        cell2.Text = CStr((dv(i).Item("Description").ToString.Trim)) + "-" + IIf(IsDBNull(dv(i).Item("Note")), String.Empty, dv(i).Item("Note").ToString)
+                        'cell2.Text = CStr((dv(i).Item("Description").ToString.Trim)) + "-" + IIf(IsDBNull(dv(i).Item("Note")), String.Empty, dv(i).Item("Note").ToString)
+                        cell2.Text = IIf(IsDBNull(dv(i).Item("Note")), String.Empty, dv(i).Item("Note").ToString)
+
                     End If
 
                     If IsDBNull(dv(i).Item("Amount")) Then
@@ -1012,7 +1018,9 @@
                     If IsDBNull(dv(i).Item("Description")) Then
                         cell2.Text = String.Empty
                     Else
-                        cell2.Text = CStr((dv(i).Item("Description").ToString.Trim)) + "-" + IIf(IsDBNull(dv(i).Item("Note")), String.Empty, dv(i).Item("Note").ToString)
+                        ' cell2.Text = CStr((dv(i).Item("Description").ToString.Trim)) + "-" + IIf(IsDBNull(dv(i).Item("Note")), String.Empty, dv(i).Item("Note").ToString)
+                        cell2.Text = IIf(IsDBNull(dv(i).Item("Note")), String.Empty, dv(i).Item("Note").ToString)
+
                     End If
 
                     If IsDBNull(dv(i).Item("Amount")) Then
