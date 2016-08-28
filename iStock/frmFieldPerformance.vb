@@ -85,7 +85,7 @@ Public Class frmFieldPerformance
 
 #Region "Print Preview"
     Private Sub sbPrint_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbPrint.Click
-        PrintPreview(gcFieldPerfomance, "Field Performance - " + leType.Text + " - " + meMonth.Text + " / " + leYear.Text)
+        PrintPreview(gcFieldPerfomance, "Field Performance - " + meMonth.Text + " / " + leYear.Text)
     End Sub
 #End Region
 
@@ -101,8 +101,8 @@ Public Class frmFieldPerformance
             selectedYear = leYear.EditValue
             currentDate = Convert.ToDateTime("01-" + selectedMonth + "-" + selectedYear)
 
-            Dim currentType As Long
-            currentType = leType.EditValue
+            'Dim currentType As Long
+            'currentType = leType.EditValue
 
             Dim ds As New DataSet
 

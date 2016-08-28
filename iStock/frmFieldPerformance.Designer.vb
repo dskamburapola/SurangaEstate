@@ -20,9 +20,8 @@ Partial Class frmFieldPerformance
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
-        Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.gcFieldPerfomance = New DevExpress.XtraGrid.GridControl()
         Me.AdvBandedGridView1 = New DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView()
@@ -36,11 +35,16 @@ Partial Class frmFieldPerformance
         Me.gridBand3 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
         Me.GridColumn6 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
         Me.GridColumn7 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
-        Me.gridBand4 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
-        Me.GridColumn9 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
-        Me.GridColumn10 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
         Me.gridBand5 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
         Me.GridColumn8 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand6 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
+        Me.GridColumn9 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand7 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
+        Me.GridColumn10 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand4 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
+        Me.BandedGridColumn1 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
+        Me.gridBand8 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand()
+        Me.BandedGridColumn2 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn()
         Me.leType = New DevExpress.XtraEditors.LookUpEdit()
         Me.meMonth = New DevExpress.XtraScheduler.UI.MonthEdit()
         Me.leYear = New DevExpress.XtraEditors.LookUpEdit()
@@ -102,8 +106,8 @@ Partial Class frmFieldPerformance
         '
         'AdvBandedGridView1
         '
-        Me.AdvBandedGridView1.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1, Me.gridBand2, Me.gridBand3, Me.gridBand4, Me.gridBand5})
-        Me.AdvBandedGridView1.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10})
+        Me.AdvBandedGridView1.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1, Me.gridBand2, Me.gridBand3, Me.gridBand5, Me.gridBand6, Me.gridBand7, Me.gridBand4, Me.gridBand8})
+        Me.AdvBandedGridView1.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.BandedGridColumn1, Me.BandedGridColumn2})
         Me.AdvBandedGridView1.GridControl = Me.gcFieldPerfomance
         Me.AdvBandedGridView1.Name = "AdvBandedGridView1"
         Me.AdvBandedGridView1.OptionsBehavior.Editable = False
@@ -148,7 +152,7 @@ Partial Class frmFieldPerformance
         '
         Me.gridBand2.AppearanceHeader.Options.UseTextOptions = True
         Me.gridBand2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.gridBand2.Caption = "Plucking"
+        Me.gridBand2.Caption = "P"
         Me.gridBand2.Columns.Add(Me.GridColumn4)
         Me.gridBand2.Columns.Add(Me.GridColumn5)
         Me.gridBand2.Name = "gridBand2"
@@ -156,14 +160,14 @@ Partial Class frmFieldPerformance
         '
         'GridColumn4
         '
-        Me.GridColumn4.Caption = "PD"
+        Me.GridColumn4.Caption = "(D)"
         Me.GridColumn4.FieldName = "PLD"
         Me.GridColumn4.Name = "GridColumn4"
         Me.GridColumn4.Visible = True
         '
         'GridColumn5
         '
-        Me.GridColumn5.Caption = "PQ"
+        Me.GridColumn5.Caption = "(P)"
         Me.GridColumn5.FieldName = "PLQ"
         Me.GridColumn5.Name = "GridColumn5"
         Me.GridColumn5.Visible = True
@@ -172,7 +176,7 @@ Partial Class frmFieldPerformance
         '
         Me.gridBand3.AppearanceHeader.Options.UseTextOptions = True
         Me.gridBand3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.gridBand3.Caption = "Tapping"
+        Me.gridBand3.Caption = "T"
         Me.gridBand3.Columns.Add(Me.GridColumn6)
         Me.gridBand3.Columns.Add(Me.GridColumn7)
         Me.gridBand3.Name = "gridBand3"
@@ -180,57 +184,88 @@ Partial Class frmFieldPerformance
         '
         'GridColumn6
         '
-        Me.GridColumn6.Caption = "TD"
+        Me.GridColumn6.Caption = "(D)"
         Me.GridColumn6.FieldName = "TPD"
         Me.GridColumn6.Name = "GridColumn6"
         Me.GridColumn6.Visible = True
         '
         'GridColumn7
         '
-        Me.GridColumn7.Caption = "TQ"
+        Me.GridColumn7.Caption = "(Q)"
         Me.GridColumn7.FieldName = "TPQ"
         Me.GridColumn7.Name = "GridColumn7"
         Me.GridColumn7.Visible = True
-        '
-        'gridBand4
-        '
-        Me.gridBand4.AppearanceHeader.Options.UseTextOptions = True
-        Me.gridBand4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.gridBand4.Caption = "Sheets"
-        Me.gridBand4.Columns.Add(Me.GridColumn9)
-        Me.gridBand4.Columns.Add(Me.GridColumn10)
-        Me.gridBand4.Name = "gridBand4"
-        Me.gridBand4.Width = 150
-        '
-        'GridColumn9
-        '
-        Me.GridColumn9.Caption = "SP"
-        Me.GridColumn9.FieldName = "SPD"
-        Me.GridColumn9.Name = "GridColumn9"
-        Me.GridColumn9.Visible = True
-        '
-        'GridColumn10
-        '
-        Me.GridColumn10.Caption = "SC"
-        Me.GridColumn10.FieldName = "SCD"
-        Me.GridColumn10.Name = "GridColumn10"
-        Me.GridColumn10.Visible = True
         '
         'gridBand5
         '
         Me.gridBand5.AppearanceHeader.Options.UseTextOptions = True
         Me.gridBand5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.gridBand5.Caption = "Others"
+        Me.gridBand5.Caption = "W & SU"
         Me.gridBand5.Columns.Add(Me.GridColumn8)
         Me.gridBand5.Name = "gridBand5"
         Me.gridBand5.Width = 75
         '
         'GridColumn8
         '
-        Me.GridColumn8.Caption = "W & SU "
+        Me.GridColumn8.Caption = "(D)"
         Me.GridColumn8.FieldName = "WSU"
         Me.GridColumn8.Name = "GridColumn8"
         Me.GridColumn8.Visible = True
+        '
+        'gridBand6
+        '
+        Me.gridBand6.Caption = "SP"
+        Me.gridBand6.Columns.Add(Me.GridColumn9)
+        Me.gridBand6.Name = "gridBand6"
+        Me.gridBand6.Width = 75
+        '
+        'GridColumn9
+        '
+        Me.GridColumn9.Caption = "(D)"
+        Me.GridColumn9.FieldName = "SPD"
+        Me.GridColumn9.Name = "GridColumn9"
+        Me.GridColumn9.Visible = True
+        '
+        'gridBand7
+        '
+        Me.gridBand7.Caption = "SC"
+        Me.gridBand7.Columns.Add(Me.GridColumn10)
+        Me.gridBand7.Name = "gridBand7"
+        Me.gridBand7.Width = 75
+        '
+        'GridColumn10
+        '
+        Me.GridColumn10.Caption = "(Q)"
+        Me.GridColumn10.FieldName = "SCD"
+        Me.GridColumn10.Name = "GridColumn10"
+        Me.GridColumn10.Visible = True
+        '
+        'gridBand4
+        '
+        Me.gridBand4.Caption = "Other"
+        Me.gridBand4.Columns.Add(Me.BandedGridColumn1)
+        Me.gridBand4.Name = "gridBand4"
+        Me.gridBand4.Width = 75
+        '
+        'BandedGridColumn1
+        '
+        Me.BandedGridColumn1.Caption = "(D)"
+        Me.BandedGridColumn1.Name = "BandedGridColumn1"
+        Me.BandedGridColumn1.Visible = True
+        '
+        'gridBand8
+        '
+        Me.gridBand8.Caption = " "
+        Me.gridBand8.Columns.Add(Me.BandedGridColumn2)
+        Me.gridBand8.Name = "gridBand8"
+        Me.gridBand8.Width = 75
+        '
+        'BandedGridColumn2
+        '
+        Me.BandedGridColumn2.Caption = "AVG (%)"
+        Me.BandedGridColumn2.FieldName = "AVGD"
+        Me.BandedGridColumn2.Name = "BandedGridColumn2"
+        Me.BandedGridColumn2.Visible = True
         '
         'leType
         '
@@ -242,9 +277,6 @@ Partial Class frmFieldPerformance
         Me.leType.Size = New System.Drawing.Size(113, 20)
         Me.leType.StyleController = Me.LayoutControl1
         Me.leType.TabIndex = 19
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "Require"
-        Me.dxvpFieldPerformance.SetValidationRule(Me.leType, ConditionValidationRule1)
         '
         'meMonth
         '
@@ -254,9 +286,9 @@ Partial Class frmFieldPerformance
         Me.meMonth.Size = New System.Drawing.Size(113, 20)
         Me.meMonth.StyleController = Me.LayoutControl1
         Me.meMonth.TabIndex = 17
-        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule2.ErrorText = "Require"
-        Me.dxvpFieldPerformance.SetValidationRule(Me.meMonth, ConditionValidationRule2)
+        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule3.ErrorText = "Require"
+        Me.dxvpFieldPerformance.SetValidationRule(Me.meMonth, ConditionValidationRule3)
         '
         'leYear
         '
@@ -268,9 +300,9 @@ Partial Class frmFieldPerformance
         Me.leYear.Size = New System.Drawing.Size(113, 20)
         Me.leYear.StyleController = Me.LayoutControl1
         Me.leYear.TabIndex = 15
-        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule3.ErrorText = "Require"
-        Me.dxvpFieldPerformance.SetValidationRule(Me.leYear, ConditionValidationRule3)
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "Require"
+        Me.dxvpFieldPerformance.SetValidationRule(Me.leYear, ConditionValidationRule1)
         '
         'sbGenerate
         '
@@ -387,6 +419,7 @@ Partial Class frmFieldPerformance
         Me.LayoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem5.Text = "Type"
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(30, 13)
+        Me.LayoutControlItem5.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
         'LayoutControlItem2
         '
@@ -461,6 +494,11 @@ Partial Class frmFieldPerformance
     Friend WithEvents GridBand1 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
     Friend WithEvents gridBand2 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
     Friend WithEvents gridBand3 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
-    Friend WithEvents gridBand4 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
     Friend WithEvents gridBand5 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+    Friend WithEvents gridBand6 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+    Friend WithEvents gridBand7 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+    Friend WithEvents gridBand4 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+    Friend WithEvents BandedGridColumn1 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents gridBand8 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+    Friend WithEvents BandedGridColumn2 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
 End Class
