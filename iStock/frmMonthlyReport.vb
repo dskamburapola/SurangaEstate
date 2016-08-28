@@ -585,6 +585,9 @@
 
             report.xrtAVST.Text = FormatNumber(Val(Val(report.xrtST.Text) / Val(report.xrtTO.Text)) * 100, 2, TriState.True)
 
+            report.xrtAvgTotal.Text = FormatNumber(Val(IIf(report.xrtAVPL.Text = String.Empty, 0, report.xrtAVPL.Text)) + Val(IIf(report.xrtAVSU.Text = String.Empty, 0, report.xrtAVSU.Text)) + Val(IIf(report.xrtAVTA.Text = String.Empty, 0, report.xrtAVTA.Text)) + Val(IIf(report.xrtAVWT.Text = String.Empty, 0, report.xrtAVWT.Text)) + Val(IIf(report.xrtAVST.Text = String.Empty, 0, report.xrtAVST.Text)), 2, TriState.True)
+
+
             If (dt16.Rows.Count > 0) Then
                 report.xrtNOD.Text = "NOD = " & dt16.Rows(0)("WorkDays").ToString()
             End If

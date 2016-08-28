@@ -222,16 +222,16 @@
                     '      Dim AdvTot As Decimal
 
                     Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
-                    xx.WidthF = 520
+                    xx.WidthF = 452.92
 
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.None
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.None
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.All
 
-
-                    cell1.Size = New Size(115, 25)
-                    cell2.Size = New Size(310, 25)
-                    cell3.Size = New Size(130, 25)
+                    cell1.Size = New Size(107.98, 25)
+                    cell2.Size = New Size(244.54, 25)
+                    cell3.Size = New Size(100.4, 25)
 
 
                     If IsDBNull(dt5.Rows(i).Item("IssueDate")) Then
@@ -296,16 +296,16 @@
 
 
                     Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
-                    xx.WidthF = 520
+                    xx.WidthF = 452.92
 
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.None
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.None
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.All
 
-
-                    cell1.Size = New Size(115, 25)
-                    cell2.Size = New Size(310, 25)
-                    cell3.Size = New Size(130, 25)
+                    cell1.Size = New Size(107.98, 25)
+                    cell2.Size = New Size(244.54, 25)
+                    cell3.Size = New Size(100.4, 25)
 
                     cell1.Text = ""
 
@@ -364,16 +364,16 @@
 
 
                     Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
-                    xx.WidthF = 520
+                    xx.WidthF = 452.92
 
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.None
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.None
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.All
 
-
-                    cell1.Size = New Size(115, 25)
-                    cell2.Size = New Size(310, 25)
-                    cell3.Size = New Size(130, 25)
+                    cell1.Size = New Size(107.98, 25)
+                    cell2.Size = New Size(244.54, 25)
+                    cell3.Size = New Size(100.4, 25)
 
                     cell1.Text = ""
 
@@ -432,16 +432,16 @@
 
 
                     Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
-                    xx.WidthF = 520
+                    xx.WidthF = 452.92
 
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.None
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.None
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.All
 
-
-                    cell1.Size = New Size(115, 25)
-                    cell2.Size = New Size(310, 25)
-                    cell3.Size = New Size(130, 25)
+                    cell1.Size = New Size(107.98, 25)
+                    cell2.Size = New Size(244.54, 25)
+                    cell3.Size = New Size(100.4, 25)
 
                     cell1.Text = ""
 
@@ -500,16 +500,16 @@
 
 
                     Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
-                    xx.WidthF = 520
+                    xx.WidthF = 452.92
 
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.None
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.None
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.All
 
-
-                    cell1.Size = New Size(115, 25)
-                    cell2.Size = New Size(310, 25)
-                    cell3.Size = New Size(130, 25)
+                    cell1.Size = New Size(107.98, 25)
+                    cell2.Size = New Size(244.54, 25)
+                    cell3.Size = New Size(100.4, 25)
 
                     cell1.Text = ""
 
@@ -567,16 +567,16 @@
 
 
                     Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
-                    xx.WidthF = 520
+                    xx.WidthF = 452.92
 
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.None
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.None
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.All
 
-
-                    cell1.Size = New Size(115, 25)
-                    cell2.Size = New Size(310, 25)
-                    cell3.Size = New Size(130, 25)
+                    cell1.Size = New Size(107.98, 25)
+                    cell2.Size = New Size(244.54, 25)
+                    cell3.Size = New Size(100.4, 25)
 
                     cell1.Text = ""
 
@@ -645,16 +645,16 @@
 
 
                     Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
-                    xx.WidthF = 520
+                    xx.WidthF = 452.92
 
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.None
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.None
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.All
 
-
-                    cell1.Size = New Size(115, 25)
-                    cell2.Size = New Size(310, 25)
-                    cell3.Size = New Size(130, 25)
+                    cell1.Size = New Size(107.98, 25)
+                    cell2.Size = New Size(244.54, 25)
+                    cell3.Size = New Size(100.4, 25)
 
                     cell1.Text = ""
 
@@ -711,16 +711,16 @@
 
 
                     Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
-                    xx.WidthF = 520
+                    xx.WidthF = 452.92
 
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.None
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.None
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.All
 
-
-                    cell1.Size = New Size(115, 25)
-                    cell2.Size = New Size(310, 25)
-                    cell3.Size = New Size(130, 25)
+                    cell1.Size = New Size(107.98, 25)
+                    cell2.Size = New Size(244.54, 25)
+                    cell3.Size = New Size(100.4, 25)
 
                     cell1.Text = ""
 
