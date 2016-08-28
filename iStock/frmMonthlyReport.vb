@@ -67,6 +67,7 @@
             Dim dt14 As DataTable
             Dim dt15 As DataTable
             Dim dt16 As DataTable
+            Dim dt17 As DataTable
 
             dt1 = ds.Tables(0)
             dt2 = ds.Tables(1)
@@ -85,6 +86,7 @@
             dt14 = ds.Tables(13)
             dt15 = ds.Tables(14)
             dt16 = ds.Tables(15)
+            dt17 = ds.Tables(16)
 
 
 
@@ -530,6 +532,77 @@
                 '---------------------------------------------------------------------------------
             End If
             '**
+
+            '********************************************************************************************************************************
+
+            If dt17.Rows.Count > 0 Then
+
+                Dim i As Int64
+
+                Dim xx As New DevExpress.XtraReports.UI.XRTable
+
+                For i = 0 To dt17.Rows.Count - 1
+
+
+                    Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
+                    xx.WidthF = 345
+
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.None
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+
+                    '  xx.Borders = DevExpress.XtraPrinting.BorderSide.All
+
+
+                    cell1.Size = New Size(200, 21)
+                    cell2.Size = New Size(145, 21)
+
+                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+
+
+                    cell1.Text = ""
+
+
+                    If IsDBNull(dt17.Rows(i).Item("Note")) Then
+                        cell1.Text = ""
+                    Else
+                        cell1.Text = dt17.Rows(i).Item("Note").ToString
+                    End If
+
+
+
+                    If IsDBNull(dt17.Rows(i).Item("Amount")) Then
+                        cell2.Text = "0.00 "
+                    Else
+                        cell2.Text = FormatNumber(CStr((dt17.Rows(i).Item("Amount"))), 2, TriState.True) & " "
+                        ' PermanentAdvPay = PermanentAdvPay + Convert.ToDecimal((dt17.Rows(i).Item("AdvanceAmount").ToString))
+                    End If
+
+
+
+
+
+                    Dim tr As New DevExpress.XtraReports.UI.XRTableRow
+                    tr.Cells.Add(cell1)
+                    tr.Cells.Add(cell2)
+                    'tr.Cells.Add(cell3)
+
+                    xx.Rows.Add(tr)
+
+
+                Next
+
+                Dim rISDP As New DevExpress.XtraReports.UI.XRTableRow
+                rISDP = report.XrTable1.Rows("rowEXI")
+                rISDP.Cells("xrtEXI").Controls.Add(xx)
+                ' r91.Cells("rCashAdvanceTotal").Text = FormatNumber((PermanentAdvPay).ToString, 2, TriState.True)
+
+            End If
+
+
+            '********************************************************************************************************************************
+
 
             If (dt9.Rows.Count > 0) Then
                 report.xrtFW.Text = dt9.Rows(0)("FW").ToString()

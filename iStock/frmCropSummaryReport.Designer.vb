@@ -20,7 +20,6 @@ Partial Class frmCropSummaryReport
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.pgcAttendance = New DevExpress.XtraPivotGrid.PivotGridControl()
         Me.PivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
@@ -80,8 +79,8 @@ Partial Class frmCropSummaryReport
         '
         'PivotGridField1
         '
-        Me.PivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
-        Me.PivotGridField1.AreaIndex = 0
+        Me.PivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
+        Me.PivotGridField1.AreaIndex = 2
         Me.PivotGridField1.Caption = "Month"
         Me.PivotGridField1.FieldName = "MONTH"
         Me.PivotGridField1.Name = "PivotGridField1"
@@ -131,9 +130,6 @@ Partial Class frmCropSummaryReport
         Me.leType.Size = New System.Drawing.Size(119, 20)
         Me.leType.StyleController = Me.LayoutControl1
         Me.leType.TabIndex = 15
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "Require"
-        Me.dxvpAttendaceReport.SetValidationRule(Me.leType, ConditionValidationRule1)
         '
         'sbGenerate
         '
@@ -209,6 +205,7 @@ Partial Class frmCropSummaryReport
         Me.LayoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem6.Text = "Type"
         Me.LayoutControlItem6.TextSize = New System.Drawing.Size(24, 13)
+        Me.LayoutControlItem6.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
         'LayoutControlItem1
         '

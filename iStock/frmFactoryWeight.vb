@@ -156,11 +156,7 @@ Public Class frmFactoryWeight
 
 #End Region
 
-
-
     Private Sub sbUpdate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-
 
 
     End Sub
@@ -236,5 +232,18 @@ Public Class frmFactoryWeight
 
     Private Sub pgcFactoryWeight_CustomDrawCell(sender As Object, e As PivotCustomDrawCellEventArgs) Handles pgcFactoryWeight.CustomDrawCell
 
+    End Sub
+
+    Private Sub pgcFactoryWeight_CustomCellDisplayText(sender As Object, e As PivotCellDisplayTextEventArgs) Handles pgcFactoryWeight.CustomCellDisplayText
+        'Dim a As Decimal
+
+        'If e.ColumnField.GetDisplayText("AA") Then
+
+        '    a = e.GetColumnGrandTotal(e.DataField)
+        'Else
+        '    a = 777777777777
+        'End If
+
+        'TextEdit1.Text = a
     End Sub
 End Class

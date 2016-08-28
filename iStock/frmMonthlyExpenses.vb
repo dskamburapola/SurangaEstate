@@ -785,10 +785,12 @@
                     Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
                     xx.WidthF = 865
 
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.None
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.None
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
+                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
+
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.All
 
 
                     cell1.Size = New Size(107, 25)
