@@ -229,7 +229,7 @@
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
 
-                    cell1.Size = New Size(130, 25)
+                    cell1.Size = New Size(115, 25)
                     cell2.Size = New Size(310, 25)
                     cell3.Size = New Size(130, 25)
 
@@ -262,6 +262,7 @@
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
+                    cell1.Borders = DevExpress.XtraPrinting.BorderSide.Right
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
                     tr.Cells.Add(cell1)
@@ -302,7 +303,7 @@
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
 
-                    cell1.Size = New Size(130, 25)
+                    cell1.Size = New Size(115, 25)
                     cell2.Size = New Size(310, 25)
                     cell3.Size = New Size(130, 25)
 
@@ -330,6 +331,7 @@
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
+                    cell1.Borders = DevExpress.XtraPrinting.BorderSide.Right
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
                     tr.Cells.Add(cell1)
@@ -369,7 +371,7 @@
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
 
-                    cell1.Size = New Size(130, 25)
+                    cell1.Size = New Size(115, 25)
                     cell2.Size = New Size(310, 25)
                     cell3.Size = New Size(130, 25)
 
@@ -397,6 +399,7 @@
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
+                    cell1.Borders = DevExpress.XtraPrinting.BorderSide.Right
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
                     tr.Cells.Add(cell1)
@@ -436,7 +439,7 @@
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
 
-                    cell1.Size = New Size(130, 25)
+                    cell1.Size = New Size(115, 25)
                     cell2.Size = New Size(310, 25)
                     cell3.Size = New Size(130, 25)
 
@@ -464,6 +467,7 @@
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
+                    cell1.Borders = DevExpress.XtraPrinting.BorderSide.Right
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
                     tr.Cells.Add(cell1)
@@ -503,7 +507,7 @@
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
 
-                    cell1.Size = New Size(130, 25)
+                    cell1.Size = New Size(115, 25)
                     cell2.Size = New Size(310, 25)
                     cell3.Size = New Size(130, 25)
 
@@ -531,6 +535,7 @@
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
+                    cell1.Borders = DevExpress.XtraPrinting.BorderSide.Right
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
                     tr.Cells.Add(cell1)
@@ -569,7 +574,7 @@
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
 
-                    cell1.Size = New Size(130, 25)
+                    cell1.Size = New Size(115, 25)
                     cell2.Size = New Size(310, 25)
                     cell3.Size = New Size(130, 25)
 
@@ -597,6 +602,7 @@
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
+                    cell1.Borders = DevExpress.XtraPrinting.BorderSide.Right
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
                     tr.Cells.Add(cell1)
@@ -646,7 +652,7 @@
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
 
-                    cell1.Size = New Size(130, 25)
+                    cell1.Size = New Size(115, 25)
                     cell2.Size = New Size(310, 25)
                     cell3.Size = New Size(130, 25)
 
@@ -667,6 +673,7 @@
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
+                    cell1.Borders = DevExpress.XtraPrinting.BorderSide.Right
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
                     tr.Cells.Add(cell1)
@@ -711,7 +718,7 @@
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
 
-                    cell1.Size = New Size(130, 25)
+                    cell1.Size = New Size(115, 25)
                     cell2.Size = New Size(310, 25)
                     cell3.Size = New Size(130, 25)
 
@@ -731,6 +738,8 @@
                     cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+
+                    cell1.Borders = DevExpress.XtraPrinting.BorderSide.Right
 
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
@@ -780,15 +789,13 @@
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
-                    '    xx.Borders = DevExpress.XtraPrinting.BorderSide.All
+
 
                     cell1.Size = New Size(107, 25)
                     cell2.Size = New Size(344, 25)
-                    cell3.Size = New Size(111, 25)
+                    cell3.Size = New Size(100, 25)
                     cell4.Size = New Size(114, 25)
                     cell5.Size = New Size(184, 25)
-
-
 
 
                     If IsDBNull(dv(i).Item("ExpenseDate")) Then
@@ -823,9 +830,18 @@
 
                     End If
 
-                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+
+                    'cell2.Borders = DevExpress.XtraPrinting.BorderSide.Left
+                    'cell2.Borders = DevExpress.XtraPrinting.BorderSide.Right
+                    'cell3.Borders = DevExpress.XtraPrinting.BorderSide.Left
+                    'cell3.Borders = DevExpress.XtraPrinting.BorderSide.Right
+                    'cell5.Borders = DevExpress.XtraPrinting.BorderSide.Left
+                    'cell5.Borders = DevExpress.XtraPrinting.BorderSide.Right
+
 
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
@@ -848,71 +864,11 @@
 
                 '' r22a.Cells("rExpenseWaterTotal").Text = FormatNumber((ExpenseWaterTotal).ToString, 2, TriState.True)
                 'r22a.Cells("rExpenseWaterTotal1").Text = FormatNumber((ExpenseWaterTotal).ToString, 2, TriState.True)
+                report.rExpenseWaterTotal.Text = FormatNumber((ExpenseWaterTotal).ToString, 2, TriState.True)
                 report.rExpenseWaterTotal1.Text = FormatNumber((ExpenseWaterTotal).ToString, 2, TriState.True)
             End If
 
-            ''#######################################
-
-            'If dt10.Rows.Count > 0 Then
-
-            '    Dim i As Int64
-
-            '    Dim xx As New DevExpress.XtraReports.UI.XRTable
-
-            '    Dim dv As DataView
-            '    dv = dt10.DefaultView
-            '    'dv.Sort = "DESCRIPTION ASC"
-            '    dv.RowFilter = "Description ='WATER'"
-
-
-            '    For i = 0 To dv.Count - 1
-
-
-            '        Dim cell1 As New DevExpress.XtraReports.UI.XRTableCell
-            '        xx.WidthF = 200
-
-            '        xx.Borders = DevExpress.XtraPrinting.BorderSide.None
-            '        xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
-            '        xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
-
-
-            '        cell1.Size = New Size(200, 25)
-
-
-            '        If IsDBNull(dv(i).Item("Remarks")) Then
-            '            cell1.Text = String.Empty
-            '        Else
-            '            cell1.Text = IIf(IsDBNull(dv(i).Item("Remarks")), String.Empty, dv(i).Item("Remarks").ToString)
-            '        End If
-
-
-
-
-            '        cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-
-
-            '        Dim tr As New DevExpress.XtraReports.UI.XRTableRow
-            '        tr.Cells.Add(cell1)
-
-            '        xx.Rows.Add(tr)
-            '    Next
-
-            '    Dim r22R As New DevExpress.XtraReports.UI.XRTableRow
-            '    r22R = report.xrMainTable.Rows("row22")
-            '    r22R.Cells("rWaterRemark").Controls.Add(xx)
-
-
-            '    'Dim r22a As New DevExpress.XtraReports.UI.XRTableRow
-            '    'r22a = report.xrMainTable.Rows("row22")
-
-            '    ' r22a.Cells("rExpenseWaterTotal").Text = FormatNumber((ExpenseWaterTotal).ToString, 2, TriState.True)
-            '    'r22a.Cells("rExpenseWaterTotal1").Text = FormatNumber((ExpenseWaterTotal).ToString, 2, TriState.True)
-
-            'End If
-
-            '  
-
-            ''#######################################
+          
             'Expenses Electrity
 
             If dt10.Rows.Count > 0 Then
@@ -927,17 +883,19 @@
 
                 For i = 0 To dv.Count - 1
 
-                    Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
-                    xx.WidthF = 520
+                    Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
+                    xx.WidthF = 865
 
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.None
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
 
-                    cell1.Size = New Size(130, 25)
-                    cell2.Size = New Size(310, 25)
-                    cell3.Size = New Size(130, 25)
+                    cell1.Size = New Size(107, 25)
+                    cell2.Size = New Size(344, 25)
+                    cell3.Size = New Size(100, 25)
+                    cell4.Size = New Size(114, 25)
+                    cell5.Size = New Size(184, 25)
                   
 
                     If IsDBNull(dv(i).Item("ExpenseDate")) Then
@@ -962,18 +920,28 @@
                         ExpenseElectricityTotal = ExpenseElectricityTotal + Convert.ToDecimal((dv(i).Item("Amount").ToString))
                     End If
 
-                   
+                    cell4.Text = ""
 
-                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+                    If IsDBNull(dv(i).Item("Remarks")) Then
+                        cell5.Text = String.Empty
+                    Else
+                        'cell2.Text = CStr((dv(i).Item("Description").ToString.Trim)) + "-" + IIf(IsDBNull(dv(i).Item("Note")), String.Empty, dv(i).Item("Note").ToString)
+                        cell5.Text = IIf(IsDBNull(dv(i).Item("Remarks")), String.Empty, dv(i).Item("Remarks").ToString)
+
+                    End If
+
+                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
 
                   
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
                     tr.Cells.Add(cell1)
                     tr.Cells.Add(cell2)
                     tr.Cells.Add(cell3)
-                 
+                    tr.Cells.Add(cell4)
+                    tr.Cells.Add(cell5)
 
                     xx.Rows.Add(tr)
                 Next
@@ -982,11 +950,14 @@
                 r23 = report.xrMainTable.Rows("row23")
                 r23.Cells("rExprenesEletricity").Controls.Add(xx)
 
-                Dim r23a As New DevExpress.XtraReports.UI.XRTableRow
-                r23a = report.xrMainTable.Rows("row23")
+                'Dim r23a As New DevExpress.XtraReports.UI.XRTableRow
+                'r23a = report.xrMainTable.Rows("row23")
 
                 ' r23a.Cells("rExpenseElectrityTotal").Text = FormatNumber((ExpenseElectricityTotal).ToString, 2, TriState.True)
-                r23a.Cells("rExpenseElectrityTotal1").Text = FormatNumber((ExpenseElectricityTotal).ToString, 2, TriState.True)
+                'r23a.Cells("rExpenseElectrityTotal1").Text = FormatNumber((ExpenseElectricityTotal).ToString, 2, TriState.True)
+
+                report.rExpenseElectrityTotal.Text = FormatNumber((ExpenseElectricityTotal).ToString, 2, TriState.True)
+                report.rExpenseElectrityTotal1.Text = FormatNumber((ExpenseElectricityTotal).ToString, 2, TriState.True)
 
 
             End If
@@ -1007,17 +978,19 @@
 
                 For i = 0 To dv.Count - 1
 
-                    Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
-                    xx.WidthF = 520
+                    Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
+                    xx.WidthF = 865
 
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.None
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
 
-                    cell1.Size = New Size(130, 25)
-                    cell2.Size = New Size(310, 25)
-                    cell3.Size = New Size(130, 25)
+                    cell1.Size = New Size(107, 25)
+                    cell2.Size = New Size(344, 25)
+                    cell3.Size = New Size(100, 25)
+                    cell4.Size = New Size(114, 25)
+                    cell5.Size = New Size(184, 25)
 
                     If IsDBNull(dv(i).Item("ExpenseDate")) Then
                         cell1.Text = String.Empty
@@ -1041,14 +1014,27 @@
                         ExpenseMotivationTotal = ExpenseMotivationTotal + Convert.ToDecimal((dv(i).Item("Amount").ToString))
                     End If
 
-                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+                    cell4.Text = ""
+
+                    If IsDBNull(dv(i).Item("Remarks")) Then
+                        cell5.Text = String.Empty
+                    Else
+                        'cell2.Text = CStr((dv(i).Item("Description").ToString.Trim)) + "-" + IIf(IsDBNull(dv(i).Item("Note")), String.Empty, dv(i).Item("Note").ToString)
+                        cell5.Text = IIf(IsDBNull(dv(i).Item("Remarks")), String.Empty, dv(i).Item("Remarks").ToString)
+
+                    End If
+
+                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
                     tr.Cells.Add(cell1)
                     tr.Cells.Add(cell2)
                     tr.Cells.Add(cell3)
+                    tr.Cells.Add(cell4)
+                    tr.Cells.Add(cell5)
 
                     xx.Rows.Add(tr)
                 Next
@@ -1057,12 +1043,14 @@
                 r25 = report.xrMainTable.Rows("row25")
                 r25.Cells("rExprenesMotivation").Controls.Add(xx)
 
-                Dim r25a As New DevExpress.XtraReports.UI.XRTableRow
-                r25a = report.xrMainTable.Rows("row25")
+                'Dim r25a As New DevExpress.XtraReports.UI.XRTableRow
+                'r25a = report.xrMainTable.Rows("row25")
 
-                ' r25a.Cells("rExprenesMotivationTotal").Text = FormatNumber((ExpenseMotivationTotal).ToString, 2, TriState.True)
-                r25a.Cells("rExprenesMotivationTotal1").Text = FormatNumber((ExpenseMotivationTotal).ToString, 2, TriState.True)
+                'r25a.Cells("rExprenesMotivationTotal").Text = FormatNumber((ExpenseMotivationTotal).ToString, 2, TriState.True)
+                'r25a.Cells("rExprenesMotivationTotal1").Text = FormatNumber((ExpenseMotivationTotal).ToString, 2, TriState.True)
 
+                report.rExprenesMotivationTotal.Text = FormatNumber((ExpenseMotivationTotal).ToString, 2, TriState.True)
+                report.rExprenesMotivationTotal1.Text = FormatNumber((ExpenseMotivationTotal).ToString, 2, TriState.True)
 
             End If
 
@@ -1081,17 +1069,19 @@
 
                 For i = 0 To dv.Count - 1
 
-                    Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
-                    xx.WidthF = 520
+                    Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
+                    xx.WidthF = 865
 
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.None
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
 
-                    cell1.Size = New Size(130, 25)
-                    cell2.Size = New Size(310, 25)
-                    cell3.Size = New Size(130, 25)
+                    cell1.Size = New Size(107, 25)
+                    cell2.Size = New Size(344, 25)
+                    cell3.Size = New Size(100, 25)
+                    cell4.Size = New Size(114, 25)
+                    cell5.Size = New Size(184, 25)
 
                     If IsDBNull(dv(i).Item("ExpenseDate")) Then
                         cell1.Text = String.Empty
@@ -1115,14 +1105,25 @@
                         ExpenseCachRewardsTotal = ExpenseCachRewardsTotal + Convert.ToDecimal((dv(i).Item("Amount").ToString))
                     End If
 
-                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+                    If IsDBNull(dv(i).Item("Remarks")) Then
+                        cell5.Text = String.Empty
+                    Else
+                        'cell2.Text = CStr((dv(i).Item("Description").ToString.Trim)) + "-" + IIf(IsDBNull(dv(i).Item("Note")), String.Empty, dv(i).Item("Note").ToString)
+                        cell5.Text = IIf(IsDBNull(dv(i).Item("Remarks")), String.Empty, dv(i).Item("Remarks").ToString)
+
+                    End If
+
+                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
                     tr.Cells.Add(cell1)
                     tr.Cells.Add(cell2)
                     tr.Cells.Add(cell3)
+                    tr.Cells.Add(cell4)
+                    tr.Cells.Add(cell5)
 
                     xx.Rows.Add(tr)
                 Next
@@ -1131,11 +1132,14 @@
                 r25 = report.xrMainTable.Rows("row26")
                 r25.Cells("rExprenesCashRewards").Controls.Add(xx)
 
-                Dim r25a As New DevExpress.XtraReports.UI.XRTableRow
-                r25a = report.xrMainTable.Rows("row26")
+                'Dim r25a As New DevExpress.XtraReports.UI.XRTableRow
+                'r25a = report.xrMainTable.Rows("row26")
 
                 'r25a.Cells("rExprenesCashRewardsTotal").Text = FormatNumber((ExpenseCachRewardsTotal).ToString, 2, TriState.True)
-                r25a.Cells("rExprenesCashRewardsTotal1").Text = FormatNumber((ExpenseCachRewardsTotal).ToString, 2, TriState.True)
+                ' r25a.Cells("rExprenesCashRewardsTotal1").Text = FormatNumber((ExpenseCachRewardsTotal).ToString, 2, TriState.True)
+
+                report.rExprenesCashRewardsTotal2.Text = FormatNumber((ExpenseCachRewardsTotal).ToString, 2, TriState.True)
+                report.rExprenesCashRewardsTotal3.Text = FormatNumber((ExpenseCachRewardsTotal).ToString, 2, TriState.True)
 
 
             End If
@@ -1155,17 +1159,20 @@
 
                 For i = 0 To dv.Count - 1
 
-                    Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
-                    xx.WidthF = 520
+                    Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
+                    xx.WidthF = 865
 
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.None
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
 
-                    cell1.Size = New Size(130, 25)
-                    cell2.Size = New Size(310, 25)
-                    cell3.Size = New Size(130, 25)
+                    cell1.Size = New Size(107, 25)
+                    cell2.Size = New Size(344, 25)
+                    cell3.Size = New Size(100, 25)
+                    cell4.Size = New Size(114, 25)
+                    cell5.Size = New Size(184, 25)
+
 
                     If IsDBNull(dv(i).Item("ExpenseDate")) Then
                         cell1.Text = String.Empty
@@ -1187,14 +1194,27 @@
                         ExpenseOtherTotal = ExpenseOtherTotal + Convert.ToDecimal((dv(i).Item("Amount").ToString))
                     End If
 
-                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+                    cell4.Text = ""
+
+                    If IsDBNull(dv(i).Item("Remarks")) Then
+                        cell5.Text = String.Empty
+                    Else
+                        'cell2.Text = CStr((dv(i).Item("Description").ToString.Trim)) + "-" + IIf(IsDBNull(dv(i).Item("Note")), String.Empty, dv(i).Item("Note").ToString)
+                        cell5.Text = IIf(IsDBNull(dv(i).Item("Remarks")), String.Empty, dv(i).Item("Remarks").ToString)
+
+                    End If
+
+                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
                     cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                     cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
                     tr.Cells.Add(cell1)
                     tr.Cells.Add(cell2)
                     tr.Cells.Add(cell3)
+                    tr.Cells.Add(cell4)
+                    tr.Cells.Add(cell5)
 
                     xx.Rows.Add(tr)
                 Next
@@ -1203,12 +1223,14 @@
                 r27 = report.xrMainTable.Rows("row27")
                 r27.Cells("rExprenesOther").Controls.Add(xx)
 
-                Dim r27a As New DevExpress.XtraReports.UI.XRTableRow
-                r27a = report.xrMainTable.Rows("row27")
+                'Dim r27a As New DevExpress.XtraReports.UI.XRTableRow
+                'r27a = report.xrMainTable.Rows("row27")
 
                 '  r27a.Cells("rExprenesOtherTotal").Text = FormatNumber((ExpenseOtherTotal).ToString, 2, TriState.True)
-                r27a.Cells("rExprenesOtherTotal1").Text = FormatNumber((ExpenseOtherTotal).ToString, 2, TriState.True)
+                'r27a.Cells("rExprenesOtherTotal1").Text = FormatNumber((ExpenseOtherTotal).ToString, 2, TriState.True)
 
+                report.rExprenesOtherTotal.Text = FormatNumber((ExpenseOtherTotal).ToString, 2, TriState.True)
+                report.rExprenesOtherTotal1.Text = FormatNumber((ExpenseOtherTotal).ToString, 2, TriState.True)
 
             End If
     
