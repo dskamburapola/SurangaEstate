@@ -20,14 +20,16 @@ Partial Class frmFactoryWeight
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule4 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
-        Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.txtExcess = New DevExpress.XtraEditors.TextEdit()
         Me.btnPrint = New DevExpress.XtraEditors.SimpleButton()
         Me.pgcFactoryWeight = New DevExpress.XtraPivotGrid.PivotGridControl()
         Me.PivotGridField1 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.PivotGridField2 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.PivotGridField4 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.leType = New DevExpress.XtraEditors.LookUpEdit()
         Me.leYear = New DevExpress.XtraEditors.LookUpEdit()
         Me.meMonth = New DevExpress.XtraScheduler.UI.MonthEdit()
@@ -41,15 +43,15 @@ Partial Class frmFactoryWeight
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
-        Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.PivotGridField4 = New DevExpress.XtraPivotGrid.PivotGridField()
-        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
         Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem3 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem4 = New DevExpress.XtraLayout.EmptySpaceItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.txtExcess.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pgcFactoryWeight, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.leType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,17 +65,17 @@ Partial Class frmFactoryWeight
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
         '
-        Me.LayoutControl1.Controls.Add(Me.TextEdit1)
+        Me.LayoutControl1.Controls.Add(Me.txtExcess)
         Me.LayoutControl1.Controls.Add(Me.btnPrint)
         Me.LayoutControl1.Controls.Add(Me.pgcFactoryWeight)
         Me.LayoutControl1.Controls.Add(Me.leType)
@@ -87,6 +89,16 @@ Partial Class frmFactoryWeight
         Me.LayoutControl1.Size = New System.Drawing.Size(907, 502)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'txtExcess
+        '
+        Me.txtExcess.Location = New System.Drawing.Point(92, 263)
+        Me.txtExcess.Name = "txtExcess"
+        Me.txtExcess.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 14.0!)
+        Me.txtExcess.Properties.Appearance.Options.UseFont = True
+        Me.txtExcess.Size = New System.Drawing.Size(137, 30)
+        Me.txtExcess.StyleController = Me.LayoutControl1
+        Me.txtExcess.TabIndex = 20
         '
         'btnPrint
         '
@@ -102,11 +114,11 @@ Partial Class frmFactoryWeight
         Me.pgcFactoryWeight.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.PivotGridField1, Me.PivotGridField2, Me.PivotGridField4})
         Me.pgcFactoryWeight.Location = New System.Drawing.Point(24, 69)
         Me.pgcFactoryWeight.Name = "pgcFactoryWeight"
-        Me.pgcFactoryWeight.OptionsBehavior.BestFitMode = DevExpress.XtraPivotGrid.PivotGridBestFitMode.Cell
+        Me.pgcFactoryWeight.OptionsBehavior.BestFitMode = CType((DevExpress.XtraPivotGrid.PivotGridBestFitMode.FieldHeader Or DevExpress.XtraPivotGrid.PivotGridBestFitMode.Cell), DevExpress.XtraPivotGrid.PivotGridBestFitMode)
         Me.pgcFactoryWeight.OptionsView.ShowColumnTotals = False
         Me.pgcFactoryWeight.OptionsView.ShowGrandTotalsForSingleValues = True
         Me.pgcFactoryWeight.OptionsView.ShowRowGrandTotals = False
-        Me.pgcFactoryWeight.Size = New System.Drawing.Size(859, 191)
+        Me.pgcFactoryWeight.Size = New System.Drawing.Size(859, 180)
         Me.pgcFactoryWeight.TabIndex = 18
         '
         'PivotGridField1
@@ -116,6 +128,9 @@ Partial Class frmFactoryWeight
         Me.PivotGridField1.Caption = "CurrentDay"
         Me.PivotGridField1.FieldName = "CurrentDay"
         Me.PivotGridField1.Name = "PivotGridField1"
+        Me.PivotGridField1.Options.AllowEdit = False
+        Me.PivotGridField1.Options.AllowSort = DevExpress.Utils.DefaultBoolean.[True]
+        Me.PivotGridField1.SortMode = DevExpress.XtraPivotGrid.PivotSortMode.None
         Me.PivotGridField1.TotalsVisibility = DevExpress.XtraPivotGrid.PivotTotalsVisibility.None
         Me.PivotGridField1.Width = 60
         '
@@ -126,8 +141,22 @@ Partial Class frmFactoryWeight
         Me.PivotGridField2.Caption = "Description"
         Me.PivotGridField2.FieldName = "Description"
         Me.PivotGridField2.Name = "PivotGridField2"
+        Me.PivotGridField2.Options.AllowEdit = False
+        Me.PivotGridField2.Options.AllowFilter = DevExpress.Utils.DefaultBoolean.[False]
+        Me.PivotGridField2.Options.AllowSort = DevExpress.Utils.DefaultBoolean.[False]
+        Me.PivotGridField2.SortOrder = DevExpress.XtraPivotGrid.PivotSortOrder.Descending
         Me.PivotGridField2.TotalsVisibility = DevExpress.XtraPivotGrid.PivotTotalsVisibility.None
         Me.PivotGridField2.Width = 118
+        '
+        'PivotGridField4
+        '
+        Me.PivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
+        Me.PivotGridField4.AreaIndex = 0
+        Me.PivotGridField4.Caption = "Crop"
+        Me.PivotGridField4.CellFormat.FormatString = "F"
+        Me.PivotGridField4.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.PivotGridField4.FieldName = "FactoryCrop"
+        Me.PivotGridField4.Name = "PivotGridField4"
         '
         'leType
         '
@@ -139,9 +168,9 @@ Partial Class frmFactoryWeight
         Me.leType.Size = New System.Drawing.Size(117, 20)
         Me.leType.StyleController = Me.LayoutControl1
         Me.leType.TabIndex = 17
-        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule3.ErrorText = "Require"
-        Me.dxvpAttendaceReport.SetValidationRule(Me.leType, ConditionValidationRule3)
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule2.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.leType, ConditionValidationRule2)
         '
         'leYear
         '
@@ -153,9 +182,9 @@ Partial Class frmFactoryWeight
         Me.leYear.Size = New System.Drawing.Size(119, 20)
         Me.leYear.StyleController = Me.LayoutControl1
         Me.leYear.TabIndex = 15
-        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule4.ErrorText = "Require"
-        Me.dxvpAttendaceReport.SetValidationRule(Me.leYear, ConditionValidationRule4)
+        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule3.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.leYear, ConditionValidationRule3)
         '
         'meMonth
         '
@@ -165,9 +194,9 @@ Partial Class frmFactoryWeight
         Me.meMonth.Size = New System.Drawing.Size(111, 20)
         Me.meMonth.StyleController = Me.LayoutControl1
         Me.meMonth.TabIndex = 14
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "Require"
-        Me.dxvpAttendaceReport.SetValidationRule(Me.meMonth, ConditionValidationRule1)
+        ConditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule4.ErrorText = "Require"
+        Me.dxvpAttendaceReport.SetValidationRule(Me.meMonth, ConditionValidationRule4)
         '
         'sbGenerate
         '
@@ -191,7 +220,7 @@ Partial Class frmFactoryWeight
         'LayoutControlGroup2
         '
         Me.LayoutControlGroup2.CustomizationFormText = "Select Month & Year"
-        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem1, Me.LayoutControlItem3, Me.LayoutControlItem2, Me.LayoutControlItem4, Me.EmptySpaceItem1, Me.LayoutControlItem8, Me.EmptySpaceItem2, Me.EmptySpaceItem3})
+        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem1, Me.LayoutControlItem3, Me.LayoutControlItem2, Me.LayoutControlItem4, Me.EmptySpaceItem1, Me.LayoutControlItem8, Me.EmptySpaceItem2, Me.EmptySpaceItem3, Me.EmptySpaceItem4})
         Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
         Me.LayoutControlGroup2.Size = New System.Drawing.Size(887, 482)
@@ -263,7 +292,7 @@ Partial Class frmFactoryWeight
         Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
         Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 26)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(863, 195)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(863, 184)
         Me.LayoutControlItem2.Text = "LayoutControlItem2"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextToControlDistance = 0
@@ -295,6 +324,36 @@ Partial Class frmFactoryWeight
         Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
+        'LayoutControlItem8
+        '
+        Me.LayoutControlItem8.Control = Me.txtExcess
+        Me.LayoutControlItem8.CustomizationFormText = "LOSS / EXESS"
+        Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 220)
+        Me.LayoutControlItem8.Name = "LayoutControlItem8"
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(209, 34)
+        Me.LayoutControlItem8.Text = "LOSS / EXESS"
+        Me.LayoutControlItem8.TextSize = New System.Drawing.Size(65, 13)
+        '
+        'EmptySpaceItem2
+        '
+        Me.EmptySpaceItem2.AllowHotTrack = False
+        Me.EmptySpaceItem2.CustomizationFormText = "EmptySpaceItem2"
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(0, 254)
+        Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(863, 154)
+        Me.EmptySpaceItem2.Text = "EmptySpaceItem2"
+        Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'EmptySpaceItem3
+        '
+        Me.EmptySpaceItem3.AllowHotTrack = False
+        Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(0, 210)
+        Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(863, 10)
+        Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
+        Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
+        '
         'LayoutControlItem7
         '
         Me.LayoutControlItem7.CustomizationFormText = "LayoutControlItem3"
@@ -309,55 +368,15 @@ Partial Class frmFactoryWeight
         Me.LayoutControlItem7.TextToControlDistance = 0
         Me.LayoutControlItem7.TextVisible = False
         '
-        'PivotGridField4
+        'EmptySpaceItem4
         '
-        Me.PivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
-        Me.PivotGridField4.AreaIndex = 0
-        Me.PivotGridField4.Caption = "Crop"
-        Me.PivotGridField4.CellFormat.FormatString = "F"
-        Me.PivotGridField4.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.PivotGridField4.FieldName = "FactoryCrop"
-        Me.PivotGridField4.Name = "PivotGridField4"
-        '
-        'TextEdit1
-        '
-        Me.TextEdit1.Location = New System.Drawing.Point(92, 274)
-        Me.TextEdit1.Name = "TextEdit1"
-        Me.TextEdit1.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 14.0!)
-        Me.TextEdit1.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit1.Size = New System.Drawing.Size(791, 30)
-        Me.TextEdit1.StyleController = Me.LayoutControl1
-        Me.TextEdit1.TabIndex = 20
-        '
-        'LayoutControlItem8
-        '
-        Me.LayoutControlItem8.Control = Me.TextEdit1
-        Me.LayoutControlItem8.CustomizationFormText = "LOSS / EXESS"
-        Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 231)
-        Me.LayoutControlItem8.Name = "LayoutControlItem8"
-        Me.LayoutControlItem8.Size = New System.Drawing.Size(863, 34)
-        Me.LayoutControlItem8.Text = "LOSS / EXESS"
-        Me.LayoutControlItem8.TextSize = New System.Drawing.Size(65, 13)
-        '
-        'EmptySpaceItem2
-        '
-        Me.EmptySpaceItem2.AllowHotTrack = False
-        Me.EmptySpaceItem2.CustomizationFormText = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(0, 265)
-        Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(863, 143)
-        Me.EmptySpaceItem2.Text = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmptySpaceItem3
-        '
-        Me.EmptySpaceItem3.AllowHotTrack = False
-        Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(0, 221)
-        Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(863, 10)
-        Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
+        Me.EmptySpaceItem4.AllowHotTrack = False
+        Me.EmptySpaceItem4.CustomizationFormText = "EmptySpaceItem4"
+        Me.EmptySpaceItem4.Location = New System.Drawing.Point(209, 220)
+        Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
+        Me.EmptySpaceItem4.Size = New System.Drawing.Size(654, 34)
+        Me.EmptySpaceItem4.Text = "EmptySpaceItem4"
+        Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(0, 0)
         '
         'frmFactoryWeight
         '
@@ -370,6 +389,7 @@ Partial Class frmFactoryWeight
         Me.Text = "Factory Crop Summary"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.txtExcess.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pgcFactoryWeight, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.leType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.leYear.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -383,12 +403,12 @@ Partial Class frmFactoryWeight
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -414,8 +434,9 @@ Partial Class frmFactoryWeight
     Friend WithEvents PivotGridField1 As DevExpress.XtraPivotGrid.PivotGridField
     Friend WithEvents PivotGridField2 As DevExpress.XtraPivotGrid.PivotGridField
     Friend WithEvents PivotGridField4 As DevExpress.XtraPivotGrid.PivotGridField
-    Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtExcess As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LayoutControlItem8 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem2 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem3 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents EmptySpaceItem4 As DevExpress.XtraLayout.EmptySpaceItem
 End Class

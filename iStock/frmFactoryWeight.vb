@@ -20,7 +20,7 @@ Public Class frmFactoryWeight
     Dim dtholiday As New DataTable
     Dim listDays As New List(Of String)
     Private _CWBWorkDays As iStockCommon.iStockWorkDays
-
+    Dim a, b As Decimal
     Dim ds As New DataSet
 #End Region
 
@@ -138,6 +138,9 @@ Public Class frmFactoryWeight
 
     Private Sub sbGenerate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbGenerate.Click
         Me.LoadGrid()
+        txtExcess.Text = Math.Abs(a - b)
+
+
     End Sub
 
 
@@ -175,7 +178,7 @@ Public Class frmFactoryWeight
 
             ds = Me.iStockDailyCrop.GetDailyCropByMonthYearReport()
             pgcFactoryWeight.DataSource = ds.Tables(0)
-            pgcFactoryWeight.BestFit()
+            pgcFactoryWeight.BestFitColumnArea()
 
 
             CWBWorkDays.YearName = selectedYear
@@ -235,15 +238,37 @@ Public Class frmFactoryWeight
     End Sub
 
     Private Sub pgcFactoryWeight_CustomCellDisplayText(sender As Object, e As PivotCellDisplayTextEventArgs) Handles pgcFactoryWeight.CustomCellDisplayText
-        'Dim a As Decimal
 
-        'If e.ColumnField.GetDisplayText("AA") Then
 
-        '    a = e.GetColumnGrandTotal(e.DataField)
-        'Else
-        '    a = 777777777777
-        'End If
+        If (e.ColumnValueType = PivotGridValueType.GrandTotal) Then
 
-        'TextEdit1.Text = a
+
+            If (e.GetColumnGrandTotal(e.DataField) IsNot Nothing) Then
+                If (e.RowFieldIndex = 0) Then
+
+                    If (e.GetColumnGrandTotal(e.DataField) <> 0) Then
+                        a = e.GetColumnGrandTotal(e.DataField).ToString
+
+                    End If
+
+                End If
+
+                If (e.RowFieldIndex = 1) Then
+                    If (e.GetColumnGrandTotal(e.DataField) <> 0) Then
+                        b = e.GetColumnGrandTotal(e.DataField)
+                    End If
+
+                End If
+
+
+
+
+            End If
+
+
+        End If
+
+
+
     End Sub
 End Class
