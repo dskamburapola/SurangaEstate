@@ -783,21 +783,21 @@
 
 
                     Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
-                    xx.WidthF = 865
 
-                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.None
-                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
-                    'xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
-
-
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.All
+                    xx.WidthF = 862.9
+                    xx.Borders = DevExpress.XtraPrinting.BorderSide.None
+                    xx.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Right) Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
 
 
-                    cell1.Size = New Size(107, 25)
-                    cell2.Size = New Size(344, 25)
-                    cell3.Size = New Size(100, 25)
-                    cell4.Size = New Size(114, 25)
-                    cell5.Size = New Size(184, 25)
+                    cell1.Size = New Size(107.98, 25)
+                    cell2.Size = New Size(344.95, 25)
+                    cell3.Size = New Size(111.65, 25)
+                    cell4.Size = New Size(114.26, 25)
+                    cell5.Size = New Size(184.06, 25)
+
+                    cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
 
 
                     If IsDBNull(dv(i).Item("ExpenseDate")) Then
@@ -832,17 +832,8 @@
 
                     End If
 
-                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-                    cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-                    cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-                    cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
 
-                    'cell2.Borders = DevExpress.XtraPrinting.BorderSide.Left
-                    'cell2.Borders = DevExpress.XtraPrinting.BorderSide.Right
-                    'cell3.Borders = DevExpress.XtraPrinting.BorderSide.Left
-                    'cell3.Borders = DevExpress.XtraPrinting.BorderSide.Right
-                    'cell5.Borders = DevExpress.XtraPrinting.BorderSide.Left
-                    'cell5.Borders = DevExpress.XtraPrinting.BorderSide.Right
+      
 
 
 
@@ -886,18 +877,20 @@
                 For i = 0 To dv.Count - 1
 
                     Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
-                    xx.WidthF = 865
 
+                    xx.WidthF = 862.9
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.None
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    xx.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Right) Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
 
+                    cell1.Size = New Size(107.98, 25)
+                    cell2.Size = New Size(344.95, 25)
+                    cell3.Size = New Size(111.65, 25)
+                    cell4.Size = New Size(114.26, 25)
+                    cell5.Size = New Size(184.06, 25)
 
-                    cell1.Size = New Size(107, 25)
-                    cell2.Size = New Size(344, 25)
-                    cell3.Size = New Size(100, 25)
-                    cell4.Size = New Size(114, 25)
-                    cell5.Size = New Size(184, 25)
+                    cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
                   
 
                     If IsDBNull(dv(i).Item("ExpenseDate")) Then
@@ -981,18 +974,21 @@
                 For i = 0 To dv.Count - 1
 
                     Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
-                    xx.WidthF = 865
 
+                    xx.WidthF = 862.9
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.None
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    xx.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Right) Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
 
 
-                    cell1.Size = New Size(107, 25)
-                    cell2.Size = New Size(344, 25)
-                    cell3.Size = New Size(100, 25)
-                    cell4.Size = New Size(114, 25)
-                    cell5.Size = New Size(184, 25)
+                    cell1.Size = New Size(107.98, 25)
+                    cell2.Size = New Size(344.95, 25)
+                    cell3.Size = New Size(111.65, 25)
+                    cell4.Size = New Size(114.26, 25)
+                    cell5.Size = New Size(184.06, 25)
+
+                    cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
 
                     If IsDBNull(dv(i).Item("ExpenseDate")) Then
                         cell1.Text = String.Empty
@@ -1026,10 +1022,7 @@
 
                     End If
 
-                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-                    cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-                    cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-                    cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                 
 
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
                     tr.Cells.Add(cell1)
@@ -1072,18 +1065,21 @@
                 For i = 0 To dv.Count - 1
 
                     Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
-                    xx.WidthF = 865
 
+                    xx.WidthF = 862.9
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.None
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    xx.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Right) Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
 
 
-                    cell1.Size = New Size(107, 25)
-                    cell2.Size = New Size(344, 25)
-                    cell3.Size = New Size(100, 25)
-                    cell4.Size = New Size(114, 25)
-                    cell5.Size = New Size(184, 25)
+                    cell1.Size = New Size(107.98, 25)
+                    cell2.Size = New Size(344.95, 25)
+                    cell3.Size = New Size(111.65, 25)
+                    cell4.Size = New Size(114.26, 25)
+                    cell5.Size = New Size(184.06, 25)
+
+                    cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
 
                     If IsDBNull(dv(i).Item("ExpenseDate")) Then
                         cell1.Text = String.Empty
@@ -1115,11 +1111,7 @@
 
                     End If
 
-                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-                    cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-                    cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-                    cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-
+                
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
                     tr.Cells.Add(cell1)
                     tr.Cells.Add(cell2)
@@ -1162,18 +1154,21 @@
                 For i = 0 To dv.Count - 1
 
                     Dim cell1, cell2, cell3, cell4, cell5 As New DevExpress.XtraReports.UI.XRTableCell
-                    xx.WidthF = 865
 
+                    xx.WidthF = 862.9
                     xx.Borders = DevExpress.XtraPrinting.BorderSide.None
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
-                    xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
+                    xx.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Right) Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
 
 
-                    cell1.Size = New Size(107, 25)
-                    cell2.Size = New Size(344, 25)
-                    cell3.Size = New Size(100, 25)
-                    cell4.Size = New Size(114, 25)
-                    cell5.Size = New Size(184, 25)
+                    cell1.Size = New Size(107.98, 25)
+                    cell2.Size = New Size(344.95, 25)
+                    cell3.Size = New Size(111.65, 25)
+                    cell4.Size = New Size(114.26, 25)
+                    cell5.Size = New Size(184.06, 25)
+
+                    cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                    cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                    cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
 
 
                     If IsDBNull(dv(i).Item("ExpenseDate")) Then
@@ -1206,11 +1201,7 @@
 
                     End If
 
-                    cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-                    cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-                    cell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-                    cell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-
+                
                     Dim tr As New DevExpress.XtraReports.UI.XRTableRow
                     tr.Cells.Add(cell1)
                     tr.Cells.Add(cell2)
