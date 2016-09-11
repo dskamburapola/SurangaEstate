@@ -382,7 +382,7 @@ Public Class frmCheckRoll
             gvPrint.Columns("OverSheets").Visible = False
             gvPrint.Columns("LowerSheets").Visible = False
             gvPrint.Columns("OTHours").Visible = False
-            gvPrint.Columns("BasicPay").Visible = False
+            gvPrint.Columns("BasicPay").Visible = True
             gvPrint.Columns("OverKgsPay").Visible = False
             gvPrint.Columns("LowerKgsPay").Visible = False
             gvPrint.Columns("OverSheetsPay").Visible = False

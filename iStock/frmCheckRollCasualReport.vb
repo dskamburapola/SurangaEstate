@@ -270,7 +270,7 @@ Public Class frmCheckRollCasualReport
             gvPayrollPrint.Columns("OverSheets").Visible = False
             gvPayrollPrint.Columns("LowerSheets").Visible = False
             gvPayrollPrint.Columns("OTHours").Visible = False
-            gvPayrollPrint.Columns("BasicPay").Visible = False
+            gvPayrollPrint.Columns("BasicPay").Visible = True
             gvPayrollPrint.Columns("OverKgsPay").Visible = False
             gvPayrollPrint.Columns("LowerKgsPay").Visible = False
             gvPayrollPrint.Columns("OverSheetsPay").Visible = False

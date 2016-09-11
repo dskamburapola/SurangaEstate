@@ -244,7 +244,11 @@ Partial Public Class xrMonthlyReport
         Me.XrTableCell77 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell78 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.xrNettProfit = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableRow23 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell112 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.rowEXI = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell116 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrtEXI = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell110 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow49 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell82 = New DevExpress.XtraReports.UI.XRTableCell()
@@ -329,10 +333,6 @@ Partial Public Class xrMonthlyReport
         Me.xrtNOE = New DevExpress.XtraReports.UI.XRTableCell()
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
-        Me.XrTableRow23 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell112 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell116 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.xrtEXI = New DevExpress.XtraReports.UI.XRTableCell()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1639,8 +1639,7 @@ Partial Public Class xrMonthlyReport
         '
         'XrTableCell98
         '
-        Me.XrTableCell98.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right) _
-            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrTableCell98.Borders = CType((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right), DevExpress.XtraPrinting.BorderSide)
         Me.XrTableCell98.Name = "XrTableCell98"
         Me.XrTableCell98.StylePriority.UseBorders = False
         Me.XrTableCell98.StylePriority.UseTextAlignment = False
@@ -1689,8 +1688,7 @@ Partial Public Class xrMonthlyReport
         '
         'xrSalaryTotal
         '
-        Me.xrSalaryTotal.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
-            Or DevExpress.XtraPrinting.BorderSide.Right) _
+        Me.xrSalaryTotal.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.xrSalaryTotal.Name = "xrSalaryTotal"
         Me.xrSalaryTotal.StylePriority.UseBorders = False
@@ -2080,11 +2078,37 @@ Partial Public Class xrMonthlyReport
         Me.xrNettProfit.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.xrNettProfit.Weight = 0.67890773893609635R
         '
+        'XrTableRow23
+        '
+        Me.XrTableRow23.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell112})
+        Me.XrTableRow23.Name = "XrTableRow23"
+        Me.XrTableRow23.Weight = 0.83999999999999986R
+        '
+        'XrTableCell112
+        '
+        Me.XrTableCell112.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.XrTableCell112.Name = "XrTableCell112"
+        Me.XrTableCell112.StylePriority.UseFont = False
+        Me.XrTableCell112.Weight = 3.0127227278261461R
+        '
         'rowEXI
         '
         Me.rowEXI.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell116, Me.xrtEXI, Me.XrTableCell110})
         Me.rowEXI.Name = "rowEXI"
         Me.rowEXI.Weight = 0.83999999999999986R
+        '
+        'XrTableCell116
+        '
+        Me.XrTableCell116.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.XrTableCell116.Name = "XrTableCell116"
+        Me.XrTableCell116.StylePriority.UseFont = False
+        Me.XrTableCell116.Text = "Expenses of Investment"
+        Me.XrTableCell116.Weight = 0.93154835142007264R
+        '
+        'xrtEXI
+        '
+        Me.xrtEXI.Name = "xrtEXI"
+        Me.xrtEXI.Weight = 1.4022663746495889R
         '
         'XrTableCell110
         '
@@ -2718,32 +2742,6 @@ Partial Public Class xrMonthlyReport
         Me.BottomMargin.Name = "BottomMargin"
         Me.BottomMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
-        '
-        'XrTableRow23
-        '
-        Me.XrTableRow23.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell112})
-        Me.XrTableRow23.Name = "XrTableRow23"
-        Me.XrTableRow23.Weight = 0.83999999999999986R
-        '
-        'XrTableCell112
-        '
-        Me.XrTableCell112.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.XrTableCell112.Name = "XrTableCell112"
-        Me.XrTableCell112.StylePriority.UseFont = False
-        Me.XrTableCell112.Weight = 3.0127227278261461R
-        '
-        'XrTableCell116
-        '
-        Me.XrTableCell116.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.XrTableCell116.Name = "XrTableCell116"
-        Me.XrTableCell116.StylePriority.UseFont = False
-        Me.XrTableCell116.Text = "Expenses of Investment"
-        Me.XrTableCell116.Weight = 0.93154835142007264R
-        '
-        'xrtEXI
-        '
-        Me.xrtEXI.Name = "xrtEXI"
-        Me.xrtEXI.Weight = 1.4022663746495889R
         '
         'xrMonthlyReport
         '

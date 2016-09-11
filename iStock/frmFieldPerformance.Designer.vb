@@ -20,8 +20,8 @@ Partial Class frmFieldPerformance
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule1 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+        Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.gcFieldPerfomance = New DevExpress.XtraGrid.GridControl()
         Me.AdvBandedGridView1 = New DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView()
@@ -167,7 +167,7 @@ Partial Class frmFieldPerformance
         '
         'GridColumn5
         '
-        Me.GridColumn5.Caption = "(P)"
+        Me.GridColumn5.Caption = "(Q)"
         Me.GridColumn5.FieldName = "PLQ"
         Me.GridColumn5.Name = "GridColumn5"
         Me.GridColumn5.Visible = True
@@ -286,9 +286,9 @@ Partial Class frmFieldPerformance
         Me.meMonth.Size = New System.Drawing.Size(113, 20)
         Me.meMonth.StyleController = Me.LayoutControl1
         Me.meMonth.TabIndex = 17
-        ConditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule3.ErrorText = "Require"
-        Me.dxvpFieldPerformance.SetValidationRule(Me.meMonth, ConditionValidationRule3)
+        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule1.ErrorText = "Require"
+        Me.dxvpFieldPerformance.SetValidationRule(Me.meMonth, ConditionValidationRule1)
         '
         'leYear
         '
@@ -300,9 +300,9 @@ Partial Class frmFieldPerformance
         Me.leYear.Size = New System.Drawing.Size(113, 20)
         Me.leYear.StyleController = Me.LayoutControl1
         Me.leYear.TabIndex = 15
-        ConditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
-        ConditionValidationRule1.ErrorText = "Require"
-        Me.dxvpFieldPerformance.SetValidationRule(Me.leYear, ConditionValidationRule1)
+        ConditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank
+        ConditionValidationRule2.ErrorText = "Require"
+        Me.dxvpFieldPerformance.SetValidationRule(Me.leYear, ConditionValidationRule2)
         '
         'sbGenerate
         '

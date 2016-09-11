@@ -76,7 +76,7 @@ Partial Class frmRecoverySummary
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.LayoutControlGroup1
-        Me.LayoutControl1.Size = New System.Drawing.Size(1362, 666)
+        Me.LayoutControl1.Size = New System.Drawing.Size(1268, 666)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -85,7 +85,7 @@ Partial Class frmRecoverySummary
         Me.gcFieldPerfomance.Location = New System.Drawing.Point(12, 81)
         Me.gcFieldPerfomance.MainView = Me.gvFieldPerformance
         Me.gcFieldPerfomance.Name = "gcFieldPerfomance"
-        Me.gcFieldPerfomance.Size = New System.Drawing.Size(1338, 538)
+        Me.gcFieldPerfomance.Size = New System.Drawing.Size(1244, 538)
         Me.gcFieldPerfomance.TabIndex = 20
         Me.gcFieldPerfomance.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvFieldPerformance})
         '
@@ -277,7 +277,7 @@ Partial Class frmRecoverySummary
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.EmptySpaceItem3, Me.LayoutControlGroup2, Me.LayoutControlItem2})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "Root"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(1362, 666)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(1268, 666)
         Me.LayoutControlGroup1.Text = "Root"
         Me.LayoutControlGroup1.TextVisible = False
         '
@@ -289,7 +289,7 @@ Partial Class frmRecoverySummary
         Me.LayoutControlItem3.MaxSize = New System.Drawing.Size(200, 35)
         Me.LayoutControlItem3.MinSize = New System.Drawing.Size(200, 35)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(1342, 35)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(1248, 35)
         Me.LayoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem3.Text = "LayoutControlItem3"
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
@@ -302,7 +302,7 @@ Partial Class frmRecoverySummary
         Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
         Me.EmptySpaceItem3.Location = New System.Drawing.Point(324, 0)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(1018, 69)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(924, 69)
         Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -349,7 +349,7 @@ Partial Class frmRecoverySummary
         Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
         Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 69)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(1342, 542)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(1248, 542)
         Me.LayoutControlItem2.Text = "LayoutControlItem2"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextToControlDistance = 0
@@ -359,7 +359,7 @@ Partial Class frmRecoverySummary
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1362, 666)
+        Me.ClientSize = New System.Drawing.Size(1268, 666)
         Me.Controls.Add(Me.LayoutControl1)
         Me.KeyPreview = True
         Me.Name = "frmRecoverySummary"
