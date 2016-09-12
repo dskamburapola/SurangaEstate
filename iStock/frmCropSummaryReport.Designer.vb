@@ -79,11 +79,14 @@ Partial Class frmCropSummaryReport
         '
         'PivotGridField1
         '
-        Me.PivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
-        Me.PivotGridField1.AreaIndex = 2
+        Me.PivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea
+        Me.PivotGridField1.AreaIndex = 0
         Me.PivotGridField1.Caption = "Month"
         Me.PivotGridField1.FieldName = "MONTH"
         Me.PivotGridField1.Name = "PivotGridField1"
+        Me.PivotGridField1.SortBySummaryInfo.FieldName = "MonthNo"
+        Me.PivotGridField1.SortMode = DevExpress.XtraPivotGrid.PivotSortMode.Key
+        Me.PivotGridField1.TotalsVisibility = DevExpress.XtraPivotGrid.PivotTotalsVisibility.None
         '
         'PivotGridField5
         '
@@ -92,6 +95,7 @@ Partial Class frmCropSummaryReport
         Me.PivotGridField5.Caption = "AbbreviationCode"
         Me.PivotGridField5.FieldName = "AbbreviationCode"
         Me.PivotGridField5.Name = "PivotGridField5"
+        Me.PivotGridField5.UnboundFieldName = "PivotGridField5"
         '
         'PivotGridField2
         '
