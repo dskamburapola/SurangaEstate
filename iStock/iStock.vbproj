@@ -616,6 +616,7 @@
     <EmbeddedResource Include="frmMonthlyExpenses.resx">
       <DependentUpon>frmMonthlyExpenses.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="xrpIncomeReport.resx">
       <DependentUpon>xrpIncomeReport.vb</DependentUpon>
     </EmbeddedResource>
@@ -822,7 +823,6 @@
       <DependentUpon>frmUserLogins.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>

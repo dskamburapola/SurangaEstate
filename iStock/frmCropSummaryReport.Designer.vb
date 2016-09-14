@@ -120,7 +120,7 @@ Partial Class frmCropSummaryReport
         Me.PivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
         Me.PivotGridField4.AreaIndex = 1
         Me.PivotGridField4.Caption = "Avg (%)"
-        Me.PivotGridField4.FieldName = "Crop"
+        Me.PivotGridField4.FieldName = "Average"
         Me.PivotGridField4.Name = "PivotGridField4"
         Me.PivotGridField4.SummaryDisplayType = DevExpress.Data.PivotGrid.PivotSummaryDisplayType.PercentOfColumn
         '

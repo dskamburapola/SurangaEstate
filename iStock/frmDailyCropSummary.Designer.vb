@@ -218,6 +218,8 @@ Partial Class frmDailyCropSummary
         Me.GridColumn4.FieldName = "Rate"
         Me.GridColumn4.Name = "GridColumn4"
         Me.GridColumn4.OptionsColumn.AllowEdit = False
+        Me.GridColumn4.Visible = True
+        Me.GridColumn4.VisibleIndex = 2
         '
         'RepositoryItemSpinEdit2
         '
@@ -378,7 +380,6 @@ Partial Class frmDailyCropSummary
         Me.LayoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem4.Text = "Monthly Factory Rate"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(104, 13)
-        Me.LayoutControlItem4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
         'LayoutControlItem7
         '
