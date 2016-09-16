@@ -1428,7 +1428,23 @@ Public Class iStockDailyWorking
     End Function
 #End Region
 
+#Region "Load Festival Advance"
+    Public Function LoadFestivalAdvance(ByVal year As Integer) As DataSet
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand("FestivalAdvance_By_Year")
+            DB.AddInParameter(DBC, "@year", DbType.Int32, year)
 
+            Return DB.ExecuteDataSet(DBC)
+            DBC.Dispose()
+        Catch ex As Exception
+            Return Nothing
+            Throw
+        End Try
+
+
+    End Function
+#End Region
 
 #Region "Holiday Is Exits"
     Public Function HolidayIsExits() As Boolean
