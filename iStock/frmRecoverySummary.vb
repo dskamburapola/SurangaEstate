@@ -158,4 +158,15 @@ Public Class frmRecoverySummary
 
 
    
+    Private Sub leYear_EditValueChanged(sender As Object, e As EventArgs) Handles leYear.EditValueChanged
+        Dim selectedYear As String
+
+        selectedYear = leYear.EditValue
+
+
+        Me.leFestival.Properties.DataSource = iStockDailyWorking.LoadFestivalAdvance(selectedYear).Tables(0)
+        Me.leFestival.Properties.DisplayMember = "TDdescription"
+        Me.leFestival.Properties.ValueMember = "TermDeductionID"
+
+    End Sub
 End Class
