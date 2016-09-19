@@ -535,12 +535,22 @@ Public Class iStockDailyWorking
     Private _LowerSheetsRate As Decimal
     Private _SmokingSheetsPayRate As Decimal
 
+    Private _TermDeductionID As Int64
+
 
 
 
 #End Region
 
 #Region "Properties"
+    Public Property TermDeductionID() As Int64
+        Get
+            Return _TermDeductionID
+        End Get
+        Set(ByVal value As Int64)
+            _TermDeductionID = value
+        End Set
+    End Property
 
     Public Property StockID() As Int64
         Get
@@ -1416,6 +1426,24 @@ Public Class iStockDailyWorking
             Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
             Dim DBC As DbCommand = DB.GetStoredProcCommand("RecoverySummary")
             DB.AddInParameter(DBC, "@year", DbType.Int32, year)
+
+            Return DB.ExecuteDataSet(DBC)
+            DBC.Dispose()
+        Catch ex As Exception
+            Return Nothing
+            Throw
+        End Try
+
+
+    End Function
+#End Region
+
+#Region "Festival Details Report"
+    Public Function RecoveryDetails(ByVal year As Int64) As DataSet
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand("RecoverySummary")
+            DB.AddInParameter(DBC, "@TermDeductionID", DbType.Int32, year)
 
             Return DB.ExecuteDataSet(DBC)
             DBC.Dispose()

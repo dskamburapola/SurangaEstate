@@ -169,4 +169,33 @@ Public Class frmRecoverySummary
         Me.leFestival.Properties.ValueMember = "TermDeductionID"
 
     End Sub
+
+    Private Sub leFestival_EditValueChanged(sender As Object, e As EventArgs) Handles leFestival.EditValueChanged
+
+        Dim ds As New DataSet
+        Dim a As Integer
+
+        a = Convert.ToInt32(leFestival.EditValue.ToString)
+        ds = iStockDailyWorking.RecoveryDetails(a)
+
+        If ds.Tables(0).Rows.Count <> 0 Then
+
+            txtFestivalAmount.Text = FormatNumber(ds.Tables(0).Rows(0)(3).ToString, 2, TriState.True)
+
+
+            Dim b As Decimal
+
+            b = Val(GridColumn6.SummaryText)
+            txtRecovery.Text = FormatNumber(b, 2, TriState.True)
+
+            txtBalance.Text = FormatNumber(Val(txtFestivalAmount.Text) - Val(txtRecovery.Text), 2, TriState.True)
+
+            gcRecovery.DataSource = ds.Tables(0)
+            gvRecovery.BestFitColumns()
+
+
+        End If
+
+
+    End Sub
 End Class

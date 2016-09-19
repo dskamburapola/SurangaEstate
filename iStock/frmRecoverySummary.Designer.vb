@@ -22,6 +22,14 @@ Partial Class frmRecoverySummary
         Me.components = New System.ComponentModel.Container()
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.txtRecovery = New DevExpress.XtraEditors.TextEdit()
+        Me.txtFestivalAmount = New DevExpress.XtraEditors.TextEdit()
+        Me.gcRecovery = New DevExpress.XtraGrid.GridControl()
+        Me.gvRecovery = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.leFestival = New DevExpress.XtraEditors.LookUpEdit()
         Me.gcFieldPerfomance = New DevExpress.XtraGrid.GridControl()
         Me.gvFieldPerformance = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -52,9 +60,18 @@ Partial Class frmRecoverySummary
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.dxvpFieldPerformance = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.txtBalance = New DevExpress.XtraEditors.TextEdit()
+        Me.LayoutControlItem9 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.txtRecovery.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtFestivalAmount.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gcRecovery, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gvRecovery, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.leFestival.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcFieldPerfomance, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gvFieldPerformance, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,11 +84,20 @@ Partial Class frmRecoverySummary
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpFieldPerformance, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtBalance.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
         '
+        Me.LayoutControl1.Controls.Add(Me.txtBalance)
+        Me.LayoutControl1.Controls.Add(Me.txtRecovery)
+        Me.LayoutControl1.Controls.Add(Me.txtFestivalAmount)
+        Me.LayoutControl1.Controls.Add(Me.gcRecovery)
         Me.LayoutControl1.Controls.Add(Me.leFestival)
         Me.LayoutControl1.Controls.Add(Me.gcFieldPerfomance)
         Me.LayoutControl1.Controls.Add(Me.leYear)
@@ -84,6 +110,71 @@ Partial Class frmRecoverySummary
         Me.LayoutControl1.Size = New System.Drawing.Size(1268, 666)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'txtRecovery
+        '
+        Me.txtRecovery.EditValue = "0.00"
+        Me.txtRecovery.Location = New System.Drawing.Point(594, 105)
+        Me.txtRecovery.Name = "txtRecovery"
+        Me.txtRecovery.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.txtRecovery.Size = New System.Drawing.Size(316, 20)
+        Me.txtRecovery.StyleController = Me.LayoutControl1
+        Me.txtRecovery.TabIndex = 24
+        '
+        'txtFestivalAmount
+        '
+        Me.txtFestivalAmount.EditValue = "0.00"
+        Me.txtFestivalAmount.Location = New System.Drawing.Point(111, 105)
+        Me.txtFestivalAmount.Name = "txtFestivalAmount"
+        Me.txtFestivalAmount.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.txtFestivalAmount.Size = New System.Drawing.Size(380, 20)
+        Me.txtFestivalAmount.StyleController = Me.LayoutControl1
+        Me.txtFestivalAmount.TabIndex = 23
+        '
+        'gcRecovery
+        '
+        Me.gcRecovery.Location = New System.Drawing.Point(12, 145)
+        Me.gcRecovery.MainView = Me.gvRecovery
+        Me.gcRecovery.Name = "gcRecovery"
+        Me.gcRecovery.Size = New System.Drawing.Size(1244, 143)
+        Me.gcRecovery.TabIndex = 22
+        Me.gcRecovery.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvRecovery})
+        '
+        'gvRecovery
+        '
+        Me.gvRecovery.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7})
+        Me.gvRecovery.GridControl = Me.gcRecovery
+        Me.gvRecovery.Name = "gvRecovery"
+        Me.gvRecovery.OptionsView.ShowFooter = True
+        '
+        'GridColumn4
+        '
+        Me.GridColumn4.Caption = "TermDeductionID"
+        Me.GridColumn4.FieldName = "TermDeductionID"
+        Me.GridColumn4.Name = "GridColumn4"
+        '
+        'GridColumn5
+        '
+        Me.GridColumn5.Caption = "Recovery Date"
+        Me.GridColumn5.FieldName = "IssueDate"
+        Me.GridColumn5.Name = "GridColumn5"
+        Me.GridColumn5.Visible = True
+        Me.GridColumn5.VisibleIndex = 0
+        '
+        'GridColumn6
+        '
+        Me.GridColumn6.Caption = "AdvanceAmount"
+        Me.GridColumn6.FieldName = "AdvanceAmount"
+        Me.GridColumn6.Name = "GridColumn6"
+        Me.GridColumn6.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "AdvanceAmount", "{0:n2}")})
+        Me.GridColumn6.Visible = True
+        Me.GridColumn6.VisibleIndex = 1
+        '
+        'GridColumn7
+        '
+        Me.GridColumn7.Caption = "TDAmount"
+        Me.GridColumn7.FieldName = "TDAmount"
+        Me.GridColumn7.Name = "GridColumn7"
         '
         'leFestival
         '
@@ -98,10 +189,10 @@ Partial Class frmRecoverySummary
         '
         'gcFieldPerfomance
         '
-        Me.gcFieldPerfomance.Location = New System.Drawing.Point(12, 105)
+        Me.gcFieldPerfomance.Location = New System.Drawing.Point(111, 292)
         Me.gcFieldPerfomance.MainView = Me.gvFieldPerformance
         Me.gcFieldPerfomance.Name = "gcFieldPerfomance"
-        Me.gcFieldPerfomance.Size = New System.Drawing.Size(1244, 514)
+        Me.gcFieldPerfomance.Size = New System.Drawing.Size(1145, 327)
         Me.gcFieldPerfomance.TabIndex = 20
         Me.gcFieldPerfomance.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvFieldPerformance})
         '
@@ -290,7 +381,7 @@ Partial Class frmRecoverySummary
         'LayoutControlGroup1
         '
         Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.EmptySpaceItem3, Me.LayoutControlGroup2, Me.LayoutControlItem2, Me.LayoutControlItem4})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.EmptySpaceItem3, Me.LayoutControlGroup2, Me.LayoutControlItem2, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem7, Me.LayoutControlItem8, Me.LayoutControlItem9})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "Root"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(1268, 666)
@@ -363,13 +454,12 @@ Partial Class frmRecoverySummary
         '
         Me.LayoutControlItem2.Control = Me.gcFieldPerfomance
         Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 93)
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 280)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(1248, 518)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(1248, 331)
         Me.LayoutControlItem2.Text = "LayoutControlItem2"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem2.TextToControlDistance = 0
-        Me.LayoutControlItem2.TextVisible = False
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(96, 13)
+        Me.LayoutControlItem2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
         'LayoutControlItem4
         '
@@ -380,6 +470,57 @@ Partial Class frmRecoverySummary
         Me.LayoutControlItem4.Size = New System.Drawing.Size(1248, 24)
         Me.LayoutControlItem4.Text = "LayoutControlItem4"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(96, 13)
+        '
+        'LayoutControlItem5
+        '
+        Me.LayoutControlItem5.Control = Me.gcRecovery
+        Me.LayoutControlItem5.CustomizationFormText = "LayoutControlItem5"
+        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 117)
+        Me.LayoutControlItem5.Name = "LayoutControlItem5"
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(1248, 163)
+        Me.LayoutControlItem5.Text = "LayoutControlItem5"
+        Me.LayoutControlItem5.TextLocation = DevExpress.Utils.Locations.Top
+        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(96, 13)
+        '
+        'LayoutControlItem7
+        '
+        Me.LayoutControlItem7.Control = Me.txtFestivalAmount
+        Me.LayoutControlItem7.CustomizationFormText = "LayoutControlItem7"
+        Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 93)
+        Me.LayoutControlItem7.Name = "LayoutControlItem7"
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(483, 24)
+        Me.LayoutControlItem7.Text = "Paid Amount"
+        Me.LayoutControlItem7.TextSize = New System.Drawing.Size(96, 13)
+        '
+        'LayoutControlItem8
+        '
+        Me.LayoutControlItem8.Control = Me.txtRecovery
+        Me.LayoutControlItem8.CustomizationFormText = "LayoutControlItem8"
+        Me.LayoutControlItem8.Location = New System.Drawing.Point(483, 93)
+        Me.LayoutControlItem8.Name = "LayoutControlItem8"
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(419, 24)
+        Me.LayoutControlItem8.Text = "Recovery Amount"
+        Me.LayoutControlItem8.TextSize = New System.Drawing.Size(96, 13)
+        '
+        'txtBalance
+        '
+        Me.txtBalance.EditValue = "0.00"
+        Me.txtBalance.Location = New System.Drawing.Point(1013, 105)
+        Me.txtBalance.Name = "txtBalance"
+        Me.txtBalance.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.txtBalance.Size = New System.Drawing.Size(243, 20)
+        Me.txtBalance.StyleController = Me.LayoutControl1
+        Me.txtBalance.TabIndex = 25
+        '
+        'LayoutControlItem9
+        '
+        Me.LayoutControlItem9.Control = Me.txtBalance
+        Me.LayoutControlItem9.CustomizationFormText = "Balance"
+        Me.LayoutControlItem9.Location = New System.Drawing.Point(902, 93)
+        Me.LayoutControlItem9.Name = "LayoutControlItem9"
+        Me.LayoutControlItem9.Size = New System.Drawing.Size(346, 24)
+        Me.LayoutControlItem9.Text = "Balance"
+        Me.LayoutControlItem9.TextSize = New System.Drawing.Size(96, 13)
         '
         'frmRecoverySummary
         '
@@ -392,6 +533,10 @@ Partial Class frmRecoverySummary
         Me.Text = "Festival Recovery Summary"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.txtRecovery.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtFestivalAmount.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gcRecovery, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gvRecovery, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.leFestival.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gcFieldPerfomance, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gvFieldPerformance, System.ComponentModel.ISupportInitialize).EndInit()
@@ -404,7 +549,12 @@ Partial Class frmRecoverySummary
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dxvpFieldPerformance, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtBalance.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -441,4 +591,17 @@ Partial Class frmRecoverySummary
     Friend WithEvents grdRemarks As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents leFestival As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LayoutControlItem4 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents gcRecovery As DevExpress.XtraGrid.GridControl
+    Friend WithEvents gvRecovery As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents txtRecovery As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtFestivalAmount As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents GridColumn4 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn5 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn6 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn7 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents LayoutControlItem7 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem8 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents txtBalance As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LayoutControlItem9 As DevExpress.XtraLayout.LayoutControlItem
 End Class
