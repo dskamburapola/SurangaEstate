@@ -23,7 +23,6 @@ Partial Class frmRecoverySummary
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.txtBalance = New DevExpress.XtraEditors.TextEdit()
-        Me.txtRecovery = New DevExpress.XtraEditors.TextEdit()
         Me.txtFestivalAmount = New DevExpress.XtraEditors.TextEdit()
         Me.gcRecovery = New DevExpress.XtraGrid.GridControl()
         Me.gvRecovery = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -51,25 +50,23 @@ Partial Class frmRecoverySummary
         Me.grdFeb = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.grdRemarks = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.leYear = New DevExpress.XtraEditors.LookUpEdit()
-        Me.sbGenerate = New DevExpress.XtraEditors.SimpleButton()
         Me.sbPrint = New DevExpress.XtraEditors.SimpleButton()
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem3 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem9 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.dxvpFieldPerformance = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.txtBalance.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtRecovery.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtFestivalAmount.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcRecovery, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gvRecovery, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,26 +79,24 @@ Partial Class frmRecoverySummary
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dxvpFieldPerformance, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
         '
         Me.LayoutControl1.Controls.Add(Me.txtBalance)
-        Me.LayoutControl1.Controls.Add(Me.txtRecovery)
         Me.LayoutControl1.Controls.Add(Me.txtFestivalAmount)
         Me.LayoutControl1.Controls.Add(Me.gcRecovery)
         Me.LayoutControl1.Controls.Add(Me.leFestival)
         Me.LayoutControl1.Controls.Add(Me.gcFieldPerfomance)
         Me.LayoutControl1.Controls.Add(Me.leYear)
-        Me.LayoutControl1.Controls.Add(Me.sbGenerate)
         Me.LayoutControl1.Controls.Add(Me.sbPrint)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 0)
@@ -114,39 +109,31 @@ Partial Class frmRecoverySummary
         'txtBalance
         '
         Me.txtBalance.EditValue = "0.00"
-        Me.txtBalance.Location = New System.Drawing.Point(1013, 105)
+        Me.txtBalance.Location = New System.Drawing.Point(111, 269)
         Me.txtBalance.Name = "txtBalance"
-        Me.txtBalance.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.txtBalance.Size = New System.Drawing.Size(243, 20)
+        Me.txtBalance.Properties.Appearance.Options.UseTextOptions = True
+        Me.txtBalance.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.txtBalance.Size = New System.Drawing.Size(471, 20)
         Me.txtBalance.StyleController = Me.LayoutControl1
         Me.txtBalance.TabIndex = 25
-        '
-        'txtRecovery
-        '
-        Me.txtRecovery.EditValue = "0.00"
-        Me.txtRecovery.Location = New System.Drawing.Point(594, 105)
-        Me.txtRecovery.Name = "txtRecovery"
-        Me.txtRecovery.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.txtRecovery.Size = New System.Drawing.Size(316, 20)
-        Me.txtRecovery.StyleController = Me.LayoutControl1
-        Me.txtRecovery.TabIndex = 24
         '
         'txtFestivalAmount
         '
         Me.txtFestivalAmount.EditValue = "0.00"
-        Me.txtFestivalAmount.Location = New System.Drawing.Point(111, 105)
+        Me.txtFestivalAmount.Location = New System.Drawing.Point(111, 79)
         Me.txtFestivalAmount.Name = "txtFestivalAmount"
-        Me.txtFestivalAmount.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.txtFestivalAmount.Size = New System.Drawing.Size(380, 20)
+        Me.txtFestivalAmount.Properties.Appearance.Options.UseTextOptions = True
+        Me.txtFestivalAmount.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.txtFestivalAmount.Size = New System.Drawing.Size(475, 20)
         Me.txtFestivalAmount.StyleController = Me.LayoutControl1
         Me.txtFestivalAmount.TabIndex = 23
         '
         'gcRecovery
         '
-        Me.gcRecovery.Location = New System.Drawing.Point(12, 129)
+        Me.gcRecovery.Location = New System.Drawing.Point(12, 103)
         Me.gcRecovery.MainView = Me.gvRecovery
         Me.gcRecovery.Name = "gcRecovery"
-        Me.gcRecovery.Size = New System.Drawing.Size(1244, 159)
+        Me.gcRecovery.Size = New System.Drawing.Size(1244, 162)
         Me.gcRecovery.TabIndex = 22
         Me.gcRecovery.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvRecovery})
         '
@@ -188,21 +175,21 @@ Partial Class frmRecoverySummary
         '
         'leFestival
         '
-        Me.leFestival.Location = New System.Drawing.Point(111, 81)
+        Me.leFestival.Location = New System.Drawing.Point(323, 43)
         Me.leFestival.Name = "leFestival"
         Me.leFestival.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.leFestival.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("TermDeductionID", "TermDeductionID", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("TDdescription", "TDdescription")})
         Me.leFestival.Properties.NullText = ""
-        Me.leFestival.Size = New System.Drawing.Size(1145, 20)
+        Me.leFestival.Size = New System.Drawing.Size(251, 20)
         Me.leFestival.StyleController = Me.LayoutControl1
         Me.leFestival.TabIndex = 21
         '
         'gcFieldPerfomance
         '
-        Me.gcFieldPerfomance.Location = New System.Drawing.Point(111, 292)
+        Me.gcFieldPerfomance.Location = New System.Drawing.Point(111, 293)
         Me.gcFieldPerfomance.MainView = Me.gvFieldPerformance
         Me.gcFieldPerfomance.Name = "gcFieldPerfomance"
-        Me.gcFieldPerfomance.Size = New System.Drawing.Size(1145, 327)
+        Me.gcFieldPerfomance.Size = New System.Drawing.Size(1145, 326)
         Me.gcFieldPerfomance.TabIndex = 20
         Me.gcFieldPerfomance.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvFieldPerformance})
         '
@@ -370,15 +357,6 @@ Partial Class frmRecoverySummary
         ConditionValidationRule2.ErrorText = "Require"
         Me.dxvpFieldPerformance.SetValidationRule(Me.leYear, ConditionValidationRule2)
         '
-        'sbGenerate
-        '
-        Me.sbGenerate.Location = New System.Drawing.Point(224, 43)
-        Me.sbGenerate.Name = "sbGenerate"
-        Me.sbGenerate.Size = New System.Drawing.Size(146, 22)
-        Me.sbGenerate.StyleController = Me.LayoutControl1
-        Me.sbGenerate.TabIndex = 12
-        Me.sbGenerate.Text = "Generate"
-        '
         'sbPrint
         '
         Me.sbPrint.Location = New System.Drawing.Point(12, 623)
@@ -391,7 +369,7 @@ Partial Class frmRecoverySummary
         'LayoutControlGroup1
         '
         Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.EmptySpaceItem3, Me.LayoutControlGroup2, Me.LayoutControlItem2, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem7, Me.LayoutControlItem8, Me.LayoutControlItem9})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.EmptySpaceItem3, Me.LayoutControlGroup2, Me.LayoutControlItem2, Me.LayoutControlItem5, Me.LayoutControlItem7, Me.LayoutControlItem9, Me.EmptySpaceItem1, Me.EmptySpaceItem2})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "Root"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(1268, 666)
@@ -412,24 +390,25 @@ Partial Class frmRecoverySummary
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem3.TextToControlDistance = 0
         Me.LayoutControlItem3.TextVisible = False
+        Me.LayoutControlItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
         'EmptySpaceItem3
         '
         Me.EmptySpaceItem3.AllowHotTrack = False
         Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(374, 0)
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(578, 0)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(874, 69)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(670, 67)
         Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlGroup2
         '
         Me.LayoutControlGroup2.CustomizationFormText = "Select Tapping or Plucking"
-        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem6, Me.LayoutControlItem1})
+        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem6, Me.LayoutControlItem4})
         Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
-        Me.LayoutControlGroup2.Size = New System.Drawing.Size(374, 69)
+        Me.LayoutControlGroup2.Size = New System.Drawing.Size(578, 67)
         Me.LayoutControlGroup2.Text = "Select  Year"
         '
         'LayoutControlItem6
@@ -440,54 +419,39 @@ Partial Class frmRecoverySummary
         Me.LayoutControlItem6.MaxSize = New System.Drawing.Size(200, 24)
         Me.LayoutControlItem6.MinSize = New System.Drawing.Size(120, 24)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
-        Me.LayoutControlItem6.Size = New System.Drawing.Size(200, 26)
+        Me.LayoutControlItem6.Size = New System.Drawing.Size(200, 24)
         Me.LayoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
         Me.LayoutControlItem6.Text = "Year"
         Me.LayoutControlItem6.TextSize = New System.Drawing.Size(96, 13)
-        '
-        'LayoutControlItem1
-        '
-        Me.LayoutControlItem1.Control = Me.sbGenerate
-        Me.LayoutControlItem1.CustomizationFormText = "LayoutControlItem1"
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(200, 0)
-        Me.LayoutControlItem1.MaxSize = New System.Drawing.Size(150, 26)
-        Me.LayoutControlItem1.MinSize = New System.Drawing.Size(150, 26)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(150, 26)
-        Me.LayoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom
-        Me.LayoutControlItem1.Text = "LayoutControlItem1"
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem1.TextToControlDistance = 0
-        Me.LayoutControlItem1.TextVisible = False
-        '
-        'LayoutControlItem2
-        '
-        Me.LayoutControlItem2.Control = Me.gcFieldPerfomance
-        Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 280)
-        Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(1248, 331)
-        Me.LayoutControlItem2.Text = "LayoutControlItem2"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(96, 13)
-        Me.LayoutControlItem2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
         'LayoutControlItem4
         '
         Me.LayoutControlItem4.Control = Me.leFestival
         Me.LayoutControlItem4.CustomizationFormText = "LayoutControlItem4"
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 69)
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(200, 0)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(1248, 24)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(354, 24)
         Me.LayoutControlItem4.Text = "Type"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(96, 13)
+        '
+        'LayoutControlItem2
+        '
+        Me.LayoutControlItem2.Control = Me.gcFieldPerfomance
+        Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 281)
+        Me.LayoutControlItem2.Name = "LayoutControlItem2"
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(1248, 330)
+        Me.LayoutControlItem2.Text = "LayoutControlItem2"
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(96, 13)
+        Me.LayoutControlItem2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
         'LayoutControlItem5
         '
         Me.LayoutControlItem5.Control = Me.gcRecovery
         Me.LayoutControlItem5.CustomizationFormText = "LayoutControlItem5"
-        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 117)
+        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 91)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(1248, 163)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(1248, 166)
         Me.LayoutControlItem5.Text = "LayoutControlItem5"
         Me.LayoutControlItem5.TextLocation = DevExpress.Utils.Locations.Top
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(0, 0)
@@ -498,31 +462,41 @@ Partial Class frmRecoverySummary
         '
         Me.LayoutControlItem7.Control = Me.txtFestivalAmount
         Me.LayoutControlItem7.CustomizationFormText = "LayoutControlItem7"
-        Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 93)
+        Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 67)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
-        Me.LayoutControlItem7.Size = New System.Drawing.Size(483, 24)
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(578, 24)
         Me.LayoutControlItem7.Text = "Paid Amount"
         Me.LayoutControlItem7.TextSize = New System.Drawing.Size(96, 13)
-        '
-        'LayoutControlItem8
-        '
-        Me.LayoutControlItem8.Control = Me.txtRecovery
-        Me.LayoutControlItem8.CustomizationFormText = "LayoutControlItem8"
-        Me.LayoutControlItem8.Location = New System.Drawing.Point(483, 93)
-        Me.LayoutControlItem8.Name = "LayoutControlItem8"
-        Me.LayoutControlItem8.Size = New System.Drawing.Size(419, 24)
-        Me.LayoutControlItem8.Text = "Recovery Amount"
-        Me.LayoutControlItem8.TextSize = New System.Drawing.Size(96, 13)
         '
         'LayoutControlItem9
         '
         Me.LayoutControlItem9.Control = Me.txtBalance
         Me.LayoutControlItem9.CustomizationFormText = "Balance"
-        Me.LayoutControlItem9.Location = New System.Drawing.Point(902, 93)
+        Me.LayoutControlItem9.Location = New System.Drawing.Point(0, 257)
         Me.LayoutControlItem9.Name = "LayoutControlItem9"
-        Me.LayoutControlItem9.Size = New System.Drawing.Size(346, 24)
+        Me.LayoutControlItem9.Size = New System.Drawing.Size(574, 24)
         Me.LayoutControlItem9.Text = "Balance"
         Me.LayoutControlItem9.TextSize = New System.Drawing.Size(96, 13)
+        '
+        'EmptySpaceItem1
+        '
+        Me.EmptySpaceItem1.AllowHotTrack = False
+        Me.EmptySpaceItem1.CustomizationFormText = "EmptySpaceItem1"
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(578, 67)
+        Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(670, 24)
+        Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
+        Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'EmptySpaceItem2
+        '
+        Me.EmptySpaceItem2.AllowHotTrack = False
+        Me.EmptySpaceItem2.CustomizationFormText = "EmptySpaceItem2"
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(574, 257)
+        Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(674, 24)
+        Me.EmptySpaceItem2.Text = "EmptySpaceItem2"
+        Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
         '
         'frmRecoverySummary
         '
@@ -536,7 +510,6 @@ Partial Class frmRecoverySummary
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.txtBalance.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtRecovery.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtFestivalAmount.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gcRecovery, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gvRecovery, System.ComponentModel.ISupportInitialize).EndInit()
@@ -549,13 +522,13 @@ Partial Class frmRecoverySummary
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dxvpFieldPerformance, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -565,8 +538,6 @@ Partial Class frmRecoverySummary
     Friend WithEvents sbPrint As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
 
-    Friend WithEvents sbGenerate As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem3 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents leYear As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LayoutControlItem6 As DevExpress.XtraLayout.LayoutControlItem
@@ -596,14 +567,14 @@ Partial Class frmRecoverySummary
     Friend WithEvents gcRecovery As DevExpress.XtraGrid.GridControl
     Friend WithEvents gvRecovery As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents txtRecovery As DevExpress.XtraEditors.TextEdit
     Friend WithEvents txtFestivalAmount As DevExpress.XtraEditors.TextEdit
     Friend WithEvents GridColumn4 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn5 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn6 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn7 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents LayoutControlItem7 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LayoutControlItem8 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents txtBalance As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LayoutControlItem9 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents EmptySpaceItem1 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents EmptySpaceItem2 As DevExpress.XtraLayout.EmptySpaceItem
 End Class

@@ -91,46 +91,46 @@ Public Class frmRecoverySummary
 
 #Region "Button Events"
 
-    Private Sub sbGenerate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbGenerate.Click
+    'Private Sub sbGenerate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
 
-        Dim selectedYear As String
+    '    Dim selectedYear As String
 
-        selectedYear = leYear.EditValue
-
-
-        Me.leFestival.Properties.DataSource = iStockDailyWorking.LoadFestivalAdvance(selectedYear)
-        Me.leFestival.Properties.DisplayMember = "TDdescription"
-        Me.leFestival.Properties.ValueMember = "TermDeductionID"
-
-        MsgBox("OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK")
-        'If dxvpFieldPerformance.Validate Then
-
-        '    Dim currentDate As Date
-        '    Dim selectedYear As String
-
-        '    selectedYear = leYear.EditValue
-        '    ' currentDate = Convert.ToDateTime("01-" + "October-" + selectedYear)
+    '    selectedYear = leYear.EditValue
 
 
-        '    Dim ds As New DataSet
+    '    Me.leFestival.Properties.DataSource = iStockDailyWorking.LoadFestivalAdvance(selectedYear)
+    '    Me.leFestival.Properties.DisplayMember = "TDdescription"
+    '    Me.leFestival.Properties.ValueMember = "TermDeductionID"
 
-        '    ds = iStockDailyWorking.RecoverySummary(selectedYear)
-        '    gcFieldPerfomance.DataSource = ds.Tables(0)
-        '    gvFieldPerformance.BestFitColumns()
+    '    MsgBox("OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK")
+    '    'If dxvpFieldPerformance.Validate Then
 
+    '    '    Dim currentDate As Date
+    '    '    Dim selectedYear As String
 
-        '    Dim Total As String
-        '    Total = Convert.ToDecimal(grdMay.SummaryText) + Convert.ToDecimal(grdMay.SummaryText) + Convert.ToDecimal(grdJun.SummaryText) + Convert.ToDecimal(grdJul.SummaryText) + Convert.ToDecimal(grdAug.SummaryText) + Convert.ToDecimal(grdSep.SummaryText) + Convert.ToDecimal(grdOct.SummaryText) + Convert.ToDecimal(grdNov.SummaryText) + Convert.ToDecimal(grdDec.SummaryText) + Convert.ToDecimal(grdJan.SummaryText) + Convert.ToDecimal(grdFeb.SummaryText)
-
-
-        '    Dim item As GridColumnSummaryItem = New GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, "Remarks", Total.ToString)
-        '    gvFieldPerformance.Columns("Remarks").Summary.Add(item)
-
-        'End If
+    '    '    selectedYear = leYear.EditValue
+    '    '    ' currentDate = Convert.ToDateTime("01-" + "October-" + selectedYear)
 
 
-    End Sub
+    '    '    Dim ds As New DataSet
+
+    '    '    ds = iStockDailyWorking.RecoverySummary(selectedYear)
+    '    '    gcFieldPerfomance.DataSource = ds.Tables(0)
+    '    '    gvFieldPerformance.BestFitColumns()
+
+
+    '    '    Dim Total As String
+    '    '    Total = Convert.ToDecimal(grdMay.SummaryText) + Convert.ToDecimal(grdMay.SummaryText) + Convert.ToDecimal(grdJun.SummaryText) + Convert.ToDecimal(grdJul.SummaryText) + Convert.ToDecimal(grdAug.SummaryText) + Convert.ToDecimal(grdSep.SummaryText) + Convert.ToDecimal(grdOct.SummaryText) + Convert.ToDecimal(grdNov.SummaryText) + Convert.ToDecimal(grdDec.SummaryText) + Convert.ToDecimal(grdJan.SummaryText) + Convert.ToDecimal(grdFeb.SummaryText)
+
+
+    '    '    Dim item As GridColumnSummaryItem = New GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, "Remarks", Total.ToString)
+    '    '    gvFieldPerformance.Columns("Remarks").Summary.Add(item)
+
+    '    'End If
+
+
+    'End Sub
 
 
 #End Region
@@ -183,16 +183,26 @@ Public Class frmRecoverySummary
             txtFestivalAmount.Text = FormatNumber(ds.Tables(0).Rows(0)(3).ToString, 2, TriState.True)
 
 
-            Dim b As Decimal
 
-            b = Val(GridColumn6.SummaryText)
-            txtRecovery.Text = FormatNumber(b, 2, TriState.True)
-
-            txtBalance.Text = FormatNumber(Val(txtFestivalAmount.Text) - Val(txtRecovery.Text), 2, TriState.True)
 
             gcRecovery.DataSource = ds.Tables(0)
             gvRecovery.BestFitColumns()
 
+
+            Dim b, c As Decimal
+
+            b = Convert.ToDecimal(gvRecovery.Columns("AdvanceAmount").SummaryText)
+
+            c = Convert.ToDecimal(txtFestivalAmount.Text) - b
+
+            If c < 0 Then
+                txtBalance.ForeColor = Color.Red
+            Else
+
+                txtBalance.ForeColor = Color.Black
+            End If
+
+            txtBalance.Text = FormatNumber(c, 2, TriState.True)
 
         End If
 
