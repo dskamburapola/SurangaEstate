@@ -1400,6 +1400,7 @@ Partial Public Class xrMonthlyReport
         '
         Me.xrAdvancePermenant.Name = "xrAdvancePermenant"
         Me.xrAdvancePermenant.StylePriority.UseTextAlignment = False
+        Me.xrAdvancePermenant.Text = "0"
         Me.xrAdvancePermenant.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.xrAdvancePermenant.Weight = 0.73608136353963893R
         '
@@ -1448,6 +1449,7 @@ Partial Public Class xrMonthlyReport
         '
         Me.xrAdvanceCasual.Name = "xrAdvanceCasual"
         Me.xrAdvanceCasual.StylePriority.UseTextAlignment = False
+        Me.xrAdvanceCasual.Text = "0"
         Me.xrAdvanceCasual.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.xrAdvanceCasual.Weight = 0.73608136353963893R
         '
@@ -1493,6 +1495,7 @@ Partial Public Class xrMonthlyReport
         '
         Me.xrAdvanceStaff.Name = "xrAdvanceStaff"
         Me.xrAdvanceStaff.StylePriority.UseTextAlignment = False
+        Me.xrAdvanceStaff.Text = "0"
         Me.xrAdvanceStaff.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.xrAdvanceStaff.Weight = 0.73608136353963893R
         '
@@ -1575,6 +1578,7 @@ Partial Public Class xrMonthlyReport
         '
         Me.xrFadvPermanent.Name = "xrFadvPermanent"
         Me.xrFadvPermanent.StylePriority.UseTextAlignment = False
+        Me.xrFadvPermanent.Text = "0"
         Me.xrFadvPermanent.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.xrFadvPermanent.Weight = 0.7360814880306058R
         '
@@ -1623,6 +1627,7 @@ Partial Public Class xrMonthlyReport
         '
         Me.xrFadvCasual.Name = "xrFadvCasual"
         Me.xrFadvCasual.StylePriority.UseTextAlignment = False
+        Me.xrFadvCasual.Text = "0"
         Me.xrFadvCasual.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.xrFadvCasual.Weight = 0.7360814880306058R
         '
@@ -1673,6 +1678,7 @@ Partial Public Class xrMonthlyReport
         '
         Me.xrFadvStaff.Name = "xrFadvStaff"
         Me.xrFadvStaff.StylePriority.UseTextAlignment = False
+        Me.xrFadvStaff.Text = "0"
         Me.xrFadvStaff.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.xrFadvStaff.Weight = 0.7360814880306058R
         '
