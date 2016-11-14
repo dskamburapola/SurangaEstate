@@ -161,6 +161,14 @@ Public Class frmAttendaceReport
             End With
 
 
+            If workDays = 0 Then
+
+                MessageBox.Show("Invalid Worked Days.Please Check the WorkDay Shedule", "Invalid Parameters", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Return
+                meMonth.Focus()
+
+            End If
+
             selectedMonth = meMonth.EditValue
             selectedYear = leYear.EditValue
             currentDate = Convert.ToDateTime("01-" + selectedMonth + "-" + selectedYear)

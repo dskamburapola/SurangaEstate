@@ -317,7 +317,7 @@
                     End If
 
 
-                    cell2.Text = "[" + CStr((dt5.Rows(i).Item("EmployerNo"))) + "] " + CStr((dt16.Rows(i).Item("EmployeeName")))
+                    cell2.Text = "[" + CStr((dt16.Rows(i).Item("EmployerNo"))) + "] " + CStr((dt16.Rows(i).Item("EmployeeName")))
 
                     If IsDBNull(dt16.Rows(i).Item("AdvanceAmount")) Then
                         cell3.Text = "0.00 "
@@ -951,7 +951,7 @@
                 ' r23a.Cells("rExpenseElectrityTotal").Text = FormatNumber((ExpenseElectricityTotal).ToString, 2, TriState.True)
                 'r23a.Cells("rExpenseElectrityTotal1").Text = FormatNumber((ExpenseElectricityTotal).ToString, 2, TriState.True)
 
-                report.rExpenseElectrityTotal.Text = FormatNumber((ExpenseElectricityTotal).ToString, 2, TriState.True)
+                '  report.rExpenseElectrityTotal.Text = FormatNumber((ExpenseElectricityTotal).ToString, 2, TriState.True)
                 report.rExpenseElectrityTotal1.Text = FormatNumber((ExpenseElectricityTotal).ToString, 2, TriState.True)
 
 
@@ -1044,7 +1044,7 @@
                 'r25a.Cells("rExprenesMotivationTotal").Text = FormatNumber((ExpenseMotivationTotal).ToString, 2, TriState.True)
                 'r25a.Cells("rExprenesMotivationTotal1").Text = FormatNumber((ExpenseMotivationTotal).ToString, 2, TriState.True)
 
-                report.rExprenesMotivationTotal.Text = FormatNumber((ExpenseMotivationTotal).ToString, 2, TriState.True)
+                '   report.rExprenesMotivationTotal.Text = FormatNumber((ExpenseMotivationTotal).ToString, 2, TriState.True)
                 report.rExprenesMotivationTotal1.Text = FormatNumber((ExpenseMotivationTotal).ToString, 2, TriState.True)
 
             End If
@@ -1132,7 +1132,7 @@
                 'r25a.Cells("rExprenesCashRewardsTotal").Text = FormatNumber((ExpenseCachRewardsTotal).ToString, 2, TriState.True)
                 ' r25a.Cells("rExprenesCashRewardsTotal1").Text = FormatNumber((ExpenseCachRewardsTotal).ToString, 2, TriState.True)
 
-                report.rExprenesCashRewardsTotal2.Text = FormatNumber((ExpenseCachRewardsTotal).ToString, 2, TriState.True)
+                '  report.rExprenesCashRewardsTotal2.Text = FormatNumber((ExpenseCachRewardsTotal).ToString, 2, TriState.True)
                 report.rExprenesCashRewardsTotal3.Text = FormatNumber((ExpenseCachRewardsTotal).ToString, 2, TriState.True)
 
 
@@ -1222,7 +1222,7 @@
                 '  r27a.Cells("rExprenesOtherTotal").Text = FormatNumber((ExpenseOtherTotal).ToString, 2, TriState.True)
                 'r27a.Cells("rExprenesOtherTotal1").Text = FormatNumber((ExpenseOtherTotal).ToString, 2, TriState.True)
 
-                report.rExprenesOtherTotal.Text = FormatNumber((ExpenseOtherTotal).ToString, 2, TriState.True)
+                '  report.rExprenesOtherTotal.Text = FormatNumber((ExpenseOtherTotal).ToString, 2, TriState.True)
                 report.rExprenesOtherTotal1.Text = FormatNumber((ExpenseOtherTotal).ToString, 2, TriState.True)
 
             End If
