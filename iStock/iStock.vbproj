@@ -547,12 +547,6 @@
     <Compile Include="xrMonthlyReport.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="xrpMonthlyExpenses.Designer.vb">
-      <DependentUpon>xrpMonthlyExpenses.vb</DependentUpon>
-    </Compile>
-    <Compile Include="xrpMonthlyExpenses.vb">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="xrProfitnLoss.Designer.vb">
       <DependentUpon>xrProfitnLoss.vb</DependentUpon>
     </Compile>
@@ -836,9 +830,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="xrMonthlyReport.resx">
       <DependentUpon>xrMonthlyReport.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="xrpMonthlyExpenses.resx">
-      <DependentUpon>xrpMonthlyExpenses.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="xrProfitnLoss.resx">
       <DependentUpon>xrProfitnLoss.vb</DependentUpon>

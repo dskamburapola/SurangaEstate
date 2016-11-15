@@ -137,9 +137,11 @@ Public Class frmFactoryWeight
 #Region "Button Events"
 
     Private Sub sbGenerate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbGenerate.Click
+        txtExcess.Text = 0
         Me.LoadGrid()
         txtExcess.Text = Math.Abs(a - b)
-
+        a = 0
+        b = 0
 
     End Sub
 
@@ -159,10 +161,7 @@ Public Class frmFactoryWeight
 
 #End Region
 
-    Private Sub sbUpdate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-
-    End Sub
+    
 
     Private Sub LoadGrid()
 

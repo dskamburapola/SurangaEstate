@@ -68,6 +68,7 @@
             Dim dt15 As DataTable
             Dim dt16 As DataTable
             Dim dt17 As DataTable
+            Dim dt18 As DataTable
 
             dt1 = ds.Tables(0)
             dt2 = ds.Tables(1)
@@ -87,7 +88,7 @@
             dt15 = ds.Tables(14)
             dt16 = ds.Tables(15)
             dt17 = ds.Tables(16)
-
+            dt18 = ds.Tables(17)
 
 
 
@@ -568,6 +569,14 @@
                 'report.xrtST.Text = FormatNumber(dt14.Rows(0)("STAFF").ToString(), 0)
                 report.xrtST.Text = (dt14.Rows(0)("STAFF").ToString())
             End If
+
+
+            If (dt18.Rows.Count > 0) Then
+                'report.xrtPL.Text = FormatNumber(dt11.Rows(0)("PLUCKER").ToString(), 0)
+                report.xrtTA.Text = (dt18.Rows(0)("TAPPER").ToString())
+            End If
+
+
 
             Dim a, b, c, d, t As Decimal
 

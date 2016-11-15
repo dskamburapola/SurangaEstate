@@ -62,7 +62,6 @@ Partial Public Class xrMonthlyReport
         Me.XrTable5 = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow57 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell115 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell11 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableRow58 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell63 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell89 = New DevExpress.XtraReports.UI.XRTableCell()
@@ -677,7 +676,7 @@ Partial Public Class xrMonthlyReport
         '
         'XrTableRow57
         '
-        Me.XrTableRow57.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell115, Me.XrTableCell11})
+        Me.XrTableRow57.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell115})
         Me.XrTableRow57.Name = "XrTableRow57"
         Me.XrTableRow57.Weight = 0.84R
         '
@@ -689,13 +688,7 @@ Partial Public Class xrMonthlyReport
         Me.XrTableCell115.StylePriority.UseTextAlignment = False
         Me.XrTableCell115.Text = "RATIO OF WORKER'S"
         Me.XrTableCell115.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
-        Me.XrTableCell115.Weight = 1.2375985044224322R
-        '
-        'XrTableCell11
-        '
-        Me.XrTableCell11.Name = "XrTableCell11"
-        Me.XrTableCell11.Text = "XrTableCell11"
-        Me.XrTableCell11.Weight = 1.2375985044224322R
+        Me.XrTableCell115.Weight = 2.4751970088448645R
         '
         'XrTableRow58
         '
@@ -3066,7 +3059,6 @@ Partial Public Class xrMonthlyReport
     Friend WithEvents XrTableRow6 As DevExpress.XtraReports.UI.XRTableRow
     Friend WithEvents xrtNOD As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents xrtNOE As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell11 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell14 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell16 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell81 As DevExpress.XtraReports.UI.XRTableCell
