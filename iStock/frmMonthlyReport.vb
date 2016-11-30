@@ -544,8 +544,6 @@
 
 
 
-
-
             If (dt11.Rows.Count > 0) Then
                 'report.xrtPL.Text = FormatNumber(dt11.Rows(0)("PLUCKER").ToString(), 0)
                 report.xrtPL.Text = (dt11.Rows(0)("PLUCKER").ToString())
@@ -575,6 +573,7 @@
                 'report.xrtPL.Text = FormatNumber(dt11.Rows(0)("PLUCKER").ToString(), 0)
                 report.xrtTA.Text = (dt18.Rows(0)("TAPPER").ToString())
             End If
+
 
 
 

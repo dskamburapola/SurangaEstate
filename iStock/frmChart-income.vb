@@ -299,18 +299,23 @@
             Dim AllIncome As Decimal
 
             Dim index As Integer
+
             For index = 0 To dt.Rows.Count - 1
 
                 If (dt.Rows(index)("Description") = "Expenses") Then
                     dt.Rows(index)("Amount") = totalExpenes
                     Allexpenses = Convert.ToDecimal(dt.Rows(index)("Amount"))
                 ElseIf (dt.Rows(index)("Description") = "Income") Then
-                    dt.Rows(index)("Amount") = netIncome
-                    AllIncome = Convert.ToDecimal(dt.Rows(index)("Amount"))
+                    'dt.Rows(index)("Amount") = netIncome
+                    'AllIncome = Convert.ToDecimal(dt.Rows(index)("Amount"))
+                    AllIncome = Convert.ToDecimal(netIncome)
                 ElseIf (dt.Rows(index)("Description") = "Profit") Then
                     dt.Rows(index)("Amount") = (AllIncome - Allexpenses)
                 End If
             Next
+
+
+
         End If
 
         Chart.DataSource = dt
