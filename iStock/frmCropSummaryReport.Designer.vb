@@ -84,8 +84,7 @@ Partial Class frmCropSummaryReport
         Me.PivotGridField1.Caption = "Month"
         Me.PivotGridField1.FieldName = "MONTH"
         Me.PivotGridField1.Name = "PivotGridField1"
-        Me.PivotGridField1.SortBySummaryInfo.FieldName = "MonthNo"
-        Me.PivotGridField1.SortMode = DevExpress.XtraPivotGrid.PivotSortMode.Key
+        Me.PivotGridField1.SortMode = DevExpress.XtraPivotGrid.PivotSortMode.Custom
         Me.PivotGridField1.TotalsVisibility = DevExpress.XtraPivotGrid.PivotTotalsVisibility.None
         '
         'PivotGridField5

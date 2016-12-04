@@ -109,9 +109,23 @@ Public Class frmCropSummaryReport
 
 #Region "Button Events"
 
+    Private fieldMonth As PivotGridField
+
+    Public Sub New()
+        InitializeComponent()
+
+        fieldMonth = pgcAttendance.Fields.GetFieldByName("Month")
+        AddHandler pgcAttendance.CustomFieldSort, AddressOf pgcAttendance_CustomFieldSort
+    End Sub
+
+
     Private Sub sbGenerate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sbGenerate.Click
 
         If dxvpAttendaceReport.Validate Then
+
+
+     
+
 
             Dim ds As New DataSet
 
@@ -137,8 +151,7 @@ Public Class frmCropSummaryReport
             '    .Fields.Add(fdataPercentage).SummaryDisplayType = DevExpress.Data.PivotGrid.PivotSummaryDisplayType.PercentOfColumn
             '    .Fields.Add(fcol)
 
-            'End With
-
+    
 
             pgcAttendance.BestFitColumnArea()
 
@@ -157,4 +170,17 @@ Public Class frmCropSummaryReport
     Private Sub pgcAttendance_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pgcAttendance.Click
 
     End Sub
+
+
+    Private Sub pgcAttendance_CustomFieldSort(ByVal sender As Object, ByVal e As PivotGridCustomFieldSortEventArgs)
+        If e.Field.FieldName = "MONTH" Then
+
+            Dim orderValue1 As Object = e.GetListSourceColumnValue(e.ListSourceRowIndex1, "MonthNo"), orderValue2 As Object = e.GetListSourceColumnValue(e.ListSourceRowIndex2, "MonthNo")
+            e.Result = Comparer.Default.Compare(orderValue1, orderValue2)
+            e.Handled = True
+        End If
+    End Sub
+
+
+
 End Class
