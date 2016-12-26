@@ -1057,7 +1057,7 @@ Partial Public Class xrMonthlyReport
         'XrTableCell71
         '
         Me.XrTableCell71.Name = "XrTableCell71"
-        Me.XrTableCell71.Text = "Rubber (Latex)"
+        Me.XrTableCell71.Text = "TAPPING"
         Me.XrTableCell71.Weight = 0.93154861424046087R
         '
         'xrRubberLatexDes
@@ -1132,7 +1132,7 @@ Partial Public Class xrMonthlyReport
         '
         Me.XrTableCell72.Name = "XrTableCell72"
         Me.XrTableCell72.StylePriority.UseTextAlignment = False
-        Me.XrTableCell72.Text = "Rubber (Sheets)"
+        Me.XrTableCell72.Text = "SCRAPS"
         Me.XrTableCell72.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         Me.XrTableCell72.Weight = 0.93154861424046087R
         '
@@ -2252,7 +2252,7 @@ Partial Public Class xrMonthlyReport
         Me.XrTableCell74.Multiline = True
         Me.XrTableCell74.Name = "XrTableCell74"
         Me.XrTableCell74.StylePriority.UseFont = False
-        Me.XrTableCell74.Text = "RUBBER LATEX" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.XrTableCell74.Text = "TAPPING"
         Me.XrTableCell74.Weight = 3.0127227278261461R
         '
         'XrTableRow34

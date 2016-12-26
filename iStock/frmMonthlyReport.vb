@@ -647,7 +647,7 @@
 
             report.xrISDPTotal.Text = FormatNumber(dt1.Rows(0)("OtherAmt").ToString(), 2, TriState.True)
 
-            report.xrtTO.Text = FormatNumber(Val(report.xrtPL.Text) + Val(report.xrtSU.Text) + Val(report.xrtWT.Text) + Val(report.xrtST.Text), 0, TriState.False)
+            report.xrtTO.Text = FormatNumber(Val(report.xrtPL.Text) + Val(report.xrtTA.Text) + Val(report.xrtSU.Text) + Val(report.xrtWT.Text) + Val(report.xrtST.Text), 0, TriState.False)
 
             report.xrtAVPL.Text = FormatNumber(Val(Val(report.xrtPL.Text) / Val(report.xrtTO.Text)) * 100, 2, TriState.True)
 
@@ -659,7 +659,7 @@
 
             report.xrtAVST.Text = FormatNumber(Val(Val(report.xrtST.Text) / Val(report.xrtTO.Text)) * 100, 2, TriState.True)
 
-            report.xrtAvgTotal.Text = FormatNumber(Val(IIf(report.xrtAVPL.Text = String.Empty, 0, report.xrtAVPL.Text)) + Val(IIf(report.xrtAVSU.Text = String.Empty, 0, report.xrtAVSU.Text)) + Val(IIf(report.xrtAVTA.Text = String.Empty, 0, report.xrtAVTA.Text)) + Val(IIf(report.xrtAVWT.Text = String.Empty, 0, report.xrtAVWT.Text)) + Val(IIf(report.xrtAVST.Text = String.Empty, 0, report.xrtAVST.Text)), 2, TriState.True)
+            report.xrtAvgTotal.Text = FormatNumber(Val(IIf(report.xrtAVPL.Text = String.Empty, 0, report.xrtAVPL.Text)) + Val(IIf(report.xrtAVSU.Text = String.Empty, 0, report.xrtAVSU.Text)) + Val(IIf(report.xrtAVTA.Text = String.Empty, 0, report.xrtAVTA.Text)) + Val(IIf(report.xrtAVWT.Text = String.Empty, 0, report.xrtAVWT.Text)) + Val(IIf(report.xrtAVST.Text = String.Empty, 0, report.xrtAVST.Text)))
 
             report.xrNettProfit.Text = FormatNumber((Convert.ToDecimal(report.xrIncomeTotal.Text) - Convert.ToDecimal(report.xrTotalExpenses.Text)), 2, TriState.True)
 
