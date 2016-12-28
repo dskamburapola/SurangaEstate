@@ -1782,7 +1782,7 @@ Partial Public Class xrMonthlyReport
         Me.XrTableCell19.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell19.Name = "XrTableCell19"
         Me.XrTableCell19.StylePriority.UseFont = False
-        Me.XrTableCell19.Text = "Other Expenses"
+        Me.XrTableCell19.Text = "OTHER EXPENSES"
         Me.XrTableCell19.Weight = 3.0127227278261461R
         '
         'XrTableRow42
@@ -2101,7 +2101,7 @@ Partial Public Class xrMonthlyReport
         Me.XrTableCell116.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
         Me.XrTableCell116.Name = "XrTableCell116"
         Me.XrTableCell116.StylePriority.UseFont = False
-        Me.XrTableCell116.Text = "Expenses of Investment"
+        Me.XrTableCell116.Text = "EXPENSES OF INVESTMENTS"
         Me.XrTableCell116.Weight = 0.93154835142007264R
         '
         'xrtEXI
@@ -2359,7 +2359,7 @@ Partial Public Class xrMonthlyReport
         Me.XrTableCell33.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
         Me.XrTableCell33.Name = "XrTableCell33"
         Me.XrTableCell33.StylePriority.UseFont = False
-        Me.XrTableCell33.Text = "RUBBER SHEET"
+        Me.XrTableCell33.Text = "SCRAPS"
         Me.XrTableCell33.Weight = 3.0127227278261461R
         '
         'XrTableRow20

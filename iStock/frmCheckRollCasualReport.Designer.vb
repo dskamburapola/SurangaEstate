@@ -24,6 +24,8 @@ Partial Class frmCheckRollCasualReport
         Dim ConditionValidationRule2 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Dim ConditionValidationRule3 As DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule = New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.gcPayrollPrint = New DevExpress.XtraGrid.GridControl()
+        Me.gvPayrollPrint = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.cbeRange = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.gcCheckRoll = New DevExpress.XtraGrid.GridControl()
@@ -43,12 +45,12 @@ Partial Class frmCheckRollCasualReport
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
-        Me.gcPayrollPrint = New DevExpress.XtraGrid.GridControl()
-        Me.gvPayrollPrint = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.dxvpAttendaceReport = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.gcPayrollPrint, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gvPayrollPrint, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cbeRange.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcCheckRoll, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gvCheckRoll, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,10 +67,8 @@ Partial Class frmCheckRollCasualReport
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.gcPayrollPrint, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.gvPayrollPrint, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -89,12 +89,28 @@ Partial Class frmCheckRollCasualReport
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
+        'gcPayrollPrint
+        '
+        Me.gcPayrollPrint.Location = New System.Drawing.Point(12, 311)
+        Me.gcPayrollPrint.MainView = Me.gvPayrollPrint
+        Me.gcPayrollPrint.Name = "gcPayrollPrint"
+        Me.gcPayrollPrint.Size = New System.Drawing.Size(678, 144)
+        Me.gcPayrollPrint.TabIndex = 20
+        Me.gcPayrollPrint.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvPayrollPrint})
+        '
+        'gvPayrollPrint
+        '
+        Me.gvPayrollPrint.BestFitMaxRowCount = 1
+        Me.gvPayrollPrint.GridControl = Me.gcPayrollPrint
+        Me.gvPayrollPrint.Name = "gvPayrollPrint"
+        Me.gvPayrollPrint.OptionsView.ColumnAutoWidth = False
+        '
         'cbeRange
         '
         Me.cbeRange.Location = New System.Drawing.Point(358, 43)
         Me.cbeRange.Name = "cbeRange"
         Me.cbeRange.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cbeRange.Properties.Items.AddRange(New Object() {"1-15", "16-EOM"})
+        Me.cbeRange.Properties.Items.AddRange(New Object() {"1-15", "16-EOM", "ALL"})
         Me.cbeRange.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
         Me.cbeRange.Size = New System.Drawing.Size(62, 20)
         Me.cbeRange.StyleController = Me.LayoutControl1
@@ -312,22 +328,6 @@ Partial Class frmCheckRollCasualReport
         Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
-        'gcPayrollPrint
-        '
-        Me.gcPayrollPrint.Location = New System.Drawing.Point(12, 311)
-        Me.gcPayrollPrint.MainView = Me.gvPayrollPrint
-        Me.gcPayrollPrint.Name = "gcPayrollPrint"
-        Me.gcPayrollPrint.Size = New System.Drawing.Size(678, 144)
-        Me.gcPayrollPrint.TabIndex = 20
-        Me.gcPayrollPrint.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gvPayrollPrint})
-        '
-        'gvPayrollPrint
-        '
-        Me.gvPayrollPrint.BestFitMaxRowCount = 1
-        Me.gvPayrollPrint.GridControl = Me.gcPayrollPrint
-        Me.gvPayrollPrint.Name = "gvPayrollPrint"
-        Me.gvPayrollPrint.OptionsView.ColumnAutoWidth = False
-        '
         'LayoutControlItem8
         '
         Me.LayoutControlItem8.Control = Me.gcPayrollPrint
@@ -353,6 +353,8 @@ Partial Class frmCheckRollCasualReport
         Me.Text = "Check Roll (Casual)"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.gcPayrollPrint, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gvPayrollPrint, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cbeRange.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gcCheckRoll, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gvCheckRoll, System.ComponentModel.ISupportInitialize).EndInit()
@@ -369,10 +371,8 @@ Partial Class frmCheckRollCasualReport
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.gcPayrollPrint, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.gvPayrollPrint, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dxvpAttendaceReport, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
