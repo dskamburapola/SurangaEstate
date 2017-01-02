@@ -132,7 +132,7 @@ Public Class frmTermDeductions
         Dim a As Integer
 
         a = Val(gvTermDeductions.RowCount.ToString)
-        If a > 1 Then
+        If a >= 1 Then
 
             If dxvpCompany.Validate Then
 
