@@ -520,8 +520,12 @@
                         cell1.Text = Convert.ToDateTime(dt14.Rows(i).Item("TDDate").ToString).ToString("dd-MMM-yy")
                     End If
 
+                    If IsDBNull(dt14.Rows(i).Item("EmployerNo")) Or IsDBNull(dt14.Rows(i).Item("EmployerName")) Then
+                        cell2.Text = ""
+                    Else
+                        cell2.Text = "[" + CStr((dt14.Rows(i).Item("EmployerNo"))) + "] " + CStr((dt14.Rows(i).Item("EmployerName")))
+                    End If
 
-                    cell2.Text = "[" + CStr((dt5.Rows(i).Item("EmployerNo"))) + "] " + CStr((dt14.Rows(i).Item("EmployerName")))
 
                     If IsDBNull(dt14.Rows(i).Item("TDAmount")) Then
                         cell3.Text = "0.00 "
