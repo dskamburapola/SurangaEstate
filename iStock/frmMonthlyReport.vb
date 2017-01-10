@@ -342,15 +342,15 @@
                     If dt6.Rows(i)("Designation").ToString() = "CASUAL" Then
 
                         report.xrAdvanceCasual.Text = FormatNumber(dt6.Rows(i)("Advance").ToString(), 2, TriState.True)
-                    Else
-                        report.xrAdvanceCasual.Text = 0
+                        'Else
+                        '    report.xrAdvanceCasual.Text = 0
                     End If
 
                     If dt6.Rows(i)("Designation").ToString() = "STAFF" Then
 
                         report.xrAdvanceStaff.Text = FormatNumber(dt6.Rows(i)("Advance").ToString(), 2, TriState.True)
-                    Else
-                        report.xrAdvanceStaff.Text = 0
+                        'Else
+                        '    report.xrAdvanceStaff.Text = 0
 
                     End If
 
