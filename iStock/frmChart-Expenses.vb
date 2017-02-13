@@ -126,6 +126,7 @@
         Dim CasualTotalto15 As Decimal
         Dim CasualTotal5toEOM As Decimal
         Dim cashAdvancePermanent As Decimal
+        Dim cashAdvanceStaff As Decimal
         Dim cashAdvanceCasual As Decimal
         Dim cashAdvanceTotal As Decimal
         Dim festivalAdvance As Decimal
@@ -156,7 +157,7 @@
         Dim dt13 As DataTable 'CashRewards
         Dim dt14 As DataTable 'Festival Advance - Casual
         Dim dt15 As DataTable 'Festival Advance - Staff
-        'Dim dt16 As DataTable 'Festival Advance - Other Exps
+        Dim dt16 As DataTable 'Festival Advance - Other Exps
 
 
 
@@ -176,7 +177,7 @@
         dt13 = ds.Tables(12)
         dt14 = ds.Tables(13)
         dt15 = ds.Tables(14)
-        'dt16 = ds.Tables(15)
+        dt16 = ds.Tables(16)
 
         If (ds IsNot Nothing And ds.Tables.Count > 0) Then
 
@@ -201,16 +202,17 @@
                 cashAdvancePermanent = cashAdvancePermanent + Convert.ToDecimal(dr("AdvanceAmount").ToString)
             Next
 
-            'cash advance casual
+            'cash advance staff
 
             For Each dr As DataRow In dt6.Rows
+                cashAdvanceStaff = cashAdvanceStaff + Convert.ToDecimal(dr("AdvanceAmount").ToString)
+            Next
+
+            For Each dr As DataRow In dt16.Rows
                 cashAdvanceCasual = cashAdvanceCasual + Convert.ToDecimal(dr("AdvanceAmount").ToString)
             Next
 
-            ''stafff advance
-            'For Each dr As DataRow In dt11.Rows
-            '    cashAdvanceAdmin = cashAdvanceAdmin + Convert.ToDecimal(dr("staffAdvance").ToString)
-            'Next
+           
 
    
             'festival advance
@@ -237,7 +239,7 @@
 
 
             totalSalary = PermenentTotal + CasualTotalto15 + CasualTotal5toEOM + KPB
-            cashAdvanceTotal = cashAdvancePermanent + cashAdvanceCasual
+            cashAdvanceTotal = cashAdvancePermanent + cashAdvanceCasual + cashAdvanceStaff
 
         End If
 
