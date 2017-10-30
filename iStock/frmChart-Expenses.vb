@@ -212,9 +212,6 @@
                 cashAdvanceCasual = cashAdvanceCasual + Convert.ToDecimal(dr("AdvanceAmount").ToString)
             Next
 
-           
-
-   
             'festival advance
             For Each dr As DataRow In dt7.Rows
                 festivalAdvance = festivalAdvance + Convert.ToDecimal(dr("TDAmount").ToString)
@@ -230,22 +227,12 @@
                 ETF_3 = ETF_3 + Convert.ToDecimal(dr("ETF_3").ToString)
             Next
 
-            'For Each dr As DataRow In ds.Tables(15).Rows
-            '    OtherExpenseTotal = OtherExpenseTotal + Convert.ToDecimal(dr("OtherExs").ToString)
-            'Next
-
-
-
-
+            
 
             totalSalary = PermenentTotal + CasualTotalto15 + CasualTotal5toEOM + KPB
             cashAdvanceTotal = cashAdvancePermanent + cashAdvanceCasual + cashAdvanceStaff
 
         End If
-
-
-
-
 
 
         CWBCharts.Year = leYear.EditValue
@@ -275,8 +262,6 @@
             Next
 
         End If
-
-
       
         Chart.DataSource = dt
 
