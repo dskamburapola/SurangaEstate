@@ -247,6 +247,12 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.PageHeader = New DevExpress.XtraReports.UI.PageHeaderBand()
         Me.PageFooter = New DevExpress.XtraReports.UI.PageFooterBand()
+        Me.XrTableRow15 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell119 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.rStaffSalary = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell139 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell140 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell141 = New DevExpress.XtraReports.UI.XRTableCell()
         CType(Me.xrMainTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.xrMainTableheader, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -254,7 +260,7 @@ Partial Public Class xrpMonthlyExpensesDetails
         'Detail
         '
         Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrMainTable})
-        Me.Detail.HeightF = 711.9875!
+        Me.Detail.HeightF = 732.9875!
         Me.Detail.Name = "Detail"
         Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
@@ -267,8 +273,8 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.xrMainTable.LocationFloat = New DevExpress.Utils.PointFloat(12.5!, 0.0!)
         Me.xrMainTable.Name = "xrMainTable"
         Me.xrMainTable.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.xrMainTable.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.row0, Me.XrTableRow4, Me.row2, Me.row3, Me.XrTableRow6, Me.row5, Me.XrTableRow8, Me.row7, Me.XrTableRow3, Me.row91, Me.XrTableRow9, Me.row9, Me.XrTableRow11, Me.XrTableRow13, Me.row12, Me.XrTableRow12, Me.row14, Me.XrTableRow16, Me.row16, Me.row18, Me.XrTableRow19, Me.row20, Me.row2000, Me.row22, Me.XrTableRow2, Me.row23, Me.XrTableRow5, Me.row25, Me.XrTableRow7, Me.row26, Me.XrTableRow10, Me.row27, Me.XrTableRow14, Me.row24})
-        Me.xrMainTable.SizeF = New System.Drawing.SizeF(1049.0!, 711.9875!)
+        Me.xrMainTable.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.row0, Me.XrTableRow4, Me.row2, Me.row3, Me.XrTableRow6, Me.XrTableRow15, Me.row5, Me.XrTableRow8, Me.row7, Me.XrTableRow3, Me.row91, Me.XrTableRow9, Me.row9, Me.XrTableRow11, Me.XrTableRow13, Me.row12, Me.XrTableRow12, Me.row14, Me.XrTableRow16, Me.row16, Me.row18, Me.XrTableRow19, Me.row20, Me.row2000, Me.row22, Me.XrTableRow2, Me.row23, Me.XrTableRow5, Me.row25, Me.XrTableRow7, Me.row26, Me.XrTableRow10, Me.row27, Me.XrTableRow14, Me.row24})
+        Me.xrMainTable.SizeF = New System.Drawing.SizeF(1049.0!, 732.9875!)
         Me.xrMainTable.StylePriority.UseBorders = False
         Me.xrMainTable.StylePriority.UseFont = False
         Me.xrMainTable.StylePriority.UsePadding = False
@@ -1834,6 +1840,37 @@ Partial Public Class xrpMonthlyExpensesDetails
         Me.PageFooter.HeightF = 750.0013!
         Me.PageFooter.Name = "PageFooter"
         '
+        'XrTableRow15
+        '
+        Me.XrTableRow15.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell119, Me.rStaffSalary, Me.XrTableCell139, Me.XrTableCell140, Me.XrTableCell141})
+        Me.XrTableRow15.Name = "XrTableRow15"
+        Me.XrTableRow15.Weight = 0.8677175421231752R
+        '
+        'XrTableCell119
+        '
+        Me.XrTableCell119.Name = "XrTableCell119"
+        Me.XrTableCell119.Weight = 0.49695101927249774R
+        '
+        'rStaffSalary
+        '
+        Me.rStaffSalary.Name = "rStaffSalary"
+        Me.rStaffSalary.Weight = 1.2094384640227021R
+        '
+        'XrTableCell139
+        '
+        Me.XrTableCell139.Name = "XrTableCell139"
+        Me.XrTableCell139.Weight = 0.29813118213773637R
+        '
+        'XrTableCell140
+        '
+        Me.XrTableCell140.Name = "XrTableCell140"
+        Me.XrTableCell140.Weight = 0.30511655501976948R
+        '
+        'XrTableCell141
+        '
+        Me.XrTableCell141.Name = "XrTableCell141"
+        Me.XrTableCell141.Weight = 0.49147947436144557R
+        '
         'xrpMonthlyExpensesDetails
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin, Me.PageHeader, Me.PageFooter})
@@ -2077,4 +2114,10 @@ Partial Public Class xrpMonthlyExpensesDetails
     Public WithEvents rExprenesOtherTotal As DevExpress.XtraReports.UI.XRTableCell
     Public WithEvents rExprenesOtherTotal1 As DevExpress.XtraReports.UI.XRTableCell
     Public WithEvents rExprenesOther As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableRow15 As DevExpress.XtraReports.UI.XRTableRow
+    Friend WithEvents XrTableCell119 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents rStaffSalary As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents XrTableCell139 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents XrTableCell140 As DevExpress.XtraReports.UI.XRTableCell
+    Public WithEvents XrTableCell141 As DevExpress.XtraReports.UI.XRTableCell
 End Class

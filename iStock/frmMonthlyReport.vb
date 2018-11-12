@@ -12,6 +12,7 @@
             Return _PL
         End Get
     End Property
+
 #Region "Populate Years"
 
     Private Sub LoadYears()
@@ -50,6 +51,7 @@
             Dim ds As New DataSet
             PL.FromDate = currentDate
             ds = PL.GetMonthlyReport()
+
             Dim dt1 As DataTable
             Dim dt2 As DataTable
             Dim dt3 As DataTable
@@ -58,7 +60,6 @@
             Dim dt6 As DataTable
             Dim dt7 As DataTable
             Dim dt8 As DataTable
-
             Dim dt9 As DataTable
             Dim dt10 As DataTable
             Dim dt11 As DataTable
@@ -69,6 +70,9 @@
             Dim dt16 As DataTable
             Dim dt17 As DataTable
             Dim dt18 As DataTable
+            Dim dt19 As DataTable
+            Dim dt20 As DataTable
+            Dim dt21 As DataTable
 
             dt1 = ds.Tables(0)
             dt2 = ds.Tables(1)
@@ -78,7 +82,6 @@
             dt6 = ds.Tables(5)
             dt7 = ds.Tables(6)
             dt8 = ds.Tables(7)
-
             dt9 = ds.Tables(8)
             dt10 = ds.Tables(9)
             dt11 = ds.Tables(10)
@@ -89,7 +92,9 @@
             dt16 = ds.Tables(15)
             dt17 = ds.Tables(16)
             dt18 = ds.Tables(17)
-
+            dt19 = ds.Tables(18)
+            dt20 = ds.Tables(19)
+            dt21 = ds.Tables(20)
 
 
 
@@ -113,74 +118,74 @@
                 report.xrRubberSheetAmt.Text = FormatNumber(dt1.Rows(0)("RubberSheeAmt").ToString(), 2, TriState.True)
                 report.xrRSTotal.Text = FormatNumber(dt1.Rows(0)("RubberSheeAmt").ToString(), 2, TriState.True)
 
-                report.xrOTotal.Text = FormatNumber("0", 2, TriState.True)
+                report.xrOTotal.Text = FormatNumber(dt1.Rows(0)("NonOtherAmt").ToString(), 2, TriState.True)
 
                
               
                 '********************************************************************************************************************************
 
-                If dt15.Rows.Count > 0 Then
+                'If dt15.Rows.Count > 0 Then
 
-                    Dim i As Int64
+                '    Dim i As Int64
 
-                    Dim xx As New DevExpress.XtraReports.UI.XRTable
+                '    Dim xx As New DevExpress.XtraReports.UI.XRTable
 
-                    For i = 0 To dt15.Rows.Count - 1
-
-
-                        Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
-                        xx.WidthF = 345
-
-                        xx.Borders = DevExpress.XtraPrinting.BorderSide.None
-                        xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
-                        xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
-
-                     
-
-                        cell1.Size = New Size(200, 21)
-                        cell2.Size = New Size(145, 21)
-
-                        cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-                        cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+                '    For i = 0 To dt15.Rows.Count - 1
 
 
-                        cell1.Text = ""
+                '        Dim cell1, cell2, cell3 As New DevExpress.XtraReports.UI.XRTableCell
+                '        xx.WidthF = 345
+
+                '        xx.Borders = DevExpress.XtraPrinting.BorderSide.None
+                '        xx.Borders = DevExpress.XtraPrinting.BorderSide.Top
+                '        xx.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
 
 
-                        If IsDBNull(dt15.Rows(i).Item("Note")) Then
-                            cell1.Text = ""
-                        Else
-                            cell1.Text = dt15.Rows(i).Item("Note").ToString
-                        End If
+
+                '        cell1.Size = New Size(200, 21)
+                '        cell2.Size = New Size(145, 21)
+
+                '        cell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+                '        cell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
 
 
-                      
-                        If IsDBNull(dt15.Rows(i).Item("Amount")) Then
-                            cell2.Text = "0.00 "
-                        Else
-                            cell2.Text = FormatNumber(CStr((dt15.Rows(i).Item("Amount"))), 2, TriState.True) & " "
-
-                        End If
+                '        cell1.Text = ""
 
 
-                      
+                '        If IsDBNull(dt15.Rows(i).Item("Note")) Then
+                '            cell1.Text = ""
+                '        Else
+                '            cell1.Text = dt15.Rows(i).Item("Note").ToString
+                '        End If
 
 
-                        Dim tr As New DevExpress.XtraReports.UI.XRTableRow
-                        tr.Cells.Add(cell1)
-                        tr.Cells.Add(cell2)
+
+                '        If IsDBNull(dt15.Rows(i).Item("Amount")) Then
+                '            cell2.Text = "0.00 "
+                '        Else
+                '            cell2.Text = FormatNumber(CStr((dt15.Rows(i).Item("Amount"))), 2, TriState.True) & " "
+
+                '        End If
 
 
-                        xx.Rows.Add(tr)
 
 
-                    Next
 
-                    Dim rISDP As New DevExpress.XtraReports.UI.XRTableRow
-                    rISDP = report.XrTable1.Rows("rowISDP")
-                    rISDP.Cells("xrtISDP").Controls.Add(xx)
-                   
-                End If
+                '        Dim tr As New DevExpress.XtraReports.UI.XRTableRow
+                '        tr.Cells.Add(cell1)
+                '        tr.Cells.Add(cell2)
+
+
+                '        xx.Rows.Add(tr)
+
+
+                '    Next
+
+                '    Dim rISDP As New DevExpress.XtraReports.UI.XRTableRow
+                '    rISDP = report.XrTable1.Rows("rowISDP")
+                '    rISDP.Cells("xrtISDP").Controls.Add(xx)
+
+                'End If
 
 
                 '********************************************************************************************************************************
@@ -258,12 +263,12 @@
                     Select Case i
 
                         Case 0
-                            report.xrRubberSheetDes1.Text = "[" + dt4.Rows(i)("EmployerNo").ToString() + "] " + dt4.Rows(i)("EmployerName").ToString()
-                            report.xrRubberSheetAmt1.Text = dt4.Rows(i)("Quantity").ToString()
+                            '  report.xrRubberSheetDes1.Text = "[" + dt4.Rows(i)("EmployerNo").ToString() + "] " + dt4.Rows(i)("EmployerName").ToString()
+                            ' report.xrRubberSheetAmt1.Text = dt4.Rows(i)("Quantity").ToString()
 
                         Case 1
-                            report.xrRubberSheetDes2.Text = "[" + dt4.Rows(i)("EmployerNo").ToString() + "] " + dt4.Rows(i)("EmployerName").ToString()
-                            report.xrRubberSheetAmt2.Text = dt4.Rows(i)("Quantity").ToString()
+                            '   report.xrRubberSheetDes2.Text = "[" + dt4.Rows(i)("EmployerNo").ToString() + "] " + dt4.Rows(i)("EmployerName").ToString()
+                            '   report.xrRubberSheetAmt2.Text = dt4.Rows(i)("Quantity").ToString()
 
                         Case 2
                             report.xrRubberSheetDes3.Text = "[" + dt4.Rows(i)("EmployerNo").ToString() + "] " + dt4.Rows(i)("EmployerName").ToString()
@@ -277,8 +282,8 @@
             Else
 
                 
-                report.xrRubberSheetDes1.Text = "N/A"
-                report.xrRubberSheetDes2.Text = "N/A"
+                '    report.xrRubberSheetDes1.Text = "N/A"
+                '     report.xrRubberSheetDes2.Text = "N/A"
                 report.xrRubberSheetDes3.Text = "N/A"
 
                    
@@ -291,34 +296,48 @@
 
                     Select Case i
 
-                        Case 0
-                            report.xrAttendanceName1.Text = "[" + dt5.Rows(i)("EmployerNo").ToString() + "] " + dt5.Rows(i)("EmployerName").ToString()
-                            report.xrAttendanceDays1.Text = dt5.Rows(i)("WorkedDays").ToString()
-                            report.xrAttendanceDaysPerc1.Text = FormatNumber(dt5.Rows(i)("DaysAvg").ToString(), 2, TriState.True)
-                            report.xrAttendancePluck1.Text = dt5.Rows(i)("Plucking").ToString()
-                            report.xrAttendanceLatex1.Text = dt5.Rows(i)("Tapping").ToString()
-                            report.xrAttendanceSheets1.Text = dt5.Rows(i)("RubberSheet").ToString()
-                            report.xrAttendanceScrapping1.Text = dt5.Rows(i)("Scrapping").ToString()
 
+                        Case 0
+                            report.xrAttendaceDes1.Text = "[" + dt5.Rows(i)("EmployerNo").ToString() + "] " + dt5.Rows(i)("EmployerName").ToString()
+                            report.xrAttendaceDays1.Text = dt5.Rows(i)("WorkedDays").ToString()
 
                         Case 1
-                            report.xrAttendanceName2.Text = "[" + dt5.Rows(i)("EmployerNo").ToString() + "] " + dt5.Rows(i)("EmployerName").ToString()
-                            report.xrAttendanceDays2.Text = dt5.Rows(i)("WorkedDays").ToString()
-                            report.xrAttendanceDaysPerc2.Text = FormatNumber(dt5.Rows(i)("DaysAvg").ToString(), 2, TriState.True)
-                            report.xrAttendancePluck2.Text = dt5.Rows(i)("Plucking").ToString()
-                            report.xrAttendanceLatex2.Text = dt5.Rows(i)("Tapping").ToString()
-                            report.xrAttendanceSheets2.Text = dt5.Rows(i)("RubberSheet").ToString()
-                            report.xrAttendanceScrapping2.Text = dt5.Rows(i)("Scrapping").ToString()
-
+                            report.xrAttendaceDes2.Text = "[" + dt5.Rows(i)("EmployerNo").ToString() + "] " + dt5.Rows(i)("EmployerName").ToString()
+                            report.xrAttendaceDays2.Text = dt5.Rows(i)("WorkedDays").ToString()
 
                         Case 2
-                            report.xrAttendanceName3.Text = "[" + dt5.Rows(i)("EmployerNo").ToString() + "] " + dt5.Rows(i)("EmployerName").ToString()
-                            report.xrAttendanceDays3.Text = dt5.Rows(i)("WorkedDays").ToString()
-                            report.xrAttendanceDaysPerc3.Text = FormatNumber(dt5.Rows(i)("DaysAvg").ToString(), 2, TriState.True)
-                            report.xrAttendancePluck3.Text = dt5.Rows(i)("Plucking").ToString()
-                            report.xrAttendanceLatex3.Text = dt5.Rows(i)("Tapping").ToString()
-                            report.xrAttendanceSheets3.Text = dt5.Rows(i)("RubberSheet").ToString()
-                            report.xrAttendanceScrapping3.Text = dt5.Rows(i)("Scrapping").ToString()
+                            report.xrAttendaceDes3.Text = "[" + dt5.Rows(i)("EmployerNo").ToString() + "] " + dt5.Rows(i)("EmployerName").ToString()
+                            report.xrAttendaceDays3.Text = dt5.Rows(i)("WorkedDays").ToString()
+
+
+                            'Case 0
+                            '    report.xrAttendanceName1.Text = "[" + dt5.Rows(i)("EmployerNo").ToString() + "] " + dt5.Rows(i)("EmployerName").ToString()
+                            '    report.xrAttendanceDays1.Text = dt5.Rows(i)("WorkedDays").ToString()
+                            '    report.xrAttendanceDaysPerc1.Text = FormatNumber(dt5.Rows(i)("DaysAvg").ToString(), 2, TriState.True)
+                            '    report.xrAttendancePluck1.Text = dt5.Rows(i)("Plucking").ToString()
+                            '    report.xrAttendanceLatex1.Text = dt5.Rows(i)("Tapping").ToString()
+                            '    report.xrAttendanceSheets1.Text = dt5.Rows(i)("RubberSheet").ToString()
+                            '    report.xrAttendanceScrapping1.Text = dt5.Rows(i)("Scrapping").ToString()
+
+
+                            'Case 1
+                            '    report.xrAttendanceName2.Text = "[" + dt5.Rows(i)("EmployerNo").ToString() + "] " + dt5.Rows(i)("EmployerName").ToString()
+                            '    report.xrAttendanceDays2.Text = dt5.Rows(i)("WorkedDays").ToString()
+                            '    report.xrAttendanceDaysPerc2.Text = FormatNumber(dt5.Rows(i)("DaysAvg").ToString(), 2, TriState.True)
+                            '    report.xrAttendancePluck2.Text = dt5.Rows(i)("Plucking").ToString()
+                            '    report.xrAttendanceLatex2.Text = dt5.Rows(i)("Tapping").ToString()
+                            '    report.xrAttendanceSheets2.Text = dt5.Rows(i)("RubberSheet").ToString()
+                            '    report.xrAttendanceScrapping2.Text = dt5.Rows(i)("Scrapping").ToString()
+
+
+                            'Case 2
+                            '    report.xrAttendanceName3.Text = "[" + dt5.Rows(i)("EmployerNo").ToString() + "] " + dt5.Rows(i)("EmployerName").ToString()
+                            '    report.xrAttendanceDays3.Text = dt5.Rows(i)("WorkedDays").ToString()
+                            '    report.xrAttendanceDaysPerc3.Text = FormatNumber(dt5.Rows(i)("DaysAvg").ToString(), 2, TriState.True)
+                            '    report.xrAttendancePluck3.Text = dt5.Rows(i)("Plucking").ToString()
+                            '    report.xrAttendanceLatex3.Text = dt5.Rows(i)("Tapping").ToString()
+                            '    report.xrAttendanceSheets3.Text = dt5.Rows(i)("RubberSheet").ToString()
+                            '    report.xrAttendanceScrapping3.Text = dt5.Rows(i)("Scrapping").ToString()
 
 
 
@@ -536,7 +555,7 @@
                 report.xrtAVP.Text = (dt11.Rows(0)("PLUCKER").ToString())
                 'report.xrtAVP.Text = Convert.ToString(FormatNumber(dt11.Rows(0)("PLUCKER").ToString(), 0))
             Else
-                report.xrtAVP.Text = "7989"
+                report.xrtAVP.Text = ""
             End If
 
             report.xrtAVG.Text = Convert.ToString(FormatNumber(Val(report.xrtPW.Text) / Val(report.xrtAVP.Text), 2, TriState.True))
@@ -574,7 +593,16 @@
                 report.xrtTA.Text = (dt18.Rows(0)("TAPPER").ToString())
             End If
 
+            If (dt19.Rows.Count > 0) Then
 
+                If IsDBNull(dt19.Rows(0).Item("InvestmentExpenses")) Then
+                    report.xrInvestmentExpenses.Text = "0.00 "
+                Else
+                    report.xrInvestmentExpenses.Text = FormatNumber(CStr((dt19.Rows(0)("InvestmentExpenses").ToString())), 2, TriState.True) & " "
+
+                End If
+
+            End If
 
 
             Dim a, b, c, d, t As Decimal
@@ -668,6 +696,83 @@
             End If
 
             report.xrtNOE.Text = "NOE = " & report.xrtTO.Text
+
+
+            If (dt20.Rows.Count > 0) Then
+
+                For i = 0 To dt5.Rows.Count - 1
+
+                    Select Case i
+
+
+
+
+                        Case 0
+                            report.xrbpn1.Text = "[" + dt20.Rows(i)("EmployerNo").ToString() + "] " + dt20.Rows(i)("EmployerName").ToString()
+                            report.xrbpd1.Text = dt20.Rows(i)("WorkedDays").ToString()
+                            report.xrbpc1.Text = FormatNumber(dt20.Rows(i)("PContribution").ToString(), 2, TriState.True)
+                            report.xrbpq1.Text = dt20.Rows(i)("Plucking").ToString()
+
+
+
+                        Case 1
+                            report.xrbpn2.Text = "[" + dt20.Rows(i)("EmployerNo").ToString() + "] " + dt20.Rows(i)("EmployerName").ToString()
+                            report.xrbpd2.Text = dt20.Rows(i)("WorkedDays").ToString()
+                            report.xrbpc2.Text = FormatNumber(dt20.Rows(i)("PContribution").ToString(), 2, TriState.True)
+                            report.xrbpq2.Text = dt20.Rows(i)("Plucking").ToString()
+
+
+                        Case 2
+                            report.xrbpn3.Text = "[" + dt20.Rows(i)("EmployerNo").ToString() + "] " + dt20.Rows(i)("EmployerName").ToString()
+                            report.xrbpd3.Text = dt20.Rows(i)("WorkedDays").ToString()
+                            report.xrbpc3.Text = FormatNumber(dt20.Rows(i)("PContribution").ToString(), 2, TriState.True)
+                            report.xrbpq3.Text = dt20.Rows(i)("Plucking").ToString()
+
+
+                    End Select
+
+                Next
+
+            End If
+
+
+
+            If (dt21.Rows.Count > 0) Then
+
+                For i = 0 To dt5.Rows.Count - 1
+
+                    Select Case i
+
+
+
+
+                        Case 0
+                            report.xrbtn1.Text = "[" + dt21.Rows(i)("EmployerNo").ToString() + "] " + dt21.Rows(i)("EmployerName").ToString()
+                            report.xrbtd1.Text = dt21.Rows(i)("WorkedDays").ToString()
+                            report.xrbtc1.Text = FormatNumber(dt21.Rows(i)("TContribution").ToString(), 2, TriState.True)
+                            report.xrbtq1.Text = dt21.Rows(i)("Tapping").ToString()
+
+
+
+                        Case 1
+                            report.xrbtn2.Text = "[" + dt21.Rows(i)("EmployerNo").ToString() + "] " + dt21.Rows(i)("EmployerName").ToString()
+                            report.xrbtd2.Text = dt21.Rows(i)("WorkedDays").ToString()
+                            report.xrbtc2.Text = FormatNumber(dt21.Rows(i)("TContribution").ToString(), 2, TriState.True)
+                            report.xrbtq2.Text = dt21.Rows(i)("Tapping").ToString()
+
+
+                        Case 2
+                            report.xrbtn3.Text = "[" + dt21.Rows(i)("EmployerNo").ToString() + "] " + dt21.Rows(i)("EmployerName").ToString()
+                            report.xrbtd3.Text = dt21.Rows(i)("WorkedDays").ToString()
+                            report.xrbtc3.Text = FormatNumber(dt21.Rows(i)("TContribution").ToString(), 2, TriState.True)
+                            report.xrbtq3.Text = dt21.Rows(i)("Tapping").ToString()
+
+
+                    End Select
+
+                Next
+
+            End If
 
             report.CreateDocument()
             report.BringToFront()

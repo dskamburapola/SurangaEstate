@@ -1,7 +1,31 @@
 Imports System.Threading
 Imports System.Globalization
+Imports iStockCommon.iStockConstants
+Imports iStockCommon.iStockSettings
+Imports System.Data.SqlClient
+
 
 Public Class frmMain
+
+
+
+#Region "Properties"
+    Private _ECSSettings As iStockCommon.iStockSettings
+#End Region
+
+#Region "Constructors"
+
+    Public ReadOnly Property ECSSettings() As iStockCommon.iStockSettings
+        Get
+
+            If _ECSSettings Is Nothing Then
+                _ECSSettings = New iStockCommon.iStockSettings
+            End If
+
+            Return _ECSSettings
+        End Get
+    End Property
+#End Region
 
 #Region "Form Events"
 
@@ -20,6 +44,8 @@ Public Class frmMain
     End Sub
 
     Private Sub frmMain_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
+
+        '  Me.BackupDB()
         Application.Exit()
     End Sub
 
@@ -190,6 +216,44 @@ Public Class frmMain
     End Sub
 
 #End Region
+
+#Region "BackupDB"
+
+    Private Sub BackupDB()
+        Try
+
+            Dim FileToDelete As String
+            FileToDelete = System.Configuration.ConfigurationManager.AppSettings("backuplocation") & "DBbackup" & DateTime.Today.ToString("yyyyMMdd") & ".bak"
+
+            If System.IO.File.Exists(FileToDelete) = True Then
+
+                System.IO.File.Delete(FileToDelete)
+
+            Else
+
+                Dim con As SqlConnection
+                Dim cmd As SqlCommand
+
+
+                con = New SqlConnection(System.Configuration.ConfigurationManager.AppSettings("backupConnection"))
+                ' con = New SqlConnection("Data Source=DESKTOP-TGP7LML;Initial Catalog=Estate;Integrated Security=SSPI")
+
+                Dim str As String
+
+                str = System.Configuration.ConfigurationManager.AppSettings("backup") & "DBbackup" & DateTime.Today.ToString("yyyyMMdd") & ".bak'"
+
+                cmd = New SqlCommand(str, con)
+                '  cmd = New SqlCommand("backup database Estate to disk='d:\pathfined\test.bak'", con)
+
+                con.Open()
+                cmd.ExecuteNonQuery()
+                con.Close()
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+#End Region
    
     Private Sub BarButtonItem35_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem35.ItemClick
 
@@ -252,5 +316,15 @@ Public Class frmMain
 
     Private Sub BarButtonItem49_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem49.ItemClick
         ShowIStockForm(frmFactoryWeight)
+    End Sub
+
+    Private Sub BarButtonItem50_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem50.ItemClick
+        'ECSSettings.CreateBackUp()
+        Me.BackupDB()
+        MessageBox.Show("Database Successfully Backuped.", "Estate Planning", MessageBoxButtons.OK)
+
+        ' MsgBox("Database Backuped Successfully")
+        
+
     End Sub
 End Class

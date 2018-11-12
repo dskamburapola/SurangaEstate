@@ -463,4 +463,20 @@ Public Class iStockSettings
 
 #End Region
 
+#Region "Delete Abbrevation"
+
+    Public Sub CreateBackUp()
+        Try
+            Dim DB As Database = DatabaseFactory.CreateDatabase(ISTOCK_DBCONNECTION_STRING)
+            Dim DBC As DbCommand = DB.GetStoredProcCommand(BACKUP_DATABASE)
+
+            DB.ExecuteNonQuery(DBC)
+        Catch ex As Exception
+            Throw
+        End Try
+
+    End Sub
+
+#End Region
+
 End Class

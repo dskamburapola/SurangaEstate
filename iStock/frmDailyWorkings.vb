@@ -254,21 +254,11 @@ Public Class frmDailyWorkings
 
 
                     Case "TAPPING"
-
-                        'If seDays.EditValue = 0.5 Then
-                        '    .NameDays = 0.5
-                        'Else
-
                         If Val(seQuantity.Text) >= Val(lblSheetsPerDay.Text) Then
                             .NameDays = 1
                         Else
-                            .NameDays = 0.5
+                            .NameDays = 0
                         End If
-
-                        ' End If
-
-
-
 
                     Case Else
                         .NameDays = Me.seDays.Text.Trim

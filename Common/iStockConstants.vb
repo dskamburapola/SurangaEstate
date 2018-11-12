@@ -337,6 +337,7 @@
     Public Shared SETTINGS_INSERT As String = "Settings_Insert"
     Public Shared SETTINGS_GETALL As String = "Settings_GetAll"
 
+    Public Shared BACKUP_DATABASE As String = "Backup_Database"
 
     Public Shared DAILYWORKING_INSERT As String = "DailyWorking_Insert"
     Public Shared DAILYWORKING_GETBY_DATE As String = "DailyWorking_GetBy_Date"
